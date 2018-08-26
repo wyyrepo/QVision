@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvprocessingblocks/qvfilterselectorblock.h</h1><a href="qvfilterselectorblock_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVFILTERSELECTORWORKER_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVFILTERSELECTORWORKER_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;QVIndexedStringList&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00037"></a>00037 
+<a name="l00041"></a>00041 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C&gt; <span class="keyword">class </span>QVFilterSelectorBlock: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00042"></a>00042         {
+<a name="l00043"></a>00043         <span class="keyword">private</span>:
+<a name="l00044"></a>00044                 <a class="code" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a> firstFilter;
+<a name="l00045"></a>00045 
+<a name="l00047"></a>00047                 <span class="comment">// Function that apply a canny filter</span>
+<a name="l00048"></a>00048                 <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;T,1&gt;</a> cannyIterate(<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;T,1&gt;</a> image, <span class="keywordtype">double</span> threLow, <span class="keywordtype">double</span> threHigh)
+<a name="l00049"></a>00049                         {
+<a name="l00051"></a>00051                         <span class="comment">// Read input parameters</span>
+<a name="l00052"></a>00052                         uInt cols = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), rows = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00053"></a>00053                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> imageFloat(cols, rows), dX(cols, rows), dY(cols, rows), dXNeg(cols, rows);
+<a name="l00054"></a>00054                         <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>  canny(cols, rows), buffer;
+<a name="l00055"></a>00055                 
+<a name="l00057"></a>00057                         <span class="comment">// Convert image from uChar to sShort</span>
+<a name="l00058"></a>00058                         Convert(image, imageFloat);
+<a name="l00059"></a>00059                 
+<a name="l00061"></a>00061                         <span class="comment">// Obtain horizontal and vertical gradients from image</span>
+<a name="l00062"></a>00062                         <a class="code" href="group__qvippFF.html#ga80cdf87494c982146fbaf42fa4e1886f" title="QVision wrapper function for IPP&amp;#39;s ippiFilterSobelHorizMask_32f_C1R.">FilterSobelHorizMask</a>(imageFloat, dY, ippMskSize3x3);
+<a name="l00063"></a>00063                         <a class="code" href="group__qvippFF.html#gac4c214ba6435857ee9874d2103e99418" title="QVision wrapper function for IPP&amp;#39;s ippiFilterSobelVertMask_32f_C1R.">FilterSobelVertMask</a>(imageFloat, dX, ippMskSize3x3);
+<a name="l00064"></a>00064                         <a class="code" href="group__qvippIAALO.html#gadc8a14bd103bb45afa43950ce454f2fd" title="Adds, subtracts, or multiplies pixel values of an image and a constant, and places...">MulC</a>(dX, -1, dXNeg);
+<a name="l00065"></a>00065                 
+<a name="l00067"></a>00067                         <span class="comment">// Apply Canny operator</span>
+<a name="l00068"></a>00068                         <a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7" title="Allocates size in a buffer image for temporary data for function Canny.This function...">CannyGetSize</a>(canny, buffer);
+<a name="l00069"></a>00069                         <a class="code" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a" title="Creates binary image of source&amp;#39;s image edges, using derivatives of the first...">Canny</a>(dXNeg, dY, canny, threLow, threHigh, buffer);
+<a name="l00070"></a>00070                 
+<a name="l00072"></a>00072                         <span class="comment">// Publish resulting images</span>
+<a name="l00073"></a>00073                         <span class="keywordflow">return</span> canny;
+<a name="l00074"></a>00074                         }
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 
+<a name="l00078"></a>00078                 <span class="comment">// Function that apply the selected filter</span>
+<a name="l00079"></a>00079                 <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;T,1&gt;</a> applyFilter(<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;T,1&gt;</a> image, <span class="keywordtype">int</span> choice, <span class="keywordtype">double</span> threLow, <span class="keywordtype">double</span> threHigh, <span class="keywordtype">bool</span> sizeOf5, <span class="keywordtype">int</span> maskRow, <span class="keywordtype">int</span> maskCol)
+<a name="l00080"></a>00080                         {
+<a name="l00081"></a>00081                         <span class="keywordflow">switch</span> (choice)
+<a name="l00082"></a>00082                                 {
+<a name="l00083"></a>00083                                 <span class="keywordflow">case</span> 0: <span class="comment">// None</span>
+<a name="l00084"></a>00084                                         {
+<a name="l00085"></a>00085                                         <span class="keywordflow">break</span>;
+<a name="l00086"></a>00086                                         }
+<a name="l00087"></a>00087                                 <span class="keywordflow">case</span> 1: <span class="comment">// Canny</span>
+<a name="l00088"></a>00088                                         {
+<a name="l00089"></a>00089                                         image = cannyIterate(image, threLow, threHigh);
+<a name="l00090"></a>00090                                         <span class="keywordflow">break</span>;
+<a name="l00091"></a>00091                                         }
+<a name="l00092"></a>00092                                 <span class="keywordflow">case</span> 2: <span class="comment">// Hessian</span>
+<a name="l00093"></a>00093                                         {
+<a name="l00094"></a>00094                                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> auxImage(image);
+<a name="l00095"></a>00095                                         <a class="code" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9" title="Obtains the Hessian corner response image.">FilterHessianCornerResponseImage</a>(image, auxImage);
+<a name="l00096"></a>00096                                         <a class="code" href="group__qvippIAALO.html#ga1c3b64b9805d40a0fee1709bfdbb0b4e" title="Computes the natural logarithm of each pixel values of a source image and places...">Ln</a>(auxImage, auxImage);
+<a name="l00097"></a>00097                                         FilterNormalize(auxImage, image);
+<a name="l00098"></a>00098                                         <span class="keywordflow">break</span>;
+<a name="l00099"></a>00099                                         }
+<a name="l00100"></a>00100                                 <span class="keywordflow">case</span> 3: <span class="comment">// Harris</span>
+<a name="l00101"></a>00101                                         {
+<a name="l00102"></a>00102                                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> auxImage(image);
+<a name="l00103"></a>00103                                         <a class="code" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b" title="Obtains the Harris corner response image.">FilterHarrisCornerResponseImage</a>(image, auxImage);
+<a name="l00104"></a>00104                                         <a class="code" href="group__qvippIAALO.html#ga1c3b64b9805d40a0fee1709bfdbb0b4e" title="Computes the natural logarithm of each pixel values of a source image and places...">Ln</a>(auxImage, auxImage);
+<a name="l00105"></a>00105                                         FilterNormalize(auxImage, image);
+<a name="l00106"></a>00106                                         <span class="keywordflow">break</span>;
+<a name="l00107"></a>00107                                         }
+<a name="l00108"></a>00108                                 <span class="keywordflow">case</span> 4: <span class="comment">// DOG</span>
+<a name="l00109"></a>00109                                         {
+<a name="l00110"></a>00110                                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> auxImage(image);
+<a name="l00111"></a>00111                                         <span class="comment">//FilterDoG(image, auxImage);</span>
+<a name="l00112"></a>00112                                         <a class="code" href="group__qvippIAALO.html#ga1c3b64b9805d40a0fee1709bfdbb0b4e" title="Computes the natural logarithm of each pixel values of a source image and places...">Ln</a>(auxImage, auxImage);
+<a name="l00113"></a>00113                                         FilterNormalize(auxImage, image);
+<a name="l00114"></a>00114                                         <span class="keywordflow">break</span>;
+<a name="l00115"></a>00115                                         }
+<a name="l00116"></a>00116                                 <span class="keywordflow">case</span> 5: <span class="comment">// Gauss</span>
+<a name="l00117"></a>00117                                         {
+<a name="l00118"></a>00118                                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> auxImage(image);
+<a name="l00119"></a>00119                                         <span class="keywordflow">if</span> (sizeOf5)
+<a name="l00120"></a>00120                                                 <a class="code" href="group__qvippFF.html#gae5c1010fcf026e45590b363519769da5" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_8u_C1R.">FilterGauss</a>(image, auxImage, ippMskSize5x5);
+<a name="l00121"></a>00121                                         <span class="keywordflow">else</span>
+<a name="l00122"></a>00122                                                 <a class="code" href="group__qvippFF.html#gae5c1010fcf026e45590b363519769da5" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_8u_C1R.">FilterGauss</a>(image, auxImage, ippMskSize3x3);
+<a name="l00123"></a>00123                                         <span class="keywordflow">return</span> auxImage;
+<a name="l00124"></a>00124                                         <span class="keywordflow">break</span>;
+<a name="l00125"></a>00125                                         }
+<a name="l00126"></a>00126                                 <span class="keywordflow">case</span> 6: <span class="comment">// Sharpen</span>
+<a name="l00127"></a>00127                                         {
+<a name="l00128"></a>00128                                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> auxImage(image);
+<a name="l00129"></a>00129                                         <a class="code" href="group__qvippFF.html#ga66c41b76bbad4f212ae571b33df8d92e" title="Filters an image using a sharpening filter.This function applies a sharpening filter...">FilterSharpen</a>(image, auxImage);
+<a name="l00130"></a>00130                                         <span class="keywordflow">return</span> auxImage;
+<a name="l00131"></a>00131                                         <span class="keywordflow">break</span>;
+<a name="l00132"></a>00132                                         }
+<a name="l00133"></a>00133                                 <span class="keywordflow">case</span> 7: <span class="comment">// Box</span>
+<a name="l00134"></a>00134                                         {
+<a name="l00135"></a>00135                                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> auxImage(image);
+<a name="l00136"></a>00136                                         <a class="code" href="group__qvippFF.html#ga2d118e9683ff100e1ae96b54158040ca" title="QVision wrapper function for IPP&amp;#39;s ippiFilterBox_8u_C1R.">FilterBox</a>(image, auxImage, QSize(maskRow, maskCol));
+<a name="l00137"></a>00137                                         <span class="keywordflow">return</span> auxImage;
+<a name="l00138"></a>00138                                         <span class="keywordflow">break</span>;
+<a name="l00139"></a>00139                                         }
+<a name="l00140"></a>00140                                 }
+<a name="l00141"></a>00141                         <span class="keywordflow">return</span> image;
+<a name="l00142"></a>00142                         }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         <span class="keyword">public</span>:
+<a name="l00145"></a>00145                 QVFilterSelectorBlock(QString name = QString()): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+<a name="l00146"></a>00146                         {
+<a name="l00148"></a>00148                         <span class="comment">// Generate the filter&#39;s combobox</span>
+<a name="l00149"></a>00149                         firstFilter.append(<span class="stringliteral">&quot;None&quot;</span>);
+<a name="l00150"></a>00150                         firstFilter.append(<span class="stringliteral">&quot;Canny&quot;</span>);
+<a name="l00151"></a>00151                         firstFilter.append(<span class="stringliteral">&quot;Hessian&quot;</span>);
+<a name="l00152"></a>00152                         firstFilter.append(<span class="stringliteral">&quot;Harris&quot;</span>);
+<a name="l00153"></a>00153                         firstFilter.append(<span class="stringliteral">&quot;DOG&quot;</span>);
+<a name="l00154"></a>00154                         firstFilter.append(<span class="stringliteral">&quot;Gauss&quot;</span>);
+<a name="l00155"></a>00155                         firstFilter.append(<span class="stringliteral">&quot;Sharpen&quot;</span>);
+<a name="l00156"></a>00156                         firstFilter.append(<span class="stringliteral">&quot;Box&quot;</span>);
+<a name="l00157"></a>00157                         addProperty&lt; QVIndexedStringList &gt;(<span class="stringliteral">&quot;Filter&quot;</span>, inputFlag, firstFilter);
+<a name="l00158"></a>00158 
+<a name="l00160"></a>00160                         <span class="comment">// Generate the filter&#39;s parameters</span>
+<a name="l00161"></a>00161                         addProperty&lt;bool&gt;(<span class="stringliteral">&quot;Mask: Size of 5 (gauss)&quot;</span>, inputFlag, <span class="keyword">false</span>);
+<a name="l00162"></a>00162                         addProperty&lt;int&gt;(<span class="stringliteral">&quot;Mask: Row (Box)&quot;</span>, inputFlag, 3, <span class="stringliteral">&quot;Row Mask Size&quot;</span>, 1, 10);
+<a name="l00163"></a>00163                         addProperty&lt;int&gt;(<span class="stringliteral">&quot;Mask: Col (Box)&quot;</span>, inputFlag, 3, <span class="stringliteral">&quot;Col Mask Size&quot;</span>, 1, 10);
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165                         addProperty&lt;double&gt;(<span class="stringliteral">&quot;Threshold high (canny)&quot;</span>, inputFlag, 150, <span class="stringliteral">&quot;High threshold for Canny operator&quot;</span>, 50, 1000);
+<a name="l00166"></a>00166                         addProperty&lt;double&gt;(<span class="stringliteral">&quot;Threshold low (canny)&quot;</span>, inputFlag, 50, <span class="stringliteral">&quot;Low threshold for Canny operator&quot;</span>, 10, 500);
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168                         
+<a name="l00169"></a>00169                         addProperty&lt; QVImage&lt;T,C&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>, inputFlag|outputFlag);
+<a name="l00170"></a>00170                         addProperty&lt; QVImage&lt;T,C&gt; &gt;(<span class="stringliteral">&quot;Output image&quot;</span>, outputFlag);
+<a name="l00171"></a>00171                         }
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173                 <span class="keywordtype">void</span> <a class="code" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">iterate</a>()
+<a name="l00174"></a>00174                         {
+<a name="l00175"></a>00175                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;T,1&gt;</a> image = getPropertyValue&lt; QVImage&lt;uChar,C&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>);
+<a name="l00176"></a>00176 
+<a name="l00178"></a>00178                         <span class="comment">// Get the parameters&#39;s current values</span>
+<a name="l00179"></a>00179                         <span class="keyword">const</span> <a class="code" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a> auxFF = getPropertyValue&lt;QVIndexedStringList&gt;(<span class="stringliteral">&quot;Filter&quot;</span>);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181                         <span class="keyword">const</span> <span class="keywordtype">double</span> threLow = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;Threshold low (canny)&quot;</span>);
+<a name="l00182"></a>00182                         <span class="keyword">const</span> <span class="keywordtype">double</span> threHigh = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;Threshold high (canny)&quot;</span>);
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184                         <span class="keyword">const</span> <span class="keywordtype">bool</span> sizeOf5 = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;Mask: Size of 5 (gauss)&quot;</span>);
+<a name="l00185"></a>00185                         <span class="keyword">const</span> <span class="keywordtype">int</span> maskRow = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Mask: Row (Box)&quot;</span>);
+<a name="l00186"></a>00186                         <span class="keyword">const</span> <span class="keywordtype">int</span> maskCol = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Mask: Col (Box)&quot;</span>);
+<a name="l00187"></a>00187                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Read input parameters&quot;</span>);
+<a name="l00188"></a>00188 
+<a name="l00190"></a>00190                         <span class="comment">// Apply the filter</span>
+<a name="l00191"></a>00191                         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;T,C&gt;</a> filteredImage = applyFilter(image, auxFF.getIndex(), threLow, threHigh, sizeOf5, maskRow, maskCol);
+<a name="l00192"></a>00192                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Apply the filter&quot;</span>);
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194                         setPropertyValue&lt; QVImage&lt;T,C&gt; &gt;(<span class="stringliteral">&quot;Output image&quot;</span>, filteredImage);
+<a name="l00195"></a>00195                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Write input parameters&quot;</span>);
+<a name="l00196"></a>00196                         }
+<a name="l00197"></a>00197         };
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

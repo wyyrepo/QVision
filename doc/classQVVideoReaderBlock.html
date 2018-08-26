@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVVideoReaderBlock Class Reference<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1><!-- doxytag: class="QVVideoReaderBlock" --><!-- doxytag: inherits="QVProcessingBlock" -->
+<p>This is a generic video input processing block for the QVision architecture.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvvideoreaderblock_8h_source.html">QVVideoReaderBlock</a>&gt;</code></p>
+
+<p>Inherits <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a>.</p>
+
+<p><a href="classQVVideoReaderBlock-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#af2ab0db3d129c38e0c15c75933e15f50">opened</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Emitted each time a new video source is opened.  <a href="#af2ab0db3d129c38e0c15c75933e15f50"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#a2e1b8419ff4967a59b71711ef840632d">closed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Emitted each time the video source is closed.  <a href="#a2e1b8419ff4967a59b71711ef840632d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#a2ccdf398a2b53b1fa81d328eccbce206">grabbed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Emitted each time a new frame is grabbed.  <a href="#a2ccdf398a2b53b1fa81d328eccbce206"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#a62f11462d833180a28b76150299b651e">QVVideoReaderBlock</a> (QString name=QString(&quot;&quot;))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> class.  <a href="#a62f11462d833180a28b76150299b651e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#aa516e0006785df268ed21849cba1ef79">~QVVideoReaderBlock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor for <a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> class.  <a href="#aa516e0006785df268ed21849cba1ef79"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59">linkProperty</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *dstCont, QString dstProp)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Links a <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,3&gt; (RGB image) or <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt; (gray image) from the camera to another block.  <a href="#a4330756e5e37295f500d223414eeca59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReaderBlock.html#ac979126d1eb3124ca37f2177782632b2">linkProperty</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *dstCont, QString dstProp1, QString dstProp2, QString dstProp3, bool YUV_RGB=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Links 3 <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt; from the camera (YUV channels) to the corresponding ones of another block.  <a href="#ac979126d1eb3124ca37f2177782632b2"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>This is a generic video input processing block for the QVision architecture. </p>
+<p>This is a generic video input processing block (see <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a>) for the QVision architecture, which is based on the corresponding generic video source reader class <a class="el" href="classQVVideoReader.html">QVVideoReader</a>. You will find it very useful when writing QVision programs which have to process a sequence of video images, as it provides you with a lot of functionality by default, such as selecting from a wide range of video sources in runtime, rescaling input images, grab YUV, gray or RGB images, pausing the video, or going directly to a desired position in it, among many other possibilities. Compile and test example <a class="el" href="videoReader_8cpp.html">videoReader.cpp</a> in <a class="el" href="group__ExamplePrograms.html">Example programs</a> section for a quick hands-on introduction to its usage.</p>
+<p>As any other <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a>, it has some custom input and output properties:</p>
+<dl class="user"><dt><b>Input properties:</b></dt><dd></dd></dl>
+<p>The user can set desired values for these properties directly through the command line, and the programmer through the corresponding <a class="el" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c">QVProcessingBlock::setPropertyValue</a> method:</p>
+<ul>
+<li><em>NoLoop</em> (bool): If the source should be opened in no loop mode.</li>
+<li><em>RealTime</em> (bool): If the source should be opened in real time mode.</li>
+<li><em>URL</em> (QString): URL of the video source to read.</li>
+<li><em>Cols</em> (int): Number of suggested columns for the video source.</li>
+<li><em>Rows</em> (int): Number of suggested rows for the video source.</li>
+</ul>
+<p><b>Note</b>.- RealTime property is also input (and as such can be initialized using the command line), but invisible to the GUI (because once the source has been linked, it cannot be relinked changing its synchronism).</p>
+<p><b>Note</b>.- Note also that you can open the camera in a different size of that specified in the real video source, by setting the desired values of properties <em>Cols</em> and <em>Rows</em> (this class will automatically rescale output images if needed).</p>
+<dl class="user"><dt><b>Output properties:</b></dt><dd></dd></dl>
+<p>These can be accessed using the corresponding <a class="el" href="classQVPropertyContainer.html#affc6008202b566e68ab20cec8b16a7ee">QVProcessingBlock::getPropertyValue</a> method:</p>
+<ul>
+<li><em>Opened</em> (bool): Tells if the camera is correctly opened and working.</li>
+<li><em>FPS</em> (int): FPS of the video.</li>
+<li><em>Frames</em> (int): Number of read frames up to now.</li>
+<li><em>ColsR</em> (int): Actual number of columns of the video -not necessarily equal to the number of requested columns, which will in any case be transparently rounded to the nearest upper even integer-.</li>
+<li><em>RowsR</em> (int): Actual number of rows of the video -not necessarily equal to the number of requested rows, which will in any case be transparently rounded to the nearest upper even integer-.</li>
+<li><em>Pos</em> (double): Current position in the video, if available.</li>
+<li><em>Length</em> (double): Length of the video, if available.</li>
+</ul>
+<p><em>Note</em>.- Remember again that you can open the camera in a different size of that specified in the real video source file (this class will automatically rescale output images if needed); thus, <em>ColsR</em> and <em>RowsR</em> will always contain the real size of the output images served by this block.</p>
+<dl class="user"><dt><b>Output image properties:</b></dt><dd></dd></dl>
+<p>Again, these can be accessed using the <a class="el" href="classQVPropertyContainer.html#affc6008202b566e68ab20cec8b16a7ee" title="Method to get the actual value of a property.">QVProcessingBlock::getPropertyValue</a> method:</p>
+<ul>
+<li><em>RGB image</em> (<a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,3&gt;): Last grabbed RGB image.</li>
+<li><em>Y channel image</em> (<a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt;): Last grabbed Y channel image (gray level image).</li>
+<li><em>U channel image</em> (<a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt;): Last grabbed U channel image.</li>
+<li><em>V channel image</em> (<a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt;): Last grabbed V channel image.</li>
+</ul>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd></dd></dl>
+<ul>
+<li>Output image properties can (and should!) be linked automatically, without the need of naming them explicitly, using any of the <a class="el" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59">QVVideoReaderBlock::linkProperty()</a> available methods.</li>
+</ul>
+<ul>
+<li>When using <a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> objets in your program, you can specify any of the input properties at the start of the program, using the command line parameters; for example, the file to read the video from could be specified by calling the program this way: <code>./program --URL="/home/me/myfile.avi --Rows=300 --Cols=400" </code>. But modification of these properties can also be done directly in the corresponding graphical widgets when reopening the camera during execution (though, of course, these new values will have no effect until the camera is reopened).</li>
+</ul>
+<ul>
+<li>Two important properties worth a little more discussion are <em>RealTime</em> and <em>NoLoop</em>, both boolean. The first one specifies if the camera will be read in real time mode -possibly leaving frames unprocessed, if processing is slower than reading (RealTime=true)-, or at maximum speed -but without leaving any frame unprocessed in any case (RealTime=false)-. The second one specifies if the camera will be closed when the end of the file is reached (NoLoop=true), or will loop, starting from the first frame again and again (NoLoop=false).</li>
+</ul>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a> <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreaderblock_8h_source.html#l00115">115</a> of file <a class="el" href="qvvideoreaderblock_8h_source.html">qvvideoreaderblock.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a62f11462d833180a28b76150299b651e"></a><!-- doxytag: member="QVVideoReaderBlock::QVVideoReaderBlock" ref="a62f11462d833180a28b76150299b651e" args="(QString name=QString(&quot;&quot;))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVideoReaderBlock::QVVideoReaderBlock </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>QString(&quot;&quot;)</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> class. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>the (optional) name given to the camera block. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreaderblock_8cpp_source.html#l00040">40</a> of file <a class="el" href="qvvideoreaderblock_8cpp_source.html">qvvideoreaderblock.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa516e0006785df268ed21849cba1ef79"></a><!-- doxytag: member="QVVideoReaderBlock::~QVVideoReaderBlock" ref="aa516e0006785df268ed21849cba1ef79" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVideoReaderBlock::~QVVideoReaderBlock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor for <a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> class. </p>
+
+<p>Definition at line <a class="el" href="qvvideoreaderblock_8cpp_source.html#l00098">98</a> of file <a class="el" href="qvvideoreaderblock_8cpp_source.html">qvvideoreaderblock.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a4330756e5e37295f500d223414eeca59"></a><!-- doxytag: member="QVVideoReaderBlock::linkProperty" ref="a4330756e5e37295f500d223414eeca59" args="(QVPropertyContainer *dstCont, QString dstProp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReaderBlock::linkProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>dstCont</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>dstProp</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Links a <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,3&gt; (RGB image) or <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt; (gray image) from the camera to another block. </p>
+<p>This method will automatically link, using the adequate synchronism (Asynchronous for real time cameras and Synchronous for non real time cameras; see <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a>), a gray or an RGB image in the block to the corresponding output image property of the camera. An error (return value=false) will occur if dstProp is not of the adequate type (<a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,3&gt; or <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt;).</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dstCont</em>&nbsp;</td><td>Pointer to the destination block. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dstProp</em>&nbsp;</td><td>Name of the destination property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if success, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreaderblock_8cpp_source.html#l00223">223</a> of file <a class="el" href="qvvideoreaderblock_8cpp_source.html">qvvideoreaderblock.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac979126d1eb3124ca37f2177782632b2"></a><!-- doxytag: member="QVVideoReaderBlock::linkProperty" ref="ac979126d1eb3124ca37f2177782632b2" args="(QVPropertyContainer *dstCont, QString dstProp1, QString dstProp2, QString dstProp3, bool YUV_RGB=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReaderBlock::linkProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>dstCont</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>dstProp1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>dstProp2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>dstProp3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>YUV_RGB</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Links 3 <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt; from the camera (YUV channels) to the corresponding ones of another block. </p>
+<p>This method will automatically link, using the adequate synchronism (Asynchronous for real time cameras and Synchronous for non real time cameras; see <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a>), a set of three one channel images in the block to the corresponding output image properties of the camera. An error (return value=false) will occur if any of the dstProp are not of the adequate <a class="el" href="classQVImage.html">QVImage</a>&lt;uChar,1&gt; type.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dstCont</em>&nbsp;</td><td>Pointer to the destination block. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dstProp1</em>&nbsp;</td><td>Name of the destination property for image Y (or R; see YUV_RGB parameter). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dstProp2</em>&nbsp;</td><td>Name of the destination property for image U (or G; see YUV_RGB parameter). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dstProp3</em>&nbsp;</td><td>Name of the destination property for image V (or B; see YUV_RGB parameter). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>YUV_RGB</em>&nbsp;</td><td>if false (default), Y, U and V images are linked; otherwise, R, G, and B will be linked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if success, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreaderblock_8cpp_source.html#l00240">240</a> of file <a class="el" href="qvvideoreaderblock_8cpp_source.html">qvvideoreaderblock.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2ab0db3d129c38e0c15c75933e15f50"></a><!-- doxytag: member="QVVideoReaderBlock::opened" ref="af2ab0db3d129c38e0c15c75933e15f50" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReaderBlock::opened </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Emitted each time a new video source is opened. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e1b8419ff4967a59b71711ef840632d"></a><!-- doxytag: member="QVVideoReaderBlock::closed" ref="a2e1b8419ff4967a59b71711ef840632d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReaderBlock::closed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Emitted each time the video source is closed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ccdf398a2b53b1fa81d328eccbce206"></a><!-- doxytag: member="QVVideoReaderBlock::grabbed" ref="a2ccdf398a2b53b1fa81d328eccbce206" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReaderBlock::grabbed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Emitted each time a new frame is grabbed. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/qvioblocks/<a class="el" href="qvvideoreaderblock_8h_source.html">qvvideoreaderblock.h</a></li>
+<li>src/qvblockprogramming/qvioblocks/<a class="el" href="qvvideoreaderblock_8cpp_source.html">qvvideoreaderblock.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

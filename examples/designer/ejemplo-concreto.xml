@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<QVApplication>
+    <Nodes>
+        <Node Type="QVMPlayerReaderBlock" Id="1" Name="qvmplayerreaderblock" X="76.865" Y="118.473">
+            <Property Name="Cols" Value="320"></Property>
+            <Property Name="Deinterlaced" Value="false"></Property>
+            <Property Name="NoLoop" Value="false"></Property>
+            <Property Name="Rows" Value="240"></Property>
+            <Property Name="URL" Value="http://perception.inf.um.es/public_data/videos/misc/penguin.dv"></Property>
+        </Node>
+        <Node Type="QVFilterMedian_uCharC1Block" Id="2" Name="qvfiltermedian_ucharc1block" X="-0.0124647" Y="0.0018431"></Node>
+	<Node Type="QVFilterSobelVertMask_sFloatC1Block" Id="3" Name="qvfiltersobelvertmask_sfloatc1block" X="-0.00111354" Y="0.00221678"></Node>
+	<Node Type="QVFilterSobelHorizMask_sFloatC1Block" Id="4" Name="qvfiltersobelhorizmask_sfloatc1block" X="2.99988" Y="149.998"></Node>
+        <Node Type="QVConvert_uCharsFloatC1Block" Id="5" Name="qvconvert_ucharsfloatc1block" X="330.571" Y="-34.6775"></Node>
+	<Node Type="QVFilterSobelVertMask_sFloatC1Block" Id="6" Name="qvfiltersobelvertmask_sfloatc1block" X="400.008" Y="379"></Node>
+	<Node Type="QVFilterSobelHorizMask_sFloatC1Block" Id="7" Name="qvfiltersobelhorizmask_sfloatc1block" X="384.008" Y="240.997"></Node>
+	<Node Type="QVFilterSobelHorizMask_sFloatC1Block" Id="8" Name="qvfiltersobelhorizmask_sfloatc1block" X="376.008" Y="114.002"></Node>
+	<Node Type="QVFilterSobelVertMask_sFloatC1Block" Id="9" Name="qvfiltersobelvertmask_sfloatc1block" X="376.008" Y="-3.99505"></Node>
+        <Node Type="QVMul_sFloatC1Block" Id="10" Name="qvmul_sfloatc1block" X="0.0146929" Y="0.00440121"></Node>
+        <Node Type="QVMul_sFloatC1Block" Id="11" Name="qvmul_sfloatc1block" X="0.0144361" Y="9.83295e-05"></Node>
+        <Node Type="QVAbsDiff_sFloatC1Block" Id="12" Name="qvabsdiff_sfloatc1block" X="83.644" Y="619.373"></Node>
+        <Node Type="QVFilterGauss_sFloatC1Block" Id="13" Name="qvfiltergauss_sfloatc1block" X="380.368" Y="613.604"></Node>
+        <Node Type="QVSFloatC1MaximalPoints" Id="14" Name="qvsfloatc1maximalpoints" X="681.79" Y="606.65">
+            <Property Name="Radius" Value="8"></Property>
+            <Property Name="Threshold" Value="20"></Property>
+        </Node>
+        <Node Type="QVImageCanvas" Id="15" Name="qvimagecanvas" X="974.09" Y="540.06"></Node>
+        <Node Type="QVDivC_sFloatC1Block" Id="16" Name="qvdivc_sfloatc1block" X="250.0" Y="100.0">
+            <Property Name="value" Value="1000"></Property>
+        </Node>
+        <Node Type="QVDivC_sFloatC1Block" Id="17" Name="qvdivc_sfloatc1block" X="250.0" Y="100.1">
+            <Property Name="value" Value="1000"></Property>
+        </Node>
+    </Nodes>
+    <Links>
+        <SynchronousLink FromId="1" FromProp="Y channel image" ToId="2" ToProp="qvimage_pSrc"></SynchronousLink>
+        <AsynchronousLink FromId="2" FromProp="qvimage_pDst" ToId="5" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="2" FromProp="qvimage_pDst" ToId="15" ToProp="qvimage_pDst"></AsynchronousLink>
+        <AsynchronousLink FromId="3" FromProp="qvimage_pDst" ToId="6" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="3" FromProp="qvimage_pDst" ToId="8" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="4" FromProp="qvimage_pDst" ToId="7" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="4" FromProp="qvimage_pDst" ToId="9" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="5" FromProp="qvimage_pDst" ToId="3" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="5" FromProp="qvimage_pDst" ToId="4" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="6" FromProp="qvimage_pDst" ToId="11" ToProp="qvimage_pSrc2"></AsynchronousLink>
+        <AsynchronousLink FromId="7" FromProp="qvimage_pDst" ToId="11" ToProp="qvimage_pSrc1"></AsynchronousLink>
+        <AsynchronousLink FromId="8" FromProp="qvimage_pDst" ToId="10" ToProp="qvimage_pSrc2"></AsynchronousLink>
+        <AsynchronousLink FromId="9" FromProp="qvimage_pDst" ToId="10" ToProp="qvimage_pSrc1"></AsynchronousLink>
+        <AsynchronousLink FromId="10" FromProp="qvimage_pDst" ToId="17" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="11" FromProp="qvimage_pDst" ToId="16" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="12" FromProp="qvimage_pDst" ToId="13" ToProp="qvimage_pSrc"></AsynchronousLink>
+        <AsynchronousLink FromId="13" FromProp="qvimage_pDst" ToId="14" ToProp="Input image"></AsynchronousLink>
+        <AsynchronousLink FromId="14" FromProp="max" ToId="15" ToProp="max"></AsynchronousLink>
+        <AsynchronousLink FromId="16" FromProp="qvimage_pDst" ToId="12" ToProp="qvimage_pSrc2"></AsynchronousLink>
+        <AsynchronousLink FromId="17" FromProp="qvimage_pDst" ToId="12" ToProp="qvimage_pSrc1"></AsynchronousLink>
+    </Links>
+    <Groups>
+        <Group Id="1" Name="Group" X="360.789" Y="251.32">
+            <ChildNode Id="5"></ChildNode>
+            <ChildNode Id="2"></ChildNode>
+            <VisibleNodeLink ChildNode="2" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="5" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="2" Prop="qvimage_pSrc" Direction="Input"></VisibleNodeLink>
+        </Group>
+        <Group Id="2" Name="Group" X="990.81" Y="322.994">
+            <ChildNode Id="17"></ChildNode>
+            <ChildNode Id="10"></ChildNode>
+            <VisibleNodeLink ChildNode="17" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="10" Prop="qvimage_pSrc2" Direction="Input"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="10" Prop="qvimage_pSrc1" Direction="Input"></VisibleNodeLink>
+        </Group>
+        <Group Id="3" Name="Group" X="650.583" Y="162.202">
+            <ChildNode Id="3"></ChildNode>
+            <ChildNode Id="6"></ChildNode>
+            <ChildNode Id="4"></ChildNode>
+            <ChildNode Id="8"></ChildNode>
+            <ChildNode Id="9"></ChildNode>
+            <ChildNode Id="7"></ChildNode>
+            <VisibleNodeLink ChildNode="3" Prop="qvimage_pSrc" Direction="Input"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="8" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="9" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="6" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="4" Prop="qvimage_pSrc" Direction="Input"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="7" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+        </Group>
+        <Group Id="4" Name="Group" X="981.68" Y="141.897">
+            <ChildNode Id="11"></ChildNode>
+            <ChildNode Id="16"></ChildNode>
+            <VisibleNodeLink ChildNode="16" Prop="qvimage_pDst" Direction="Output"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="11" Prop="qvimage_pSrc2" Direction="Input"></VisibleNodeLink>
+            <VisibleNodeLink ChildNode="11" Prop="qvimage_pSrc1" Direction="Input"></VisibleNodeLink>
+        </Group>
+    </Groups>
+</QVApplication>

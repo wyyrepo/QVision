@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="OctaveInteroperability">Interoperability with Octave </a></h1><p>To enable the QVision to inter-operate with Octave, the following line must be not commented at the <em>config.pri</em> file, prior to compilation and installation of the QVision library:</p>
+<div class="fragment"><pre class="fragment">CONFIG += qvoctave
+</pre></div><p>QVision applications will automatically link to the include and binary files for the Octave library.</p>
+<h2><a class="anchor" id="ConvertingQVisionObjectsFromAndToOctaveLibraryTypes">
+Converting QVision objects from and to Octave library types</a></h2>
+<p>The QVision includes functionality to convert <a class="el" href="classQVMatrix.html">QVMatrix</a> objects from and to Octave <em>Matrix</em> objects. To convert a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> objects from and to an Octave Matrix objects, the developer can use the <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> constructor and conversion operators:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// First create an Octave matrix</span>
+Matrix octMatrix(rows, cols);
+
+<span class="comment">// Next, init the contents of the OpenCV matrix.</span>
+[...]
+
+<span class="comment">// Converts the Octave matrix to a QVision matrix</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> qvMatrix = octMatrix;
+
+<span class="comment">// Do things with the QVision matrix</span>
+[...]
+
+<span class="comment">// Convert back the QVision matrix to a new Octave matrix</span>
+Matrix octMatrix2 = qvMatrix;
+</pre></div><h2><a class="anchor" id="UsingQVMatricesWithOctaveLibFunctionallity">
+Using QVMatrices with functions of the Octave library</a></h2>
+<p>You can generally use <a class="el" href="classQVMatrix.html">QVMatrix</a> objects directly with Octave library functions and code. This is so because the <a class="el" href="classQVMatrix.html">QVMatrix</a> class provides a constructor and a cast operator, to convert <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> objects from and to Matrix objects, transparently to the programmer. The following code uses Octave library functionality to obtain the <a href="http://mathworld.wolfram.com/HessenbergDecomposition.html">Hessenberg decomposition</a> of a square <em>3x3</em> random matrix <em>A</em>:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,3);
+
+HESS hessA(A);  <span class="comment">// Hessenberg decomposition of matrix &#39;A&#39;</span>
+
+<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  H = hessA.hess_matrix(),
+                P = hessA.unitary_hess_matrix();
+</pre></div><p>When executing this code, matrices <em>H</em> and <em>P</em> should contain respectively the Hessenberg and the unitary Hessenberg matrices, from the Hessenberg decomposition of matrix <em>A</em>:</p>
+<div class="fragment"><pre class="fragment">A = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 3)
+[
+    [ 0.215825 0.431953 0.226107 ]
+    [ 0.920128 0.281059 0.276235 ]
+    [ 0.881062 0.307458 0.416501 ]
+]
+
+H = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 3)
+[
+    [ 0.215825 -0.468366 -0.135431 ]
+    [ -1.273933 0.637416 -0.064699 ]
+    [ 0.000000 -0.095923 0.060145 ]
+]
+
+P = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 3)
+[
+    [ 1.000000 0.000000 0.000000 ]
+    [ 0.000000 -0.722273 -0.691608 ]
+    [ 0.000000 -0.691608 0.722273 ]
+]
+
+P*H*P<span class="stringliteral">&#39; = QVMatrix (3, 3)</span>
+<span class="stringliteral">[</span>
+<span class="stringliteral">    [ 0.215825 0.431953 0.226107 ]</span>
+<span class="stringliteral">    [ 0.920128 0.281059 0.276235 ]</span>
+<span class="stringliteral">    [ 0.881062 0.307458 0.416501 ]</span>
+<span class="stringliteral">]</span>
+</pre></div><p>To enable the QVision to interoperate with Octave, the following line must be present (and un-commented) at the <em>config.pri</em> file, prior to compilation and installation of the QVision library:</p>
+<div class="fragment"><pre class="fragment">CONFIG += qvoctave
+</pre></div><p>QVision applications will automatically link to the include and binary files for the Octave library.</p>
+<h2><a class="anchor" id="ConvertingQVisionObjectsFromAndToOctaveLibraryTypes">
+Converting QVision objects from and to Octave library types</a></h2>
+<p>The QVision includes functionality to convert <a class="el" href="classQVMatrix.html">QVMatrix</a> objects from and to Octave <em>Matrix</em> objects. To convert a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object from and to an Octave Matrix object, the developer can use the <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> constructor and conversion operators:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// First create an Octave matrix</span>
+Matrix octMatrix(rows, cols);
+
+<span class="comment">// Next, init the contents of the OpenCV matrix.</span>
+[...]
+
+<span class="comment">// Converts the Octave matrix to a QVision matrix</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> qvMatrix = octMatrix;
+
+<span class="comment">// Do things with the QVision matrix</span>
+[...]
+
+<span class="comment">// Convert back the QVision matrix to a new Octave matrix</span>
+Matrix octMatrix2 = qvMatrix;
+</pre></div><h2><a class="anchor" id="UsingQVMatricesWithOctaveLibFunctionallity">
+Using QVMatrices with functions of the Octave library</a></h2>
+<p>You can generally use <a class="el" href="classQVMatrix.html">QVMatrix</a> objects directly with Octave library functions and code. This is so because the <a class="el" href="classQVMatrix.html">QVMatrix</a> class provides a constructor and a cast operator, to convert <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> objects from and to Matrix objects, transparently to the programmer. The following code uses Octave library functionality to obtain the <a href="http://mathworld.wolfram.com/HessenbergDecomposition.html">Hessenberg decomposition</a> of a square <em>3x3</em> random matrix <em>A</em>:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,3);
+
+HESS hessA(A);  <span class="comment">// Hessenberg decomposition of matrix &#39;A&#39;</span>
+
+<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  H = hessA.hess_matrix(),
+                P = hessA.unitary_hess_matrix();
+</pre></div><p>When executing this code, matrices <em>H</em> and <em>P</em> should contain respectively the Hessenberg and the unitary Hessenberg matrices, from the Hessenberg decomposition of matrix <em>A</em>:</p>
+<div class="fragment"><pre class="fragment">A = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 3)
+[
+    [ 0.215825 0.431953 0.226107 ]
+    [ 0.920128 0.281059 0.276235 ]
+    [ 0.881062 0.307458 0.416501 ]
+]
+
+H = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 3)
+[
+    [ 0.215825 -0.468366 -0.135431 ]
+    [ -1.273933 0.637416 -0.064699 ]
+    [ 0.000000 -0.095923 0.060145 ]
+]
+
+P = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 3)
+[
+    [ 1.000000 0.000000 0.000000 ]
+    [ 0.000000 -0.722273 -0.691608 ]
+    [ 0.000000 -0.691608 0.722273 ]
+]
+
+P*H*P<span class="stringliteral">&#39; = QVMatrix (3, 3)</span>
+<span class="stringliteral">[</span>
+<span class="stringliteral">    [ 0.215825 0.431953 0.226107 ]</span>
+<span class="stringliteral">    [ 0.920128 0.281059 0.276235 ]</span>
+<span class="stringliteral">    [ 0.881062 0.307458 0.416501 ]</span>
+<span class="stringliteral">]</span>
+</pre></div> </div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

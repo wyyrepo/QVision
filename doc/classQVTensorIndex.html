@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVTensorIndex Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVTensorIndex" -->
+<p>Indexes for tensors.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvtensorindex_8h_source.html">QVTensorIndex</a>&gt;</code></p>
+
+<p><a href="classQVTensorIndex-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html#a9c5c35da6befcd58f25c5baea2df151d">QVTensorIndex</a> (const int dimension)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new index name object.  <a href="#a9c5c35da6befcd58f25c5baea2df151d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html#a95744ceb2568e59ec3eee3d8f571cbe7">QVTensorIndex</a> (const <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> &amp;tensorIndex)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor for tensor index name objects.  <a href="#a95744ceb2568e59ec3eee3d8f571cbe7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensorIndex.html">QVTensorIndex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4">cov</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the covariant version of this index name.  <a href="#a68d2ea2884959500b639874597abcfc4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensorIndex.html">QVTensorIndex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html#a388e6dbeb4ce1d4ab7198330755de942">covariant</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the covariant version of this index name.  <a href="#a388e6dbeb4ce1d4ab7198330755de942"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVTensorIndexRange&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html#a7e487e3db0e1effc56adee40beafd355">range</a> (const int min, const int max) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a value state containing a range of integer values for the index name.  <a href="#a7e487e3db0e1effc56adee40beafd355"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QVTensorIndexRange&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html#a4ab08398c60cb95cd79d2865c1f7b925">operator[]</a> (const int value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a value state containing an integer, for the index name.  <a href="#a4ab08398c60cb95cd79d2865c1f7b925"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Indexes for tensors. </p>
+<p>The valence of a particular tensor is the number and type of array indices. <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> class can be used to create index objects, and compose list of them to indicate the valence of a tensor, at construction.</p>
+<p>See <a class="el" href="classQVTensor.html">QVTensor</a> class for detailed usage.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00119">119</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9c5c35da6befcd58f25c5baea2df151d"></a><!-- doxytag: member="QVTensorIndex::QVTensorIndex" ref="a9c5c35da6befcd58f25c5baea2df151d" args="(const int dimension)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensorIndex::QVTensorIndex </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>dimension</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates a new index name object. </p>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00124">124</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4">cov()</a>, and <a class="el" href="classQVTensorIndex.html#a388e6dbeb4ce1d4ab7198330755de942">covariant()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95744ceb2568e59ec3eee3d8f571cbe7"></a><!-- doxytag: member="QVTensorIndex::QVTensorIndex" ref="a95744ceb2568e59ec3eee3d8f571cbe7" args="(const QVTensorIndex &amp;tensorIndex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensorIndex::QVTensorIndex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensorIndex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor for tensor index name objects. </p>
+<p>Copies an index. </p>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00129">129</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a68d2ea2884959500b639874597abcfc4"></a><!-- doxytag: member="QVTensorIndex::cov" ref="a68d2ea2884959500b639874597abcfc4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> QVTensorIndex::cov </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the covariant version of this index name. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> object, which is the covariant version of the original one </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00133">133</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a388e6dbeb4ce1d4ab7198330755de942"></a><!-- doxytag: member="QVTensorIndex::covariant" ref="a388e6dbeb4ce1d4ab7198330755de942" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> QVTensorIndex::covariant </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the covariant version of this index name. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> object, which is the covariant version of the original one </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00137">137</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e487e3db0e1effc56adee40beafd355"></a><!-- doxytag: member="QVTensorIndex::range" ref="a7e487e3db0e1effc56adee40beafd355" args="(const int min, const int max) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensorIndexRange QVTensorIndex::range </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>max</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a value state containing a range of integer values for the index name. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>an object containing a range of values for the index name </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00141">141</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ab08398c60cb95cd79d2865c1f7b925"></a><!-- doxytag: member="QVTensorIndex::operator[]" ref="a4ab08398c60cb95cd79d2865c1f7b925" args="(const int value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QVTensorIndexRange QVTensorIndex::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a value state containing an integer, for the index name. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>an object containing the value for the index name </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensorindex_8h_source.html#l00145">145</a> of file <a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvtensorindex_8h_source.html">qvtensorindex.h</a></li>
+<li>src/qvmath/<a class="el" href="qvtensorindex_8cpp_source.html">qvtensorindex.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

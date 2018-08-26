@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/movingEdgesDetector/movingEdgesDetector.cpp</h1><a href="movingEdgesDetector_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00038"></a>00038 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QVVideoReaderBlock&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QVDefaultGUI&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QVImageCanvas&gt;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QVCannyEdgeDetector&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QVImageRetarderBlock&gt;</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;qvippblocks.h&gt;</span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<a name="l00051"></a>00051 <span class="preprocessor">#include &lt;QVPolyline&gt;</span>
+<a name="l00052"></a>00052 <span class="keyword">class </span>MovingEdgesDetector: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00053"></a>00053         {
+<a name="l00054"></a>00054         <span class="keyword">public</span>:
+<a name="l00055"></a>00055                 MovingEdgesDetector(QString name = QString());
+<a name="l00056"></a>00056                 <span class="keywordtype">void</span> <a class="code" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">iterate</a>();
+<a name="l00057"></a>00057         };
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 MovingEdgesDetector::MovingEdgesDetector(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+<a name="l00060"></a>00060         {
+<a name="l00061"></a>00061         addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Edge response image&quot;</span>, inputFlag);
+<a name="l00062"></a>00062         addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Movement response image&quot;</span>, inputFlag);
+<a name="l00063"></a>00063         addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Moving borders image&quot;</span>, outputFlag);
+<a name="l00064"></a>00064         addProperty&lt; double &gt;(<span class="stringliteral">&quot;Minimal pixel percentage&quot;</span>, inputFlag, 0.5, <span class="stringliteral">&quot;Minimal percentage of moving pixels for an edge&quot;</span>, 0.0, 1.0);
+<a name="l00065"></a>00065         }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keywordtype">void</span> <a class="code" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">MovingEdgesDetector::iterate</a>()
+<a name="l00068"></a>00068         {
+<a name="l00069"></a>00069         <span class="comment">// 1. Read the input values and algorithm parameters</span>
+<a name="l00070"></a>00070         <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>  movementResponseImage = getPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Movement response image&quot;</span>),
+<a name="l00071"></a>00071                                 edgeResponseImage = getPropertyValue&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;Edge response image&quot;</span>);
+<a name="l00072"></a>00072         <span class="keyword">const</span> <span class="keywordtype">double</span> minimalPixelPercentage = getPropertyValue&lt; double &gt;(<span class="stringliteral">&quot;Minimal pixel percentage&quot;</span>);
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">// 2. process the input values with the input parameter values.</span>
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         <span class="comment">// 2.1. Obtain the list of moving edges as a polyline list.</span>
+<a name="l00077"></a>00077         <span class="comment">// 2.1.1. Get the list of edges from the edge response image, as a list of polylines:</span>
+<a name="l00078"></a>00078         <span class="keyword">const</span> QList&lt; QVPolyline &gt; edges = <a class="code" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6" title="Obtains a list of the 8-connected pixel lines in the imageThis function can be used...">getLineContoursThreshold8Connectivity</a>(edgeResponseImage, 128);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         <span class="comment">// 2.1.2. For each edge, test if a percentage high enough of its pixels is active in the</span>
+<a name="l00081"></a>00081         <span class="comment">//      movement response image. If so, store it in the list of moving image borders.</span>
+<a name="l00082"></a>00082         QList&lt; QVPolyline &gt; movingImageBorders;
+<a name="l00083"></a>00083         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> edge, edges)
+<a name="l00084"></a>00084                 {
+<a name="l00085"></a>00085                 <span class="keywordtype">int</span> count = 0;
+<a name="l00086"></a>00086                 <span class="keywordflow">foreach</span>(QPoint edgePoint, edge)
+<a name="l00087"></a>00087                         <span class="keywordflow">if</span> (movementResponseImage(edgePoint) != 0)
+<a name="l00088"></a>00088                                 count++;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090                 <span class="keywordflow">if</span> (count &gt;= minimalPixelPercentage * edge.size())
+<a name="l00091"></a>00091                         movingImageBorders &lt;&lt; edge;
+<a name="l00092"></a>00092                 }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <span class="comment">// 2.2. Create the moving edge response image from the list of moving edges.</span>
+<a name="l00095"></a>00095         <span class="comment">// 2.2.1. Create the image with the same size as the movement response image.</span>
+<a name="l00096"></a>00096         <a class="code" href="classQVImage.html">QVImage&lt;uChar,1 &gt;</a> movingBordersImage(movementResponseImage.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), movementResponseImage.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098         <span class="comment">// 2.2.2. Initialize the pixels of the image to zero</span>
+<a name="l00099"></a>00099         <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(0, movingBordersImage);
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101         <span class="comment">// 2.2.3. Draw each polyline contained in the moving image edges at the output image.</span>
+<a name="l00102"></a>00102         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> edge, movingImageBorders)
+<a name="l00103"></a>00103                 <span class="keywordflow">foreach</span>(QPoint edgePoint, edge)
+<a name="l00104"></a>00104                         movingBordersImage(edgePoint) = 255;
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106         <span class="comment">// 3. Store the resulting image in the output property</span>
+<a name="l00107"></a>00107         setPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Moving borders image&quot;</span>, movingBordersImage);
+<a name="l00108"></a>00108         timeFlag(<span class="stringliteral">&quot;Publish resulting images&quot;</span>);
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 <span class="comment">// main function.</span>
+<a name="l00112"></a>00112 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<a name="l00113"></a>00113         {
+<a name="l00114"></a>00114         <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv,
+<a name="l00115"></a>00115                 <span class="stringliteral">&quot;Example program for QVision library. Obtains several features from input video frames.&quot;</span>
+<a name="l00116"></a>00116                 );
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118         <a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> interface;
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <a class="code" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> videoReader(<span class="stringliteral">&quot;Video&quot;</span>);
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         <span class="comment">// 1. Edge detection</span>
+<a name="l00123"></a>00123         <a class="code" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a> cannyBlock(<span class="stringliteral">&quot;Canny block&quot;</span>);
+<a name="l00124"></a>00124         <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> imageDisplayer(<span class="stringliteral">&quot;Original image&quot;</span>);
+<a name="l00125"></a>00125         <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> edgesDisplayer(<span class="stringliteral">&quot;Canny edges&quot;</span>);
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127         videoReader.linkProperty(&amp;cannyBlock,<span class="stringliteral">&quot;Input image&quot;</span>);
+<a name="l00128"></a>00128         cannyBlock.linkProperty(<span class="stringliteral">&quot;Input image&quot;</span>,imageDisplayer);
+<a name="l00129"></a>00129         cannyBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>,edgesDisplayer);
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131         <span class="comment">// 2. Movement detection</span>
+<a name="l00132"></a>00132         QVImageRetarderBlock&lt;uChar,1&gt; retarderBlock(<span class="stringliteral">&quot;Image retarder block&quot;</span>);
+<a name="l00133"></a>00133         <a class="code" href="classQVAbsDiff__uCharC1Block.html" title="Calculate absolute difference between corresponding pixels of the two images or between...">QVAbsDiff_uCharC1Block</a> absDiffBlock(<span class="stringliteral">&quot;Absolute difference block&quot;</span>);
+<a name="l00134"></a>00134         <a class="code" href="classQVCompareC__uCharC1Block.html" title="Compares pixel values of two images, or pixel values of an image to a constant value...">QVCompareC_uCharC1Block</a> compareCBlock(<span class="stringliteral">&quot;Threshold block&quot;</span>);
+<a name="l00135"></a>00135         <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> movementDisplayer(<span class="stringliteral">&quot;Movement detector&quot;</span>);
+<a name="l00136"></a>00136         
+<a name="l00137"></a>00137         compareCBlock.setPropertyValue&lt;IppCmpOp&gt;(<span class="stringliteral">&quot;ippCmpOp&quot;</span>, ippCmpGreater);
+<a name="l00138"></a>00138         compareCBlock.setPropertyValue&lt;uChar&gt;(<span class="stringliteral">&quot;value&quot;</span>, 32);
+<a name="l00139"></a>00139         
+<a name="l00140"></a>00140         videoReader.linkProperty(&amp;retarderBlock, <span class="stringliteral">&quot;Input image&quot;</span>);
+<a name="l00141"></a>00141         videoReader.linkProperty(&amp;absDiffBlock, <span class="stringliteral">&quot;qvimage_pSrc1&quot;</span>);
+<a name="l00142"></a>00142         retarderBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>, &amp;absDiffBlock, <span class="stringliteral">&quot;qvimage_pSrc2&quot;</span>, QVProcessingBlock::SynchronousLink);
+<a name="l00143"></a>00143         absDiffBlock.linkProperty(<span class="stringliteral">&quot;qvimage_pDst&quot;</span>, &amp;compareCBlock, <span class="stringliteral">&quot;qvimage_pSrc&quot;</span>, QVProcessingBlock::SynchronousLink);
+<a name="l00144"></a>00144         compareCBlock.linkProperty(<span class="stringliteral">&quot;qvimage_pDst&quot;</span>, movementDisplayer);
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         <span class="comment">// 3. Edge and movement combination using one qvipp block</span>
+<a name="l00147"></a>00147         <a class="code" href="classQVMul__uCharC1Block.html" title="Adds, subtracts, or multiplies pixel values of two source images and places the results...">QVMul_uCharC1Block</a> multBlock(<span class="stringliteral">&quot;Product block&quot;</span>);
+<a name="l00148"></a>00148         <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> movingEdgesDisplayer(<span class="stringliteral">&quot;Detected moving edges&quot;</span>);
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         cannyBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>, &amp;multBlock, <span class="stringliteral">&quot;qvimage_pSrc1&quot;</span>, QVProcessingBlock::SynchronousLink);
+<a name="l00151"></a>00151         compareCBlock.linkProperty(<span class="stringliteral">&quot;qvimage_pDst&quot;</span>, &amp;multBlock, <span class="stringliteral">&quot;qvimage_pSrc2&quot;</span>, QVProcessingBlock::SynchronousLink);
+<a name="l00152"></a>00152         multBlock.linkProperty(<span class="stringliteral">&quot;qvimage_pDst&quot;</span>, movingEdgesDisplayer);
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154         <span class="comment">// 4. Edge and movement combination using new block</span>
+<a name="l00155"></a>00155         MovingEdgesDetector movingEdgesDetector(<span class="stringliteral">&quot;Edge &amp; movement image composer&quot;</span>);
+<a name="l00156"></a>00156         <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> movingEdgesDisplayer2(<span class="stringliteral">&quot;Detected moving edges 2&quot;</span>);
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         cannyBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>, &amp;movingEdgesDetector, <span class="stringliteral">&quot;Edge response image&quot;</span>, QVProcessingBlock::SynchronousLink);
+<a name="l00159"></a>00159         compareCBlock.linkProperty(<span class="stringliteral">&quot;qvimage_pDst&quot;</span>, &amp;movingEdgesDetector, <span class="stringliteral">&quot;Movement response image&quot;</span>, QVProcessingBlock::SynchronousLink);
+<a name="l00160"></a>00160         movingEdgesDetector.linkProperty(<span class="stringliteral">&quot;Moving borders image&quot;</span>, movingEdgesDisplayer2);
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <span class="keywordflow">return</span> app.exec();
+<a name="l00163"></a>00163         }
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

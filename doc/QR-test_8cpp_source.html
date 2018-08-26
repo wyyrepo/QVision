@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/matrixalgebra-tests/QR-test/QR-test.cpp</h1><a href="QR-test_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QTime&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QVPropertyContainer&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QVMatrix&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QVVector&gt;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036     <span class="comment">// QVApplication object:</span>
+<a name="l00037"></a>00037     <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc,argv,<span class="stringliteral">&quot;Performance test for QR methods in QVision&quot;</span>,<span class="keyword">false</span>);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     <span class="comment">// Container with command line parameters:</span>
+<a name="l00040"></a>00040     <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> arg_container(argv[0]);
+<a name="l00041"></a>00041     arg_container.addProperty&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;Rows&quot;</span>,QVPropertyContainer::inputFlag,200,
+<a name="l00042"></a>00042                                    <span class="stringliteral">&quot;Number of rows for the test matrix&quot;</span>,1,100000);
+<a name="l00043"></a>00043     arg_container.addProperty&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;Cols&quot;</span>,QVPropertyContainer::inputFlag,100,
+<a name="l00044"></a>00044                                    <span class="stringliteral">&quot;Number of columns for the test matrix&quot;</span>,1,100000);
+<a name="l00045"></a>00045     arg_container.addProperty&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;RHS_size&quot;</span>,QVPropertyContainer::inputFlag,0,
+<a name="l00046"></a>00046                      <span class="stringliteral">&quot;.......................Number of right hand sides to solve for:\n&quot;</span>
+<a name="l00047"></a>00047                      <span class="stringliteral">&quot;                                    &quot;</span>
+<a name="l00048"></a>00048                      <span class="stringliteral">&quot;If 0, only decompose, if &lt;0 solve and also return decomposition)&quot;</span>,-1000,1000);
+<a name="l00049"></a>00049     arg_container.addProperty&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;n_tests&quot;</span>,QVPropertyContainer::inputFlag,1,
+<a name="l00050"></a>00050                                    <span class="stringliteral">&quot;Number of tests to average execution time&quot;</span>,1,100);
+<a name="l00051"></a>00051     arg_container.addProperty&lt;QString&gt;(<span class="stringliteral">&quot;method&quot;</span>,QVPropertyContainer::inputFlag,<span class="stringliteral">&quot;GSL_HOUSEHOLDER_THIN_QR&quot;</span>,
+<a name="l00052"></a>00052                      <span class="stringliteral">&quot;..................QR method (available methods follow):\n&quot;</span>
+<a name="l00053"></a>00053                      <span class="stringliteral">&quot;         GSL_HOUSEHOLDER_THIN_QR | GSL_HOUSEHOLDER_FULL_QR | LAPACK_THIN_DGEQR2 | LAPACK_FULL_DGEQR2&quot;</span>);
+<a name="l00054"></a>00054     arg_container.addProperty&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>,QVPropertyContainer::inputFlag,<span class="keyword">false</span>,
+<a name="l00055"></a>00055                                    <span class="stringliteral">&quot;If true, print involved matrices and vectors&quot;</span>);
+<a name="l00056"></a>00056     arg_container.addProperty&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;show_residuals&quot;</span>,QVPropertyContainer::inputFlag,<span class="keyword">false</span>,
+<a name="l00057"></a>00057                                    <span class="stringliteral">&quot;If true, print test residuals&quot;</span>);
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     <span class="comment">// Process command line (and check for help or incorrect input parameters):</span>
+<a name="l00060"></a>00060     <span class="keywordtype">int</span> ret_value = app.processArguments();
+<a name="l00061"></a>00061     <span class="keywordflow">if</span>(ret_value != 1) exit(ret_value);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     <span class="comment">// If parameters OK, read possible parameters from command line:</span>
+<a name="l00064"></a>00064     <span class="keyword">const</span> <span class="keywordtype">int</span> Rows = arg_container.getPropertyValue&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;Rows&quot;</span>);
+<a name="l00065"></a>00065     <span class="keyword">const</span> <span class="keywordtype">int</span> Cols = arg_container.getPropertyValue&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;Cols&quot;</span>);
+<a name="l00066"></a>00066     <span class="keywordtype">int</span> RHS_size = arg_container.getPropertyValue&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;RHS_size&quot;</span>);
+<a name="l00067"></a>00067     <span class="keyword">const</span> <span class="keywordtype">int</span> n_tests = arg_container.getPropertyValue&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;n_tests&quot;</span>);
+<a name="l00068"></a>00068     <span class="keyword">const</span> <span class="keywordtype">int</span> verbose = arg_container.getPropertyValue&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);
+<a name="l00069"></a>00069     <span class="keywordtype">int</span> show_residuals = arg_container.getPropertyValue&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;show_residuals&quot;</span>);
+<a name="l00070"></a>00070     <span class="keyword">const</span> QString method = arg_container.getPropertyValue&lt;QString&gt;(<span class="stringliteral">&quot;method&quot;</span>);
+<a name="l00071"></a>00071     <a class="code" href="group__qvmatrixalgebra.html#ga34489f7f981fd3ad10dcd6e287644c21" title="Available methods for QR Decomposition.">TQVQR_Method</a> qr_method;
+<a name="l00072"></a>00072     <span class="keywordflow">if</span>(method == <span class="stringliteral">&quot;GSL_HOUSEHOLDER_THIN_QR&quot;</span>)
+<a name="l00073"></a>00073         qr_method = <a class="code" href="group__qvmatrixalgebra.html#gga34489f7f981fd3ad10dcd6e287644c21a17474e8b41843fa89de4b33a88cf3ed4">GSL_HOUSEHOLDER_THIN_QR</a>;
+<a name="l00074"></a>00074     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method == <span class="stringliteral">&quot;GSL_HOUSEHOLDER_FULL_QR&quot;</span>)
+<a name="l00075"></a>00075         qr_method = <a class="code" href="group__qvmatrixalgebra.html#gga34489f7f981fd3ad10dcd6e287644c21a052f682a71e7b5e52ae3767b8ccf1532">GSL_HOUSEHOLDER_FULL_QR</a>;
+<a name="l00076"></a>00076     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method == <span class="stringliteral">&quot;LAPACK_THIN_DGEQR2&quot;</span>)
+<a name="l00077"></a>00077         qr_method = <a class="code" href="group__qvmatrixalgebra.html#gga34489f7f981fd3ad10dcd6e287644c21a4102acc0d67031755466ca0d736b3dd8">LAPACK_THIN_DGEQR2</a>;
+<a name="l00078"></a>00078     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method == <span class="stringliteral">&quot;LAPACK_FULL_DGEQR2&quot;</span>)
+<a name="l00079"></a>00079         qr_method = <a class="code" href="group__qvmatrixalgebra.html#gga34489f7f981fd3ad10dcd6e287644c21a5c91dd50e5272c56c5d9a1545ae74919">LAPACK_FULL_DGEQR2</a>;
+<a name="l00080"></a>00080     <span class="keywordflow">else</span> {
+<a name="l00081"></a>00081         std::cout &lt;&lt; <span class="stringliteral">&quot;Incorrect QR method. Use --help to see available methods.\n&quot;</span>;
+<a name="l00082"></a>00082         exit(-1);
+<a name="l00083"></a>00083     }
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     std::cout &lt;&lt; <span class="stringliteral">&quot;Using values: Rows=&quot;</span> &lt;&lt; Rows  &lt;&lt; <span class="stringliteral">&quot; Cols=&quot;</span> &lt;&lt; Cols &lt;&lt; <span class="stringliteral">&quot; RHS_size=&quot;</span> &lt;&lt; RHS_size
+<a name="l00087"></a>00087               &lt;&lt; <span class="stringliteral">&quot; n_tests=&quot;</span> &lt;&lt; n_tests &lt;&lt; <span class="stringliteral">&quot; QR method=&quot;</span> &lt;&lt; qPrintable(method) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     <span class="keywordtype">double</span> total_ms = 0.0;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n_tests;i++) {
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(Rows,Cols), Q, R, X, B, X_sol;
+<a name="l00094"></a>00094         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x, b, x_sol;
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         <span class="comment">// We generate RHS_size random solutions, and the corresponding right hand sides (for testing):</span>
+<a name="l00097"></a>00097         <span class="keywordflow">if</span>(qAbs(RHS_size) == 1) {
+<a name="l00098"></a>00098             x_sol = <a class="code" href="classQVVector.html#ac550cb33a94138c6a55901bc2dc23558" title="Creates a vector of random values.">QVVector::random</a>(Cols);
+<a name="l00099"></a>00099             b = M * x_sol;
+<a name="l00100"></a>00100         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (qAbs(RHS_size) &gt; 1) {
+<a name="l00101"></a>00101             X_sol = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(Cols,qAbs(RHS_size));
+<a name="l00102"></a>00102             B = M * X_sol;
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         QTime t;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         t.start();
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109         <span class="keywordflow">if</span>(RHS_size == 0)
+<a name="l00110"></a>00110             <a class="code" href="group__qvmatrixalgebra.html#gadabb7917a1bf7e229a4c7a9b8037b5f0" title="Obtains the QR decomposition of a rectangular  matrix.">QRDecomposition</a>(M, Q, R, qr_method);
+<a name="l00111"></a>00111         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(RHS_size == 1)
+<a name="l00112"></a>00112             SolveByQRDecomposition(M, x, b, qr_method);
+<a name="l00113"></a>00113         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(RHS_size &gt; 1)
+<a name="l00114"></a>00114             SolveByQRDecomposition(M, X, B, qr_method);
+<a name="l00115"></a>00115         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (RHS_size == -1)
+<a name="l00116"></a>00116             SolveByQRDecomposition(M, x, b, Q, R, qr_method);
+<a name="l00117"></a>00117         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (RHS_size &lt; -1)
+<a name="l00118"></a>00118             SolveByQRDecomposition(M, X, B, Q, R, qr_method);
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         total_ms += t.elapsed();
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         <span class="keywordflow">if</span>(verbose) {
+<a name="l00123"></a>00123             <span class="keywordflow">if</span>(RHS_size &lt;= 0) {
+<a name="l00124"></a>00124                     std::cout &lt;&lt; <span class="stringliteral">&quot;*****************************************\n&quot;</span>;
+<a name="l00125"></a>00125                     std::cout &lt;&lt; <span class="stringliteral">&quot;M:&quot;</span> &lt;&lt; M &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00126"></a>00126                     std::cout &lt;&lt; <span class="stringliteral">&quot;Q:&quot;</span> &lt;&lt; Q &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00127"></a>00127                     std::cout &lt;&lt; <span class="stringliteral">&quot;R:&quot;</span> &lt;&lt; R &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00128"></a>00128                     std::cout &lt;&lt; <span class="stringliteral">&quot;Q R:&quot;</span> &lt;&lt; Q*R &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00129"></a>00129                     std::cout &lt;&lt; <span class="stringliteral">&quot;Q^T Q:&quot;</span> &lt;&lt; Q.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>()*Q &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00130"></a>00130                     std::cout &lt;&lt; <span class="stringliteral">&quot;*****************************************\n&quot;</span>;
+<a name="l00131"></a>00131             }
+<a name="l00132"></a>00132             <span class="keywordflow">if</span>(qAbs(RHS_size) == 1) {
+<a name="l00133"></a>00133                     std::cout &lt;&lt; <span class="stringliteral">&quot;*****************************************\n&quot;</span>;
+<a name="l00134"></a>00134                     std::cout &lt;&lt; <span class="stringliteral">&quot;M:&quot;</span> &lt;&lt; M &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00135"></a>00135                     std::cout &lt;&lt; <span class="stringliteral">&quot;b:&quot;</span> &lt;&lt; b &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00136"></a>00136                     std::cout &lt;&lt; <span class="stringliteral">&quot;x:&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00137"></a>00137                     std::cout &lt;&lt; <span class="stringliteral">&quot;x_sol:&quot;</span> &lt;&lt; x_sol &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00138"></a>00138                     std::cout &lt;&lt; <span class="stringliteral">&quot;*****************************************\n&quot;</span>;
+<a name="l00139"></a>00139             }
+<a name="l00140"></a>00140             <span class="keywordflow">if</span>(qAbs(RHS_size) &gt; 1){
+<a name="l00141"></a>00141                     std::cout &lt;&lt; <span class="stringliteral">&quot;*****************************************\n&quot;</span>;
+<a name="l00142"></a>00142                     std::cout &lt;&lt; <span class="stringliteral">&quot;M:&quot;</span> &lt;&lt; M &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00143"></a>00143                     std::cout &lt;&lt; <span class="stringliteral">&quot;B:&quot;</span> &lt;&lt; B &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00144"></a>00144                     std::cout &lt;&lt; <span class="stringliteral">&quot;X:&quot;</span> &lt;&lt; X &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00145"></a>00145                     std::cout &lt;&lt; <span class="stringliteral">&quot;X_sol:&quot;</span> &lt;&lt; X_sol &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00146"></a>00146                     std::cout &lt;&lt; <span class="stringliteral">&quot;*****************************************\n&quot;</span>;
+<a name="l00147"></a>00147             }
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         <span class="keywordflow">if</span>(show_residuals) {           
+<a name="l00151"></a>00151             <span class="keywordflow">if</span>(RHS_size &lt;= 0) {
+<a name="l00152"></a>00152                 std::cout &lt;&lt; <span class="stringliteral">&quot;QR residual = &quot;</span> &lt;&lt; <a class="code" href="group__qvmatrixalgebra.html#ga00e06784b460e9b3c4a1377b50b2ccb5" title="Checks for correctness of the QR decomposition of a matrix.">QRDecompositionResidual</a>(M, Q, R) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00153"></a>00153             }
+<a name="l00154"></a>00154             <span class="keywordflow">if</span>(qAbs(RHS_size) == 1) {
+<a name="l00155"></a>00155                 std::cout &lt;&lt; <span class="stringliteral">&quot;Test solve residual = &quot;</span> &lt;&lt; SolveResidual(M, x_sol, b) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00156"></a>00156                 std::cout &lt;&lt; <span class="stringliteral">&quot;QR solve residual = &quot;</span> &lt;&lt; SolveResidual(M, x, b) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00157"></a>00157                 std::cout &lt;&lt; <span class="stringliteral">&quot;x - x_sol residual = &quot;</span> &lt;&lt; (x-x_sol).norm2() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00158"></a>00158                 std::cout &lt;&lt; <span class="stringliteral">&quot;x norm = &quot;</span> &lt;&lt; x.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00159"></a>00159                 std::cout &lt;&lt; <span class="stringliteral">&quot;x_sol norm = &quot;</span> &lt;&lt; x_sol.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00160"></a>00160             }
+<a name="l00161"></a>00161             <span class="keywordflow">if</span>(qAbs(RHS_size) &gt; 1) {
+<a name="l00162"></a>00162                 std::cout &lt;&lt; <span class="stringliteral">&quot;Test solve residual = &quot;</span> &lt;&lt; SolveResidual(M, X_sol, B) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00163"></a>00163                 std::cout &lt;&lt; <span class="stringliteral">&quot;QR solve residual = &quot;</span> &lt;&lt; SolveResidual(M, X, B) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00164"></a>00164             }
+<a name="l00165"></a>00165         }
+<a name="l00166"></a>00166     }
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168     total_ms /= n_tests;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170     <span class="keywordflow">if</span>(n_tests==1)
+<a name="l00171"></a>00171         std::cout &lt;&lt; <span class="stringliteral">&quot;Total time: &quot;</span> &lt;&lt; total_ms &lt;&lt; <span class="stringliteral">&quot; ms.\n&quot;</span>;
+<a name="l00172"></a>00172     <span class="keywordflow">else</span>
+<a name="l00173"></a>00173         std::cout &lt;&lt; <span class="stringliteral">&quot;Average total time: &quot;</span> &lt;&lt; total_ms &lt;&lt; <span class="stringliteral">&quot; ms.\n&quot;</span>;
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175     std::cout &lt;&lt; <span class="stringliteral">&quot;Finished.\n&quot;</span>;    
+<a name="l00176"></a>00176 }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

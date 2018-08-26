@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVision: Computer Vision Library for Qt </h1><h3 class="version">0.8.1 </h3><div align="center">
+<img src="qvisionpenguin.png" alt="qvisionpenguin.png"/>
+</div>
+ <h2><a class="anchor" id="WhatIsQVision">
+What is QVision?</a></h2>
+<p>The QVision is a <b>free and open source library</b> oriented to the development of <b>computer vision</b>, <b>image/video processing</b>, and <b>scientific computing</b> applications. It is based on the <b>Qt application framework</b>, so it is an object-oriented and cross-platform library for C++.</p>
+<p>The library is mainly intended for educational and research purposes, usability and performance. It has a clean and well documented, Qt-style, object oriented API, which provides functionality for:</p>
+<ul>
+<li>Video and image input/output.</li>
+<li>Image processing.</li>
+<li>Graphical interface programming.</li>
+<li>Augmented reality visualization.</li>
+<li>Performance evaluation.</li>
+<li>Scientific computing (matrix, vector, quaternions, function optimization, etc..).</li>
+<li>Visual data-path editor tool for rapid application development (RAD).</li>
+<li>... and so on.</li>
+</ul>
+<p>The developer can use the library to rapidly create fully working applications or test new algorithms without investing too much time and effort in technical or programming details not essentially related to computer vision or image processing, such as the development of the graphical interface, image and video input/output, interacting with third party libraries, like the <a href="http://www.intel.com/cd/software/products/asmo-na/eng/302910.htm">Intel(R) Integrated Performance Primitives (IPP)</a> (for efficient low-level image processing), the <a href="http://sourceforge.net/projects/opencvlibrary/">OpenCV</a> (for extended computer vision and machine learning functionality), <a href="http://www.gnu.org/software/gsl/">GSL - GNU Scientific Library</a> (for general scientific computation and math calculus), and so on.</p>
+<p>The QVision takes advantage of these top-performance libraries, so the developer can use their functionality within a clean object oriented API. For example, QVision object types for images, vectors and matrices adapt their methods to use the IPP and GSL functionality for low-level image processing and matrix algebra when these libraries are available.</p>
+<p>For more comprehensible information about the QVision you can visit the different sections of this documentation:</p>
+<ul>
+<li>Read the <a class="el" href="QVisionOverview.html">QVision overview</a> section for a more comprehensive description of what offers the library.</li>
+<li>The <a class="el" href="DownloadAndSetup.html">Download and setup</a> section describes how to obtain the library and start working with it.</li>
+<li><a class="el" href="ManualSections.html">The manual</a> contains an extensive guide to QVision programming, divided in several chapters by topic.</li>
+<li>The <b><a href="modules.html">modules</a></b> page contains a comprehensive list of the functionality provided by the library.</li>
+<li>Section <a class="el" href="group__ExamplePrograms.html">Example programs</a> contains example applications built with the QVision library.</li>
+</ul>
+<h2><a class="anchor" id="Copyright">
+Copyright, license and warranty.</a></h2>
+<p>Copyright &copy; 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group. University of Murcia, Spain. QVision is <b>free software</b>: you can redistribute it and/or modify it under the terms of the <b>GNU Lesser General Public License</b> as published by the Free Software Foundation, <a href="http://www.gnu.org/licenses/lgpl-3.0.txt">version 3 of the license</a>.</p>
+<p>QVision is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU Lesser General Public License along with QVision. If not, see &lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<h2><a class="anchor" id="Feedback">
+Feedback and contact information</a></h2>
+<p>If you have bug reports or interesting suggestions about the library, please create a ticket at the <a href="https://sourceforge.net/apps/trac/qvision/">trac</a>, post them in the <a href="http://sourceforge.net/projects/qvision/forums">forum</a>, or contact the authors through e-mail:</p>
+<p><a href="mailto:pedroe@um.es">Pedro E. L&oacute;pez de Teruel Alcolea &lt;pedroe@um.es&gt;</a><br/>
+ <a href="mailto:alrl1@alu.um.es">Antonio L. Rodr&iacute;guez L&oacute;pez &lt;alrl1@alu.um.es&gt;</a><br/>
+ <a href="mailto:antonio.or.sa@gmail.com">Antonio Ortu&ntilde;o S&aacute;nchez &lt;antonio.or.sa@gmail.com&gt;</a></p>
+<h2><a class="anchor" id="Acknowledgements">
+Acknowledgements</a></h2>
+<p>The following is a list of people who provided important contributions to the QVision library:</p>
+<p><a href="mailto:einiesta@ditec.um.es">Eduardo Iniesta Soto &lt;einiesta@ditec.um.es&gt;</a> contributed with the linear time implementation of the MSER algorithm.<br/>
+ <a href="mailto:i.sanchezlinares@um.es">Irene S&aacute;nchez Linares &lt;i.sanchezlinares@um.es&gt;</a> contributed with the adaptation of the GPU-KLT+FLOW software for feature tracking and optical flow estimation on the GPU.<br/>
+ </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

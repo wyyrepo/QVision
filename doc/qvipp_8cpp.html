@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>src/qvipp/qvipp.cpp File Reference</h1>
+<p>File from the QVision library.  
+<a href="#_details">More...</a></p>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;qvipp.h&gt;</code><br/>
+<code>#include &lt;QVMatrix&gt;</code><br/>
+<code>#include &lt;<a class="el" href="macros_8h_source.html">qvipp/macros.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="qvmatrix_8h_source.html">qvmath/qvmatrix.h</a>&gt;</code><br/>
+
+<p><a href="qvipp_8cpp_source.html">Go to the source code of this file.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">YUV420ToRGB</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src2, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src3, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;dest, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">RGBToYUV420</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;dst1, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;dst2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;dst3, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippFF.html#ga9509aca9c5c02975804d29f7799d9902">FilterGaussGetBufferSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, uInt kernelSize)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the size of the external buffer for the Gaussian filter with border.This function computes the size of the external buffer that is required for the filter function FilterGaussBorder. This buffer can be used to filter an image whose width and height are equal to or less than param <a class="el" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> image, and the kernel size is equal to or less than kernelSize.  <a href="group__qvippFF.html#ga9509aca9c5c02975804d29f7799d9902"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920">MinEigenValGetBufferSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, uInt apertureSize, uInt avgWindow)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function MinEigenValGet.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function MinEigenVal. Initializes dimensions for that buffer image, appropriated for that algorithm.  <a href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7">CannyGetSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function Canny.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function Canny. Initializes dimensions for that buffer image, appropriated for canny algorithm.  <a href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd">FastMarchingGetBufferSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function FastMarching.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function FastMarching. Initializes dimensions for that buffer image, appropriated for that algorithm.  <a href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">InpaintInitAllocC3</a> (IppiInpaintState_8u_C3R **pState, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;distances, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;mask, const sFloat radius, const IppiInpaintFlag flag)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">InpaintFreeC3</a> (IppiInpaintState_8u_C3R *pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">InpaintInitAllocC1</a> (IppiInpaintState_8u_C1R **pState, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;distances, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;mask, const sFloat radius, const IppiInpaintFlag flag)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">InpaintFreeC1</a> (IppiInpaintState_8u_C1R *pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96">HistogramRange</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculates frequency histogram for a given set of values, for a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>This function computes the intensity histogram of an image in the ranges from 0 to 255.  <a href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; sInt, int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaafd238c384d328ca51834ff1671731da">HistogramRange</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src, QList&lt; uChar &gt; values)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculates frequency histogram for a given set of values, for a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>This function computes the intensity histogram of an image in the ranges specified by the QList 'values'. Default value for this QList is empty list, indicating the set of integer which cover the group of valid values for uChar type (from 0 to 255).  <a href="group__qvipp.html#gaafd238c384d328ca51834ff1671731da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function family FloodFill.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function family FloodFill. Initializes dimensions for that buffer image, appropriated for that algorithm.  <a href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907">Filter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;dest, const <a class="el" href="classQVMatrix.html">QVMatrix</a> kernel, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function uses the general square kernel defined in the matrix <em>kernel</em> to filter an image, using a convolution operation.  <a href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f">FilterColumn</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;dest, const <a class="el" href="classQVVector.html">QVVector</a> kernel, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Filters an image using a spatial kernel that consists of a single column.This function uses the vertical column kernel contained in vector <em>kernel</em> to filter an image ROI.  <a href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e">FilterRow</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;dest, const <a class="el" href="classQVVector.html">QVVector</a> kernel, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Filters an image using a spatial kernel that consists of a single row.This function uses the vertical column kernel contained in vector <em>kernel</em> to filter an image ROI.  <a href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>File from the QVision library. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>PARP Research Group. University of Murcia, Spain. </dd></dl>
+
+<p>Definition in file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

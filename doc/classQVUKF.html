@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVUKF Class Reference<br/>
+<small>
+[<a class="el" href="group__qvsignalprocessing.html">Signal processing functionality</a>]</small>
+</h1><!-- doxytag: class="QVUKF" -->
+<p>Implementation of UKF filter.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvukf_8h_source.html">qvukf.h</a>&gt;</code></p>
+
+<p><a href="classQVUKF-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVUKF.html#a03c50b23aa537c66bdf42c98f54611df">QVUKF</a> (double k=0.0, double alpha=0.5, double beta=2.0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classQVUKF.html" title="Implementation of UKF filter.">QVUKF</a> default constructor.  <a href="#a03c50b23aa537c66bdf42c98f54611df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVUKF.html#a77a7d85376b98d7d6596c8ff9b72548f">QVUKF</a> (const <a class="el" href="structQVUKFstate.html">QVUKFstate</a> &amp;state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classQVUKF.html" title="Implementation of UKF filter.">QVUKF</a> copy constructor.  <a href="#a77a7d85376b98d7d6596c8ff9b72548f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVUKF.html#a473451fad3c9b2016fed435a9902e2c7">setState</a> (const <a class="el" href="structQVUKFstate.html">QVUKFstate</a> &amp;state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method that fills the current state from a given <a class="el" href="structQVUKFstate.html" title="A structure that contains the mean and covariance matrix to represent a normal state...">QVUKFstate</a>.  <a href="#a473451fad3c9b2016fed435a9902e2c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVUKF.html#a2a8d8d4b08c95657876036a7b337280e">update</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;obs, <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;g, <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;h, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Rt, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Qt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method that updates the current state, moving from X_k to X_k+1.  <a href="#a2a8d8d4b08c95657876036a7b337280e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVUKF.html#a0eb739a92938bd540883c462cf0e8428">getState</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method that returns the current system state.  <a href="#a0eb739a92938bd540883c462cf0e8428"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVUKF.html#af4c53f693838f00936798fd63ec0b07b">getDiscrepance</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method that returns the discrepancy.  <a href="#af4c53f693838f00936798fd63ec0b07b"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of UKF filter. </p>
+<p>This is an implementation of the general Unscented Kalman Filter, useful for non-linear filtering. </p>
+
+<p>Definition at line <a class="el" href="qvukf_8h_source.html#l00073">73</a> of file <a class="el" href="qvukf_8h_source.html">qvukf.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a03c50b23aa537c66bdf42c98f54611df"></a><!-- doxytag: member="QVUKF::QVUKF" ref="a03c50b23aa537c66bdf42c98f54611df" args="(double k=0.0, double alpha=0.5, double beta=2.0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVUKF::QVUKF </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>k</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>alpha</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>beta</em> = <code>2.0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classQVUKF.html" title="Implementation of UKF filter.">QVUKF</a> default constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>k.</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>alpha.</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>beta.</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a77a7d85376b98d7d6596c8ff9b72548f"></a><!-- doxytag: member="QVUKF::QVUKF" ref="a77a7d85376b98d7d6596c8ff9b72548f" args="(const QVUKFstate &amp;state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVUKF::QVUKF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structQVUKFstate.html">QVUKFstate</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classQVUKF.html" title="Implementation of UKF filter.">QVUKF</a> copy constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>A <a class="el" href="structQVUKFstate.html" title="A structure that contains the mean and covariance matrix to represent a normal state...">QVUKFstate</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvukf_8cpp_source.html#l00026">26</a> of file <a class="el" href="qvukf_8cpp_source.html">qvukf.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a473451fad3c9b2016fed435a9902e2c7"></a><!-- doxytag: member="QVUKF::setState" ref="a473451fad3c9b2016fed435a9902e2c7" args="(const QVUKFstate &amp;state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVUKF::setState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structQVUKFstate.html">QVUKFstate</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method that fills the current state from a given <a class="el" href="structQVUKFstate.html" title="A structure that contains the mean and covariance matrix to represent a normal state...">QVUKFstate</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td><a class="el" href="structQVUKFstate.html" title="A structure that contains the mean and covariance matrix to represent a normal state...">QVUKFstate</a> used to fill the current filter state (discrepancy is reset to 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvukf_8cpp_source.html#l00038">38</a> of file <a class="el" href="qvukf_8cpp_source.html">qvukf.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a8d8d4b08c95657876036a7b337280e"></a><!-- doxytag: member="QVUKF::update" ref="a2a8d8d4b08c95657876036a7b337280e" args="(const QVMatrix &amp;obs, QVFunction&lt; QVVector, QVVector &gt; &amp;g, QVFunction&lt; QVVector, QVVector &gt; &amp;h, const QVMatrix &amp;Rt, const QVMatrix &amp;Qt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVUKF::update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>obs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Rt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Qt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method that updates the current state, moving from X_k to X_k+1. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obs</em>&nbsp;</td><td><a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> that contains an acquired observation. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>g</em>&nbsp;</td><td>A functor that implements the dynamic model for a specific problem. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>A functor that implements how to propagate the observation according to the conditions of a specific problem. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Rt</em>&nbsp;</td><td>Multivariate Gaussian noise (0-mean) that will be added to the covariance matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Qt</em>&nbsp;</td><td>Multivariate Gaussian noise (0-mean) that will be added to the predicted covariance matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvukf_8cpp_source.html#l00160">160</a> of file <a class="el" href="qvukf_8cpp_source.html">qvukf.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0eb739a92938bd540883c462cf0e8428"></a><!-- doxytag: member="QVUKF::getState" ref="a0eb739a92938bd540883c462cf0e8428" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVUKF::getState </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method that returns the current system state. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> that contains the current system state. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvukf_8cpp_source.html#l00045">45</a> of file <a class="el" href="qvukf_8cpp_source.html">qvukf.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af4c53f693838f00936798fd63ec0b07b"></a><!-- doxytag: member="QVUKF::getDiscrepance" ref="af4c53f693838f00936798fd63ec0b07b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVUKF::getDiscrepance </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method that returns the discrepancy. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The system discrepancy. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvukf_8cpp_source.html#l00050">50</a> of file <a class="el" href="qvukf_8cpp_source.html">qvukf.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvukf_8h_source.html">qvukf.h</a></li>
+<li>src/qvmath/<a class="el" href="qvukf_8cpp_source.html">qvukf.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

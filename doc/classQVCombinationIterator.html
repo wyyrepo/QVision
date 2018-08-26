@@ -1,0 +1,516 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVCombinationIterator Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVCombinationIterator" -->
+<p>Iterator over all possible <a href="http://en.wikipedia.org/wiki/Combination">combinations</a> over a set.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvcombinationiterator_8h_source.html">QVCombinationIterator</a>&gt;</code></p>
+
+<p><a href="classQVCombinationIterator-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a6e11a666b1c9ffcb06a6cc2a74b4f0ba">QVCombinationIterator</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a default combination iterator.  <a href="#a6e11a666b1c9ffcb06a6cc2a74b4f0ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a2ac735a78accb3e11a7d784057d137c5">QVCombinationIterator</a> (const <a class="el" href="classQVCombinationIterator.html">QVCombinationIterator</a> &amp;combinationIterator)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a new combination iterator that is a copy of other.  <a href="#a2ac735a78accb3e11a7d784057d137c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#af8de206f2f0918515ac21f366860f8cf">QVCombinationIterator</a> (const int numElements, const int elementsXSet)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a new combination iterator with a specifics cardinallity and subset's size.  <a href="#af8de206f2f0918515ac21f366860f8cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a8d942cbeff05b86359d60b8433bae793">increment</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the next subset of the iteration, indicating if the iteration has finished.  <a href="#a8d942cbeff05b86359d60b8433bae793"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCombinationIterator.html">QVCombinationIterator</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#ac6361404f092a9c2b8459cb5c692e6ce">operator++</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">infix ++ operator.  <a href="#ac6361404f092a9c2b8459cb5c692e6ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#afc1cbac83cebea7aa279cd6324977e76">operator++</a> (int)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">postfix ++ operator.  <a href="#afc1cbac83cebea7aa279cd6324977e76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a99acd396a8cf0bd3cdf0480585baa0ee">getSubsetNumber</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the amount of possible subsets of a given size and cardinallity.  <a href="#a99acd396a8cf0bd3cdf0480585baa0ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#af432a22dce2980ea13ee42fa5386919d">finished</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Indicate if the iteration has finished.  <a href="#af432a22dce2980ea13ee42fa5386919d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a8b8c517e071bd03670f6ea72bebbe930">firstIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the first element of the current subset.  <a href="#a8b8c517e071bd03670f6ea72bebbe930"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#aba3d4398aba09dda56a50509b316b223">lastIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the last element of the current subset.  <a href="#aba3d4398aba09dda56a50509b316b223"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a48ea97e4e1918a479a54b42c556674a7">getSetCardinallity</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the cardinallity of the combination.  <a href="#a48ea97e4e1918a479a54b42c556674a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html#a0bc5e95587d58f5c9e3265292cf586d0">getSubsetsSize</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the subset's size.  <a href="#a0bc5e95587d58f5c9e3265292cf586d0"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Iterator over all possible <a href="http://en.wikipedia.org/wiki/Combination">combinations</a> over a set. </p>
+<p>Generates a sequence containing all the possible subsets of a given cardinallity, from a original set. This set will be the integer numbers from zero to an specified value, so the elements of the original set should be contained in a QList or a QVector.</p>
+<p>Use examples: The following examples show how to use this iterator. </p>
+<ul>
+<li>
+<em>While</em> flavour: <div class="fragment"><pre class="fragment"><a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a> combination(7, 3);
+
+<span class="keywordflow">while</span>(!combination.finished())
+    {
+    std::cout &lt;&lt; combination;
+    combination.increment();
+    }
+</pre></div> </li>
+<li>
+<em>Do.. while</em> flavour: <div class="fragment"><pre class="fragment"><a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a> combination(7, 3);
+
+<span class="keywordflow">do</span>      std::cout &lt;&lt; combination;
+    <span class="keywordflow">while</span>(combination.increment());
+</pre></div> </li>
+<li>
+<p class="startli"><em>For</em> flavour: </p>
+<div class="fragment"><pre class="fragment"><span class="keywordflow">for</span> (<a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a> combination(7, 3); !combination.finished(); combination++)
+    std::cout &lt;&lt; combination;
+</pre></div><p>All of the previous examples will print the resulting combination of elements from the original set, producing the following output: </p>
+<div class="fragment"><pre class="fragment">Combination(3 elements over 7):  [0] [1] [2]  3   4   5   6
+Combination(3 elements over 7):  [0] [1]  2  [3]  4   5   6
+Combination(3 elements over 7):  [0]  1  [2] [3]  4   5   6
+Combination(3 elements over 7):   0  [1] [2] [3]  4   5   6
+Combination(3 elements over 7):  [0] [1]  2   3  [4]  5   6
+Combination(3 elements over 7):  [0]  1  [2]  3  [4]  5   6
+Combination(3 elements over 7):   0  [1] [2]  3  [4]  5   6
+Combination(3 elements over 7):  [0]  1   2  [3] [4]  5   6
+Combination(3 elements over 7):   0  [1]  2  [3] [4]  5   6
+Combination(3 elements over 7):   0   1  [2] [3] [4]  5   6
+Combination(3 elements over 7):  [0] [1]  2   3   4  [5]  6
+Combination(3 elements over 7):  [0]  1  [2]  3   4  [5]  6
+Combination(3 elements over 7):   0  [1] [2]  3   4  [5]  6
+Combination(3 elements over 7):  [0]  1   2  [3]  4  [5]  6
+Combination(3 elements over 7):   0  [1]  2  [3]  4  [5]  6
+Combination(3 elements over 7):   0   1  [2] [3]  4  [5]  6
+Combination(3 elements over 7):  [0]  1   2   3  [4] [5]  6
+Combination(3 elements over 7):   0  [1]  2   3  [4] [5]  6
+Combination(3 elements over 7):   0   1  [2]  3  [4] [5]  6
+Combination(3 elements over 7):   0   1   2  [3] [4] [5]  6
+Combination(3 elements over 7):  [0] [1]  2   3   4   5  [6]
+Combination(3 elements over 7):  [0]  1  [2]  3   4   5  [6]
+Combination(3 elements over 7):   0  [1] [2]  3   4   5  [6]
+Combination(3 elements over 7):  [0]  1   2  [3]  4   5  [6]
+Combination(3 elements over 7):   0  [1]  2  [3]  4   5  [6]
+Combination(3 elements over 7):   0   1  [2] [3]  4   5  [6]
+Combination(3 elements over 7):  [0]  1   2   3  [4]  5  [6]
+Combination(3 elements over 7):   0  [1]  2   3  [4]  5  [6]
+Combination(3 elements over 7):   0   1  [2]  3  [4]  5  [6]
+Combination(3 elements over 7):   0   1   2  [3] [4]  5  [6]
+Combination(3 elements over 7):  [0]  1   2   3   4  [5] [6]
+Combination(3 elements over 7):   0  [1]  2   3   4  [5] [6]
+Combination(3 elements over 7):   0   1  [2]  3   4  [5] [6]
+Combination(3 elements over 7):   0   1   2  [3]  4  [5] [6]
+Combination(3 elements over 7):   0   1   2   3  [4] [5] [6]
+</pre></div><p class="endli">Meaning the selected elements surrounded by brackets for each combination. The index for each one of the selected elements can be accessed with the operator[]. The number of elements accessible with it can be obtained with method <a class="el" href="classQVCombinationIterator.html#a0bc5e95587d58f5c9e3265292cf586d0">getSubsetsSize()</a>, which is the size of the subsets. </p>
+</li>
+</ul>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00110">110</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a6e11a666b1c9ffcb06a6cc2a74b4f0ba"></a><!-- doxytag: member="QVCombinationIterator::QVCombinationIterator" ref="a6e11a666b1c9ffcb06a6cc2a74b4f0ba" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCombinationIterator::QVCombinationIterator </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a default combination iterator. </p>
+<p>Generate a combination iterator with one element, and its internal state is defined to finished. </p>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00120">120</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ac735a78accb3e11a7d784057d137c5"></a><!-- doxytag: member="QVCombinationIterator::QVCombinationIterator" ref="a2ac735a78accb3e11a7d784057d137c5" args="(const QVCombinationIterator &amp;combinationIterator)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCombinationIterator::QVCombinationIterator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCombinationIterator.html">QVCombinationIterator</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>combinationIterator</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a new combination iterator that is a copy of other. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>combinationIterator</em>&nbsp;</td><td>the combination iterator to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00126">126</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af8de206f2f0918515ac21f366860f8cf"></a><!-- doxytag: member="QVCombinationIterator::QVCombinationIterator" ref="af8de206f2f0918515ac21f366860f8cf" args="(const int numElements, const int elementsXSet)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCombinationIterator::QVCombinationIterator </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numElements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>elementsXSet</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a new combination iterator with a specifics cardinallity and subset's size. </p>
+<p>The new combination iterator contains the first subset of the iteration. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>numElements</em>&nbsp;</td><td>the cardinallity of the susets, must be &gt; 0. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>elementsXSet</em>&nbsp;</td><td>the subset's size, must be &lt;= numElements. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00135">135</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a8d942cbeff05b86359d60b8433bae793"></a><!-- doxytag: member="QVCombinationIterator::increment" ref="a8d942cbeff05b86359d60b8433bae793" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVCombinationIterator::increment </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the next subset of the iteration, indicating if the iteration has finished. </p>
+<p>Returns a true valor until it obtains the last subset, the following times it returns false valor and passes to an undefined subset. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if it obtain the next subset and false if the iteration has finished. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8cpp_source.html#l00027">27</a> of file <a class="el" href="qvcombinationiterator_8cpp_source.html">qvcombinationiterator.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCombinationIterator.html#ac6361404f092a9c2b8459cb5c692e6ce">operator++()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6361404f092a9c2b8459cb5c692e6ce"></a><!-- doxytag: member="QVCombinationIterator::operator++" ref="ac6361404f092a9c2b8459cb5c692e6ce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCombinationIterator.html">QVCombinationIterator</a>&amp; QVCombinationIterator::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>infix ++ operator. </p>
+<p>Increment the iteration. </p>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00157">157</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc1cbac83cebea7aa279cd6324977e76"></a><!-- doxytag: member="QVCombinationIterator::operator++" ref="afc1cbac83cebea7aa279cd6324977e76" args="(int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVCombinationIterator::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>postfix ++ operator. </p>
+<p>Increment the iteration. </p>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00163">163</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99acd396a8cf0bd3cdf0480585baa0ee"></a><!-- doxytag: member="QVCombinationIterator::getSubsetNumber" ref="a99acd396a8cf0bd3cdf0480585baa0ee" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVCombinationIterator::getSubsetNumber </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the amount of possible subsets of a given size and cardinallity. </p>
+<p>The increment function returns a true valor the first getSubsetNmber - 1 invocations. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of posible subsets. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00169">169</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af432a22dce2980ea13ee42fa5386919d"></a><!-- doxytag: member="QVCombinationIterator::finished" ref="af432a22dce2980ea13ee42fa5386919d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVCombinationIterator::finished </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Indicate if the iteration has finished. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if contains a valid subset, and false if has been incremented after it contains the last subset. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00173">173</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b8c517e071bd03670f6ea72bebbe930"></a><!-- doxytag: member="QVCombinationIterator::firstIndex" ref="a8b8c517e071bd03670f6ea72bebbe930" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVCombinationIterator::firstIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the first element of the current subset. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the first element of the current subset. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00177">177</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba3d4398aba09dda56a50509b316b223"></a><!-- doxytag: member="QVCombinationIterator::lastIndex" ref="aba3d4398aba09dda56a50509b316b223" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVCombinationIterator::lastIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the last element of the current subset. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the last element of the current subset. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00181">181</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48ea97e4e1918a479a54b42c556674a7"></a><!-- doxytag: member="QVCombinationIterator::getSetCardinallity" ref="a48ea97e4e1918a479a54b42c556674a7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVCombinationIterator::getSetCardinallity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the cardinallity of the combination. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the cardinallity. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00185">185</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+<p>Referenced by <a class="el" href="qvcombinationiterator_8h.html#ad13c8a97aaec5c669346a5aeff06f452">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bc5e95587d58f5c9e3265292cf586d0"></a><!-- doxytag: member="QVCombinationIterator::getSubsetsSize" ref="a0bc5e95587d58f5c9e3265292cf586d0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVCombinationIterator::getSubsetsSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the subset's size. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>subset's size. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcombinationiterator_8h_source.html#l00189">189</a> of file <a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a>.</p>
+
+<p>Referenced by <a class="el" href="qvcombinationiterator_8h.html#ad13c8a97aaec5c669346a5aeff06f452">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvcombinationiterator_8h_source.html">qvcombinationiterator.h</a></li>
+<li>src/qvmath/<a class="el" href="qvcombinationiterator_8cpp_source.html">qvcombinationiterator.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

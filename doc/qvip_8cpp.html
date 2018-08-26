@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>src/qvip/qvip.cpp File Reference</h1>
+<p>File from the QVision library.  
+<a href="#_details">More...</a></p>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;float.h&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;qvip.h&gt;</code><br/>
+<code>#include &lt;qvmath.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="qvdefines_8h_source.html">qvdefines.h</a>&gt;</code><br/>
+<code>#include &lt;qvmatrixalgebra.h&gt;</code><br/>
+<code>#include &lt;QVPolyline&gt;</code><br/>
+<code>#include &lt;QVPolylineF&gt;</code><br/>
+<code>#include &lt;QList&gt;</code><br/>
+<code>#include &lt;qvip/fast-C-src-2.1/fast.h&gt;</code><br/>
+<code>#include &lt;qvipp.h&gt;</code><br/>
+<code>#include &lt;QVComponentTree&gt;</code><br/>
+<code>#include &lt;<a class="el" href="qvdisjointset_8h_source.html">qvmath/qvdisjointset.h</a>&gt;</code><br/>
+
+<p><a href="qvip_8cpp_source.html">Go to the source code of this file.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; QVector&lt; QPoint &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138">CountingSort</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sorts pixels in an image, given their gray-scale value.This function uses the <a href="http://en.wikipedia.org/wiki/Counting_sort">Counting Sort</a> algorithm to get an arrangement of the pixels of an input 8-bit image, regarding their gray-scale value. This arrangement is useful when you need to process the pixels of that image, which contain a certain gray-scale value.  <a href="group__qvip.html#ga192921df3cd4daafb183772dc960d138"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b">FilterHarrisCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;result, int aperture, int avgwindow, const QPoint &amp;)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the Harris corner response image.  <a href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519">FilterDoG</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;result)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the DoG corner response image.  <a href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaa9474c9f380746aaa24f9997bada59f5">SobelCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;result)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the Sobel corner response image.  <a href="group__qvipp.html#gaa9474c9f380746aaa24f9997bada59f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9">FilterHessianCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;result, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the Hessian corner response image.  <a href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaacf3624cc8f531fccb9a436878af3fba">FilterSeparable</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;dest, const <a class="el" href="classQVVector.html">QVVector</a> &amp;rowFilter, const <a class="el" href="classQVVector.html">QVVector</a> &amp;colFilter, const QPoint &amp;destROIOffset)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a separable filter.  <a href="group__qvipp.html#gaacf3624cc8f531fccb9a436878af3fba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; sFloat, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6">fastMaximalPoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, const double threshold, const int windowRadius)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds luminance peaks in the input image.  <a href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; uChar, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gacbdf9bb3ccccd60cf561cf7fbd5b94c7">fastMaximalPoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const double threshold, const int windowRadius)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds luminance peaks in the input image This is an overloaded version provided for convenience. Processing 8 bit depth images is faster than doing it on 64 floating images.  <a href="group__qvipp.html#gacbdf9bb3ccccd60cf561cf7fbd5b94c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13">FilterLocalMax</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;dest, uInt colMaskSize, uInt rowMaskSize, sFloat threshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generates a binary image of local grey-scale maximal value pixels.This function receives a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>, and generates a binary image where each pixel is set to IPP_MAX_8U if the pixel in the original image is strict maximal in value regarding to pixels in a vicinity window of colMaskSize width, and rowMaskSize height.  <a href="group__qvip.html#gade8ced9dc785b2238de521daff597b13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="qvip_8cpp.html#ad59b48c43b863530b8ef45a61ef250e7">myFloodFill</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, uInt x, uInt y, uInt value, uInt minVal, uInt maxVal)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; sFloat, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">maximalPoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;cornerResponseImage, const double threshold, const int windowRadius)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds luminance peaks in the input image.  <a href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga48592e8d0ecc14b8a01c373e97a0b630">FASTFeatures</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const int threshold, const <a class="el" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">FASTDetectionAlgorithm</a> &amp;fastAlgorithm)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains FAST features on an image-.  <a href="group__qvip.html#ga48592e8d0ecc14b8a01c373e97a0b630"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff">IterativePointElimination</a> (const <a class="el" href="classQVPolyline.html">QVPolyline</a> &amp;polyline, <a class="el" href="classQVPolyline.html">QVPolyline</a> &amp;result, const double param, bool maxNumberOfPointsMethod, bool intersectLines, double *max_removed_cost)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Eliminates points of a polyline of small shape contribution using the IPE algorithmThis function eliminates points of a <a class="el" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a>, simplifying it. Points are recursively eliminated while a) their distance to the line joining its two immediate neighbours is smaller than a given maximum value, or b) the number of points of the approximated polyline falls below a given number (depending on the chosen method).  <a href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga38efea2a64358c2fcf43fc302b0b3595">IterativePointElimination</a> (const <a class="el" href="classQVPolylineF.html">QVPolylineF</a> &amp;polyline, <a class="el" href="classQVPolylineF.html">QVPolylineF</a> &amp;result, const double param, bool maxNumberOfPointsMethod, bool intersectLines, double *max_removed_cost)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Eliminates points of a polyline of small shape contribution using the IPE algorithmThis is an overloaded version of the <em>IterativePointElimination</em>, provided for convenience. It simplifies floating point polylines.  <a href="group__qvip.html#ga38efea2a64358c2fcf43fc302b0b3595"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24">getConnectedSetBorderContoursThreshold</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const uChar threshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the borders of connected sets of pixels, containing gray-scale values equal or greater than a given threshold.This function thresholds an input image. Then it obtains the borders of the <a href="http://en.wikipedia.org/wiki/Connected_set">connected sets</a> of the pixels remaining. An example of these connected sets, and the borders this function obtains can be seen in the following picture:  <a href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga5dab7ea4ed1170143df3e59fdd895bf9">getLineContoursThreshold4Connectivity</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const uChar threshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a list of the 4-connected pixel lines in the imageThis function can be used to obtain the 4-connected lines appearing in a border response image. It returns the lines as a <a class="el" href="classQVPolyline.html">QVPolyline</a> objects.  <a href="group__qvip.html#ga5dab7ea4ed1170143df3e59fdd895bf9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6">getLineContoursThreshold8Connectivity</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const uChar threshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a list of the 8-connected pixel lines in the imageThis function can be used to obtain the 8-connected lines appearing in a border response image. It returns the lines as a <a class="el" href="classQVPolyline.html">QVPolyline</a> objects.  <a href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga0a73e3730368b307c874e53dd5af54c4">FastLaplaceFilter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; image)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a fast Laplace filter on the input image.  <a href="group__qvip.html#ga0a73e3730368b307c874e53dd5af54c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga69cc8d72179389d9897aa9ac97d62c33">FastSmoothFilter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; image, const uChar threshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a fast smooth filter on the input image.  <a href="group__qvip.html#ga69cc8d72179389d9897aa9ac97d62c33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga083ddecc2c02b1aa32bd2dd9d6c69601">SmoothFilter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; image, const uChar threshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a smooth filter on the input image.  <a href="group__qvip.html#ga083ddecc2c02b1aa32bd2dd9d6c69601"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gab0e45b1b85498b4df9cbd1af432cbaea">FastLaplacePoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const int threshold, const bool applyPreviousSmooth, const bool smoothResponseImage)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detects salient points in the Laplace response of an input image.  <a href="group__qvip.html#gab0e45b1b85498b4df9cbd1af432cbaea"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>File from the QVision library. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>PARP Research Group. University of Murcia, Spain. </dd></dl>
+
+<p>Definition in file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ad59b48c43b863530b8ef45a61ef250e7"></a><!-- doxytag: member="qvip.cpp::myFloodFill" ref="ad59b48c43b863530b8ef45a61ef250e7" args="(QVImage&lt; uChar &gt; &amp;image, uInt x, uInt y, uInt value, uInt minVal, uInt maxVal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int myFloodFill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>minVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>maxVal</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd>this function is deprecated: erase it and replace calls to it by IPP's flood fill function. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00416">416</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

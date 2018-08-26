@@ -1,0 +1,25 @@
+Performing 5 tests per measure.
+GSL_EIGENSYMM
+5x5: Average total time: 0 ms. 
+50x50: Average total time: 2.2 ms. 
+100x100: Average total time: 8.4 ms. 
+500x500: Average total time: 2791.8 ms. 
+1000x1000: Average total time: 17011.8 ms. 
+GSL_EIGENSYMM_ONLY
+5x5: Average total time: 0 ms. 
+50x50: Average total time: 0.8 ms. 
+100x100: Average total time: 2.8 ms. 
+500x500: Average total time: 134.4 ms. 
+1000x1000: Average total time: 1394.6 ms. 
+LAPACK_DSYEV
+5x5: Average total time: 0.6 ms. 
+50x50: Average total time: 3.8 ms. 
+100x100: Average total time: 10.4 ms. 
+500x500: Average total time: 1082.2 ms. 
+1000x1000: Average total time: 5561.6 ms. 
+LAPACK_DSYEV_ONLY
+5x5: Average total time: 0.4 ms. 
+50x50: Average total time: 1 ms. 
+100x100: Average total time: 2.4 ms. 
+500x500: Average total time: 122.4 ms. 
+1000x1000: Average total time: 1161.4 ms. 

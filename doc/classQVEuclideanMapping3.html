@@ -1,0 +1,682 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVEuclideanMapping3 Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVEuclideanMapping3" -->
+<p>Class modeling rotation-translation transformations for 3D points.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qveuclideanmapping3_8h_source.html">QVEuclideanMapping3</a>&gt;</code></p>
+
+<p><a href="classQVEuclideanMapping3-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a76a1d70036100c41eec91c7d9e2438df">QVEuclideanMapping3</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#a76a1d70036100c41eec91c7d9e2438df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a3891f71137a302d43d89dc8b3a624bde">QVEuclideanMapping3</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#a3891f71137a302d43d89dc8b3a624bde"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#afd3d1afc10b277ab06d40aaf3087d0dc">QVEuclideanMapping3</a> (const <a class="el" href="classQVQuaternion.html">QVQuaternion</a> &amp;q, const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;t)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialization from a quaternion rotation, and a translation vector.  <a href="#afd3d1afc10b277ab06d40aaf3087d0dc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a6824a43812219a34d29d7eb512d9294f">QVEuclideanMapping3</a> (const double quatx, const double quaty, const double quatz, const double quatw, const double tx, const double ty, const double tz)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialization from the components of a quaternion rotation, and a translation vector.  <a href="#a6824a43812219a34d29d7eb512d9294f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#abd90c44b323ba1313c5f4f0ea3e54d2d">QVEuclideanMapping3</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;v)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialization from the components of a quaternion rotation, and a translation vector.  <a href="#abd90c44b323ba1313c5f4f0ea3e54d2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a9fa1c24113751ff783141415a3dc38c8">QVEuclideanMapping3</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Rt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialization from a rotation-translation matrix.  <a href="#a9fa1c24113751ff783141415a3dc38c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#ac571ddc6c4f7c05faf81aae1e67b3d5f">apply</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;X) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the euclidean transformation for the point.  <a href="#ac571ddc6c4f7c05faf81aae1e67b3d5f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a4f121b8e3fd1b7abf8748f07ae11c888">operator QVVector</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cast to a 7-size vector.  <a href="#a4f121b8e3fd1b7abf8748f07ae11c888"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a2e6704756a86d69a60b043695a238699">operator==</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Equality compare operator.  <a href="#a2e6704756a86d69a60b043695a238699"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a4affc977b2f668d857d0cf0dcad05770">operator!=</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inequality compare operator.  <a href="#a4affc977b2f668d857d0cf0dcad05770"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a38a8068d953454ddaf0ef3ff975b9804">toRotationTranslationMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cast to a Rotation-translation matrix.  <a href="#a38a8068d953454ddaf0ef3ff975b9804"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVQuaternion.html">QVQuaternion</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a56cd60e4bd4ca255855bc6eeaa9beea4">getRotation</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the rotation quaternion of the mapping.  <a href="#a56cd60e4bd4ca255855bc6eeaa9beea4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#aebfc6a4f42f4bdd7a9eb442c7c74048c">getTranslation</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the translation of the mapping.  <a href="#aebfc6a4f42f4bdd7a9eb442c7c74048c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a6860de8604ce1846261d2c8056b19dfd">setRotation</a> (const <a class="el" href="classQVQuaternion.html">QVQuaternion</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the rotation quaternion of the mapping.  <a href="#a6860de8604ce1846261d2c8056b19dfd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#aa96f1f838588196ee38ded4185db00a7">setTranslation</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the translation of the mapping.  <a href="#aa96f1f838588196ee38ded4185db00a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#af891d3f088eb8fb3eb6ad9c0b9144b82">inverse</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the inverse of the mapping.  <a href="#af891d3f088eb8fb3eb6ad9c0b9144b82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a0f7986ac48c1fe02d6b75b15824fcaeb">compose</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Composes two euclidean mappings.  <a href="#a0f7986ac48c1fe02d6b75b15824fcaeb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a4509a773df1a3222e7eeab391091ca6c">operator*</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Composes two euclidean mappings.  <a href="#a4509a773df1a3222e7eeab391091ca6c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html#a10e232d54b6cb66b28ecd5139d8db794">operator/</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides an euclidean mapping by another one.  <a href="#a10e232d54b6cb66b28ecd5139d8db794"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Class modeling rotation-translation transformations for 3D points. </p>
+<p>This class models elements from the E<sub>3</sub> group. These elements are combinations of translations and rotations in the 3D euclidean space.</p>
+<p>Each element from this class contains a quaternion and a 3D point, respectively representing the rotation and the translation of the elements of the 3D space. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00044">44</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a76a1d70036100c41eec91c7d9e2438df"></a><!-- doxytag: member="QVEuclideanMapping3::QVEuclideanMapping3" ref="a76a1d70036100c41eec91c7d9e2438df" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::QVEuclideanMapping3 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00052">52</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVEuclideanMapping3.html#a0f7986ac48c1fe02d6b75b15824fcaeb">compose()</a>, and <a class="el" href="classQVEuclideanMapping3.html#af891d3f088eb8fb3eb6ad9c0b9144b82">inverse()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3891f71137a302d43d89dc8b3a624bde"></a><!-- doxytag: member="QVEuclideanMapping3::QVEuclideanMapping3" ref="a3891f71137a302d43d89dc8b3a624bde" args="(const QVEuclideanMapping3 &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::QVEuclideanMapping3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00055">55</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd3d1afc10b277ab06d40aaf3087d0dc"></a><!-- doxytag: member="QVEuclideanMapping3::QVEuclideanMapping3" ref="afd3d1afc10b277ab06d40aaf3087d0dc" args="(const QVQuaternion &amp;q, const QV3DPointF &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::QVEuclideanMapping3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVQuaternion.html">QVQuaternion</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialization from a quaternion rotation, and a translation vector. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>q</em>&nbsp;</td><td>Quaternion for the rotation </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>3D point for the translation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00060">60</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6824a43812219a34d29d7eb512d9294f"></a><!-- doxytag: member="QVEuclideanMapping3::QVEuclideanMapping3" ref="a6824a43812219a34d29d7eb512d9294f" args="(const double quatx, const double quaty, const double quatz, const double quatw, const double tx, const double ty, const double tz)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::QVEuclideanMapping3 </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>quatx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>quaty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>quatz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>quatw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>tx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>ty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>tz</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialization from the components of a quaternion rotation, and a translation vector. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>quatx</em>&nbsp;</td><td>Coefficient for the <em>i</em> coordinate of the quaternion </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>quaty</em>&nbsp;</td><td>Coefficient for the <em>j</em> coordinate of the quaternion </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>quatz</em>&nbsp;</td><td>Coefficient for the <em>k</em> coordinate of the quaternion </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>quatw</em>&nbsp;</td><td>Coefficient for the real coordinate of the quaternion </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tx</em>&nbsp;</td><td>The <em>x</em> coordinate of the translation </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ty</em>&nbsp;</td><td>The <em>y</em> coordinate of the translation </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tz</em>&nbsp;</td><td>The <em>z</em> coordinate of the translation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00071">71</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd90c44b323ba1313c5f4f0ea3e54d2d"></a><!-- doxytag: member="QVEuclideanMapping3::QVEuclideanMapping3" ref="abd90c44b323ba1313c5f4f0ea3e54d2d" args="(const QVVector &amp;v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::QVEuclideanMapping3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>v</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialization from the components of a quaternion rotation, and a translation vector. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td>Vector of size 7 containing the coefficients for the <em>i</em>, <em>j</em>, <em>k</em>, and the real components of the quaternion, and the <em>x</em>, <em>y</em>, <em>z</em> components of the translation, in that order. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00081">81</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9fa1c24113751ff783141415a3dc38c8"></a><!-- doxytag: member="QVEuclideanMapping3::QVEuclideanMapping3" ref="a9fa1c24113751ff783141415a3dc38c8" args="(const QVMatrix &amp;Rt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::QVEuclideanMapping3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Rt</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialization from a rotation-translation matrix. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Rt</em>&nbsp;</td><td>The rotation/translation matrix. It is equal to <img class="formulaInl" alt="$ [R|t] $" src="form_34.png"/>, where <img class="formulaInl" alt="$ R $" src="form_21.png"/> is the rotation matrix, and <img class="formulaInl" alt="$ t $" src="form_35.png"/> is the translation vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8cpp_source.html#l00028">28</a> of file <a class="el" href="qveuclideanmapping3_8cpp_source.html">qveuclideanmapping3.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac571ddc6c4f7c05faf81aae1e67b3d5f"></a><!-- doxytag: member="QVEuclideanMapping3::apply" ref="ac571ddc6c4f7c05faf81aae1e67b3d5f" args="(const QV3DPointF &amp;X) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> QVEuclideanMapping3::apply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>X</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Applies the euclidean transformation for the point. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>X</em>&nbsp;</td><td>Point to apply the euclidean rotation-translation transformation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00093">93</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f121b8e3fd1b7abf8748f07ae11c888"></a><!-- doxytag: member="QVEuclideanMapping3::operator QVVector" ref="a4f121b8e3fd1b7abf8748f07ae11c888" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVEuclideanMapping3::operator <a class="el" href="classQVVector.html">QVVector</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cast to a 7-size vector. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Vector of size 7 containing the coefficients for the <em>i</em>, <em>j</em>, <em>k</em>, and the real components of the quaternion, and the <em>x</em>, <em>y</em>, <em>z</em> components of the translation, in that order. </dd></dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00103">103</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e6704756a86d69a60b043695a238699"></a><!-- doxytag: member="QVEuclideanMapping3::operator==" ref="a2e6704756a86d69a60b043695a238699" args="(const QVEuclideanMapping3 &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVEuclideanMapping3::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Equality compare operator. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00121">121</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4affc977b2f668d857d0cf0dcad05770"></a><!-- doxytag: member="QVEuclideanMapping3::operator!=" ref="a4affc977b2f668d857d0cf0dcad05770" args="(const QVEuclideanMapping3 &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVEuclideanMapping3::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inequality compare operator. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00128">128</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38a8068d953454ddaf0ef3ff975b9804"></a><!-- doxytag: member="QVEuclideanMapping3::toRotationTranslationMatrix" ref="a38a8068d953454ddaf0ef3ff975b9804" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVEuclideanMapping3::toRotationTranslationMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cast to a Rotation-translation matrix. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A rotation translation matrix <img class="formulaInl" alt="$ [R|t] $" src="form_34.png"/>, where <img class="formulaInl" alt="$ R $" src="form_21.png"/> is the rotation matrix, and <img class="formulaInl" alt="$ t $" src="form_35.png"/> is the translation vector. </dd></dl>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00137">137</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56cd60e4bd4ca255855bc6eeaa9beea4"></a><!-- doxytag: member="QVEuclideanMapping3::getRotation" ref="a56cd60e4bd4ca255855bc6eeaa9beea4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVQuaternion.html">QVQuaternion</a> QVEuclideanMapping3::getRotation </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the rotation quaternion of the mapping. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00153">153</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aebfc6a4f42f4bdd7a9eb442c7c74048c"></a><!-- doxytag: member="QVEuclideanMapping3::getTranslation" ref="aebfc6a4f42f4bdd7a9eb442c7c74048c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> QVEuclideanMapping3::getTranslation </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the translation of the mapping. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00156">156</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6860de8604ce1846261d2c8056b19dfd"></a><!-- doxytag: member="QVEuclideanMapping3::setRotation" ref="a6860de8604ce1846261d2c8056b19dfd" args="(const QVQuaternion &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVEuclideanMapping3::setRotation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVQuaternion.html">QVQuaternion</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the rotation quaternion of the mapping. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00159">159</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa96f1f838588196ee38ded4185db00a7"></a><!-- doxytag: member="QVEuclideanMapping3::setTranslation" ref="aa96f1f838588196ee38ded4185db00a7" args="(const QV3DPointF &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVEuclideanMapping3::setTranslation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the translation of the mapping. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00162">162</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af891d3f088eb8fb3eb6ad9c0b9144b82"></a><!-- doxytag: member="QVEuclideanMapping3::inverse" ref="af891d3f088eb8fb3eb6ad9c0b9144b82" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> QVEuclideanMapping3::inverse </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the inverse of the mapping. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00166">166</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVEuclideanMapping3.html#a10e232d54b6cb66b28ecd5139d8db794">operator/()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f7986ac48c1fe02d6b75b15824fcaeb"></a><!-- doxytag: member="QVEuclideanMapping3::compose" ref="a0f7986ac48c1fe02d6b75b15824fcaeb" args="(const QVEuclideanMapping3 &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> QVEuclideanMapping3::compose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Composes two euclidean mappings. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00174">174</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVEuclideanMapping3.html#a4509a773df1a3222e7eeab391091ca6c">operator*()</a>, and <a class="el" href="classQVEuclideanMapping3.html#a10e232d54b6cb66b28ecd5139d8db794">operator/()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4509a773df1a3222e7eeab391091ca6c"></a><!-- doxytag: member="QVEuclideanMapping3::operator*" ref="a4509a773df1a3222e7eeab391091ca6c" args="(const QVEuclideanMapping3 &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> QVEuclideanMapping3::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Composes two euclidean mappings. </p>
+
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00181">181</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a10e232d54b6cb66b28ecd5139d8db794"></a><!-- doxytag: member="QVEuclideanMapping3::operator/" ref="a10e232d54b6cb66b28ecd5139d8db794" args="(const QVEuclideanMapping3 &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> QVEuclideanMapping3::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Divides an euclidean mapping by another one. </p>
+<p>This operator is equivalent to the following code:</p>
+<div class="fragment"><pre class="fragment"> this-&gt;<a class="code" href="classQVEuclideanMapping3.html#a0f7986ac48c1fe02d6b75b15824fcaeb" title="Composes two euclidean mappings.">compose</a>(other.inverse())
+</pre></div> 
+<p>Definition at line <a class="el" href="qveuclideanmapping3_8h_source.html#l00191">191</a> of file <a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qveuclideanmapping3_8h_source.html">qveuclideanmapping3.h</a></li>
+<li>src/qvmath/<a class="el" href="qveuclideanmapping3_8cpp_source.html">qveuclideanmapping3.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

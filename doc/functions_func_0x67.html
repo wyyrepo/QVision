@@ -1,0 +1,482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li class="current"><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="functions.html"><span>All</span></a></li>
+      <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="functions_func.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_func_0x62.html#index_b"><span>b</span></a></li>
+      <li><a href="functions_func_0x63.html#index_c"><span>c</span></a></li>
+      <li><a href="functions_func_0x64.html#index_d"><span>d</span></a></li>
+      <li><a href="functions_func_0x65.html#index_e"><span>e</span></a></li>
+      <li><a href="functions_func_0x66.html#index_f"><span>f</span></a></li>
+      <li class="current"><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
+      <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_0x6a.html#index_j"><span>j</span></a></li>
+      <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
+      <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
+      <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
+      <li><a href="functions_func_0x6e.html#index_n"><span>n</span></a></li>
+      <li><a href="functions_func_0x6f.html#index_o"><span>o</span></a></li>
+      <li><a href="functions_func_0x70.html#index_p"><span>p</span></a></li>
+      <li><a href="functions_func_0x71.html#index_q"><span>q</span></a></li>
+      <li><a href="functions_func_0x72.html#index_r"><span>r</span></a></li>
+      <li><a href="functions_func_0x73.html#index_s"><span>s</span></a></li>
+      <li><a href="functions_func_0x74.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_func_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_func_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_func_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="functions_func_0x78.html#index_x"><span>x</span></a></li>
+      <li><a href="functions_func_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_func_0x7a.html#index_z"><span>z</span></a></li>
+      <li><a href="functions_func_0x7e.html#index_~"><span>~</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+&nbsp;
+
+<h3><a class="anchor" id="index_g">- g -</a></h3><ul>
+<li>gaussianVector()
+: <a class="el" href="classQVVector.html#a615053c57c2d85dce8b77622debdab9f">QVVector</a>
+</li>
+<li>getAnchor()
+: <a class="el" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6">QVGenericImage</a>
+</li>
+<li>getArgument()
+: <a class="el" href="classQVApplication.html#a115946f057c917dc38b43c7d2b340449">QVApplication</a>
+</li>
+<li>getArguments()
+: <a class="el" href="classQVApplication.html#a6379eef13e82e53ef89b390beacc91a9">QVApplication</a>
+</li>
+<li>getBestInliers()
+: <a class="el" href="classQVRANSAC.html#a28bbe6479b1babf7398e1b3215435e67">QVRANSAC&lt; Element, Model &gt;</a>
+</li>
+<li>getBestModel()
+: <a class="el" href="classQVRANSAC.html#ad45b090b62c67943d269fa25855b71ce">QVRANSAC&lt; Element, Model &gt;</a>
+</li>
+<li>getBlock()
+: <a class="el" href="classQVSparseBlockMatrix.html#a19d8143ac0013bb30353199eaf75b990">QVSparseBlockMatrix</a>
+</li>
+<li>getBlockRowIndexes()
+: <a class="el" href="classQVSparseBlockMatrix.html#a41e42237298152cf3b3da6e0e7e79c01">QVSparseBlockMatrix</a>
+</li>
+<li>getCenter()
+: <a class="el" href="classQVCameraPose.html#a57101f0fd271736866f970c1635dd7c1">QVCameraPose</a>
+</li>
+<li>getChannels()
+: <a class="el" href="classQVGenericImage.html#a3dde18969f0fe8ed9079d21540e3fc13">QVGenericImage</a>
+, <a class="el" href="classQVImage.html#a5d430b0f71799b2b2ca8f8ae8f05ca3c">QVImage&lt; Type, Channels &gt;</a>
+</li>
+<li>getClosestPoint()
+: <a class="el" href="classQV2DMap.html#a3dbbb115bfd5395a44dd643a52075f2f">QV2DMap</a>
+</li>
+<li>getClosestPoints()
+: <a class="el" href="classQV2DMap.html#a7ce06d11042ea4727b22024a732ecdca">QV2DMap</a>
+</li>
+<li>getClosestVector()
+: <a class="el" href="classQVVectorMap.html#aa3d9e5d64920be9235ca1a2b0a3392ba">QVVectorMap</a>
+</li>
+<li>getClosestVectors()
+: <a class="el" href="classQVVectorMap.html#a102aacc999f283e4ece97bca8db8df33">QVVectorMap</a>
+</li>
+<li>getCol()
+: <a class="el" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa">QVMatrix</a>
+</li>
+<li>getCols()
+: <a class="el" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb">QVCUDAImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVVideoReader.html#a05af873ddd0778c8d34a7fe5adc00a1d">QVVideoReader</a>
+, <a class="el" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a">QVGenericImage</a>
+, <a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66">QVMatrix</a>
+</li>
+<li>getCpuStat()
+: <a class="el" href="classQVProcessingBlock.html#aca59123fcdd242d3c7a867cfc942d1bb">QVProcessingBlock</a>
+</li>
+<li>getCurrent()
+: <a class="el" href="classQVIndexedStringList.html#af98ec139afe8156b993f5796b90111d3">QVIndexedStringList</a>
+</li>
+<li>getData()
+: <a class="el" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d">QVCUDAImage&lt; Type, Channels &gt;</a>
+</li>
+<li>getDataSize()
+: <a class="el" href="classQVGenericImage.html#a93cd55976a2289ba45d154c210597ea3">QVGenericImage</a>
+, <a class="el" href="classQVImage.html#a397ee658c9574be3013a68c584b3f9d0">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVMatrix.html#ae9de904f46a790bef981c0101a4ee6f6">QVMatrix</a>
+, <a class="el" href="classQVTensor.html#aaf731ea26d29371aedf67e02a1f47983">QVTensor</a>
+</li>
+<li>getDescriptors()
+: <a class="el" href="classQVBRIEFDetector.html#a0882e01e86c84b45d5c9f6e138af2cca">QVBRIEFDetector</a>
+</li>
+<li>getDestinyContainers()
+: <a class="el" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027">QVPropertyContainer</a>
+</li>
+<li>getDiscrepance()
+: <a class="el" href="classQVUKF.html#af4c53f693838f00936798fd63ec0b07b">QVUKF</a>
+</li>
+<li>getFeatureList()
+: <a class="el" href="classQVKLTFeatureTracking.html#a7507c7562e2e73a0166b47e8e9f11787">QVKLTFeatureTracking</a>
+</li>
+<li>getFeatureTracking()
+: <a class="el" href="classQVTrackingManager.html#a4e44c9d0551aa0e610ad3d1008643a67">QVTrackingManager</a>
+</li>
+<li>getFirstFrame()
+: <a class="el" href="classQVKLTFeatureTracking.html#acfe71e802d735513975c455e5e01f0d4">QVKLTFeatureTracking</a>
+</li>
+<li>getFPS()
+: <a class="el" href="classQVVideoReader.html#a096e32912c250dad3e827f1282e1a0ba">QVVideoReader</a>
+</li>
+<li>getGrayImage()
+: <a class="el" href="classQVVideoReader.html#a7c9765c5ed51cdf2349e456dc7a6f3f2">QVVideoReader</a>
+</li>
+<li>getHelp()
+: <a class="el" href="classQVApplication.html#a29268a90a2e72f550f1143e239e2e3e7">QVApplication</a>
+</li>
+<li>getId()
+: <a class="el" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e">QVPropertyContainer</a>
+</li>
+<li>getIndex()
+: <a class="el" href="classQVIndexedStringList.html#a9855746cb07868930d17476bab48f251">QVIndexedStringList</a>
+</li>
+<li>getIndexator()
+: <a class="el" href="classQVTensor.html#a1b856e5e538e752255d0d49e8509dd66">QVTensor</a>
+</li>
+<li>getInformer()
+: <a class="el" href="classQVPropertyContainer.html#a8c64c9c1074995778dbf8d517cd1c479">QVPropertyContainer</a>
+</li>
+<li>getIteration()
+: <a class="el" href="classQVProcessingBlock.html#a95c56bae078a84bf689b7ee8073bcf7c">QVProcessingBlock</a>
+</li>
+<li>getIterations()
+: <a class="el" href="classQVRANSAC.html#a69241e87115f9030f0da68c720117970">QVRANSAC&lt; Element, Model &gt;</a>
+</li>
+<li>getLastError()
+: <a class="el" href="classQVPropertyContainer.html#a14303586bf0de35498002c984408735f">QVPropertyContainer</a>
+</li>
+<li>getLastFrame()
+: <a class="el" href="classQVKLTFeatureTracking.html#a7477cf0438d610652a2fbc4788ce35b3">QVKLTFeatureTracking</a>
+</li>
+<li>getLeafNodes()
+: <a class="el" href="classQVComponentTree.html#a4b7630450cf7de6631aee95adf7d9612">QVComponentTree</a>
+</li>
+<li>getLength()
+: <a class="el" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997">QVBaseReader</a>
+, <a class="el" href="classQVVideoReader.html#afea030febc7f6e776968d10079002e37">QVVideoReader</a>
+</li>
+<li>getLinks()
+: <a class="el" href="classQVDirectedGraph.html#a1f2447948be415119b3956715b8fe8b0">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>getMajorCols()
+: <a class="el" href="classQVSparseBlockMatrix.html#a6cb89146c9191b915b8f493f0be6becc">QVSparseBlockMatrix</a>
+</li>
+<li>getMajorRows()
+: <a class="el" href="classQVSparseBlockMatrix.html#a202dae52dc2ec0501ceddc53ffc31aac">QVSparseBlockMatrix</a>
+</li>
+<li>getMaxConnectivity()
+: <a class="el" href="classQVDirectedGraph.html#ad953eb3c097c2566905efdcdffe5ac20">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>getMaxNodeIndex()
+: <a class="el" href="classQVDirectedGraph.html#a6538a2387c2fb71b3af367515fd3e142">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>getMeanConnectivity()
+: <a class="el" href="classQVDirectedGraph.html#abf57f705c153bc423ef877c7c0ec1428">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>getMinConnectivity()
+: <a class="el" href="classQVDirectedGraph.html#a901fd2a8b6e62aba1e2c58142c1c1add">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>getMinorCols()
+: <a class="el" href="classQVSparseBlockMatrix.html#ad606f1e2fe760064d0494e7c133dbed7">QVSparseBlockMatrix</a>
+</li>
+<li>getMinorRows()
+: <a class="el" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6">QVSparseBlockMatrix</a>
+</li>
+<li>getName()
+: <a class="el" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85">QVPropertyContainer</a>
+</li>
+<li>getNodesConnectivity()
+: <a class="el" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>getNumberOfArguments()
+: <a class="el" href="classQVApplication.html#ae7495c8995c30b40c3f55dc6d77bdcff">QVApplication</a>
+</li>
+<li>getNumNodes()
+: <a class="el" href="classQVComponentTree.html#afecb92bc570b9389428b6da484794ad6">QVComponentTree</a>
+</li>
+<li>getOrientation()
+: <a class="el" href="classQVCameraPose.html#a8643ae492e7a6f66679bf0cc2fc911c7">QVCameraPose</a>
+</li>
+<li>getPos()
+: <a class="el" href="classQVBaseReader.html#ab480a1785c777028fc4e73e86139fac8">QVBaseReader</a>
+, <a class="el" href="classQVVideoReader.html#ac169b0d7746551424f5ef4fe471a9c7d">QVVideoReader</a>
+</li>
+<li>getPropertyFlags()
+: <a class="el" href="classQVPropertyContainer.html#a9044690763a61b2da16735cdf42968f8">QVPropertyContainer</a>
+</li>
+<li>getPropertyInfo()
+: <a class="el" href="classQVPropertyContainer.html#afbbd3b9914406c1e237d9443ea5fa48b">QVPropertyContainer</a>
+</li>
+<li>getPropertyList()
+: <a class="el" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc">QVPropertyContainer</a>
+</li>
+<li>getPropertyListByType()
+: <a class="el" href="classQVPropertyContainer.html#a99342ac4665ab8a2dcd00b3bc7b38695">QVPropertyContainer</a>
+</li>
+<li>getPropertyMaximum()
+: <a class="el" href="classQVPropertyContainer.html#aa522f5a0b43093ca4ef90c72a499344d">QVPropertyContainer</a>
+</li>
+<li>getPropertyMinimum()
+: <a class="el" href="classQVPropertyContainer.html#a61a8accaec52384a4b0980a2fd0c2899">QVPropertyContainer</a>
+</li>
+<li>getPropertyQVariantValue()
+: <a class="el" href="classQVPropertyContainer.html#a253156f365b20fa2e0accc82dff1284f">QVPropertyContainer</a>
+</li>
+<li>getPropertyType()
+: <a class="el" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3">QVPropertyContainer</a>
+</li>
+<li>getPropertyValue()
+: <a class="el" href="classQVPropertyContainer.html#affc6008202b566e68ab20cec8b16a7ee">QVPropertyContainer</a>
+</li>
+<li>getQVPainter()
+: <a class="el" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22">QVImageCanvas</a>
+</li>
+<li>getReadData()
+: <a class="el" href="classQVTensor.html#a9e75752b76652d2a1ebc64dbc5d0df49">QVTensor</a>
+, <a class="el" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64">QVMatrix</a>
+</li>
+<li>getRGBImage()
+: <a class="el" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093">QVVideoReader</a>
+</li>
+<li>getROI()
+: <a class="el" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4">QVGenericImage</a>
+</li>
+<li>getRotation()
+: <a class="el" href="classQVEuclideanMapping3.html#a56cd60e4bd4ca255855bc6eeaa9beea4">QVEuclideanMapping3</a>
+</li>
+<li>getRow()
+: <a class="el" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80">QVMatrix</a>
+</li>
+<li>getRows()
+: <a class="el" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a">QVCUDAImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVVideoReader.html#a7e64e124eec398f4fb0dbf4263d1bb96">QVVideoReader</a>
+, <a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f">QVMatrix</a>
+, <a class="el" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3">QVGenericImage</a>
+</li>
+<li>getScheme()
+: <a class="el" href="classQVVideoReader.html#aca5a2e877a2fac39ada8b47382849881">QVVideoReader</a>
+</li>
+<li>getSetCardinality()
+: <a class="el" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84">QVDisjointSet</a>
+</li>
+<li>getSetCardinallity()
+: <a class="el" href="classQVCombinationIterator.html#a48ea97e4e1918a479a54b42c556674a7">QVCombinationIterator</a>
+</li>
+<li>getSize()
+: <a class="el" href="classQVImageCanvas.html#a012298b8e651df7d1bb5df06c590e016">QVImageCanvas</a>
+, <a class="el" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999">QVGenericImage</a>
+</li>
+<li>getSourceContainer()
+: <a class="el" href="classQVPropertyContainer.html#a350c0c7a337fb173dbfe5b384cc615eb">QVPropertyContainer</a>
+</li>
+<li>getSourceProperty()
+: <a class="el" href="classQVPropertyContainer.html#aa88d1097bf52887c07e8cf1b15e98791">QVPropertyContainer</a>
+</li>
+<li>getState()
+: <a class="el" href="classQVUKF.html#a0eb739a92938bd540883c462cf0e8428">QVUKF</a>
+</li>
+<li>getStatus()
+: <a class="el" href="classQVProcessingBlock.html#a37bbb1533327b59c24daa736d7de67e3">QVProcessingBlock</a>
+</li>
+<li>getStep()
+: <a class="el" href="classQVGenericImage.html#a73b40cb2faa1943637116da270da800d">QVGenericImage</a>
+, <a class="el" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283">QVCUDAImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">QVImage&lt; Type, Channels &gt;</a>
+</li>
+<li>getSubmatrix()
+: <a class="el" href="classQVMatrix.html#a77b34335086bb9e12d7d72398c608e75">QVMatrix</a>
+</li>
+<li>getSubsetNumber()
+: <a class="el" href="classQVCombinationIterator.html#a99acd396a8cf0bd3cdf0480585baa0ee">QVCombinationIterator</a>
+</li>
+<li>getSubsetsSize()
+: <a class="el" href="classQVCombinationIterator.html#a0bc5e95587d58f5c9e3265292cf586d0">QVCombinationIterator</a>
+</li>
+<li>getTotalPoints()
+: <a class="el" href="classQVComponentTree.html#acd3bca7b612187c099bae32386f323d5">QVComponentTree</a>
+</li>
+<li>getTrackings()
+: <a class="el" href="classQVTrackingManager.html#a886dbb89684607ec13f1897078d05780">QVTrackingManager</a>
+</li>
+<li>getTrackingsAtFrame()
+: <a class="el" href="classQVTrackingManager.html#aba824019bf7e2b1c35dc427cc2fa67b6">QVTrackingManager</a>
+</li>
+<li>getTrackingsAtLastFrame()
+: <a class="el" href="classQVTrackingManager.html#ab74651fa44e436a6bf92022163484e60">QVTrackingManager</a>
+</li>
+<li>getTranslation()
+: <a class="el" href="classQVEuclideanMapping3.html#aebfc6a4f42f4bdd7a9eb442c7c74048c">QVEuclideanMapping3</a>
+</li>
+<li>getTriggerList()
+: <a class="el" href="classQVProcessingBlock.html#addab1a41d0a9e7bbdfe47f8b81283ffc">QVProcessingBlock</a>
+</li>
+<li>getType()
+: <a class="el" href="classQVMatrix.html#a546d28cd3b62456bb4e09987c9904162">QVMatrix</a>
+</li>
+<li>getTypeQString()
+: <a class="el" href="classQVImage.html#a82511ed913536f548b1f5e10e7f8f4a1">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVGenericImage.html#a11b4c13e54a1e89d735c12f9cbec277f">QVGenericImage</a>
+, <a class="el" href="classQVImage.html#a1da886203b77c0baac9a9a8e5e31fbbb">QVImage&lt; Type, Channels &gt;</a>
+</li>
+<li>getTypeSize()
+: <a class="el" href="classQVGenericImage.html#a7429b1cdaa57edfcd7edfad8204c9024">QVGenericImage</a>
+, <a class="el" href="classQVImage.html#a70e75bb386d5b424f266a62d000e52bf">QVImage&lt; Type, Channels &gt;</a>
+</li>
+<li>getUnusedArguments()
+: <a class="el" href="classQVApplication.html#abac81490de1809d8f3d741b5a7d779a4">QVApplication</a>
+</li>
+<li>getURL()
+: <a class="el" href="classQVVideoReader.html#a9aec25744053d21fb2b56f37e5187843">QVVideoReader</a>
+</li>
+<li>getValence()
+: <a class="el" href="classQVTensor.html#ada0f3000987c85bbaaa3c02e4b69aada">QVTensor</a>
+</li>
+<li>getViewport()
+: <a class="el" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052">QVImageCanvas</a>
+</li>
+<li>getWriteData()
+: <a class="el" href="classQVImage.html#a231507d781e33e508fac771b5284c3c9">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVTensor.html#a9d5c2f2d4fd11123354d7568400d2b8e">QVTensor</a>
+, <a class="el" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a">QVMatrix</a>
+</li>
+<li>getYUVImage()
+: <a class="el" href="classQVVideoReader.html#af79c7379cbbfc613b64d21a74eb7f8eb">QVVideoReader</a>
+</li>
+<li>getZoom()
+: <a class="el" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9">QVImageCanvas</a>
+</li>
+<li>grab()
+: <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140">QVVideoReader</a>
+, <a class="el" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d">QVBaseReader</a>
+</li>
+<li>grabbed()
+: <a class="el" href="classQVVideoReaderBlock.html#a2ccdf398a2b53b1fa81d328eccbce206">QVVideoReaderBlock</a>
+</li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

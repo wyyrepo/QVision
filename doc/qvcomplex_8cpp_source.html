@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvcomplex.cpp</h1><a href="qvcomplex_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;QVComplex&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00029"></a>00029 <span class="comment">// Constructors</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78">00031</a> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex::QVComplex</a>():_real(0.0), _imaginary(0.0)                                                      { }
+<a name="l00032"></a><a class="code" href="classQVComplex.html#abaebcbe26a30c33f70d3d19a683fa3b7">00032</a> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex::QVComplex</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex): _real(complex._real), _imaginary(complex._imaginary)    { }
+<a name="l00033"></a><a class="code" href="classQVComplex.html#a908417d55a10387812ebf3000f47269e">00033</a> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex::QVComplex</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> real, <span class="keyword">const</span> <span class="keywordtype">double</span> imaginary): _real(real), _imaginary(imaginary)     { }
+<a name="l00034"></a><a class="code" href="classQVComplex.html#abf6b2872ac74e7b8aefd50742678d15c">00034</a> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex::QVComplex</a>(<span class="keyword">const</span> QPointF &amp;point): _real(point.x()), _imaginary(point.y())                     { }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classQVComplex.html#ad126bb0526badc34e24ca39398c53d31">00036</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp; <a class="code" href="classQVComplex.html#ad126bb0526badc34e24ca39398c53d31" title="Copy operator.">QVComplex::operator=</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)
+<a name="l00037"></a>00037     {
+<a name="l00038"></a>00038     _real = complex._real;
+<a name="l00039"></a>00039     _imaginary = complex._imaginary;
+<a name="l00040"></a>00040     <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00041"></a>00041     }
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="classQVComplex.html#a585033e23669137089afa0cd5c147f19">00043</a> <span class="keywordtype">bool</span> <a class="code" href="classQVComplex.html#a585033e23669137089afa0cd5c147f19" title="Complex-complex equality operator.">QVComplex::operator==</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)<span class="keyword">            const   </span>{ <span class="keywordflow">return</span> (_real == complex._real) and (_imaginary == complex._imaginary);       };
+<a name="l00044"></a><a class="code" href="classQVComplex.html#ada7a3161b6da2094c68d43c91595ff23">00044</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp; <a class="code" href="classQVComplex.html#ada7a3161b6da2094c68d43c91595ff23" title="Complex-complex incremental operator.">QVComplex::operator+=</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)             { _real += complex._real; _imaginary += complex._imaginary; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }
+<a name="l00045"></a><a class="code" href="classQVComplex.html#afaac911c41aa799e16ab86c2499c0f88">00045</a> <span class="keywordtype">bool</span> <a class="code" href="classQVComplex.html#afaac911c41aa799e16ab86c2499c0f88" title="Complex-complex unequality operator.">QVComplex::operator!=</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)<span class="keyword">            const   </span>{ <span class="keywordflow">return</span> (_real != complex._real) or (_imaginary != complex._imaginary);        };
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="classQVComplex.html#acffd76d37a9fb9a6032d2484a71b004c">00047</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#acffd76d37a9fb9a6032d2484a71b004c" title="Complex-complex product operator.">QVComplex::operator*</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)<span class="keyword">        const</span>
+<a name="l00048"></a>00048 <span class="keyword">    </span>{
+<a name="l00049"></a>00049     <span class="comment">/* Maple code</span>
+<a name="l00050"></a>00050 <span class="comment">    n := (r1 + i1*I) * (r2 + i2*I):</span>
+<a name="l00051"></a>00051 <span class="comment">    evalc(Re(n));</span>
+<a name="l00052"></a>00052 <span class="comment">    evalc(Im(n));</span>
+<a name="l00053"></a>00053 <span class="comment">    */</span>
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(   _real * complex._real - _imaginary * complex._imaginary,
+<a name="l00055"></a>00055                 _real * complex._imaginary + _imaginary * complex._real);
+<a name="l00056"></a>00056     };
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="classQVComplex.html#a1b7fdffa93b10b721bc914be159f4125">00058</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#a1b7fdffa93b10b721bc914be159f4125" title="Complex-complex division.">QVComplex::operator/</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)<span class="keyword">        const</span>
+<a name="l00059"></a>00059 <span class="keyword">    </span>{
+<a name="l00060"></a>00060     <span class="comment">/* Maple code</span>
+<a name="l00061"></a>00061 <span class="comment">    n := (r1 + i1*I) / (r2 + i2*I):</span>
+<a name="l00062"></a>00062 <span class="comment">    evalc(Re(n));</span>
+<a name="l00063"></a>00063 <span class="comment">    evalc(Im(n));</span>
+<a name="l00064"></a>00064 <span class="comment">    */</span>
+<a name="l00065"></a>00065     <span class="keyword">const</span> <span class="keywordtype">double</span> denominator = POW2(complex._real) + POW2(complex._imaginary);
+<a name="l00066"></a>00066     <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(   (_real * complex._real + _imaginary * complex._imaginary) / denominator,
+<a name="l00067"></a>00067             (_imaginary * complex._real - _real * complex._imaginary) / denominator);
+<a name="l00068"></a>00068     }
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="classQVComplex.html#a38f5464dd430dfac70ba1aae91f244a2">00070</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#a38f5464dd430dfac70ba1aae91f244a2" title="Complex-complex addition operator.">QVComplex::operator+</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)<span class="keyword">        const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(_real + complex._real, _imaginary + complex._imaginary);     };
+<a name="l00071"></a><a class="code" href="classQVComplex.html#a4498379eac055a759b74d2e9b455fae2">00071</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#adc088f9dbd8fb5fee2dbcb2d09032b38" title="Obtains the additive inverse of the complex.">QVComplex::operator-</a>(<span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex)<span class="keyword">        const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(_real - complex._real, _imaginary - complex._imaginary);     };
+<a name="l00072"></a><a class="code" href="classQVComplex.html#adc088f9dbd8fb5fee2dbcb2d09032b38">00072</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#adc088f9dbd8fb5fee2dbcb2d09032b38" title="Obtains the additive inverse of the complex.">QVComplex::operator-</a>()<span class="keyword">                                const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(-_real, -_imaginary);        };
+<a name="l00073"></a><a class="code" href="classQVComplex.html#a86336df1451fb2eb85cf79b19046e2af">00073</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#acffd76d37a9fb9a6032d2484a71b004c" title="Complex-complex product operator.">QVComplex::operator*</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword">              const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(value * _real, value * _imaginary);  };
+<a name="l00074"></a><a class="code" href="classQVComplex.html#a3a9127f78bd5b53333d528e7bf35aa36">00074</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#a1b7fdffa93b10b721bc914be159f4125" title="Complex-complex division.">QVComplex::operator/</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword">              const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(_real / value, _imaginary / value);  };
+<a name="l00075"></a><a class="code" href="classQVComplex.html#a3e510f4968ce1d5b0ecd22f7bbb44ba3">00075</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#a38f5464dd430dfac70ba1aae91f244a2" title="Complex-complex addition operator.">QVComplex::operator+</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword">              const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(_real + value, _imaginary);  };
+<a name="l00076"></a><a class="code" href="classQVComplex.html#a4e1705f37ca0c89d53670fa7ec6b8449">00076</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#adc088f9dbd8fb5fee2dbcb2d09032b38" title="Obtains the additive inverse of the complex.">QVComplex::operator-</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword">              const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>(_real - value, _imaginary);  };
+<a name="l00077"></a><a class="code" href="classQVComplex.html#ab13613331500f6433425da7fd187d206">00077</a> <span class="keywordtype">double</span> <a class="code" href="classQVComplex.html#ab13613331500f6433425da7fd187d206" title="Gets the norm2 for complex.">QVComplex::norm2</a>()<span class="keyword">                                       const   </span>{ <span class="keywordflow">return</span> sqrt( POW2(_real) + POW2(_imaginary) ); }
+<a name="l00078"></a><a class="code" href="classQVComplex.html#a8de38671ae4ef50c10824815b7648479">00078</a> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> <a class="code" href="classQVComplex.html#a8de38671ae4ef50c10824815b7648479" title="Creates the unit imaginary value.">QVComplex::i</a>()                                                { <span class="keywordflow">return</span> <a class="code" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78" title="Default constructor.">QVComplex</a>( 0.0, 1.0); }
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 
+<a name="l00082"></a><a class="code" href="group__qvmath.html#gaf32edeb19dd7ba0327a1405ffd78cea4">00082</a> std::ostream&amp; operator &lt;&lt; ( std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classQVComplex.html" title="Implementation of complex numbers.">QVComplex</a> &amp;complex )
+<a name="l00083"></a>00083     {
+<a name="l00084"></a>00084     <span class="keywordflow">if</span> (complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>() == 0.0)
+<a name="l00085"></a>00085         os &lt;&lt; complex.<a class="code" href="classQVComplex.html#a8205f0bb88be6cc2f7f41a39e034d7ab" title="Get real component of complex value.">real</a>();
+<a name="l00086"></a>00086     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (complex.<a class="code" href="classQVComplex.html#a8205f0bb88be6cc2f7f41a39e034d7ab" title="Get real component of complex value.">real</a>() == 0.0)
+<a name="l00087"></a>00087         {
+<a name="l00088"></a>00088         <span class="keywordflow">if</span> (complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>() == 1.0)
+<a name="l00089"></a>00089             os &lt;&lt; <span class="stringliteral">&quot;i&quot;</span>;
+<a name="l00090"></a>00090         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>() == -1.0)
+<a name="l00091"></a>00091             os &lt;&lt; <span class="stringliteral">&quot;-i&quot;</span>;
+<a name="l00092"></a>00092         <span class="keywordflow">else</span>
+<a name="l00093"></a>00093             os &lt;&lt; complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>() &lt;&lt; <span class="stringliteral">&quot;i&quot;</span>;
+<a name="l00094"></a>00094         }
+<a name="l00095"></a>00095     <span class="keywordflow">else</span>        {
+<a name="l00096"></a>00096         os &lt;&lt; complex.<a class="code" href="classQVComplex.html#a8205f0bb88be6cc2f7f41a39e034d7ab" title="Get real component of complex value.">real</a>();
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098         <span class="keywordflow">if</span> (complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>() &lt; 0)
+<a name="l00099"></a>00099             os &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;
+<a name="l00100"></a>00100         <span class="keywordflow">else</span>
+<a name="l00101"></a>00101             os &lt;&lt; <span class="stringliteral">&quot; + &quot;</span>;
+<a name="l00102"></a>00102         <span class="keywordflow">if</span> (complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>() == 1.0)
+<a name="l00103"></a>00103             os &lt;&lt; <span class="stringliteral">&quot;i&quot;</span>;
+<a name="l00104"></a>00104         <span class="keywordflow">else</span>
+<a name="l00105"></a>00105             os &lt;&lt; ABS(complex.<a class="code" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d" title="Get imaginary component of complex value.">imaginary</a>()) &lt;&lt; <span class="stringliteral">&quot;i&quot;</span>;
+<a name="l00106"></a>00106         }
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     <span class="keywordflow">return</span> os;
+<a name="l00109"></a>00109     }
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

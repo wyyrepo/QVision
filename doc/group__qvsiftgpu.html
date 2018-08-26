@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>SIFT GPU wrapper functions<br/>
+<small>
+[<a class="el" href="group__qvip.html">Image processing</a>]</small>
+</h1>
+<p>Wrapper classes and functions for the GPU implementation of SIFT.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsiftgpu.html#ga84ba9885258ee2d66f7a577ea09a4062">getSiftGPUFeatures</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, <a class="el" href="group__qvcuda.html#ga9e7ea30ae00a3e8671079437153458a0">nvidia_method</a> method=CUDA_METHOD, bool computeDescriptors=FALSE, double filterWidthFactor=4.0, double orientationSampleWindow=2.0, double descriptorGridSize=3.0, int firstOctave=0, double thresholdDoG=0.02/3, double thresholdEdge=10.0, int d=3, int v=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Find SIFT features in an image using user-specified parameter values, using NVIDIA CUDA.  <a href="#ga84ba9885258ee2d66f7a577ea09a4062"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPair&lt; int, int &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsiftgpu.html#gaafeabf762b94906e7ea2ffe8893866e6">matchSiftGPUFeatures</a> (const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt; img1features, const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt; img2features, const float distmax=0.7, const float ratiomax=0.8, const bool mutual_best_match=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Match SIFT features between a pair of images using using NVIDIA CUDA.  <a href="#gaafeabf762b94906e7ea2ffe8893866e6"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Wrapper classes and functions for the GPU implementation of SIFT. </p>
+<p>This group contains wrapper functions for the <a href="http://www.cs.unc.edu/~ccwu/siftgpu/">SIFT GPU</a> implementation of <a href="http://cs.unc.edu/~ccwu/">Changchang Wu</a>. You can enable the QVision compatibility with this software in the <em>config.pri</em> file. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga84ba9885258ee2d66f7a577ea09a4062"></a><!-- doxytag: member="qvsiftgpu.h::getSiftGPUFeatures" ref="ga84ba9885258ee2d66f7a577ea09a4062" args="(const QVImage&lt; uChar &gt; &amp;image, nvidia_method method=CUDA_METHOD, bool computeDescriptors=FALSE, double filterWidthFactor=4.0, double orientationSampleWindow=2.0, double descriptorGridSize=3.0, int firstOctave=0, double thresholdDoG=0.02/3, double thresholdEdge=10.0, int d=3, int v=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QList&lt;<a class="el" href="classQVSiftFeature.html">QVSiftFeature</a>&gt; getSiftGPUFeatures </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__qvcuda.html#ga9e7ea30ae00a3e8671079437153458a0">nvidia_method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>CUDA_METHOD</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>computeDescriptors</em> = <code>FALSE</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>filterWidthFactor</em> = <code>4.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>orientationSampleWindow</em> = <code>2.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>descriptorGridSize</em> = <code>3.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>firstOctave</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>thresholdDoG</em> = <code>0.02/3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>thresholdEdge</em> = <code>10.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>d</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>v</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Find SIFT features in an image using user-specified parameter values, using NVIDIA CUDA. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>The image in which to detect features. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>method</em>&nbsp;</td><td>0=CUDA, 1=GLSL, 2=CG </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>computeDescriptors</em>&nbsp;</td><td>Skip descriptor computation if TRUE (not modifiable after initialization) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>filterWidthFactor</em>&nbsp;</td><td>Factor for filter width (2*factor*sigma+1). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>orientationSampleWindow</em>&nbsp;</td><td>Factor for orientation sample window (2*factor*sigma). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>descriptorGridSize</em>&nbsp;</td><td>Factor for descriptor grid size (4*factor*sigma). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>firstOctave</em>&nbsp;</td><td>First octave to start detection. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>thresholdDoG</em>&nbsp;</td><td>DoG threshold. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>thresholdEdge</em>&nbsp;</td><td>Edge threshold.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the list of obtained keypoints (with descriptors if sd is not TRUE). </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsiftgpu_8cpp_source.html#l00044">44</a> of file <a class="el" href="qvsiftgpu_8cpp_source.html">qvsiftgpu.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaafeabf762b94906e7ea2ffe8893866e6"></a><!-- doxytag: member="qvsiftgpu.h::matchSiftGPUFeatures" ref="gaafeabf762b94906e7ea2ffe8893866e6" args="(const QList&lt; QVSiftFeature &gt; img1features, const QList&lt; QVSiftFeature &gt; img2features, const float distmax=0.7, const float ratiomax=0.8, const bool mutual_best_match=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QPair&lt;int, int&gt; &gt; matchSiftGPUFeatures </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>img1features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>img2features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&nbsp;</td>
+          <td class="paramname"> <em>distmax</em> = <code>0.7</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&nbsp;</td>
+          <td class="paramname"> <em>ratiomax</em> = <code>0.8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>mutual_best_match</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Match SIFT features between a pair of images using using NVIDIA CUDA. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>img1features</em>&nbsp;</td><td>List of SIFT features from image 1. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>img2features</em>&nbsp;</td><td>List of SIFT features from image 2. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>distmax</em>&nbsp;</td><td>Maximum distance of SIFT descriptor. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ratiomax</em>&nbsp;</td><td>Maximum distance ratio. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mutualBestMatch</em>&nbsp;</td><td>Mutual best match or one way.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns set of matchings. Each matching contains two index references, one for the feature in each input feature list. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsiftgpu_8cpp_source.html#l00154">154</a> of file <a class="el" href="qvsiftgpu_8cpp_source.html">qvsiftgpu.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

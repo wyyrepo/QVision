@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li class="current"><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="functions.html"><span>All</span></a></li>
+      <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="functions.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_0x62.html#index_b"><span>b</span></a></li>
+      <li><a href="functions_0x63.html#index_c"><span>c</span></a></li>
+      <li><a href="functions_0x64.html#index_d"><span>d</span></a></li>
+      <li><a href="functions_0x65.html#index_e"><span>e</span></a></li>
+      <li><a href="functions_0x66.html#index_f"><span>f</span></a></li>
+      <li><a href="functions_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="functions_0x68.html#index_h"><span>h</span></a></li>
+      <li><a href="functions_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_0x6a.html#index_j"><span>j</span></a></li>
+      <li><a href="functions_0x6b.html#index_k"><span>k</span></a></li>
+      <li><a href="functions_0x6c.html#index_l"><span>l</span></a></li>
+      <li><a href="functions_0x6d.html#index_m"><span>m</span></a></li>
+      <li><a href="functions_0x6e.html#index_n"><span>n</span></a></li>
+      <li><a href="functions_0x6f.html#index_o"><span>o</span></a></li>
+      <li><a href="functions_0x70.html#index_p"><span>p</span></a></li>
+      <li><a href="functions_0x71.html#index_q"><span>q</span></a></li>
+      <li><a href="functions_0x72.html#index_r"><span>r</span></a></li>
+      <li class="current"><a href="functions_0x73.html#index_s"><span>s</span></a></li>
+      <li><a href="functions_0x74.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="functions_0x78.html#index_x"><span>x</span></a></li>
+      <li><a href="functions_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_0x7a.html#index_z"><span>z</span></a></li>
+      <li><a href="functions_0x7e.html#index_~"><span>~</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+Here is a list of all documented class members with links to the class documentation for each member:
+
+<h3><a class="anchor" id="index_s">- s -</a></h3><ul>
+<li>scalarAdd()
+: <a class="el" href="classQVMatrix.html#af1286b0c208cec68dd42e5411b210081">QVMatrix</a>
+, <a class="el" href="classQVVector.html#a752f2f2f18796a3bc883236dea74908e">QVVector</a>
+</li>
+<li>scalarDivide()
+: <a class="el" href="classQVMatrix.html#ab87d29d63b8f41ff3f4a812a813f7718">QVMatrix</a>
+</li>
+<li>scalarDivision()
+: <a class="el" href="classQVVector.html#a943a6862968b73e8d42b18096b992875">QVVector</a>
+</li>
+<li>scalarMultiplication()
+: <a class="el" href="classQVVector.html#a7783edc2a21a8d5002ae377ec2a82027">QVVector</a>
+</li>
+<li>scalarProduct()
+: <a class="el" href="classQVMatrix.html#a75ac95f4f6c88b4354e4e8aeab5b13a1">QVMatrix</a>
+, <a class="el" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead">QVVector</a>
+</li>
+<li>scalarSubstract()
+: <a class="el" href="classQVMatrix.html#a6980327fe32d68ae6028482a8a96200e">QVMatrix</a>
+, <a class="el" href="classQVVector.html#a67a7bf9f5130d269aaf8601da877a1aa">QVVector</a>
+</li>
+<li>scale()
+: <a class="el" href="classQVKeypoint.html#a2956acf9396b76e3b94a1e7a62351c5c">QVKeypoint</a>
+</li>
+<li>scaleMatrix()
+: <a class="el" href="classQVMatrix.html#ae85e5758081def4123365e2b949e8028">QVMatrix</a>
+</li>
+<li>seed
+: <a class="el" href="classQVMSER.html#aca09ffbbcd424aaf0f6ac66d75c1f9f0">QVMSER</a>
+</li>
+<li>seedX()
+: <a class="el" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb">QVComponentTree</a>
+</li>
+<li>seedY()
+: <a class="el" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862">QVComponentTree</a>
+</li>
+<li>seek()
+: <a class="el" href="classQVBaseReader.html#a7f47dba42a7dbdd9c04b364b8bf890b0">QVBaseReader</a>
+, <a class="el" href="classQVVideoReader.html#aef184d33d65b5e7cca33189a148f1037">QVVideoReader</a>
+</li>
+<li>set()
+: <a class="el" href="classQVImage.html#addec4b1d837eb849d4b8605c1a86e3ac">QVImage&lt; Type, Channels &gt;</a>
+, <a class="el" href="classQVMatrix.html#ae6b416b2be44685dab80600afd239ed4">QVMatrix</a>
+, <a class="el" href="classQVVector.html#a4bad482bf1ebb4d38c2e3a8c16047f7a">QVVector</a>
+</li>
+<li>setAnchor()
+: <a class="el" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac">QVGenericImage</a>
+</li>
+<li>setArgumentAsUsed()
+: <a class="el" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33">QVApplication</a>
+</li>
+<li>setBlock()
+: <a class="el" href="classQVSparseBlockMatrix.html#a0cb729d3480d161417812d5ddbc2b378">QVSparseBlockMatrix</a>
+</li>
+<li>setCol()
+: <a class="el" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a">QVMatrix</a>
+</li>
+<li>setColor()
+: <a class="el" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a">QVImageCanvas</a>
+</li>
+<li>setIndex()
+: <a class="el" href="classQVIndexedStringList.html#a2caf19a347dcdfb356a95875dda981de">QVIndexedStringList</a>
+</li>
+<li>setLastError()
+: <a class="el" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a">QVPropertyContainer</a>
+</li>
+<li>setLowHigh()
+: <a class="el" href="classQVImageCanvas.html#a5b3506a49bedc014967502dba9a0a59e">QVImageCanvas</a>
+</li>
+<li>setMinimumDelay()
+: <a class="el" href="classQVProcessingBlock.html#a511e811818f28903b60631a550f86b55">QVProcessingBlock</a>
+</li>
+<li>setName()
+: <a class="el" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f">QVPropertyContainer</a>
+</li>
+<li>setPrintStatsFrequency()
+: <a class="el" href="classQVProcessingBlock.html#af9896015375318688fb78012a08cddfb">QVProcessingBlock</a>
+</li>
+<li>setPrintTags()
+: <a class="el" href="classQVImageCanvas.html#a1cf2eec22039d5793791a3109348bcfe">QVImageCanvas</a>
+</li>
+<li>setPropertyValue()
+: <a class="el" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c">QVPropertyContainer</a>
+</li>
+<li>setRadius()
+: <a class="el" href="classQVImageCanvas.html#a7f4e77bc5830094390b2857aacba4236">QVImageCanvas</a>
+</li>
+<li>setROI()
+: <a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">QVGenericImage</a>
+</li>
+<li>setRotation()
+: <a class="el" href="classQVEuclideanMapping3.html#a6860de8604ce1846261d2c8056b19dfd">QVEuclideanMapping3</a>
+</li>
+<li>setRow()
+: <a class="el" href="classQVMatrix.html#a002135a00c7da0bce059a47bc1def347">QVMatrix</a>
+</li>
+<li>setSaturationRange()
+: <a class="el" href="classQVImageCanvas.html#abd0e106aa4bf642f6caf41624c00c43c">QVImageCanvas</a>
+</li>
+<li>setState()
+: <a class="el" href="classQVUKF.html#a473451fad3c9b2016fed435a9902e2c7">QVUKF</a>
+</li>
+<li>setSubmatrix()
+: <a class="el" href="classQVMatrix.html#ac5ce9ed25c533d7b89abe5b6a5c6df3e">QVMatrix</a>
+</li>
+<li>setTerminateOnLastBlock()
+: <a class="el" href="classQVApplication.html#aed7dd19235aed68747f5b35de5196788">QVApplication</a>
+</li>
+<li>setTranslation()
+: <a class="el" href="classQVEuclideanMapping3.html#aa96f1f838588196ee38ded4185db00a7">QVEuclideanMapping3</a>
+</li>
+<li>setType()
+: <a class="el" href="classQVMatrix.html#a5ff2ac8ea4e316fc793d32ce09671e8c">QVMatrix</a>
+</li>
+<li>show()
+: <a class="el" href="classQVGUI.html#aeda9d300364e3f709b6ba1aaf76efcd3">QVGUI</a>
+</li>
+<li>signature()
+: <a class="el" href="classQVPermutation.html#a270bd86cab5d13026a2ceb1967e83c25">QVPermutation</a>
+</li>
+<li>size()
+: <a class="el" href="classQVKLTFeatureTracking.html#aefff1609456664f59d901b640fbd7591">QVKLTFeatureTracking</a>
+</li>
+<li>slice()
+: <a class="el" href="classQVTensor.html#abeec4ea63ea5cac0bec9985b89d6c11b">QVTensor</a>
+</li>
+<li>sourceClosed()
+: <a class="el" href="classQVVideoReader.html#a887bd81fc95920d2fd8123949db59086">QVVideoReader</a>
+</li>
+<li>sourceOpened()
+: <a class="el" href="classQVVideoReader.html#a24596d37c6e4c6098f2460d22b9c33c8">QVVideoReader</a>
+</li>
+<li>startItems()
+: <a class="el" href="classQVApplication.html#ae9afd38de95ccabd4e8680d96e98d42f">QVApplication</a>
+</li>
+<li>startIteration()
+: <a class="el" href="classQVProcessingBlock.html#a2be02b18fe1e03a2dd3a51b589e61f69">QVProcessingBlock</a>
+</li>
+<li>statusUpdate()
+: <a class="el" href="classQVProcessingBlock.html#af6d73eb86583ac05cc86e9dcd2da4f19">QVProcessingBlock</a>
+</li>
+<li>step()
+: <a class="el" href="classQVProcessingBlock.html#a3f4dd477633e707ec876aa5f8677d18c">QVProcessingBlock</a>
+</li>
+<li>stop()
+: <a class="el" href="classQVProcessingBlock.html#ace1cb7c1c822c3f4b32782528a3b9a99">QVProcessingBlock</a>
+</li>
+<li>Stopped
+: <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a598549c56ecfbe02fbc7a71825bde564">QVProcessingBlock</a>
+</li>
+<li>substract()
+: <a class="el" href="classQVVector.html#a6aeacd80798f80447989c0cb016c7a48">QVVector</a>
+, <a class="el" href="classQVMatrix.html#ac65404c74ffc0f41f6d22a3fd6914f8a">QVMatrix</a>
+, <a class="el" href="classQVTensor.html#a9c310f3902d33a4572b36147b887a3a5">QVTensor</a>
+</li>
+<li>subVector()
+: <a class="el" href="classQVVector.html#a3206fc1db84f548568298c6326b7c0fa">QVVector</a>
+</li>
+<li>sum()
+: <a class="el" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646">QVVector</a>
+</li>
+<li>surrounds()
+: <a class="el" href="classQVPolylineF.html#a83d2ba5a58c11438dbc1e4e6d2b0dda4">QVPolylineF</a>
+</li>
+<li>Symmetric
+: <a class="el" href="classQVMatrix.html#a8f4414e6cfd14fe164a164ab20379999a70d0ec7b265bc849efccd60db9c40a5a">QVMatrix</a>
+</li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

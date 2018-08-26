@@ -1,0 +1,911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVDisjointSet Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVDisjointSet" -->
+<p>Implementation of a disjoint set data type, based on the <a href="http://en.wikipedia.org/wiki/Disjoint-set_data_structure">union-find algorithm</a>.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvdisjointset_8h_source.html">QVDisjointSet</a>&gt;</code></p>
+
+<p><a href="classQVDisjointSet-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b">QVDisjointSet</a> (uInt numElements)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a disjoint set.  <a href="#aa5ca745800720b7234d2455e72a3301b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet</a> (uInt cols, uInt rows)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> object, that will maintain a partition of the set of pixels in an image.  <a href="#a403db4da44d59cbd9088b81b3293ccae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;image)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> object, that will maintain a partition of the set of pixels in a given image.  <a href="#a7af53f9dd45d67e1ee3429582637b5b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a89e21b6bcc9a6e89adea9debf32661ca">QVDisjointSet</a> (const <a class="el" href="classQVDisjointSet.html">QVDisjointSet</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#a89e21b6bcc9a6e89adea9debf32661ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be">find</a> (QPoint p)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded version of find, for partitions over the set of points contained in an image.  <a href="#adb359c333540ac1d8a7e820f799c63be"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">find</a> (uInt col, uInt row)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded version of find, for partitions over the set of points contained in an image.  <a href="#aecc85e8893897ff5f1caabc0c3cf27a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">find</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a common integer identifier, for any element in the same subset of the partition.  <a href="#aef6e9f646b8f08e1dc0c22a8afcb46e0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e">unify</a> (QPoint p1, QPoint p2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Joins two subsets of points.  <a href="#a092d79e584f33905948f5e812fdb963e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">unify</a> (uInt c1, uInt r1, uInt c2, uInt r2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded version of unify, for partitions over the set of points contained in an image.  <a href="#abb8eb0283fbda257f635f3920e6d232f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701">unify</a> (uInt index1, uInt index2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Joins two subsets.  <a href="#a0da75d74cd958218f3919b4256f7b701"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84">getSetCardinality</a> (const QPoint &amp;p1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of elements contained in the set that includes the given element.  <a href="#a59327bbf6e60cbb00d23af810192ad84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a1351654178fe3c4053c0476db3c9be67">getSetCardinality</a> (uInt col, uInt row)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of elements contained in the set that uncles the given element.  <a href="#a1351654178fe3c4053c0476db3c9be67"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a4b41d194508953d51987a6f5a9f2bcc5">getSetCardinality</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of elements contained in the set that includes the given element.  <a href="#a4b41d194508953d51987a6f5a9f2bcc5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a51e16b7f3b5df034c3231ca92242c4c3">numberOfSets</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of different subgroups contained in the disjoint set.  <a href="#a51e16b7f3b5df034c3231ca92242c4c3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41">index</a> (QPoint p) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number corresponding to the given point, in the integer set.  <a href="#a1e8ca8f33af020cce71d5d92b9bbcc41"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a208c4013bbd70ec527d3b7a7f1790467">index</a> (uInt col, uInt row) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number corresponding to the given point, in the integer set.  <a href="#a208c4013bbd70ec527d3b7a7f1790467"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#a688371533eece0d10111053c6f05076f">isRootElement</a> (uInt col, uInt row) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks if a given element is the root of its set.  <a href="#a688371533eece0d10111053c6f05076f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html#abbaef0cb2a1ad2d6fd217e294b6090f1">isRootElement</a> (uInt index) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks if a given element is the root of its set.  <a href="#abbaef0cb2a1ad2d6fd217e294b6090f1"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of a disjoint set data type, based on the <a href="http://en.wikipedia.org/wiki/Disjoint-set_data_structure">union-find algorithm</a>. </p>
+<p>This implementation makes use of  <a href="http://en.wikipedia.org/wiki/Disjoint-set_data_structure#Disjoint-set_forests">union-find</a> algorithms to maintain partitions efficiently. It is essentially built for maintaining disjoint sets of unsigned integer elements, in the rank from 0 to a given maximum element.</p>
+<p><a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> objects created with the constructor <a class="el" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b">QVDisjointSet(uInt)</a> partition the set <img class="formulaInl" alt="$ S_{maxElement} \in \aleph, S_{maxElement} = \{0 .. maxElement\} $" src="form_23.png"/> in <em>maxElement</em> different sets, each one containing one of the elements of the set <img class="formulaInl" alt="$ S_{maxElement} $" src="form_24.png"/>. Given 'maxElement' will be pass to the constructor to allocate data for the disjoint set.</p>
+<p>Later, <a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701">unify(uInt,uInt)</a> and <a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">find(uInt)</a> functions can be used respectively to join subsets of the partition, and to find which elements of the set <img class="formulaInl" alt="$ S_{maxElement} $" src="form_24.png"/> are in the same subset.</p>
+<p>Internally, all elements contained in the same subset in a partition are linked with one of those elements. That element will be the canonical element of the subset, and <a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">find(uInt)</a> function retrieves that integer value.</p>
+<p>Join two subsets is as simple as using <a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701">unify(uInt,uInt)</a> passing as parameters an element from each subset. After joining, using <a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">find(uInt)</a> with any of those elements, or any contained in the original two sets joined, will return the same canonical element.</p>
+<p>The class <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> can be used to maintain partitions of general sets, as long as there is a bijection mapping between the set to be partitioned, and a set <img class="formulaInl" alt="$ S_{maxElement} $" src="form_24.png"/>. An example of use of the class <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a>, for a general set <img class="formulaInl" alt="$ G $" src="form_25.png"/> given <em>G_MAX_ELEMENT</em> being the element to which corresponds the maximal integer value, could be this:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Create disjoint set, with at least as many elements as the set G.</span>
+<a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> disjointSet(G_MAX_ELEMENT.toInt());
+
+[...]
+
+<span class="comment">// Let element1, element2, ... be elements contained in the set G.</span>
+<span class="comment">// Configure structure of the disjoint set using unify function:</span>
+disjointSet.unify(element1.toInt(), element2.toInt());
+disjointSet.unify(element3.toInt(), element4.toInt());
+[...]
+
+<span class="comment">// Let elementA and elementB be elements contained in the set G.</span>
+<span class="comment">// Test whether elementA and elementB are contained in the same subset of the partition:</span>
+<span class="keywordflow">if</span> (disjointSet.find(elementA.toInt()) == disjointSet.find(elementB.toInt()))
+    <span class="comment">// case elements belong to the same subset in the disjoint set.</span>
+<span class="keywordflow">else</span>
+    <span class="comment">// elementA and elementB are not in the same subset of the disjoint set.</span>
+
+[...]
+</pre></div><p>This class however is specially design for dealing with sets of points in an image. Constructors <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt,uInt)</a> and <a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet(const QVGenericImage&amp;)</a> can be used to create disjoint sets prepared to represent a partition of the set of pixels contained in an image, without the need of converting points in the image, to integer values.</p>
+<p>For that matter, functions union and find were overloaded to receive points in QPoint format (see <a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be">find(QPoint)</a> and <a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e">unify(QPoint,QPoint)</a> functions), and in coordinate pair format (see <a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">find(uInt,uInt)</a> and <a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">unify(uInt,uInt,uInt,uInt)</a> functions). The previous example, using <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> to partitionate the points in a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>, could be rewritten like this:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// The QVImage to partition:</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image(cols, rows);
+
+<span class="comment">// Create disjoint set, from</span>
+<a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> disjointSet(image);
+
+[...]
+
+<span class="comment">// Configure structure of the disjoint set using unify function:</span>
+disjointSet.unify(QPoint(1,2), QPoint(2,1));
+disjointSet.unify(QPoint(4,5), QPoint(3,4));
+[...]
+
+<span class="comment">// Test whether points (10,9) and (8,8) are contained in the same subset of the partition:</span>
+<span class="keywordflow">if</span> (disjointSet.find(QPoint(10,9)) == disjointSet.find(QPoint(8,8)))
+    <span class="comment">// case points belong to the same subset in the disjoint set.</span>
+<span class="keywordflow">else</span>
+    <span class="comment">// given points are not in the same subset of the disjoint set.</span>
+
+[...]
+</pre></div><p>It can also be rewritten using <a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">find(uInt,uInt)</a>, <a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">unify(uInt,uInt,uInt,uInt)</a>, and <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt,uInt)</a>, coordinate pair format overloaded versions of those functions:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// The QVImage to partition:</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image(cols, rows);
+
+<span class="comment">// Create disjoint set, from</span>
+<a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> disjointSet(cols, rows);
+
+[...]
+
+<span class="comment">// Configure structure of the disjoint set using unify function:</span>
+disjointSet.unify(1, 2, 2, 1));
+disjointSet.unify(4, 5, 3, 4));
+[...]
+
+<span class="comment">// Test whether points (10,9) and (8,8) are contained in the same subset of the partition:</span>
+<span class="keywordflow">if</span> (disjointSet.find(10,9) == disjointSet.find(8,8))
+    <span class="comment">// case points belong to the same subset in the disjoint set.</span>
+<span class="keywordflow">else</span>
+    <span class="comment">// given points are not in the same subset of the disjoint set.</span>
+
+[...]
+</pre></div> 
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00128">128</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa5ca745800720b7234d2455e72a3301b"></a><!-- doxytag: member="QVDisjointSet::QVDisjointSet" ref="aa5ca745800720b7234d2455e72a3301b" args="(uInt numElements)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVDisjointSet::QVDisjointSet </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>numElements</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a disjoint set. </p>
+<p>This constructor creates a <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> object that will maintain a partition over the set of integers in the range 0..numElements.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>numElements</em>&nbsp;</td><td>maximal element contained in the disjoint set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8cpp_source.html#l00028">28</a> of file <a class="el" href="qvdisjointset_8cpp_source.html">qvdisjointset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a403db4da44d59cbd9088b81b3293ccae"></a><!-- doxytag: member="QVDisjointSet::QVDisjointSet" ref="a403db4da44d59cbd9088b81b3293ccae" args="(uInt cols, uInt rows)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVDisjointSet::QVDisjointSet </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>rows</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> object, that will maintain a partition of the set of pixels in an image. </p>
+<p>You can only use functions <a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be">find(QPoint p)</a>, <a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">find(uInt col, uInt row)</a>, <a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e">unify(QPoint p1, QPoint p2)</a>, and <a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">unify(uInt c1, uInt r1, uInt c2, uInt r2)</a> if the <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> were created with this constructor, or the constructor <a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet(const QVGenericImage&amp;)</a>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cols</em>&nbsp;</td><td>number of cols of the image to be partitionated. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rows</em>&nbsp;</td><td>number of rows of the image to be partitionated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>QVDisjointSet(QVGenericImage &amp;image) </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find(QPoint p)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9" title="Overloaded version of find, for partitions over the set of points contained in an...">find(uInt col, uInt row)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify(QPoint p1, QPoint p2)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f" title="Overloaded version of unify, for partitions over the set of points contained in an...">unify(uInt c1, uInt r1, uInt c2, uInt r2)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8cpp_source.html#l00048">48</a> of file <a class="el" href="qvdisjointset_8cpp_source.html">qvdisjointset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7af53f9dd45d67e1ee3429582637b5b5"></a><!-- doxytag: member="QVDisjointSet::QVDisjointSet" ref="a7af53f9dd45d67e1ee3429582637b5b5" args="(const QVGenericImage &amp;image)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVDisjointSet::QVDisjointSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> object, that will maintain a partition of the set of pixels in a given image. </p>
+<p>You can only use functions <a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be">find(QPoint p)</a>, <a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">find(uInt col, uInt row)</a>, <a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e">unify(QPoint p1, QPoint p2)</a>, and <a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">unify(uInt c1, uInt r1, uInt c2, uInt r2)</a> if the <a class="el" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> were created with this constructor, or the constructor <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt cols, uInt rows)</a>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image containing the pixels to partition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(uInt cols, uInt rows)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find(QPoint p)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9" title="Overloaded version of find, for partitions over the set of points contained in an...">find(uInt col, uInt row)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify(QPoint p1, QPoint p2)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f" title="Overloaded version of unify, for partitions over the set of points contained in an...">unify(uInt c1, uInt r1, uInt c2, uInt r2)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8cpp_source.html#l00056">56</a> of file <a class="el" href="qvdisjointset_8cpp_source.html">qvdisjointset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89e21b6bcc9a6e89adea9debf32661ca"></a><!-- doxytag: member="QVDisjointSet::QVDisjointSet" ref="a89e21b6bcc9a6e89adea9debf32661ca" args="(const QVDisjointSet &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVDisjointSet::QVDisjointSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVDisjointSet.html">QVDisjointSet</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8cpp_source.html#l00035">35</a> of file <a class="el" href="qvdisjointset_8cpp_source.html">qvdisjointset.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="adb359c333540ac1d8a7e820f799c63be"></a><!-- doxytag: member="QVDisjointSet::find" ref="adb359c333540ac1d8a7e820f799c63be" args="(QPoint p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::find </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded version of find, for partitions over the set of points contained in an image. </p>
+<p>The function takes a point (QPoint <em>p</em>) as parameter, and converts it into an integer automatically. Then calls <a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">find(uInt)</a> to obtain the canonical element (uInt) of the group that holds the integer corresponding to the point <em>p</em>.</p>
+<p>This method can only be used if the disjoint set was constructed with the constructors <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt,uInt)</a> or <a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet(const QVGenericImage&amp;)</a>. Otherwise the class can not convert the image point into an integer number.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(uInt cols, uInt rows)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(const QVGenericImage&amp;)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0" title="Retrieves a common integer identifier, for any element in the same subset of the...">find(uInt)</a></dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>point contained in the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>canonical element of the subset from the partition, that contains point <em>p</em> </dd></dl>
+
+<p><p>ASSERT: point belongs to rectangle (0,0), (cols, rows) </p>
+</p>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00192">192</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">find()</a>, <a class="el" href="classQVDisjointSet.html#a4b41d194508953d51987a6f5a9f2bcc5">getSetCardinality()</a>, and <a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701">unify()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aecc85e8893897ff5f1caabc0c3cf27a9"></a><!-- doxytag: member="QVDisjointSet::find" ref="aecc85e8893897ff5f1caabc0c3cf27a9" args="(uInt col, uInt row)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::find </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded version of find, for partitions over the set of points contained in an image. </p>
+<p>The function takes the coordinates of a point (col, row) as parameter, and converts it into an integer automatically. Then calls <a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">find(uInt)</a> to obtain the canonical element (uInt) of the group that holds the integer corresponding to the point <em>p</em>.</p>
+<p>This method can only be used if the disjoint set was constructed with the constructors <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt,uInt)</a> or <a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet(const QVGenericImage&amp;)</a>. Otherwise the class can not convert the image point into an integer number.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(uInt cols, uInt rows)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(const QVGenericImage&amp;)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0" title="Retrieves a common integer identifier, for any element in the same subset of the...">find(uInt)</a></dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>first coordinate of the point. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>second coordinate of the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>canonical element of the subset from the partition that contains point of coordinates (col, row). </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00220">220</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef6e9f646b8f08e1dc0c22a8afcb46e0"></a><!-- doxytag: member="QVDisjointSet::find" ref="aef6e9f646b8f08e1dc0c22a8afcb46e0" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::find </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves a common integer identifier, for any element in the same subset of the partition. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>number identifying the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find(QPoint p)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9" title="Overloaded version of find, for partitions over the set of points contained in an...">find(uInt col, uInt row)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00234">234</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a092d79e584f33905948f5e812fdb963e"></a><!-- doxytag: member="QVDisjointSet::unify" ref="a092d79e584f33905948f5e812fdb963e" args="(QPoint p1, QPoint p2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::unify </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&nbsp;</td>
+          <td class="paramname"> <em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPoint&nbsp;</td>
+          <td class="paramname"> <em>p2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Joins two subsets of points. </p>
+<p>This is an overloaded version of unify, for partitions over the set of points contained in an image. The function converts automatically both elements of the points of an image, represented with QPoints <em>p1</em> and <em>p2</em>, into integers, to apply later the function <a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701">unify(uInt,uInt)</a> to join both subsets containing the corresponding integer elements for <em>p1</em> and <em>p2</em>.</p>
+<p>This method can only be used if the disjoint set was constructed with the constructors <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt,uInt)</a> or <a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet(const QVGenericImage&amp;)</a>. Otherwise the class can not convert the image point into an integer number.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(uInt cols, uInt rows)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(const QVGenericImage&amp;)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701" title="Joins two subsets.">unify(uInt,uInt)</a></dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p1</em>&nbsp;</td><td>element contained in the first set to be join. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>p2</em>&nbsp;</td><td>element contained in the second set to be join. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>canonical element of the subset resulting from the union of both subsets. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00265">265</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">unify()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb8eb0283fbda257f635f3920e6d232f"></a><!-- doxytag: member="QVDisjointSet::unify" ref="abb8eb0283fbda257f635f3920e6d232f" args="(uInt c1, uInt r1, uInt c2, uInt r2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::unify </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>r1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>c2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>r2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded version of unify, for partitions over the set of points contained in an image. </p>
+<p>The function converts automatically both elements of the points of an image, represented with QPoints <em>p1</em> and <em>p2</em>, into integers, to apply later the function <a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701">unify(uInt,uInt)</a> to join both subsets containing elements <em>p1</em> and <em>p2</em>.</p>
+<p>This method can only be used if the disjoint set was constructed with the constructors <a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae">QVDisjointSet(uInt,uInt)</a> or <a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5">QVDisjointSet(const QVGenericImage&amp;)</a>. Otherwise the class can not convert the image point into an integer number.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#a403db4da44d59cbd9088b81b3293ccae" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(uInt cols, uInt rows)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a7af53f9dd45d67e1ee3429582637b5b5" title="Constructs a QVDisjointSet object, that will maintain a partition of the set of pixels...">QVDisjointSet(const QVGenericImage&amp;)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#a0da75d74cd958218f3919b4256f7b701" title="Joins two subsets.">unify(uInt,uInt)</a></dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>c1</em>&nbsp;</td><td>first coordinate of a point from the first set. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>r1</em>&nbsp;</td><td>second coordinate of a point front the first set. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>c2</em>&nbsp;</td><td>first coordinate of a point frond the second set. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>r2</em>&nbsp;</td><td>second coordinate of a point frown the second set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>canonical element of the subset resulting from the union of both subsets. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00294">294</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0da75d74cd958218f3919b4256f7b701"></a><!-- doxytag: member="QVDisjointSet::unify" ref="a0da75d74cd958218f3919b4256f7b701" args="(uInt index1, uInt index2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::unify </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Joins two subsets. </p>
+<p>Given two elements of the partitionated set (or their set indexes), joins the two subsets that contain those elements in a new subset.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index1</em>&nbsp;</td><td>number identifying first element. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>index2</em>&nbsp;</td><td>number identifying second element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify(QPoint p1, QPoint p2)</a> </dd>
+<dd>
+<a class="el" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f" title="Overloaded version of unify, for partitions over the set of points contained in an...">unify(uInt c1, uInt r1, uInt c2, uInt r2)</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the canonical element for the new set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8cpp_source.html#l00072">72</a> of file <a class="el" href="qvdisjointset_8cpp_source.html">qvdisjointset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59327bbf6e60cbb00d23af810192ad84"></a><!-- doxytag: member="QVDisjointSet::getSetCardinality" ref="a59327bbf6e60cbb00d23af810192ad84" args="(const QPoint &amp;p1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::getSetCardinality </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>p1</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of elements contained in the set that includes the given element. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p1</em>&nbsp;</td><td>point contained in the set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of elements contained in the set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00321">321</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84">getSetCardinality()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1351654178fe3c4053c0476db3c9be67"></a><!-- doxytag: member="QVDisjointSet::getSetCardinality" ref="a1351654178fe3c4053c0476db3c9be67" args="(uInt col, uInt row)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::getSetCardinality </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of elements contained in the set that uncles the given element. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>first coordinate of the point. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>second coordinate of the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of elements contained in the set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00328">328</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDisjointSet.html#a1351654178fe3c4053c0476db3c9be67">getSetCardinality()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b41d194508953d51987a6f5a9f2bcc5"></a><!-- doxytag: member="QVDisjointSet::getSetCardinality" ref="a4b41d194508953d51987a6f5a9f2bcc5" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::getSetCardinality </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of elements contained in the set that includes the given element. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>identifying integer of the element contained in the set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of elements contained in the set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00334">334</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51e16b7f3b5df034c3231ca92242c4c3"></a><!-- doxytag: member="QVDisjointSet::numberOfSets" ref="a51e16b7f3b5df034c3231ca92242c4c3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::numberOfSets </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of different subgroups contained in the disjoint set. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of different subgroups held in the disjoint set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00343">343</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e8ca8f33af020cce71d5d92b9bbcc41"></a><!-- doxytag: member="QVDisjointSet::index" ref="a1e8ca8f33af020cce71d5d92b9bbcc41" args="(QPoint p) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::index </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number corresponding to the given point, in the integer set. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>point contained in the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number corresponding to the given point in the disjoint set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00349">349</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a208c4013bbd70ec527d3b7a7f1790467"></a><!-- doxytag: member="QVDisjointSet::index" ref="a208c4013bbd70ec527d3b7a7f1790467" args="(uInt col, uInt row) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVDisjointSet::index </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number corresponding to the given point, in the integer set. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>first coordinate of the point. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>second coordinate of the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number corresponding to the given point in the disjoint set. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00356">356</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a688371533eece0d10111053c6f05076f"></a><!-- doxytag: member="QVDisjointSet::isRootElement" ref="a688371533eece0d10111053c6f05076f" args="(uInt col, uInt row) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVDisjointSet::isRootElement </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if a given element is the root of its set. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>first coordinate of the point. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>second coordinate of the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the element is the canonical element of its group, false otherwise. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>isRootElement(uInt index) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00364">364</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDisjointSet.html#a688371533eece0d10111053c6f05076f">isRootElement()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abbaef0cb2a1ad2d6fd217e294b6090f1"></a><!-- doxytag: member="QVDisjointSet::isRootElement" ref="abbaef0cb2a1ad2d6fd217e294b6090f1" args="(uInt index) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVDisjointSet::isRootElement </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if a given element is the root of its set. </p>
+<p>This function is a replacement for the expression:</p>
+<div class="fragment"><pre class="fragment"> (<a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(<a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41" title="Gets the number corresponding to the given point, in the integer set.">index</a>) == <a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41" title="Gets the number corresponding to the given point, in the integer set.">index</a>) 
+</pre></div><p>Faster than that expression, if <em>find</em> is not needed to be called. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>first coordinate of the point. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>second coordinate of the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the element is the canonical element of its group, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdisjointset_8h_source.html#l00376">376</a> of file <a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvdisjointset_8h_source.html">qvdisjointset.h</a></li>
+<li>src/qvmath/<a class="el" href="qvdisjointset_8cpp_source.html">qvdisjointset.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

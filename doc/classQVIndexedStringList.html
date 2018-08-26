@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVIndexedStringList Class Reference</h1><!-- doxytag: class="QVIndexedStringList" -->
+<p>String List with a current string index.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvindexedstringlist_8h_source.html">QVIndexedStringList</a>&gt;</code></p>
+
+<p><a href="classQVIndexedStringList-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#a150ca3f3455818cccebf635186cce72c">QVIndexedStringList</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a void <a class="el" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a>. Its index must be -1.  <a href="#a150ca3f3455818cccebf635186cce72c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#aad36615802e4e3479c5d2763cb8b7246">QVIndexedStringList</a> (const <a class="el" href="classQVIndexedStringList.html">QVIndexedStringList</a> &amp;l)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor from a <a class="el" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a>.  <a href="#aad36615802e4e3479c5d2763cb8b7246"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#adb8323d426484e0176811a38a0e9ce03">QVIndexedStringList</a> (const QStringList &amp;l)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor from a QStringList. Its index must be 0 or -1 if is empty.  <a href="#adb8323d426484e0176811a38a0e9ce03"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#afd285301048be2225ef77c42c46a4470">QVIndexedStringList</a> (const QString &amp;i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor from a QString. Creates a new <a class="el" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a> that contains the gives string an its index is 0 (the first item of the list).  <a href="#afd285301048be2225ef77c42c46a4470"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#a9855746cb07868930d17476bab48f251">getIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the index.  <a href="#a9855746cb07868930d17476bab48f251"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#af98ec139afe8156b993f5796b90111d3">getCurrent</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the current string, marked by the index.  <a href="#af98ec139afe8156b993f5796b90111d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#a2caf19a347dcdfb356a95875dda981de">setIndex</a> (int i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the index to i.  <a href="#a2caf19a347dcdfb356a95875dda981de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#a8d9e5433cdc5117a42992bdd59ea818d">incIndex</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Increment the index. if (i &gt;= list size -1), do nothing and return false.  <a href="#a8d9e5433cdc5117a42992bdd59ea818d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#a534498a6c86bedc7e6bc38282e155f84">decIndex</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Decrement the index. if (i &lt; 0), do nothing and return false.  <a href="#a534498a6c86bedc7e6bc38282e155f84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVIndexedStringList.html#a6e36e6c5821f1147683b731b33919ed6">append</a> (const QString &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inserts a string as the last element of the list. if there are no elements in the list, i becomes 0.  <a href="#a6e36e6c5821f1147683b731b33919ed6"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>String List with a current string index. </p>
+<p>This class represents a string list with an index, the index marks the current string in the list. The index values are: -1, there are no items in the list. 0 ... n-1, the strings of the list. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8h_source.html#l00041">41</a> of file <a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a150ca3f3455818cccebf635186cce72c"></a><!-- doxytag: member="QVIndexedStringList::QVIndexedStringList" ref="a150ca3f3455818cccebf635186cce72c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVIndexedStringList::QVIndexedStringList </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a void <a class="el" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a>. Its index must be -1. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8h_source.html#l00050">50</a> of file <a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad36615802e4e3479c5d2763cb8b7246"></a><!-- doxytag: member="QVIndexedStringList::QVIndexedStringList" ref="aad36615802e4e3479c5d2763cb8b7246" args="(const QVIndexedStringList &amp;l)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVIndexedStringList::QVIndexedStringList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVIndexedStringList.html">QVIndexedStringList</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>l</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor from a <a class="el" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a>. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8h_source.html#l00054">54</a> of file <a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb8323d426484e0176811a38a0e9ce03"></a><!-- doxytag: member="QVIndexedStringList::QVIndexedStringList" ref="adb8323d426484e0176811a38a0e9ce03" args="(const QStringList &amp;l)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVIndexedStringList::QVIndexedStringList </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;&nbsp;</td>
+          <td class="paramname"> <em>l</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor from a QStringList. Its index must be 0 or -1 if is empty. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8h_source.html#l00059">59</a> of file <a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd285301048be2225ef77c42c46a4470"></a><!-- doxytag: member="QVIndexedStringList::QVIndexedStringList" ref="afd285301048be2225ef77c42c46a4470" args="(const QString &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVIndexedStringList::QVIndexedStringList </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>i</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor from a QString. Creates a new <a class="el" href="classQVIndexedStringList.html" title="String List with a current string index.">QVIndexedStringList</a> that contains the gives string an its index is 0 (the first item of the list). </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8h_source.html#l00064">64</a> of file <a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9855746cb07868930d17476bab48f251"></a><!-- doxytag: member="QVIndexedStringList::getIndex" ref="a9855746cb07868930d17476bab48f251" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVIndexedStringList::getIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the index. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8h_source.html#l00079">79</a> of file <a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVIndexedStringList.html#a534498a6c86bedc7e6bc38282e155f84">decIndex()</a>, and <a class="el" href="classQVIndexedStringList.html#a8d9e5433cdc5117a42992bdd59ea818d">incIndex()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af98ec139afe8156b993f5796b90111d3"></a><!-- doxytag: member="QVIndexedStringList::getCurrent" ref="af98ec139afe8156b993f5796b90111d3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QVIndexedStringList::getCurrent </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the current string, marked by the index. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8cpp_source.html#l00067">67</a> of file <a class="el" href="qvindexedstringlist_8cpp_source.html">qvindexedstringlist.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2caf19a347dcdfb356a95875dda981de"></a><!-- doxytag: member="QVIndexedStringList::setIndex" ref="a2caf19a347dcdfb356a95875dda981de" args="(int i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVIndexedStringList::setIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>i</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the index to i. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>the new index.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>if (i &lt; -1) or (i &gt;= list size), do nothing and return false.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>if the change has been done. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8cpp_source.html#l00073">73</a> of file <a class="el" href="qvindexedstringlist_8cpp_source.html">qvindexedstringlist.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVIndexedStringList.html#a534498a6c86bedc7e6bc38282e155f84">decIndex()</a>, and <a class="el" href="classQVIndexedStringList.html#a8d9e5433cdc5117a42992bdd59ea818d">incIndex()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8d9e5433cdc5117a42992bdd59ea818d"></a><!-- doxytag: member="QVIndexedStringList::incIndex" ref="a8d9e5433cdc5117a42992bdd59ea818d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVIndexedStringList::incIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Increment the index. if (i &gt;= list size -1), do nothing and return false. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>if the change has been done. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8cpp_source.html#l00083">83</a> of file <a class="el" href="qvindexedstringlist_8cpp_source.html">qvindexedstringlist.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a534498a6c86bedc7e6bc38282e155f84"></a><!-- doxytag: member="QVIndexedStringList::decIndex" ref="a534498a6c86bedc7e6bc38282e155f84" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVIndexedStringList::decIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Decrement the index. if (i &lt; 0), do nothing and return false. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>if the change has been done. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8cpp_source.html#l00087">87</a> of file <a class="el" href="qvindexedstringlist_8cpp_source.html">qvindexedstringlist.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e36e6c5821f1147683b731b33919ed6"></a><!-- doxytag: member="QVIndexedStringList::append" ref="a6e36e6c5821f1147683b731b33919ed6" args="(const QString &amp;str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVIndexedStringList::append </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inserts a string as the last element of the list. if there are no elements in the list, i becomes 0. </p>
+
+<p>Definition at line <a class="el" href="qvindexedstringlist_8cpp_source.html#l00059">59</a> of file <a class="el" href="qvindexedstringlist_8cpp_source.html">qvindexedstringlist.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVIndexedStringList.html#afd285301048be2225ef77c42c46a4470">QVIndexedStringList()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/qvguiblocks/<a class="el" href="qvindexedstringlist_8h_source.html">qvindexedstringlist.h</a></li>
+<li>src/qvblockprogramming/qvguiblocks/<a class="el" href="qvindexedstringlist_8cpp_source.html">qvindexedstringlist.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

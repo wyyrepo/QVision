@@ -1,0 +1,23 @@
+<RCC>
+<qresource>
+    <file>images/bringtofront.png</file>
+    <file>images/colors.png</file>
+    <file>images/delete.png</file>
+    <file>images/slink.png</file>
+    <file>images/alink.png</file>
+    <file>images/qlink.png</file>
+    <file>images/node.png</file>
+    <file>images/join.png</file>
+    <file>images/sendtoback.png</file>
+    <file>images/icon.png</file>
+    <file>images/new.png</file>
+    <file>images/open.png</file>
+    <file>images/save.png</file>
+    <file>images/cut.png</file>
+    <file>images/copy.png</file>
+    <file>images/paste.png</file>
+    <file>images/run.png</file>
+    <file>images/stop.png</file>
+    <file>images/background1.png</file>
+</qresource>
+</RCC>

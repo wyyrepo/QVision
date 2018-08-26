@@ -1,0 +1,53 @@
+Performing 5 tests per measure.
+GSL_LU
+5x5: Average total time: 0 ms. 
+5x50: LU decomposition: GSL_LU method works only on square matrices. 
+5x100: LU decomposition: GSL_LU method works only on square matrices. 
+5x500: LU decomposition: GSL_LU method works only on square matrices. 
+5x1000: LU decomposition: GSL_LU method works only on square matrices. 
+50x5: LU decomposition: GSL_LU method works only on square matrices. 
+50x50: Average total time: 0.2 ms. 
+50x100: LU decomposition: GSL_LU method works only on square matrices. 
+50x500: LU decomposition: GSL_LU method works only on square matrices. 
+50x1000: LU decomposition: GSL_LU method works only on square matrices. 
+100x5: LU decomposition: GSL_LU method works only on square matrices. 
+100x50: LU decomposition: GSL_LU method works only on square matrices. 
+100x100: Average total time: 1.2 ms. 
+100x500: LU decomposition: GSL_LU method works only on square matrices. 
+100x1000: LU decomposition: GSL_LU method works only on square matrices. 
+500x5: LU decomposition: GSL_LU method works only on square matrices. 
+500x50: LU decomposition: GSL_LU method works only on square matrices. 
+500x100: LU decomposition: GSL_LU method works only on square matrices. 
+500x500: Average total time: 69 ms. 
+500x1000: LU decomposition: GSL_LU method works only on square matrices. 
+1000x5: LU decomposition: GSL_LU method works only on square matrices. 
+1000x50: LU decomposition: GSL_LU method works only on square matrices. 
+1000x100: LU decomposition: GSL_LU method works only on square matrices. 
+1000x500: LU decomposition: GSL_LU method works only on square matrices. 
+1000x1000: Average total time: 985.6 ms. 
+LAPACK_DGETRF
+5x5: Average total time: 0.6 ms. 
+5x50: Average total time: 0.6 ms. 
+5x100: Average total time: 0.4 ms. 
+5x500: Average total time: 0.4 ms. 
+5x1000: Average total time: 0.4 ms. 
+50x5: Average total time: 0.4 ms. 
+50x50: Average total time: 0.6 ms. 
+50x100: Average total time: 0.8 ms. 
+50x500: Average total time: 2.4 ms. 
+50x1000: Average total time: 3 ms. 
+100x5: Average total time: 0.4 ms. 
+100x50: Average total time: 0.8 ms. 
+100x100: Average total time: 1.4 ms. 
+100x500: Average total time: 6.2 ms. 
+100x1000: Average total time: 8 ms. 
+500x5: Average total time: 1.8 ms. 
+500x50: Average total time: 2.4 ms. 
+500x100: Average total time: 4 ms. 
+500x500: Average total time: 35.2 ms. 
+500x1000: Average total time: 153.4 ms. 
+1000x5: Average total time: 6.4 ms. 
+1000x50: Average total time: 8.8 ms. 
+1000x100: Average total time: 11.8 ms. 
+1000x500: Average total time: 80.8 ms. 
+1000x1000: Average total time: 194.4 ms. 

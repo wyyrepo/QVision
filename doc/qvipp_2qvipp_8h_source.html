@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvipp/qvipp.h</h1><a href="qvipp_2qvipp_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVIPP_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVIPP_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;ipp.h&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QMap&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QSize&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QPoint&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;QVIndexedStringList&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keyword">class </span><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>;
+<a name="l00037"></a>00037 <span class="keyword">class </span><a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;<a class="code" href="qvippfunctions_8h.html" title="File from the QVision library.">qvipp/qvippfunctions.h</a>&gt;</span>
+<a name="l00040"></a>00040 
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src2, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src3, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00068"></a>00068 
+<a name="l00072"></a>00072 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort, 1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort, 1&gt;</a> &amp;src2, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort, 1&gt;</a> &amp;src3, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort, 3&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00073"></a>00073 
+<a name="l00077"></a>00077 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort, 1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort, 1&gt;</a> &amp;src2, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort, 1&gt;</a> &amp;src3, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort, 3&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00078"></a>00078 
+<a name="l00082"></a>00082 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 1&gt;</a> &amp;src2, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 1&gt;</a> &amp;src3, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00083"></a>00083 
+<a name="l00087"></a>00087 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;src2, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;src3, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 3&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00088"></a>00088 
+<a name="l00091"></a>00091 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dest1, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dest2, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dest3, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00092"></a>00092 
+<a name="l00095"></a>00095 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;dest1, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;dest2, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;dest3, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00096"></a>00096 
+<a name="l00105"></a>00105 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;src, <span class="keyword">const</span> uChar channel, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00106"></a>00106 
+<a name="l00110"></a>00110 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort, 3&gt;</a> &amp;src, <span class="keyword">const</span> uChar channel, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort, 1&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00111"></a>00111 
+<a name="l00115"></a>00115 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort, 3&gt;</a> &amp;src, <span class="keyword">const</span> uChar channel, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort, 1&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00116"></a>00116 
+<a name="l00120"></a>00120 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> &amp;src, <span class="keyword">const</span> uChar channel, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 1&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00121"></a>00121 
+<a name="l00125"></a>00125 <span class="keywordtype">void</span> Copy(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 3&gt;</a> &amp;src, <span class="keyword">const</span> uChar channel, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;dest,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00126"></a>00126 
+<a name="l00130"></a>00130 <span class="keywordtype">void</span> <a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src2, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, IppCmpOp ippCmpOp = ippCmpEq,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00131"></a>00131 
+<a name="l00135"></a>00135 <span class="keywordtype">void</span> <a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort,3&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort,3&gt;</a> &amp;src2, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, IppCmpOp ippCmpOp = ippCmpEq,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00136"></a>00136 
+<a name="l00140"></a>00140 <span class="keywordtype">void</span> <a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort,3&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort,3&gt;</a> &amp;src2, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, IppCmpOp ippCmpOp = ippCmpEq,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00141"></a>00141 
+<a name="l00145"></a>00145 <span class="keywordtype">void</span> <a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;src2, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, IppCmpOp ippCmpOp = ippCmpEq,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00146"></a>00146 
+<a name="l00149"></a>00149 <span class="keywordtype">void</span> <a class="code" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">YUV420ToRGB</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;srcY, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;srcU, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;srcV,
+<a name="l00150"></a>00150         <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;destRGB,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00151"></a>00151 
+<a name="l00154"></a>00154 <span class="keywordtype">void</span> <a class="code" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">RGBToYUV420</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dst1, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dst2, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dst3,
+<a name="l00155"></a>00155         <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00156"></a>00156 
+<a name="l00163"></a>00163 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907" title="This function uses the general square kernel defined in the matrix kernel to filter...">Filter</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> kernel, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 
+<a name="l00174"></a>00174 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f" title="Filters an image using a spatial kernel that consists of a single column.This function...">FilterColumn</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> kernel, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00175"></a>00175 
+<a name="l00184"></a>00184 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e" title="Filters an image using a spatial kernel that consists of a single row.This function...">FilterRow</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> kernel, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00185"></a>00185 
+<a name="l00198"></a>00198 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga66c41b76bbad4f212ae571b33df8d92e" title="Filters an image using a sharpening filter.This function applies a sharpening filter...">FilterSharpen</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00199"></a>00199 
+<a name="l00203"></a>00203 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga66c41b76bbad4f212ae571b33df8d92e" title="Filters an image using a sharpening filter.This function applies a sharpening filter...">FilterSharpen</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00204"></a>00204 
+<a name="l00210"></a>00210 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00211"></a>00211 
+<a name="l00217"></a>00217 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00218"></a>00218 
+<a name="l00224"></a>00224 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00225"></a>00225 
+<a name="l00231"></a>00231 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00232"></a>00232 
+<a name="l00238"></a>00238 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00239"></a>00239 
+<a name="l00245"></a>00245 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00246"></a>00246 
+<a name="l00252"></a>00252 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00253"></a>00253 
+<a name="l00259"></a>00259 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00260"></a>00260 
+<a name="l00266"></a>00266 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00267"></a>00267 
+<a name="l00273"></a>00273 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00274"></a>00274 
+<a name="l00280"></a>00280 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00281"></a>00281 
+<a name="l00287"></a>00287 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00288"></a>00288 
+<a name="l00294"></a>00294 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00295"></a>00295 
+<a name="l00301"></a>00301 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00302"></a>00302 
+<a name="l00308"></a>00308 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00309"></a>00309 
+<a name="l00315"></a>00315 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00316"></a>00316 
+<a name="l00322"></a>00322 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00323"></a>00323 
+<a name="l00329"></a>00329 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00330"></a>00330 
+<a name="l00336"></a>00336 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00337"></a>00337 
+<a name="l00343"></a>00343 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00344"></a>00344 
+<a name="l00350"></a>00350 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00351"></a>00351 
+<a name="l00357"></a>00357 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00358"></a>00358 
+<a name="l00364"></a>00364 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00365"></a>00365 
+<a name="l00371"></a>00371 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00372"></a>00372 
+<a name="l00387"></a>00387 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga9d12bdc7d480013fdd884174c9cfbe55" title="Applies horizontal Sobel filter with border.This function is similar to FilterSobelHorizMask...">FilterSobelHorizBorder</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort&gt;</a> &amp;dest, <span class="keyword">const</span> IppiMaskSize maskSize,
+<a name="l00388"></a>00388         <span class="keyword">const</span> IppiBorderType borderType, <span class="keyword">const</span> uChar borderValue, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00389"></a>00389 
+<a name="l00404"></a>00404 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gadad5d91b09ebcf965394246ddcdec8ba" title="Applies vertical Sobel filter with border.This function is similar to FilterSobelVertMask...">FilterSobelNegVertBorder</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sShort&gt;</a> &amp;dest, <span class="keyword">const</span> IppiMaskSize maskSize,
+<a name="l00405"></a>00405         <span class="keyword">const</span> IppiBorderType borderType, <span class="keyword">const</span> uChar borderValue, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00406"></a>00406 
+<a name="l00420"></a>00420 <span class="keywordtype">void</span> <a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keywordtype">int</span> interpolation = IPPI_INTER_LINEAR);
+<a name="l00421"></a>00421 
+<a name="l00425"></a>00425 <span class="keywordtype">void</span> <a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keywordtype">int</span> interpolation = IPPI_INTER_LINEAR);
+<a name="l00426"></a>00426 
+<a name="l00430"></a>00430 <span class="keywordtype">void</span> <a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;dest, <span class="keywordtype">int</span> interpolation = IPPI_INTER_LINEAR);
+<a name="l00431"></a>00431 
+<a name="l00432"></a>00432 
+<a name="l00436"></a>00436 <span class="keywordtype">void</span> <a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;dest, <span class="keywordtype">int</span> interpolation = IPPI_INTER_LINEAR);
+<a name="l00437"></a>00437 
+<a name="l00447"></a>00447 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7" title="Allocates size in a buffer image for temporary data for function Canny.This function...">CannyGetSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00448"></a>00448 
+<a name="l00459"></a>00459 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#gadfa1eaf6615962a65a4788b8954c9d09" title="Allocates size in a buffer image for temporary data for function FilterSobelHoriz...">FilterSobelHorizGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <span class="keyword">const</span> IppiMaskSize maskSize, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00460"></a>00460 
+<a name="l00471"></a>00471 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga180dd7c1bdc22bb98bcf119e788f6d89" title="Allocates size in a buffer image for temporary data for function FilterSobelNegVert...">FilterSobelNegVertGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <span class="keyword">const</span> IppiMaskSize maskSize, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00472"></a>00472 
+<a name="l00484"></a>00484 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920" title="Allocates size in a buffer image for temporary data for function MinEigenValGet.This...">MinEigenValGetBufferSize</a>( <span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, uInt apertureSize = 5, uInt avgWindow = 5);
+<a name="l00485"></a>00485 
+<a name="l00495"></a>00495 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06" title="Allocates size in a buffer image for temporary data for function family FloodFill...">FloodFillGetSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00496"></a>00496 
+<a name="l00520"></a>00520 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gab2eadd7360e07f47881c2727bf28b2df" title="Calculates the minimal eigen value of image blocks for corner detection.This function...">MinEigenVal</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer,
+<a name="l00521"></a>00521         uInt apertureSize = 3, uInt avgWindow = 5, IppiKernelType kernel = ippKernelSobel,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00522"></a>00522 
+<a name="l00532"></a>00532 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd" title="Allocates size in a buffer image for temporary data for function FastMarching.This...">FastMarchingGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00533"></a>00533 
+<a name="l00536"></a>00536 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">InpaintInitAllocC3</a>(IppiInpaintState_8u_C3R **pState, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;distances, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;mask,
+<a name="l00537"></a>00537         <span class="keyword">const</span> sFloat radius, <span class="keyword">const</span> IppiInpaintFlag flag);
+<a name="l00538"></a>00538 
+<a name="l00541"></a>00541 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">InpaintFreeC3</a>(IppiInpaintState_8u_C3R *pState);
+<a name="l00542"></a>00542 
+<a name="l00545"></a>00545 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">InpaintInitAllocC1</a>(IppiInpaintState_8u_C1R **pState, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;distances, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;mask,
+<a name="l00546"></a>00546         <span class="keyword">const</span> sFloat radius, <span class="keyword">const</span> IppiInpaintFlag flag);
+<a name="l00547"></a>00547 
+<a name="l00550"></a>00550 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">InpaintFreeC1</a>(IppiInpaintState_8u_C1R *pState);
+<a name="l00551"></a>00551 
+<a name="l00564"></a>00564 QMap&lt;sInt, int&gt; <a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96" title="Calculates frequency histogram for a given set of values, for a QVImageThis function...">HistogramRange</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src, QList&lt;uChar&gt; values);
+<a name="l00565"></a>00565 
+<a name="l00574"></a>00574 QVector&lt;int&gt; <a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96" title="Calculates frequency histogram for a given set of values, for a QVImageThis function...">HistogramRange</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src);
+<a name="l00575"></a>00575 
+<a name="l00599"></a>00599 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gae06195554922c14fa17f8e73ab847995" title="Performs flood filling of pixels with values in the specified range in the connected...">FloodFillRange4Connected</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;img, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer,
+<a name="l00600"></a>00600         uInt seedX, uInt seedY, uChar newVal, uChar minDelta, uChar maxDelta);
+<a name="l00601"></a>00601 
+<a name="l00626"></a>00626 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga651729e62b24103aa10667c463c64fed" title="Performs gradient flood filling of connected area on an image.This function performs...">FloodFillGradient4Connected</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;img, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer,
+<a name="l00627"></a>00627         uInt seedX, uInt seedY, uChar newVal, uChar minDelta, uChar maxDelta);
+<a name="l00628"></a>00628 
+<a name="l00654"></a>00654 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga6c4251a727e0b56f7938b736d6176f6c" title="Applies Gauss filter with border.This function applies the Gaussian filter to the...">FilterGaussBorder</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;dest, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, sInt kernelSize, sFloat sigma, IppiBorderType borderType = ippBorderConst, sFloat borderValue = 0.0,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00655"></a>00655 
+<a name="l00667"></a>00667 <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga9509aca9c5c02975804d29f7799d9902" title="Computes the size of the external buffer for the Gaussian filter with border.This...">FilterGaussGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, uInt kernelSize);
+<a name="l00668"></a>00668 
+<a name="l00689"></a>00689 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga6998ed9960561b8625418fb9eb36193a" title="Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold...">FindPeaks3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 1&gt;</a> &amp;img, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, QList&lt;QPoint&gt; &amp;points, sInt threshold, IppiNorm norm, uInt border, uInt maxPeakCount);
+<a name="l00690"></a>00690 
+<a name="l00694"></a>00694 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga6998ed9960561b8625418fb9eb36193a" title="Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold...">FindPeaks3x3</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;img, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, QList&lt;QPoint&gt; &amp;points, sFloat threshold, IppiNorm norm, uInt border, uInt maxPeakCount);
+<a name="l00695"></a>00695 
+<a name="l00696"></a>00696 
+<a name="l00707"></a>00707 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga4b54dbfc2853fe49efdefc6142c7918b" title="Computes the size of the working buffer for the peak search.This function computes...">FindPeaks3x3GetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt,1&gt;</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00708"></a>00708 
+<a name="l00713"></a>00713 <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga4b54dbfc2853fe49efdefc6142c7918b" title="Computes the size of the working buffer for the peak search.This function computes...">FindPeaks3x3GetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,1&gt;</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer);
+<a name="l00714"></a>00714 
+<a name="l00727"></a>00727 <span class="keywordtype">void</span>    <a class="code" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b" title="Performs perspective warping of the source image using the given transform coefficients...">WarpPerspective</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;rectifyingHomography, <span class="keywordtype">int</span> interpolation = IPPI_INTER_LINEAR,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00728"></a>00728 
+<a name="l00732"></a>00732 <span class="keywordtype">void</span>    <a class="code" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b" title="Performs perspective warping of the source image using the given transform coefficients...">WarpPerspective</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;rectifyingHomography, <span class="keywordtype">int</span> interpolation = IPPI_INTER_LINEAR,  <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00733"></a>00733 
+<a name="l00734"></a>00734 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

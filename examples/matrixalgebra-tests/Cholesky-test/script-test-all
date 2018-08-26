@@ -1,0 +1,12 @@
+for METHOD in GSL_CHOLESKY LAPACK_CHOLESKY_DPOTRF
+do
+  echo -ne $METHOD
+  for SIZE in 5 50 100 500
+  do
+    echo -ne "\n${SIZE}x${SIZE}: " 
+    ./Cholesky-test --Rows=${SIZE} --RHS_size=-1 --show_residuals=true --method=$METHOD | grep "Cholesky" | grep "residual" | tr "\n" " "      
+  done
+  echo
+done
+
+

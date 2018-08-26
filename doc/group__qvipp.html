@@ -1,0 +1,566 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>IPP wrapper functions<br/>
+<small>
+[<a class="el" href="group__qvip.html">Image processing</a>]</small>
+</h1>
+<p>Comprehensive set of wrapper functions for <a href="http://en.wikipedia.org/wiki/Integrated_Performance_Primitives">Intel(R) Integrated Performance Primitives (IPP)</a>.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Modules</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippIDEAIF.html">Image Data Exchange and Initialization Functions</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Image processing functions that perform image data manipulation, exchange and initialization operations. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippIAALO.html">Image Arithmetic and Logical Operations</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Image processing functions that modify pixel values of an image using arithmetic or logical operations, and functions that perform image compositing based on opacity (alpha-blending). </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippICC.html">Image Color Conversion</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Image processing functions that perform different type of image color conversion. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html">Threshold and Compare Operations</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Image processing functions that operate on a pixel-by-pixel basis: threshold and compare functions. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html">Morphological Operation</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Image processing functions that perform morphological operations on images. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippFF.html">Filtering Functions</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Image processing functions that perform linear and non-linear filtering operations on an image. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippILT.html">Image Linear Transforms</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Functions that perform linear transform operations on an image. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html">Image Statistics Functions</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Functions that can be used to compute the following statistical parameters of an image. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippIGT.html">Image Geometry Transforms</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Functions that perform geometric operations of resizing, rotating, warping and remapping an image. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippWT.html">Wavelet Transforms</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Two-dimensional Discrete Wavelet Transform (DWT) functions implemented in the Intel IPP for image processing. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html">Computer Vision</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Functions for computer vision. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b">FilterHarrisCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;result, int aperture=3, int avgwindow=5, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the Harris corner response image.  <a href="#ga500350a4e3dc3d05b99bd034ab65a67b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519">FilterDoG</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;result)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the DoG corner response image.  <a href="#ga26877fdb37dbf494fa5672d84b7d3519"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaa9474c9f380746aaa24f9997bada59f5">SobelCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;result)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the Sobel corner response image.  <a href="#gaa9474c9f380746aaa24f9997bada59f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9">FilterHessianCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;result, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the Hessian corner response image.  <a href="#ga5e1dd92e6da496d1e621861eb2b67cf9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaacf3624cc8f531fccb9a436878af3fba">FilterSeparable</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;dest, const <a class="el" href="classQVVector.html">QVVector</a> &amp;rowFilter, const <a class="el" href="classQVVector.html">QVVector</a> &amp;colFilter, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a separable filter.  <a href="#gaacf3624cc8f531fccb9a436878af3fba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; sFloat, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6">fastMaximalPoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, const double threshold=1.0, const int windowSize=2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds luminance peaks in the input image.  <a href="#gaa3b64cec3b1037dc5935e6c37ef277e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; uChar, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gacbdf9bb3ccccd60cf561cf7fbd5b94c7">fastMaximalPoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const double threshold, const int windowRadius=2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds luminance peaks in the input image This is an overloaded version provided for convenience. Processing 8 bit depth images is faster than doing it on 64 floating images.  <a href="#gacbdf9bb3ccccd60cf561cf7fbd5b94c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; sInt, int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gaafd238c384d328ca51834ff1671731da">HistogramRange</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src, QList&lt; uChar &gt; values)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculates frequency histogram for a given set of values, for a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>This function computes the intensity histogram of an image in the ranges specified by the QList 'values'. Default value for this QList is empty list, indicating the set of integer which cover the group of valid values for uChar type (from 0 to 255).  <a href="#gaafd238c384d328ca51834ff1671731da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96">HistogramRange</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;src)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculates frequency histogram for a given set of values, for a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>This function computes the intensity histogram of an image in the ranges from 0 to 255.  <a href="#gae25c99f8b8e1975910a913eaa8d41d96"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Comprehensive set of wrapper functions for <a href="http://en.wikipedia.org/wiki/Integrated_Performance_Primitives">Intel(R) Integrated Performance Primitives (IPP)</a>. </p>
+<h2><a class="anchor" id="QvippMotivation">
+Motivation</a></h2>
+<p>This package provides a set of wrapper functions for the Intel's Performance Primitives library. Each of these functions has an usage and functionality equivalent to that of one of the functions of the IPP library. The <a class="el" href="group__qvipp.html">IPP wrapper functions</a> function offers an easier to use object oriented interface, defining <a class="el" href="classQVImage.html">QVImage</a> objects as parameters instead of raw pointers to the data buffer of the images, and substituting other struct data type parameters like points, or sizes, with references to objects, like QPoint and QSize objects.</p>
+<p>The naming convention for those wrapper functions is simpler, avoiding the need of specifying IPP names suffixes, which previously indicated the type and channel number of the input images.</p>
+<p>For further details about the usage of these wrapper functions, see section AdvancedImageProcessing in the manual. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga500350a4e3dc3d05b99bd034ab65a67b"></a><!-- doxytag: member="qvip.h::FilterHarrisCornerResponseImage" ref="ga500350a4e3dc3d05b99bd034ab65a67b" args="(const QVImage&lt; uChar &gt; &amp;image, QVImage&lt; sFloat &gt; &amp;result, int aperture=3, int avgwindow=5, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilterHarrisCornerResponseImage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>aperture</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>avgwindow</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the Harris corner response image. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on the IPP library functionality. Thus it requires that library, to be available. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000037">Todo:</a></b></dt><dd>document this</dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00255">255</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga26877fdb37dbf494fa5672d84b7d3519"></a><!-- doxytag: member="qvip.h::FilterDoG" ref="ga26877fdb37dbf494fa5672d84b7d3519" args="(const QVImage&lt; uChar &gt; &amp;image, QVImage&lt; uChar &gt; &amp;result)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilterDoG </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>result</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the DoG corner response image. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on the IPP library functionality. Thus it requires that library, to be available. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo:</a></b></dt><dd>document this</dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00263">263</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa9474c9f380746aaa24f9997bada59f5"></a><!-- doxytag: member="qvip.h::SobelCornerResponseImage" ref="gaa9474c9f380746aaa24f9997bada59f5" args="(const QVImage&lt; sFloat &gt; &amp;image, QVImage&lt; sFloat &gt; &amp;result)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SobelCornerResponseImage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>result</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the Sobel corner response image. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on the IPP library functionality. Thus it requires that library, to be available. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo:</a></b></dt><dd>document this</dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00277">277</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5e1dd92e6da496d1e621861eb2b67cf9"></a><!-- doxytag: member="qvip.h::FilterHessianCornerResponseImage" ref="ga5e1dd92e6da496d1e621861eb2b67cf9" args="(const QVImage&lt; sFloat &gt; &amp;image, QVImage&lt; sFloat &gt; &amp;result, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilterHessianCornerResponseImage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the Hessian corner response image. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on the IPP library functionality. Thus it requires that library, to be available. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo:</a></b></dt><dd>document this</dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00283">283</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvipp.html#gaa9474c9f380746aaa24f9997bada59f5">SobelCornerResponseImage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaacf3624cc8f531fccb9a436878af3fba"></a><!-- doxytag: member="qvip.h::FilterSeparable" ref="gaacf3624cc8f531fccb9a436878af3fba" args="(const QVImage&lt; sFloat, 1 &gt; &amp;image, QVImage&lt; sFloat, 1 &gt; &amp;dest, const QVVector &amp;rowFilter, const QVVector &amp;colFilter, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilterSeparable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>rowFilter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>colFilter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Applies a separable filter. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on the IPP library functionality. Thus it requires that library, to be available. </dd>
+<dd>
+This function also requires GSL compatibility. This will not be necessary in the future. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo:</a></b></dt><dd>document this</dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00303">303</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa3b64cec3b1037dc5935e6c37ef277e6"></a><!-- doxytag: member="qvip.h::fastMaximalPoints" ref="gaa3b64cec3b1037dc5935e6c37ef277e6" args="(const QVImage&lt; sFloat &gt; &amp;image, const double threshold=1.0, const int windowSize=2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;sFloat, QPointF&gt; fastMaximalPoints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>windowSize</em> = <code>2</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds luminance peaks in the input image. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000043">Todo:</a></b></dt><dd>document this </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvipp.html#gacbdf9bb3ccccd60cf561cf7fbd5b94c7" title="Finds luminance peaks in the input image This is an overloaded version provided for...">fastMaximalPoints(const QVImage&lt;uChar&gt; &amp;, const double, const int)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00313">313</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacbdf9bb3ccccd60cf561cf7fbd5b94c7"></a><!-- doxytag: member="qvip.h::fastMaximalPoints" ref="gacbdf9bb3ccccd60cf561cf7fbd5b94c7" args="(const QVImage&lt; uChar &gt; &amp;image, const double threshold, const int windowRadius=2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;uChar, QPointF&gt; fastMaximalPoints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>windowRadius</em> = <code>2</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds luminance peaks in the input image This is an overloaded version provided for convenience. Processing 8 bit depth images is faster than doing it on 64 floating images. </p>
+<p>Pixels with a maximal luminance value inside a search window centered at them will be considered peaks. The search algorithm filters low response peaks with a threshold value to improve the performance time.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Image to detect luminance peaks. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Threshold used to filter out low luminance value peaks. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>windowRadius</em>&nbsp;</td><td>Radius for the search window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a" title="Finds luminance peaks in the input image.">maximalPoints(const QVImage&lt;sFloat&gt; &amp;, const double, const int)</a> </dd>
+<dd>
+<a class="el" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6" title="Finds luminance peaks in the input image.">fastMaximalPoints(const QVImage&lt;sFloat&gt; &amp;, const double, const int)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00335">335</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaafd238c384d328ca51834ff1671731da"></a><!-- doxytag: member="qvipp.h::HistogramRange" ref="gaafd238c384d328ca51834ff1671731da" args="(const QVImage&lt; uChar, 1 &gt; &amp;src, QList&lt; uChar &gt; values)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;sInt, int&gt; HistogramRange </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; uChar &gt;&nbsp;</td>
+          <td class="paramname"> <em>values</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculates frequency histogram for a given set of values, for a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>This function computes the intensity histogram of an image in the ranges specified by the QList 'values'. Default value for this QList is empty list, indicating the set of integer which cover the group of valid values for uChar type (from 0 to 255). </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000058">Todo:</a></b></dt><dd>fill pLevels array with values from QList 'values'</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image to obtain histogram values. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>values</em>&nbsp;</td><td>list of <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> data type values, to obtain frequency in histogram. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a QMap variable, that maps pixel values, with their frequency of depicting in the image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00270">270</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae25c99f8b8e1975910a913eaa8d41d96"></a><!-- doxytag: member="qvipp.h::HistogramRange" ref="gae25c99f8b8e1975910a913eaa8d41d96" args="(const QVImage&lt; uChar, 1 &gt; &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;int&gt; HistogramRange </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculates frequency histogram for a given set of values, for a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>This function computes the intensity histogram of an image in the ranges from 0 to 255. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image to obtain histogram values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a QVector list of 256 integer values, that maps pixel values, with their frequency of apperance in the image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00247">247</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138">CountingSort()</a>, <a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921">getLTMSER()</a>, and <a class="el" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96">HistogramRange()</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

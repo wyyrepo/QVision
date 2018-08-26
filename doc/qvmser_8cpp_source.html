@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvip/qvmser.cpp</h1><a href="qvmser_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QVMSER&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="group__qvip.html#ga782538a21f9e2ea0aef216b54cbf0570">00028</a> <span class="keywordtype">void</span> <a class="code" href="group__qvip.html#ga782538a21f9e2ea0aef216b54cbf0570" title="Obtains border contours for an MSER list, obtained with the function getMSER.">getMSERContours</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image, <span class="keyword">const</span> QList&lt;QVMSER&gt; &amp;MSERList, QList&lt; QVPolyline &gt; &amp;polylineMSERList)
+<a name="l00029"></a>00029         {
+<a name="l00030"></a>00030         <span class="keyword">const</span> uInt rows = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(), cols = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>();
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> notImage = image;
+<a name="l00033"></a>00033         <span class="keywordflow">for</span> (uInt col = 0; col &lt; cols; col++)
+<a name="l00034"></a>00034                 <span class="keywordflow">for</span> (uInt row = 0; row &lt; rows; row++)
+<a name="l00035"></a>00035                         <span class="comment">// Weird: using the following line produces a core error:</span>
+<a name="l00036"></a>00036                         <span class="comment">//notImage(col, row) = 255 - image(col, row);</span>
+<a name="l00037"></a>00037                         notImage(col, row) = 255 - notImage(col, row);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> msers = 0; msers &lt; MSERList.size(); msers++)
+<a name="l00040"></a>00040                 {
+<a name="l00041"></a>00041                 <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> polylineMSER = getConnectedSetBorderContourThreshold(notImage,
+<a name="l00042"></a>00042                                                 MSERList.at(msers).seed,  255 - MSERList.at(msers).threshold);
+<a name="l00043"></a>00043                 polylineMSERList.append (polylineMSER);
+<a name="l00044"></a>00044                 }
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="preprocessor">#define RELATIVE_DISTANCE(X,Y)  (ABS((X-Y)/(Y)))</span>
+<a name="l00048"></a><a class="code" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">00048</a> <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9" title="This algorithm obtains MSER&amp;#39;s - from an image.This is an implementation of the...">getMSER</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;image, QList&lt;QVMSER&gt; &amp;MSERList, <span class="keyword">const</span> <span class="keywordtype">int</span> delta, <span class="keyword">const</span> <span class="keywordtype">int</span> minArea, <span class="keyword">const</span> <span class="keywordtype">int</span> maxArea, <span class="keyword">const</span> <span class="keywordtype">double</span> diffAreaThreshold)
+<a name="l00049"></a>00049         {
+<a name="l00051"></a>00051         <span class="comment">// Prune low areas from image, with component tree</span>
+<a name="l00052"></a>00052         <a class="code" href="classQVComponentTree.html" title="Image component tree data structure.">QVComponentTree</a> componentTree(image);
+<a name="l00053"></a>00053 
+<a name="l00055"></a>00055         <span class="comment">// Tree transversing</span>
+<a name="l00056"></a>00056         uInt histogram[256];
+<a name="l00057"></a>00057         <span class="keywordtype">double</span> q_function[256];
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059         <span class="keywordflow">for</span> (uInt node = 0; node &lt; componentTree.<a class="code" href="classQVComponentTree.html#afecb92bc570b9389428b6da484794ad6" title="Gets the number of total nodes in the tree.">getNumNodes</a>(); node++)
+<a name="l00060"></a>00060                 {
+<a name="l00061"></a>00061                 <span class="keywordtype">int</span> firstThres = componentTree.<a class="code" href="classQVComponentTree.html#af6f964ef20bf880f7aab393ec829e575" title="Returns gray-scale value of the points at the vertex of a node.">firstThreshold</a>(node), lastThres = componentTree.<a class="code" href="classQVComponentTree.html#ae1f6def9a17a983f3d2047eb564cc3ad" title="Returns gray-scale value of the points at the base of a node.">lastThreshold</a>(node);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063                 <span class="keywordflow">if</span> (lastThres - firstThres - 2*delta - 2 &lt; 0)
+<a name="l00064"></a>00064                         <span class="keywordflow">continue</span>;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066                 <span class="comment">// We obtain histogram</span>
+<a name="l00067"></a>00067                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> threshold = firstThres; threshold &lt;= lastThres; threshold++)
+<a name="l00068"></a>00068                                 {
+<a name="l00069"></a>00069                                 uInt area = componentTree.<a class="code" href="classQVComponentTree.html#a270428438cc9b604e9261cf3c741c217" title="Returns the accumulative histogram of the gray-level values of the pixels, for a...">area</a>(node)[threshold], lastHistogramValue = 0 <span class="comment">/* esta variable no sería necesaria, se puede asignar area */</span>;
+<a name="l00070"></a>00070                                 <span class="keywordflow">if</span>(area != 0)
+<a name="l00071"></a>00071                                         lastHistogramValue = area;
+<a name="l00072"></a>00072                                 histogram[threshold] = lastHistogramValue;
+<a name="l00073"></a>00073                                 }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075                 <span class="comment">// Calculate &#39;q&#39; function (from the paper)</span>
+<a name="l00076"></a>00076                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> threshold = firstThres + delta; threshold &lt;= lastThres - delta; threshold++)
+<a name="l00077"></a>00077                         {
+<a name="l00078"></a>00078                         q_function[threshold] = (double)(histogram[threshold + delta] - histogram[threshold - delta]) / histogram[threshold];
+<a name="l00079"></a>00079                         }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081                 <span class="comment">// Get local minima of the function, and append them to MSER list</span>
+<a name="l00082"></a>00082                 <span class="keywordtype">int</span> lastMSERThreshold = -1, minLastMSERThreshold = 0;
+<a name="l00083"></a>00083                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> threshold = firstThres + delta + 1; threshold &lt;= lastThres - delta - 1; threshold++)
+<a name="l00084"></a>00084                         {
+<a name="l00085"></a>00085                         <span class="keywordflow">if</span> ( ((<span class="keywordtype">int</span>)histogram[threshold] &lt; minArea) || ((int)histogram[threshold] &gt; maxArea) )
+<a name="l00086"></a>00086                                 <span class="keywordflow">continue</span>;
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088                         <span class="keywordflow">if</span> ( (q_function[threshold + 1] &gt; q_function[threshold]) &amp;&amp; (q_function[threshold - 1] &gt; q_function[threshold]) )
+<a name="l00089"></a>00089                                 <span class="comment">// We have a minimum in the q function</span>
+<a name="l00090"></a>00090                                 {
+<a name="l00091"></a>00091                                 <span class="keywordflow">if</span> (lastMSERThreshold == -1)
+<a name="l00092"></a>00092                                         <span class="comment">// We don&#39;t have any previous local minima in the node</span>
+<a name="l00093"></a>00093                                         {
+<a name="l00094"></a>00094                                         lastMSERThreshold = threshold;
+<a name="l00095"></a>00095                                         minLastMSERThreshold = threshold;
+<a name="l00096"></a>00096                                         }
+<a name="l00097"></a>00097                                 <span class="keywordflow">else</span>
+<a name="l00098"></a>00098                                         <span class="keywordflow">if</span> (RELATIVE_DISTANCE((<span class="keywordtype">float</span>)histogram[lastMSERThreshold], (float)histogram[threshold]) &lt; diffAreaThreshold)
+<a name="l00099"></a>00099                                                 <span class="comment">// if distance with last minima isn&#39;t enough, we just actialize minimum MSER</span>
+<a name="l00100"></a>00100                                                 {
+<a name="l00101"></a>00101                                                 <span class="keywordflow">if</span> (q_function[minLastMSERThreshold] &gt; q_function[threshold])
+<a name="l00102"></a>00102                                                                 minLastMSERThreshold = threshold;
+<a name="l00103"></a>00103                                                 }
+<a name="l00104"></a>00104                                         <span class="keywordflow">else</span>    <span class="comment">// We have a previous minima, and far enough from the actual minimum, we add the smallest MSER found in the previous set of minimums</span>
+<a name="l00105"></a>00105                                                 {
+<a name="l00106"></a>00106                                                 MSERList.append(<a class="code" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a>(QPoint(componentTree.<a class="code" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb" title="Returns horizontal coordinate for the seed point of a node, given it&amp;#39;s index...">seedX</a>(node), componentTree.<a class="code" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862" title="Returns vertical coordinate for the seed point of a node, given it&amp;#39;s index.">seedY</a>(node)), minLastMSERThreshold));
+<a name="l00107"></a>00107                                                 lastMSERThreshold = threshold;
+<a name="l00108"></a>00108                                                 minLastMSERThreshold = threshold;
+<a name="l00109"></a>00109                                                 }
+<a name="l00110"></a>00110                                 }
+<a name="l00111"></a>00111                         }
+<a name="l00112"></a>00112                 <span class="keywordflow">if</span> (lastMSERThreshold != -1)
+<a name="l00113"></a>00113                         MSERList.append(<a class="code" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a>(QPoint(componentTree.<a class="code" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb" title="Returns horizontal coordinate for the seed point of a node, given it&amp;#39;s index...">seedX</a>(node), componentTree.<a class="code" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862" title="Returns vertical coordinate for the seed point of a node, given it&amp;#39;s index.">seedY</a>(node)), minLastMSERThreshold));
+<a name="l00114"></a>00114                 }
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116         }
+<a name="l00117"></a>00117 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

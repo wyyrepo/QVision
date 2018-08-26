@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/maximize.png</file>
+        <file>images/player_end.png</file>
+        <file>images/player_pause.png</file>
+        <file>images/player_play.png</file>
+        <file>images/player_stop.png</file>
+        <file>images/player_finish.png</file>
+        <file>images/stat.png</file>
+        <file>images/zoom.png</file>
+        <file>images/zoom-in.png</file>
+        <file>images/zoom-out.png</file>
+        <file>images/zoom-best-fit.png</file>
+        <file>images/zoom-original.png</file>
+        <file>images/poly.png</file>
+        <file>images/list.png</file>
+        <file>images/select.png</file>
+        <file>images/drawsel.png</file>
+        <file>images/hand.png</file>
+        <file>images/fileopen.png</file>
+        <file>images/polyclosed.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/designer/designer.cpp</h1><a href="designer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QVDesignerGUI&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QVCannyEdgeDetector&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QVVideoReaderBlock&gt;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QVImageCanvas&gt;</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="comment">//#include &lt;qvipp.h&gt;</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#include &lt;QV2DMap&gt;</span>
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="comment">/*class QVMyFilterHipass: public QVProcessingBlock</span>
+<a name="l00056"></a>00056 <span class="comment">        {</span>
+<a name="l00057"></a>00057 <span class="comment">        public:</span>
+<a name="l00058"></a>00058 <span class="comment">                QVMyFilterHipass(QString name = QString()): QVProcessingBlock(name)</span>
+<a name="l00059"></a>00059 <span class="comment">                        {</span>
+<a name="l00060"></a>00060 <span class="comment">                        addProperty&lt; QVImage&lt;uChar,3&gt; &gt;(&quot;Input image&quot;, inputFlag|outputFlag);</span>
+<a name="l00061"></a>00061 <span class="comment">                        addProperty&lt; QVImage&lt;uChar,3&gt; &gt;(&quot;Output image&quot;, outputFlag);</span>
+<a name="l00062"></a>00062 <span class="comment">                        addProperty&lt; IppiMaskSize &gt;(&quot;mask&quot;, inputFlag, ippMskSize5x5);</span>
+<a name="l00063"></a>00063 <span class="comment">                        addProperty&lt; QPoint &gt;(&quot;destROIOffset&quot;, inputFlag);</span>
+<a name="l00064"></a>00064 <span class="comment">                        }</span>
+<a name="l00065"></a>00065 <span class="comment"></span>
+<a name="l00066"></a>00066 <span class="comment">                void iterate()</span>
+<a name="l00067"></a>00067 <span class="comment">                        {</span>
+<a name="l00068"></a>00068 <span class="comment">                        // 0. Read input image.</span>
+<a name="l00069"></a>00069 <span class="comment">                        const QVImage&lt;uChar, 3&gt; qvimage_pSrc = getPropertyValue&lt; QVImage&lt;uChar, 3&gt; &gt; (&quot;Input image&quot;);</span>
+<a name="l00070"></a>00070 <span class="comment">                        const IppiMaskSize mask = getPropertyValue&lt; IppiMaskSize &gt; (&quot;mask&quot;);</span>
+<a name="l00071"></a>00071 <span class="comment">                        const QPoint destROIOffset = getPropertyValue&lt; QPoint &gt; (&quot;destROIOffset&quot;);</span>
+<a name="l00072"></a>00072 <span class="comment">                </span>
+<a name="l00073"></a>00073 <span class="comment">                        QVImage&lt;uChar, 3&gt; qvimage_pDst;</span>
+<a name="l00074"></a>00074 <span class="comment">                </span>
+<a name="l00075"></a>00075 <span class="comment">                        FilterHipass(qvimage_pSrc, qvimage_pDst, mask, destROIOffset);</span>
+<a name="l00076"></a>00076 <span class="comment">                        setPropertyValue&lt; QVImage&lt;uChar, 3&gt; &gt;(&quot;Output image&quot;, qvimage_pDst);</span>
+<a name="l00077"></a>00077 <span class="comment">                        }</span>
+<a name="l00078"></a>00078 <span class="comment">        };*/</span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="keyword">class </span>QVSFloatC1MaximalPoints: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00081"></a>00081         {
+<a name="l00082"></a>00082         <span class="keyword">public</span>:
+<a name="l00083"></a>00083                 QVSFloatC1MaximalPoints(QString name = QString()): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+<a name="l00084"></a>00084                         {
+<a name="l00085"></a>00085                         <span class="comment">// Input properties</span>
+<a name="l00086"></a>00086                         addProperty&lt; QVImage&lt;sFloat&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>, inputFlag|outputFlag);
+<a name="l00087"></a>00087                         addProperty&lt; double &gt;(<span class="stringliteral">&quot;Threshold&quot;</span>, inputFlag);
+<a name="l00088"></a>00088                         addProperty&lt; int &gt;(<span class="stringliteral">&quot;Radius&quot;</span>, inputFlag);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090                         <span class="comment">// Output properties</span>
+<a name="l00091"></a>00091                         addProperty&lt; QList&lt;QPointF&gt; &gt;(<span class="stringliteral">&quot;max&quot;</span>, outputFlag);
+<a name="l00092"></a>00092                         }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094                 <span class="keywordtype">void</span> <a class="code" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">iterate</a>()
+<a name="l00095"></a>00095                         {
+<a name="l00096"></a>00096                         <span class="comment">// 0. Read input image.</span>
+<a name="l00097"></a>00097                         <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> image = getPropertyValue&lt; QVImage&lt;sFloat&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>);
+<a name="l00098"></a>00098                         <span class="keyword">const</span> <span class="keywordtype">double</span> threshold = getPropertyValue&lt; double &gt;(<span class="stringliteral">&quot;Threshold&quot;</span>);
+<a name="l00099"></a>00099                         <span class="keyword">const</span> <span class="keywordtype">int</span> radius = getPropertyValue&lt; int &gt;(<span class="stringliteral">&quot;Radius&quot;</span>);
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101                         QMap&lt;sFloat, QPointF&gt; map = <a class="code" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a" title="Finds luminance peaks in the input image.">maximalPoints</a>(image, threshold, radius);
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103                         <span class="comment">// 1. Export single-channel images</span>
+<a name="l00104"></a>00104                         setPropertyValue&lt; QList&lt;QPointF&gt; &gt;(<span class="stringliteral">&quot;max&quot;</span>, map.values());
+<a name="l00105"></a>00105                         }
+<a name="l00106"></a>00106         };
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<a name="l00109"></a>00109         {
+<a name="l00110"></a>00110         <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv, <span class="stringliteral">&quot;Example application for QVision.&quot;</span>, <span class="keyword">true</span> );
+<a name="l00111"></a>00111         
+<a name="l00112"></a>00112         <span class="comment">//QVDesignerGUI::registerUserType&lt;QVMyFilterHipass&gt;(&quot;QVMyFilterHipass&quot;);</span>
+<a name="l00113"></a>00113         QVDesignerGUI::registerUserType&lt;QVSFloatC1MaximalPoints&gt;(<span class="stringliteral">&quot;QVSFloatC1MaximalPoints&quot;</span>);
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115  <span class="comment">//   QVMyFilterHipass hipass(&quot;Hipass&quot;);</span>
+<a name="l00116"></a>00116     QVSFloatC1MaximalPoints max(<span class="stringliteral">&quot;Maximal&quot;</span>);
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118         <a class="code" href="classQVDesignerGUI.html" title="Advanced graphic block oriented programming interface widget for QVision applications...">QVDesignerGUI</a> interface;
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <span class="keywordflow">return</span> app.exec();
+<a name="l00121"></a>00121         }
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

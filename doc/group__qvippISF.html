@@ -1,0 +1,1459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Image Statistics Functions<br/>
+<small>
+[<a class="el" href="group__qvipp.html">IPP wrapper functions</a>]</small>
+</h1>
+<p>Functions that can be used to compute the following statistical parameters of an image.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga2e7319ac380719f2d97cb2ea111e8bc2">Sum</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pSum)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the sum of image pixel values.  <a href="#ga2e7319ac380719f2d97cb2ea111e8bc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga9872d70eef43309f08f0357b6dc4bc7d">Sum</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, sDouble sum[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the sum of image pixel values.  <a href="#ga9872d70eef43309f08f0357b6dc4bc7d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gac1410e94b416600039dfcfc5fd13f693">Sum</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pSum)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the sum of image pixel values.  <a href="#gac1410e94b416600039dfcfc5fd13f693"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gab5ce6228aa5deb8053da44d3f138763f">Sum</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sDouble sum[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the sum of image pixel values.  <a href="#gab5ce6228aa5deb8053da44d3f138763f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga9ae3f12a9b4be81b9657f78eb6932063">Integral</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sInt, 1 &gt; &amp;qvimage_pDst, const sInt val, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiIntegral_8u32s_C1R.  <a href="#ga9ae3f12a9b4be81b9657f78eb6932063"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gad227f035be043c9ce78c68847f5a7473">Integral</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat val, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiIntegral_8u32f_C1R.  <a href="#gad227f035be043c9ce78c68847f5a7473"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gaea578fd5bc05a457eb8af0c80386b819">Mean</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pMean)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the mean of image pixel values.  <a href="#gaea578fd5bc05a457eb8af0c80386b819"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga9397573869367eb01fefee1e42fdb454">Mean</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, sDouble mean[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the mean of image pixel values.  <a href="#ga9397573869367eb01fefee1e42fdb454"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga6527a6a7f7f8d70379b683314bf79a56">Mean</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pMean)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the mean of image pixel values.  <a href="#ga6527a6a7f7f8d70379b683314bf79a56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga790730b605dfb4462470ebc8241eb8d2">Mean</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sDouble mean[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the mean of image pixel values.  <a href="#ga790730b605dfb4462470ebc8241eb8d2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga47cad14d543d670d8d3b514780cec32f">Min</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, uChar &amp;pMin)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="#ga47cad14d543d670d8d3b514780cec32f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga14a90d8a976dc8b1ed05d22fdf8ff30a">Min</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, uChar min[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="#ga14a90d8a976dc8b1ed05d22fdf8ff30a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gaf1767fe230ba5d4f454894f96c549f9a">Min</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sShort &amp;pMin)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="#gaf1767fe230ba5d4f454894f96c549f9a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga0ab6a87be6ad8a4eabe566a13c8d1bb4">Min</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sShort min[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="#ga0ab6a87be6ad8a4eabe566a13c8d1bb4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gafe257bcac94f43b6dc73ec6f6520ee2e">Min</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, sFloat &amp;pMin)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="#gafe257bcac94f43b6dc73ec6f6520ee2e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga5c6818c716512e7ee6612b688cf19bd1">Max</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, uChar &amp;pMax)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="#ga5c6818c716512e7ee6612b688cf19bd1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gad19ee404ba9540ca6db400942bf1a171">Max</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, uChar max[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="#gad19ee404ba9540ca6db400942bf1a171"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gaef0fc7ea88dec12c30dfe4993ba8d6f7">Max</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sShort &amp;pMax)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="#gaef0fc7ea88dec12c30dfe4993ba8d6f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gaa4fe10e64f2584f7dc0d8966e9eacdc5">Max</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sShort max[3])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="#gaa4fe10e64f2584f7dc0d8966e9eacdc5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga4695d548df7bb25bac6dde326a364034">Max</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, sFloat &amp;pMax)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="#ga4695d548df7bb25bac6dde326a364034"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gad008e2584b86a28ee53c3a599b268b5d">MinEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMinEvery_8u_C1IR.  <a href="#gad008e2584b86a28ee53c3a599b268b5d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gac6b5d1c3d30dbfd4eb4b55c863f85470">MinEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMinEvery_8u_C3IR.  <a href="#gac6b5d1c3d30dbfd4eb4b55c863f85470"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#gae1ebc7d5c018cc391967a09d11152501">MinEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMinEvery_16s_C1IR.  <a href="#gae1ebc7d5c018cc391967a09d11152501"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga11106f8e7713f5a21879f7c593ebca68">MinEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMinEvery_16s_C3IR.  <a href="#ga11106f8e7713f5a21879f7c593ebca68"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga21a839e6f1b7b877f6bc1dfdda97458a">MinEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMinEvery_32f_C1IR.  <a href="#ga21a839e6f1b7b877f6bc1dfdda97458a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga868dcc76643480b3e18c858392fe91e4">MaxEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculation min max value for every element of two images.  <a href="#ga868dcc76643480b3e18c858392fe91e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga5245f4d5ac83173558f82e0b137e5bcd">MaxEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculation min max value for every element of two images.  <a href="#ga5245f4d5ac83173558f82e0b137e5bcd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga6a51c7dce3462cf1f348dea1354ea05b">MaxEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculation min max value for every element of two images.  <a href="#ga6a51c7dce3462cf1f348dea1354ea05b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga9ebec5dcf3cb1591327edec8bcd3bbc0">MaxEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculation min max value for every element of two images.  <a href="#ga9ebec5dcf3cb1591327edec8bcd3bbc0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippISF.html#ga0837401330dcd90305bc4e31d612f6ce">MaxEvery</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculation min max value for every element of two images.  <a href="#ga0837401330dcd90305bc4e31d612f6ce"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Functions that can be used to compute the following statistical parameters of an image. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga2e7319ac380719f2d97cb2ea111e8bc2"></a><!-- doxytag: member="qvippfunctions.h::Sum" ref="ga2e7319ac380719f2d97cb2ea111e8bc2" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pSum)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sum </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble &amp;&nbsp;</td>
+          <td class="paramname"> <em>pSum</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the sum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiSum_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSum</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04301">4301</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVSum__uCharC1Block.html#a42e3ab178437fa4102b5f52e7659794a">QVSum_uCharC1Block::iterate()</a>, and <a class="el" href="group__qvippISF.html#ga2e7319ac380719f2d97cb2ea111e8bc2">Sum()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9872d70eef43309f08f0357b6dc4bc7d"></a><!-- doxytag: member="qvippfunctions.h::Sum" ref="ga9872d70eef43309f08f0357b6dc4bc7d" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, sDouble sum[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sum </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble&nbsp;</td>
+          <td class="paramname"> <em>sum</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the sum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiSum_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sum</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04312">4312</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac1410e94b416600039dfcfc5fd13f693"></a><!-- doxytag: member="qvippfunctions.h::Sum" ref="gac1410e94b416600039dfcfc5fd13f693" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pSum)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sum </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble &amp;&nbsp;</td>
+          <td class="paramname"> <em>pSum</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the sum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiSum_16s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSum</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04323">4323</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab5ce6228aa5deb8053da44d3f138763f"></a><!-- doxytag: member="qvippfunctions.h::Sum" ref="gab5ce6228aa5deb8053da44d3f138763f" args="(const QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sDouble sum[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sum </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble&nbsp;</td>
+          <td class="paramname"> <em>sum</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the sum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiSum_16s_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sum</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04334">4334</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9ae3f12a9b4be81b9657f78eb6932063"></a><!-- doxytag: member="qvippfunctions.h::Integral" ref="ga9ae3f12a9b4be81b9657f78eb6932063" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sInt, 1 &gt; &amp;qvimage_pDst, const sInt val, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Integral </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sInt, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sInt&nbsp;</td>
+          <td class="paramname"> <em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiIntegral_8u32s_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiIntegral_8u32s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>val</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04345">4345</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippISF.html#ga9ae3f12a9b4be81b9657f78eb6932063">Integral()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad227f035be043c9ce78c68847f5a7473"></a><!-- doxytag: member="qvippfunctions.h::Integral" ref="gad227f035be043c9ce78c68847f5a7473" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat val, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Integral </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiIntegral_8u32f_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiIntegral_8u32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>val</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04361">4361</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaea578fd5bc05a457eb8af0c80386b819"></a><!-- doxytag: member="qvippfunctions.h::Mean" ref="gaea578fd5bc05a457eb8af0c80386b819" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pMean)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mean </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMean</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the mean of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMean_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMean</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04377">4377</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVMean__uCharC1Block.html#af64822b14102ec7f8278ee597fa902ff">QVMean_uCharC1Block::iterate()</a>, and <a class="el" href="group__qvippISF.html#gaea578fd5bc05a457eb8af0c80386b819">Mean()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9397573869367eb01fefee1e42fdb454"></a><!-- doxytag: member="qvippfunctions.h::Mean" ref="ga9397573869367eb01fefee1e42fdb454" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, sDouble mean[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mean </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble&nbsp;</td>
+          <td class="paramname"> <em>mean</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the mean of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMean_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mean</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04388">4388</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6527a6a7f7f8d70379b683314bf79a56"></a><!-- doxytag: member="qvippfunctions.h::Mean" ref="ga6527a6a7f7f8d70379b683314bf79a56" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sDouble &amp;pMean)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mean </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMean</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the mean of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMean_16s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMean</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04399">4399</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga790730b605dfb4462470ebc8241eb8d2"></a><!-- doxytag: member="qvippfunctions.h::Mean" ref="ga790730b605dfb4462470ebc8241eb8d2" args="(const QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sDouble mean[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mean </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sDouble&nbsp;</td>
+          <td class="paramname"> <em>mean</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the mean of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMean_16s_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mean</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04410">4410</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga47cad14d543d670d8d3b514780cec32f"></a><!-- doxytag: member="qvippfunctions.h::Min" ref="ga47cad14d543d670d8d3b514780cec32f" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, uChar &amp;pMin)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMin</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the minimum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMin_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMin</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04421">4421</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVMin__sFloatC1Block.html#a0e34bef2a7f115b4f8a52b6b96f590e1">QVMin_sFloatC1Block::iterate()</a>, <a class="el" href="classQVMin__uCharC1Block.html#a53258697aaf7c8b9f82b023eae0fb24a">QVMin_uCharC1Block::iterate()</a>, and <a class="el" href="group__qvippISF.html#ga47cad14d543d670d8d3b514780cec32f">Min()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga14a90d8a976dc8b1ed05d22fdf8ff30a"></a><!-- doxytag: member="qvippfunctions.h::Min" ref="ga14a90d8a976dc8b1ed05d22fdf8ff30a" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, uChar min[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>min</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the minimum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMin_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>min</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04432">4432</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf1767fe230ba5d4f454894f96c549f9a"></a><!-- doxytag: member="qvippfunctions.h::Min" ref="gaf1767fe230ba5d4f454894f96c549f9a" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sShort &amp;pMin)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sShort &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMin</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the minimum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMin_16s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMin</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04443">4443</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0ab6a87be6ad8a4eabe566a13c8d1bb4"></a><!-- doxytag: member="qvippfunctions.h::Min" ref="ga0ab6a87be6ad8a4eabe566a13c8d1bb4" args="(const QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sShort min[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sShort&nbsp;</td>
+          <td class="paramname"> <em>min</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the minimum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMin_16s_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>min</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04454">4454</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafe257bcac94f43b6dc73ec6f6520ee2e"></a><!-- doxytag: member="qvippfunctions.h::Min" ref="gafe257bcac94f43b6dc73ec6f6520ee2e" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, sFloat &amp;pMin)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sFloat &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMin</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the minimum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMin_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMin</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04465">4465</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5c6818c716512e7ee6612b688cf19bd1"></a><!-- doxytag: member="qvippfunctions.h::Max" ref="ga5c6818c716512e7ee6612b688cf19bd1" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, uChar &amp;pMax)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMax</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the maximum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMax_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMax</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04476">4476</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVMax__sFloatC1Block.html#a632b953a0b466383a1d8e0433d248378">QVMax_sFloatC1Block::iterate()</a>, <a class="el" href="classQVMax__uCharC1Block.html#a52ef49fb07f3cb6ca4cf05f13c9b5772">QVMax_uCharC1Block::iterate()</a>, and <a class="el" href="group__qvippISF.html#ga5c6818c716512e7ee6612b688cf19bd1">Max()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad19ee404ba9540ca6db400942bf1a171"></a><!-- doxytag: member="qvippfunctions.h::Max" ref="gad19ee404ba9540ca6db400942bf1a171" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, uChar max[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>max</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the maximum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMax_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04487">4487</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaef0fc7ea88dec12c30dfe4993ba8d6f7"></a><!-- doxytag: member="qvippfunctions.h::Max" ref="gaef0fc7ea88dec12c30dfe4993ba8d6f7" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, sShort &amp;pMax)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sShort &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMax</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the maximum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMax_16s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMax</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04498">4498</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa4fe10e64f2584f7dc0d8966e9eacdc5"></a><!-- doxytag: member="qvippfunctions.h::Max" ref="gaa4fe10e64f2584f7dc0d8966e9eacdc5" args="(const QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrc, sShort max[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sShort&nbsp;</td>
+          <td class="paramname"> <em>max</em>[3]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the maximum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMax_16s_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04509">4509</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4695d548df7bb25bac6dde326a364034"></a><!-- doxytag: member="qvippfunctions.h::Max" ref="ga4695d548df7bb25bac6dde326a364034" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, sFloat &amp;pMax)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sFloat &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMax</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the maximum of image pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMax_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMax</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04520">4520</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad008e2584b86a28ee53c3a599b268b5d"></a><!-- doxytag: member="qvippfunctions.h::MinEvery" ref="gad008e2584b86a28ee53c3a599b268b5d" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiMinEvery_8u_C1IR. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMinEvery_8u_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04531">4531</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippISF.html#gad008e2584b86a28ee53c3a599b268b5d">MinEvery()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac6b5d1c3d30dbfd4eb4b55c863f85470"></a><!-- doxytag: member="qvippfunctions.h::MinEvery" ref="gac6b5d1c3d30dbfd4eb4b55c863f85470" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiMinEvery_8u_C3IR. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMinEvery_8u_C3IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04545">4545</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae1ebc7d5c018cc391967a09d11152501"></a><!-- doxytag: member="qvippfunctions.h::MinEvery" ref="gae1ebc7d5c018cc391967a09d11152501" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiMinEvery_16s_C1IR. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMinEvery_16s_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04559">4559</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga11106f8e7713f5a21879f7c593ebca68"></a><!-- doxytag: member="qvippfunctions.h::MinEvery" ref="ga11106f8e7713f5a21879f7c593ebca68" args="(const QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiMinEvery_16s_C3IR. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMinEvery_16s_C3IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04573">4573</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga21a839e6f1b7b877f6bc1dfdda97458a"></a><!-- doxytag: member="qvippfunctions.h::MinEvery" ref="ga21a839e6f1b7b877f6bc1dfdda97458a" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiMinEvery_32f_C1IR. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMinEvery_32f_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04587">4587</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga868dcc76643480b3e18c858392fe91e4"></a><!-- doxytag: member="qvippfunctions.h::MaxEvery" ref="ga868dcc76643480b3e18c858392fe91e4" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MaxEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculation min max value for every element of two images. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMaxEvery_8u_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04601">4601</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippISF.html#ga868dcc76643480b3e18c858392fe91e4">MaxEvery()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5245f4d5ac83173558f82e0b137e5bcd"></a><!-- doxytag: member="qvippfunctions.h::MaxEvery" ref="ga5245f4d5ac83173558f82e0b137e5bcd" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MaxEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculation min max value for every element of two images. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMaxEvery_8u_C3IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04615">4615</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6a51c7dce3462cf1f348dea1354ea05b"></a><!-- doxytag: member="qvippfunctions.h::MaxEvery" ref="ga6a51c7dce3462cf1f348dea1354ea05b" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MaxEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculation min max value for every element of two images. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMaxEvery_16s_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04629">4629</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9ebec5dcf3cb1591327edec8bcd3bbc0"></a><!-- doxytag: member="qvippfunctions.h::MaxEvery" ref="ga9ebec5dcf3cb1591327edec8bcd3bbc0" args="(const QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; sShort, 3 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MaxEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculation min max value for every element of two images. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMaxEvery_16s_C3IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04643">4643</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0837401330dcd90305bc4e31d612f6ce"></a><!-- doxytag: member="qvippfunctions.h::MaxEvery" ref="ga0837401330dcd90305bc4e31d612f6ce" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MaxEvery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculation min max value for every element of two images. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMaxEvery_32f_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04657">4657</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

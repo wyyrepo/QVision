@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVMSER Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmser.html">Linear time MSER implementation</a>]</small>
+</h1><!-- doxytag: class="QVMSER" -->
+<p>Maximally stable extremal region datatype.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvmser_8h_source.html">QVMSER</a>&gt;</code></p>
+
+<p><a href="classQVMSER-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QPoint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMSER.html#aca09ffbbcd424aaf0f6ac66d75c1f9f0">seed</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Seed coordinates (darkest point in region).  <a href="#aca09ffbbcd424aaf0f6ac66d75c1f9f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uChar&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMSER.html#a1995cf69917eb0408babaacbc4932461">threshold</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Threshold value to obtain region.  <a href="#a1995cf69917eb0408babaacbc4932461"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMSER.html#a26e76f44a74f7a71380f85d059c81b8e">merit</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Merit value (i.e., value of <img class="formulaInl" alt="$ \frac{area_{th-delta} - area_{th-delta}}{area_{th-delta}} $" src="form_10.png"/> ).  <a href="#a26e76f44a74f7a71380f85d059c81b8e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMSER.html#a2b5dae6c4c26fb3c11d07c95dc8aa024">area</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Area of region (in pixels).  <a href="#a2b5dae6c4c26fb3c11d07c95dc8aa024"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Maximally stable extremal region datatype. </p>
+
+<p>Definition at line <a class="el" href="qvmser_8h_source.html#l00036">36</a> of file <a class="el" href="qvmser_8h_source.html">qvmser.h</a>.</p>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aca09ffbbcd424aaf0f6ac66d75c1f9f0"></a><!-- doxytag: member="QVMSER::seed" ref="aca09ffbbcd424aaf0f6ac66d75c1f9f0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint <a class="el" href="classQVMSER.html#aca09ffbbcd424aaf0f6ac66d75c1f9f0">QVMSER::seed</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Seed coordinates (darkest point in region). </p>
+
+<p>Definition at line <a class="el" href="qvmser_8h_source.html#l00042">42</a> of file <a class="el" href="qvmser_8h_source.html">qvmser.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921">getLTMSER()</a>, and <a class="el" href="group__qvmser.html#ga63a38297183386411e250f0a2d52122b">getLTMSERContours()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1995cf69917eb0408babaacbc4932461"></a><!-- doxytag: member="QVMSER::threshold" ref="a1995cf69917eb0408babaacbc4932461" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uChar <a class="el" href="classQVMSER.html#a1995cf69917eb0408babaacbc4932461">QVMSER::threshold</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Threshold value to obtain region. </p>
+
+<p>Definition at line <a class="el" href="qvmser_8h_source.html#l00048">48</a> of file <a class="el" href="qvmser_8h_source.html">qvmser.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921">getLTMSER()</a>, and <a class="el" href="group__qvmser.html#ga63a38297183386411e250f0a2d52122b">getLTMSERContours()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26e76f44a74f7a71380f85d059c81b8e"></a><!-- doxytag: member="QVMSER::merit" ref="a26e76f44a74f7a71380f85d059c81b8e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classQVMSER.html#a26e76f44a74f7a71380f85d059c81b8e">QVMSER::merit</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Merit value (i.e., value of <img class="formulaInl" alt="$ \frac{area_{th-delta} - area_{th-delta}}{area_{th-delta}} $" src="form_10.png"/> ). </p>
+
+<p>Definition at line <a class="el" href="qvmser_8h_source.html#l00051">51</a> of file <a class="el" href="qvmser_8h_source.html">qvmser.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921">getLTMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b5dae6c4c26fb3c11d07c95dc8aa024"></a><!-- doxytag: member="QVMSER::area" ref="a2b5dae6c4c26fb3c11d07c95dc8aa024" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVMSER.html#a2b5dae6c4c26fb3c11d07c95dc8aa024">QVMSER::area</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Area of region (in pixels). </p>
+
+<p>Definition at line <a class="el" href="qvmser_8h_source.html#l00054">54</a> of file <a class="el" href="qvmser_8h_source.html">qvmser.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921">getLTMSER()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvip/<a class="el" href="qvmser_8h_source.html">qvmser.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

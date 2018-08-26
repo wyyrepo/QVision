@@ -1,0 +1,479 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVRANSAC&lt; Element, Model &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__qvstatistics.html">Statistics</a>]</small>
+</h1><!-- doxytag: class="QVRANSAC" -->
+<p>Implementation of <a href="http://en.wikipedia.org/wiki/RANSAC">RANSAC</a>, a robust statistical model fitting algorithm.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvsampleconsensus_8h_source.html">QVRANSAC</a>&gt;</code></p>
+
+<p>Inherited by <a class="el" href="classQVPROSAC.html">QVPROSAC&lt; Element, Model &gt;</a>.</p>
+
+<p><a href="classQVRANSAC-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a50f5de1745380c4225a454d1ca923305">QVRANSAC</a> (const int sampleSetSize, const int minInliers)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> class.  <a href="#a50f5de1745380c4225a454d1ca923305"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899">fit</a> (const QList&lt; Element &gt; &amp;elementList, Model &amp;model)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generate a model from a set of observations.  <a href="#a0d8bec0d4c7201e3821b0106db079899"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a79fd586329d3e77aab2bfec0d7666012">test</a> (const Model &amp;model, const Element &amp;element)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if an observation fits in a model.  <a href="#a79fd586329d3e77aab2bfec0d7666012"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a7470d21ea8b806df5ee83405b05d14f1">addElement</a> (const Element &amp;element)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a data sample to the observations set.  <a href="#a7470d21ea8b806df5ee83405b05d14f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const Model &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#ad45b090b62c67943d269fa25855b71ce">getBestModel</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the best model obtained in a search.  <a href="#ad45b090b62c67943d269fa25855b71ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QList&lt; Element &gt; &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a28bbe6479b1babf7398e1b3215435e67">getBestInliers</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the data elements matching with the best model.  <a href="#a28bbe6479b1babf7398e1b3215435e67"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a69241e87115f9030f0da68c720117970">getIterations</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of iterations performed in a search.  <a href="#a69241e87115f9030f0da68c720117970"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">iterate</a> (const int maxIterations)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Starts a RANSAC search.  <a href="#a33fbf94a2d5f7df09202d97d505a0ea5"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<h3>template&lt;typename Element, typename Model&gt;<br/>
+ class QVRANSAC&lt; Element, Model &gt;</h3>
+
+<p>Implementation of <a href="http://en.wikipedia.org/wiki/RANSAC">RANSAC</a>, a robust statistical model fitting algorithm. </p>
+<p><a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a> <a class="el" href="qvsampleconsensus_8h_source.html">qvmath/qvsampleconsensus.h</a> RANSAC can be used for regression over sample data sets, containing a significant percentage of gross errors. The following image shows the result of using RANSAC to fit a linear model over a set of points in the bi-dimensional plane:</p>
+<div align="center">
+<img src="ransac-linear-fitting.png" alt="ransac-linear-fitting.png"/>
+</div>
+<p>it is a more robust linear fitting than those performed by other common algorithms, such as least squares, because RANSAC can ignore a big amount of erroneous or not corresponding data elements.</p>
+<p>The input to the RANSAC algorithm is a set <b><em>S</em></b> of observed data values, or elements, and a parametric model <b><em>M</em></b> which must be fitted to the observations. RANSAC looks randomly for subsets <b><em>s</em></b>  <b><em>S</em></b> of a fixed size <b><em>n</em></b>, which gets a model <b><em>M</em></b> that fits better the whole data set <b><em>S</em></b>.</p>
+<p>With each subset <b><em>s</em></b>, a model fitting is performed, obtaining the parameters for the model <b><em>M</em></b> that fit it best to the elements of the subset. If this succeeds, the algorithm counts the number of elements of the set <b><em>S</em></b> that fit with the new model.</p>
+<p>After testing a fixed number <b><em>k</em></b> of random subsets, the algorithm stops, and returns the parameters of the model <b><em>M</em></b> that make it fit the most elements of <b><em>S</em></b>.</p>
+<p>To create a RANSAC iterator, the class <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> should be extended, instantiating the Element and Model template parameters with the type or class for the observed data values, and the model, respectively. The following example defines a RANSAC iterator that will fit a line (represented as an object derived from class Line) over a set of points (represented as objects derived from class QPoint):</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// We create the class for the fitting model</span>
+<span class="keyword">class </span>Line
+    {
+    [...]
+    <span class="keyword">public</span>:
+        Line()                                  { [...] };
+        Line(<span class="keyword">const</span> QPoint, <span class="keyword">const</span> QPoint)        { [...] };
+        <span class="keywordtype">double</span> distance(<span class="keyword">const</span> QPoint)<span class="keyword"> const     </span>{ <span class="keywordflow">return</span> [...]; }
+    };
+
+<span class="comment">// And a subclass extending class QVRANSAC</span>
+<span class="keyword">class </span>myRANSAC: <span class="keyword">public</span> <a class="code" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>&lt;QPoint, Line&gt;
+    {
+    <span class="keyword">private</span>:
+        <span class="keywordtype">double</span> maximalDistance;
+
+    <span class="keyword">public</span>:
+        myRANSAC(<span class="keyword">const</span> QList&lt;QPoint&gt; &amp;observedPoints, <span class="keyword">const</span> <span class="keywordtype">double</span> maximalDistance):
+            <a class="code" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>&lt; QPoint, Line&gt;(2, 10), maximalDistance(maximalDistance)
+            {
+            <span class="keywordflow">foreach</span>(QPoint point, observedPoints)
+                <a class="code" href="classQVRANSAC.html#a7470d21ea8b806df5ee83405b05d14f1" title="Adds a data sample to the observations set.">addElement</a>(point);
+            }
+
+        <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899" title="Generate a model from a set of observations.">fit</a>(<span class="keyword">const</span> QList&lt;QPoint&gt; &amp;testInliers, Line &amp;model)
+            {
+            model = Line(testInliers.first(), testInliers.last());
+            <span class="keywordflow">return</span> <span class="keyword">true</span>;
+            };
+
+        <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classQVRANSAC.html#a79fd586329d3e77aab2bfec0d7666012" title="Check if an observation fits in a model.">test</a>(<span class="keyword">const</span> Line &amp;model, <span class="keyword">const</span> QPoint &amp;point)
+            { <span class="keywordflow">return</span> model.distance(point) &lt; maximalDistance; };
+    };
+</pre></div><p>The constructor should call <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> constructor, providing the size of the subsets <b><em>n</em></b>, and the minimum number of points that a model should fit, from the whole set <b><em>S</em></b>, to be considered a valid model. In this case, only 2 points are needed to create a line, and we will require 10 points fitting in the line to consider it a proper line.</p>
+<p>Value <em>maximalDistance</em> will be used to establish the maximal distance between a point and a line, to consider that point as fitting in the line. The parameter <em>observedPoints</em> is the list of observed data values, points in this case. The constructor myRANSAC adds them to the RANSAC search using the function <a class="el" href="classQVRANSAC.html#a7470d21ea8b806df5ee83405b05d14f1">addElement</a>.</p>
+<p>Methods <a class="el" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899">fit</a> and <a class="el" href="classQVRANSAC.html#a79fd586329d3e77aab2bfec0d7666012">test</a> are declared as <em><b>virtual</b></em> in <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>, and must be implemented for class myRANSAC. Method <a class="el" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899">fit</a> must contain the code to generate a line model from a subset of the observed values <b><em>s</em></b>. Method <a class="el" href="classQVRANSAC.html#a79fd586329d3e77aab2bfec0d7666012">test</a> must be able to perform element-model fitting test. Once created the RANSAC class, extending class <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>, the search must be initiated:</p>
+<div class="fragment"><pre class="fragment">[...]
+QList&lt;QPoint&gt; observedData;
+observedData.append(QPoint(10,20));
+observedData.append(QPoint(20,50));
+[...]
+
+<span class="keywordtype">int</span> maxIterations = 100;
+myRANSAC samplerConsensus(observedData, 1.5);
+<span class="keywordflow">if</span> (samplerConsensus.iterate(maxIterations))
+    {
+    Line line = samplerConsensus.getBestModel();
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Found regression line.&quot;</span> &lt;&lt; std::endl;
+    }
+<span class="keywordflow">else</span>
+    std::cout &lt;&lt; <span class="stringliteral">&quot;A line couldn&#39;t be fitted to the data, in &quot;</span> &lt;&lt; maxIterations &lt;&lt; <span class="stringliteral">&quot; iterations.&quot;</span>;
+[...]
+</pre></div><p>The <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">iterate</a> method starts a RANSAC search over of a maximum number of random subsets from <b><em>S</em></b>. It returns true when the search is successful, meaning that a line, closer than 1.5 units to at least 10 sample points from the <em>observedData</em> set was found by the algorithm, in exactly 100 tries. Else it will return false.</p>
+<p>The maximum number of iterations (aka, number <b><em>k</em></b> of subsets of <em>observedData</em>to test) should be small enough to stop the search if the probability of finding a good fitting subset <b><em>s</em></b> becomes low. It should be established upon the probability that a valid model would fit a random element of the set <b><em>S</em></b>.</p>
+<h2><a class="anchor" id="References">
+References</a></h2>
+<p>Martin A. Fischler and Robert C. Bolles. <a href="http://portal.acm.org/citation.cfm?doid=358669.358692">Random Sample Consensus: A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography</a>. <em>Comm. of the ACM 24: 381–395.</em></p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVPROSAC.html" title="Implementation of PROSAC, an extension to RANSAC (see QVRANSAC).">QVPROSAC</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00122">122</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a50f5de1745380c4225a454d1ca923305"></a><!-- doxytag: member="QVRANSAC::QVRANSAC" ref="a50f5de1745380c4225a454d1ca923305" args="(const int sampleSetSize, const int minInliers)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::<a class="el" href="classQVRANSAC.html">QVRANSAC</a> </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>sampleSetSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minInliers</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> class. </p>
+<p>Because <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> is a pure virtual class, this constructor should only be called from the constructor of its subclasses. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sampleSetSize</em>&nbsp;</td><td>size of the subsets <em><b>s</b></em> to be used for model fitting. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minInliers</em>&nbsp;</td><td>minimum number of sample data for a model to fit, to be considered a valid model. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00176">176</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0d8bec0d4c7201e3821b0106db079899"></a><!-- doxytag: member="QVRANSAC::fit" ref="a0d8bec0d4c7201e3821b0106db079899" args="(const QList&lt; Element &gt; &amp;elementList, Model &amp;model)=0" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::fit </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; Element &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>elementList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Model &amp;&nbsp;</td>
+          <td class="paramname"> <em>model</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generate a model from a set of observations. </p>
+<p>This method should be implemented by subclasses of <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> with the code to generate a model, from a set of sample data. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>elementList</em>&nbsp;</td><td>list of test inliers. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>model</em>&nbsp;</td><td>model to store parameters fitting the observed elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if model fitting was successful, for the elementList set of observations, Else false. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">QVRANSAC&lt; Element, Model &gt;::iterate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79fd586329d3e77aab2bfec0d7666012"></a><!-- doxytag: member="QVRANSAC::test" ref="a79fd586329d3e77aab2bfec0d7666012" args="(const Model &amp;model, const Element &amp;element)=0" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::test </td>
+          <td>(</td>
+          <td class="paramtype">const Model &amp;&nbsp;</td>
+          <td class="paramname"> <em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Element &amp;&nbsp;</td>
+          <td class="paramname"> <em>element</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if an observation fits in a model. </p>
+<p>This method should be implemented by subclasses of <a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> with the code to check if a sample data fits in a generated model, </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>element</em>&nbsp;</td><td>element. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>model</em>&nbsp;</td><td>model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the observation fits in the model, else false. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">QVRANSAC&lt; Element, Model &gt;::iterate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7470d21ea8b806df5ee83405b05d14f1"></a><!-- doxytag: member="QVRANSAC::addElement" ref="a7470d21ea8b806df5ee83405b05d14f1" args="(const Element &amp;element)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::addElement </td>
+          <td>(</td>
+          <td class="paramtype">const Element &amp;&nbsp;</td>
+          <td class="paramname"> <em>element</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds a data sample to the observations set. </p>
+<p>This method should be called before performing any search with the function <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">iterate</a>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>element</em>&nbsp;</td><td>element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00201">201</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad45b090b62c67943d269fa25855b71ce"></a><!-- doxytag: member="QVRANSAC::getBestModel" ref="ad45b090b62c67943d269fa25855b71ce" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const Model&amp; <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::getBestModel </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the best model obtained in a search. </p>
+<p>This method should be called after performing a search with the function <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">iterate</a>.</p>
+<p>the best model obtained in a search, after calling the init() method. </p>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00208">208</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28bbe6479b1babf7398e1b3215435e67"></a><!-- doxytag: member="QVRANSAC::getBestInliers" ref="a28bbe6479b1babf7398e1b3215435e67" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const QList&lt;Element&gt;&amp; <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::getBestInliers </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the data elements matching with the best model. </p>
+<p>This method should be called after performing a search with the function <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">iterate</a>. It will return the data elements from the observations set, matching with the best model. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>data elements matching with the best model obtained in a search. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00215">215</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a69241e87115f9030f0da68c720117970"></a><!-- doxytag: member="QVRANSAC::getIterations" ref="a69241e87115f9030f0da68c720117970" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::getIterations </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of iterations performed in a search. </p>
+<p>This method should be called after performing a search with the function <a class="el" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">iterate</a>. It will return the number of random sets tested for model fitting in a RANSAC search. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of sets tested in the ransac search. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00222">222</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33fbf94a2d5f7df09202d97d505a0ea5"></a><!-- doxytag: member="QVRANSAC::iterate" ref="a33fbf94a2d5f7df09202d97d505a0ea5" args="(const int maxIterations)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classQVRANSAC.html">QVRANSAC</a>&lt; Element, Model &gt;::iterate </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxIterations</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Starts a RANSAC search. </p>
+<p>This method will perform a random search over the elements of the observations set, to find a model that fits a given number of elements from that set, specified in the constructor of the RANSAC object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if a suitable model, that fits in a minimum number of observations specified in the construction of the RANSAC object, was found, else false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00231">231</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvmath/<a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

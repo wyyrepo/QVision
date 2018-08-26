@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="index.html">QVision: Computer Vision Library for Qt</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="DownloadAndSetup">Download and setup </a></h1><p>This page describes how to obtain, configure, compile and (if needed) install the QVision on a computer.</p>
+<p>Prior to configuration and compilation, you should install the <a href="http://trolltech.com/downloads/opensource#qt-open-source-edition">Qt Framework for high performance, cross-platform application development</a> (Version 4.0 or later), and the <a href="http://www.gnu.org/software/gsl/">GNU Scientific Library</a> in the computer. </p>
+<p>You should also download and install any third party library or application that you wish to interoperate with from the QVison. As described at the <a class="el" href="QVisionOverview.html">QVision overview</a> section, the QVision can interoperate with the following libraries: the <a href="http://www.gnu.org/software/gsl/">GSL - GNU Scientific Library</a>, the <a href="http://en.wikipedia.org/wiki/Integrated_Performance_Primitives">Intel(R) Integrated Performance Primitives (IPP)</a>, the <a href="http://sourceforge.net/projects/opencvlibrary/">OpenCV</a> library, the <a href="http://www.mplayerhq.hu">MPlayer</a> application, the <a href="http://qwt.sourceforge.net/">QWT - Qt Widgets for Technical Applications</a>, the <a href="http://www.cgal.org/">CGAL</a>, the <a href="http://octave.sourceforge.net/doxygen/html/index.html">Octave C++ API</a>, and the <a href="http://www.nvidia.com/object/cuda_home.html">CUDA</a> (not yet fully implemented).</p>
+<p>Next, you should download the sources of the latest (recommended) version of the QVision. Then you should configure it and compile it. In that moment you should be able to start creating applications with the library. Optionally, you can install the library binaries and the header files in the system.</p>
+<h2><a class="anchor" id="ConfigurationWindows">
+Installing Qt and third party libraries on Windows</a></h2>
+<p>The straightforward way to develop Qt applications on Windows is to install the <a href="http://qt.nokia.com/downloads/sdk-windows-cpp">Qt SDK</a>. To compile the QVision, simply load the file <em>qvision.pro</em> at the Qt Creator and build the project.</p>
+<p>It is also recommended to install the <a href="http://gnuwin32.sourceforge.net/packages/gsl.htm">GSL for Windows</a>, and configure the QVision to use it. Otherwise some of the QVision mathematical functionality will not be available. Make sure to install both the developer files and the binaries of this library under the same path.</p>
+<p>You can optionally install other third-party libraries such as OpenCV or Intel IPP, and configure the QVision to link against them. Notice that some libraries and applications (such as MPlayer for video input functionality) can only be configured under Linux.</p>
+<h2><a class="anchor" id="ConfigurationUbuntu">
+Installing Qt and third party libraries on Ubuntu/Debian systems</a></h2>
+<p>If you are planning to install QVision on a Ubuntu, Debian or any other distribution with a similar package management, you can directly install the following packages for the Qt and the GSL libraries:</p>
+<ul>
+<li><b>Packages for Qt library:</b> <em>g++, libqt4-core, libqt4-debug, libqt4-dev, libqt4-gui, libqt4-qt3support, libqt3-compat-headers, qt4-designer, qt4-dev-tools</em> and <em>qt4-doc</em>.<br/>
+<small>Version 4.3.2-0ubuntu3.1 of these packages was tested and works correctly for current version of QVision.</small></li>
+<li><b>Packages for GSL:</b> <em>libgsl0-dev</em>.<br/>
+<small>Version 1.9-3 for the GSL library was tested and worked correctly for current version of QVision.</small></li>
+</ul>
+<p>If you want to interoperate with other libraries, you can install the following packages:</p>
+<ul>
+<li><b>Packages for the Intel's IPP:</b> unfortunately there are no <em>deb</em> packages available in the ubuntu repositories for that library. A free <a href="http://www.intel.com/cd/software/products/asmo-na/eng/219771.htm">non-commercial</a> version is available for Linux platforms. You can download it from <a href="https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1016&amp;AccountID=&amp;ProgramID=&amp;RequestDt=&amp;rm=NCOM&amp;lang=">Intel's IPP homepage</a>. <small>Version 5.3 of this library was tested and worked correctly for current version of QVision.</small></li>
+<li><b>Packages for the MPlayer:</b> <em>mencoder</em> and <em>mplayer</em>.<br/>
+<small>Version 2:1.0 was tested and worked correctly for current version of QVision.</small></li>
+<li><b>Packages for the QWT library:</b> <em>libqwt5-qt4</em> and <em>libqwt5-qt4-dev</em>.<br/>
+<small>Version 5.0.1-2 of these packages was tested and worked correctly for current version of QVision.</small></li>
+<li><b>Packages for the the OpenCV:</b> <em>libcv-dev, libhighgui-dev</em>, <em>libcvaux-dev</em> and <em>opencv-doc</em>.</li>
+<li><b>Packages for the the CGAL:</b> <em>libcgal-dev</em>.</li>
+<li><b>Packages for the the CUDA Toolkit:</b> <em>nvidia-cg-toolkit, libdevil-dev</em> and <em>libglew1.5-dev</em>.</li>
+</ul>
+<p>Using <b><em>apt-get</em></b>, these packages can be installed from the command line with the following commands:</p>
+<table  align="center" border="0" width="90%">
+<tr>
+<td><em> # Packages required for the basic installation<br/>
+ sudo apt-get install g++ libqt4-core libqt4-dev libqt4-gui libqt4-qt3support libqt3-compat-headers qt4-designer qt4-dev-tools qt4-doc libgsl0-dev g++<br/>
+ # Packages for the MPlayer back-end application<br/>
+ sudo apt-get install mencoder mplayer<br/>
+ # Packages for the QWT library<br/>
+ sudo apt-get install libqwt5-qt4 libqwt5-qt4-dev<br/>
+ # Packages for the OpenCV library<br/>
+ sudo apt-get install libcv-dev libhighgui-dev libcvaux-dev opencv-doc<br/>
+ # Packages for the CGAL<br/>
+ sudo apt-get install libcgal-dev # Packages for CUDA Toolkit<br/>
+ sudo apt-get install nvidia-cg-toolkit libdevil-dev libglew1.5-dev </em></td></tr>
+</table>
+<h2><a class="anchor" id="QVisionDownload">
+Downloading QVision</a></h2>
+<p>You can download the latest snapshot of the library from the following <em>subversion</em> repository:</p>
+<pre>       <a href="https://qvision.svn.sourceforge.net/svnroot/qvision">https://qvision.svn.sourceforge.net/svnroot/qvision</a> qvision</pre><p>To do so, you can use a Windows client such as <a href="http://en.wikipedia.org/wiki/TortoiseSVN">Tortoise SVN</a>. On Linux you can use the following line to download the library with the standard subversion client: </p>
+<pre>	svn co <a href="https://qvision.svn.sourceforge.net/svnroot/qvision">https://qvision.svn.sourceforge.net/svnroot/qvision</a> qvision</pre><p>The library files and sources are under the directory <em>qvision/trunk</em> in the svn repository.</p>
+<p>If you want a closed and stable version of the QVision you can download one of the latest releases from the Sourceforge page:</p>
+<p><a href="http://sourceforge.net/projects/qvision/files/">http://sourceforge.net/projects/qvision/files/</a></p>
+<p>Older releases can still be downloaded from the following URL:</p>
+<p><a href="http://forja.rediris.es/frs/?group_id=321">http://forja.rediris.es/frs/?group_id=321</a></p>
+<h2><a class="anchor" id="QVisionConfiguration">
+Configuring QVision</a></h2>
+<p>You must rename the file <em>config.pri.example</em> to <em>config.pri</em>. This file contains several parameters and options that configure the compilation and functionality of the QVision.</p>
+<p>In this file you can enable interoperability of the QVision with many third-party libraries and applications (see section <a class="el" href="QVisionOverview.html#Interoperability">Interoperability with other libraries</a>). Open the file <em>config.pri</em> with a text editor, and read carefully the instructions contained in that file about how to tune each configuration parameter.</p>
+<h2><a class="anchor" id="QVisionCompilationCommandShell">
+Compiling the QVision from the command shell (Linux)</a></h2>
+<p>Once the <em>config.pri</em> file is correctly configured, you can proceed to compile the QVision. First, you should use the <em>qmake</em> application, to create the <em>Makefile</em> file from the QVision project files (<em>*.pro</em>, <em>*.pri</em> and <em>configure.pri</em> files). You can use the following console command line, at the QVision directory:</p>
+<pre>	# qmake-qt4</pre><p>The <em>qmake</em> application should display several messages. If everything was ok, the <em>qmake</em> should create the <em>Makefile</em> file. Then you can compile the library using the classic <em>make</em> command:</p>
+<pre>	# make</pre><h2><a class="anchor" id="QVisionCompilationQtCreator">
+Compiling the QVision with Qt Creator (Windows and Linux)</a></h2>
+<p>You can open the <em>qvision.pro</em> file (contained in the QVision download) to load the whole QVision as a project in the <em>Qt Creator IDE</em> (installed with the SDK).</p>
+<p>Then you can proceed to compile the library.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Make sure to disable the <a href="shadowbuild.jpg">shadow build</a> option in the Qt Creator application to compile the QVision. Otherwise the library files will not be where they are supposed to be. </dd></dl>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

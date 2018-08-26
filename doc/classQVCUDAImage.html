@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVCUDAImage&lt; Type, Channels &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__qvcuda.html">GPU functionality</a>]</small>
+</h1><!-- doxytag: class="QVCUDAImage" -->
+<p>Class to manage images stored in the GPU for the QVision framework.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvcudaimage_8h_source.html">QVCUDAImage</a>&gt;</code></p>
+
+<p><a href="classQVCUDAImage-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a5df4a46ef6067e31e061ba2d42c8da4a">QVCUDAImage</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>.  <a href="#a5df4a46ef6067e31e061ba2d42c8da4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a2edff0ea816a33115a883f7020ead207">QVCUDAImage</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt; qvimage)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class from <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>.  <a href="#a2edff0ea816a33115a883f7020ead207"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a5b1ca38fcf2da79fb69db9615c0fb553">QVCUDAImage</a> (const int c, const int r)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class from scratch.  <a href="#a5b1ca38fcf2da79fb69db9615c0fb553"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a7671bed674b96f10570a263560adffe5">QVCUDAImage</a> (const <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt; &amp;src)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class.  <a href="#a7671bed674b96f10570a263560adffe5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a94748cb40759e33e9b76ab2b3c0d80e5">operator=</a> (const <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt; &amp;src)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignment operator for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class.  <a href="#a94748cb40759e33e9b76ab2b3c0d80e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a01368faba1388f6cd99e51446a64883b">~QVCUDAImage</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class.  <a href="#a01368faba1388f6cd99e51446a64883b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb">getCols</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of cols of the image.  <a href="#a85022bc8b3e21adee52f8f6f73eb9afb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a">getRows</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of rows of the image.  <a href="#a6ffd1bbe764e1a77d06b68cee251071a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283">getStep</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the step of the image.  <a href="#a4bc1fb37fa6c8afa95bb344c0a4ee283"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Type *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d">getData</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the pointer to the start of the device data for the image.  <a href="#a34085acda5201bd164d4581ee882855d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#a0b2e7c0fa2ffd39717d81d3b09f3264c">resize</a> (const int c, const int r)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resizes a <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>.  <a href="#a0b2e7c0fa2ffd39717d81d3b09f3264c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#afc679c7ec7a57687d282a486ccaaef17">uploadToDevice</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt; qvimage)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uploads a (host) <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> to a (device) <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>.  <a href="#afc679c7ec7a57687d282a486ccaaef17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCUDAImage.html#aaf6520232ea4609f1aec970e60b2b488">downloadFromDevice</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt; &amp;qvimage) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Download a (device) <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> to a (host) <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>.  <a href="#aaf6520232ea4609f1aec970e60b2b488"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<h3>template&lt;typename Type, int Channels = 1&gt;<br/>
+ class QVCUDAImage&lt; Type, Channels &gt;</h3>
+
+<p>Class to manage images stored in the GPU for the QVision framework. </p>
+<p>This class is... //FIXME </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00047">47</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5df4a46ef6067e31e061ba2d42c8da4a"></a><!-- doxytag: member="QVCUDAImage::QVCUDAImage" ref="a5df4a46ef6067e31e061ba2d42c8da4a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::<a class="el" href="classQVCUDAImage.html">QVCUDAImage</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>. </p>
+<p>Constructs an empty <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00053">53</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2edff0ea816a33115a883f7020ead207"></a><!-- doxytag: member="QVCUDAImage::QVCUDAImage" ref="a2edff0ea816a33115a883f7020ead207" args="(QVImage&lt; Type, Channels &gt; qvimage)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::<a class="el" href="classQVCUDAImage.html">QVCUDAImage</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt;&nbsp;</td>
+          <td class="paramname"> <em>qvimage</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class from <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. </p>
+<p>Constructs a <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> which copies the contents of a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> when built. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage</em>&nbsp;</td><td>Source <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00059">59</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b1ca38fcf2da79fb69db9615c0fb553"></a><!-- doxytag: member="QVCUDAImage::QVCUDAImage" ref="a5b1ca38fcf2da79fb69db9615c0fb553" args="(const int c, const int r)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::<a class="el" href="classQVCUDAImage.html">QVCUDAImage</a> </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>r</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class from scratch. </p>
+<p>Constructs a new, empty <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> with a given size. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>Number of requested cols. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>r</em>&nbsp;</td><td>Number of requested rows. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00069">69</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7671bed674b96f10570a263560adffe5"></a><!-- doxytag: member="QVCUDAImage::QVCUDAImage" ref="a7671bed674b96f10570a263560adffe5" args="(const QVCUDAImage&lt; Type, Channels &gt; &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::<a class="el" href="classQVCUDAImage.html">QVCUDAImage</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00072">72</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01368faba1388f6cd99e51446a64883b"></a><!-- doxytag: member="QVCUDAImage::~QVCUDAImage" ref="a01368faba1388f6cd99e51446a64883b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::~<a class="el" href="classQVCUDAImage.html">QVCUDAImage</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00087">87</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a94748cb40759e33e9b76ab2b3c0d80e5"></a><!-- doxytag: member="QVCUDAImage::operator=" ref="a94748cb40759e33e9b76ab2b3c0d80e5" args="(const QVCUDAImage&lt; Type, Channels &gt; &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&amp; <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment operator for <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> class. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00079">79</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a85022bc8b3e21adee52f8f6f73eb9afb"></a><!-- doxytag: member="QVCUDAImage::getCols" ref="a85022bc8b3e21adee52f8f6f73eb9afb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::getCols </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of cols of the image. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00090">90</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCUDAImage.html#a94748cb40759e33e9b76ab2b3c0d80e5">QVCUDAImage&lt; Type, Channels &gt;::operator=()</a>, <a class="el" href="qvcudaip_8h.html#ac90306668622a81ff94896cb653eed1f">QVCUDAFilterGauss()</a>, <a class="el" href="classQVCUDAImage.html#a7671bed674b96f10570a263560adffe5">QVCUDAImage&lt; Type, Channels &gt;::QVCUDAImage()</a>, <a class="el" href="qvcudaip_8h.html#a0068ac6f27bcd30f7569bf4a300f5bfa">QVCUDAScaleDown()</a>, <a class="el" href="qvcudaip_8h.html#aaa6c34d6f29b16df26f33fac10d598dd">QVCUDASubtract()</a>, and <a class="el" href="qvcudaip_8h.html#ab59e13f0ba387c19ab90df841c2a5025">QVCUDATest()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ffd1bbe764e1a77d06b68cee251071a"></a><!-- doxytag: member="QVCUDAImage::getRows" ref="a6ffd1bbe764e1a77d06b68cee251071a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::getRows </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of rows of the image. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00093">93</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCUDAImage.html#a94748cb40759e33e9b76ab2b3c0d80e5">QVCUDAImage&lt; Type, Channels &gt;::operator=()</a>, <a class="el" href="qvcudaip_8h.html#ac90306668622a81ff94896cb653eed1f">QVCUDAFilterGauss()</a>, <a class="el" href="classQVCUDAImage.html#a7671bed674b96f10570a263560adffe5">QVCUDAImage&lt; Type, Channels &gt;::QVCUDAImage()</a>, <a class="el" href="qvcudaip_8h.html#a0068ac6f27bcd30f7569bf4a300f5bfa">QVCUDAScaleDown()</a>, <a class="el" href="qvcudaip_8h.html#aaa6c34d6f29b16df26f33fac10d598dd">QVCUDASubtract()</a>, and <a class="el" href="qvcudaip_8h.html#ab59e13f0ba387c19ab90df841c2a5025">QVCUDATest()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bc1fb37fa6c8afa95bb344c0a4ee283"></a><!-- doxytag: member="QVCUDAImage::getStep" ref="a4bc1fb37fa6c8afa95bb344c0a4ee283" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::getStep </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the step of the image. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00096">96</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCUDAImage.html#a94748cb40759e33e9b76ab2b3c0d80e5">QVCUDAImage&lt; Type, Channels &gt;::operator=()</a>, <a class="el" href="qvcudaip_8h.html#ac90306668622a81ff94896cb653eed1f">QVCUDAFilterGauss()</a>, <a class="el" href="classQVCUDAImage.html#a7671bed674b96f10570a263560adffe5">QVCUDAImage&lt; Type, Channels &gt;::QVCUDAImage()</a>, <a class="el" href="qvcudaip_8h.html#a0068ac6f27bcd30f7569bf4a300f5bfa">QVCUDAScaleDown()</a>, <a class="el" href="qvcudaip_8h.html#aaa6c34d6f29b16df26f33fac10d598dd">QVCUDASubtract()</a>, and <a class="el" href="qvcudaip_8h.html#ab59e13f0ba387c19ab90df841c2a5025">QVCUDATest()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34085acda5201bd164d4581ee882855d"></a><!-- doxytag: member="QVCUDAImage::getData" ref="a34085acda5201bd164d4581ee882855d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Type* <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::getData </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the pointer to the start of the device data for the image. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00099">99</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCUDAImage.html#a94748cb40759e33e9b76ab2b3c0d80e5">QVCUDAImage&lt; Type, Channels &gt;::operator=()</a>, <a class="el" href="qvcudaip_8h.html#ac90306668622a81ff94896cb653eed1f">QVCUDAFilterGauss()</a>, <a class="el" href="classQVCUDAImage.html#a7671bed674b96f10570a263560adffe5">QVCUDAImage&lt; Type, Channels &gt;::QVCUDAImage()</a>, <a class="el" href="qvcudaip_8h.html#a0068ac6f27bcd30f7569bf4a300f5bfa">QVCUDAScaleDown()</a>, <a class="el" href="qvcudaip_8h.html#aaa6c34d6f29b16df26f33fac10d598dd">QVCUDASubtract()</a>, and <a class="el" href="qvcudaip_8h.html#ab59e13f0ba387c19ab90df841c2a5025">QVCUDATest()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b2e7c0fa2ffd39717d81d3b09f3264c"></a><!-- doxytag: member="QVCUDAImage::resize" ref="a0b2e7c0fa2ffd39717d81d3b09f3264c" args="(const int c, const int r)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>r</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resizes a <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>. </p>
+<p>The new image resizes to the new number of requested rows and cols (but completely discards the old image). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>Number of requested cols. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>r</em>&nbsp;</td><td>Number of requested rows. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00106">106</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCUDAImage.html#a94748cb40759e33e9b76ab2b3c0d80e5">QVCUDAImage&lt; Type, Channels &gt;::operator=()</a>, <a class="el" href="qvcudaip_8h.html#ac90306668622a81ff94896cb653eed1f">QVCUDAFilterGauss()</a>, <a class="el" href="classQVCUDAImage.html#a5b1ca38fcf2da79fb69db9615c0fb553">QVCUDAImage&lt; Type, Channels &gt;::QVCUDAImage()</a>, <a class="el" href="qvcudaip_8h.html#a0068ac6f27bcd30f7569bf4a300f5bfa">QVCUDAScaleDown()</a>, <a class="el" href="qvcudaip_8h.html#aaa6c34d6f29b16df26f33fac10d598dd">QVCUDASubtract()</a>, <a class="el" href="qvcudaip_8h.html#ab59e13f0ba387c19ab90df841c2a5025">QVCUDATest()</a>, and <a class="el" href="classQVCUDAImage.html#afc679c7ec7a57687d282a486ccaaef17">QVCUDAImage&lt; Type, Channels &gt;::uploadToDevice()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc679c7ec7a57687d282a486ccaaef17"></a><!-- doxytag: member="QVCUDAImage::uploadToDevice" ref="afc679c7ec7a57687d282a486ccaaef17" args="(const QVImage&lt; Type, Channels &gt; qvimage)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::uploadToDevice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt;&nbsp;</td>
+          <td class="paramname"> <em>qvimage</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Uploads a (host) <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> to a (device) <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a>. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00116">116</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCUDAImage.html#a2edff0ea816a33115a883f7020ead207">QVCUDAImage&lt; Type, Channels &gt;::QVCUDAImage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf6520232ea4609f1aec970e60b2b488"></a><!-- doxytag: member="QVCUDAImage::downloadFromDevice" ref="aaf6520232ea4609f1aec970e60b2b488" args="(QVImage&lt; Type, Channels &gt; &amp;qvimage) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int Channels = 1&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVCUDAImage.html">QVCUDAImage</a>&lt; Type, Channels &gt;::downloadFromDevice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Download a (device) <a class="el" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage</a> to a (host) <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. </p>
+
+<p>Definition at line <a class="el" href="qvcudaimage_8h_source.html#l00123">123</a> of file <a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvcuda/<a class="el" href="qvcudaimage_8h_source.html">qvcudaimage.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

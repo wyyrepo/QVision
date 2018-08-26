@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>src/qvmath/qvprojective.cpp File Reference</h1>
+<p>File from the QVision library.  
+<a href="#_details">More...</a></p>
+<code>#include &lt;qvprojective.h&gt;</code><br/>
+<code>#include &lt;qvmatrixalgebra.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="qvdefines_8h_source.html">qvdefines.h</a>&gt;</code><br/>
+<code>#include &lt;qvmath.h&gt;</code><br/>
+<code>#include &lt;float.h&gt;</code><br/>
+<code>#include &lt;qvnumericalanalysis.h&gt;</code><br/>
+
+<p><a href="qvprojective_8cpp_source.html">Go to the source code of this file.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668">computeProjectiveHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a planar homography from a list of point correspondences.  <a href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gae622eb1823659bb0d8dd9528f22e2f1c">computeAffineHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains an affine homography from a list of point correspondences.  <a href="group__qvprojectivegeometry.html#gae622eb1823659bb0d8dd9528f22e2f1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga06a3ff264f0821da24ee07ce73c86bd6">computeSimilarHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a similar homography from a set of inter-image point matchings.  <a href="group__qvprojectivegeometry.html#ga06a3ff264f0821da24ee07ce73c86bd6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b">cvFindFundamentalMat</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the fundamental matrix between two images, using the 8 point algorithm.  <a href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QPointF&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H, const QPointF &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maps a point using an homography.  <a href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga57f5860ede7f1c5cc138a08a9770debd">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const QList&lt; QPointF &gt; &amp;sourcePoints)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maps a set of points using an homography.  <a href="group__qvprojectivegeometry.html#ga57f5860ede7f1c5cc138a08a9770debd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga16d78d75712d628864cbfcd0e9622052">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const int interpolation)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs an homography distortion on an image.  <a href="group__qvprojectivegeometry.html#ga16d78d75712d628864cbfcd0e9622052"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gab759381f29a49e65fb47b7e377705e8f">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;image, const int interpolation)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs an homography distortion on an image.  <a href="group__qvprojectivegeometry.html#gab759381f29a49e65fb47b7e377705e8f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gae1435ef34731a4088d1c45deab3d3ba5">linearCameraResection</a> (const QList&lt; QPointF &gt; &amp;points2d, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3d)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the camera matrix from a set of correspondences between 3D points and their respective image projections.  <a href="group__qvprojectivegeometry.html#gae1435ef34731a4088d1c45deab3d3ba5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="qvprojective_8cpp.html#aefe2c68264497da296129eb3c0cc8ed4">linearCameraCenterResection</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef">linear3DPointTriangulation</a> (const QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;cameraMatrices, const QList&lt; QPointF &gt; &amp;projectionsOfAPoint, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on several views, and their corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga8d7cc4afd681a8c0251b975f5d303436">linear3DPointTriangulation</a> (const QVector&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;cameraMatrices, const QHash&lt; int, QPointF &gt; &amp;projectionsOfAPoint, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on several views, and their corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga8d7cc4afd681a8c0251b975f5d303436"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga3d79b8259c6cf0dfbd6fbbc4d1f8f968">linear3DPointTriangulation</a> (const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P1, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P2, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga3d79b8259c6cf0dfbd6fbbc4d1f8f968"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">linear3DPointTriangulation</a> (const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;pose1, const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;pose2, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;cameras, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga2213ce30fd6ab62c46e482fd9fec6397">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;cameras, const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga2213ce30fd6ab62c46e482fd9fec6397"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga7ad9c59ab6cdc91ac4c908e1d2f95174">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga7ad9c59ab6cdc91ac4c908e1d2f95174"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga867d933e04eb6e85cd89b9604592b0c9">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#ga867d933e04eb6e85cd89b9604592b0c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga017edd807b040c198a02733e4b81e1df">getCameraPosesFromEssentialMatrix</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;originalE, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R1, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R2, <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;t)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Decomposes an essential matrix and obtains the corresponding pair of camera poses.  <a href="group__qvprojectivegeometry.html#ga017edd807b040c198a02733e4b81e1df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b">testCheiralityForCameraPoses</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;sourceRt, const QPointF &amp;sourceProjection, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;destRt, const QPointF &amp;destProjection)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tests if two camera poses satisfy the cheirality condition for the reconstruction of a 3D point.  <a href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gafebb00bc1698d22fdb6875a6a5d70c24">computeCameraFocalFromPlanarHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H, int w, int h, bool byzero)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compute camera focal from a planar homography.  <a href="group__qvprojectivegeometry.html#gafebb00bc1698d22fdb6875a6a5d70c24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCameraPose.html">QVCameraPose</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43">getCameraPoseFromCalibratedHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;K, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the camera pose form the intrinsic calibration and a planar homography.  <a href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga5d0a08b6088fe1fa90baa765cff776a2">computeProjectiveHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a planar homography from a list of point correspondences.  <a href="group__qvprojectivegeometry.html#ga5d0a08b6088fe1fa90baa765cff776a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gabaa689662af5c3e513041ef1a7c97117">linear3DPointTriangulation</a> (const QPointF &amp;point1, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P1, const QPointF &amp;point2, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P2, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices.  <a href="group__qvprojectivegeometry.html#gabaa689662af5c3e513041ef1a7c97117"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>File from the QVision library. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>PARP Research Group. University of Murcia, Spain. </dd></dl>
+
+<p>Definition in file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="aefe2c68264497da296129eb3c0cc8ed4"></a><!-- doxytag: member="qvprojective.cpp::linearCameraCenterResection" ref="aefe2c68264497da296129eb3c0cc8ed4" args="(const QVMatrix &amp;R, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; QV3DPointF &gt; &amp;points3D)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> linearCameraCenterResection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points2D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000077">Todo:</a></b></dt><dd>Resolver el sistema linear de forma más eficiente. </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00940">940</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

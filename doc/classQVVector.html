@@ -1,0 +1,2029 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVVector Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVVector" -->
+<p>Implementation of numerical vectors.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvvector_8h_source.html">QVVector</a>&gt;</code></p>
+
+<p>Inherited by <a class="el" href="classQV3DPointF.html">QV3DPointF</a>, and <a class="el" href="classQVQuaternion.html">QVQuaternion</a>.</p>
+
+<p><a href="classQVVector-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a87f1f96ea24455e4629c3938a3a235c1">QVVector</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>.  <a href="#a87f1f96ea24455e4629c3938a3a235c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a5a8cffeb9c8ad0e87368a3e8788a8752">QVVector</a> (const int size, const double defaultValue=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>.  <a href="#a5a8cffeb9c8ad0e87368a3e8788a8752"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ad5399f02b9f5f3ac4ec4fd9641783c67">QVVector</a> (const int size, const double *defaultValues)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>.  <a href="#ad5399f02b9f5f3ac4ec4fd9641783c67"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ad5f4b0a665b20f1589cb7717bd2bb907">QVVector</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>.  <a href="#ad5f4b0a665b20f1589cb7717bd2bb907"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a1dcd237406a7bdf557d498e35949d6f2">QVVector</a> (const QVector&lt; double &gt; &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor for QVector.  <a href="#a1dcd237406a7bdf557d498e35949d6f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a3374f129475594d47d3bc6bc5838f9fe">QVVector</a> (const QList&lt; double &gt; &amp;list)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert constructor from QList.  <a href="#a3374f129475594d47d3bc6bc5838f9fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a8fa57e8d00d704003a7928d4593f250f">QVVector</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert constructor from <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>.  <a href="#a8fa57e8d00d704003a7928d4593f250f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a9d4bb8f3587fbbfdaedbdca1258bc363">QVVector</a> (const gsl_vector *vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor for gsl_vector.  <a href="#a9d4bb8f3587fbbfdaedbdca1258bc363"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#afbf9d1d605f1a4909aad35a792f9c415">QVVector</a> (const QPoint &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert constructor for QPoint.  <a href="#afbf9d1d605f1a4909aad35a792f9c415"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ad4def03f464629342b9114f4a5884371">QVVector</a> (const QPointF &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert constructor for QPointF.  <a href="#ad4def03f464629342b9114f4a5884371"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a3489b5719cb435b96bf1c533e2be9de9">operator()</a> (const int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Element access operator.  <a href="#a3489b5719cb435b96bf1c533e2be9de9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#aa3b0f3e34215a26e980b3602adf8b7cf">operator()</a> (const int index) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded version of element access operator.  <a href="#aa3b0f3e34215a26e980b3602adf8b7cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#acf83ad762d4111599f3a0b8dafd5d981">operator*</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector dot product.  <a href="#acf83ad762d4111599f3a0b8dafd5d981"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a8c8b374af4ed6ecfe301ea434273501f">operator^</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector cross product.  <a href="#a8c8b374af4ed6ecfe301ea434273501f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ab53364730dbb375a9660db6514f28061">operator+</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector add.  <a href="#ab53364730dbb375a9660db6514f28061"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a5f879a38860a97df321eb6cf201b97c5">operator-</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector substraction.  <a href="#a5f879a38860a97df321eb6cf201b97c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a3b522f669566e2f638c445d11885de04">operator-</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the additive inverse of the vector.  <a href="#a3b522f669566e2f638c445d11885de04"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a6d83fd194bf9a4b60633115463fbb0de">operator+</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar addition.  <a href="#a6d83fd194bf9a4b60633115463fbb0de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#af29ce98af082ff22a9e270240b3f1bfc">operator-</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar substraction.  <a href="#af29ce98af082ff22a9e270240b3f1bfc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ae078603aca68138f82ec00b612b5bc2d">operator*</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar multiplication.  <a href="#ae078603aca68138f82ec00b612b5bc2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ac1035ab17b6b4095c66fbc27cd3dff65">operator/</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar division.  <a href="#ac1035ab17b6b4095c66fbc27cd3dff65"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a01773daae3598db0ab634c0d4c12c383">operator*</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector-matrix product.  <a href="#a01773daae3598db0ab634c0d4c12c383"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ab24632bd6017f047b0995629a38a7fcb">operator==</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare operator.  <a href="#ab24632bd6017f047b0995629a38a7fcb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a6d8a9cae85983ca7a0f2ddc3c4e79117">operator+=</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add compound assignment operator.  <a href="#a6d8a9cae85983ca7a0f2ddc3c4e79117"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a96940793c76e3a8ee5662c6e1d6fc2c7">operator QPointF</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert to QPointF operator.  <a href="#a96940793c76e3a8ee5662c6e1d6fc2c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a3415494755e69cc4aad2502b51829904">operator gsl_vector *</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert to gsl_vector * operator.  <a href="#a3415494755e69cc4aad2502b51829904"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#abf6f01233d14e8be796a5919981ff2f5">maxIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the location of the element with the maximal value.  <a href="#abf6f01233d14e8be796a5919981ff2f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a06bba5625933ab01a23a2f901eae9049">minIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the location of the element with the minimal value.  <a href="#a06bba5625933ab01a23a2f901eae9049"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a677b0a1980da08a66e67b15d95a46dda">maxAbsIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the index of the element with the maximal absolute value.  <a href="#a677b0a1980da08a66e67b15d95a46dda"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a746718c9e2c3a046938dcc6e44b5c1a1">minAbsIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the index of the element with the minimal absolute value.  <a href="#a746718c9e2c3a046938dcc6e44b5c1a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a4bad482bf1ebb4d38c2e3a8c16047f7a">set</a> (const double value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set vector elements to a value.  <a href="#a4bad482bf1ebb4d38c2e3a8c16047f7a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a3206fc1db84f548568298c6326b7c0fa">subVector</a> (const int firstIndex, const int lastIndex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a sub-vector containing a given range of elements from the original vector.  <a href="#a3206fc1db84f548568298c6326b7c0fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a943a6862968b73e8d42b18096b992875">scalarDivision</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar division.  <a href="#a943a6862968b73e8d42b18096b992875"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a752f2f2f18796a3bc883236dea74908e">scalarAdd</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar addition.  <a href="#a752f2f2f18796a3bc883236dea74908e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a67a7bf9f5130d269aaf8601da877a1aa">scalarSubstract</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar substraction.  <a href="#a67a7bf9f5130d269aaf8601da877a1aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a7783edc2a21a8d5002ae377ec2a82027">scalarMultiplication</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar multiplication.  <a href="#a7783edc2a21a8d5002ae377ec2a82027"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead">scalarProduct</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scalar multiplication.  <a href="#a0a5c3fd6110fbd8643c618434687eead"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05">norm2</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Norm 2 of the vector.  <a href="#a49c6f41f1fa80efcc943f1c26fdcbf05"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a29235517605f49f2327df62d5e0295df">containsNaN</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks whether the vector contains a NaN value or not.  <a href="#a29235517605f49f2327df62d5e0295df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a42c4fb1fe1e48c0936d662052f84bba0">normalize</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Normalize vector.  <a href="#a42c4fb1fe1e48c0936d662052f84bba0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a4d544afa97822276b94ba2174023b362">abs</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the absolute values of the vector elements.  <a href="#a4d544afa97822276b94ba2174023b362"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a6695f3c638ef5e1eb50df4d48d6f6a99">max</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maximal value contained in the vector.  <a href="#a6695f3c638ef5e1eb50df4d48d6f6a99"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ad25060e9173730d6e1d5a1a116389fe0">min</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Minimal value contained in the vector.  <a href="#ad25060e9173730d6e1d5a1a116389fe0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646">sum</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accumulated value.  <a href="#aa15b6373a5ca28b1dd82b5b07b71e646"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a34778251c3900cac4b2e19269fd9be2f">mean</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mean value.  <a href="#a34778251c3900cac4b2e19269fd9be2f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#aada9281a571f1a7ef99b161af80b38be">median</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Median value.  <a href="#aada9281a571f1a7ef99b161af80b38be"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860">variance</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Standard deviation.  <a href="#ac58dcee99e36a0d26cf006aafb6cb860"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a25d1e2fa44bf8ecd106a241e7d93211b">entropy</a> (const double base=2) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Shannon's entropy of a probability state vector.  <a href="#a25d1e2fa44bf8ecd106a241e7d93211b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a9f5e5261bace97f7f315444be9992790">dotProduct</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector dot product.  <a href="#a9f5e5261bace97f7f315444be9992790"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#aa2784fe126cba704e1801fcfa3b36e30">crossProduct</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector cross product.  <a href="#aa2784fe126cba704e1801fcfa3b36e30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a6c796d6ed02dd3b04db75e97e92b7fcb">outerProduct</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Outer product with another vector (to obtain a matrix).  <a href="#a6c796d6ed02dd3b04db75e97e92b7fcb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a15bf38ec2d56c24537e118b11bdd1ad7">add</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector add.  <a href="#a15bf38ec2d56c24537e118b11bdd1ad7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a6aeacd80798f80447989c0cb016c7a48">substract</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector substraction.  <a href="#a6aeacd80798f80447989c0cb016c7a48"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#acd3cdacd7ad33bfd723ce694a707f5e7">equals</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare operator.  <a href="#acd3cdacd7ad33bfd723ce694a707f5e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#af8e81c72e88b61e1f9a8d118f8120c23">homogeneousCoordinates</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the vector in homogeneous coordinates.  <a href="#af8e81c72e88b61e1f9a8d118f8120c23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a70bc159ef037b663898798140f1d2a59">crossProductMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtain the matrix corresponding to the matrix multiplication notation for the vector cross product.  <a href="#a70bc159ef037b663898798140f1d2a59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a54fddac966be9af0f7fce89b87b5cd48">toRowMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns this vector in the form of a row matrix.  <a href="#a54fddac966be9af0f7fce89b87b5cd48"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a57387ffc7c1b3ee7de38adb5155d3707">toColumnMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns this vector in the form of a column matrix.  <a href="#a57387ffc7c1b3ee7de38adb5155d3707"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a615053c57c2d85dce8b77622debdab9f">gaussianVector</a> (const int radius, const double sigma)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector of Gaussian distributed values.  <a href="#a615053c57c2d85dce8b77622debdab9f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#ac550cb33a94138c6a55901bc2dc23558">random</a> (const int elements)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a vector of random values.  <a href="#ac550cb33a94138c6a55901bc2dc23558"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#a2423f32fab62271dd0dc0dfb6ba6f4cb">mexicanHatWaveletVector</a> (const int radius, const double sigma)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Vector of mexican hat wavelet distributed values.  <a href="#a2423f32fab62271dd0dc0dfb6ba6f4cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html#acc2df5760c4935341efc23f5b483a5a3">homogeneousCoordinates</a> (const QPointF &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates vector corresponding to the homogeneous coordinates of a 2D point (appending a value 1.0 on an added dimension).  <a href="#acc2df5760c4935341efc23f5b483a5a3"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of numerical vectors. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="MatricesAndVectors.html">Matrices and vectors</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00058">58</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a87f1f96ea24455e4629c3938a3a235c1"></a><!-- doxytag: member="QVVector::QVVector" ref="a87f1f96ea24455e4629c3938a3a235c1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00064">64</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#af8e81c72e88b61e1f9a8d118f8120c23">homogeneousCoordinates()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a8cffeb9c8ad0e87368a3e8788a8752"></a><!-- doxytag: member="QVVector::QVVector" ref="a5a8cffeb9c8ad0e87368a3e8788a8752" args="(const int size, const double defaultValue=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>defaultValue</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>initializing size for the vector </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>defaultValue</em>&nbsp;</td><td>default value to set all elements of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00070">70</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5399f02b9f5f3ac4ec4fd9641783c67"></a><!-- doxytag: member="QVVector::QVVector" ref="ad5399f02b9f5f3ac4ec4fd9641783c67" args="(const int size, const double *defaultValues)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&nbsp;</td>
+          <td class="paramname"> <em>defaultValues</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>initializing size for the vector </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>defaultValues</em>&nbsp;</td><td>array of doubles, containing the inizialization data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00076">76</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5f4b0a665b20f1589cb7717bd2bb907"></a><!-- doxytag: member="QVVector::QVVector" ref="ad5f4b0a665b20f1589cb7717bd2bb907" args="(const QVVector &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00085">85</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1dcd237406a7bdf557d498e35949d6f2"></a><!-- doxytag: member="QVVector::QVVector" ref="a1dcd237406a7bdf557d498e35949d6f2" args="(const QVector&lt; double &gt; &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor for QVector. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00090">90</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3374f129475594d47d3bc6bc5838f9fe"></a><!-- doxytag: member="QVVector::QVVector" ref="a3374f129475594d47d3bc6bc5838f9fe" args="(const QList&lt; double &gt; &amp;list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>list</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert constructor from QList. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>list</em>&nbsp;</td><td>List of double values to be converted to <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00095">95</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fa57e8d00d704003a7928d4593f250f"></a><!-- doxytag: member="QVVector::QVVector" ref="a8fa57e8d00d704003a7928d4593f250f" args="(const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert constructor from <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>. </p>
+<p>This function generates a vector containing the elements of a matrix in a row mayor order.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matrix</em>&nbsp;</td><td>matrix to be converted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00029">29</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9d4bb8f3587fbbfdaedbdca1258bc363"></a><!-- doxytag: member="QVVector::QVVector" ref="a9d4bb8f3587fbbfdaedbdca1258bc363" args="(const gsl_vector *vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const gsl_vector *&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor for gsl_vector. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This constructor requires compatibility with the GSL library </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00110">110</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afbf9d1d605f1a4909aad35a792f9c415"></a><!-- doxytag: member="QVVector::QVVector" ref="afbf9d1d605f1a4909aad35a792f9c415" args="(const QPoint &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert constructor for QPoint. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00120">120</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4def03f464629342b9114f4a5884371"></a><!-- doxytag: member="QVVector::QVVector" ref="ad4def03f464629342b9114f4a5884371" args="(const QPointF &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::QVVector </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert constructor for QPointF. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00125">125</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a3489b5719cb435b96bf1c533e2be9de9"></a><!-- doxytag: member="QVVector::operator()" ref="a3489b5719cb435b96bf1c533e2be9de9" args="(const int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double&amp; QVVector::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Element access operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>main index value for data access </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00132">132</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3b0f3e34215a26e980b3602adf8b7cf"></a><!-- doxytag: member="QVVector::operator()" ref="aa3b0f3e34215a26e980b3602adf8b7cf" args="(const int index) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded version of element access operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>main index value for data access </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>secondary index value for data access </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00139">139</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf83ad762d4111599f3a0b8dafd5d981"></a><!-- doxytag: member="QVVector::operator*" ref="acf83ad762d4111599f3a0b8dafd5d981" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector dot product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a9f5e5261bace97f7f315444be9992790" title="Vector dot product.">dotProduct</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00146">146</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a3b522f669566e2f638c445d11885de04">operator-()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c8b374af4ed6ecfe301ea434273501f"></a><!-- doxytag: member="QVVector::operator^" ref="a8c8b374af4ed6ecfe301ea434273501f" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector cross product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#aa2784fe126cba704e1801fcfa3b36e30" title="Vector cross product.">crossProduct</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00152">152</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab53364730dbb375a9660db6514f28061"></a><!-- doxytag: member="QVVector::operator+" ref="ab53364730dbb375a9660db6514f28061" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector add. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>term for the operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a15bf38ec2d56c24537e118b11bdd1ad7" title="Vector add.">add</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00158">158</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f879a38860a97df321eb6cf201b97c5"></a><!-- doxytag: member="QVVector::operator&#45;" ref="a5f879a38860a97df321eb6cf201b97c5" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector substraction. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>subtrahend for the operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a6aeacd80798f80447989c0cb016c7a48" title="Vector substraction.">substract</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00164">164</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b522f669566e2f638c445d11885de04"></a><!-- doxytag: member="QVVector::operator&#45;" ref="a3b522f669566e2f638c445d11885de04" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator- </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the additive inverse of the vector. </p>
+<p>Obtains a vector changing the sign of its elements.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a6aeacd80798f80447989c0cb016c7a48" title="Vector substraction.">substract</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00171">171</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d83fd194bf9a4b60633115463fbb0de"></a><!-- doxytag: member="QVVector::operator+" ref="a6d83fd194bf9a4b60633115463fbb0de" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar addition. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to multiply each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a752f2f2f18796a3bc883236dea74908e" title="Scalar addition.">scalarAdd</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00178">178</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af29ce98af082ff22a9e270240b3f1bfc"></a><!-- doxytag: member="QVVector::operator&#45;" ref="af29ce98af082ff22a9e270240b3f1bfc" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar substraction. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to multiply each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a67a7bf9f5130d269aaf8601da877a1aa" title="Scalar substraction.">scalarSubstract</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00184">184</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae078603aca68138f82ec00b612b5bc2d"></a><!-- doxytag: member="QVVector::operator*" ref="ae078603aca68138f82ec00b612b5bc2d" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar multiplication. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to multiply each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead" title="Scalar multiplication.">scalarProduct</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00190">190</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1035ab17b6b4095c66fbc27cd3dff65"></a><!-- doxytag: member="QVVector::operator/" ref="ac1035ab17b6b4095c66fbc27cd3dff65" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar division. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to divide each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>scalarDivide </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00196">196</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a42c4fb1fe1e48c0936d662052f84bba0">normalize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01773daae3598db0ab634c0d4c12c383"></a><!-- doxytag: member="QVVector::operator*" ref="a01773daae3598db0ab634c0d4c12c383" args="(const QVMatrix &amp;matrix) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector-matrix product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matrix</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00092">92</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab24632bd6017f047b0995629a38a7fcb"></a><!-- doxytag: member="QVVector::operator==" ref="ab24632bd6017f047b0995629a38a7fcb" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVector::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#acd3cdacd7ad33bfd723ce694a707f5e7" title="Compare operator.">equals</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00207">207</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d8a9cae85983ca7a0f2ddc3c4e79117"></a><!-- doxytag: member="QVVector::operator+=" ref="a6d8a9cae85983ca7a0f2ddc3c4e79117" args="(const QVVector &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a>&amp; QVVector::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add compound assignment operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000091">Todo:</a></b></dt><dd>use blas </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00212">212</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96940793c76e3a8ee5662c6e1d6fc2c7"></a><!-- doxytag: member="QVVector::operator QPointF" ref="a96940793c76e3a8ee5662c6e1d6fc2c7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::operator QPointF </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert to QPointF operator. </p>
+<p>Cast from homogeneous coordinates. </p>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00229">229</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3415494755e69cc4aad2502b51829904"></a><!-- doxytag: member="QVVector::operator gsl_vector *" ref="a3415494755e69cc4aad2502b51829904" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVector::operator gsl_vector * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert to gsl_vector * operator. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This operator requires compatibility with the GSL library. </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>gsl_vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8h_source.html#l00244">244</a> of file <a class="el" href="qvvector_8h_source.html">qvvector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf6f01233d14e8be796a5919981ff2f5"></a><!-- doxytag: member="QVVector::maxIndex" ref="abf6f01233d14e8be796a5919981ff2f5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVVector::maxIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the location of the element with the maximal value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>-1 if the vector has zero elements, else the index of the largest element. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00317">317</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPermutation.html#a8df4d9f49027ce1ab5b0349f6e05febc">QVPermutation::fromMatrix()</a>, and <a class="el" href="classQVVector.html#a677b0a1980da08a66e67b15d95a46dda">maxAbsIndex()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06bba5625933ab01a23a2f901eae9049"></a><!-- doxytag: member="QVVector::minIndex" ref="a06bba5625933ab01a23a2f901eae9049" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVVector::minIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the location of the element with the minimal value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>-1 if the vector has zero elements, else the index of the lowest element. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00329">329</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a746718c9e2c3a046938dcc6e44b5c1a1">minAbsIndex()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a677b0a1980da08a66e67b15d95a46dda"></a><!-- doxytag: member="QVVector::maxAbsIndex" ref="a677b0a1980da08a66e67b15d95a46dda" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVVector::maxAbsIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the index of the element with the maximal absolute value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>-1 if the vector has zero elements, else the index of the element with the greatest absolute value. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00341">341</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a746718c9e2c3a046938dcc6e44b5c1a1"></a><!-- doxytag: member="QVVector::minAbsIndex" ref="a746718c9e2c3a046938dcc6e44b5c1a1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVVector::minAbsIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the index of the element with the minimal absolute value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>-1 if the vector has zero elements, else the index of the element with the lowest absolute value. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00354">354</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bad482bf1ebb4d38c2e3a8c16047f7a"></a><!-- doxytag: member="QVVector::set" ref="a4bad482bf1ebb4d38c2e3a8c16047f7a" args="(const double value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVector::set </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set vector elements to a value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to set all the elements of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00367">367</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3206fc1db84f548568298c6326b7c0fa"></a><!-- doxytag: member="QVVector::subVector" ref="a3206fc1db84f548568298c6326b7c0fa" args="(const int firstIndex, const int lastIndex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::subVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>firstIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>lastIndex</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a sub-vector containing a given range of elements from the original vector. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>firstIndex</em>&nbsp;</td><td>First element in the value range for the resulting subvector. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>secondIndex</em>&nbsp;</td><td>Last element in the value range for the resulting subvector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A vector containing the elements from 'firstIndex' to 'lastIndex' of the original vector. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00373">373</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a943a6862968b73e8d42b18096b992875"></a><!-- doxytag: member="QVVector::scalarDivision" ref="a943a6862968b73e8d42b18096b992875" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::scalarDivision </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar division. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to divide each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator/(const double) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00386">386</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#ac1035ab17b6b4095c66fbc27cd3dff65">operator/()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a752f2f2f18796a3bc883236dea74908e"></a><!-- doxytag: member="QVVector::scalarAdd" ref="a752f2f2f18796a3bc883236dea74908e" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::scalarAdd </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar addition. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to divide each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator/(const double) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00395">395</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a6d83fd194bf9a4b60633115463fbb0de">operator+()</a>, and <a class="el" href="qvvector_8h.html#a3152598eef07afd036bee3a6c16da74e">operator+()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67a7bf9f5130d269aaf8601da877a1aa"></a><!-- doxytag: member="QVVector::scalarSubstract" ref="a67a7bf9f5130d269aaf8601da877a1aa" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::scalarSubstract </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar substraction. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to divide each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator/(const double) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00404">404</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#af29ce98af082ff22a9e270240b3f1bfc">operator-()</a>, and <a class="el" href="qvvector_8h.html#ab3bb42e9d7856acc187642be54e517a5">operator-()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7783edc2a21a8d5002ae377ec2a82027"></a><!-- doxytag: member="QVVector::scalarMultiplication" ref="a7783edc2a21a8d5002ae377ec2a82027" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::scalarMultiplication </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar multiplication. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to multiply each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator*(const double) </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>use scalarProduct instead. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00413">413</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a5c3fd6110fbd8643c618434687eead"></a><!-- doxytag: member="QVVector::scalarProduct" ref="a0a5c3fd6110fbd8643c618434687eead" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::scalarProduct </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scalar multiplication. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to multiply each component of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator*(const double) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00419">419</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#ae078603aca68138f82ec00b612b5bc2d">operator*()</a>, <a class="el" href="qvvector_8h.html#a9680d9a2f115495d01c447083bde7ef1">operator*()</a>, and <a class="el" href="classQVVector.html#a7783edc2a21a8d5002ae377ec2a82027">scalarMultiplication()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a49c6f41f1fa80efcc943f1c26fdcbf05"></a><!-- doxytag: member="QVVector::norm2" ref="a49c6f41f1fa80efcc943f1c26fdcbf05" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::norm2 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Norm 2 of the vector. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#a42c4fb1fe1e48c0936d662052f84bba0" title="Normalize vector.">normalize</a> </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a">QVQuaternion</a>.</p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00230">230</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43">getCameraPoseFromCalibratedHomography()</a>, <a class="el" href="group__qvmath.html#ga85e11a75a24eec1686a939aa690e1942">lnSO3()</a>, <a class="el" href="classQVVector.html#a42c4fb1fe1e48c0936d662052f84bba0">normalize()</a>, <a class="el" href="classQVQuaternion.html#a9ee4bf11cb29232be2cef660fd0aacd6">QVQuaternion::QVQuaternion()</a>, <a class="el" href="group__qvip.html#ga301080d8b72707aaa755539efc7ab99a">saveSIFTDescriptorsInLoweSIFTFileFormat()</a>, <a class="el" href="group__qvmatrixalgebra.html#gada28dcc8be2cf1b93f3b1f201cafdb88">solveHomogeneous()</a>, and <a class="el" href="group__qvprojectivegeometry.html#gae93905c2b6cca18996c889210cbb6874">symmetricEpipolarDistance()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29235517605f49f2327df62d5e0295df"></a><!-- doxytag: member="QVVector::containsNaN" ref="a29235517605f49f2327df62d5e0295df" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVector::containsNaN </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks whether the vector contains a NaN value or not. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if any of the values contained in the vector is a NaN, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00235">235</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gaf0ef3cb35d54cb93528315bcd249147a">checkForNaNValues()</a>, <a class="el" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add">QVCameraPose::compose()</a>, <a class="el" href="classQVQuaternion.html#abce39f61e6deb9ca1fdab9a3745c0383">QVQuaternion::conjugate()</a>, <a class="el" href="classQVCameraPose.html#a2ab3d874b18ae3b7696388007a096d32">QVCameraPose::containsNaN()</a>, <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, <a class="el" href="classQVQuaternion.html#a50fdd28714a4034db3ba71dbd0a3af7f">QVQuaternion::inverse()</a>, <a class="el" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1">QVCameraPose::inverse()</a>, <a class="el" href="group__qvsfm.html#gaab6ac97055fa83864cb3bcad712008b7">linearCameraPairInitialization()</a>, <a class="el" href="classQVCameraPose.html#a97fa6dbe48643f88c997c72feae108ea">QVCameraPose::operator QVEuclideanMapping3()</a>, <a class="el" href="classQVCameraPose.html#a016dd44c3f2517e242feed030ae05651">QVCameraPose::operator QVVector()</a>, <a class="el" href="classQVCameraPose.html#a49c48c2f18fa0f7da4df1ef3e9adf572">QVCameraPose::operator!=()</a>, <a class="el" href="classQVCameraPose.html#a92d6b001739c6c5fa2742c7722d8a042">QVCameraPose::operator==()</a>, <a class="el" href="group__qvprojectivegeometry.html#ga6a50717778dcec283e6294ba95e41078">optimizeReprojectionErrorForCameraPoseCauchy()</a>, <a class="el" href="classQVCameraPose.html#a618a5bf0fe0bb41ba717eef051198a4b">QVCameraPose::project()</a>, <a class="el" href="classQVQuaternion.html#ad6537490c23f56408af1db33b3f20d93">QVQuaternion::quaternionProduct()</a>, <a class="el" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11">QVCameraPose::QVCameraPose()</a>, <a class="el" href="classQVQuaternion.html#a9ee4bf11cb29232be2cef660fd0aacd6">QVQuaternion::QVQuaternion()</a>, <a class="el" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c">QVQuaternion::rotate()</a>, <a class="el" href="classQVCameraPose.html#a024c8a5a0b5506debb6ae08f9f3ab57c">QVCameraPose::toCameraReferenceCoordinates()</a>, <a class="el" href="classQVQuaternion.html#aeb4178065e8ff7ac908d5573869d826a">QVQuaternion::toEulerAngles()</a>, <a class="el" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b">QVCameraPose::toProjectionMatrix()</a>, and <a class="el" href="classQVQuaternion.html#a00c343b8018cfc98536b13ff31341751">QVQuaternion::toRotationMatrix()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a42c4fb1fe1e48c0936d662052f84bba0"></a><!-- doxytag: member="QVVector::normalize" ref="a42c4fb1fe1e48c0936d662052f84bba0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::normalize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Normalize vector. </p>
+<p>Divides each element of the vector by its euclidean norm. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>norm </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00244">244</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4d544afa97822276b94ba2174023b362"></a><!-- doxytag: member="QVVector::abs" ref="a4d544afa97822276b94ba2174023b362" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::abs </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the absolute values of the vector elements. </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00249">249</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6695f3c638ef5e1eb50df4d48d6f6a99"></a><!-- doxytag: member="QVVector::max" ref="a6695f3c638ef5e1eb50df4d48d6f6a99" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::max </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maximal value contained in the vector. </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00258">258</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad25060e9173730d6e1d5a1a116389fe0"></a><!-- doxytag: member="QVVector::min" ref="ad25060e9173730d6e1d5a1a116389fe0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::min </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Minimal value contained in the vector. </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00266">266</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa15b6373a5ca28b1dd82b5b07b71e646"></a><!-- doxytag: member="QVVector::sum" ref="aa15b6373a5ca28b1dd82b5b07b71e646" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::sum </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Accumulated value. </p>
+<p>This function returns the sumatory of the elements of the vector.</p>
+<p><img class="formulaInl" alt="$ \bar{x} = \sum_{i=1}^n{x_i} $" src="form_214.png"/> </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00274">274</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a25d1e2fa44bf8ecd106a241e7d93211b">entropy()</a>, and <a class="el" href="classQVVector.html#a34778251c3900cac4b2e19269fd9be2f">mean()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34778251c3900cac4b2e19269fd9be2f"></a><!-- doxytag: member="QVVector::mean" ref="a34778251c3900cac4b2e19269fd9be2f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::mean </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mean value. </p>
+<p>This function returns the standard average value of the vector:</p>
+<p><img class="formulaInl" alt="$ \bar{x} = \frac{1}{n} \sum_{i=1}^n{x_i} $" src="form_215.png"/> </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00283">283</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDirectedGraph.html#abf57f705c153bc423ef877c7c0ec1428">QVDirectedGraph&lt; Element &gt;::getMeanConnectivity()</a>, and <a class="el" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860">variance()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aada9281a571f1a7ef99b161af80b38be"></a><!-- doxytag: member="QVVector::median" ref="aada9281a571f1a7ef99b161af80b38be" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::median </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Median value. </p>
+<p>This function returns the middle element in the list of sorted elements of the vector: </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00288">288</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac58dcee99e36a0d26cf006aafb6cb860"></a><!-- doxytag: member="QVVector::variance" ref="ac58dcee99e36a0d26cf006aafb6cb860" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::variance </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Standard deviation. </p>
+<p>This function returns a variance estimation of the elements in the vector: <img class="formulaInl" alt="$ s^2 = \frac{1}{n} \sum_{i=1}^n\left(x_i - \overline{x} \right)^ 2 $" src="form_216.png"/> </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00296">296</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25d1e2fa44bf8ecd106a241e7d93211b"></a><!-- doxytag: member="QVVector::entropy" ref="a25d1e2fa44bf8ecd106a241e7d93211b" args="(const double base=2) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::entropy </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>base</em> = <code>2</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Shannon's entropy of a probability state vector. </p>
+<p>This function calculates the entropy of the elements of the vector. These elements are considered as the probabilities of a random variable. Thus the sum of the vector elements must be equal to <img class="formulaInl" alt="$ 1 $" src="form_217.png"/>. The entropy is computed with the following formula:</p>
+<p><img class="formulaInl" alt="$ H(X) = - \sum_{i=1}^n p(x_i) \log_b p(x_i) $" src="form_218.png"/></p>
+<p>If the sum of the elements of the vector is not <img class="formulaInl" alt="$ 1 $" src="form_217.png"/>, they are normalized before computing the entropy. In the case of <img class="formulaInl" alt="$ x_i = 0 $" src="form_219.png"/> for some <img class="formulaInl" alt="$ x_i $" src="form_220.png"/> element of the vector, the value of the corresponding summand <img class="formulaInl" alt="$ 0 \cdot log_b(0) $" src="form_221.png"/> is taken to be <img class="formulaInl" alt="$ 0 $" src="form_208.png"/>, which is consistent with the limit</p>
+<p><img class="formulaInl" alt="$ \lim_{p\to0+}p\log p = 0 $" src="form_222.png"/></p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>base</em>&nbsp;</td><td>base of the logarithm in the entropy equation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00306">306</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f5e5261bace97f7f315444be9992790"></a><!-- doxytag: member="QVVector::dotProduct" ref="a9f5e5261bace97f7f315444be9992790" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVVector::dotProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector dot product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator* </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00038">38</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#acf83ad762d4111599f3a0b8dafd5d981">operator*()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2784fe126cba704e1801fcfa3b36e30"></a><!-- doxytag: member="QVVector::crossProduct" ref="aa2784fe126cba704e1801fcfa3b36e30" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::crossProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector cross product. </p>
+<p>Computes the cross product for two vectors of size 3 </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator^ </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00049">49</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a8c8b374af4ed6ecfe301ea434273501f">operator^()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c796d6ed02dd3b04db75e97e92b7fcb"></a><!-- doxytag: member="QVVector::outerProduct" ref="a6c796d6ed02dd3b04db75e97e92b7fcb" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVVector::outerProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Outer product with another vector (to obtain a matrix). </p>
+<p>Computes the matrix M which is the outer product <img class="formulaInl" alt="$ M = v \otimes v_2$" src="form_223.png"/> with another vector <img class="formulaInl" alt="$ v_2 $" src="form_224.png"/> </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>operand for the product </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00070">70</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557">pseudoInverse()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15bf38ec2d56c24537e118b11bdd1ad7"></a><!-- doxytag: member="QVVector::add" ref="a15bf38ec2d56c24537e118b11bdd1ad7" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector add. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>term for the operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator+ </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00106">106</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#ab53364730dbb375a9660db6514f28061">operator+()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6aeacd80798f80447989c0cb016c7a48"></a><!-- doxytag: member="QVVector::substract" ref="a6aeacd80798f80447989c0cb016c7a48" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::substract </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector substraction. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>subtrahend for the operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator- </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00122">122</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#a5f879a38860a97df321eb6cf201b97c5">operator-()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd3cdacd7ad33bfd723ce694a707f5e7"></a><!-- doxytag: member="QVVector::equals" ref="acd3cdacd7ad33bfd723ce694a707f5e7" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVector::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#acd3cdacd7ad33bfd723ce694a707f5e7" title="Compare operator.">equals</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00138">138</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVector.html#ab24632bd6017f047b0995629a38a7fcb">operator==()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a615053c57c2d85dce8b77622debdab9f"></a><!-- doxytag: member="QVVector::gaussianVector" ref="a615053c57c2d85dce8b77622debdab9f" args="(const int radius, const double sigma)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classQVVector.html">QVVector</a> QVVector::gaussianVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>sigma</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector of Gaussian distributed values. </p>
+<p>This function generates a vector containing homogeneously sampled values of a gaussian distribution. The size of the vector will equal the double of the radius of the gaussian distribution plus one. The standart deviation must be explicitally provided.</p>
+<div align="center">
+<img src="gaussvector.png" alt="gaussvector.png"/>
+</div>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>radius</em>&nbsp;</td><td>Radius of the gaussian distribution. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sigma</em>&nbsp;</td><td>Sigma of the gaussian distribution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00185">185</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac550cb33a94138c6a55901bc2dc23558"></a><!-- doxytag: member="QVVector::random" ref="ac550cb33a94138c6a55901bc2dc23558" args="(const int elements)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::random </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>elements</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates a vector of random values. </p>
+<p>This function returns a vector containing random values, from a uniform distribution [0,1].</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>elements</em>&nbsp;</td><td>size of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00199">199</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmatrixalgebra.html#gada28dcc8be2cf1b93f3b1f201cafdb88">solveHomogeneous()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2423f32fab62271dd0dc0dfb6ba6f4cb"></a><!-- doxytag: member="QVVector::mexicanHatWaveletVector" ref="a2423f32fab62271dd0dc0dfb6ba6f4cb" args="(const int radius, const double sigma)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classQVVector.html">QVVector</a> QVVector::mexicanHatWaveletVector </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>sigma</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Vector of mexican hat wavelet distributed values. </p>
+<p>This function generates a vector containing homogeneously sampled values of a mexican hat wavelet function. The size of the vector will equal the double of the radius plus one. The standart deviation must be explicitally provided.</p>
+<div align="center">
+<img src="mexicanhatvector.png" alt="mexicanhatvector.png"/>
+</div>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>radius</em>&nbsp;</td><td>Radius of the wavelet distribution. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sigma</em>&nbsp;</td><td>Sigma of the wavelet distribution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00207">207</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc2df5760c4935341efc23f5b483a5a3"></a><!-- doxytag: member="QVVector::homogeneousCoordinates" ref="acc2df5760c4935341efc23f5b483a5a3" args="(const QPointF &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classQVVector.html">QVVector</a> QVVector::homogeneousCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates vector corresponding to the homogeneous coordinates of a 2D point (appending a value 1.0 on an added dimension). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>2D input point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00221">221</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gafbe2b84faffa62f5838ac22a3b6d2026">reconstructionError()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af8e81c72e88b61e1f9a8d118f8120c23"></a><!-- doxytag: member="QVVector::homogeneousCoordinates" ref="af8e81c72e88b61e1f9a8d118f8120c23" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVector::homogeneousCoordinates </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the vector in homogeneous coordinates. </p>
+<p>This method simply copies the actual vector and adds an extra element containing the value 1.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The vector in homogeneous coordinates. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00153">153</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70bc159ef037b663898798140f1d2a59"></a><!-- doxytag: member="QVVector::crossProductMatrix" ref="a70bc159ef037b663898798140f1d2a59" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVVector::crossProductMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtain the matrix corresponding to the matrix multiplication notation for the vector cross product. </p>
+<p>This function returns a matrix which can be used in the cross product multiplication rewritten as a matrix product. The cross product between two vectors:</p>
+<p><img class="formulaInl" alt="$ \mathbf{a} \times \mathbf{b} = \mathbf{c} $" src="form_225.png"/></p>
+<p>Can be rewritten as the following matrix multiplication:</p>
+<p><img class="formulaInl" alt="$ [\mathbf{a}]_\times \mathbf{b} = \mathbf{c} $" src="form_226.png"/></p>
+<p>Where <img class="formulaInl" alt="$ [\mathbf{a}]_\times $" src="form_227.png"/> is the so called <em>cross product matrix for vector</em> <img class="formulaInl" alt="$ \mathbf{a} $" src="form_228.png"/>, which has the following structure:</p>
+<p><img class="formulaInl" alt="$ [\mathbf{a}]_{\times} = \left( \begin{array}{ccc} 0 &amp; -a_3 &amp; a_2 \\ a_3 &amp; 0 &amp; -a_1 \\ -a_2 &amp; a_1 &amp; 0\end{array} \right)$" src="form_229.png"/></p>
+<p>This function only works on vectors of size 3.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVector.html#acd3cdacd7ad33bfd723ce694a707f5e7" title="Compare operator.">equals</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00158">158</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54fddac966be9af0f7fce89b87b5cd48"></a><!-- doxytag: member="QVVector::toRowMatrix" ref="a54fddac966be9af0f7fce89b87b5cd48" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVVector::toRowMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns this vector in the form of a row matrix. </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00170">170</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57387ffc7c1b3ee7de38adb5155d3707"></a><!-- doxytag: member="QVVector::toColumnMatrix" ref="a57387ffc7c1b3ee7de38adb5155d3707" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVVector::toColumnMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns this vector in the form of a column matrix. </p>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00177">177</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmatrixalgebra.html#ga067556526a2c186f723d887a30658402">solveByCholeskyDecomposition()</a>, <a class="el" href="group__qvmatrixalgebra.html#gab8d289ba74af9334d85562f62f51ebf9">solveByLUDecomposition()</a>, <a class="el" href="group__qvmatrixalgebra.html#ga35e4e3e2dd0a5ebbd93f672bf569e4a3">solveByQRDecomposition()</a>, <a class="el" href="group__qvmatrixalgebra.html#gac5e38c9a7f64b9c7785f4d353c0b9ada">solveBySingularValueDecomposition()</a>, <a class="el" href="group__qvmatrixalgebra.html#gaed3915fd119f48853adcb72010e6cd09">solveFromCholeskyDecomposition()</a>, <a class="el" href="group__qvmatrixalgebra.html#gad8bfbb08c8abc180fc75d1c95cd384b2">solveFromLUDecomposition()</a>, <a class="el" href="group__qvmatrixalgebra.html#ga228fdd20d46605f6177054634126320c">solveFromQRDecomposition()</a>, and <a class="el" href="group__qvmatrixalgebra.html#gad74c5a3f06b0c9c72148b44e31264c1c">solveFromSingularValueDecomposition()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvvector_8h_source.html">qvvector.h</a></li>
+<li>src/qvmath/<a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvcombinationiterator.h</h1><a href="qvcombinationiterator_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVCOMBINATIONITERATOR_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVCOMBINATIONITERATOR_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QVector&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00110"></a><a class="code" href="classQVCombinationIterator.html">00110</a> <span class="keyword">class </span><a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a>: <span class="keyword">public</span> QVector&lt;int&gt;
+<a name="l00111"></a>00111     {
+<a name="l00112"></a>00112     <span class="keyword">private</span>:
+<a name="l00113"></a>00113         <span class="keywordtype">int</span> numElements;
+<a name="l00114"></a>00114         <span class="keywordtype">bool</span> endCondition;
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116     <span class="keyword">public</span>:
+<a name="l00120"></a><a class="code" href="classQVCombinationIterator.html#a6e11a666b1c9ffcb06a6cc2a74b4f0ba">00120</a>         <a class="code" href="classQVCombinationIterator.html#a6e11a666b1c9ffcb06a6cc2a74b4f0ba" title="Constructs a default combination iterator.">QVCombinationIterator</a>(): QVector&lt;int&gt;(1), numElements(1), endCondition(true)
+<a name="l00121"></a>00121             { }
+<a name="l00122"></a>00122 
+<a name="l00126"></a><a class="code" href="classQVCombinationIterator.html#a2ac735a78accb3e11a7d784057d137c5">00126</a>         <a class="code" href="classQVCombinationIterator.html#a6e11a666b1c9ffcb06a6cc2a74b4f0ba" title="Constructs a default combination iterator.">QVCombinationIterator</a>(<span class="keyword">const</span> <a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a> &amp;combinationIterator): QVector&lt;int&gt;(combinationIterator),
+<a name="l00127"></a>00127             numElements(combinationIterator.numElements), endCondition(combinationIterator.endCondition)
+<a name="l00128"></a>00128             { }
+<a name="l00129"></a>00129 
+<a name="l00135"></a><a class="code" href="classQVCombinationIterator.html#af8de206f2f0918515ac21f366860f8cf">00135</a>         <a class="code" href="classQVCombinationIterator.html#a6e11a666b1c9ffcb06a6cc2a74b4f0ba" title="Constructs a default combination iterator.">QVCombinationIterator</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> numElements, <span class="keyword">const</span> <span class="keywordtype">int</span> elementsXSet): QVector&lt;int&gt;(elementsXSet),
+<a name="l00136"></a>00136             numElements(numElements), endCondition(false)
+<a name="l00137"></a>00137             {
+<a name="l00138"></a>00138             Q_ASSERT(numElements &gt; 0);
+<a name="l00139"></a>00139             Q_ASSERT(numElements &gt;= elementsXSet);
+<a name="l00140"></a>00140             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; elementsXSet; i++)
+<a name="l00141"></a>00141                 <span class="keyword">operator</span>[](i) = i;
+<a name="l00142"></a>00142             }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         <span class="keyword">virtual</span> ~<a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a>() { }
+<a name="l00145"></a>00145 
+<a name="l00151"></a>00151         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVCombinationIterator.html#a8d942cbeff05b86359d60b8433bae793" title="Obtains the next subset of the iteration, indicating if the iteration has finished...">increment</a>();
+<a name="l00152"></a>00152 
+<a name="l00156"></a>00156         <span class="comment">// infix ++ operator</span>
+<a name="l00157"></a><a class="code" href="classQVCombinationIterator.html#ac6361404f092a9c2b8459cb5c692e6ce">00157</a>         <a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a>&amp; <a class="code" href="classQVCombinationIterator.html#ac6361404f092a9c2b8459cb5c692e6ce" title="infix ++ operator.">operator++ </a>()    { <a class="code" href="classQVCombinationIterator.html#a8d942cbeff05b86359d60b8433bae793" title="Obtains the next subset of the iteration, indicating if the iteration has finished...">increment</a>(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }
+<a name="l00158"></a>00158 
+<a name="l00162"></a>00162         <span class="comment">// postfix ++ operator</span>
+<a name="l00163"></a><a class="code" href="classQVCombinationIterator.html#afc1cbac83cebea7aa279cd6324977e76">00163</a>         <span class="keywordtype">void</span> <a class="code" href="classQVCombinationIterator.html#ac6361404f092a9c2b8459cb5c692e6ce" title="infix ++ operator.">operator++ </a>(<span class="keywordtype">int</span>)                   { ++(*this); }
+<a name="l00164"></a>00164 
+<a name="l00169"></a><a class="code" href="classQVCombinationIterator.html#a99acd396a8cf0bd3cdf0480585baa0ee">00169</a>         <span class="keywordtype">double</span> <a class="code" href="classQVCombinationIterator.html#a99acd396a8cf0bd3cdf0480585baa0ee" title="Obtains the amount of possible subsets of a given size and cardinallity.">getSubsetNumber</a>()<span class="keyword">        const   </span>{ <span class="keywordflow">return</span> <a class="code" href="group__qvmath.html#ga1882a4c380d6ee8ea52eee749e1f508e" title="Obtains the number of combinations of a fixed size over the elements of a set.">qvCombination</a>(numElements, size()); }
+<a name="l00170"></a>00170 
+<a name="l00173"></a><a class="code" href="classQVCombinationIterator.html#af432a22dce2980ea13ee42fa5386919d">00173</a>         <span class="keywordtype">bool</span> <a class="code" href="classQVCombinationIterator.html#af432a22dce2980ea13ee42fa5386919d" title="Indicate if the iteration has finished.">finished</a>()<span class="keyword">         const   </span>{ <span class="keywordflow">return</span> endCondition; }
+<a name="l00174"></a>00174 
+<a name="l00177"></a><a class="code" href="classQVCombinationIterator.html#a8b8c517e071bd03670f6ea72bebbe930">00177</a>         <span class="keywordtype">int</span> <a class="code" href="classQVCombinationIterator.html#a8b8c517e071bd03670f6ea72bebbe930" title="Obtains the first element of the current subset.">firstIndex</a>()<span class="keyword">                const   </span>{ <span class="keywordflow">return</span> first(); }
+<a name="l00178"></a>00178 
+<a name="l00181"></a><a class="code" href="classQVCombinationIterator.html#aba3d4398aba09dda56a50509b316b223">00181</a>         <span class="keywordtype">int</span> <a class="code" href="classQVCombinationIterator.html#aba3d4398aba09dda56a50509b316b223" title="Obtains the last element of the current subset.">lastIndex</a>()<span class="keyword">         const   </span>{ <span class="keywordflow">return</span> last(); }
+<a name="l00182"></a>00182 
+<a name="l00185"></a><a class="code" href="classQVCombinationIterator.html#a48ea97e4e1918a479a54b42c556674a7">00185</a>         <span class="keywordtype">int</span> <a class="code" href="classQVCombinationIterator.html#a48ea97e4e1918a479a54b42c556674a7" title="Obtains the cardinallity of the combination.">getSetCardinallity</a>()<span class="keyword">        const   </span>{ <span class="keywordflow">return</span> numElements; }
+<a name="l00186"></a>00186 
+<a name="l00189"></a><a class="code" href="classQVCombinationIterator.html#a0bc5e95587d58f5c9e3265292cf586d0">00189</a>         <span class="keywordtype">int</span> <a class="code" href="classQVCombinationIterator.html#a0bc5e95587d58f5c9e3265292cf586d0" title="Obtains the subset&amp;#39;s size.">getSubsetsSize</a>()<span class="keyword">    const   </span>{ <span class="keywordflow">return</span> size(); }
+<a name="l00190"></a>00190     };
+<a name="l00191"></a>00191 
+<a name="l00199"></a>00199 std::ostream&amp; operator &lt;&lt; ( std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classQVCombinationIterator.html" title="Iterator over all possible combinations over a set.">QVCombinationIterator</a> &amp;combination);
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

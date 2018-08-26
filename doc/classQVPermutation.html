@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVPermutation Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVPermutation" -->
+<p>Implementation of permutations.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvpermutation_8h_source.html">QVPermutation</a>&gt;</code></p>
+
+<p><a href="classQVPermutation-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#a218af07edade4214f789f5259c35a6f1">QVPermutation</a> (const int n=0, bool initialize_with_identity=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor for <a class="el" href="classQVPermutation.html" title="Implementation of permutations.">QVPermutation</a>.  <a href="#a218af07edade4214f789f5259c35a6f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#a9c015026a8b683a2e97ffc76098ab1ce">checkConsistency</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check consistency of permutation.  <a href="#a9c015026a8b683a2e97ffc76098ab1ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#a5c42f6c290685631975fa3bb445acd95">toMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Conversion to <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>.  <a href="#a5c42f6c290685631975fa3bb445acd95"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#a270bd86cab5d13026a2ceb1967e83c25">signature</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signature of a permutation.  <a href="#a270bd86cab5d13026a2ceb1967e83c25"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#aeb5394eb463bf5d7a45ce931ba047b45">operator()</a> (const int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Element access operator.  <a href="#aeb5394eb463bf5d7a45ce931ba047b45"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#a07b5cf530ae75740e03c34becbf9d759">operator()</a> (const int index) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded version of element access operator.  <a href="#a07b5cf530ae75740e03c34becbf9d759"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQVPermutation.html">QVPermutation</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html#a8df4d9f49027ce1ab5b0349f6e05febc">fromMatrix</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Conversion from <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>.  <a href="#a8df4d9f49027ce1ab5b0349f6e05febc"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of permutations. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="MatricesAndVectors.html">Matrices and vectors</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8h_source.html#l00041">41</a> of file <a class="el" href="qvpermutation_8h_source.html">qvpermutation.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a218af07edade4214f789f5259c35a6f1"></a><!-- doxytag: member="QVPermutation::QVPermutation" ref="a218af07edade4214f789f5259c35a6f1" args="(const int n=0, bool initialize_with_identity=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVPermutation::QVPermutation </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>n</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>initialize_with_identity</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor for <a class="el" href="classQVPermutation.html" title="Implementation of permutations.">QVPermutation</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>size of the permutation </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>initialize_with_identity</em>&nbsp;</td><td>if true, returns an identity permutation; if false, permutation will be uninitialized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8h_source.html#l00047">47</a> of file <a class="el" href="qvpermutation_8h_source.html">qvpermutation.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9c015026a8b683a2e97ffc76098ab1ce"></a><!-- doxytag: member="QVPermutation::checkConsistency" ref="a9c015026a8b683a2e97ffc76098ab1ce" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPermutation::checkConsistency </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check consistency of permutation. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if a valid permutation, false otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8cpp_source.html#l00031">31</a> of file <a class="el" href="qvpermutation_8cpp_source.html">qvpermutation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPermutation.html#a8df4d9f49027ce1ab5b0349f6e05febc">fromMatrix()</a>, and <a class="el" href="classQVPermutation.html#a5c42f6c290685631975fa3bb445acd95">toMatrix()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c42f6c290685631975fa3bb445acd95"></a><!-- doxytag: member="QVPermutation::toMatrix" ref="a5c42f6c290685631975fa3bb445acd95" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVPermutation::toMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Conversion to <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>. </p>
+<p>This function generates a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> from a <a class="el" href="classQVPermutation.html" title="Implementation of permutations.">QVPermutation</a>, which will only contain ones and zeros, with exactly one nonzero element per row and per column. </p>
+
+<p>Definition at line <a class="el" href="qvpermutation_8cpp_source.html#l00048">48</a> of file <a class="el" href="qvpermutation_8cpp_source.html">qvpermutation.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a270bd86cab5d13026a2ceb1967e83c25"></a><!-- doxytag: member="QVPermutation::signature" ref="a270bd86cab5d13026a2ceb1967e83c25" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVPermutation::signature </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signature of a permutation. </p>
+<p>Returns the signature of a permutation (-1 if it has odd parity, +1 otherwise).</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>signature of permutation </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8cpp_source.html#l00058">58</a> of file <a class="el" href="qvpermutation_8cpp_source.html">qvpermutation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416">determinant()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8df4d9f49027ce1ab5b0349f6e05febc"></a><!-- doxytag: member="QVPermutation::fromMatrix" ref="a8df4d9f49027ce1ab5b0349f6e05febc" args="(const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVPermutation.html">QVPermutation</a> QVPermutation::fromMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Conversion from <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>. </p>
+<p>This function generates a <a class="el" href="classQVPermutation.html" title="Implementation of permutations.">QVPermutation</a> from a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>, where the maximum elements in each row, when substituted by ones, with the rest of elements in that row substituted by zeros, generate a permutation matrix. Otherwise it will fail and abort execution.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matrix</em>&nbsp;</td><td>matrix to get permutation from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8cpp_source.html#l00083">83</a> of file <a class="el" href="qvpermutation_8cpp_source.html">qvpermutation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416">determinant()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb5394eb463bf5d7a45ce931ba047b45"></a><!-- doxytag: member="QVPermutation::operator()" ref="aeb5394eb463bf5d7a45ce931ba047b45" args="(const int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int&amp; QVPermutation::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Element access operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>main index value for data access </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8h_source.html#l00087">87</a> of file <a class="el" href="qvpermutation_8h_source.html">qvpermutation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07b5cf530ae75740e03c34becbf9d759"></a><!-- doxytag: member="QVPermutation::operator()" ref="a07b5cf530ae75740e03c34becbf9d759" args="(const int index) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVPermutation::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded version of element access operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>main index value for data access </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpermutation_8h_source.html#l00093">93</a> of file <a class="el" href="qvpermutation_8h_source.html">qvpermutation.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvpermutation_8h_source.html">qvpermutation.h</a></li>
+<li>src/qvmath/<a class="el" href="qvpermutation_8cpp_source.html">qvpermutation.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

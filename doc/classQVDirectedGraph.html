@@ -1,0 +1,680 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVDirectedGraph&lt; Element &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVDirectedGraph" -->
+<p>Directed graph class.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>&gt;</code></p>
+
+<p><a href="classQVDirectedGraph-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa">getNodesConnectivity</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of links connecting each node.  <a href="#a140bd13629201d83db07a51b07cc5cfa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a901fd2a8b6e62aba1e2c58142c1c1add">getMinConnectivity</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the minimal number of links connecting each node.  <a href="#a901fd2a8b6e62aba1e2c58142c1c1add"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#ad953eb3c097c2566905efdcdffe5ac20">getMaxConnectivity</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the maximal number of links connecting each node.  <a href="#ad953eb3c097c2566905efdcdffe5ac20"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#abf57f705c153bc423ef877c7c0ec1428">getMeanConnectivity</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the mean number of links connecting each node.  <a href="#abf57f705c153bc423ef877c7c0ec1428"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a4fba1639845e007caed01a403dfea1ba">QVDirectedGraph</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a4fba1639845e007caed01a403dfea1ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a4195d1920e7e5f31709cfe729560210a">insert</a> (const int source, const int destination, const Element element)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add a link between two nodes of the graph.  <a href="#a4195d1920e7e5f31709cfe729560210a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a559559050686ff63f9f785010320dd3e">insert</a> (const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;link, const Element element)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add a link between two nodes of the graph.  <a href="#a559559050686ff63f9f785010320dd3e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Element&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a30dff79e368e1a6e1044e7175df17a67">operator[]</a> (const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;link) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve element for a link between two nodes.  <a href="#a30dff79e368e1a6e1044e7175df17a67"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Element &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#aec026a8a1df2307b43d12376350a1af5">operator[]</a> (const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;link)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve element for a link between two nodes.  <a href="#aec026a8a1df2307b43d12376350a1af5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const Element&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#ab7764dfab0839dcf34778b466dbe2f3e">value</a> (const int source, const int destination) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve element for a link between two nodes.  <a href="#ab7764dfab0839dcf34778b466dbe2f3e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a7e5f31b1a5f78109bc2eeff0982c2b19">contains</a> (const int source, const int destination) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve element for a link between two nodes.  <a href="#a7e5f31b1a5f78109bc2eeff0982c2b19"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a27e4962312f3fb080387154eca3ae717">contains</a> (const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;link) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve element for a link between two nodes.  <a href="#a27e4962312f3fb080387154eca3ae717"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a1f2447948be415119b3956715b8fe8b0">getLinks</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieve links defined between the nodes of the graph.  <a href="#a1f2447948be415119b3956715b8fe8b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a9769dcd1f1a21804926fb16475f14f1e">deleteInsufficientlyConnectedNodes</a> (const int minConnections)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delete nodes connected by less nodes than a given value, with other nodes in the graph.  <a href="#a9769dcd1f1a21804926fb16475f14f1e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a24b9710dac03caa19b63643f78035ae6">numNodes</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the number of connected nodes in the graph.  <a href="#a24b9710dac03caa19b63643f78035ae6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#ae60445f8036170a8147514cc927ce136">maxNodesIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the maximal index for the nodes in the graph.  <a href="#ae60445f8036170a8147514cc927ce136"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#a6538a2387c2fb71b3af367515fd3e142">getMaxNodeIndex</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the maximal index for a node in the graph.  <a href="#a6538a2387c2fb71b3af367515fd3e142"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; int, int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#af45d0094a0c23f3398581ebd2dc8d76f">numLinksForNode</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; int, int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474">numLinksPerNode</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of connections for each node in the graph.  <a href="#acb21fae6bb31ef526c89e581060d5474"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<h3>template&lt;typename Element&gt;<br/>
+ class QVDirectedGraph&lt; Element &gt;</h3>
+
+<p>Directed graph class. </p>
+<p>This class represents a directed graph. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00049">49</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4fba1639845e007caed01a403dfea1ba"></a><!-- doxytag: member="QVDirectedGraph::QVDirectedGraph" ref="a4fba1639845e007caed01a403dfea1ba" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::<a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00108">108</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a140bd13629201d83db07a51b07cc5cfa"></a><!-- doxytag: member="QVDirectedGraph::getNodesConnectivity" ref="a140bd13629201d83db07a51b07cc5cfa" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::getNodesConnectivity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of links connecting each node. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00057">57</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDirectedGraph.html#ad953eb3c097c2566905efdcdffe5ac20">QVDirectedGraph&lt; Element &gt;::getMaxConnectivity()</a>, <a class="el" href="classQVDirectedGraph.html#abf57f705c153bc423ef877c7c0ec1428">QVDirectedGraph&lt; Element &gt;::getMeanConnectivity()</a>, and <a class="el" href="classQVDirectedGraph.html#a901fd2a8b6e62aba1e2c58142c1c1add">QVDirectedGraph&lt; Element &gt;::getMinConnectivity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a901fd2a8b6e62aba1e2c58142c1c1add"></a><!-- doxytag: member="QVDirectedGraph::getMinConnectivity" ref="a901fd2a8b6e62aba1e2c58142c1c1add" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::getMinConnectivity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the minimal number of links connecting each node. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00070">70</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad953eb3c097c2566905efdcdffe5ac20"></a><!-- doxytag: member="QVDirectedGraph::getMaxConnectivity" ref="ad953eb3c097c2566905efdcdffe5ac20" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::getMaxConnectivity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the maximal number of links connecting each node. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00073">73</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf57f705c153bc423ef877c7c0ec1428"></a><!-- doxytag: member="QVDirectedGraph::getMeanConnectivity" ref="abf57f705c153bc423ef877c7c0ec1428" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::getMeanConnectivity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the mean number of links connecting each node. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00076">76</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4195d1920e7e5f31709cfe729560210a"></a><!-- doxytag: member="QVDirectedGraph::insert" ref="a4195d1920e7e5f31709cfe729560210a" args="(const int source, const int destination, const Element element)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Element&nbsp;</td>
+          <td class="paramname"> <em>element</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add a link between two nodes of the graph. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00113">113</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga20979b415197687de5b70baf9dfa2417">getPointMatchingsListsVec()</a>, and <a class="el" href="classQVDirectedGraph.html#a559559050686ff63f9f785010320dd3e">QVDirectedGraph&lt; Element &gt;::insert()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a559559050686ff63f9f785010320dd3e"></a><!-- doxytag: member="QVDirectedGraph::insert" ref="a559559050686ff63f9f785010320dd3e" args="(const QVGraphLink &amp;link, const Element element)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>link</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Element&nbsp;</td>
+          <td class="paramname"> <em>element</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add a link between two nodes of the graph. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00123">123</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30dff79e368e1a6e1044e7175df17a67"></a><!-- doxytag: member="QVDirectedGraph::operator[]" ref="a30dff79e368e1a6e1044e7175df17a67" args="(const QVGraphLink &amp;link) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Element <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>link</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve element for a link between two nodes. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00133">133</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDirectedGraph.html#aec026a8a1df2307b43d12376350a1af5">QVDirectedGraph&lt; Element &gt;::operator[]()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec026a8a1df2307b43d12376350a1af5"></a><!-- doxytag: member="QVDirectedGraph::operator[]" ref="aec026a8a1df2307b43d12376350a1af5" args="(const QVGraphLink &amp;link)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Element&amp; <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>link</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve element for a link between two nodes. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00145">145</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7764dfab0839dcf34778b466dbe2f3e"></a><!-- doxytag: member="QVDirectedGraph::value" ref="ab7764dfab0839dcf34778b466dbe2f3e" args="(const int source, const int destination) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const Element <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::value </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>destination</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve element for a link between two nodes. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00155">155</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e5f31b1a5f78109bc2eeff0982c2b19"></a><!-- doxytag: member="QVDirectedGraph::contains" ref="a7e5f31b1a5f78109bc2eeff0982c2b19" args="(const int source, const int destination) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>destination</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve element for a link between two nodes. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00167">167</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDirectedGraph.html#a27e4962312f3fb080387154eca3ae717">QVDirectedGraph&lt; Element &gt;::contains()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a27e4962312f3fb080387154eca3ae717"></a><!-- doxytag: member="QVDirectedGraph::contains" ref="a27e4962312f3fb080387154eca3ae717" args="(const QVGraphLink &amp;link) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>link</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve element for a link between two nodes. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00173">173</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f2447948be415119b3956715b8fe8b0"></a><!-- doxytag: member="QVDirectedGraph::getLinks" ref="a1f2447948be415119b3956715b8fe8b0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">QVGraphLink</a>&gt; <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::getLinks </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve links defined between the nodes of the graph. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00179">179</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9769dcd1f1a21804926fb16475f14f1e"></a><!-- doxytag: member="QVDirectedGraph::deleteInsufficientlyConnectedNodes" ref="a9769dcd1f1a21804926fb16475f14f1e" args="(const int minConnections)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::deleteInsufficientlyConnectedNodes </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minConnections</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete nodes connected by less nodes than a given value, with other nodes in the graph. </p>
+<p>This method eliminates the nodes with a smaller connectivity, leaving a skeletal graph of the best connected nodes. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00187">187</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24b9710dac03caa19b63643f78035ae6"></a><!-- doxytag: member="QVDirectedGraph::numNodes" ref="a24b9710dac03caa19b63643f78035ae6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::numNodes </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the number of connected nodes in the graph. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00206">206</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmath.html#gac1d9acd6dfaf0cb36bea2a05a6a6a780">writeGraphToDotFile()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae60445f8036170a8147514cc927ce136"></a><!-- doxytag: member="QVDirectedGraph::maxNodesIndex" ref="ae60445f8036170a8147514cc927ce136" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::maxNodesIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the maximal index for the nodes in the graph. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>for <a class="el" href="classQVDirectedGraph.html#a6538a2387c2fb71b3af367515fd3e142">getMaxNodeIndex</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00213">213</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDirectedGraph.html#a6538a2387c2fb71b3af367515fd3e142">QVDirectedGraph&lt; Element &gt;::getMaxNodeIndex()</a>, and <a class="el" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa">QVDirectedGraph&lt; Element &gt;::getNodesConnectivity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6538a2387c2fb71b3af367515fd3e142"></a><!-- doxytag: member="QVDirectedGraph::getMaxNodeIndex" ref="a6538a2387c2fb71b3af367515fd3e142" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::getMaxNodeIndex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the maximal index for a node in the graph. </p>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00224">224</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af45d0094a0c23f3398581ebd2dc8d76f"></a><!-- doxytag: member="QVDirectedGraph::numLinksForNode" ref="af45d0094a0c23f3398581ebd2dc8d76f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int, int&gt; <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::numLinksForNode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>for <a class="el" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474">numLinksPerNode</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00239">239</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb21fae6bb31ef526c89e581060d5474"></a><!-- doxytag: member="QVDirectedGraph::numLinksPerNode" ref="acb21fae6bb31ef526c89e581060d5474" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int, int&gt; <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; Element &gt;::numLinksPerNode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of connections for each node in the graph. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A map containing the number of links for each node in the graph. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8h_source.html#l00247">247</a> of file <a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVDirectedGraph.html#a9769dcd1f1a21804926fb16475f14f1e">QVDirectedGraph&lt; Element &gt;::deleteInsufficientlyConnectedNodes()</a>, <a class="el" href="classQVDirectedGraph.html#af45d0094a0c23f3398581ebd2dc8d76f">QVDirectedGraph&lt; Element &gt;::numLinksForNode()</a>, and <a class="el" href="classQVDirectedGraph.html#a24b9710dac03caa19b63643f78035ae6">QVDirectedGraph&lt; Element &gt;::numNodes()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvmath/<a class="el" href="qvdirectedgraph_8h_source.html">qvdirectedgraph.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

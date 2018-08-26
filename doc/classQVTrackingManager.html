@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVTrackingManager Class Reference<br/>
+<small>
+[<a class="el" href="group__qvgpukltflow.html">GPU-KLT+FLOW wrapper functions and classes</a>]</small>
+</h1><!-- doxytag: class="QVTrackingManager" -->
+<p>Class to manage trackings of features in video sequences.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a>&gt;</code></p>
+
+<p><a href="classQVTrackingManager-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#a46d277759f98350538c1dc826ae08f3a">QVTrackingManager</a> (bool removeLostTrackings=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#a46d277759f98350538c1dc826ae08f3a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#acec53213e5307ad028937819a9db5782">~QVTrackingManager</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default destructor.  <a href="#acec53213e5307ad028937819a9db5782"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#a2cc4a4e200c32f2db347a1c217499f0e">updateTrackings</a> (QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; *tracks)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update the tracking hash with the updated feature hash.  <a href="#a2cc4a4e200c32f2db347a1c217499f0e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#aba824019bf7e2b1c35dc427cc2fa67b6">getTrackingsAtFrame</a> (int frame)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get all features tracked in a given frame.  <a href="#aba824019bf7e2b1c35dc427cc2fa67b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#ab74651fa44e436a6bf92022163484e60">getTrackingsAtLastFrame</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get all features tracked in the last frame.  <a href="#ab74651fa44e436a6bf92022163484e60"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QHash&lt; int, <a class="el" href="classQVKLTFeatureTracking.html">QVKLTFeatureTracking</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#a886dbb89684607ec13f1897078d05780">getTrackings</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get all trackings.  <a href="#a886dbb89684607ec13f1897078d05780"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVKLTFeatureTracking.html">QVKLTFeatureTracking</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTrackingManager.html#a4e44c9d0551aa0e610ad3d1008643a67">getFeatureTracking</a> (int id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the tracking corresponding to a given individual feature.  <a href="#a4e44c9d0551aa0e610ad3d1008643a67"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Class to manage trackings of features in video sequences. </p>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8h_source.html#l00121">121</a> of file <a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a46d277759f98350538c1dc826ae08f3a"></a><!-- doxytag: member="QVTrackingManager::QVTrackingManager" ref="a46d277759f98350538c1dc826ae08f3a" args="(bool removeLostTrackings=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTrackingManager::QVTrackingManager </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>removeLostTrackings</em> = <code>true</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8h_source.html#l00125">125</a> of file <a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acec53213e5307ad028937819a9db5782"></a><!-- doxytag: member="QVTrackingManager::~QVTrackingManager" ref="acec53213e5307ad028937819a9db5782" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTrackingManager::~QVTrackingManager </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default destructor. </p>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8h_source.html#l00132">132</a> of file <a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2cc4a4e200c32f2db347a1c217499f0e"></a><!-- doxytag: member="QVTrackingManager::updateTrackings" ref="a2cc4a4e200c32f2db347a1c217499f0e" args="(QHash&lt; int, QVKLTTrackerFeature &gt; *tracks)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVTrackingManager::updateTrackings </td>
+          <td>(</td>
+          <td class="paramtype">QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; *&nbsp;</td>
+          <td class="paramname"> <em>tracks</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Update the tracking hash with the updated feature hash. </p>
+<p>This method updates the tracking hash according to the feature status in the input feature hash. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tracks</em>&nbsp;</td><td>Input feature hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8cpp_source.html#l00027">27</a> of file <a class="el" href="qvkltfeaturetracking_8cpp_source.html">qvkltfeaturetracking.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba824019bf7e2b1c35dc427cc2fa67b6"></a><!-- doxytag: member="QVTrackingManager::getTrackingsAtFrame" ref="aba824019bf7e2b1c35dc427cc2fa67b6" args="(int frame)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; int &gt; QVTrackingManager::getTrackingsAtFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>frame</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get all features tracked in a given frame. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>frame</em>&nbsp;</td><td>number of the frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list with the identifiers of all features tracked in that frame. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8cpp_source.html#l00066">66</a> of file <a class="el" href="qvkltfeaturetracking_8cpp_source.html">qvkltfeaturetracking.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTrackingManager.html#ab74651fa44e436a6bf92022163484e60">getTrackingsAtLastFrame()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab74651fa44e436a6bf92022163484e60"></a><!-- doxytag: member="QVTrackingManager::getTrackingsAtLastFrame" ref="ab74651fa44e436a6bf92022163484e60" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; int &gt; QVTrackingManager::getTrackingsAtLastFrame </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get all features tracked in the last frame. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list with the identifiers of all features tracked in the last frame. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8cpp_source.html#l00058">58</a> of file <a class="el" href="qvkltfeaturetracking_8cpp_source.html">qvkltfeaturetracking.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a886dbb89684607ec13f1897078d05780"></a><!-- doxytag: member="QVTrackingManager::getTrackings" ref="a886dbb89684607ec13f1897078d05780" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;int, <a class="el" href="classQVKLTFeatureTracking.html">QVKLTFeatureTracking</a>&gt; QVTrackingManager::getTrackings </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get all trackings. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A hash containing all the trackings. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8h_source.html#l00155">155</a> of file <a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e44c9d0551aa0e610ad3d1008643a67"></a><!-- doxytag: member="QVTrackingManager::getFeatureTracking" ref="a4e44c9d0551aa0e610ad3d1008643a67" args="(int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVKLTFeatureTracking.html">QVKLTFeatureTracking</a>&amp; QVTrackingManager::getFeatureTracking </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the tracking corresponding to a given individual feature. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>Feature identifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The tracking corresponding to that feature </dd></dl>
+
+<p>Definition at line <a class="el" href="qvkltfeaturetracking_8h_source.html#l00163">163</a> of file <a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvgpukltflow/<a class="el" href="qvkltfeaturetracking_8h_source.html">qvkltfeaturetracking.h</a></li>
+<li>src/qvgpukltflow/<a class="el" href="qvkltfeaturetracking_8cpp_source.html">qvkltfeaturetracking.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

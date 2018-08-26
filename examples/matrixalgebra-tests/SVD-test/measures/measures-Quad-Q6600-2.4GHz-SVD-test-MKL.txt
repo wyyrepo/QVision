@@ -1,0 +1,61 @@
+Performing 5 tests per measure.
+GSL_THIN_DECOMP_MOD
+30x30: Average total time: 1 ms. 
+30x200: Average total time: 3.2 ms. 
+200x30: Average total time: 2.4 ms. 
+200x200: Average total time: 144.6 ms. 
+GSL_THIN_DECOMP
+30x30: Average total time: 0.6 ms. 
+30x200: Average total time: 2.6 ms. 
+200x30: Average total time: 3.8 ms. 
+200x200: Average total time: 184.2 ms. 
+GSL_THIN_DECOMP_JACOBI
+30x30: Average total time: 3.6 ms. 
+30x200: Average total time: 6 ms. 
+200x30: Average total time: 10.2 ms. 
+200x200: Average total time: 202.2 ms. 
+LAPACK_FULL_DGESVD
+30x30: Average total time: 1 ms. 
+30x200: Average total time: 5.8 ms. 
+200x30: Average total time: 3.6 ms. 
+200x200: Average total time: 58.6 ms. 
+LAPACK_FULL_DGESDD
+30x30: Average total time: 1.6 ms. 
+30x200: Average total time: 4 ms. 
+200x30: Average total time: 4 ms. 
+200x200: Average total time: 41.6 ms. 
+LAPACK_THIN_DGESVD
+30x30: Average total time: 1 ms. 
+30x200: Average total time: 1.6 ms. 
+200x30: Average total time: 2.2 ms. 
+200x200: Average total time: 53 ms. 
+LAPACK_FULL_DGESDD
+30x30: Average total time: 1.6 ms. 
+30x200: Average total time: 4.8 ms. 
+200x30: Average total time: 5.6 ms. 
+200x200: Average total time: 42.8 ms. 
+GSL_ONLY_DECOMP_MOD
+30x30: Average total time: 1.4 ms. 
+30x200: Average total time: 3.2 ms. 
+200x30: Average total time: 1.6 ms. 
+200x200: Average total time: 139.2 ms. 
+GSL_ONLY_DECOMP
+30x30: Average total time: 1.2 ms. 
+30x200: Average total time: 2.2 ms. 
+200x30: Average total time: 2.4 ms. 
+200x200: Average total time: 123 ms. 
+GSL_ONLY_DECOMP_JACOBI
+30x30: Average total time: 3.6 ms. 
+30x200: Average total time: 8.6 ms. 
+200x30: Average total time: 6.6 ms. 
+200x200: Average total time: 296 ms. 
+LAPACK_ONLY_DGESVD
+30x30: Average total time: 0.6 ms. 
+30x200: Average total time: 1.2 ms. 
+200x30: Average total time: 0.8 ms. 
+200x200: Average total time: 15.4 ms. 
+LAPACK_ONLY_DGESDD
+30x30: Average total time: 0.8 ms. 
+30x200: Average total time: 1.2 ms. 
+200x30: Average total time: 0.8 ms. 
+200x200: Average total time: 15.8 ms. 

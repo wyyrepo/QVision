@@ -1,0 +1,923 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Math functionality</h1>
+<p>Several classes and functions for numeric, vector and matrix scientific computations.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph&lt; Element &gt;</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Directed graph class.  <a href="classQVDirectedGraph.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV2DMap.html">QV2DMap</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fast 2D nearest neigbour access data container.  <a href="classQV2DMap.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV3DPointF.html">QV3DPointF</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">3D point representation  <a href="classQV3DPointF.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV3DPolylineF.html">QV3DPolylineF</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">3D polyline representation  <a href="classQV3DPolylineF.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCombinationIterator.html">QVCombinationIterator</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Iterator over all possible <a href="http://en.wikipedia.org/wiki/Combination">combinations</a> over a set.  <a href="classQVCombinationIterator.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html">QVComplex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of complex numbers.  <a href="classQVComplex.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDisjointSet.html">QVDisjointSet</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of a disjoint set data type, based on the <a href="http://en.wikipedia.org/wiki/Disjoint-set_data_structure">union-find algorithm</a>.  <a href="classQVDisjointSet.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Class modeling rotation-translation transformations for 3D points.  <a href="classQVEuclideanMapping3.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMatrix.html">QVMatrix</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of numerical matrices.  <a href="classQVMatrix.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPermutation.html">QVPermutation</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of permutations.  <a href="classQVPermutation.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVQuaternion.html">QVQuaternion</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of <a href="http://en.wikipedia.org/wiki/Quaternion">quaternions</a>.  <a href="classQVQuaternion.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of sparse block matrices.  <a href="classQVSparseBlockMatrix.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html">QVTensor</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of <a href="http://en.wikipedia.org/wiki/Classical_treatment_of_tensors">tensors</a>, a generalization for matrices and vectors.  <a href="classQVTensor.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensorIndex.html">QVTensorIndex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Indexes for tensors.  <a href="classQVTensorIndex.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVector.html">QVVector</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of numerical vectors.  <a href="classQVVector.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVectorMap.html">QVVectorMap</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fast nearest neigbour vector container.  <a href="classQVVectorMap.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Modules</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmatrixalgebra.html">Matrix Algebra</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Matrix algebra related functions (see also source programs in directory examples/matrixalgebra-tests for an exhaustive set of examples of use). </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvstatistics.html">Statistics</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Statistics, regression and model fitting related functionality. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html">Numerical analisis and function minimization</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Function optimization and numerical derivative evaluation. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsignalprocessing.html">Signal processing functionality</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Signal filtering functions. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html">Projective Geometry</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Functions related to Projective Geometry. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef QPair&lt; QPointF, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga522a6e638c0293e9d6f5b4c3dbd1d98e">qvIteratedBitCount</a> (unsigned int n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Iterative bit counting routine.  <a href="#ga522a6e638c0293e9d6f5b4c3dbd1d98e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga62bddb92d064405db6f2dc0eb77e002f">qvMITHAKMEMBitCount</a> (unsigned int n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Bit counting routine from the MIT HAKMEM.  <a href="#ga62bddb92d064405db6f2dc0eb77e002f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaabea9bcc4938d7719cc2940ed2894c02">qvNiftyParallelBitCount</a> (unsigned int n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Nifty parallel bit counting routine.  <a href="#gaabea9bcc4938d7719cc2940ed2894c02"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaf32edeb19dd7ba0327a1405ffd78cea4">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Prints the complex number contained in a complex number objecto to an output stream.  <a href="#gaf32edeb19dd7ba0327a1405ffd78cea4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gac1d9acd6dfaf0cb36bea2a05a6a6a780">writeGraphToDotFile</a> (const QString &amp;fileName, const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QString &gt; &amp;graph, const QStringList &amp;nodeLabels=QStringList())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Writes a directed graph in a .dot file.  <a href="#gac1d9acd6dfaf0cb36bea2a05a6a6a780"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga1882a4c380d6ee8ea52eee749e1f508e">qvCombination</a> (const int setRange, const int subsetRange)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the number of combinations of a fixed size over the elements of a set.  <a href="#ga1882a4c380d6ee8ea52eee749e1f508e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga2b6468e67530eef17b69a8b994484864">qvAngle</a> (const QPointF &amp;point1, const QPointF &amp;point2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the angle between two 2D vectors.  <a href="#ga2b6468e67530eef17b69a8b994484864"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="classQVComplex.html">QVComplex</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga053b5741cdb470b08837b70aa5c274c4">qvSolveCubicPolynomial</a> (const double a0, const double a1, const double a2, const double a3)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the three complex (or real) solutions for a third grade polynomial.  <a href="#ga053b5741cdb470b08837b70aa5c274c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaeb39222b657a43c07ce908b9813a8e6b">qvPointLineDistance</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;, const QPointF &amp;)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the geometric distance between a point and a line in the 2D plane.  <a href="#gaeb39222b657a43c07ce908b9813a8e6b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga459fc88ab2ecb0145f7a4d88f52b1589">qvSymmetricFloor</a> (const double value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the natural number closest to a given real value.  <a href="#ga459fc88ab2ecb0145f7a4d88f52b1589"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaabdd51683148ac1153014120c7558b89">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::istream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga20cb79175099f4623dc53a96d9f1ce6c">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaa3314730bd45d74b2a4f3cb8bd3fa0fa">qHash</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga9ead752411a6772cfd7d75051cdc677e">writeQVMatrixToFile</a> (const QString fileName, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix, const int precission=7)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Writes the content of a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object in an ASCII file.  <a href="#ga9ead752411a6772cfd7d75051cdc677e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gae1e1afa78741e92ed46d20b70830a4fc">readQVMatrixFromFile</a> (const QString fileName, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads the content of a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object from an ASCII file.  <a href="#gae1e1afa78741e92ed46d20b70830a4fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga85e11a75a24eec1686a939aa690e1942">lnSO3</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the element from the Lie algebra so(3) corresponding to a rotation matrix.  <a href="#ga85e11a75a24eec1686a939aa690e1942"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gad9a79664f7af4487d5af8fe2296fc7a4">expSO3</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;w)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the rotation matrix corresponding to the element from the Lie algebra so(3).  <a href="#gad9a79664f7af4487d5af8fe2296fc7a4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga54320e843f77c715252ff8f9be6e8083">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVPermutation.html">QVPermutation</a> &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Output stream operator for QVPermutaion.  <a href="#ga54320e843f77c715252ff8f9be6e8083"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga9eb3c76cb24443e2ff28327bc2c194d2">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaba2fa16f67dd829053ea94d47f956692">qHash</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Several classes and functions for numeric, vector and matrix scientific computations. </p>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga818fe0c689af956cd14431148c879718"></a><!-- doxytag: member="qvdefines.h::QPointFMatching" ref="ga818fe0c689af956cd14431148c879718" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QPair&lt;QPointF, QPointF&gt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Type for a pair of points. </p>
+
+<p>Definition at line <a class="el" href="qvdefines_8h_source.html#l00091">91</a> of file <a class="el" href="qvdefines_8h_source.html">qvdefines.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga522a6e638c0293e9d6f5b4c3dbd1d98e"></a><!-- doxytag: member="qvbitcount.h::qvIteratedBitCount" ref="ga522a6e638c0293e9d6f5b4c3dbd1d98e" args="(unsigned int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qvIteratedBitCount </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Iterative bit counting routine. </p>
+<p>This method counts the number of bits set to 1 in the input integer. It is the slower method for bit counting included in QVision, but can count bits on 64 bit integers.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>N</em>&nbsp;</td><td>input unsigned integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of bits set to 1 in the input integer </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbitcount_8cpp_source.html#l00027">27</a> of file <a class="el" href="qvbitcount_8cpp_source.html">qvbitcount.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga62bddb92d064405db6f2dc0eb77e002f"></a><!-- doxytag: member="qvbitcount.h::qvMITHAKMEMBitCount" ref="ga62bddb92d064405db6f2dc0eb77e002f" args="(unsigned int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qvMITHAKMEMBitCount </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Bit counting routine from the MIT HAKMEM. </p>
+<p>This method counts the number of bits set to 1 in the input integer. It is included in the <a href="http://en.wikipedia.org/wiki/HAKMEM">HAKMEM</a>, or AI Memo 239, which is a technical report from the MIT AI Lab.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This method can count only the 32 less significant bits.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>N</em>&nbsp;</td><td>input unsigned integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of bits set to 1 in the input integer </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbitcount_8cpp_source.html#l00039">39</a> of file <a class="el" href="qvbitcount_8cpp_source.html">qvbitcount.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaabea9bcc4938d7719cc2940ed2894c02"></a><!-- doxytag: member="qvbitcount.h::qvNiftyParallelBitCount" ref="gaabea9bcc4938d7719cc2940ed2894c02" args="(unsigned int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qvNiftyParallelBitCount </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Nifty parallel bit counting routine. </p>
+<p>This method counts the number of bits set to 1 in the input integer. It is slightly faster than the <a class="el" href="group__qvmath.html#ga62bddb92d064405db6f2dc0eb77e002f">qvMITHAKMEMBitCount</a> method, and much faster than <a class="el" href="group__qvmath.html#ga522a6e638c0293e9d6f5b4c3dbd1d98e">qvIteratedBitCount</a> method. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This method can count only the 32 less significant bits.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>input unsigned integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of bits set to 1 in the input integer </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbitcount_8cpp_source.html#l00049">49</a> of file <a class="el" href="qvbitcount_8cpp_source.html">qvbitcount.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVBRIEFDetector.html#a340eb352eb4a43e2b47674dc7b7995f3">QVBRIEFDetector::distance()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf32edeb19dd7ba0327a1405ffd78cea4"></a><!-- doxytag: member="qvcomplex.h::operator&lt;&lt;" ref="gaf32edeb19dd7ba0327a1405ffd78cea4" args="(std::ostream &amp;os, const QVComplex &amp;complex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints the complex number contained in a complex number objecto to an output stream. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00082">82</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac1d9acd6dfaf0cb36bea2a05a6a6a780"></a><!-- doxytag: member="qvdirectedgraph.h::writeGraphToDotFile" ref="gac1d9acd6dfaf0cb36bea2a05a6a6a780" args="(const QString &amp;fileName, const QVDirectedGraph&lt; QString &gt; &amp;graph, const QStringList &amp;nodeLabels=QStringList())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeGraphToDotFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QString &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;&nbsp;</td>
+          <td class="paramname"> <em>nodeLabels</em> = <code>QStringList()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Writes a directed graph in a .dot file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>Name for the .dot file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>graph</em>&nbsp;</td><td>Graph to store in the .dot file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nodeLabels</em>&nbsp;</td><td>List of labels for the nodes in the .dot file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvdirectedgraph_8cpp_source.html#l00040">40</a> of file <a class="el" href="qvdirectedgraph_8cpp_source.html">qvdirectedgraph.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1882a4c380d6ee8ea52eee749e1f508e"></a><!-- doxytag: member="qvmath.h::qvCombination" ref="ga1882a4c380d6ee8ea52eee749e1f508e" args="(const int setRange, const int subsetRange)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double qvCombination </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>setRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>subsetRange</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the number of combinations of a fixed size over the elements of a set. </p>
+<p>Given a set size of <em>n</em>, this function returns the number of subsets of size <em>k</em> within that set.</p>
+<p><img class="formulaInl" alt="$ qvCombination(n,k) = {n \choose k} = \frac{n!}{k!(n-k)!} $" src="form_37.png"/> </p>
+
+<p>Definition at line <a class="el" href="qvmath_8cpp_source.html#l00052">52</a> of file <a class="el" href="qvmath_8cpp_source.html">qvmath.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCombinationIterator.html#a99acd396a8cf0bd3cdf0480585baa0ee">QVCombinationIterator::getSubsetNumber()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2b6468e67530eef17b69a8b994484864"></a><!-- doxytag: member="qvmath.h::qvAngle" ref="ga2b6468e67530eef17b69a8b994484864" args="(const QPointF &amp;point1, const QPointF &amp;point2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double qvAngle </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the angle between two 2D vectors. </p>
+<p>This function returns the angle defined between two input points.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point1</em>&nbsp;</td><td>First point. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point2</em>&nbsp;</td><td>Second point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A value in the range <img class="formulaInl" alt="$ [ -\Pi, \Pi ] $" src="form_38.png"/> corresponding to the angle from the first point to the second. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmath_8cpp_source.html#l00085">85</a> of file <a class="el" href="qvmath_8cpp_source.html">qvmath.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga053b5741cdb470b08837b70aa5c274c4"></a><!-- doxytag: member="qvmath.h::qvSolveCubicPolynomial" ref="ga053b5741cdb470b08837b70aa5c274c4" args="(const double a0, const double a1, const double a2, const double a3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="classQVComplex.html">QVComplex</a>&gt; qvSolveCubicPolynomial </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>a0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>a3</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the three complex (or real) solutions for a third grade polynomial. </p>
+<p>This function returns the three complex values which satisfy the following equation:</p>
+<p><img class="formulaInl" alt="$ a_0 + a_1 x + a_2 x^2 + a_3 x^3 = 0 $" src="form_39.png"/></p>
+<dl class="note"><dt><b>Note:</b></dt><dd>The value <img class="formulaInl" alt="$ a_3 $" src="form_40.png"/> should not be zero, so the polynomial is bond to have three root values. </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a0</em>&nbsp;</td><td>coefficient <img class="formulaInl" alt="$ a_0 $" src="form_41.png"/> of the polynomial. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>a1</em>&nbsp;</td><td>coefficient <img class="formulaInl" alt="$ a_1 $" src="form_42.png"/> of the polynomial. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>a2</em>&nbsp;</td><td>coefficient <img class="formulaInl" alt="$ a_2 $" src="form_43.png"/> of the polynomial. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>a3</em>&nbsp;</td><td>coefficient <img class="formulaInl" alt="$ a_3 $" src="form_40.png"/> of the polynomial. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvmath_8cpp_source.html#l00134">134</a> of file <a class="el" href="qvmath_8cpp_source.html">qvmath.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaeb39222b657a43c07ce908b9813a8e6b"></a><!-- doxytag: member="qvmath.h::qvPointLineDistance" ref="gaeb39222b657a43c07ce908b9813a8e6b" args="(const QVVector &amp;, const QPointF &amp;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double qvPointLineDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the geometric distance between a point and a line in the 2D plane. </p>
+<p>Given a point</p>
+<p><img class="formulaInl" alt="$ p \equiv (p_x, p_y) $" src="form_44.png"/></p>
+<p>and a line</p>
+<p><img class="formulaInl" alt="$l \equiv l_1 x + l_2 y + l_3 = 0 $" src="form_45.png"/></p>
+<p>this function returns the geometric distance between the 2D point <img class="formulaInl" alt="$ p $" src="form_28.png"/>, and the closest point in the line <img class="formulaInl" alt="$ l $" src="form_29.png"/>. This distance is evaluated with the following expression:</p>
+<p><img class="formulaInl" alt="$ qvPointLineDistance(l, p) = \frac{|l_1 p_x + l_2 p_y + l_3|}{\sqrt{{l_1}^2+{l_2}^2}} $" src="form_46.png"/></p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>l</em>&nbsp;</td><td>3D vector, containing the line coefficients <img class="formulaInl" alt="$(l_1, l_2, l_3)$" src="form_47.png"/>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>Point </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvmath_8cpp_source.html#l00286">286</a> of file <a class="el" href="qvmath_8cpp_source.html">qvmath.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga459fc88ab2ecb0145f7a4d88f52b1589"></a><!-- doxytag: member="qvmath.h::qvSymmetricFloor" ref="ga459fc88ab2ecb0145f7a4d88f52b1589" args="(const double value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double qvSymmetricFloor </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the natural number closest to a given real value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Real value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvmath_8cpp_source.html#l00291">291</a> of file <a class="el" href="qvmath_8cpp_source.html">qvmath.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVBRIEFDetector.html#a919f31539fe65e0a476a5fe6a0ed2fb9">QVBRIEFDetector::QVBRIEFDetector()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaabdd51683148ac1153014120c7558b89"></a><!-- doxytag: member="qvmatrix.h::operator&lt;&lt;" ref="gaabdd51683148ac1153014120c7558b89" args="(std::ostream &amp;os, const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000072">Todo:</a></b></dt><dd>detailed description should follow </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l00963">963</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga20cb79175099f4623dc53a96d9f1ce6c"></a><!-- doxytag: member="qvmatrix.h::operator&gt;&gt;" ref="ga20cb79175099f4623dc53a96d9f1ce6c" args="(std::istream &amp;is, QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&nbsp;</td>
+          <td class="paramname"> <em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000073">Todo:</a></b></dt><dd>detailed description should follow </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l00985">985</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa3314730bd45d74b2a4f3cb8bd3fa0fa"></a><!-- doxytag: member="qvmatrix.h::qHash" ref="gaa3314730bd45d74b2a4f3cb8bd3fa0fa" args="(const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint qHash </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000074">Todo:</a></b></dt><dd>detailed description should follow </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01029">1029</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9ead752411a6772cfd7d75051cdc677e"></a><!-- doxytag: member="qvmatrix.h::writeQVMatrixToFile" ref="ga9ead752411a6772cfd7d75051cdc677e" args="(const QString fileName, const QVMatrix &amp;matrix, const int precission=7)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeQVMatrixToFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>precission</em> = <code>7</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Writes the content of a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object in an ASCII file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>The name of the file to create. It is overwritten if already exists. The matrix values are stored in text format. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matrix</em>&nbsp;</td><td>The matrix to store in the file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>precission</em>&nbsp;</td><td>Number of decimal digits to display for the matrix elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if success, FALSE otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01046">1046</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae1e1afa78741e92ed46d20b70830a4fc"></a><!-- doxytag: member="qvmatrix.h::readQVMatrixFromFile" ref="gae1e1afa78741e92ed46d20b70830a4fc" args="(const QString fileName, QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool readQVMatrixFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reads the content of a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object from an ASCII file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>The name of the file to read from. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matrix</em>&nbsp;</td><td>The image to store in the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if success, FALSE otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01060">1060</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga85e11a75a24eec1686a939aa690e1942"></a><!-- doxytag: member="qvmatrix.h::lnSO3" ref="ga85e11a75a24eec1686a939aa690e1942" args="(const QVMatrix &amp;R)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> lnSO3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>R</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the element from the Lie algebra so(3) corresponding to a rotation matrix. </p>
+<p>The special orthogonal group in three dimensions SO(3), also known as the rotation group, is a Lie group that contains the possible rotation matrices. This function converts a rotation matrix <img class="formulaInl" alt="$ R$" src="form_48.png"/> (an element of the rotation group) to its corresponding element <img class="formulaInl" alt="$ w $" src="form_49.png"/> on the Lie algebra so(3). The Lie algebra so(3) is used commonly to represent rotations in a regular space using only 3 coordinates.</p>
+<p>Both elements <img class="formulaInl" alt="$w$" src="form_50.png"/> and <img class="formulaInl" alt="$R$" src="form_51.png"/> will satisfy the following equation:</p>
+<p><img class="formulaInl" alt="$ R = e^{\left[w\right]_\times}$" src="form_52.png"/></p>
+<p>There the operator <img class="formulaInl" alt="$ [\cdot]_\times$" src="form_53.png"/> maps a vector to its corresponding cross product matrix, and the operator <img class="formulaInl" alt="$e^\cdot$" src="form_54.png"/> is the matrix exponential operator.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>R</em>&nbsp;</td><td>The rotation matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The vector <img class="formulaInl" alt="$w$" src="form_50.png"/>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvmath.html#gad9a79664f7af4487d5af8fe2296fc7a4" title="Obtains the rotation matrix corresponding to the element from the Lie algebra so(3)...">expSO3</a> </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on code from <a href="http://mi.eng.cam.ac.uk/~twd20/TooNhtml/">the TooN library</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01141">1141</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gad245d4a452046e18d3e4854398add123">globalEpipolarAdjustment()</a>, and <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad9a79664f7af4487d5af8fe2296fc7a4"></a><!-- doxytag: member="qvmatrix.h::expSO3" ref="gad9a79664f7af4487d5af8fe2296fc7a4" args="(const QV3DPointF &amp;w)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> expSO3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>w</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the rotation matrix corresponding to the element from the Lie algebra so(3). </p>
+<p>The special orthogonal group in three dimensions SO(3), also known as the rotation group, is a Lie group that contains the possible rotation matrices. This function converts an element <img class="formulaInl" alt="$ w $" src="form_49.png"/> on the Lie algebra so(3) to its corresponding rotation matrix <img class="formulaInl" alt="$ R$" src="form_48.png"/> on the rotation group SO(3). The Lie algebra so(3) is used commonly to represent rotations in a regular space using only 3 coordinates.</p>
+<p>Both elements <img class="formulaInl" alt="$w$" src="form_50.png"/> and <img class="formulaInl" alt="$R$" src="form_51.png"/> will satisfy the following equation:</p>
+<p><img class="formulaInl" alt="$ R = e^{\left[w\right]_\times}$" src="form_52.png"/></p>
+<p>Where the operator <img class="formulaInl" alt="$ [\cdot]_\times$" src="form_53.png"/> maps a vector to its corresponding cross product matrix, and the operator <img class="formulaInl" alt="$e^\cdot$" src="form_54.png"/> is the matrix exponential operator.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>The element from the Lie algebra so(3). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The rotation matrix <img class="formulaInl" alt="$R$" src="form_51.png"/>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvmath.html#ga85e11a75a24eec1686a939aa690e1942" title="Obtains the element from the Lie algebra so(3) corresponding to a rotation matrix...">lnSO3</a> </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on code from <a href="http://mi.eng.cam.ac.uk/~twd20/TooNhtml/">the TooN library</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01117">1117</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gad245d4a452046e18d3e4854398add123">globalEpipolarAdjustment()</a>, and <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga54320e843f77c715252ff8f9be6e8083"></a><!-- doxytag: member="qvpermutation.h::operator&lt;&lt;" ref="ga54320e843f77c715252ff8f9be6e8083" args="(std::ostream &amp;os, const QVPermutation &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVPermutation.html">QVPermutation</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Output stream operator for QVPermutaion. </p>
+
+<p>Definition at line <a class="el" href="qvpermutation_8cpp_source.html#l00100">100</a> of file <a class="el" href="qvpermutation_8cpp_source.html">qvpermutation.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9eb3c76cb24443e2ff28327bc2c194d2"></a><!-- doxytag: member="qvvector.h::operator&lt;&lt;" ref="ga9eb3c76cb24443e2ff28327bc2c194d2" args="(std::ostream &amp;os, const QVVector &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000089">Todo:</a></b></dt><dd>detailed description should follow </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00428">428</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaba2fa16f67dd829053ea94d47f956692"></a><!-- doxytag: member="qvvector.h::qHash" ref="gaba2fa16f67dd829053ea94d47f956692" args="(const QVVector &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint qHash </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000090">Todo:</a></b></dt><dd>detailed description should follow </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvector_8cpp_source.html#l00441">441</a> of file <a class="el" href="qvvector_8cpp_source.html">qvvector.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

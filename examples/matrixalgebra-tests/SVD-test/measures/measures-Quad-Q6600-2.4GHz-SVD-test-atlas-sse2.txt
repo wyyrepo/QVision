@@ -1,0 +1,61 @@
+Performing 5 tests per measure.
+GSL_THIN_DECOMP_MOD
+30x30: Average total time: 0.6 ms. 
+30x200: Average total time: 3.2 ms. 
+200x30: Average total time: 2.8 ms. 
+200x200: Average total time: 147.6 ms. 
+GSL_THIN_DECOMP
+30x30: Average total time: 0.6 ms. 
+30x200: Average total time: 3.8 ms. 
+200x30: Average total time: 2.2 ms. 
+200x200: Average total time: 124 ms. 
+GSL_THIN_DECOMP_JACOBI
+30x30: Average total time: 2 ms. 
+30x200: Average total time: 6.8 ms. 
+200x30: Average total time: 10.4 ms. 
+200x200: Average total time: 233.2 ms. 
+LAPACK_FULL_DGESVD
+30x30: Average total time: 1.2 ms. 
+30x200: Average total time: 4.4 ms. 
+200x30: Average total time: 4.8 ms. 
+200x200: Average total time: 100.2 ms. 
+LAPACK_FULL_DGESDD
+30x30: Average total time: 1.2 ms. 
+30x200: Average total time: 4.4 ms. 
+200x30: Average total time: 3.8 ms. 
+200x200: Average total time: 65.4 ms. 
+LAPACK_THIN_DGESVD
+30x30: Average total time: 1.4 ms. 
+30x200: Average total time: 3.6 ms. 
+200x30: Average total time: 3 ms. 
+200x200: Average total time: 99.6 ms. 
+LAPACK_FULL_DGESDD
+30x30: Average total time: 1.2 ms. 
+30x200: Average total time: 6.2 ms. 
+200x30: Average total time: 4.2 ms. 
+200x200: Average total time: 64.2 ms. 
+GSL_ONLY_DECOMP_MOD
+30x30: Average total time: 0.8 ms. 
+30x200: Average total time: 2 ms. 
+200x30: Average total time: 2.8 ms. 
+200x200: Average total time: 159.8 ms. 
+GSL_ONLY_DECOMP
+30x30: Average total time: 0.8 ms. 
+30x200: Average total time: 3 ms. 
+200x30: Average total time: 2.4 ms. 
+200x200: Average total time: 118 ms. 
+GSL_ONLY_DECOMP_JACOBI
+30x30: Average total time: 2.6 ms. 
+30x200: Average total time: 6.6 ms. 
+200x30: Average total time: 9.2 ms. 
+200x200: Average total time: 232 ms. 
+LAPACK_ONLY_DGESVD
+30x30: Average total time: 0.8 ms. 
+30x200: Average total time: 1.4 ms. 
+200x30: Average total time: 0.6 ms. 
+200x200: Average total time: 16.4 ms. 
+LAPACK_ONLY_DGESDD
+30x30: Average total time: 0.8 ms. 
+30x200: Average total time: 1.4 ms. 
+200x30: Average total time: 1 ms. 
+200x200: Average total time: 18.8 ms. 

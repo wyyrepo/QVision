@@ -1,0 +1,609 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVComponentTree Class Reference<br/>
+<small>
+[<a class="el" href="group__qvip.html">Image processing</a>]</small>
+</h1><!-- doxytag: class="QVComponentTree" -->
+<p>Image component tree data structure.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvcomponenttree_8h_source.html">QVComponentTree</a>&gt;</code></p>
+
+<p><a href="classQVComponentTree-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">QVComponentTree</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, bool inverseTree=false, bool useAlternative=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a component tree set, from a gray-scale image.  <a href="#ac807f5189700723202a4b5f120fd2e57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a2a94333317eb67e9d74e71fca6fc19b0">isInverseTree</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns whether this tree is inverted or not.  <a href="#a2a94333317eb67e9d74e71fca6fc19b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a608bd4b04af5ad582c863c7dc225ad0d">rootNode</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns index for the root node in the image.  <a href="#a608bd4b04af5ad582c863c7dc225ad0d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb">seedX</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns horizontal coordinate for the seed point of a node, given it's index.  <a href="#a045219975a0145022d98c7fcf47642cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862">seedY</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns vertical coordinate for the seed point of a node, given it's index.  <a href="#ac763fa3f3de4beab5bdb072921965862"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uChar &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#af6f964ef20bf880f7aab393ec829e575">firstThreshold</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns gray-scale value of the points at the vertex of a node.  <a href="#af6f964ef20bf880f7aab393ec829e575"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uChar &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#ae1f6def9a17a983f3d2047eb564cc3ad">lastThreshold</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns gray-scale value of the points at the base of a node.  <a href="#ae1f6def9a17a983f3d2047eb564cc3ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a1f7a6e31ceac2e50e0b262e0ec4056d1">numChilds</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of child nodes for a node.  <a href="#a1f7a6e31ceac2e50e0b262e0ec4056d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a6fd2408b5112230e515623c7084601ea">firstChild</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the index for the first of the childs of a node.  <a href="#a6fd2408b5112230e515623c7084601ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a44625404b168bb90229d611d32a628e4">nextSibling</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the index for the next node in the list of childs, for a node.  <a href="#a44625404b168bb90229d611d32a628e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a270428438cc9b604e9261cf3c741c217">area</a> (uInt index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the accumulative histogram of the gray-level values of the pixels, for a node.  <a href="#a270428438cc9b604e9261cf3c741c217"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#afecb92bc570b9389428b6da484794ad6">getNumNodes</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of total nodes in the tree.  <a href="#afecb92bc570b9389428b6da484794ad6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#a4b7630450cf7de6631aee95adf7d9612">getLeafNodes</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of leaf nodes in the tree.  <a href="#a4b7630450cf7de6631aee95adf7d9612"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html#acd3bca7b612187c099bae32386f323d5">getTotalPoints</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of pixels processed by the tree construction.  <a href="#acd3bca7b612187c099bae32386f323d5"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Image component tree data structure. </p>
+<p>A level set in a gray-scale image is a connected set of points (pixels) with a gray-scale level above a given threshold. Component trees are built upon the inclusion relation of the level sets in an image.</p>
+<p>They are a representation useful to obtain non-flat connected component filters, that may preserve connected components in the image, satisfying a given criterion. These trees are used in computer vision for task like image segmentation, filtering, scale and rotation invariant image feature extraction (like MSER, see [<a href="#matas">Matas</a>]), amongst other.</p>
+<p>For a wider explanation about component trees, you can read paper [<a href="#rjones">Jones</a>]. The former implementation of component trees is very efficient, so that it can be used with regular sized images (320x240 to 640x480, depending on the computer speed) in real-time programs. It is based in the algorithm described in the paper [<a href="#najman">Najman</a>], which is supposed to obtain the component tree in quasi-linear time.</p>
+<p>There's a main difference between this implementation and that described in the paper. While the latter constructs a node for each gray-level in a level set, this implementation compacts every gray-level included in a same level set, in one node only. It will only be stored for every gray-level in the same node it's histogram area; thus, every non-leaf node in QVision's component tree will have more than one descendant, making smaller trees.</p>
+<p>You can access the properties of a node by its index, using the functions <a class="el" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb">seedX</a> and <a class="el" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862">seedY</a>, <a class="el" href="classQVComponentTree.html#af6f964ef20bf880f7aab393ec829e575">firstThreshold</a>, <a class="el" href="classQVComponentTree.html#ae1f6def9a17a983f3d2047eb564cc3ad">lastThreshold</a>, and <a class="el" href="classQVComponentTree.html#a270428438cc9b604e9261cf3c741c217">area</a>. All of these accept as parameter the node index.</p>
+<p>You can get the index of the different nodes of the tree by transversing it, using functions <a class="el" href="classQVComponentTree.html#a608bd4b04af5ad582c863c7dc225ad0d">rootNode</a>, <a class="el" href="classQVComponentTree.html#a1f7a6e31ceac2e50e0b262e0ec4056d1">numChilds</a>, <a class="el" href="classQVComponentTree.html#a6fd2408b5112230e515623c7084601ea">firstChild</a> and <a class="el" href="classQVComponentTree.html#a44625404b168bb90229d611d32a628e4">nextSibling</a>. A code example of use of these functions is the following</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> processNode(<a class="code" href="classQVComponentTree.html" title="Image component tree data structure.">QVComponentTree</a> &amp;componentTree, uInt nodeIndex)
+        {
+        std::cout &lt;&lt; <span class="stringliteral">&quot;Node seed: &quot;</span> &lt;&lt; componentTree.<a class="code" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb" title="Returns horizontal coordinate for the seed point of a node, given it&amp;#39;s index...">seedX</a>(nodeIndex) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>
+        &lt;&lt; componentTree.<a class="code" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862" title="Returns vertical coordinate for the seed point of a node, given it&amp;#39;s index.">seedY</a>(nodeIndex) &lt;&lt; std::endl;
+        
+        <span class="keywordflow">for</span> (   <span class="keywordtype">int</span> childIndex = componentTree.<a class="code" href="classQVComponentTree.html#a6fd2408b5112230e515623c7084601ea" title="Returns the index for the first of the childs of a node.">firstChild</a>(nodeIndex);
+                childIndex != NULL_NODE;
+                childIndex = componentTree.<a class="code" href="classQVComponentTree.html#a44625404b168bb90229d611d32a628e4" title="Returns the index for the next node in the list of childs, for a node.">nextSibling</a>(childIndex) )
+                processNode(componentTree, childIndex);
+        }
+
+<span class="keywordtype">void</span> processComponentTree(<a class="code" href="classQVComponentTree.html" title="Image component tree data structure.">QVComponentTree</a> &amp;componentTree)
+        {
+        processNode(componentTree, componentTree.<a class="code" href="classQVComponentTree.html#a608bd4b04af5ad582c863c7dc225ad0d" title="Returns index for the root node in the image.">rootNode</a>());
+        }
+</pre></div><p>This code transverses the component-tree in a depth-first pre-order walk, and just shows the horizontal and vertical coordinate for each node's seed point.</p>
+<p>Each node has a seed point, which is any of the points at the vertex of the node if it is a leaf node, or any of the points with gray-level value close to the child nodes if it is an internal node. You can get the seed point of a node with the functions <a class="el" href="classQVComponentTree.html#a045219975a0145022d98c7fcf47642cb">seedX</a> and <a class="el" href="classQVComponentTree.html#ac763fa3f3de4beab5bdb072921965862">seedY</a> functions.</p>
+<p>Also, every node saves information about the histogram areas of their gray-level values. With the functions <a class="el" href="classQVComponentTree.html#af6f964ef20bf880f7aab393ec829e575">firstThreshold</a> and <a class="el" href="classQVComponentTree.html#ae1f6def9a17a983f3d2047eb564cc3ad">lastThreshold</a> you can obtain the lowest and the highest of the gray-level values of the pixels in the node (if the tree is direct. If it is reversed, the highest and the lowest).</p>
+<h2><a class="anchor" id="References">
+References</a></h2>
+<ul>
+<li>
+<a class="anchor" id="rjones"></a><em>Component trees for image filtering and segmentation</em>. Ronald Jones. </li>
+<li>
+<a class="anchor" id="najman"></a><em>Building the component tree in quasi-linear time</em>. L. Najman and M. Couprie. </li>
+<li>
+<a class="anchor" id="matas"></a><em>Robust Wide Baseline Stereo from Maximally Stable Extremal Regions</em>. J. Matas et al. </li>
+</ul>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00103">103</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac807f5189700723202a4b5f120fd2e57"></a><!-- doxytag: member="QVComponentTree::QVComponentTree" ref="ac807f5189700723202a4b5f120fd2e57" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, bool inverseTree=false, bool useAlternative=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVComponentTree::QVComponentTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>inverseTree</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>useAlternative</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a component tree set, from a gray-scale image. </p>
+<p>By default the leaf nodes will represent low gray-scale value areas in the image.</p>
+<p>A reverse version of the tree can be created by setting the second parameter of the constructor ( <em>inverseTree</em> ) to true. In that case, leaf nodes will represent high gray-scale valued areas in the image, and will increase to lower gray-scale valued areas, as you transverse the tree to the root node.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo:</a></b></dt><dd>Check sum of childs for node equals numChilds(node)</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image to create from the component tree. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>inverseTree</em>&nbsp;</td><td>tells the function whether construct a direct or a reverse tree. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8cpp_source.html#l00030">30</a> of file <a class="el" href="qvcomponenttree_8cpp_source.html">qvcomponenttree.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2a94333317eb67e9d74e71fca6fc19b0"></a><!-- doxytag: member="QVComponentTree::isInverseTree" ref="a2a94333317eb67e9d74e71fca6fc19b0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVComponentTree::isInverseTree </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns whether this tree is inverted or not. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the tree represent high gray-scale valued areas in the image, and false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00123">123</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a608bd4b04af5ad582c863c7dc225ad0d"></a><!-- doxytag: member="QVComponentTree::rootNode" ref="a608bd4b04af5ad582c863c7dc225ad0d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt&amp; QVComponentTree::rootNode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns index for the root node in the image. </p>
+<p>Nodes in the component tree can be accessed by their index, that is a integer number. It is not assured that root node will have index zero for every component tree, so it's index should be obtained with this function. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>index for the root node in the image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00131">131</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a045219975a0145022d98c7fcf47642cb"></a><!-- doxytag: member="QVComponentTree::seedX" ref="a045219975a0145022d98c7fcf47642cb" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt&amp; QVComponentTree::seedX </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns horizontal coordinate for the seed point of a node, given it's index. </p>
+<p>The seed point of a component tree's node is one of the points (or the point if it is unique) of the vertex of the region it represents.</p>
+<p>Given the index of a node in the component tree, this function returns first coordinate of that point. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>horizontal coordinate for seed point of that node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00142">142</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac763fa3f3de4beab5bdb072921965862"></a><!-- doxytag: member="QVComponentTree::seedY" ref="ac763fa3f3de4beab5bdb072921965862" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt&amp; QVComponentTree::seedY </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns vertical coordinate for the seed point of a node, given it's index. </p>
+<p>The seed point of a component tree's node is one of the points (or the point if it is unique) of the vertex of the region it represents.</p>
+<p>Given the index of a node in the component tree, this function returns second coordinate of that point. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>vertical coordinate for seed point of that node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00153">153</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6f964ef20bf880f7aab393ec829e575"></a><!-- doxytag: member="QVComponentTree::firstThreshold" ref="af6f964ef20bf880f7aab393ec829e575" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uChar&amp; QVComponentTree::firstThreshold </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns gray-scale value of the points at the vertex of a node. </p>
+<p>This function returns the minimal (or maximal, if the tree is inverted) gray-scale value of the pixels contained in it. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>node</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>gray-scale value of the points at the vertex of a node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00161">161</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1f6def9a17a983f3d2047eb564cc3ad"></a><!-- doxytag: member="QVComponentTree::lastThreshold" ref="ae1f6def9a17a983f3d2047eb564cc3ad" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uChar&amp; QVComponentTree::lastThreshold </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns gray-scale value of the points at the base of a node. </p>
+<p>This function returns the maximal (or minimal, if the tree is inverted) gray-scale value of the pixels contained in it. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>node</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>gray-scale value of the points at the base of a node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00169">169</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f7a6e31ceac2e50e0b262e0ec4056d1"></a><!-- doxytag: member="QVComponentTree::numChilds" ref="a1f7a6e31ceac2e50e0b262e0ec4056d1" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt&amp; QVComponentTree::numChilds </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of child nodes for a node. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>node</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of child nodes that a node has got. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00174">174</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fd2408b5112230e515623c7084601ea"></a><!-- doxytag: member="QVComponentTree::firstChild" ref="a6fd2408b5112230e515623c7084601ea" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt&amp; QVComponentTree::firstChild </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the index for the first of the childs of a node. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>node</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>index to the first of the childs of a node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00179">179</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a44625404b168bb90229d611d32a628e4"></a><!-- doxytag: member="QVComponentTree::nextSibling" ref="a44625404b168bb90229d611d32a628e4" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt&amp; QVComponentTree::nextSibling </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the index for the next node in the list of childs, for a node. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>node</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>index for the next node in the list of childs, for a node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00184">184</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a270428438cc9b604e9261cf3c741c217"></a><!-- doxytag: member="QVComponentTree::area" ref="a270428438cc9b604e9261cf3c741c217" args="(uInt index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt* QVComponentTree::area </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the accumulative histogram of the gray-level values of the pixels, for a node. </p>
+<p>Considering the gray-scale values of the pixels of an image as indicator of a topological level or height, we can think of a node as a convex surface. That surface will have different areas for the different horizontal slides that we can think of.</p>
+<p>Because heights in our topological image are discretized, we can store in a 256 integer array the number of pixels that get to a given level. That is what the array returned by this function gives, the area of the different slides, for the concave surface defined by the gray-scale values of the pixels of the node.</p>
+<p>Generally you will obtain valid values in the range of cells between <a class="el" href="classQVComponentTree.html#af6f964ef20bf880f7aab393ec829e575">firstThreshold</a> and <a class="el" href="classQVComponentTree.html#ae1f6def9a17a983f3d2047eb564cc3ad">lastThreshold</a> functions. There's an exception to that, when you find in that range cells containing the value zero, that means we have the keep the previous value in the array. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>node</em>&nbsp;</td><td>index for a node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array of areas of the slides of the concave surface defined by the pixels in the node. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00203">203</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afecb92bc570b9389428b6da484794ad6"></a><!-- doxytag: member="QVComponentTree::getNumNodes" ref="afecb92bc570b9389428b6da484794ad6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVComponentTree::getNumNodes </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of total nodes in the tree. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of total nodes in the tree. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00207">207</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b7630450cf7de6631aee95adf7d9612"></a><!-- doxytag: member="QVComponentTree::getLeafNodes" ref="a4b7630450cf7de6631aee95adf7d9612" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVComponentTree::getLeafNodes </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of leaf nodes in the tree. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of leaf nodes in the tree. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00211">211</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd3bca7b612187c099bae32386f323d5"></a><!-- doxytag: member="QVComponentTree::getTotalPoints" ref="acd3bca7b612187c099bae32386f323d5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uInt QVComponentTree::getTotalPoints </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of pixels processed by the tree construction. </p>
+<p>This value should always equal cols x rows of the image fron which the tree was obtained. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of pixels in the original image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomponenttree_8h_source.html#l00217">217</a> of file <a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvip/<a class="el" href="qvcomponenttree_8h_source.html">qvcomponenttree.h</a></li>
+<li>src/qvip/<a class="el" href="qvcomponenttree_8cpp_source.html">qvcomponenttree.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

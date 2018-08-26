@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvcuda/qvsiftgpu/qvsiftgpu.cpp</h1><a href="qvsiftgpu_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;locale.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;SiftGPU.h&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QtOpenGL&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;qvsiftgpu.h&gt;</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="keyword">static</span> <span class="keywordtype">bool</span> firstTime = TRUE;
+<a name="l00033"></a>00033 <span class="keyword">static</span> SiftGPU *sift = NULL;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keywordtype">bool</span> resetSiftGPU()
+<a name="l00036"></a>00036     {
+<a name="l00037"></a>00037     <span class="keyword">delete</span> sift;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     firstTime = TRUE;
+<a name="l00040"></a>00040     sift = NULL;
+<a name="l00041"></a>00041     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00042"></a>00042     }
+<a name="l00043"></a>00043 
+<a name="l00044"></a><a class="code" href="group__qvsiftgpu.html#ga84ba9885258ee2d66f7a577ea09a4062">00044</a> <span class="keyword">const</span> QList&lt;QVSiftFeature&gt;      <a class="code" href="group__qvsiftgpu.html#ga84ba9885258ee2d66f7a577ea09a4062" title="Find SIFT features in an image using user-specified parameter values, using NVIDIA...">getSiftGPUFeatures</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image,
+<a name="l00045"></a>00045                                 <a class="code" href="group__qvcuda.html#ga9e7ea30ae00a3e8671079437153458a0" title="Available methods for CPU SIFT feature detection.">nvidia_method</a> method,
+<a name="l00046"></a>00046                                 <span class="keywordtype">bool</span> sd, <span class="keywordtype">double</span> f, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> dw,
+<a name="l00047"></a>00047                                 <span class="keywordtype">int</span> fo, <span class="keywordtype">double</span> t, <span class="keywordtype">double</span> e, <span class="keywordtype">int</span> d, <span class="keywordtype">int</span> v)
+<a name="l00048"></a>00048     {
+<a name="l00049"></a>00049     <span class="comment">//static SiftGPU sift;</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051     <span class="keywordflow">if</span> (sift == NULL)
+<a name="l00052"></a>00052         sift = <span class="keyword">new</span> SiftGPU();
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="comment">// Needed for correct interpretation of dot (.) in numeric strings: (!)</span>
+<a name="l00055"></a>00055     setlocale(LC_NUMERIC,<span class="stringliteral">&quot;C&quot;</span>);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057     <span class="comment">// String arguments for sift parsing of parameters:</span>
+<a name="l00058"></a>00058     <span class="keywordtype">char</span> * t_argv[] = { (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-f&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;4.0&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-w&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;2.0&quot;</span>,
+<a name="l00059"></a>00059     (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-dw&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;3.0&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-fo&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;0&quot;</span>,
+<a name="l00060"></a>00060     (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-t&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;0.00666&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-e&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;10.0&quot;</span>,
+<a name="l00061"></a>00061     (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-d&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;3&quot;</span>,
+<a name="l00062"></a>00062     (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-v&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;0&quot;</span>,
+<a name="l00063"></a>00063     (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-sign&quot;</span>, (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-sd&quot;</span> };
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keywordtype">int</span> t_argc = <span class="keyword">sizeof</span>(t_argv)/<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*);
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067     <span class="comment">// Choose CUDA, GLSL or CG method:</span>
+<a name="l00068"></a>00068     <span class="keywordflow">switch</span>(method)
+<a name="l00069"></a>00069         {
+<a name="l00070"></a>00070         <span class="keywordflow">case</span> CUDA_METHOD:
+<a name="l00071"></a>00071             t_argv[0] = (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-cuda&quot;</span>;
+<a name="l00072"></a>00072             <span class="keywordflow">break</span>;
+<a name="l00073"></a>00073         <span class="keywordflow">case</span> <a class="code" href="group__qvcuda.html#gga9e7ea30ae00a3e8671079437153458a0a9dbaf84a46cee087af13293a760f74c5" title="CUDA.">GLSL_METHOD</a>:
+<a name="l00074"></a>00074             t_argv[0] = (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-glsl&quot;</span>;
+<a name="l00075"></a>00075             <span class="keywordflow">break</span>;
+<a name="l00076"></a>00076         <span class="keywordflow">case</span> <a class="code" href="group__qvcuda.html#gga9e7ea30ae00a3e8671079437153458a0a2e3409d771fdf6f499a466364efeb920" title="GLSL.">CG_METHOD</a>:
+<a name="l00077"></a>00077             t_argv[0] = (<span class="keywordtype">char</span>*) <span class="stringliteral">&quot;-cg&quot;</span>;
+<a name="l00078"></a>00078             <span class="keywordflow">break</span>;
+<a name="l00079"></a>00079         }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081     <span class="comment">// If not descriptors needed, do not take into account last parameter &quot;-sd&quot;.</span>
+<a name="l00082"></a>00082     <span class="keywordflow">if</span>(not sd)
+<a name="l00083"></a>00083         t_argc--;
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085     <span class="comment">// Rest of parameters:</span>
+<a name="l00086"></a>00086     QString aux_f = QString::number(f,<span class="charliteral">&#39;f&#39;</span>,6);
+<a name="l00087"></a>00087     QString aux_w = QString::number(w,<span class="charliteral">&#39;f&#39;</span>,6);
+<a name="l00088"></a>00088     QString aux_dw = QString::number(dw,<span class="charliteral">&#39;f&#39;</span>,6);
+<a name="l00089"></a>00089     QString aux_fo = QString::number(fo);
+<a name="l00090"></a>00090     QString aux_t = QString::number(t,<span class="charliteral">&#39;f&#39;</span>,6);
+<a name="l00091"></a>00091     QString aux_e = QString::number(e,<span class="charliteral">&#39;f&#39;</span>,6);
+<a name="l00092"></a>00092     QString aux_d = QString::number(d);
+<a name="l00093"></a>00093     QString aux_v = QString::number(v);
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095     t_argv[2] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50]; strcpy(t_argv[2],aux_f.toLatin1().data());
+<a name="l00096"></a>00096     t_argv[4] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[4],aux_w.toLatin1().data());
+<a name="l00097"></a>00097     t_argv[6] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[6],aux_dw.toLatin1().data());
+<a name="l00098"></a>00098     t_argv[8] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[8],aux_fo.toLatin1().data());
+<a name="l00099"></a>00099     t_argv[10] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[10],aux_t.toLatin1().data());
+<a name="l00100"></a>00100     t_argv[12] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[12],aux_e.toLatin1().data());
+<a name="l00101"></a>00101     t_argv[14] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[14],aux_d.toLatin1().data());
+<a name="l00102"></a>00102     t_argv[16] = <span class="keyword">new</span> <span class="keywordtype">char</span>[50];  strcpy(t_argv[16],aux_v.toLatin1().data());
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104     sift-&gt;ParseParam(t_argc, t_argv);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106     <span class="keyword">delete</span> [] t_argv[2];
+<a name="l00107"></a>00107     <span class="keyword">delete</span> [] t_argv[4];
+<a name="l00108"></a>00108     <span class="keyword">delete</span> [] t_argv[6];
+<a name="l00109"></a>00109     <span class="keyword">delete</span> [] t_argv[8];
+<a name="l00110"></a>00110     <span class="keyword">delete</span> [] t_argv[10];
+<a name="l00111"></a>00111     <span class="keyword">delete</span> [] t_argv[12];
+<a name="l00112"></a>00112     <span class="keyword">delete</span> [] t_argv[14];
+<a name="l00113"></a>00113     <span class="keyword">delete</span> [] t_argv[16];
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115     <span class="comment">// OpenGL context creation:</span>
+<a name="l00116"></a>00116     <span class="keywordflow">if</span>(firstTime)
+<a name="l00117"></a>00117         {
+<a name="l00118"></a>00118         <span class="keywordflow">if</span>(sift-&gt;CreateContextGL() != SiftGPU::SIFTGPU_FULL_SUPPORTED)
+<a name="l00119"></a>00119             std::cerr &lt;&lt; <span class="stringliteral">&quot;Falla inicialización ContextGL\n&quot;</span>;
+<a name="l00120"></a>00120         firstTime = FALSE;
+<a name="l00121"></a>00121         }
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123     <span class="comment">// Run of GPU SIFT method:</span>
+<a name="l00124"></a>00124     <span class="keywordtype">int</span> width = <span class="comment">/* image.getCols() */</span> image.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), height = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00125"></a>00125     <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = image.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>();
+<a name="l00126"></a>00126     sift-&gt;RunSIFT(width,height,data,GL_LUMINANCE,GL_UNSIGNED_BYTE);
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128     <span class="comment">// Extract output:</span>
+<a name="l00129"></a>00129     <span class="keywordtype">int</span> num = sift-&gt;GetFeatureNum();
+<a name="l00130"></a>00130     std::vector&lt;float&gt; descriptors(128*num);
+<a name="l00131"></a>00131     std::vector&lt;SiftGPU::SiftKeypoint&gt; keys(num);
+<a name="l00132"></a>00132     sift-&gt;GetFeatureVector(&amp;keys[0],&amp;descriptors[0]);
+<a name="l00133"></a>00133     QList&lt;QVSiftFeature&gt; feature_list;
+<a name="l00134"></a>00134     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;num;i++)
+<a name="l00135"></a>00135         {
+<a name="l00136"></a>00136         <a class="code" href="classQVKeypoint.html" title="Class for image key point data-type.">QVKeypoint</a> keypoint;
+<a name="l00137"></a>00137         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> descriptor(128);
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         keypoint.<a class="code" href="classQVKeypoint.html#a2c80b2e40b1e5e2585525d4b1ee5a58d" title="Horizontal coordinate of the image feature.">x</a>() = keys[i].x;
+<a name="l00140"></a>00140         keypoint.<a class="code" href="classQVKeypoint.html#ac9ce66379d45defd17d419bb4eb6030f" title="Vertical coordinate of the image feature.">y</a>() = keys[i].y;
+<a name="l00141"></a>00141         keypoint.<a class="code" href="classQVKeypoint.html#a2956acf9396b76e3b94a1e7a62351c5c" title="Scale of the image feature.">scale</a>() = keys[i].s;
+<a name="l00142"></a>00142         keypoint.<a class="code" href="classQVKeypoint.html#a7deaee6fcefb2b6e61d9bf90205d027c" title="Orientation of the image feature.">orientation</a>() = keys[i].o;
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;128;j++)
+<a name="l00145"></a>00145             descriptor[j] = descriptors[128*i+j];
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147         feature_list.append( <a class="code" href="classQVSiftFeature.html" title="Class for SIFT feature.">QVSiftFeature</a>(keypoint, descriptor) );
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150     <span class="keywordflow">return</span> feature_list;
+<a name="l00151"></a>00151     }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153 <span class="comment">//QList&lt; QPair&lt;int, int&gt; &gt; matchSiftGPUFeatures(const QList&lt;QVSiftFeature&gt; img1features, const QList&lt;QVSiftFeature&gt; img2features)</span>
+<a name="l00154"></a><a class="code" href="group__qvsiftgpu.html#gaafeabf762b94906e7ea2ffe8893866e6">00154</a> QList&lt; QPair&lt;int, int&gt; &gt; <a class="code" href="group__qvsiftgpu.html#gaafeabf762b94906e7ea2ffe8893866e6" title="Match SIFT features between a pair of images using using NVIDIA CUDA.">matchSiftGPUFeatures</a>(<span class="keyword">const</span> QList&lt;QVSiftFeature&gt; img1features, <span class="keyword">const</span> QList&lt;QVSiftFeature&gt; img2features, <span class="keyword">const</span> <span class="keywordtype">float</span> distmax, <span class="keyword">const</span> <span class="keywordtype">float</span> ratiomax, <span class="keyword">const</span> <span class="keywordtype">bool</span> mutual_best_match)
+<a name="l00155"></a>00155     {
+<a name="l00156"></a>00156     <span class="keywordflow">if</span> (sift == NULL)
+<a name="l00157"></a>00157         sift = <span class="keyword">new</span> SiftGPU();
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159     <span class="keywordflow">if</span>(firstTime)
+<a name="l00160"></a>00160         {
+<a name="l00161"></a>00161         <span class="keywordflow">if</span>(sift-&gt;CreateContextGL() != SiftGPU::SIFTGPU_FULL_SUPPORTED)
+<a name="l00162"></a>00162             std::cerr &lt;&lt; <span class="stringliteral">&quot;Falla inicialización ContextGL\n&quot;</span>;
+<a name="l00163"></a>00163         firstTime = FALSE;
+<a name="l00164"></a>00164         }
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166     <span class="keyword">const</span> <span class="keywordtype">int</span>   size1 = img1features.size(),
+<a name="l00167"></a>00167             size2 = img2features.size(),
+<a name="l00168"></a>00168             minSize = MIN(size1, size2);
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170     <span class="keywordtype">float</span> des1[128*size1], des2[128*size2];
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;size1;i++)
+<a name="l00173"></a>00173         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;128;j++)
+<a name="l00174"></a>00174             des1[i*128+j] = img1features[i].descriptor[j];
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;size2;i++)
+<a name="l00177"></a>00177         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;128;j++)
+<a name="l00178"></a>00178             des2[i*128+j] = img2features[i].descriptor[j];
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180     SiftMatchGPU matcher(minSize);
+<a name="l00181"></a>00181     <span class="keywordflow">if</span>(matcher.VerifyContextGL() == 0)
+<a name="l00182"></a>00182         {
+<a name="l00183"></a>00183         std::cout &lt;&lt; <span class="stringliteral">&quot;Error in matcher. VerifyContextGL\n&quot;</span>;
+<a name="l00184"></a>00184         <span class="keywordflow">return</span> QList&lt;QPair&lt;int, int&gt; &gt;();
+<a name="l00185"></a>00185         }
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187     matcher.SetDescriptors(0, size1, des1);
+<a name="l00188"></a>00188     matcher.SetDescriptors(1, size2, des2);
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190     <span class="keywordtype">int</span> match_buf[minSize][2];
+<a name="l00191"></a>00191     <span class="keywordtype">int</span> num_matchings = matcher.GetSiftMatch(minSize, match_buf, distmax, ratiomax, mutual_best_match);
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193     QList&lt; QPair&lt;int, int&gt; &gt; matchings;
+<a name="l00194"></a>00194     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; num_matchings; i++)
+<a name="l00195"></a>00195         matchings &lt;&lt; QPair&lt;int, int&gt;(match_buf[i][0], match_buf[i][1]);
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197     <span class="keywordflow">return</span> matchings;
+<a name="l00198"></a>00198     }
+<a name="l00199"></a>00199 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

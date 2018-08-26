@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/OpenCV/watershed/watershed.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment">This source is one of the sample codes from the OpenCV 2.1 library</span>
+<a name="l00003"></a>00003 <span class="comment">*/</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 <span class="preprocessor">#ifdef _CH_</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#pragma package &lt;opencv&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span>
+<a name="l00009"></a>00009 <span class="preprocessor">#define CV_NO_BACKWARD_COMPATIBILITY</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span>
+<a name="l00011"></a>00011 <span class="preprocessor">#ifndef _EiC</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span>
+<a name="l00013"></a>00013 <span class="comment">/* This is a standalone program. Pass an image name as a first parameter of the program.</span>
+<a name="l00014"></a>00014 <span class="comment">   Switch between standard and probabilistic Hough transform by changing &quot;#if 1&quot; to &quot;#if 0&quot; and back */</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;opencv/cv.h&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;opencv/highgui.h&gt;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#endif</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 IplImage* marker_mask = 0;
+<a name="l00024"></a>00024 IplImage* markers = 0;
+<a name="l00025"></a>00025 IplImage* img0 = 0, *img = 0, *img_gray = 0, *wshed = 0;
+<a name="l00026"></a>00026 CvPoint prev_pt = {-1,-1};
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keywordtype">void</span> on_mouse( <span class="keywordtype">int</span> event, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> flags, <span class="keywordtype">void</span>* param )
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030     <span class="keywordflow">if</span>( !img )
+<a name="l00031"></a>00031         <span class="keywordflow">return</span>;
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033     <span class="keywordflow">if</span>( event == CV_EVENT_LBUTTONUP || !(flags &amp; CV_EVENT_FLAG_LBUTTON) )
+<a name="l00034"></a>00034         prev_pt = cvPoint(-1,-1);
+<a name="l00035"></a>00035     <span class="keywordflow">else</span> <span class="keywordflow">if</span>( event == CV_EVENT_LBUTTONDOWN )
+<a name="l00036"></a>00036         prev_pt = cvPoint(x,y);
+<a name="l00037"></a>00037     <span class="keywordflow">else</span> <span class="keywordflow">if</span>( event == CV_EVENT_MOUSEMOVE &amp;&amp; (flags &amp; CV_EVENT_FLAG_LBUTTON) )
+<a name="l00038"></a>00038     {
+<a name="l00039"></a>00039         CvPoint pt = cvPoint(x,y);
+<a name="l00040"></a>00040         <span class="keywordflow">if</span>( prev_pt.x &lt; 0 )
+<a name="l00041"></a>00041             prev_pt = pt;
+<a name="l00042"></a>00042         cvLine( marker_mask, prev_pt, pt, cvScalarAll(255), 5, 8, 0 );
+<a name="l00043"></a>00043         cvLine( img, prev_pt, pt, cvScalarAll(255), 5, 8, 0 );
+<a name="l00044"></a>00044         prev_pt = pt;
+<a name="l00045"></a>00045         cvShowImage( <span class="stringliteral">&quot;image&quot;</span>, img );
+<a name="l00046"></a>00046     }
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv )
+<a name="l00051"></a>00051 {
+<a name="l00052"></a>00052     <span class="keywordtype">char</span>* filename = argc &gt;= 2 ? argv[1] : (<span class="keywordtype">char</span>*)<span class="stringliteral">&quot;fruits.jpg&quot;</span>;
+<a name="l00053"></a>00053     CvMemStorage* storage = cvCreateMemStorage(0);
+<a name="l00054"></a>00054     CvRNG rng = cvRNG(-1);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     <span class="keywordflow">if</span>( (img0 = cvLoadImage(filename,1)) == 0 )
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> 0;
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     printf( <span class="stringliteral">&quot;Hot keys: \n&quot;</span>
+<a name="l00060"></a>00060             <span class="stringliteral">&quot;\tESC - quit the program\n&quot;</span>
+<a name="l00061"></a>00061             <span class="stringliteral">&quot;\tr - restore the original image\n&quot;</span>
+<a name="l00062"></a>00062             <span class="stringliteral">&quot;\tw or SPACE - run watershed algorithm\n&quot;</span>
+<a name="l00063"></a>00063             <span class="stringliteral">&quot;\t\t(before running it, roughly mark the areas on the image)\n&quot;</span>
+<a name="l00064"></a>00064             <span class="stringliteral">&quot;\t  (before that, roughly outline several markers on the image)\n&quot;</span> );
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066     cvNamedWindow( <span class="stringliteral">&quot;image&quot;</span>, 1 );
+<a name="l00067"></a>00067     cvNamedWindow( <span class="stringliteral">&quot;watershed transform&quot;</span>, 1 );
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     img = cvCloneImage( img0 );
+<a name="l00070"></a>00070     img_gray = cvCloneImage( img0 );
+<a name="l00071"></a>00071     wshed = cvCloneImage( img0 );
+<a name="l00072"></a>00072     marker_mask = cvCreateImage( cvGetSize(img), 8, 1 );
+<a name="l00073"></a>00073     markers = cvCreateImage( cvGetSize(img), IPL_DEPTH_32S, 1 );
+<a name="l00074"></a>00074     cvCvtColor( img, marker_mask, CV_BGR2GRAY );
+<a name="l00075"></a>00075     cvCvtColor( marker_mask, img_gray, CV_GRAY2BGR );
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     cvZero( marker_mask );
+<a name="l00078"></a>00078     cvZero( wshed );
+<a name="l00079"></a>00079     cvShowImage( <span class="stringliteral">&quot;image&quot;</span>, img );
+<a name="l00080"></a>00080     cvShowImage( <span class="stringliteral">&quot;watershed transform&quot;</span>, wshed );
+<a name="l00081"></a>00081     cvSetMouseCallback( <span class="stringliteral">&quot;image&quot;</span>, on_mouse, 0 );
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     <span class="keywordflow">for</span>(;;)
+<a name="l00084"></a>00084     {
+<a name="l00085"></a>00085         <span class="keywordtype">int</span> c = cvWaitKey(0);
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <span class="keywordflow">if</span>( (<span class="keywordtype">char</span>)c == 27 )
+<a name="l00088"></a>00088             <span class="keywordflow">break</span>;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         <span class="keywordflow">if</span>( (<span class="keywordtype">char</span>)c == <span class="charliteral">&#39;r&#39;</span> )
+<a name="l00091"></a>00091         {
+<a name="l00092"></a>00092             cvZero( marker_mask );
+<a name="l00093"></a>00093             cvCopy( img0, img );
+<a name="l00094"></a>00094             cvShowImage( <span class="stringliteral">&quot;image&quot;</span>, img );
+<a name="l00095"></a>00095         }
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         <span class="keywordflow">if</span>( (<span class="keywordtype">char</span>)c == <span class="charliteral">&#39;w&#39;</span> || (<span class="keywordtype">char</span>)c == <span class="charliteral">&#39; &#39;</span> )
+<a name="l00098"></a>00098         {
+<a name="l00099"></a>00099             CvSeq* contours = 0;
+<a name="l00100"></a>00100             CvMat* color_tab = 0;
+<a name="l00101"></a>00101             <span class="keywordtype">int</span> i, j, comp_count = 0;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103             cvClearMemStorage(storage);
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105             <span class="comment">//cvSaveImage( &quot;wshed_mask.png&quot;, marker_mask );</span>
+<a name="l00106"></a>00106             <span class="comment">//marker_mask = cvLoadImage( &quot;wshed_mask.png&quot;, 0 );</span>
+<a name="l00107"></a>00107             cvFindContours( marker_mask, storage, &amp;contours, <span class="keyword">sizeof</span>(CvContour),
+<a name="l00108"></a>00108                             CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE );
+<a name="l00109"></a>00109             cvZero( markers );
+<a name="l00110"></a>00110             <span class="keywordflow">for</span>( ; contours != 0; contours = contours-&gt;h_next, comp_count++ )
+<a name="l00111"></a>00111             {
+<a name="l00112"></a>00112                 cvDrawContours( markers, contours, cvScalarAll(comp_count+1),
+<a name="l00113"></a>00113                                 cvScalarAll(comp_count+1), -1, -1, 8, cvPoint(0,0) );
+<a name="l00114"></a>00114             }
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116             <span class="keywordflow">if</span>( comp_count == 0 )
+<a name="l00117"></a>00117                 <span class="keywordflow">continue</span>;
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119             color_tab = cvCreateMat( 1, comp_count, CV_8UC3 );
+<a name="l00120"></a>00120             <span class="keywordflow">for</span>( i = 0; i &lt; comp_count; i++ )
+<a name="l00121"></a>00121             {
+<a name="l00122"></a>00122                 uchar* ptr = color_tab-&gt;data.ptr + i*3;
+<a name="l00123"></a>00123                 ptr[0] = (uchar)(cvRandInt(&amp;rng)%180 + 50);
+<a name="l00124"></a>00124                 ptr[1] = (uchar)(cvRandInt(&amp;rng)%180 + 50);
+<a name="l00125"></a>00125                 ptr[2] = (uchar)(cvRandInt(&amp;rng)%180 + 50);
+<a name="l00126"></a>00126             }
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128             {
+<a name="l00129"></a>00129             <span class="keywordtype">double</span> t = (double)cvGetTickCount();
+<a name="l00130"></a>00130             cvWatershed( img0, markers );
+<a name="l00131"></a>00131             t = (double)cvGetTickCount() - t;
+<a name="l00132"></a>00132             printf( <span class="stringliteral">&quot;exec time = %gms\n&quot;</span>, t/(cvGetTickFrequency()*1000.) );
+<a name="l00133"></a>00133             }
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135             <span class="comment">// paint the watershed image</span>
+<a name="l00136"></a>00136             <span class="keywordflow">for</span>( i = 0; i &lt; markers-&gt;height; i++ )
+<a name="l00137"></a>00137                 <span class="keywordflow">for</span>( j = 0; j &lt; markers-&gt;width; j++ )
+<a name="l00138"></a>00138                 {
+<a name="l00139"></a>00139                     <span class="keywordtype">int</span> idx = CV_IMAGE_ELEM( markers, <span class="keywordtype">int</span>, i, j );
+<a name="l00140"></a>00140                     uchar* dst = &amp;CV_IMAGE_ELEM( wshed, uchar, i, j*3 );
+<a name="l00141"></a>00141                     <span class="keywordflow">if</span>( idx == -1 )
+<a name="l00142"></a>00142                         dst[0] = dst[1] = dst[2] = (uchar)255;
+<a name="l00143"></a>00143                     <span class="keywordflow">else</span> <span class="keywordflow">if</span>( idx &lt;= 0 || idx &gt; comp_count )
+<a name="l00144"></a>00144                         dst[0] = dst[1] = dst[2] = (uchar)0; <span class="comment">// should not get here</span>
+<a name="l00145"></a>00145                     <span class="keywordflow">else</span>
+<a name="l00146"></a>00146                     {
+<a name="l00147"></a>00147                         uchar* ptr = color_tab-&gt;data.ptr + (idx-1)*3;
+<a name="l00148"></a>00148                         dst[0] = ptr[0]; dst[1] = ptr[1]; dst[2] = ptr[2];
+<a name="l00149"></a>00149                     }
+<a name="l00150"></a>00150                 }
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152             cvAddWeighted( wshed, 0.5, img_gray, 0.5, 0, wshed );
+<a name="l00153"></a>00153             cvShowImage( <span class="stringliteral">&quot;watershed transform&quot;</span>, wshed );
+<a name="l00154"></a>00154             cvReleaseMat( &amp;color_tab );
+<a name="l00155"></a>00155         }
+<a name="l00156"></a>00156     }
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158     <span class="keywordflow">return</span> 1;
+<a name="l00159"></a>00159 }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161 <span class="preprocessor">#ifdef _EiC</span>
+<a name="l00162"></a>00162 <span class="preprocessor"></span>main(1,<span class="stringliteral">&quot;watershed.cpp&quot;</span>);
+<a name="l00163"></a>00163 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

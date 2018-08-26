@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVFunction&lt; Input, Output &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__qvnumericalanalysis.html">Numerical analisis and function minimization</a>]</small>
+</h1><!-- doxytag: class="QVFunction" -->
+<p>Base class for function objects.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvfunction_8h_source.html">QVFunction</a>&gt;</code></p>
+
+<p><a href="classQVFunction-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Output&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d">evaluate</a> (const Input &amp;input)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method implementing the code for the function evaluation.  <a href="#a547d70580fc6ca0c97cb299958f8c85d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Output&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFunction.html#ae60ab039e3057080a8ea33c83d9378c2">operator()</a> (const Input &amp;input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Operator to evaluate the function.  <a href="#ae60ab039e3057080a8ea33c83d9378c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; Output &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFunction.html#adbce8451cff22c531ffeb7e53b9ebe9e">operator()</a> (const QList&lt; Input &gt; &amp;input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function map operator.  <a href="#adbce8451cff22c531ffeb7e53b9ebe9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; Output &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFunction.html#ac1080f5feba95ba7fd5f58649dd31d3b">map</a> (const QList&lt; Input &gt; &amp;inputs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maps a list of input elements, to the outputs for those elements.  <a href="#ac1080f5feba95ba7fd5f58649dd31d3b"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<h3>template&lt;typename Input, typename Output&gt;<br/>
+ class QVFunction&lt; Input, Output &gt;</h3>
+
+<p>Base class for function objects. </p>
+<p>This class can be used to create function class types. Objects derived from this class will wrap functions so they can be provided as parameters to other methods or procedures.</p>
+<p>These objects can be used as any C++ function, using their overloaded function operator (). This operator calls to the virtual method <em>evaluate</em>, which must be implemented by subclasses of <a class="el" href="classQVFunction.html">QVFunction</a> to contain the code of the function:</p>
+<div class="fragment"><pre class="fragment">[...]
+<span class="keyword">class </span>FactorialFunction: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;int, int&gt;
+        {
+        <span class="keyword">public</span>:
+                <span class="keywordtype">int</span> <a class="code" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d" title="Virtual method implementing the code for the function evaluation.">evaluate</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;value)
+                        {
+                        <span class="keywordtype">int</span> accum = 1;
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; value; i++)
+                                accum *= i;
+                        <span class="keywordflow">return</span> accum;
+                        }
+        };
+
+[...]
+
+<span class="keywordtype">int</span> main()
+        {
+        [...]
+        FactorialFunction factorial;
+        std::cout &lt;&lt; <span class="stringliteral">&quot;10! = &quot;</span> &lt;&lt; factorial(10) &lt;&lt; std::endl;
+        [...]
+        }
+</pre></div><p>Function objects can contain parametrization data to evaluate the function, besides each given input value:</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">class </span>QuadraticFunction: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;double, double&gt;
+        {
+        <span class="keyword">private</span>:
+                <span class="keyword">const</span> <span class="keywordtype">double</span> a, b, c;
+
+        <span class="keyword">public</span>:
+                QuadraticFunction(<span class="keyword">const</span> <span class="keywordtype">double</span> a, <span class="keyword">const</span> <span class="keywordtype">double</span> b, <span class="keyword">const</span> <span class="keywordtype">double</span> c):
+                        <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;double, double&gt;(), a(a), b(b), c(c)
+                        { }
+
+                <span class="keywordtype">double</span> <a class="code" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d" title="Virtual method implementing the code for the function evaluation.">evaluate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;x)
+                        { <span class="keywordflow">return</span> a*x*x + b*x + c; }
+        };
+</pre></div> 
+<p>Definition at line <a class="el" href="qvfunction_8h_source.html#l00082">82</a> of file <a class="el" href="qvfunction_8h_source.html">qvfunction.h</a>.</p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a547d70580fc6ca0c97cb299958f8c85d"></a><!-- doxytag: member="QVFunction::evaluate" ref="a547d70580fc6ca0c97cb299958f8c85d" args="(const Input &amp;input)=0" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Input, typename Output&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Output <a class="el" href="classQVFunction.html">QVFunction</a>&lt; Input, Output &gt;::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">const Input &amp;&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method implementing the code for the function evaluation. </p>
+<p>This virtual method must be redefined at any <a class="el" href="classQVFunction.html">QVFunction</a> subclass. It should implement the code for the function evaluation.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td>Input value provided for its evaluation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenced by <a class="el" href="classQVFunction.html#ac1080f5feba95ba7fd5f58649dd31d3b">QVFunction&lt; QVVector, QVMatrix &gt;::map()</a>, <a class="el" href="classQVFunction.html#ae60ab039e3057080a8ea33c83d9378c2">QVFunction&lt; QVVector, QVMatrix &gt;::operator()()</a>, and <a class="el" href="classQVUKF.html#a2a8d8d4b08c95657876036a7b337280e">QVUKF::update()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae60ab039e3057080a8ea33c83d9378c2"></a><!-- doxytag: member="QVFunction::operator()" ref="ae60ab039e3057080a8ea33c83d9378c2" args="(const Input &amp;input)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Input, typename Output&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Output <a class="el" href="classQVFunction.html">QVFunction</a>&lt; Input, Output &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const Input &amp;&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Operator to evaluate the function. </p>
+<p>This operator calls to the <a class="el" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d">evaluate</a> method, to obtain the return value of the function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td>Input value provided for its evaluation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d" title="Virtual method implementing the code for the function evaluation.">evaluate</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvfunction_8h_source.html#l00102">102</a> of file <a class="el" href="qvfunction_8h_source.html">qvfunction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbce8451cff22c531ffeb7e53b9ebe9e"></a><!-- doxytag: member="QVFunction::operator()" ref="adbce8451cff22c531ffeb7e53b9ebe9e" args="(const QList&lt; Input &gt; &amp;input)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Input, typename Output&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;Output&gt; <a class="el" href="classQVFunction.html">QVFunction</a>&lt; Input, Output &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; Input &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function map operator. </p>
+<p>This operator maps a list of inputs, to their corresponding outputs.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td>List of input values provided for their evaluation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVFunction.html#ac1080f5feba95ba7fd5f58649dd31d3b" title="Maps a list of input elements, to the outputs for those elements.">map</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvfunction_8h_source.html#l00111">111</a> of file <a class="el" href="qvfunction_8h_source.html">qvfunction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1080f5feba95ba7fd5f58649dd31d3b"></a><!-- doxytag: member="QVFunction::map" ref="ac1080f5feba95ba7fd5f58649dd31d3b" args="(const QList&lt; Input &gt; &amp;inputs)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Input, typename Output&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;Output&gt; <a class="el" href="classQVFunction.html">QVFunction</a>&lt; Input, Output &gt;::map </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; Input &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>inputs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maps a list of input elements, to the outputs for those elements. </p>
+<p>This operator calls the <a class="el" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d">evaluate</a> method for each element of the input list.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td>List of input values provided for their evaluation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list containing the outputs of the function for the values contained in the inputs list. This function preserves the order of the outputs, regarding the order of their corresponding inputs at the input list. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVFunction.html#a547d70580fc6ca0c97cb299958f8c85d" title="Virtual method implementing the code for the function evaluation.">evaluate</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvfunction_8h_source.html#l00121">121</a> of file <a class="el" href="qvfunction_8h_source.html">qvfunction.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVFunction.html#adbce8451cff22c531ffeb7e53b9ebe9e">QVFunction&lt; QVVector, QVMatrix &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvmath/<a class="el" href="qvfunction_8h_source.html">qvfunction.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

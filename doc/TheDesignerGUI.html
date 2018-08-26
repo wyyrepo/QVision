@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="TheDesignerGUI">The Designer GUI </a></h1><p>So far, we have discussed block oriented programming by source code writing. In this section we will describe <em>the Designer</em>, a tool provided by the QVision to perform visual block-oriented programming.</p>
+<p>We will start by extending the <em>movement edge detector</em> example application, created in section <a class="el" href="CreatingCustomProcessingBlocks.html">Creating custom processing blocks</a>, to include the visual design tool. The full source code of that application can be found in the <em>examples/movementEdgeDetector</em> directory included in the actual QVision release. Its source code is also documented <a href="movingEdgesDetector_8cpp-source.html">here</a>.</p>
+<h2><a class="anchor" id="TheDesignerGUIIncluding">
+Including the designer window in an application</a></h2>
+<p>First, the application should include the header file for the <a class="el" href="classQVDesignerGUI.html">QVDesignerGUI</a> class. Add the following line at the includes section of the <em>movementEdgeDetector.cpp</em> file:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;QVDesignerGUI&gt;</span>
+</pre></div><p>Then, we can add to the application the designer object. It must substitute any other Default GUI object in the application (for example, any <a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a> object). A single instance object of the <a class="el" href="classQVDesignerGUI.html" title="Advanced graphic block oriented programming interface widget for QVision applications...">QVDesignerGUI</a> class should be created right after the <a class="el" href="classQVApplication.html">QVApplication</a> object in the <em>main</em> function, and before the call to <em>exec()</em>:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+        {
+        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv,
+                <span class="stringliteral">&quot;Example program for QVision library. Obtains several features from input video frames.&quot;</span>
+                );
+        
+        <a class="code" href="classQVDesignerGUI.html" title="Advanced graphic block oriented programming interface widget for QVision applications...">QVDesignerGUI</a> interface;
+
+        [...]
+
+        <span class="keywordflow">return</span> app.<a class="code" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">exec</a>();
+        }
+</pre></div><p>The model control interface of <a class="el" href="classQVDesignerGUI.html" title="Advanced graphic block oriented programming interface widget for QVision applications...">QVDesignerGUI</a> is the same of <a class="el" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> interface. Its application get the same execution's parameter, and it uses the same input and output parameters's widgets (but QVDesigner places them differently).</p>
+<p>The following screenshot shows the main <a class="el" href="classQVDesignerGUI.html" title="Advanced graphic block oriented programming interface widget for QVision applications...">QVDesignerGUI</a> for a QVision example application:</p>
+<div align="center">
+<img src="designer-slate.png" alt="designer-slate.png"/>
+</div>
+<p>It is a slate widget, that allows the user to inspect and modify the application block structure. Blocks are presented as boxes, containing the block name, and the input/output properties. Property links are shown using green dashed lines (for synchronous links) or orange discontinuous lines (for asynchronous links) between the dynamic properties.</p>
+<p>The application contains no sequential property links. The only asynchronous links are between the processing blocks, and the output image canvas blocks.</p>
+<p>The user can stop and resume the application. When it is stopped, the data path structure can be modified. The user can add or delete nodes (processing blocks), and/or create new data links, or delete existing ones.</p>
+<h2><a class="anchor" id="TheDesignerGUIUsage">
+Using the designer</a></h2>
+<p>There are four main widget areas in the <a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a> window:</p>
+<h3><a class="anchor" id="MenuArea">
+A. Menu area</a></h3>
+<p>Contains the File, Edit and Insert menus.</p>
+<p>In the <em>File</em> menu we can find the following actions:</p>
+<table class="doxtable">
+<tr>
+<td><b>Export</b> </td><td>save the slate's model as a .cpp file. These file contains the default QVision code for the model. </td></tr>
+<tr>
+<td><b>Save As</b> </td><td>save the slate's model as a .xml file. These file contanis a XML representation of the model, that can be loaded by QVDesigner. </td></tr>
+<tr>
+<td><b>Load</b> </td><td>load a .xml file that contains a XML representation of a model, in the QVDesigner format. </td></tr>
+<tr>
+<td><b>Exit</b> </td><td>Exit the application. </td></tr>
+</table>
+<p>In the <em>Edit</em> menu we can find the following actions:</p>
+<table class="doxtable">
+<tr>
+<td><b>Asinchronous Link Mode</b> </td><td>sets the QVision link type as asinchronous. The following links done in the model will be asinchronous links. </td></tr>
+<tr>
+<td><b>Sinchronous Link Mode</b> </td><td>sets the QVision link type as sinchronows. The following links done in the model will be asinchronous links. </td></tr>
+<tr>
+<td><b>Sequential Link Mode</b> </td><td>sets the QVision link type as sequential. The following links done in the model will be asinchronous links. </td></tr>
+<tr>
+<td><b>Join</b> </td><td>join the selected blocks into a new group block. the group block shows its internal block and adapts theirs externals links. </td></tr>
+<tr>
+<td><b>Delete</b> </td><td>delete the selected items (blocks, groups and/or links). </td></tr>
+<tr>
+<td><b>Bring to Front</b> </td><td>bring the selected item representation front of the rest of items. </td></tr>
+<tr>
+<td><b>Send to Back</b> </td><td>send the selected item representation back of the rest of items. </td></tr>
+<tr>
+<td><b>Properties...</b> </td><td>show the selected item properties: properties values, properties controls and item controls. </td></tr>
+</table>
+<p>In the <em>Insert</em> menu we can find all items types that we can insert in the slate, by clicking it. We can find them organized in the following groups:</p>
+<table class="doxtable">
+<tr>
+<td><b>IPP: Filtering Functions</b> </td><td>contains items that executes IPP filtering functions, like Lowpass, Gauss, Laplace, Median, Min and Max filtering. </td></tr>
+<tr>
+<td><b>IPP: Image Arithmetic and Logical Operations</b> </td><td>contains items that executes aritmetic and logic functions over images. </td></tr>
+<tr>
+<td><b>IPP: Image Color Conversion</b> </td><td>contains items that executes IPP image color conversion functions. </td></tr>
+<tr>
+<td><b>IPP: Image Data Exchange and Initialization Functions</b> </td><td>contains items that executes IPP image data exchange and initialization funtions. </td></tr>
+<tr>
+<td><b>IPP: Image Estatistics Functions</b> </td><td>contains items that executes IPP stadistic functions. </td></tr>
+<tr>
+<td><b>IPP: Threshold and Compare Operations</b> </td><td>contains items that executes IPP threshold and compare funtions. </td></tr>
+<tr>
+<td><b>Input node</b> </td><td>contains QVision input items, like cameras and point generators. </td></tr>
+<tr>
+<td><b>Output node</b> </td><td>contains QVision output items, like canvas, plots and recorders. </td></tr>
+<tr>
+<td><b>QVision workers</b> </td><td>contains QVision advanced processing items. </td></tr>
+<tr>
+<td><b>User node</b> </td><td>contains the user items, defined in the user's application. </td></tr>
+</table>
+<h3><a class="anchor" id="ActionBar">
+B. Action bar</a></h3>
+<p>The action bar contains buttons for the more frecuently actions: Asinchronous Link Mode, Sinchronous Link Mode, Sequential Link Mode, Join, Delete, Bring to Front, Send to Back. The action bar includes two buttons for running and stopping the sistem too:</p>
+<table class="doxtable">
+<tr>
+<td><b>Run</b>  </td><td><div align="center">
+<img src="qvdesignergui_run.png" alt="qvdesignergui_run.png"/>
+</div>
+ </td><td><p class="starttd">Runs the processing sistem. When we open an application it start running.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td><b>Stop</b>  </td><td><div align="center">
+<img src="qvdesignergui_stop.png" alt="qvdesignergui_stop.png"/>
+</div>
+ </td><td>Stops the processing sistem. In order to make designer changes, the sistem must be stopped. </td></tr>
+</table>
+<h3><a class="anchor" id="Slate">
+C. Slate</a></h3>
+<p>We can do a lot of operations from the slate by mouse clicking or mouse dragging.</p>
+<p><b>The slate back</b></p>
+<p>By right clicking in the slate back, we can open an action menu whith the allowed operations. By mouse dragging over the slate back, we can select several items.</p>
+<p><b>Items</b></p>
+<p>The items are divided in three parts: the head the body and the link points (placed in the left and the right of the body).</p>
+<p>We can select an item by left clicking on it, and we can open an allowed actions menu by right clicking the item. By double clicking the item's body we open a properties window. By double clicking the item's head we open a remane window</p>
+<p>The items can be moved from the slate by mouse dragging. But if we are dragging over a lincking point, we are creating a new link, the link will be created if we drag the link over other allewed lincking point and we drop it.</p>
+<p><b>Groups</b></p>
+<p>The groups and the items are similar. They have a head (that is out), a body and linking points. We can do the same actions less what open the properties window (groups have not it). In a group's body we can see its internal items, that have been reduced. We can operate with the internal items normally. The scroll wheel allows us to do zoom over the slate. There is an arrow in the group's body right-bottom side, this arrow lets us to change he group view (by double clicking it), the group view can change from internal items view to abstract view. Abstract group's view hide its internal items and only show the name of the properties lincken outside the group.</p>
+<h3><a class="anchor" id="StateBar">
+C. State bar</a></h3>
+<p>The state bar is under the slate, and show the error and sistem messages.</p>
+<h2><a class="anchor" id="TheDesignerGUIFinalExample">
+Final example application</a></h2>
+<p>We will finish by extending the <em>movement edge detector</em> example application, created in section <a class="el" href="CreatingCustomProcessingBlocks.html">Creating custom processing blocks</a>, to include the visual design tool. The full source code of that application can be found in the <em>examples/movementEdgeDetector</em> directory included in the actual QVision release. Its source code is also documented <a href="movingEdgesDetector_8cpp-source.html">here</a>.</p>
+<p>We substitute the default interface with the designer. This is done by simply changing the following line:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> interface;
+</pre></div><p>With the lines:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVDesignerGUI.html" title="Advanced graphic block oriented programming interface widget for QVision applications...">QVDesignerGUI</a> interface;
+QVDesignerGUI::registerUserType&lt;MovingEdgesDetector&gt;(<span class="stringliteral">&quot;MovingEdgesDetector&quot;</span>);
+QVDesignerGUI::registerUserType&lt;QVCannyEdgeDetector&gt;(<span class="stringliteral">&quot;QVCannyEdgeDetector&quot;</span>);
+QVDesignerGUI::registerUserType&lt; QVImageRetarderBlock&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;QVImageRetarderBlock&lt;uChar,1&gt;&quot;</span>);
+</pre></div><p>The application will now open the designer window when it is launched. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

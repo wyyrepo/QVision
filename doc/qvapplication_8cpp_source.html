@@ -1,0 +1,465 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvapplication.cpp</h1><a href="qvapplication_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;QMetaType&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QSet&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QGLWidget&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QVGUI&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QVImageCanvas&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;QMutexLocker&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="preprocessor">#ifdef QVQWT</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="qvplot_8h.html" title="File from the QVision library.">qvguiblocks/qvplot.h</a>&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#endif</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00040"></a><a class="code" href="classQVApplication.html#a5e44b11b3ac56a53fcef81bcf6b96d13">00040</a> <a class="code" href="classQVApplication.html#a5e44b11b3ac56a53fcef81bcf6b96d13" title="Creates a QVApplication object.">QVApplication::QVApplication</a> (<span class="keywordtype">int</span> &amp;argc,<span class="keywordtype">char</span> **argv, QString infoString,<span class="keywordtype">bool</span> GUIenabled) : QApplication(argc,argv,GUIenabled), info(infoString), unusedArguments(), qvps(), visionInterface(NULL), isRunningFlag(FALSE), blockCount(0), terminateOnLastBlock(TRUE), forHelpFlag(FALSE)
+<a name="l00041"></a>00041         {
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043         <span class="keywordflow">if</span> (GUIenabled and not QGLFormat::hasOpenGL() )
+<a name="l00044"></a>00044                 qFatal(<span class="stringliteral">&quot;This system has no OpenGL support, and QVision GUI needs it. Exiting.&quot;</span>);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046         qRegisterMetaType&lt; QVariant &gt;(<span class="stringliteral">&quot;QVariant&quot;</span>);
+<a name="l00047"></a>00047         <span class="comment">//qRegisterMetaType&lt; QVCamera::TCameraStatus &gt;(&quot;QVCamera::TCameraStatus&quot;);</span>
+<a name="l00048"></a>00048         qRegisterMetaType&lt; QVProcessingBlock::TBlockStatus &gt;(<span class="stringliteral">&quot;QVProcessingBlock::TBlockStatus&quot;</span>);
+<a name="l00049"></a>00049         qRegisterMetaType&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;QVImage&lt;uChar,1&gt;&quot;</span>);
+<a name="l00050"></a>00050         qRegisterMetaType&lt; QVImage&lt;sShort,1&gt; &gt;(<span class="stringliteral">&quot;QVImage&lt;sShort,1&gt;&quot;</span>);
+<a name="l00051"></a>00051         qRegisterMetaType&lt; QVImage&lt;sFloat,1&gt; &gt;(<span class="stringliteral">&quot;QVImage&lt;sFloat,1&gt;&quot;</span>);
+<a name="l00052"></a>00052         qRegisterMetaType&lt; QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;QVImage&lt;uChar,3&gt;&quot;</span>);
+<a name="l00053"></a>00053         qRegisterMetaType&lt; QVImage&lt;sShort,3&gt; &gt;(<span class="stringliteral">&quot;QVImage&lt;sShort,3&gt;&quot;</span>);
+<a name="l00054"></a>00054         qRegisterMetaType&lt; QVImage&lt;sFloat,3&gt; &gt;(<span class="stringliteral">&quot;QVImage&lt;sFloat,3&gt;&quot;</span>);
+<a name="l00055"></a>00055         qRegisterMetaType&lt; QVPropertyContainerChange &gt;(<span class="stringliteral">&quot;QVPropertyContainerChange&quot;</span>);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         unusedArguments = arguments();
+<a name="l00058"></a>00058         setApplicationName(unusedArguments[0].split(<span class="stringliteral">&quot;/&quot;</span>).last());
+<a name="l00059"></a>00059         unusedArguments.removeAt(0); <span class="comment">// Application name removed.</span>
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="keywordflow">if</span>(unusedArguments.contains(<span class="stringliteral">&quot;--help&quot;</span>)) forHelpFlag = TRUE;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         }
+<a name="l00064"></a>00064 
+<a name="l00065"></a><a class="code" href="classQVApplication.html#a26cebe56daf97da9bc5f881d3d5abe2d">00065</a> <span class="keywordtype">int</span> <a class="code" href="classQVApplication.html#a26cebe56daf97da9bc5f881d3d5abe2d" title="Process command line arguments without executing.">QVApplication::processArguments</a>()
+<a name="l00066"></a>00066         {
+<a name="l00067"></a>00067         <span class="comment">// If --help parameter was given, show help and exit:</span>
+<a name="l00068"></a>00068         <span class="keywordflow">if</span>(unusedArguments.contains(<span class="stringliteral">&quot;--help&quot;</span>))
+<a name="l00069"></a>00069                 {
+<a name="l00070"></a>00070                 printHelp();
+<a name="l00071"></a>00071                 <span class="keywordflow">return</span> 0;
+<a name="l00072"></a>00072                 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">// An initialization error of any QVPropertyContainer aborts execution:</span>
+<a name="l00075"></a>00075         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00076"></a>00076                 {
+<a name="l00077"></a>00077                 QString lastError;
+<a name="l00078"></a>00078                 <span class="keywordflow">if</span>((lastError = qvp-&gt;<a class="code" href="classQVPropertyContainer.html#a14303586bf0de35498002c984408735f" title="Gets the (possible) last error string.">getLastError</a>()) != QString())
+<a name="l00079"></a>00079                         {
+<a name="l00080"></a>00080                         std::cerr &lt;&lt; <span class="stringliteral">&quot;Error initializing QVApplication: &quot;</span>
+<a name="l00081"></a>00081                                   &lt;&lt; qPrintable(lastError) &lt;&lt; std::endl;
+<a name="l00082"></a>00082                         <span class="keywordflow">return</span> -1;
+<a name="l00083"></a>00083                         }
+<a name="l00084"></a>00084                 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="comment">// If there are unused arguments, show error and exit</span>
+<a name="l00087"></a>00087         <span class="keywordflow">if</span>(not unusedArguments.isEmpty())
+<a name="l00088"></a>00088                 {
+<a name="l00089"></a>00089                 <span class="keywordflow">foreach</span>(QString argument, unusedArguments)
+<a name="l00090"></a>00090                         std::cerr &lt;&lt; <span class="stringliteral">&quot;Error initializing QVApplication: &quot;</span>
+<a name="l00091"></a>00091                                   &lt;&lt; <span class="stringliteral">&quot;unknown command line parameter: &quot;</span>
+<a name="l00092"></a>00092                                   &lt;&lt; qPrintable(argument) &lt;&lt; std::endl;
+<a name="l00093"></a>00093                 <span class="keywordflow">return</span> -1;
+<a name="l00094"></a>00094                 }
+<a name="l00095"></a>00095         <span class="keywordflow">return</span> 1;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 
+<a name="l00099"></a><a class="code" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4">00099</a> <span class="keywordtype">int</span> <a class="code" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">QVApplication::exec</a>()
+<a name="l00100"></a>00100         {
+<a name="l00101"></a>00101         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::exec()&quot;</span>;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="comment">// First, process arguments and, if error in command line, or only asked for help, return:</span>
+<a name="l00104"></a>00104         <span class="keywordtype">int</span> ret_value = <a class="code" href="classQVApplication.html#a26cebe56daf97da9bc5f881d3d5abe2d" title="Process command line arguments without executing.">processArguments</a>();
+<a name="l00105"></a>00105         <span class="keywordflow">if</span>(ret_value != 1)
+<a name="l00106"></a>00106                 <span class="keywordflow">return</span> ret_value;
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108         <span class="comment">// Now we init the GUI, in order to register all cameras and blocks, and create its widgets</span>
+<a name="l00109"></a>00109         <span class="keywordflow">if</span> (visionInterface)
+<a name="l00110"></a>00110                 {
+<a name="l00111"></a>00111                 visionInterface-&gt;<a class="code" href="classQVGUI.html#a73873873373076c825c28a86d8b19f58" title="initialice the QVGUI object.">init</a>();
+<a name="l00112"></a>00112                 visionInterface-&gt;<a class="code" href="classQVGUI.html#aeda9d300364e3f709b6ba1aaf76efcd3" title="show the QVGUI object.">show</a>();
+<a name="l00113"></a>00113                 }
+<a name="l00114"></a>00114                 qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::exec(): GUI initied&quot;</span>;
+<a name="l00115"></a>00115         
+<a name="l00116"></a>00116         <span class="comment">// Now we init all registered items (cameras, plots,canvas, blocks, ...)</span>
+<a name="l00117"></a>00117         <span class="keywordflow">if</span> (!<a class="code" href="classQVApplication.html#ae9afd38de95ccabd4e8680d96e98d42f" title="Start the application items.">startItems</a>()) <span class="keywordflow">return</span> -1;
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119         qDebug() &lt;&lt; <span class="stringliteral">&quot;Entering in QApplication::exec()&quot;</span>;
+<a name="l00120"></a>00120         isRunningFlag = TRUE;
+<a name="l00121"></a>00121         <span class="keywordtype">int</span> returnvalue = <a class="code" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">QApplication::exec</a>();
+<a name="l00122"></a>00122         qDebug() &lt;&lt; <span class="stringliteral">&quot;Back from QApplication::exec()&quot;</span>;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::exec() &lt;- return&quot;</span>;
+<a name="l00125"></a>00125         <span class="keywordflow">return</span> returnvalue;
+<a name="l00126"></a>00126         }
+<a name="l00127"></a>00127 
+<a name="l00128"></a><a class="code" href="classQVApplication.html#ae9afd38de95ccabd4e8680d96e98d42f">00128</a> <span class="keywordtype">bool</span> <a class="code" href="classQVApplication.html#ae9afd38de95ccabd4e8680d96e98d42f" title="Start the application items.">QVApplication::startItems</a>()
+<a name="l00129"></a>00129         {
+<a name="l00130"></a>00130         <span class="comment">// TODO: mover la inicialización de los QVImageCanvas al principio de esta función. Problema con el alumno de PFC.</span>
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132         <span class="comment">// Now we will open all cameras:</span>
+<a name="l00133"></a>00133         <span class="comment">/*foreach(QVPropertyContainer* qvp, qvps)</span>
+<a name="l00134"></a>00134 <span class="comment">                {</span>
+<a name="l00135"></a>00135 <span class="comment">                QVCamera* camera;</span>
+<a name="l00136"></a>00136 <span class="comment">                if((camera = dynamic_cast&lt;QVCamera*&gt;(qvp)) != NULL)</span>
+<a name="l00137"></a>00137 <span class="comment">                        //{</span>
+<a name="l00138"></a>00138 <span class="comment">                        //std::cout &lt;&lt; &quot;QVApplication::startItems(&quot; &lt;&lt; qPrintable(qvp-&gt;getName()) &lt;&lt; &quot;), camera&quot; &lt;&lt; std::endl;</span>
+<a name="l00139"></a>00139 <span class="comment">                        if(camera-&gt;isClosed())</span>
+<a name="l00140"></a>00140 <span class="comment">                                {</span>
+<a name="l00141"></a>00141 <span class="comment">                                if(not camera-&gt;open())</span>
+<a name="l00142"></a>00142 <span class="comment">                                        {</span>
+<a name="l00143"></a>00143 <span class="comment">                                        std::cerr &lt;&lt; &quot;Error initializing QVApplication: &quot;</span>
+<a name="l00144"></a>00144 <span class="comment">                                                        &lt;&lt; &quot;could not open camera: &quot;</span>
+<a name="l00145"></a>00145 <span class="comment">                                                        &lt;&lt; qPrintable(camera-&gt;getName()) &lt;&lt; std::endl;</span>
+<a name="l00146"></a>00146 <span class="comment">                                        return false;</span>
+<a name="l00147"></a>00147 <span class="comment">                                        }</span>
+<a name="l00148"></a>00148 <span class="comment">                                }</span>
+<a name="l00149"></a>00149 <span class="comment">                        //else</span>
+<a name="l00150"></a>00150 <span class="comment">                        //      std::cout &lt;&lt; &quot;QVApplication::startItems(&quot; &lt;&lt; qPrintable(qvp-&gt;getName()) &lt;&lt; &quot;): camera not closed&quot; &lt;&lt; std::endl;</span>
+<a name="l00151"></a>00151 <span class="comment">                        //}</span>
+<a name="l00152"></a>00152 <span class="comment">                }</span>
+<a name="l00153"></a>00153 <span class="comment">        qDebug() &lt;&lt; &quot;QVApplication::initItems(): cameras opened&quot;;*/</span>
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155         <span class="comment">// Now we will init all Plots, that are PropertyContainer:</span>
+<a name="l00156"></a>00156 <span class="preprocessor">        #ifdef QVQWT</span>
+<a name="l00157"></a>00157 <span class="preprocessor"></span>        <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00158"></a>00158                 {
+<a name="l00159"></a>00159                 <a class="code" href="classQVPlot.html" title="Class for plot block&amp;#39;s graphs.">QVPlot</a>* plot;
+<a name="l00160"></a>00160                 <span class="keywordflow">if</span>((plot = dynamic_cast&lt;QVPlot*&gt;(qvp)) != NULL)
+<a name="l00161"></a>00161                         {
+<a name="l00162"></a>00162                         <span class="keywordflow">if</span> (!plot-&gt;isInitied()) plot-&gt;init();
+<a name="l00163"></a>00163                         <span class="keywordflow">if</span> (plot-&gt;isAutoShow()) plot-&gt;show();
+<a name="l00164"></a>00164                         }
+<a name="l00165"></a>00165                 }
+<a name="l00166"></a>00166         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::initItems(): plots initied&quot;</span>;
+<a name="l00167"></a>00167 <span class="preprocessor">        #endif</span>
+<a name="l00168"></a>00168 <span class="preprocessor"></span>
+<a name="l00169"></a>00169         <span class="comment">// Now we will show all canvas</span>
+<a name="l00170"></a>00170         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00171"></a>00171                 {
+<a name="l00172"></a>00172                 <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>* canvas;
+<a name="l00173"></a>00173                 <span class="keywordflow">if</span>((canvas = dynamic_cast&lt;QVImageCanvas*&gt;(qvp)) != NULL)
+<a name="l00174"></a>00174                         canvas-&gt;show();
+<a name="l00175"></a>00175                 }
+<a name="l00176"></a>00176         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::initItems(): canvas shown&quot;</span>;
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178         <span class="comment">// Now we will start all blocks:</span>
+<a name="l00179"></a>00179         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00180"></a>00180                 {
+<a name="l00181"></a>00181                 <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>* block;
+<a name="l00182"></a>00182                 <span class="keywordflow">if</span>((block = dynamic_cast&lt;QVProcessingBlock*&gt;(qvp)) != NULL)
+<a name="l00183"></a>00183                         {
+<a name="l00184"></a>00184                                 <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>* masterBlock;
+<a name="l00185"></a>00185                                 <span class="comment">// The block must be moved to his master thread (if its a block), that will be usualy himself</span>
+<a name="l00186"></a>00186                                 <span class="keywordflow">if</span>((masterBlock = dynamic_cast&lt;QVProcessingBlock*&gt;(qvp-&gt;getMaster())) != NULL)
+<a name="l00187"></a>00187                                         block-&gt;moveToThread(masterBlock);
+<a name="l00188"></a>00188                                 connect(block,SIGNAL(finished()),<span class="keyword">this</span>,SLOT(blockFinished()));
+<a name="l00189"></a>00189                                 <span class="comment">// only start the masters threads, and only count this blocks to the endOnLastIteration condition</span>
+<a name="l00190"></a>00190                                 <span class="keywordflow">if</span> (block-&gt;isSequentialGroupMaster()) {
+<a name="l00191"></a>00191                                         blockCount++;
+<a name="l00192"></a>00192                                         block-&gt;start();
+<a name="l00193"></a>00193                                 }
+<a name="l00194"></a>00194                         }
+<a name="l00195"></a>00195                 }
+<a name="l00196"></a>00196         isRunningFlag = TRUE;
+<a name="l00197"></a>00197         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::initItems(): blocks started&quot;</span>;
+<a name="l00198"></a>00198         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00199"></a>00199         }
+<a name="l00200"></a>00200 
+<a name="l00201"></a><a class="code" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50">00201</a> <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50" title="Terminates an application.">QVApplication::quit</a>()
+<a name="l00202"></a>00202         {
+<a name="l00203"></a>00203         <a class="code" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6" title="Terminates the application items.">quitItems</a>();
+<a name="l00204"></a>00204         deregisterGUI();
+<a name="l00205"></a>00205         this-&gt;exit(0);
+<a name="l00206"></a>00206         }
+<a name="l00207"></a>00207 
+<a name="l00208"></a><a class="code" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6">00208</a> <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6" title="Terminates the application items.">QVApplication::quitItems</a>()
+<a name="l00209"></a>00209         {
+<a name="l00210"></a>00210         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::quitItems()&quot;</span>;
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212         <span class="comment">// We order all blocks to finish...</span>
+<a name="l00213"></a>00213         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00214"></a>00214                 {
+<a name="l00215"></a>00215                 <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>* block;
+<a name="l00216"></a>00216                 <span class="keywordflow">if</span>((block = dynamic_cast&lt;QVProcessingBlock*&gt;(qvp)) != NULL)
+<a name="l00217"></a>00217                         block-&gt;<a class="code" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499" title="Finish block execution.">finish</a>();
+<a name="l00218"></a>00218                 }
+<a name="l00219"></a>00219         <span class="comment">// ... and then wait for all of them (Warning, it won&#39;t work if we try to</span>
+<a name="l00220"></a>00220         <span class="comment">// finish and wait in the same loop).</span>
+<a name="l00221"></a>00221         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00222"></a>00222                 {
+<a name="l00223"></a>00223                 <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>* block;
+<a name="l00224"></a>00224                 <span class="keywordflow">if</span>((block = dynamic_cast&lt;QVProcessingBlock*&gt;(qvp)) != NULL)
+<a name="l00225"></a>00225                         {
+<a name="l00226"></a>00226                         <span class="comment">// Needed to treat possible pending Qt::BlockingQueuedConnection</span>
+<a name="l00227"></a>00227                         <span class="comment">// signals from qvpropertycontainer.h:</span>
+<a name="l00228"></a>00228                         <span class="comment">// if it is not a master the threat was not started, and wait do nothing</span>
+<a name="l00229"></a>00229                         <span class="keywordflow">while</span>(not block-&gt;wait(10<span class="comment">/*ms*/</span>)) processEvents();
+<a name="l00230"></a>00230                         deregisterQVPropertyContainer(block);
+<a name="l00231"></a>00231                         }
+<a name="l00232"></a>00232                 }
+<a name="l00233"></a>00233         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::quitItems(): blocks finished&quot;</span>;
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235         <span class="comment">// Now we will hide all canvas</span>
+<a name="l00236"></a>00236         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00237"></a>00237                 {
+<a name="l00238"></a>00238                 <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>* canvas;
+<a name="l00239"></a>00239                 <span class="keywordflow">if</span>((canvas = dynamic_cast&lt;QVImageCanvas*&gt;(qvp)) != NULL)
+<a name="l00240"></a>00240                         {
+<a name="l00241"></a>00241                         canvas-&gt;hide();
+<a name="l00242"></a>00242                         deregisterQVPropertyContainer(canvas);
+<a name="l00243"></a>00243                         }
+<a name="l00244"></a>00244                 }
+<a name="l00245"></a>00245         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::quitItems(): canvas hiden&quot;</span>;
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 <span class="preprocessor">        #ifdef QVQWT</span>
+<a name="l00248"></a>00248 <span class="preprocessor"></span>        <span class="comment">// Now we will stop all Plots, that are PropertyContainer:</span>
+<a name="l00249"></a>00249         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>* qvp, qvps)
+<a name="l00250"></a>00250                 {
+<a name="l00251"></a>00251                 <a class="code" href="classQVPlot.html" title="Class for plot block&amp;#39;s graphs.">QVPlot</a>* plot;
+<a name="l00252"></a>00252                 <span class="keywordflow">if</span>((plot = dynamic_cast&lt;QVPlot*&gt;(qvp)) != NULL)
+<a name="l00253"></a>00253                         {
+<a name="l00254"></a>00254                         plot-&gt;stop();
+<a name="l00255"></a>00255                         plot-&gt;hide();
+<a name="l00256"></a>00256                         deregisterQVPropertyContainer(plot);
+<a name="l00257"></a>00257                         }
+<a name="l00258"></a>00258                 }
+<a name="l00259"></a>00259         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::quitItems(): plots initied&quot;</span>;
+<a name="l00260"></a>00260 <span class="preprocessor">        #endif</span>
+<a name="l00261"></a>00261 <span class="preprocessor"></span>
+<a name="l00262"></a>00262         <span class="comment">// Now we will close all cameras:</span>
+<a name="l00263"></a>00263         <span class="comment">/*foreach(QVPropertyContainer* qvp, qvps)</span>
+<a name="l00264"></a>00264 <span class="comment">                {</span>
+<a name="l00265"></a>00265 <span class="comment">                QVCamera* camera;</span>
+<a name="l00266"></a>00266 <span class="comment">                if((camera = dynamic_cast&lt;QVCamera*&gt;(qvp)) != NULL)</span>
+<a name="l00267"></a>00267 <span class="comment">                        {</span>
+<a name="l00268"></a>00268 <span class="comment">                        if(!camera-&gt;isClosed()) camera-&gt;close();</span>
+<a name="l00269"></a>00269 <span class="comment">                        deregisterQVPropertyContainer(camera);</span>
+<a name="l00270"></a>00270 <span class="comment">                        }</span>
+<a name="l00271"></a>00271 <span class="comment">                }</span>
+<a name="l00272"></a>00272 <span class="comment">        qDebug() &lt;&lt; &quot;QVApplication::quitItems(): cameras closed&quot;;*/</span>
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274         isRunningFlag = FALSE; <span class="comment">// para que se pueda parar y realizar nuevos enlaces</span>
+<a name="l00275"></a>00275         }
+<a name="l00276"></a>00276 
+<a name="l00277"></a>00277 <span class="keywordtype">void</span> QVApplication::quitBlock(<a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> *block)
+<a name="l00278"></a>00278         {
+<a name="l00279"></a>00279                 <span class="keywordflow">if</span> (qvps.contains(block)) {
+<a name="l00280"></a>00280                         block-&gt;<a class="code" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499" title="Finish block execution.">finish</a>();
+<a name="l00281"></a>00281 
+<a name="l00282"></a>00282                         <span class="keywordflow">while</span>(not block-&gt;wait(10<span class="comment">/*ms*/</span>)) processEvents();
+<a name="l00283"></a>00283                         deregisterQVPropertyContainer(block);
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285 <span class="comment">//                      delete block; // no se puede si no se crean con new</span>
+<a name="l00286"></a>00286                 }
+<a name="l00287"></a>00287         }
+<a name="l00288"></a>00288 
+<a name="l00289"></a><a class="code" href="classQVApplication.html#abac81490de1809d8f3d741b5a7d779a4">00289</a> QStringList <a class="code" href="classQVApplication.html#abac81490de1809d8f3d741b5a7d779a4" title="Gets the list of unprocessed arguments.">QVApplication::getUnusedArguments</a>()
+<a name="l00290"></a>00290         { <span class="keywordflow">return</span> unusedArguments; }
+<a name="l00291"></a>00291 
+<a name="l00292"></a><a class="code" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33">00292</a> <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33" title="Marks a given command line argument as used.">QVApplication::setArgumentAsUsed</a>(QString argument)
+<a name="l00293"></a>00293         {
+<a name="l00294"></a>00294         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::setArgumentAsUsed(QString,bool)&quot;</span>;
+<a name="l00295"></a>00295         <span class="keywordtype">int</span> index = unusedArguments.indexOf(argument);
+<a name="l00296"></a>00296         <span class="keywordflow">if</span>(index != -1)
+<a name="l00297"></a>00297                 unusedArguments.removeAt(index);
+<a name="l00298"></a>00298         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::setArgumentAsUsed(QString,bool) &lt;- return&quot;</span>;
+<a name="l00299"></a>00299         }
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00302"></a>00302 <span class="preprocessor"></span><span class="keywordtype">void</span> QVApplication::registerQVPropertyContainer(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp)
+<a name="l00303"></a>00303         {
+<a name="l00304"></a>00304         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::registerQVPropertyContainer(&quot;</span> &lt;&lt; qvp-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00305"></a>00305         qvps.insert(qvp);
+<a name="l00306"></a>00306         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::registerQVPropertyContainer(&quot;</span> &lt;&lt; qvp-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() &lt;&lt; <span class="stringliteral">&quot;) -&gt; return&quot;</span>;
+<a name="l00307"></a>00307         }
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309 <span class="keywordtype">void</span> QVApplication::deregisterQVPropertyContainer(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp)
+<a name="l00310"></a>00310         {
+<a name="l00311"></a>00311         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::registerQVPropertyContainer(&quot;</span> &lt;&lt; qvp-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00312"></a>00312         qvps.remove(qvp);
+<a name="l00313"></a>00313         qDebug() &lt;&lt; <span class="stringliteral">&quot;QVApplication::registerQVPropertyContainer(&quot;</span> &lt;&lt; qvp-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() &lt;&lt; <span class="stringliteral">&quot;) -&gt; return&quot;</span>;
+<a name="l00314"></a>00314         }
+<a name="l00315"></a>00315 
+<a name="l00316"></a>00316 <span class="keywordtype">void</span> QVApplication::registerGUI(<a class="code" href="classQVGUI.html" title="Main user interface widget for QVision applications.">QVGUI</a> *visionInterface)
+<a name="l00317"></a>00317         {
+<a name="l00318"></a>00318         this-&gt;visionInterface = visionInterface;
+<a name="l00319"></a>00319         }
+<a name="l00320"></a>00320 
+<a name="l00321"></a>00321 <span class="keywordtype">void</span> QVApplication::deregisterGUI()
+<a name="l00322"></a>00322         {
+<a name="l00323"></a>00323         this-&gt;visionInterface = 0;
+<a name="l00324"></a>00324         }
+<a name="l00325"></a>00325 <span class="preprocessor">#endif</span>
+<a name="l00326"></a>00326 <span class="preprocessor"></span>
+<a name="l00327"></a>00327 <span class="keywordtype">void</span> QVApplication::printHelp()
+<a name="l00328"></a>00328         {
+<a name="l00329"></a>00329         std::cout &lt;&lt; qPrintable(<a class="code" href="classQVApplication.html#a29268a90a2e72f550f1143e239e2e3e7" title="Gets help for a QVApplication.">getHelp</a>());
+<a name="l00330"></a>00330         }
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332 <span class="keywordtype">void</span> QVApplication::blockFinished()
+<a name="l00333"></a>00333 {
+<a name="l00334"></a>00334         blockCount--;
+<a name="l00335"></a>00335         <span class="keywordflow">if</span>(blockCount == 0)
+<a name="l00336"></a>00336                 <span class="keywordflow">if</span>(terminateOnLastBlock)
+<a name="l00337"></a>00337                         <a class="code" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50" title="Terminates an application.">quit</a>();
+<a name="l00338"></a>00338 }
+<a name="l00339"></a>00339 
+<a name="l00340"></a><a class="code" href="classQVApplication.html#a29268a90a2e72f550f1143e239e2e3e7">00340</a> QString <a class="code" href="classQVApplication.html#a29268a90a2e72f550f1143e239e2e3e7" title="Gets help for a QVApplication.">QVApplication::getHelp</a>()
+<a name="l00341"></a>00341 {
+<a name="l00342"></a>00342         QString help_string;
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344         help_string = <span class="stringliteral">&quot;Usage: &quot;</span> + applicationName() + <span class="stringliteral">&quot; [OPTIONS]\n\n&quot;</span>;
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346         <span class="keywordflow">if</span> (info != QString())
+<a name="l00347"></a>00347                 help_string = help_string + qPrintable(info) + <span class="stringliteral">&quot;\n\n&quot;</span>;
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349         QSetIterator&lt;QVPropertyContainer *&gt; iq(qvps);
+<a name="l00350"></a>00350         <span class="keywordflow">while</span> (iq.hasNext())
+<a name="l00351"></a>00351                 {
+<a name="l00352"></a>00352                 QString infoHolder = iq.next()-&gt;infoInputProperties();
+<a name="l00353"></a>00353                 <span class="keywordflow">if</span>(infoHolder != QString() )
+<a name="l00354"></a>00354                         help_string += infoHolder + <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00355"></a>00355                 }
+<a name="l00356"></a>00356 
+<a name="l00357"></a>00357         <span class="keywordflow">return</span> help_string;
+<a name="l00358"></a>00358 
+<a name="l00359"></a>00359 }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

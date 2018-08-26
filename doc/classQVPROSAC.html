@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVPROSAC&lt; Element, Model &gt; Class Template Reference<br/>
+<small>
+[<a class="el" href="group__qvstatistics.html">Statistics</a>]</small>
+</h1><!-- doxytag: class="QVPROSAC" --><!-- doxytag: inherits="QVRANSAC" -->
+<p>Implementation of PROSAC, an extension to RANSAC (see <a class="el" href="classQVRANSAC.html">QVRANSAC</a>).  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvsampleconsensus_8h_source.html">qvmath/qvsampleconsensus.h</a>&gt;</code></p>
+
+<p>Inherits <a class="el" href="classQVRANSAC.html">QVRANSAC&lt; Element, Model &gt;</a>.</p>
+
+<p><a href="classQVPROSAC-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPROSAC.html#af6a74baf34bd19fce071f43235b945e6">QVPROSAC</a> (const int sampleSetSize, const int minInliers)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVPROSAC.html" title="Implementation of PROSAC, an extension to RANSAC (see QVRANSAC).">QVPROSAC</a> class.  <a href="#af6a74baf34bd19fce071f43235b945e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPROSAC.html#ad61ec53963bf7ad440ba942748748888">addElement</a> (const Element &amp;element, const double preference=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Starts a PROSAC search.  <a href="#ad61ec53963bf7ad440ba942748748888"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<h3>template&lt;typename Element, typename Model&gt;<br/>
+ class QVPROSAC&lt; Element, Model &gt;</h3>
+
+<p>Implementation of PROSAC, an extension to RANSAC (see <a class="el" href="classQVRANSAC.html">QVRANSAC</a>). </p>
+<p>This class implements PROSAC, a robust statistical model fitting algorithm.</p>
+<p>PROSAC is a more sophisticated and efficient version of RANSAC. The latter is described in the documentation of the class <a class="el" href="classQVRANSAC.html">QVRANSAC</a>, which is an implementation of that algorithm for the QVision.</p>
+<p>PROSAC can handle heuristic information about the probability that a sample data could fit in a valid model. When picking random samples from the observations set, sample data with high heuristic value is more likely to be chosen, increasing the probability of finding a good sample set that would fit into a valid model.</p>
+<p>This makes PROSAC to obtain a fitting model generally faster, trying less random subsets than RANSAC. In practice, with an adequate heuristic function for the sample data, PROSAC can be up to 100 times faster than RANSAC.</p>
+<p>Usage of the class <a class="el" href="classQVPROSAC.html">QVPROSAC</a> is similar to <a class="el" href="classQVRANSAC.html">QVRANSAC</a>. The only difference is at the function <a class="el" href="classQVPROSAC.html#ad61ec53963bf7ad440ba942748748888">addElement</a>, which now takes two input parameters: the sample data, and a numeric heuristic value, which will penalize or benefit the sample data at the random selection of the PROSAC algorithm.</p>
+<p>The algorithm is programmed to choose with more probability sample data's with a low heuristic value.</p>
+<h2><a class="anchor" id="References">
+References</a></h2>
+<p>Chum, Ondřej, Matas, Jiř&iacute;. <a href="http://portal.acm.org/citation.cfm?id=1068507.1068918">Matching with PROSAC - Progressive Sample Consensus</a>. <em>Proc. of Conference on Computer Vision and Pattern Recognition (CVPR). Volume 1, Pages 220-226, June, 2005</em></p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00290">290</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af6a74baf34bd19fce071f43235b945e6"></a><!-- doxytag: member="QVPROSAC::QVPROSAC" ref="af6a74baf34bd19fce071f43235b945e6" args="(const int sampleSetSize, const int minInliers)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVPROSAC.html">QVPROSAC</a>&lt; Element, Model &gt;::<a class="el" href="classQVPROSAC.html">QVPROSAC</a> </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>sampleSetSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minInliers</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVPROSAC.html" title="Implementation of PROSAC, an extension to RANSAC (see QVRANSAC).">QVPROSAC</a> class. </p>
+<p>Because <a class="el" href="classQVPROSAC.html" title="Implementation of PROSAC, an extension to RANSAC (see QVRANSAC).">QVPROSAC</a> is a pure virtual class, this constructor should only be called from the constructor of its subclasses. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sampleSetSize</em>&nbsp;</td><td>size of the subsets <em><b>s</b></em> to be used for model fitting. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minInliers</em>&nbsp;</td><td>minimum number of sample data for a model to fit, to be considered a valid model. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00324">324</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad61ec53963bf7ad440ba942748748888"></a><!-- doxytag: member="QVPROSAC::addElement" ref="ad61ec53963bf7ad440ba942748748888" args="(const Element &amp;element, const double preference=0)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classQVPROSAC.html">QVPROSAC</a>&lt; Element, Model &gt;::addElement </td>
+          <td>(</td>
+          <td class="paramtype">const Element &amp;&nbsp;</td>
+          <td class="paramname"> <em>element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>preference</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Starts a PROSAC search. </p>
+<p>This method will perform a random search over the elements of the observations set, to find a model that fits a given number of elements from that set, specified in the constructor of the RANSAC object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if a suitable model, that fits in a minimum number of observations specified in the construction of the RANSAC object, was found, else false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsampleconsensus_8h_source.html#l00333">333</a> of file <a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvmath/<a class="el" href="qvsampleconsensus_8h_source.html">qvsampleconsensus.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

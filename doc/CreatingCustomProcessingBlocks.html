@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="CreatingCustomProcessingBlocks">Creating custom processing blocks </a></h1><p>In the QVision toolkit, all the block objects are created from subclasses of a common parent class, the <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> class. This class is itself a subclass of the <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> class.</p>
+<p>The latter can be used to create <em>dynamic property container</em> objects. Dynamic properties make possible the dynamic linking between the data processing blocks. Like the typical object data members, added to the objects at compilation time, these properties are referenced by a name, and contain data values of a certain type. Unlike the typical object data members, these properties can be created (using the <a class="el" href="classQVPropertyContainer.html#ae2cd8d4bea91574bed4c1863a13d6171">QVPropertyContainer::addProperty()</a> method) and deleted (using the <a class="el" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92">QVPropertyContainer::removeProperty()</a> method) while the application is running, at execution time.</p>
+<p>The <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> defines the virtual method <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a>. It must be implemented in the subclasses of the <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> class, to contain the code of the algorithm for the processing blocks it creates. This method is called every time the processing block receives new input data to process. Whenever that happens, the input data is temporarily stored at some of the dynamic properties contained at the block object.</p>
+<p>The <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> method must read those values, operate with them to produce the output data, and store it inside other dynamic properties contained at the block object, different than those used to store the initial input values.</p>
+<p>For example, the <em>iterate</em> method of class <a class="el" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a> does the following sequence:</p>
+<ul>
+<li>First, read the values for the inputs of the block: in this case, the input image and the value for the low and high threshold.</li>
+<li>Second, perform the processing of the inputs, to obtain the output values: the processing block applies the Canny operator on the input image.</li>
+<li>Last, write the output values: in this case, the edge response image.</li>
+</ul>
+<h2><a class="anchor" id="CreatingACustomEdgeMovementDetector">
+Creating a custom processing block for the moving edges example</a></h2>
+<p>We will illustrate the creation of a custom processing block and its usage in a QVision application, by extending the moving edge detector described at section <a class="el" href="AdvancedExampleBlockStructured.html">An advanced block-oriented example</a>. We will improve its performance by adding a new processing block, that will combine the edge response image and the movement response image, better than the <em>multBlock</em> did.</p>
+<p>The moving edge detector algorithm implemented in that application obtains segmented and short edges. This is so because the <em>multBlock</em> performs a pixel-wise combination of the edge and movement response images.</p>
+<p>We will add a user defined block to the application that will process <em>as a whole</em> each edge detected by the Canny algorithm. It will identify moving edges as those containing a high percentage of pixels active in the <em>movement response image</em>.</p>
+<p>To create the new processing block object, a new block class must be created. It will have the following header:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<span class="preprocessor">#include &lt;QVPolyline&gt;</span>
+<span class="keyword">class </span>MovingEdgesDetector: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+        {
+        <span class="keyword">public</span>:
+                MovingEdgesDetector(QString name);
+                <span class="keywordtype">void</span> iterate();
+        };
+</pre></div><p>The constructor of that class must create the dynamic properties of the block object. These properties must at least store the input and the output data of the block. The constructor will create two input properties that will store the input edge and movement response images respectively: <em>Edge response image</em> and <em>Movement response image</em>. Also the constructor will create one output property in the block object to store the output moving borders image response, named <em>Moving borders image</em>:</p>
+<div class="fragment"><pre class="fragment">MovingEdgesDetector::MovingEdgesDetector(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+        {
+        addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Edge response image&quot;</span>, inputFlag);
+        addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Movement response image&quot;</span>, inputFlag);
+        addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Moving borders image&quot;</span>, outputFlag);
+        }
+</pre></div><p>This will be the the <em>iterate</em> method of the class:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> MovingEdgesDetector::iterate()
+        {
+        <span class="comment">// 1. Read the input values and algorithm parameters</span>
+        <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>  movementResponseImage = getPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Movement response image&quot;</span>),
+                                edgeResponseImage = getPropertyValue&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;Edge response image&quot;</span>);
+        <span class="keyword">const</span> <span class="keywordtype">double</span> minimalPixelPercentage = 0.5;
+
+        <span class="comment">// 2. process the input values with the input parameter values.</span>
+
+        <span class="comment">// 2.1. Obtain the list of moving edges as a polyline list.</span>
+        <span class="comment">// 2.1.1. Get the list of edges from the edge response image, as a list of polylines:</span>
+        <span class="keyword">const</span> QList&lt; QVPolyline &gt; edges = <a class="code" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6" title="Obtains a list of the 8-connected pixel lines in the imageThis function can be used...">getLineContoursThreshold8Connectivity</a>(edgeResponseImage, 128);
+
+        <span class="comment">// 2.1.2. For each edge, test if a percentage high enough of its pixels is active in the</span>
+        <span class="comment">//      movement response image. If so, store it in the list of moving image borders.</span>
+        QList&lt; QVPolyline &gt; movingImageBorders;
+        <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> edge, edges)
+                {
+                <span class="keywordtype">int</span> count = 0;
+                <span class="keywordflow">foreach</span>(QPoint edgePoint, edge)
+                        <span class="keywordflow">if</span> (movementResponseImage(edgePoint) != 0)
+                                count++;
+
+                <span class="keywordflow">if</span> (count &gt;= minimalPixelPercentage * edge.size())
+                        movingImageBorders &lt;&lt; edge;
+                }
+
+        <span class="comment">// 2.2. Create the moving edge response image from the list of moving edges.</span>
+        <span class="comment">// 2.2.1. Create the image with the same size as the movement response image.</span>
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar,1 &gt;</a> movingBordersImage(movementResponseImage.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), movementResponseImage.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+
+        <span class="comment">// 2.2.2. Initialize the pixels of the image to zero</span>
+        <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(0, movingBordersImage);
+
+        <span class="comment">// 2.2.3. Draw each polyline contained in the moving image edges at the output image.</span>
+        <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> edge, movingImageBorders)
+                <span class="keywordflow">foreach</span>(QPoint edgePoint, edge)
+                        movingBordersImage(edgePoint) = 255;
+
+        <span class="comment">// 3. Store the resulting image in the output property</span>
+        setPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Moving borders image&quot;</span>, movingBordersImage);
+        timeFlag(<span class="stringliteral">&quot;Publish resulting images&quot;</span>);
+        }
+</pre></div><p>It is divided in three sections. The first (point 1.) reads both the edge response image and the movement response image from the input properties.</p>
+<p>The second section (point 2.) process those input images, to generate the output moving edges response image (<em>movingBordersImage</em>). This section is divided in two tasks: first, it detect the edges in the image, containing a high number of pixels active in the movement response image (point 2.1.). Second, prints those edges in the output image (point 2.2.).</p>
+<p>The last section (point 3.) stores the resulting image <em>movingBordersImage</em> in the output property <em>Moving borders image</em>.</p>
+<p>Once the class is complete, we can use it in the <em>main</em> function to create the moving edge detector object. We should link the output properties <em>Output image</em> and <em>qvimage_pDst</em> from the <em>Canny edge detector block</em> and the <em>threshold block</em> respectively, to the input properties <em>Edge response image</em> and <em>Movement response image</em> of the moving edge detector object. This is similar to what we did at the application example described in section <a class="el" href="AdvancedExampleBlockStructured.html">An advanced block-oriented example</a>, to make the <em>multBlock</em> object receive edge and movement response images from the Canny edge detector and the threshold blocks:</p>
+<p>We also create the image canvas <em>movingEdgesDisplayer2</em> to display the moving edges detected with the new block <em>movingEdgesDetector</em>, an connect it the same manner as we did with the <em>multBlock</em> one and the image canvas <em>movingEdgesDisplayer</em> in the original example application:</p>
+<div class="fragment"><pre class="fragment">MovingEdgesDetector movingEdgesDetector(<span class="stringliteral">&quot;Edge &amp; movement image composer&quot;</span>);
+<a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> movingEdgesDisplayer2(<span class="stringliteral">&quot;Detected moving edges 2&quot;</span>);
+
+cannyBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>, &amp;movingEdgesDetector, <span class="stringliteral">&quot;Edge response image&quot;</span>, QVProcessingBlock::SynchronousLink);
+compareCBlock.linkProperty(<span class="stringliteral">&quot;qvimage_pDst&quot;</span>, &amp;movingEdgesDetector, <span class="stringliteral">&quot;Movement response image&quot;</span>, QVProcessingBlock::SynchronousLink);
+movingEdgesDetector.linkProperty(<span class="stringliteral">&quot;Moving borders image&quot;</span>, movingEdgesDisplayer2);
+</pre></div><p>In the following image can be seen the difference between the moving edges detected using the original <em>multBlock</em> (image canvas on the bottom left), and the new <em>movingEdgesDetector</em> block (image canvas on the bottom right). The new technique implemented in the <em>MovingEdgesDetector</em> obtains long edges, instead of segmented and small edges:</p>
+<div align="center">
+<img src="newMovingEdges.png" alt="newMovingEdges.png"/>
+</div>
+<h2><a class="anchor" id="AddingInputParameters">
+Adding input parameters</a></h2>
+<p>Once our new moving edge detector algorithm is implemented, we might want to test and refine it.</p>
+<p>The algorithm has one parameter: <em>minimalPixelPercentage</em>. It represents the minimal percentage of pixels active in the movement response image that an edge must contain to be stored by the algorithm in the list of <em>moving</em> edges.</p>
+<p>For now, that value is read from a constant double variable (<em>const double</em> in the body of the <em>iterate</em> method. We might be interested in creating an input dynamic property for that parameter. By doing so, the user will be able to set the initial value for it at the input command line, and modify its value through the GUI during the execution of the application.</p>
+<p>Dynamic properties registered in an object can be <em>inspected</em> at execution time: the method <a class="el" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc">QVPropertyContainer::getPropertyList()</a> returns a name list of the properties registered at the property container. This is specially useful to create classes in the QVision capable of detecting the properties registered in a processing block object. For example, the <a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a> detects at the blocks of the application the numerical, boolean, and string properties, and offers sliders, checkboxes and text widgets to inspect and modify their value at execution time.</p>
+<p>Also, this feature is used by the <a class="el" href="classQVApplication.html">QVApplication</a> object when parsing the input command line parameters, allowing the user to specify an initial value for numerical or string input properties of the blocks created in the application.</p>
+<p>To convert the <em>minimalPixelPercentage</em> variable in a block parameter (that is, an input property), first we add the following line at the constructor of the <em>MovingEdgesDetector</em> class:</p>
+<div class="fragment"><pre class="fragment">addProperty&lt; double &gt;(<span class="stringliteral">&quot;Minimal pixel percentage&quot;</span>, inputFlag, 0.5, <span class="stringliteral">&quot;Minimal percentage of moving pixels for an edge&quot;</span>, 0.0, 1.0);
+</pre></div><p>Next we substitute the following line at the <em>iterate</em> method:</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">const</span> <span class="keywordtype">double</span> minimalPixelPercentage = 0.5;
+</pre></div><p>For this one:</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">const</span> <span class="keywordtype">double</span> minimalPixelPercentage = getPropertyValue&lt; double &gt;(<span class="stringliteral">&quot;Minimal pixel percentage&quot;</span>);
+</pre></div><p>Making the <em>iterate</em> method read the value for the <em>minimalPixelPercentage</em> variable from the input property <em>Minimal pixel percentage</em>. When running the application, the control window will display a new input widget in the tab for the <em>Edge &amp; movement image composer</em> block, that allows to modify the value for that parameter at execution time:</p>
+<div align="center">
+<img src="parameterForMovingEgdesDetector.png" alt="parameterForMovingEgdesDetector.png"/>
+</div>
+<p>For further info about the control widget, see <a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a>.</p>
+<p>If the <em>--help</em> command line parameter is used when launching the application from the console, the command line options for the <em>Edge &amp; movement image composer</em> block will include the initial value for the <em>Minimal pixel percentage</em> property:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"># ./blockExample --help</span>
+<span class="preprocessor"></span>Usage: blockExample [OPTIONS]
+
+Example program <span class="keywordflow">for</span> QVision library. Obtains several features from input video frames.
+
+...
+
+Input parameters <span class="keywordflow">for</span> Edge &amp; movement image composer:
+  --max block iterations=[int] (def. -1) ............Maximal number of iterations to execute block.
+  --stats enabled=[<span class="keyword">true</span>,<span class="keyword">false</span>] (def. <span class="keyword">true</span>) ....................Block CPU stats are enabled/disabled.
+  --stats printing frequency=[int] (def. 0) .......Frequency to print CPU statistics (in iterations).
+  --Minimal pixel percentage=[0...1] (def. 0.5) .....Minimal percentage of moving pixels <span class="keywordflow">for</span> an edge.
+</pre></div><p>So the user can start the application specifying a different starting value for that property:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"># ./blockExample --URL=moving-hartley.mpg --&quot;Minimal pixel percentage&quot;=0.25</span>
+</pre></div><p>For further info about command line parameters, see section <a class="el" href="CommandLineParameters.html">Command line parameters</a>.</p>
+<h2><a class="anchor" id="MovingEdgesSourceCode">
+Source of the moving edges detector</a></h2>
+<p>The complete source code of the final version of the moving edges detector can be found in the <em>examples/movingEdgesDetector</em> directory, included with the actual release of the QVision. Click <a href="movingEdgesDetector_8cpp-source.html">here</a> to see the contents of the source file. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

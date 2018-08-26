@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="GSLInteroperability">Interoperability with the GSL library </a></h1><p>QVision applications will automatically link to the include and binary files for the GSL library.</p>
+<h2><a class="anchor" id="ConvertingQVisionObjectsFromAndToGSLLibraryTypes">
+Converting QVision objects from and to GSL library types</a></h2>
+<p>The QVision includes functionality to convert <a class="el" href="classQVMatrix.html">QVMatrix</a> and <a class="el" href="classQVVector.html">QVVector</a> objects from and to GSL matrices and vectors objects. To convert a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object from and to a GSL matrix object, the developer can use the <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> constructor and conversion operators:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// First create a GSL matrix</span>
+gsl_matrix *gslMatrix = gsl_matrix_alloc(rows, cols);
+
+<span class="comment">// Next, init the contents of the GSL matrix.</span>
+[...]
+
+<span class="comment">// Convert the GSL matrix to a QVision matrix</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> qvMatrix = gslMatrix;
+
+<span class="comment">// Do things with the QVision matrix</span>
+[...]
+
+<span class="comment">// Convert back the QVision matrix to a new Octave matrix</span>
+gsl_matrix *gslMatrix2 = qvMatrix;
+
+[...]
+<span class="comment">// Free GSL matrices</span>
+gsl_matrix_free(gslMatrix);
+gsl_matrix_free(gslMatrix2);
+</pre></div><p>A similar procedure can be used to convert <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> objects from and to the GSL vector datatype:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// First create a GSL matrix</span>
+gsl_vector *gslVector = gsl_vector_alloc(size);
+
+<span class="comment">// Next, init the contents of the GSL vector.</span>
+[...]
+
+<span class="comment">// Convert the GSL vector to a QVision vector</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> qvVector = gslVector;
+
+<span class="comment">// Do things with the QVision vector</span>
+[...]
+
+<span class="comment">// Convert back the QVision vector to a new GSL vector</span>
+gsl_matrix *gslVector2 = qvVector;
+
+[...]
+<span class="comment">// Free GSL matrices</span>
+gsl_vector_free(gslVector);
+gsl_vector_free(gslVector2);
+</pre></div><h2><a class="anchor" id="InteroperatingWithGSLFunctionallity">
+Interoperation between QVision and GSL functions</a></h2>
+<p>The following is an example of using the GSL functionality for SVD decomposition, using the data from a QVision matrix, and storing the results on QVision matrices:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Create a QVision matrix.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M;
+
+<span class="comment">// Init contents of the M matrix.</span>
+[ ... ]
+
+<span class="comment">// Get the second dimension of &#39;M&#39;.</span>
+<span class="keyword">const</span> <span class="keywordtype">int</span> dim = M.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>();
+
+<span class="comment">// Create the input vectors and matrices for the SVD method of the GSL.</span>
+gsl_matrix *u = M;
+gsl_vector *s = gsl_vector_alloc (dim);
+gsl_matrix *v = gsl_matrix_alloc (dim, dim);
+gsl_vector *work = gsl_vector_alloc (dim);
+gsl_matrix *X = gsl_matrix_alloc (dim,dim);
+
+<span class="comment">// Call the SVD method of the GSL</span>
+gsl_linalg_SV_decomp_mod(u, X, v, s, work);
+
+<span class="comment">// Create QVision matrices, containing the results of the SVD.</span>
+<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  U = u,
+                V = v,
+                S = <a class="code" href="classQVMatrix.html#abcfe032545b49448a2a064a7952f7ece" title="Gets the diagonal of the matrix.">QVMatrix::diagonal</a>(s);
+
+<span class="comment">// Free GSL matrices and vectors.</span>
+gsl_matrix_free(u);
+gsl_vector_free(s);
+gsl_matrix_free(v);
+gsl_vector_free(work);
+gsl_matrix_free(X);
+</pre></div> </div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

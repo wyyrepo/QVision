@@ -1,0 +1,940 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVVideoReader Class Reference</h1><!-- doxytag: class="QVVideoReader" -->
+<p>Extremely versatile class to read from multiple video devices and video/image file formats.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvvideoreader_8h_source.html">QVVideoReader</a>&gt;</code></p>
+
+<p><a href="classQVVideoReader-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b">OpenOption</a> { <a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0">Default</a> =  0x0, 
+<a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d">RealTime</a> =  0x1, 
+<a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd">Deinterlaced</a> =  0x2, 
+<a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3">NoLoop</a> =  0x4
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Open options for a video source. Combine them using OR (|) to form a valid <a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> value. </p>
+ <a href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">TSourceMode</a> { <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96">YUVMode</a> =  0, 
+<a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337">RGBMode</a> =  1, 
+<a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36">GrayOnlyMode</a> =  2
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Possible preferred modes for video sources. </p>
+ <a href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef QFlags&lt; <a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b">OpenOption</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">OpenOptions</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Open options for a video source.  <a href="#a5897497caf38c09bace454d3e205ede0"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#ab9f4cfa4e439e0bb5ffd377e514de091">close</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Closes the video source.  <a href="#ab9f4cfa4e439e0bb5ffd377e514de091"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#aef184d33d65b5e7cca33189a148f1037">seek</a> (int pos)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tries to move to a given position in the video source (if possible).  <a href="#aef184d33d65b5e7cca33189a148f1037"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a24596d37c6e4c6098f2460d22b9c33c8">sourceOpened</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signal emitted when video source has been opened.  <a href="#a24596d37c6e4c6098f2460d22b9c33c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a887bd81fc95920d2fd8123949db59086">sourceClosed</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signal emitted when video source has been closed.  <a href="#a887bd81fc95920d2fd8123949db59086"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a1953e03f3e394000b4f322838af2bc85">newGrab</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signal emitted when a new frame has been grabbed.  <a href="#a1953e03f3e394000b4f322838af2bc85"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#aa00f0803b14d9e6a9751f877d27eec83">QVVideoReader</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a <a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a>.  <a href="#aa00f0803b14d9e6a9751f877d27eec83"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a918bc822f2b44d3504e19d1cf770c9ce">~QVVideoReader</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a <a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a>.  <a href="#a918bc822f2b44d3504e19d1cf770c9ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c">open</a> (const QString &amp;url_string, unsigned int &amp;suggested_cols, unsigned int &amp;suggested_rows, unsigned int &amp;suggested_fps, <a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">OpenOptions</a> &amp;opts, <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">TSourceMode</a> &amp;source_mode)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Opens a video source given by its URL, trying to use requested options, mode, speed and output scale sizes.  <a href="#a6f4fe8891a6fcdfbfaf31302af10785c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a9db072c89f20cf111f014bf8d9a48cc6">open</a> (const QString &amp;url_string)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Opens a video source given by its URL, using default opening values.  <a href="#a9db072c89f20cf111f014bf8d9a48cc6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140">grab</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Grabs next frame in video source, saving corresponding image(s) in class internal state.  <a href="#a9dacd1ed256f1f48a193314d7e876140"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a7c9765c5ed51cdf2349e456dc7a6f3f2">getGrayImage</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageGray)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets current frame in the form of a gray image.  <a href="#a7c9765c5ed51cdf2349e456dc7a6f3f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093">getRGBImage</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;imageRGB)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets current frame in the form of a 3 channel RGB image.  <a href="#a7922b56a1ea4e76444aeda9ea4a3d093"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a0e6dfc8f13e4aa4792c589ddd41dcb71">getRGBImage</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageR, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageG, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageB)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets current frame in the form of three separated Red, Green and Blue channel images.  <a href="#a0e6dfc8f13e4aa4792c589ddd41dcb71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#af79c7379cbbfc613b64d21a74eb7f8eb">getYUVImage</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageY, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageU, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageV)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets current frame in the form of a gray image channel (Y) and two chrominance image channels (U and V).  <a href="#af79c7379cbbfc613b64d21a74eb7f8eb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#afea030febc7f6e776968d10079002e37">getLength</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the length of the video source.  <a href="#afea030febc7f6e776968d10079002e37"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#ac169b0d7746551424f5ef4fe471a9c7d">getPos</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the current position in the video source.  <a href="#ac169b0d7746551424f5ef4fe471a9c7d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a9aec25744053d21fb2b56f37e5187843">getURL</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the complete URL of the video source.  <a href="#a9aec25744053d21fb2b56f37e5187843"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#aca5a2e877a2fac39ada8b47382849881">getScheme</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the scheme of the video source.  <a href="#aca5a2e877a2fac39ada8b47382849881"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a05af873ddd0778c8d34a7fe5adc00a1d">getCols</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of cols for current frame in the video source.  <a href="#a05af873ddd0778c8d34a7fe5adc00a1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a7e64e124eec398f4fb0dbf4263d1bb96">getRows</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of rows for current frame in the video source.  <a href="#a7e64e124eec398f4fb0dbf4263d1bb96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVideoReader.html#a096e32912c250dad3e827f1282e1a0ba">getFPS</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the number of frames per second of the video source.  <a href="#a096e32912c250dad3e827f1282e1a0ba"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Extremely versatile class to read from multiple video devices and video/image file formats. </p>
+<p>This class implements a generic video reader interface to read images from different video sources. Currently, it uses one of the following underlying mechanisms to read from them (though programmers could also easily extend this functionality by inheriting from the <a class="el" href="classQVBaseReader.html">QVBaseReader</a> class; see documentation on that class for details):</p>
+<ul>
+<li>Qt native read of several image formats (possibly read in sequence from a given directory).</li>
+<li>QVision implemented read of raw (uncompressed) YUV4MPEG2 video format.</li>
+<li><a href="http://opencv.willowgarage.com/wiki/">OpenCV</a> library as a backend for reading video files and locally connected cameras (USB or firewire).</li>
+<li><a href="http://www.mplayerhq.hu/">MPlayer</a> as a backend application, to open and read frames from a wide variety of video sources, including video files encoded with very different media formats, webcams, digital cameras, internet video streams, or even DVB/TDT devices.</li>
+</ul>
+<p>The class internally implements scaling and RGB/YUV/gray color conversions, so that the programmer can transparently ask for the desired image size and color format when grabbing images.</p>
+<h2><a class="anchor" id="VideoReaderURLFormat">
+Video source identifiers</a></h2>
+<p>Any video source (video files, webcams, remote videos, etc...) is identified by a URL string, with the following <b>available formats</b>: <em>(Notation: [] means optional, {} means alternative)</em>:</p>
+<ul>
+<li><b>Local directory of images</b>: <div class="fragment"><pre class="fragment">dir://path-to-dir-of-images/ </pre></div> Reads every file in the given directory with one of the supported image file formats (<code>jpg</code>, <code>png</code>, <code>bmp</code>, <code>pgm</code>, <code>gif</code>, <code>pbm</code>, <code>ppm</code>, <code>tiff</code>, <code>xbm</code>, <code>xpm</code>). Path can be relative, or absolute. Absolute paths begin with an extra slash. Example: <div class="fragment"><pre class="fragment">dir:///home/user/images/ </pre></div></li>
+</ul>
+<ul>
+<li><b>Local directory of images filtered by name pattern</b>: <div class="fragment"><pre class="fragment">dir://path-to-dir-of-images/glob-pattern </pre></div> Again, path can be relative, or absolute, and absolute paths begin with an extra slash. The <code>glob-pattern</code> can include the typical * and ? wildcard characters. Example: <div class="fragment"><pre class="fragment">dir:///home/user/images/p*-???.jpg </pre></div></li>
+</ul>
+<ul>
+<li><b>Reading directly an uncompressed yuv4mpeg file</b>: <div class="fragment"><pre class="fragment">yuv4mpeg://[path-to-dir-of-videos/]video.yuv </pre></div> Again, path can be relative, or absolute, and absolute paths begin with an extra slash. Example: <div class="fragment"><pre class="fragment">yuv4mpeg:///home/user/videos/football.yuv </pre></div></li>
+</ul>
+<ul>
+<li><b>Reading a local video file through OpenCV (needs the OpenCV library)</b>: <div class="fragment"><pre class="fragment">cvf://[path-to-dir-of-videos/]video.{avi, mpg, dv, ...} </pre></div> Again, path can be relative, or absolute, and absolute paths begin with an extra slash. Example: <div class="fragment"><pre class="fragment">cvf:///home/user/videos/sequence.avi </pre></div></li>
+</ul>
+<ul>
+<li><b>Reading a webcam/firewire camera through OpenCV (needs the OpenCV library)</b>: <div class="fragment"><pre class="fragment">cvc://#number_of_camera </pre></div> Example: <div class="fragment"><pre class="fragment">cvc://#0 </pre></div></li>
+</ul>
+<ul>
+<li><b>Reading a local video file compatible with mplayer (needs mplayer compatibility enabled)</b>: <div class="fragment"><pre class="fragment">file://[path-to-file/]file-name.{avi, mpg, dv, ...} </pre></div> Again, path can be relative, or absolute, and absolute paths begin with an extra slash. Examples: <div class="fragment"><pre class="fragment">file:///home/vision/penguin.dv </pre></div> <div class="fragment"><pre class="fragment">file://../videos/football.avi </pre></div></li>
+</ul>
+<ul>
+<li><b>Remote video file (via http, rtsp, ftp) (needs mplayer compatibility enabled)</b>: <div class="fragment"><pre class="fragment">{http,rtsp,ftp}://domain-name/path-to-file/file.{avi, mpg, dv, ...} </pre></div> Examples: <div class="fragment"><pre class="fragment">rtsp://ficheros.7rm.es/7RM/7rm06-01-071430.rm </pre></div> <div class="fragment"><pre class="fragment">http://perception.inf.um.es/public_data/videos/misc/minuto.avi </pre></div> <div class="fragment"><pre class="fragment">ftp://user:passwd@server.dom/data/video.avi </pre></div></li>
+</ul>
+<ul>
+<li><b>DVD | VCD video track: (needs mplayer compatibility enabled)</b>: <div class="fragment"><pre class="fragment">{dvd,vcd}://{video track}</pre></div> See mplayer system man page for correct URL formation for a specific title, track, device, etc. Examples: <div class="fragment"><pre class="fragment">dvd://2 </pre></div> <div class="fragment"><pre class="fragment">vcd://1 </pre></div></li>
+</ul>
+<ul>
+<li><b>Video 4 linux, video 4 linux 2 camera through mplayer (needs mplayer compatibility enabled)</b>: <div class="fragment"><pre class="fragment">{v4l,v4l2}://{device file} </pre></div> Needs mplayer compatibility enabled. Example: <div class="fragment"><pre class="fragment">v4l2:///dev/video0 </pre></div></li>
+</ul>
+<ul>
+<li><b>TDT channels (needs mplayer compatibility enabled)</b>: <div class="fragment"><pre class="fragment">dvb://CHANNEL-NAME </pre></div> Of course, valid only for systems with adequate DVB hardware and Mplayer DVB subsystem correctly configured (i.e., <code>mplayer/channels.conf</code> must have been configured before, using the corresponding channel scan utility; for example, the <code>scan</code> utility from the package <code>dvd-apps</code>, in the case of Ubuntu Linux). Example: <div class="fragment"><pre class="fragment">dvb://TVE1 </pre></div></li>
+</ul>
+<h3><a class="anchor" id="AbbreviatedVideoReaderURLFormat">
+Abbreviated video source identifiers</a></h3>
+<p>If you do not explicitly specify any of the former URL schemes (<code>dir://</code>, <code>yuv4mpeg://</code>, ...), the following <b>simplified formats</b> are used by default:</p>
+<ul>
+<li>If it is specified just the path to a video file, by default <code>file://</code> is used, except if the file has .yuv extension, in which case <code>yuv4mpeg://</code> is used by default.</li>
+</ul>
+<ul>
+<li>If it is specified just the path to a directory, <code>dir://</code> is used by default. The same is valid if the user specifies a file pattern with a relative or absolute path (i.e. <code>/home/user/dir/imag*.jpg</code> or <code>./img?.bmp</code>, for example).</li>
+</ul>
+<ul>
+<li>If it is specified just the path to a video device, for example, <code>/dev/video0</code> (only in linux), <code>v4l2://</code> is used by default.</li>
+</ul>
+<ul>
+<li>If it is specified a number preceded by <code>#</code> (i.e. <code>#0</code>, <code>#1</code>), <code>cvc://</code> is used by default.</li>
+</ul>
+<ul>
+<li>If it is specified a string starting with <code>ftp</code>. or <code>www</code>., the corresponding schemes <code>ftp://</code> and <code>http://</code> will be used by default.</li>
+</ul>
+<h3><a class="anchor" id="SpecialVideoReaderURLFormat">
+Additional source-specific parameters</a></h3>
+<p>In some cases, the URL string can be used to specify additional source-specific parameters. For example, specifying a frame-rate is commonly required to open <em>v4l2</em> webcams through mplayer. Both extended and simplified formats can include special parameters for tuning device input options. Some additional examples of these parameters include:</p>
+<ul>
+<li><b>width=&lt;value&gt;</b> <br/>
+sets the width of the image frames to be read from the video device.</li>
+<li><b>height=&lt;value&gt;</b> <br/>
+sets the height of the image frames to be read from the video device.</li>
+<li><b>fps=&lt;value&gt;</b> <br/>
+sets the number of frames per second to be read from the video device.</li>
+<li><b>[brightness|contrast|hue|saturation]=[-100, 100]</b> <br/>
+sets the brightness, contrast, hue or saturation for the device.</li>
+</ul>
+<p>You can get a complete list of these options in the MPlayer documentation (option <em>-tv</em>). All these options work only for video 4 Linux, video 4 Linux 2 cameras. They can be included appending a <em>?</em> sign after the URL for the device, and separated with <em>&amp;</em> signs. Some example usages of these URL options follow:</p>
+<ul>
+<li>URL to open a V4L2 device specifying 25 frames per second, image size of 640x480, and minimum brightness: <div class="fragment"><pre class="fragment">v4l2:///dev/video0?height=480&amp;width=640&amp;brightness=-100&amp;fps=25 </pre></div></li>
+<li>The same device and configuration using a simplified URL: <div class="fragment"><pre class="fragment">/dev/video0?height=480&amp;width=640&amp;brightness=-100&amp;fps=25 </pre></div></li>
+</ul>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Please take into account that setting the width and height for the images read from the input device using parameters <em>width</em> and <em>height</em> differs from using rows and cols parameters of the <a class="el" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c" title="Opens a video source given by its URL, trying to use requested options, mode, speed...">open()</a> method. The former tries to configure the device to capture images using a higher or lesser resolution, while the latter simply (post-)scale the images as MPlayer reads them from the input device in their original sizes.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00164">164</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+<hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a5897497caf38c09bace454d3e205ede0"></a><!-- doxytag: member="QVVideoReader::OpenOptions" ref="a5897497caf38c09bace454d3e205ede0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QFlags&lt;<a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b">OpenOption</a>&gt; <a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">QVVideoReader::OpenOptions</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open options for a video source. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b" title="Open options for a video source. Combine them using OR (|) to form a valid QVVideoReader::OpenOption...">QVVideoReader::OpenOption</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00184">184</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a0a3fbed9c7741e2c85c65df76c8e604b"></a><!-- doxytag: member="QVVideoReader::OpenOption" ref="a0a3fbed9c7741e2c85c65df76c8e604b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b">QVVideoReader::OpenOption</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open options for a video source. Combine them using OR (|) to form a valid <a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> value. </p>
+<p>(Note that not all source types support all options). </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0"></a><!-- doxytag: member="Default" ref="a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0" args="" -->Default</em>&nbsp;</td><td>
+<p>Default options: don't include any of the other options. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d"></a><!-- doxytag: member="RealTime" ref="a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d" args="" -->RealTime</em>&nbsp;</td><td>
+<p>Do not try to ignore frame duration (i.e., do not use <code>-benchmark</code> when calling mplayer, or simulate requested fps in other sources such as dir://, yuv4mpeg://, etc.). </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd"></a><!-- doxytag: member="Deinterlaced" ref="a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd" args="" -->Deinterlaced</em>&nbsp;</td><td>
+<p>(Mplayer only) Make mplayer deinterlace the image (odd lines). </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3"></a><!-- doxytag: member="NoLoop" ref="a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3" args="" -->NoLoop</em>&nbsp;</td><td>
+<p>Continue from the beginning of the video source when it reaches the end. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00171">171</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7f437e441e6b0d6c0acbb1edbdc6421"></a><!-- doxytag: member="QVVideoReader::TSourceMode" ref="ae7f437e441e6b0d6c0acbb1edbdc6421" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Possible preferred modes for video sources. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96"></a><!-- doxytag: member="YUVMode" ref="ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96" args="" -->YUVMode</em>&nbsp;</td><td>
+<p>Source outputs YUV images by default. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337"></a><!-- doxytag: member="RGBMode" ref="ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337" args="" -->RGBMode</em>&nbsp;</td><td>
+<p>Source outputs RGB images by default. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36"></a><!-- doxytag: member="GrayOnlyMode" ref="ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36" args="" -->GrayOnlyMode</em>&nbsp;</td><td>
+<p>Source outputs gray only (BW) images by default. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00188">188</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa00f0803b14d9e6a9751f877d27eec83"></a><!-- doxytag: member="QVVideoReader::QVVideoReader" ref="aa00f0803b14d9e6a9751f877d27eec83" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVideoReader::QVVideoReader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a <a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a>. </p>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00076">76</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a918bc822f2b44d3504e19d1cf770c9ce"></a><!-- doxytag: member="QVVideoReader::~QVVideoReader" ref="a918bc822f2b44d3504e19d1cf770c9ce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVideoReader::~QVVideoReader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destroys a <a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a>. </p>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00087">87</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a6f4fe8891a6fcdfbfaf31302af10785c"></a><!-- doxytag: member="QVVideoReader::open" ref="a6f4fe8891a6fcdfbfaf31302af10785c" args="(const QString &amp;url_string, unsigned int &amp;suggested_cols, unsigned int &amp;suggested_rows, unsigned int &amp;suggested_fps, OpenOptions &amp;opts, TSourceMode &amp;source_mode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReader::open </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>url_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_fps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">QVVideoReader::OpenOptions</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_source_mode</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Opens a video source given by its URL, trying to use requested options, mode, speed and output scale sizes. </p>
+<p><b>Note:</b> Please observe that though this class has image scaling capabilities, and thus it always tries to fulfill the user size request, the method could still slightly change the suggested size when opening the video (for example, an odd number of cols is not allowed, due to YUV422 format restrictions). On output, the suggested_rows and suggested_cols parameters will contain the correct values. This is specially useful when suggested_cols = suggested_rows = 0, which is interpreted as asking the grabbed frames to be in its original resolution (i.e. no scaling is performed). Of course, you can also use methods <a class="el" href="classQVVideoReader.html#a05af873ddd0778c8d34a7fe5adc00a1d" title="Returns the number of cols for current frame in the video source.">getCols()</a> and <a class="el" href="classQVVideoReader.html#a7e64e124eec398f4fb0dbf4263d1bb96" title="Returns the number of rows for current frame in the video source.">getRows()</a> on the subsequent grabbed frames to confirm these output values.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>url_string</em>&nbsp;</td><td>Video source identifying URL string. See above for availabe URL formats. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_cols</em>&nbsp;</td><td>Number of requested output cols (0 =&gt; ask for default width of video; otherwise scale). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_rows</em>&nbsp;</td><td>Number of requested output rows (0 =&gt; ask for default height of video; otherwise scale). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_fps</em>&nbsp;</td><td>Number of requested output fps (0 =&gt; default value of source; otherwise simulate delay). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>opts</em>&nbsp;</td><td>Camera opening options (see <a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a>). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>source_mode</em>&nbsp;</td><td>On output, mode preferred by the video source (see <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">QVVideoReader::TSourceMode</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the video source was opened successfully, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00097">97</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#a9db072c89f20cf111f014bf8d9a48cc6">open()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9db072c89f20cf111f014bf8d9a48cc6"></a><!-- doxytag: member="QVVideoReader::open" ref="a9db072c89f20cf111f014bf8d9a48cc6" args="(const QString &amp;url_string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReader::open </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>url_string</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Opens a video source given by its URL, using default opening values. </p>
+<p>This is an overloaded form of the former method, provided by convenience. It will open the requested video source using default values of for the rest of input parameters (i.e. suggested_cols = suggested_rows = suggested_fps = 0, suggested_opts = Default, source_mode = YUVMode).</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>url_string</em>&nbsp;</td><td>Video source identifying URL string. See above for availabe URL formats. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the video source was successfully opened, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00239">239</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dacd1ed256f1f48a193314d7e876140"></a><!-- doxytag: member="QVVideoReader::grab" ref="a9dacd1ed256f1f48a193314d7e876140" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReader::grab </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Grabs next frame in video source, saving corresponding image(s) in class internal state. </p>
+<p>This is the only method which makes the video source to advance to the next frame. Use any of the <a class="el" href="classQVVideoReader.html#a7c9765c5ed51cdf2349e456dc7a6f3f2" title="Gets current frame in the form of a gray image.">QVVideoReader::getGrayImage()</a>, <a class="el" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093" title="Gets current frame in the form of a 3 channel RGB image.">QVVideoReader::getRGBImage()</a>, or <a class="el" href="classQVVideoReader.html#af79c7379cbbfc613b64d21a74eb7f8eb" title="Gets current frame in the form of a gray image channel (Y) and two chrominance image...">QVVideoReader::getYUVImage()</a> methods after grabbing to get the corresponding grabbed image(s).</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the video frame was successfully captured, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00315">315</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c9765c5ed51cdf2349e456dc7a6f3f2"></a><!-- doxytag: member="QVVideoReader::getGrayImage" ref="a7c9765c5ed51cdf2349e456dc7a6f3f2" args="(QVImage&lt; uChar &gt; &amp;imageGray)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::getGrayImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageGray</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets current frame in the form of a gray image. </p>
+<p>This method does NOT captures a new image; instead, it returns the last captured one. Use the <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140" title="Grabs next frame in video source, saving corresponding image(s) in class internal...">QVVideoReader::grab()</a> to advance to the next frame.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>imageGray</em>&nbsp;</td><td>captured gray image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00423">423</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7922b56a1ea4e76444aeda9ea4a3d093"></a><!-- doxytag: member="QVVideoReader::getRGBImage" ref="a7922b56a1ea4e76444aeda9ea4a3d093" args="(QVImage&lt; uChar, 3 &gt; &amp;imageRGB)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::getRGBImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageRGB</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets current frame in the form of a 3 channel RGB image. </p>
+<p>This method does NOT captures a new image; instead, it returns the last captured one. Use the <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140" title="Grabs next frame in video source, saving corresponding image(s) in class internal...">QVVideoReader::grab()</a> to advance to the next frame.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>imageRGB</em>&nbsp;</td><td>captured RGB image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00456">456</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e6dfc8f13e4aa4792c589ddd41dcb71"></a><!-- doxytag: member="QVVideoReader::getRGBImage" ref="a0e6dfc8f13e4aa4792c589ddd41dcb71" args="(QVImage&lt; uChar &gt; &amp;imageR, QVImage&lt; uChar &gt; &amp;imageG, QVImage&lt; uChar &gt; &amp;imageB)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::getRGBImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageG</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageB</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets current frame in the form of three separated Red, Green and Blue channel images. </p>
+<p>This method does NOT captures a new image; instead, it returns the last captured one. Use the <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140" title="Grabs next frame in video source, saving corresponding image(s) in class internal...">QVVideoReader::grab()</a> to advance to the next frame.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>imageR</em>&nbsp;</td><td>captured Red image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageG</em>&nbsp;</td><td>captured Green image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageB</em>&nbsp;</td><td>captured Blue image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00486">486</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af79c7379cbbfc613b64d21a74eb7f8eb"></a><!-- doxytag: member="QVVideoReader::getYUVImage" ref="af79c7379cbbfc613b64d21a74eb7f8eb" args="(QVImage&lt; uChar &gt; &amp;imageY, QVImage&lt; uChar &gt; &amp;imageU, QVImage&lt; uChar &gt; &amp;imageV)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::getYUVImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageU</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageV</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets current frame in the form of a gray image channel (Y) and two chrominance image channels (U and V). </p>
+<p>The U and V images will be at half the resolution (<img class="formulaInl" alt="$ rows/2 \times cols/2 $" src="form_5.png"/>) with respect to the Y image. This method does NOT captures a new image; instead, it returns the last captured one. Use the <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140" title="Grabs next frame in video source, saving corresponding image(s) in class internal...">QVVideoReader::grab()</a> to advance to the next frame.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>imageY</em>&nbsp;</td><td>captured Y image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageU</em>&nbsp;</td><td>captured U image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageV</em>&nbsp;</td><td>captured V image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00537">537</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afea030febc7f6e776968d10079002e37"></a><!-- doxytag: member="QVVideoReader::getLength" ref="afea030febc7f6e776968d10079002e37" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVVideoReader::getLength </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the length of the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Gets the length of the video source (if possible), usually in number of frames (though, depending on the type of source, it could be in any othe unit, such as seconds or milliseconds, for example). It returns 0 if the value is not available. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00619">619</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac169b0d7746551424f5ef4fe471a9c7d"></a><!-- doxytag: member="QVVideoReader::getPos" ref="ac169b0d7746551424f5ef4fe471a9c7d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVVideoReader::getPos </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the current position in the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Gets the current position in the video source length of the video source (if possible), usually in number of frames (though, depending on the type of source, it could be in any othe unit, such as seconds or milliseconds, for example). It returns 0 if the value is not available. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00624">624</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9f4cfa4e439e0bb5ffd377e514de091"></a><!-- doxytag: member="QVVideoReader::close" ref="ab9f4cfa4e439e0bb5ffd377e514de091" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReader::close </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Closes the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the video source was successfully closed, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00587">587</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#a918bc822f2b44d3504e19d1cf770c9ce">~QVVideoReader()</a>, and <a class="el" href="classQVVideoReaderBlock.html#aa516e0006785df268ed21849cba1ef79">QVVideoReaderBlock::~QVVideoReaderBlock()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef184d33d65b5e7cca33189a148f1037"></a><!-- doxytag: member="QVVideoReader::seek" ref="aef184d33d65b5e7cca33189a148f1037" args="(int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVVideoReader::seek </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pos</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tries to move to a given position in the video source (if possible). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>Position to move to (usually in number of frames, but other units, such as seconds or milliseconds are also possible, depending on the specific source). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True on success, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8cpp_source.html#l00614">614</a> of file <a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24596d37c6e4c6098f2460d22b9c33c8"></a><!-- doxytag: member="QVVideoReader::sourceOpened" ref="a24596d37c6e4c6098f2460d22b9c33c8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::sourceOpened </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signal emitted when video source has been opened. </p>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c">open()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a887bd81fc95920d2fd8123949db59086"></a><!-- doxytag: member="QVVideoReader::sourceClosed" ref="a887bd81fc95920d2fd8123949db59086" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::sourceClosed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signal emitted when video source has been closed. </p>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#ab9f4cfa4e439e0bb5ffd377e514de091">close()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1953e03f3e394000b4f322838af2bc85"></a><!-- doxytag: member="QVVideoReader::newGrab" ref="a1953e03f3e394000b4f322838af2bc85" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVideoReader::newGrab </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signal emitted when a new frame has been grabbed. </p>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140">grab()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9aec25744053d21fb2b56f37e5187843"></a><!-- doxytag: member="QVVideoReader::getURL" ref="a9aec25744053d21fb2b56f37e5187843" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString QVVideoReader::getURL </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the complete URL of the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Complete URL of the video source. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00336">336</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca5a2e877a2fac39ada8b47382849881"></a><!-- doxytag: member="QVVideoReader::getScheme" ref="aca5a2e877a2fac39ada8b47382849881" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString QVVideoReader::getScheme </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the scheme of the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Scheme (file, <code>dir</code>, <code>yuv4mpeg</code>, <code>cvc</code>, <code>cvf</code>, ...; see above) of the video source. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00341">341</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05af873ddd0778c8d34a7fe5adc00a1d"></a><!-- doxytag: member="QVVideoReader::getCols" ref="a05af873ddd0778c8d34a7fe5adc00a1d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int QVVideoReader::getCols </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of cols for current frame in the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of cols for current frame in video source. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00346">346</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e64e124eec398f4fb0dbf4263d1bb96"></a><!-- doxytag: member="QVVideoReader::getRows" ref="a7e64e124eec398f4fb0dbf4263d1bb96" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int QVVideoReader::getRows </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of rows for current frame in the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of rows for current frame in video source. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00351">351</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a096e32912c250dad3e827f1282e1a0ba"></a><!-- doxytag: member="QVVideoReader::getFPS" ref="a096e32912c250dad3e827f1282e1a0ba" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int QVVideoReader::getFPS </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of frames per second of the video source. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of fps in video source. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvideoreader_8h_source.html#l00356">356</a> of file <a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvio/<a class="el" href="qvvideoreader_8h_source.html">qvvideoreader.h</a></li>
+<li>src/qvio/<a class="el" href="qvvideoreader_8cpp_source.html">qvvideoreader.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

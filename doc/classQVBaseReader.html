@@ -1,0 +1,454 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVBaseReader Class Reference</h1><!-- doxytag: class="QVBaseReader" -->
+<p>Pure virtual base class to create input video reader components for the QVision architecture.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvbasereader_8h_source.html">QVBaseReader</a>&gt;</code></p>
+
+<p>Inherited by QVDirReader, QVMPlayerReader, QVOpenCVReader, and QVYUV4MPEG2Reader.</p>
+
+<p><a href="classQVBaseReader-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#a23a3327d489d81c6d7954f108bb40d53">QVBaseReader</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>.  <a href="#a23a3327d489d81c6d7954f108bb40d53"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#a16845a685180769b1d526de4531f1729">~QVBaseReader</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>.  <a href="#a16845a685180769b1d526de4531f1729"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34">open</a> (const QString &amp;url_string, unsigned int &amp;suggested_cols, unsigned int &amp;suggested_rows, unsigned int &amp;suggested_fps, <a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">QVVideoReader::OpenOptions</a> &amp;suggested_opts, <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a> &amp;source_mode)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pure virtual open method.  <a href="#a2103cc4c523995a94b1f38543b7f0d34"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51">close</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pure virtual close method.  <a href="#adc30e77972461b2ee1ec46ebfdacbd51"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d">grab</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;imgY_R, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;imgU_G, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;imgV_B)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pure virtual grab method.  <a href="#a16590831457eda6dd527834408b6cb1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997">getLength</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pure virtual method to get the length of the video.  <a href="#ac0b9b649c43720e01d1fff5ac2516997"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#ab480a1785c777028fc4e73e86139fac8">getPos</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pure virtual method to get the current position in the video.  <a href="#ab480a1785c777028fc4e73e86139fac8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBaseReader.html#a7f47dba42a7dbdd9c04b364b8bf890b0">seek</a> (int pos)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pure virtual method to set the current position in the video.  <a href="#a7f47dba42a7dbdd9c04b364b8bf890b0"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Pure virtual base class to create input video reader components for the QVision architecture. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Normal QVision users do not need to worry about this class and its derived classes, unless they want to implement new video sources (apart from the wide range of video sources supported by QVision; see <a class="el" href="classQVVideoReader.html">QVVideoReader</a> for a comprehensive list of supported video sources).</dd></dl>
+<p>This class is pure virtual, and should not be used by normal QVision users (except when implementing their own video sources, such as, say, direct driver-based IEEE 1394 or V4L2 cameras; remember, though, that <a class="el" href="classQVVideoReader.html">QVVideoReader</a> can read almost any kind of video input source, including video files and live cameras, such as USB webcams, IEEE 1394 cameras, remote streaming videos and even directories of image files, among many other possibilities). Any derived classes of <a class="el" href="classQVBaseReader.html">QVBaseReader</a> (currently QVMPlayerReader, QVOpenCVReader, QVDirReader and QVYUV4MPEG2Reader) are the (internal) classes responsible for implementing all this functionality. This classes are not documented because they will not be used directly by final users, though taking a look at their sources could be useful for new video sources implementors.</p>
+<p>Implementors of new kind of <a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a> classes should only have to redefine these six pure virtual methods:</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34" title="Pure virtual open method.">open</a>(<span class="keyword">const</span> QString &amp; url_string,
+                  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_cols,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_rows, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_fps,
+                  <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> &amp; suggested_opts, <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">QVVideoReader::TSourceMode</a> &amp; source_mode) = 0;
+
+<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51" title="Pure virtual close method.">close</a>() = 0;
+
+<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d" title="Pure virtual grab method.">grab</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imgY_R, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imgU_G, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imgV_B) = 0;
+
+<span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997" title="Pure virtual method to get the length of the video.">getLength</a>() = 0;
+
+<span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classQVBaseReader.html#ab480a1785c777028fc4e73e86139fac8" title="Pure virtual method to get the current position in the video.">getPos</a>() = 0;
+
+<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a7f47dba42a7dbdd9c04b364b8bf890b0" title="Pure virtual method to set the current position in the video.">seek</a>(<span class="keywordtype">int</span> pos) = 0;
+</pre></div><p>Whose desired behaviour is almost self-explanatory (if we are confident with the <a class="el" href="classQVVideoReader.html">QVVideoReader</a> class program interface):</p>
+<ul>
+<li>The first one (<a class="el" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34">QVBaseReader::open</a>) should open the video source specified by the string <em>url_string</em>, trying to open it with the suggested <em>cols</em>, <em>rows</em> and <em>fps</em>. The <em>url_string</em> is a generic QString that will be used differenty by the diferent classes inheriting from <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>, according to their needs (see code source for those classes and <a class="el" href="classQVVideoReader.html">QVVideoReader</a> documentation for some examples). The same can be said for the rest of suggested parameters (<em>rows</em>, <em>cols</em>, <em>fps</em> and <em>opening</em> options). Finally, the output parameter <em>source_mode</em> (of type <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a>) will return <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96">QVVideoReader::YUVMode</a>, <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337">QVVideoReader::RGBMode</a> or <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36">QVVideoReader::GrayOnlyMode</a> if the capture method of the source returns YUV, RGB or gray images, respectively, by default. If the video source allows to choose for any of these modes, this parameter could also be used as input, taking into account that it is only a recomendation and, as is the case with <em>suggested_rows</em>, <em>suggested_cols</em> and <em>suggested_fps</em>, the output value will be the mode that will be really used. The method must indicate a successful opening by returning true (and updating the corresponding <em>suggested_cols</em>, <em>suggested_rows</em> and <em>suggested_fps</em> output values to the really obtained ones, which could coincide or not with the suggested input values), or false, if there was any problem opening the source.</li>
+</ul>
+<ul>
+<li>The second (<a class="el" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51">QVBaseReader::close</a>) must close the video source, returning true on success.</li>
+</ul>
+<ul>
+<li>The third (<a class="el" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d">QVBaseReader::grab</a>) must grab either the Y, U and V channel images in the corresponding variable parameters, with respective sizes <img class="formulaInl" alt="$ cols \times rows $" src="form_3.png"/>, <img class="formulaInl" alt="$ cols/2 \times rows/2 $" src="form_4.png"/> and <img class="formulaInl" alt="$ cols/2 \times rows/2 $" src="form_4.png"/> , or the R, G and B channel images, in this case the three of them with <img class="formulaInl" alt="$ cols \times rows $" src="form_3.png"/> size. If the YUV or RGB images are the ones that the method will fill is determined by the value <em>source_mode</em> returned by the open method (see <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a>). In all cases the values <em>cols</em> and <em>rows</em> (i.e., the size of the output images) will correspond with the values <em>suggested_cols</em> and <em>suggested_rows</em> as returned by the corresponding <a class="el" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34">open</a> method. The <a class="el" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d">grab</a> method should return true if grabbing was succesful, or false otherwise (for example, if the video source was closed).</li>
+</ul>
+<ul>
+<li>The fourth method (<a class="el" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997">QVBaseReader::getLength</a>) must return the length of the video, as an integer value. This value is usually expressed in total number of frames, though it can also be 0 if it is not available (for example, for live video cameras), or even in any other integer units (such as seconds, milliseconds, or whatever, depending on the kind of video source).</li>
+</ul>
+<ul>
+<li>The fifth method (<a class="el" href="classQVBaseReader.html#ab480a1785c777028fc4e73e86139fac8">QVBaseReader::getPos</a>) must return the current position in the video, again as an integer value (the same comments for units on the former method apply).</li>
+</ul>
+<ul>
+<li>Finally, the sixth method (<a class="el" href="classQVBaseReader.html#a7f47dba42a7dbdd9c04b364b8bf890b0">QVBaseReader::seek</a>) must set, if possible, the current position on the video, again in the same units as the former two methods, returning true if the seek operation was succesful.</li>
+</ul>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd></dd></dl>
+<ul>
+<li>Remember that each video source will have a preferred Gray, YUV or RGB output mode. Thus, if a given source has, say, a YUV output preferred mode (such as in a QVMPlayerReader, for example), there is no point in performing a YUV to RGB conversion inside the corresponding inheriting class of <a class="el" href="classQVBaseReader.html">QVBaseReader</a>, because this is implemented for every video source in the more general class <a class="el" href="classQVVideoReader.html">QVVideoReader</a> (which is itself client of this <a class="el" href="classQVBaseReader.html">QVBaseReader</a> class). An analogous argument holds for the converse case -preferred output mode RGB (as in a QVOpenCVReaderBlock), and desired YUV output-, as well as for image rescalings (resizing), which are also implemented in <a class="el" href="classQVVideoReader.html">QVVideoReader</a>, and thus should not be performed by the inheriting class. Thus, the suggested <em>cols</em> and <em>rows</em> parameters should only be treated by the video source itself (for example, to suggest an adequate opening size for a camera), and not as a rescaling after the capture (which is in any case performed by the client class <a class="el" href="classQVVideoReader.html">QVVideoReader</a>).</li>
+</ul>
+<ul>
+<li>Anyway, the QVision library currently only makes these conversions/resizings if the Intel IPP library module has been enabled; otherwise, the user will be presented an according error message, and will be requested to use the other set of three images, and then perform the conversion in its own program.</li>
+</ul>
+<ul>
+<li>When reimplementing this class for gray only sources, use <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36">QVVideoReader::GrayOnlyMode</a> (see <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a>) and fill the Y image in the reimplemented grab method with the gray image, and then two 128 valued images downscaled to 1/2 of its size for the U and V channels.</li>
+</ul>
+<ul>
+<li>Of course, in every case the reimplemented <a class="el" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d">grab</a> method for the <a class="el" href="classQVBaseReader.html">QVBaseReader</a> subclass must return R, G and B or Y, U and V images with corresponding correct sizes (i.e., same sizes for R, G, and B channels, and U and V channels half sized with respect to the Y channel). Otherwise a fatal error will occur when trying to read from the video source, and the application will immediately abort.</li>
+</ul>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a> <a class="el" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbasereader_8h_source.html#l00136">136</a> of file <a class="el" href="qvbasereader_8h_source.html">qvbasereader.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a23a3327d489d81c6d7954f108bb40d53"></a><!-- doxytag: member="QVBaseReader::QVBaseReader" ref="a23a3327d489d81c6d7954f108bb40d53" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBaseReader::QVBaseReader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>. </p>
+
+<p>Definition at line <a class="el" href="qvbasereader_8h_source.html#l00140">140</a> of file <a class="el" href="qvbasereader_8h_source.html">qvbasereader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16845a685180769b1d526de4531f1729"></a><!-- doxytag: member="QVBaseReader::~QVBaseReader" ref="a16845a685180769b1d526de4531f1729" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBaseReader::~QVBaseReader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destroys a <a class="el" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>. </p>
+
+<p>Definition at line <a class="el" href="qvbasereader_8h_source.html#l00143">143</a> of file <a class="el" href="qvbasereader_8h_source.html">qvbasereader.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2103cc4c523995a94b1f38543b7f0d34"></a><!-- doxytag: member="QVBaseReader::open" ref="a2103cc4c523995a94b1f38543b7f0d34" args="(const QString &amp;url_string, unsigned int &amp;suggested_cols, unsigned int &amp;suggested_rows, unsigned int &amp;suggested_fps, QVVideoReader::OpenOptions &amp;suggested_opts, QVVideoReader::TSourceMode &amp;source_mode)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool QVBaseReader::open </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>url_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_fps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">QVVideoReader::OpenOptions</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>suggested_opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">QVVideoReader::TSourceMode</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>source_mode</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pure virtual open method. </p>
+<p>Reimplementations of this method should open the video source specified by <em>url_string</em>, trying to open it with the suggested <em>cols</em>, <em>rows</em> and <em>fps</em>. The method must indicate a successful opening by returning true (and updating the corresponding <em>suggested_cols</em>, <em>suggested_rows</em> and <em>suggested_fps</em> output values to the really obtained ones, which could coincide or not with the suggested input values), or false, if there was any problem opening the source. The same can be said for the suggested opening options. Finally, the output parameter source_mode will return <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96">QVVideoReader::YUVMode</a>, <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337">QVVideoReader::RGBMode</a> or <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36">QVVideoReader::GrayOnlyMode</a> if the capture method of the source returns YUV, RGB or gray images, respectively, by default. If the video source allows to choose for any of three modes, this parameter could also be used as input, taking into account that it is only a recomendation and, as is the case with <em>suggested_rows</em>, <em>suggested_cols</em> and <em>suggested_fps</em>, the output value will be the mode that will be really used.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>url_string</em>&nbsp;</td><td>QString determining the video source. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_cols</em>&nbsp;</td><td>Suggested number of columns (as input). On return contains real number of columns (as output). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_rows</em>&nbsp;</td><td>Suggested number of rows (as input). On return contains real number of rows (as output). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_fps</em>&nbsp;</td><td>Suggested fps (as input). On return contains real fps (as output). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>suggested_opts</em>&nbsp;</td><td>Suggested options (as input). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>source_mode</em>&nbsp;</td><td>Set to suggested source mode (as input) and set to source preferred mode (on output).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if success, false in case of failure. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c">QVVideoReader::open()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc30e77972461b2ee1ec46ebfdacbd51"></a><!-- doxytag: member="QVBaseReader::close" ref="adc30e77972461b2ee1ec46ebfdacbd51" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool QVBaseReader::close </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pure virtual close method. </p>
+<p>Reimplementations of this method should close the video source.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if success, false in case of failure. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#ab9f4cfa4e439e0bb5ffd377e514de091">QVVideoReader::close()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16590831457eda6dd527834408b6cb1d"></a><!-- doxytag: member="QVBaseReader::grab" ref="a16590831457eda6dd527834408b6cb1d" args="(QVImage&lt; uChar, 1 &gt; &amp;imgY_R, QVImage&lt; uChar, 1 &gt; &amp;imgU_G, QVImage&lt; uChar, 1 &gt; &amp;imgV_B)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool QVBaseReader::grab </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imgY_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imgU_G</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imgV_B</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pure virtual grab method. </p>
+<p>Reimplementations of this method should grab Y, U and V channel images in the corresponding variable parameters, with respective sizes <img class="formulaInl" alt="$ cols \times rows $" src="form_3.png"/> , <img class="formulaInl" alt="$ cols/2 \times rows/2 $" src="form_4.png"/> and <img class="formulaInl" alt="$ cols/2 \times rows/2 $" src="form_4.png"/> (with <em>cols</em> and <em>rows</em> as returned by the <a class="el" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34">open()</a> method), if the preferred source mode as returned by <a class="el" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34">open</a> was <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36">QVVideoReader::GrayOnlyMode</a> or <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96">QVVideoReader::YUVMode</a>, or the R, G and B channels all with sizes <img class="formulaInl" alt="$ cols \times rows $" src="form_3.png"/>, if the preferred source mode returned by <a class="el" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34">open</a> was <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337">QVVideoReader::RGBMode</a>. In every case the method must return true if grabbing was succesful, or false otherwise (for example, if the camera was closed). When reimplementing this class for gray only sources (@ ref <a class="el" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36" title="Source outputs gray only (BW) images by default.">QVVideoReader::GrayOnlyMode</a>), fill the Y image in the reimplemented grab method with the gray image, and then two 128 valued images downscaled to 1/2 of its size (<em>cols</em> and <em>rows</em>) for the U and V channels.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>imgY_R</em>&nbsp;</td><td>On return, contains the grabbed Y/R image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imgU_G</em>&nbsp;</td><td>On return, contains the grabbed U/G image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imgV_B</em>&nbsp;</td><td>On return, contains the grabbed V/B image.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if success, false in case of failure. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140">QVVideoReader::grab()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0b9b649c43720e01d1fff5ac2516997"></a><!-- doxytag: member="QVBaseReader::getLength" ref="ac0b9b649c43720e01d1fff5ac2516997" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int QVBaseReader::getLength </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pure virtual method to get the length of the video. </p>
+<p>Reimplementations of this method should inform of the length of the video, as an integer value. This value should preferrably be in total number of frames units, though it can also be in any other integer units (such as seconds, milliseconds, or whatever) if frames units are not managed by the corresponding video source. Also, a length equal to 0 should be returned if the information is not available (for example, for live cameras, remote streaming videos, and the like).</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Total number of frames (or any other length unit; see above) of video source. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#afea030febc7f6e776968d10079002e37">QVVideoReader::getLength()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab480a1785c777028fc4e73e86139fac8"></a><!-- doxytag: member="QVBaseReader::getPos" ref="ab480a1785c777028fc4e73e86139fac8" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int QVBaseReader::getPos </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pure virtual method to get the current position in the video. </p>
+<p>Reimplementations of this method should inform of the current position in the video (usually in number of frames units, but could also be in other units, such as seconds or milliseconds; see comments on method <a class="el" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997">getLength</a> above).</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Current position in video source. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#ac169b0d7746551424f5ef4fe471a9c7d">QVVideoReader::getPos()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f47dba42a7dbdd9c04b364b8bf890b0"></a><!-- doxytag: member="QVBaseReader::seek" ref="a7f47dba42a7dbdd9c04b364b8bf890b0" args="(int pos)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool QVBaseReader::seek </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pos</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pure virtual method to set the current position in the video. </p>
+<p>Reimplementations of this method should set the current position in the video (in number of frames units, but could also be in other units, such as seconds or milliseconds; see comments on method <a class="el" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997">getLength</a> above).</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>Desired position in video source.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if success, false in case of failure. </dd></dl>
+
+<p>Referenced by <a class="el" href="classQVVideoReader.html#aef184d33d65b5e7cca33189a148f1037">QVVideoReader::seek()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvio/<a class="el" href="qvbasereader_8h_source.html">qvbasereader.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

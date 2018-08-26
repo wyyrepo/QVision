@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QV2DMap Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QV2DMap" -->
+<p>Fast 2D nearest neigbour access data container.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qv2dmap_8h_source.html">QV2DMap</a>&gt;</code></p>
+
+<p><a href="classQV2DMap-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV2DMap.html#a74346550304a0802245ccfc8d28ae9f0">add</a> (const QPointF &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a 2D point to the container.  <a href="#a74346550304a0802245ccfc8d28ae9f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV2DMap.html#ab5eb8ccd6a25a52245439811d0a72fae">QV2DMap</a> (const QList&lt; QPointF &gt; &amp;points=QList&lt; QPointF &gt;())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#ab5eb8ccd6a25a52245439811d0a72fae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QPointF&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV2DMap.html#a3dbbb115bfd5395a44dd643a52075f2f">getClosestPoint</a> (const QPointF &amp;point) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the closest point to a given one from the container.  <a href="#a3dbbb115bfd5395a44dd643a52075f2f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQV2DMap.html#a7ce06d11042ea4727b22024a732ecdca">getClosestPoints</a> (const QPointF &amp;point, const int n) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the closest points to a given one from the container.  <a href="#a7ce06d11042ea4727b22024a732ecdca"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Fast 2D nearest neigbour access data container. </p>
+<p>This class represents a container for 2D points on the real plane.</p>
+<p>Such containers are created from a list of QPointF objects, or initialized <em>manually</em>, inserting the points with the <a class="el" href="classQV2DMap.html#a74346550304a0802245ccfc8d28ae9f0">add</a> method:</p>
+<div class="fragment"><pre class="fragment">QList&lt;QPointF&gt; points;
+points.append(QPointF(10.7,20.1));
+points.append(QPointF(15.5,9.2));
+
+[...]
+
+<a class="code" href="classQV2DMap.html" title="Fast 2D nearest neigbour access data container.">QV2DMap</a> pointMap1(points), pointMap2;
+pointMap2.<a class="code" href="classQV2DMap.html#a74346550304a0802245ccfc8d28ae9f0" title="Adds a 2D point to the container.">add</a>(QPointF(34.7, 12.9));
+pointMap2.<a class="code" href="classQV2DMap.html#a74346550304a0802245ccfc8d28ae9f0" title="Adds a 2D point to the container.">add</a>(QPointF(99.0, 1.2));
+
+[...]
+</pre></div><p>The method <a class="el" href="classQV2DMap.html#a7ce06d11042ea4727b22024a732ecdca">getClosestPoints</a> can be used to obtain the points registered in the container, which are closer to a given point. </p>
+
+<p>Definition at line <a class="el" href="qv2dmap_8h_source.html#l00061">61</a> of file <a class="el" href="qv2dmap_8h_source.html">qv2dmap.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab5eb8ccd6a25a52245439811d0a72fae"></a><!-- doxytag: member="QV2DMap::QV2DMap" ref="ab5eb8ccd6a25a52245439811d0a72fae" args="(const QList&lt; QPointF &gt; &amp;points=QList&lt; QPointF &gt;())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QV2DMap::QV2DMap </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points</em> = <code>QList&lt;QPointF&gt;()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>points</em>&nbsp;</td><td>Points to insert in the container. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qv2dmap_8cpp_source.html#l00042">42</a> of file <a class="el" href="qv2dmap_8cpp_source.html">qv2dmap.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a74346550304a0802245ccfc8d28ae9f0"></a><!-- doxytag: member="QV2DMap::add" ref="a74346550304a0802245ccfc8d28ae9f0" args="(const QPointF &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QV2DMap::add </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds a 2D point to the container. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Point to add to the container. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qv2dmap_8cpp_source.html#l00037">37</a> of file <a class="el" href="qv2dmap_8cpp_source.html">qv2dmap.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQV2DMap.html#ab5eb8ccd6a25a52245439811d0a72fae">QV2DMap()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3dbbb115bfd5395a44dd643a52075f2f"></a><!-- doxytag: member="QV2DMap::getClosestPoint" ref="a3dbbb115bfd5395a44dd643a52075f2f" args="(const QPointF &amp;point) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF QV2DMap::getClosestPoint </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the closest point to a given one from the container. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If the container is empty, return the default value for QPointF. Else returns the point which is closer to the given one. </dd></dl>
+
+<p>Definition at line <a class="el" href="qv2dmap_8cpp_source.html#l00048">48</a> of file <a class="el" href="qv2dmap_8cpp_source.html">qv2dmap.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ce06d11042ea4727b22024a732ecdca"></a><!-- doxytag: member="QV2DMap::getClosestPoints" ref="a7ce06d11042ea4727b22024a732ecdca" args="(const QPointF &amp;point, const int n) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QPointF &gt; QV2DMap::getClosestPoints </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the closest points to a given one from the container. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If the container holds <em>n</em> points or less, the return value is a list containing those points. Else, returns the <em>n</em> points contained which are closer to the given one. </dd></dl>
+
+<p>Definition at line <a class="el" href="qv2dmap_8cpp_source.html#l00096">96</a> of file <a class="el" href="qv2dmap_8cpp_source.html">qv2dmap.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qv2dmap_8h_source.html">qv2dmap.h</a></li>
+<li>src/qvmath/<a class="el" href="qv2dmap_8cpp_source.html">qv2dmap.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/getCameraFocals.cpp</h1><a href="getCameraFocals_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;qvprojective.h&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="comment">/*</span>
+<a name="l00028"></a>00028 <span class="comment"># Get coefficients for polynomial:</span>
+<a name="l00029"></a>00029 <span class="comment">#       a x^3 + b x^2 + c x + d</span>
+<a name="l00030"></a>00030 <span class="comment">with(linalg):</span>
+<a name="l00031"></a>00031 <span class="comment">Mf := Matrix(4,4,symbol=mf):</span>
+<a name="l00032"></a>00032 <span class="comment">Mg := Matrix(4,4,symbol=mg):</span>
+<a name="l00033"></a>00033 <span class="comment">d := det(Mf - x Mg):</span>
+<a name="l00034"></a>00034 <span class="comment"></span>
+<a name="l00035"></a>00035 <span class="comment">CodeGeneration[C](Vector([ coeff(d, x, 0), coeff(d, x, 1), coeff(d, x, 2), coeff(d, x, 3), coeff(d, x, 4) ]), optimize = true);</span>
+<a name="l00036"></a>00036 <span class="comment">*/</span>
+<a name="l00037"></a>00037 <span class="comment">// Get coefficients &#39;a_i&#39; for the following polynomial:</span>
+<a name="l00038"></a>00038 <span class="comment">//      determinant(Mf - x Mg) = a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0</span>
+<a name="l00039"></a>00039 QList&lt;double&gt; getPolynomialCoefficientsForMf_xMg(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Mf, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Mg)
+<a name="l00040"></a>00040         {
+<a name="l00041"></a>00041         <span class="keywordtype">double</span> mf[4][4], mg[4][4];
+<a name="l00042"></a>00042         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+<a name="l00043"></a>00043                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)
+<a name="l00044"></a>00044                         {
+<a name="l00045"></a>00045                         mf[i][j] = Mf(i,j);
+<a name="l00046"></a>00046                         mg[i][j] = Mg(i,j);
+<a name="l00047"></a>00047                         }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="keyword">const</span> <span class="keywordtype">double</span> t1 = mf[0][0] * mf[1][1];
+<a name="l00050"></a>00050         <span class="keyword">const</span> <span class="keywordtype">double</span> t2 = mf[2][2] * mf[3][3];
+<a name="l00051"></a>00051         <span class="keyword">const</span> <span class="keywordtype">double</span> t4 = mf[2][3] * mf[3][2];
+<a name="l00052"></a>00052         <span class="keyword">const</span> <span class="keywordtype">double</span> t6 = mf[0][0] * mf[2][1];
+<a name="l00053"></a>00053         <span class="keyword">const</span> <span class="keywordtype">double</span> t7 = mf[1][2] * mf[3][3];
+<a name="l00054"></a>00054         <span class="keyword">const</span> <span class="keywordtype">double</span> t9 = mf[1][3] * mf[3][2];
+<a name="l00055"></a>00055         <span class="keyword">const</span> <span class="keywordtype">double</span> t11 = mf[0][0] * mf[3][1];
+<a name="l00056"></a>00056         <span class="keyword">const</span> <span class="keywordtype">double</span> t12 = mf[1][2] * mf[2][3];
+<a name="l00057"></a>00057         <span class="keyword">const</span> <span class="keywordtype">double</span> t14 = mf[1][3] * mf[2][2];
+<a name="l00058"></a>00058         <span class="keyword">const</span> <span class="keywordtype">double</span> t16 = mf[1][0] * mf[2][1];
+<a name="l00059"></a>00059         <span class="keyword">const</span> <span class="keywordtype">double</span> t17 = mf[0][2] * mf[3][3];
+<a name="l00060"></a>00060         <span class="keyword">const</span> <span class="keywordtype">double</span> t19 = mf[0][3] * mf[3][2];
+<a name="l00061"></a>00061         <span class="keyword">const</span> <span class="keywordtype">double</span> t21 = mf[1][0] * mf[0][1];
+<a name="l00062"></a>00062         <span class="keyword">const</span> <span class="keywordtype">double</span> t24 = mf[1][0] * mf[3][1];
+<a name="l00063"></a>00063         <span class="keyword">const</span> <span class="keywordtype">double</span> t25 = mf[0][3] * mf[2][2];
+<a name="l00064"></a>00064         <span class="keyword">const</span> <span class="keywordtype">double</span> t27 = mf[0][2] * mf[2][3];
+<a name="l00065"></a>00065         <span class="keyword">const</span> <span class="keywordtype">double</span> t29 = t1 * t2 - t1 * t4 - t6 * t7 + t6 * t9 + t11 * t12 - t11 * t14 + t16 * t17 - t16 * t19 + t21 * t4 - t21 * t2 + t24 * t25 - t24 * t27;
+<a name="l00066"></a>00066         <span class="keyword">const</span> <span class="keywordtype">double</span> t30 = mf[2][0] * mf[0][1];
+<a name="l00067"></a>00067         <span class="keyword">const</span> <span class="keywordtype">double</span> t33 = mf[2][0] * mf[1][1];
+<a name="l00068"></a>00068         <span class="keyword">const</span> <span class="keywordtype">double</span> t36 = mf[2][0] * mf[3][1];
+<a name="l00069"></a>00069         <span class="keyword">const</span> <span class="keywordtype">double</span> t37 = mf[0][2] * mf[1][3];
+<a name="l00070"></a>00070         <span class="keyword">const</span> <span class="keywordtype">double</span> t39 = mf[0][3] * mf[1][2];
+<a name="l00071"></a>00071         <span class="keyword">const</span> <span class="keywordtype">double</span> t41 = mf[3][0] * mf[0][1];
+<a name="l00072"></a>00072         <span class="keyword">const</span> <span class="keywordtype">double</span> t44 = mf[3][0] * mf[1][1];
+<a name="l00073"></a>00073         <span class="keyword">const</span> <span class="keywordtype">double</span> t47 = mf[3][0] * mf[2][1];
+<a name="l00074"></a>00074         <span class="keyword">const</span> <span class="keywordtype">double</span> t50 = t30 * t7 - t30 * t9 - t33 * t17 + t33 * t19 + t36 * t37 - t36 * t39 - t41 * t12 + t41 * t14 + t44 * t27 - t44 * t25 - t47 * t37 + t47 * t39;
+<a name="l00075"></a>00075         <span class="keyword">const</span> <span class="keywordtype">double</span> t52 = mf[3][0] * mg[1][1];
+<a name="l00076"></a>00076         <span class="keyword">const</span> <span class="keywordtype">double</span> t54 = mg[3][0] * mf[0][1];
+<a name="l00077"></a>00077         <span class="keyword">const</span> <span class="keywordtype">double</span> t57 = mg[3][0] * mf[1][1];
+<a name="l00078"></a>00078         <span class="keyword">const</span> <span class="keywordtype">double</span> t60 = mg[3][0] * mf[2][1];
+<a name="l00079"></a>00079         <span class="keyword">const</span> <span class="keywordtype">double</span> t63 = mf[3][0] * mg[0][1];
+<a name="l00080"></a>00080         <span class="keyword">const</span> <span class="keywordtype">double</span> t65 = mf[0][2] * mg[1][3];
+<a name="l00081"></a>00081         <span class="keyword">const</span> <span class="keywordtype">double</span> t67 = mg[0][2] * mf[1][3];
+<a name="l00082"></a>00082         <span class="keyword">const</span> <span class="keywordtype">double</span> t69 = mf[0][3] * mg[1][2];
+<a name="l00083"></a>00083         <span class="keyword">const</span> <span class="keywordtype">double</span> t71 = mg[0][3] * mf[1][2];
+<a name="l00084"></a>00084         <span class="keyword">const</span> <span class="keywordtype">double</span> t73 = -t52 * t27 + t54 * t12 - t54 * t14 - t57 * t27 + t57 * t25 + t60 * t37 - t60 * t39 + t63 * t12 + t47 * t65 + t47 * t67 - t47 * t69 - t47 * t71;
+<a name="l00085"></a>00085         <span class="keyword">const</span> <span class="keywordtype">double</span> t74 = mf[3][0] * mg[2][1];
+<a name="l00086"></a>00086         <span class="keyword">const</span> <span class="keywordtype">double</span> t76 = mf[0][0] * mg[3][1];
+<a name="l00087"></a>00087         <span class="keyword">const</span> <span class="keywordtype">double</span> t79 = mf[1][2] * mg[3][3];
+<a name="l00088"></a>00088         <span class="keyword">const</span> <span class="keywordtype">double</span> t81 = mg[2][2] * mf[3][3];
+<a name="l00089"></a>00089         <span class="keyword">const</span> <span class="keywordtype">double</span> t83 = mf[0][0] * mg[1][1];
+<a name="l00090"></a>00090         <span class="keyword">const</span> <span class="keywordtype">double</span> t85 = mg[2][3] * mf[3][2];
+<a name="l00091"></a>00091         <span class="keyword">const</span> <span class="keywordtype">double</span> t87 = mg[1][3] * mf[3][2];
+<a name="l00092"></a>00092         <span class="keyword">const</span> <span class="keywordtype">double</span> t89 = mg[0][2] * mf[2][3];
+<a name="l00093"></a>00093         <span class="keyword">const</span> <span class="keywordtype">double</span> t91 = mf[0][3] * mg[2][2];
+<a name="l00094"></a>00094         <span class="keyword">const</span> <span class="keywordtype">double</span> t93 = mf[1][0] * mg[2][1];
+<a name="l00095"></a>00095         <span class="keyword">const</span> <span class="keywordtype">double</span> t95 = mf[0][2] * mg[2][3];
+<a name="l00096"></a>00096         <span class="keyword">const</span> <span class="keywordtype">double</span> t97 = t74 * t37 - t76 * t12 + t76 * t14 + t6 * t79 - t1 * t81 - t83 * t2 + t1 * t85 - t6 * t87 - t44 * t89 + t44 * t91 + t93 * t19 + t24 * t95;
+<a name="l00097"></a>00097         <span class="keyword">const</span> <span class="keywordtype">double</span> t101 = mg[0][3] * mf[2][2];
+<a name="l00098"></a>00098         <span class="keyword">const</span> <span class="keywordtype">double</span> t103 = mf[1][0] * mg[3][1];
+<a name="l00099"></a>00099         <span class="keyword">const</span> <span class="keywordtype">double</span> t106 = mf[2][3] * mg[3][2];
+<a name="l00100"></a>00100         <span class="keyword">const</span> <span class="keywordtype">double</span> t109 = mg[2][0] * mf[0][1];
+<a name="l00101"></a>00101         <span class="keyword">const</span> <span class="keywordtype">double</span> t111 = mg[2][0] * mf[1][1];
+<a name="l00102"></a>00102         <span class="keyword">const</span> <span class="keywordtype">double</span> t114 = mg[1][0] * mf[2][1];
+<a name="l00103"></a>00103         <span class="keyword">const</span> <span class="keywordtype">double</span> t116 = mf[0][2] * mg[3][3];
+<a name="l00104"></a>00104         <span class="keyword">const</span> <span class="keywordtype">double</span> t118 = t24 * t89 - t24 * t91 - t24 * t101 + t103 * t27 - t30 * t79 - t21 * t106 - t21 * t85 + t109 * t9 + t111 * t17 - t103 * t25 - t114 * t17 + t33 * t116;
+<a name="l00105"></a>00105         <span class="keyword">const</span> <span class="keywordtype">double</span> t119 = mg[0][2] * mf[3][3];
+<a name="l00106"></a>00106         <span class="keyword">const</span> <span class="keywordtype">double</span> t121 = mf[0][3] * mg[3][2];
+<a name="l00107"></a>00107         <span class="keyword">const</span> <span class="keywordtype">double</span> t123 = mg[0][3] * mf[3][2];
+<a name="l00108"></a>00108         <span class="keyword">const</span> <span class="keywordtype">double</span> t125 = mf[2][0] * mg[1][1];
+<a name="l00109"></a>00109         <span class="keyword">const</span> <span class="keywordtype">double</span> t133 = mf[2][0] * mg[3][1];
+<a name="l00110"></a>00110         <span class="keyword">const</span> <span class="keywordtype">double</span> t136 = t33 * t119 - t33 * t121 - t33 * t123 + t125 * t17 + t36 * t69 - t125 * t19 - t36 * t65 - t36 * t67 - t109 * t7 + t36 * t71 - t133 * t37 + t133 * t39;
+<a name="l00111"></a>00111         <span class="keyword">const</span> <span class="keywordtype">double</span> t139 = mf[0][0] * mg[2][1];
+<a name="l00112"></a>00112         <span class="keyword">const</span> <span class="keywordtype">double</span> t141 = mf[1][3] * mg[2][2];
+<a name="l00113"></a>00113         <span class="keyword">const</span> <span class="keywordtype">double</span> t143 = mf[1][3] * mg[3][2];
+<a name="l00114"></a>00114         <span class="keyword">const</span> <span class="keywordtype">double</span> t146 = mg[1][3] * mf[2][2];
+<a name="l00115"></a>00115         <span class="keyword">const</span> <span class="keywordtype">double</span> t149 = mg[1][2] * mf[2][3];
+<a name="l00116"></a>00116         <span class="keyword">const</span> <span class="keywordtype">double</span> t152 = mf[1][0] * mg[0][1];
+<a name="l00117"></a>00117         <span class="keyword">const</span> <span class="keywordtype">double</span> t154 = mf[1][2] * mg[2][3];
+<a name="l00118"></a>00118         <span class="keyword">const</span> <span class="keywordtype">double</span> t156 = mf[2][2] * mg[3][3];
+<a name="l00119"></a>00119         <span class="keyword">const</span> <span class="keywordtype">double</span> t158 = mg[1][2] * mf[3][3];
+<a name="l00120"></a>00120         <span class="keyword">const</span> <span class="keywordtype">double</span> t160 = -t139 * t9 + t11 * t141 - t6 * t143 + t1 * t106 + t11 * t146 + t83 * t4 - t11 * t149 - t44 * t95 + t152 * t2 - t11 * t154 - t1 * t156 + t6 * t158;
+<a name="l00121"></a>00121         <span class="keyword">const</span> <span class="keywordtype">double</span> t165 = mf[2][0] * mg[0][1];
+<a name="l00122"></a>00122         <span class="keyword">const</span> <span class="keywordtype">double</span> t174 = t139 * t7 - t74 * t39 - t63 * t14 + t30 * t87 - t165 * t7 + t165 * t9 - t152 * t4 - t16 * t116 - t16 * t119 + t16 * t121 + t16 * t123 - t93 * t17;
+<a name="l00123"></a>00123         <span class="keyword">const</span> <span class="keywordtype">double</span> t176 = mg[1][0] * mf[0][1];
+<a name="l00124"></a>00124         <span class="keyword">const</span> <span class="keywordtype">double</span> t179 = mg[1][0] * mf[3][1];
+<a name="l00125"></a>00125         <span class="keyword">const</span> <span class="keywordtype">double</span> t183 = mg[2][0] * mf[3][1];
+<a name="l00126"></a>00126         <span class="keyword">const</span> <span class="keywordtype">double</span> t191 = -t176 * t4 + t176 * t2 - t179 * t25 + t179 * t27 - t111 * t19 - t183 * t37 + t183 * t39 + t41 * t154 + t41 * t149 - t41 * t141 - t41 * t146 + t52 * t25;
+<a name="l00127"></a>00127         <span class="keyword">const</span> <span class="keywordtype">double</span> t196 = mg[0][0] * mf[1][1];
+<a name="l00128"></a>00128         <span class="keyword">const</span> <span class="keywordtype">double</span> t199 = mg[0][0] * mf[2][1];
+<a name="l00129"></a>00129         <span class="keyword">const</span> <span class="keywordtype">double</span> t202 = mg[0][0] * mf[3][1];
+<a name="l00130"></a>00130         <span class="keyword">const</span> <span class="keywordtype">double</span> t207 = -t30 * t158 + t30 * t143 + t114 * t19 + t21 * t81 - t196 * t2 + t196 * t4 + t199 * t7 - t199 * t9 - t202 * t12 + t202 * t14 + t21 * t156 + t44 * t101;
+<a name="l00131"></a>00131         <span class="keyword">const</span> <span class="keywordtype">double</span> t211 = mg[2][0] * mg[1][1];
+<a name="l00132"></a>00132         <span class="keyword">const</span> <span class="keywordtype">double</span> t217 = mg[2][0] * mg[3][1];
+<a name="l00133"></a>00133         <span class="keyword">const</span> <span class="keywordtype">double</span> t224 = mg[3][0] * mg[1][1];
+<a name="l00134"></a>00134         <span class="keyword">const</span> <span class="keywordtype">double</span> t232 = t211 * t19 + t183 * t65 + t183 * t67 - t183 * t69 - t183 * t71 + t217 * t37 - t217 * t39 + t57 * t95 + t57 * t89 - t57 * t91 - t57 * t101 + t224 * t27 + t52 * t95 + t52 * t89 - t63 * t154 - t54 * t154 - t54 * t149 + t54 * t146;
+<a name="l00135"></a>00135         <span class="keyword">const</span> <span class="keywordtype">double</span> t234 = mg[3][0] * mg[0][1];
+<a name="l00136"></a>00136         <span class="keyword">const</span> <span class="keywordtype">double</span> t240 = mg[3][0] * mg[2][1];
+<a name="l00137"></a>00137         <span class="keyword">const</span> <span class="keywordtype">double</span> t246 = mg[0][2] * mg[2][3];
+<a name="l00138"></a>00138         <span class="keyword">const</span> <span class="keywordtype">double</span> t250 = mg[0][0] * mg[2][1];
+<a name="l00139"></a>00139         <span class="keyword">const</span> <span class="keywordtype">double</span> t255 = -t224 * t25 - t234 * t12 - t60 * t65 - t60 * t67 + t60 * t69 + t60 * t71 - t240 * t37 + t240 * t39 + t234 * t14 - t93 * t121 - t93 * t123 - t24 * t246 - t103 * t95 - t103 * t89 + t250 * t9 + t111 * t121 + t63 * t146 - t202 * t141;
+<a name="l00140"></a>00140         <span class="keyword">const</span> <span class="keywordtype">double</span> t262 = mg[0][3] * mg[2][2];
+<a name="l00141"></a>00141         <span class="keyword">const</span> <span class="keywordtype">double</span> t268 = mg[1][0] * mg[0][1];
+<a name="l00142"></a>00142         <span class="keyword">const</span> <span class="keywordtype">double</span> t275 = mg[1][0] * mg[2][1];
+<a name="l00143"></a>00143         <span class="keyword">const</span> <span class="keywordtype">double</span> t278 = t54 * t141 + t109 * t79 + t133 * t65 + t103 * t91 + t103 * t101 + t24 * t262 - t176 * t156 - t176 * t81 + t176 * t106 + t176 * t85 - t268 * t2 + t268 * t4 + t114 * t116 + t114 * t119 - t114 * t121 - t114 * t123 + t275 * t17 - t275 * t19;
+<a name="l00144"></a>00144         <span class="keyword">const</span> <span class="keywordtype">double</span> t283 = mg[2][0] * mg[0][1];
+<a name="l00145"></a>00145         <span class="keyword">const</span> <span class="keywordtype">double</span> t294 = mg[2][2] * mg[3][3];
+<a name="l00146"></a>00146         <span class="keyword">const</span> <span class="keywordtype">double</span> t296 = mg[1][2] * mg[2][3];
+<a name="l00147"></a>00147         <span class="keyword">const</span> <span class="keywordtype">double</span> t298 = mg[1][3] * mg[2][2];
+<a name="l00148"></a>00148         <span class="keyword">const</span> <span class="keywordtype">double</span> t301 = -t133 * t71 + t109 * t158 - t109 * t143 - t109 * t87 + t283 * t7 - t283 * t9 - t111 * t116 - t111 * t119 + t111 * t123 - t211 * t17 + t202 * t154 + t196 * t156 - t199 * t158 - t250 * t7 - t21 * t294 - t41 * t296 + t41 * t298 - t63 * t149;
+<a name="l00149"></a>00149         <span class="keyword">const</span> <span class="keywordtype">double</span> t306 = mg[0][2] * mg[1][3];
+<a name="l00150"></a>00150         <span class="keyword">const</span> <span class="keywordtype">double</span> t308 = mg[0][3] * mg[1][2];
+<a name="l00151"></a>00151         <span class="keyword">const</span> <span class="keywordtype">double</span> t317 = mg[2][3] * mg[3][2];
+<a name="l00152"></a>00152         <span class="keyword">const</span> <span class="keywordtype">double</span> t323 = mg[0][2] * mg[3][3];
+<a name="l00153"></a>00153         <span class="keyword">const</span> <span class="keywordtype">double</span> t325 = mg[0][3] * mg[3][2];
+<a name="l00154"></a>00154         <span class="keyword">const</span> <span class="keywordtype">double</span> t327 = -t52 * t91 - t52 * t101 - t47 * t306 + t47 * t308 - t74 * t65 - t74 * t67 + t139 * t143 - t125 * t119 + t74 * t69 + t74 * t71 + t63 * t141 + t21 * t317 - t152 * t156 - t152 * t81 + t152 * t106 + t152 * t85 + t16 * t323 - t16 * t325;
+<a name="l00155"></a>00155         <span class="keyword">const</span> <span class="keywordtype">double</span> t334 = mg[1][0] * mg[3][1];
+<a name="l00156"></a>00156         <span class="keyword">const</span> <span class="keywordtype">double</span> t337 = mg[1][2] * mg[3][3];
+<a name="l00157"></a>00157         <span class="keyword">const</span> <span class="keywordtype">double</span> t339 = mg[1][3] * mg[3][2];
+<a name="l00158"></a>00158         <span class="keyword">const</span> <span class="keywordtype">double</span> t346 = mg[0][0] * mg[1][1];
+<a name="l00159"></a>00159         <span class="keyword">const</span> <span class="keywordtype">double</span> t350 = t93 * t116 + t93 * t119 - t179 * t95 - t179 * t89 + t179 * t91 + t179 * t101 - t334 * t27 + t334 * t25 + t30 * t337 - t30 * t339 + t165 * t79 + t165 * t158 - t165 * t143 - t165 * t87 - t202 * t146 - t346 * t4 + t202 * t149 - t33 * t323;
+<a name="l00160"></a>00160         <span class="keyword">const</span> <span class="keywordtype">double</span> t370 = t33 * t325 - t125 * t116 + t125 * t121 + t125 * t123 + t36 * t306 - t36 * t308 + t133 * t67 - t133 * t69 + t199 * t143 - t139 * t79 - t6 * t337 - t139 * t158 + t11 * t296 + t1 * t294 - t83 * t85 - t1 * t317 + t83 * t81 + t139 * t87;
+<a name="l00161"></a>00161         <span class="keyword">const</span> <span class="keywordtype">double</span> t371 = mg[0][0] * mg[3][1];
+<a name="l00162"></a>00162         <span class="keyword">const</span> <span class="keywordtype">double</span> t390 = t371 * t12 - t371 * t14 - t199 * t79 + t196 * t81 + t346 * t2 - t196 * t85 + t199 * t87 - t196 * t106 + t76 * t154 + t83 * t156 + t76 * t149 - t76 * t141 - t76 * t146 - t11 * t298 + t6 * t339 - t83 * t106 + t44 * t246 - t44 * t262;
+<a name="l00163"></a>00163         <span class="keyword">const</span> <span class="keywordtype">double</span> t406 = -t76 * t296 + t76 * t298 + t139 * t337 - t52 * t246 + t54 * t296 - t54 * t298 + t224 * t91 + t224 * t101 + t60 * t306 - t60 * t308 + t240 * t65 + t240 * t67;
+<a name="l00164"></a>00164         <span class="keyword">const</span> <span class="keywordtype">double</span> t419 = -t240 * t69 - t240 * t71 - t93 * t323 + t93 * t325 + t83 * t317 - t283 * t79 + t165 * t339 - t103 * t262 + t176 * t294 - t176 * t317 + t268 * t156 + t268 * t81;
+<a name="l00165"></a>00165         <span class="keyword">const</span> <span class="keywordtype">double</span> t433 = -t268 * t106 - t268 * t85 - t114 * t323 + t114 * t325 - t275 * t116 - t275 * t119 + t275 * t121 + t275 * t123 + t133 * t308 - t109 * t337 + t109 * t339 - t283 * t158;
+<a name="l00166"></a>00166         <span class="keyword">const</span> <span class="keywordtype">double</span> t446 = t283 * t143 + t283 * t87 + t111 * t323 - t111 * t325 + t211 * t116 + t211 * t119 + t52 * t262 + t74 * t306 - t346 * t81 + t346 * t106 + t202 * t298 - t199 * t339;
+<a name="l00167"></a>00167         <span class="keyword">const</span> <span class="keywordtype">double</span> t461 = -t183 * t306 + t183 * t308 - t217 * t65 - t217 * t67 + t217 * t69 + t217 * t71 - t234 * t141 - t234 * t146 - t57 * t246 + t57 * t262 - t224 * t95 - t224 * t89;
+<a name="l00168"></a>00168         <span class="keyword">const</span> <span class="keywordtype">double</span> t474 = t234 * t149 + t250 * t79 - t74 * t308 + t63 * t296 - t63 * t298 - t250 * t87 + t152 * t294 - t152 * t317 + t179 * t246 + t334 * t95 + t334 * t89 - t334 * t91;
+<a name="l00169"></a>00169         <span class="keyword">const</span> <span class="keywordtype">double</span> t488 = -t334 * t101 - t179 * t262 - t165 * t337 + t199 * t337 + t250 * t158 - t202 * t296 - t196 * t294 + t346 * t85 + t196 * t317 + t125 * t323 - t125 * t325 - t133 * t306;
+<a name="l00170"></a>00170         <span class="keyword">const</span> <span class="keywordtype">double</span> t501 = t234 * t154 - t139 * t339 - t83 * t294 - t250 * t143 - t371 * t154 - t346 * t156 - t371 * t149 + t371 * t141 + t371 * t146 + t103 * t246 - t211 * t121 - t211 * t123;
+<a name="l00171"></a>00171         <span class="keyword">const</span> <span class="keywordtype">double</span> t517 = t371 * t296 - t371 * t298 - t250 * t337 - t346 * t317 + t250 * t339 - t334 * t246 + t334 * t262 + t346 * t294 - t224 * t262 - t240 * t306 + t240 * t308 - t234 * t296;
+<a name="l00172"></a>00172         <span class="keyword">const</span> <span class="keywordtype">double</span> t530 = -t268 * t294 + t268 * t317 + t275 * t323 - t275 * t325 + t283 * t337 - t283 * t339 - t211 * t323 + t211 * t325 + t217 * t306 - t217 * t308 + t234 * t298 + t224 * t246;
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174         QList&lt;double&gt; result;
+<a name="l00175"></a>00175         result &lt;&lt; t29 + t50;
+<a name="l00176"></a>00176         result &lt;&lt; t73 + t97 + t118 + t136 + t160 + t174 + t191 + t207;
+<a name="l00177"></a>00177         result &lt;&lt; t232 + t255 + t278 + t301 + t327 + t350 + t370 + t390;
+<a name="l00178"></a>00178         result &lt;&lt; t406 + t419 + t433 + t446 + t461 + t474 + t488 + t501;
+<a name="l00179"></a>00179         result &lt;&lt; t517 + t530;
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181         <span class="keywordflow">return</span> result;
+<a name="l00182"></a>00182         }
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184 
+<a name="l00185"></a>00185 <span class="comment">/*</span>
+<a name="l00186"></a>00186 <span class="comment"># Get matrices Mf and Mg.</span>
+<a name="l00187"></a>00187 <span class="comment">#</span>
+<a name="l00188"></a>00188 <span class="comment"># These matrices are such:</span>
+<a name="l00189"></a>00189 <span class="comment">#       Mf * [ a, b, c, 1 ] = U.X.Vt</span>
+<a name="l00190"></a>00190 <span class="comment">#       Mg * [ a, b, c, 1 ] = U.cofactorX.Vt</span>
+<a name="l00191"></a>00191 <span class="comment">#</span>
+<a name="l00192"></a>00192 <span class="comment"># Where &#39;F&#39; is the fundamental matrix in:</span>
+<a name="l00193"></a>00193 <span class="comment">#       F = U.diag(r,s,0).Wt</span>
+<a name="l00194"></a>00194 <span class="comment"># or</span>
+<a name="l00195"></a>00195 <span class="comment">#       F = (U.X.Et.Wt).(W.Z.Wt)</span>
+<a name="l00196"></a>00196 <span class="comment"># and</span>
+<a name="l00197"></a>00197 <span class="comment">#       Vt = Et x Wt</span>
+<a name="l00198"></a>00198 <span class="comment">#       E = [0,1,0; -1,0,0; 0,0,1]</span>
+<a name="l00199"></a>00199 <span class="comment"># -----------------------</span>
+<a name="l00200"></a>00200 <span class="comment"># or</span>
+<a name="l00201"></a>00201 <span class="comment">#       F = U x diag(r,s,0) x Vt</span>
+<a name="l00202"></a>00202 <span class="comment">#</span>
+<a name="l00203"></a>00203 <span class="comment">*/</span>
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205 <span class="comment">/*</span>
+<a name="l00206"></a>00206 <span class="comment"># Get coefficient matrix for expression::</span>
+<a name="l00207"></a>00207 <span class="comment">#       Mf(a,b,c,1) = U*X*V^T</span>
+<a name="l00208"></a>00208 <span class="comment"># Where</span>
+<a name="l00209"></a>00209 <span class="comment">#       X = [r, 0, a; 0, s, b; 0, 0, c]</span>
+<a name="l00210"></a>00210 <span class="comment"># Given &#39;U&#39;, &#39;V&#39;, &#39;r&#39; and &#39;s&#39; values known</span>
+<a name="l00211"></a>00211 <span class="comment">with(VectorCalculus):</span>
+<a name="l00212"></a>00212 <span class="comment">with(LinearAlgebra):</span>
+<a name="l00213"></a>00213 <span class="comment">U := Matrix(3, 3, symbol=u):</span>
+<a name="l00214"></a>00214 <span class="comment">V := Matrix(3, 3, symbol=v):</span>
+<a name="l00215"></a>00215 <span class="comment">X := Matrix([ [r, 0, a], [0, s, b], [0, 0, c] ]):</span>
+<a name="l00216"></a>00216 <span class="comment">f := U.X.Transpose(V):</span>
+<a name="l00217"></a>00217 <span class="comment">fVector := Vector([ f[1,1], f[1,2], f[2,1], f[2,2] ]):</span>
+<a name="l00218"></a>00218 <span class="comment">fVectorDiffA := diff(fVector, a):</span>
+<a name="l00219"></a>00219 <span class="comment">fVectorDiffB := diff(fVector, b):</span>
+<a name="l00220"></a>00220 <span class="comment">fVectorDiffC := diff(fVector, c):</span>
+<a name="l00221"></a>00221 <span class="comment">fVectorDiffRes := simplify(fVector - a fVectorDiffA - b fVectorDiffB - c fVectorDiffC):</span>
+<a name="l00222"></a>00222 <span class="comment">Mf := Matrix([fVectorDiffA, fVectorDiffB, fVectorDiffC, fVectorDiffRes]):</span>
+<a name="l00223"></a>00223 <span class="comment"></span>
+<a name="l00224"></a>00224 <span class="comment"># Must be vector zero.</span>
+<a name="l00225"></a>00225 <span class="comment">simplify(Mf . Vector([a, b, c, 1]) - fVector);</span>
+<a name="l00226"></a>00226 <span class="comment"></span>
+<a name="l00227"></a>00227 <span class="comment">CodeGeneration[C](Mf, optimize = true);</span>
+<a name="l00228"></a>00228 <span class="comment">*/</span>
+<a name="l00229"></a>00229 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getMfCoeffsMatrix(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;U, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;V, <span class="keyword">const</span> <span class="keywordtype">double</span> r, <span class="keyword">const</span> <span class="keywordtype">double</span> s)
+<a name="l00230"></a>00230         {
+<a name="l00231"></a>00231         <span class="keywordtype">double</span> u[4][4], v[4][4];
+<a name="l00232"></a>00232         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+<a name="l00233"></a>00233                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)
+<a name="l00234"></a>00234                         {
+<a name="l00235"></a>00235                         u[i][j] = U(i,j);
+<a name="l00236"></a>00236                         v[i][j] = V(i,j);
+<a name="l00237"></a>00237                         }
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239         <span class="keyword">const</span> <span class="keywordtype">double</span> t4 = u[0][0] * r;
+<a name="l00240"></a>00240         <span class="keyword">const</span> <span class="keywordtype">double</span> t6 = u[0][1] * s;
+<a name="l00241"></a>00241         <span class="keyword">const</span> <span class="keywordtype">double</span> t18 = u[1][0] * r;
+<a name="l00242"></a>00242         <span class="keyword">const</span> <span class="keywordtype">double</span> t20 = u[1][1] * s;
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244         <span class="keywordtype">double</span> mf[4][4];
+<a name="l00245"></a>00245         mf[0][0] = u[0][0] * v[0][2];
+<a name="l00246"></a>00246         mf[0][1] = u[0][1] * v[0][2];
+<a name="l00247"></a>00247         mf[0][2] = u[0][2] * v[0][2];
+<a name="l00248"></a>00248         mf[0][3] = t4 * v[0][0] + t6 * v[0][1];
+<a name="l00249"></a>00249         mf[1][0] = u[0][0] * v[1][2];
+<a name="l00250"></a>00250         mf[1][1] = u[0][1] * v[1][2];
+<a name="l00251"></a>00251         mf[1][2] = u[0][2] * v[1][2];
+<a name="l00252"></a>00252         mf[1][3] = t4 * v[1][0] + t6 * v[1][1];
+<a name="l00253"></a>00253         mf[2][0] = u[1][0] * v[0][2];
+<a name="l00254"></a>00254         mf[2][1] = u[1][1] * v[0][2];
+<a name="l00255"></a>00255         mf[2][2] = u[1][2] * v[0][2];
+<a name="l00256"></a>00256         mf[2][3] = t18 * v[0][0] + t20 * v[0][1];
+<a name="l00257"></a>00257         mf[3][0] = u[1][0] * v[1][2];
+<a name="l00258"></a>00258         mf[3][1] = u[1][1] * v[1][2];
+<a name="l00259"></a>00259         mf[3][2] = u[1][2] * v[1][2];
+<a name="l00260"></a>00260         mf[3][3] = t18 * v[1][0] + t20 * v[1][1];
+<a name="l00261"></a>00261 
+<a name="l00262"></a>00262         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> Mf(4,4);
+<a name="l00263"></a>00263         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+<a name="l00264"></a>00264                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)
+<a name="l00265"></a>00265                         Mf(i,j) = mf[i][j];
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="keywordflow">return</span> Mf;
+<a name="l00268"></a>00268         }
+<a name="l00269"></a>00269 
+<a name="l00270"></a>00270 <span class="comment">/*</span>
+<a name="l00271"></a>00271 <span class="comment"># Get coefficient matrix for expression::</span>
+<a name="l00272"></a>00272 <span class="comment">#       Mf(a,b,c,1) = U*cofactorX*V^T</span>
+<a name="l00273"></a>00273 <span class="comment"># Where</span>
+<a name="l00274"></a>00274 <span class="comment">#       X = [s.c, 0, 0; 0, r.c, 0; -s.a, -r.b, r.s]</span>
+<a name="l00275"></a>00275 <span class="comment"># Given &#39;U&#39;, &#39;V&#39;, &#39;r&#39; and &#39;s&#39; values known</span>
+<a name="l00276"></a>00276 <span class="comment">with(VectorCalculus):</span>
+<a name="l00277"></a>00277 <span class="comment">with(LinearAlgebra):</span>
+<a name="l00278"></a>00278 <span class="comment">U := Matrix(3, 3, symbol=u):</span>
+<a name="l00279"></a>00279 <span class="comment">V := Matrix(3, 3, symbol=v):</span>
+<a name="l00280"></a>00280 <span class="comment">cofactorX := Matrix([ [s.c, 0, 0], [0, r.c, 0], [-s.a, -r.b, r.s] ]):</span>
+<a name="l00281"></a>00281 <span class="comment">g := U.cofactorX.Transpose(V):</span>
+<a name="l00282"></a>00282 <span class="comment">gVector := Vector([ g[1,1], g[1,2], g[2,1], g[2,2] ]):</span>
+<a name="l00283"></a>00283 <span class="comment">gVectorDiffA := diff(gVector, a):</span>
+<a name="l00284"></a>00284 <span class="comment">gVectorDiffB := diff(gVector, b):</span>
+<a name="l00285"></a>00285 <span class="comment">gVectorDiffC := diff(gVector, c):</span>
+<a name="l00286"></a>00286 <span class="comment">gVectorDiffRes := simplify(gVector - a gVectorDiffA - b gVectorDiffB - c gVectorDiffC):</span>
+<a name="l00287"></a>00287 <span class="comment">Mg := Matrix([gVectorDiffA, gVectorDiffB, gVectorDiffC, gVectorDiffRes]):</span>
+<a name="l00288"></a>00288 <span class="comment"></span>
+<a name="l00289"></a>00289 <span class="comment"># Must be vector zero.</span>
+<a name="l00290"></a>00290 <span class="comment">simplify(Mg . Vector([a, b, c, 1]) - gVector);</span>
+<a name="l00291"></a>00291 <span class="comment"></span>
+<a name="l00292"></a>00292 <span class="comment">CodeGeneration[C](Mg, optimize = true);</span>
+<a name="l00293"></a>00293 <span class="comment">*/</span>
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getMgCoeffsMatrix(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;U, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;V, <span class="keyword">const</span> <span class="keywordtype">double</span> r, <span class="keyword">const</span> <span class="keywordtype">double</span> s)
+<a name="l00296"></a>00296         {
+<a name="l00297"></a>00297         <span class="keywordtype">double</span> u[4][4], v[4][4];
+<a name="l00298"></a>00298         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+<a name="l00299"></a>00299                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)
+<a name="l00300"></a>00300                         {
+<a name="l00301"></a>00301                         u[i][j] = U(i,j);
+<a name="l00302"></a>00302                         v[i][j] = V(i,j);
+<a name="l00303"></a>00303                         }
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305         <span class="keyword">const</span> <span class="keywordtype">double</span> t1 = u[0][2] * s;
+<a name="l00306"></a>00306         <span class="keyword">const</span> <span class="keywordtype">double</span> t3 = u[0][2] * r;
+<a name="l00307"></a>00307         <span class="keyword">const</span> <span class="keywordtype">double</span> t5 = u[0][0] * s;
+<a name="l00308"></a>00308         <span class="keyword">const</span> <span class="keywordtype">double</span> t7 = u[0][1] * r;
+<a name="l00309"></a>00309         <span class="keyword">const</span> <span class="keywordtype">double</span> t10 = s * v[0][2];
+<a name="l00310"></a>00310         <span class="keyword">const</span> <span class="keywordtype">double</span> t17 = s * v[1][2];
+<a name="l00311"></a>00311         <span class="keyword">const</span> <span class="keywordtype">double</span> t19 = u[1][2] * s;
+<a name="l00312"></a>00312         <span class="keyword">const</span> <span class="keywordtype">double</span> t21 = u[1][2] * r;
+<a name="l00313"></a>00313         <span class="keyword">const</span> <span class="keywordtype">double</span> t23 = u[1][0] * s;
+<a name="l00314"></a>00314         <span class="keyword">const</span> <span class="keywordtype">double</span> t25 = u[1][1] * r;
+<a name="l00315"></a>00315 
+<a name="l00316"></a>00316         <span class="keywordtype">double</span> mg[4][4];
+<a name="l00317"></a>00317         mg[0][0] = -t1 * v[0][0];
+<a name="l00318"></a>00318         mg[0][1] = -t3 * v[0][1];
+<a name="l00319"></a>00319         mg[0][2] = t5 * v[0][0] + t7 * v[0][1];
+<a name="l00320"></a>00320         mg[0][3] = t3 * t10;
+<a name="l00321"></a>00321         mg[1][0] = -t1 * v[1][0];
+<a name="l00322"></a>00322         mg[1][1] = -t3 * v[1][1];
+<a name="l00323"></a>00323         mg[1][2] = t5 * v[1][0] + t7 * v[1][1];
+<a name="l00324"></a>00324         mg[1][3] = t3 * t17;
+<a name="l00325"></a>00325         mg[2][0] = -t19 * v[0][0];
+<a name="l00326"></a>00326         mg[2][1] = -t21 * v[0][1];
+<a name="l00327"></a>00327         mg[2][2] = t23 * v[0][0] + t25 * v[0][1];
+<a name="l00328"></a>00328         mg[2][3] = t21 * t10;
+<a name="l00329"></a>00329         mg[3][0] = -t19 * v[1][0];
+<a name="l00330"></a>00330         mg[3][1] = -t21 * v[1][1];
+<a name="l00331"></a>00331         mg[3][2] = t23 * v[1][0] + t25 * v[1][1];
+<a name="l00332"></a>00332         mg[3][3] = t21 * t17;
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334 
+<a name="l00335"></a>00335         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> Mg(4,4);
+<a name="l00336"></a>00336         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+<a name="l00337"></a>00337                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)
+<a name="l00338"></a>00338                         Mg(i,j) = mg[i][j];
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340         <span class="keywordflow">return</span> Mg;
+<a name="l00341"></a>00341         }
+<a name="l00342"></a>00342 
+<a name="l00343"></a>00343 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getX(<span class="keyword">const</span> <span class="keywordtype">double</span> r, <span class="keyword">const</span> <span class="keywordtype">double</span> s, <span class="keyword">const</span> <span class="keywordtype">double</span> a, <span class="keyword">const</span> <span class="keywordtype">double</span> b, <span class="keyword">const</span> <span class="keywordtype">double</span> c)
+<a name="l00344"></a>00344         {
+<a name="l00345"></a>00345         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> X(3,3, 0.0);
+<a name="l00346"></a>00346         X(0,0) = r;
+<a name="l00347"></a>00347         X(1,1) = s;
+<a name="l00348"></a>00348         X(0,2) = a;
+<a name="l00349"></a>00349         X(1,2) = b;
+<a name="l00350"></a>00350         X(2,2) = c;
+<a name="l00351"></a>00351         <span class="keywordflow">return</span> X;
+<a name="l00352"></a>00352         }
+<a name="l00353"></a>00353 
+<a name="l00354"></a>00354 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getCofactorX(<span class="keyword">const</span> <span class="keywordtype">double</span> r, <span class="keyword">const</span> <span class="keywordtype">double</span> s, <span class="keyword">const</span> <span class="keywordtype">double</span> a, <span class="keyword">const</span> <span class="keywordtype">double</span> b, <span class="keyword">const</span> <span class="keywordtype">double</span> c)
+<a name="l00355"></a>00355         {
+<a name="l00356"></a>00356         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> cofactorX(3,3, 0.0);
+<a name="l00357"></a>00357         cofactorX(0,0) = s*c;
+<a name="l00358"></a>00358         cofactorX(1,1) = r*c;
+<a name="l00359"></a>00359         cofactorX(2,0) = -s*a;
+<a name="l00360"></a>00360         cofactorX(2,1) = -r*b;
+<a name="l00361"></a>00361         cofactorX(2,2) = r*s;
+<a name="l00362"></a>00362         <span class="keywordflow">return</span> cofactorX;
+<a name="l00363"></a>00363         }
+<a name="l00364"></a>00364 
+<a name="l00365"></a>00365 <span class="keywordtype">double</span> evalPolynomial(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;coeffs, <span class="keyword">const</span> <span class="keywordtype">double</span> x)
+<a name="l00366"></a>00366         {
+<a name="l00367"></a>00367         <span class="keywordtype">double</span> accum = 0.0, xExp = 1.0;
+<a name="l00368"></a>00368         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; coeffs.count(); i++)
+<a name="l00369"></a>00369                 {
+<a name="l00370"></a>00370                 accum += coeffs[i]*xExp;
+<a name="l00371"></a>00371                 xExp *= x;
+<a name="l00372"></a>00372                 }
+<a name="l00373"></a>00373 
+<a name="l00374"></a>00374         <span class="keywordflow">return</span> accum;
+<a name="l00375"></a>00375         }
+<a name="l00376"></a>00376 
+<a name="l00377"></a>00377 <span class="keywordtype">bool</span>    directCamerasFocalsCalibration(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;preF, <span class="keywordtype">double</span> &amp;f1, <span class="keywordtype">double</span> &amp;f2)
+<a name="l00378"></a>00378         {
+<a name="l00379"></a>00379         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> F = preF * ( (<a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(preF) &lt; 0.0)?-1.0:1.0 );
+<a name="l00380"></a>00380 
+<a name="l00381"></a>00381         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> E(3,3, 0.0);
+<a name="l00382"></a>00382         E(0,1) = 1.0; E(1,0) = -1.0; E(2,2) = 1.0;
+<a name="l00383"></a>00383 
+<a name="l00384"></a>00384         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> U, W;
+<a name="l00385"></a>00385         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> d;
+<a name="l00386"></a>00386         <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(F, U, d, W);
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> V = W*E;
+<a name="l00389"></a>00389 
+<a name="l00390"></a>00390         <span class="keyword">const</span> <span class="keywordtype">double</span> det_U = <a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(U), det_V = <a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(V);
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392         <span class="comment">// determinant(F)&lt;0.0 &lt;=&gt; determinant(U)*determinant(V) &lt; 0.0 ?</span>
+<a name="l00393"></a>00393         <span class="comment">// Using (-U, V) raises the same results as using (U, -V) in this procedure?</span>
+<a name="l00394"></a>00394         <span class="keywordflow">if</span> (det_U * det_V &lt; 0.0)
+<a name="l00395"></a>00395                 {
+<a name="l00396"></a>00396                 std::cout &lt;&lt; <span class="stringliteral">&quot;[directCamerasFocalsCalibration] Error 954381.&quot;</span> &lt;&lt; std::endl;
+<a name="l00397"></a>00397                 std::cout &lt;&lt; <span class="stringliteral">&quot;[directCamerasFocalsCalibration] det(F) = &quot;</span> &lt;&lt; <a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(F) &lt;&lt; std::endl;
+<a name="l00398"></a>00398                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00399"></a>00399                 }
+<a name="l00400"></a>00400         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (det_U &lt; 0.0)
+<a name="l00401"></a>00401                 {
+<a name="l00402"></a>00402                 U = U * -1.0;
+<a name="l00403"></a>00403                 V = V * -1.0;
+<a name="l00404"></a>00404                 }
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406         <span class="keyword">const</span> <span class="keywordtype">double</span> r = d[0], s = d[1];
+<a name="l00407"></a>00407 
+<a name="l00408"></a>00408         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  Mf = getMfCoeffsMatrix(U, V, r, s),
+<a name="l00409"></a>00409                         Mg = getMgCoeffsMatrix(U, V, r, s);
+<a name="l00410"></a>00410 
+<a name="l00411"></a>00411         <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> coeffs = getPolynomialCoefficientsForMf_xMg(Mf, Mg).toVector();
+<a name="l00412"></a>00412 
+<a name="l00413"></a>00413         <span class="keyword">const</span> <span class="keywordtype">double</span> x = sqrt(ABS(coeffs[1] / coeffs[3]));
+<a name="l00414"></a>00414 
+<a name="l00415"></a>00415         <span class="keyword">const</span> <span class="keywordtype">double</span> polynomialValueAtX = evalPolynomial(coeffs, x);
+<a name="l00416"></a>00416         <span class="keywordflow">if</span> (ABS(polynomialValueAtX) &gt; 1e-8)
+<a name="l00417"></a>00417                 {
+<a name="l00418"></a>00418                 std::cout &lt;&lt; <span class="stringliteral">&quot;[directCamerasFocalsCalibration] Error: could not find x such Mf = x·Mg. polynomial(x) = &quot;</span> &lt;&lt; ABS(polynomialValueAtX) &lt;&lt; std::endl;
+<a name="l00419"></a>00419                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00420"></a>00420                 }
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A = Mf - x * Mg;
+<a name="l00423"></a>00423 
+<a name="l00424"></a>00424         <span class="comment">// Sanity check. The determinant of A should be close to zero.</span>
+<a name="l00425"></a>00425         <span class="keywordflow">if</span> (ABS(<a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(A) &gt; 1e-8))
+<a name="l00426"></a>00426                 {
+<a name="l00427"></a>00427                 std::cout &lt;&lt; <span class="stringliteral">&quot;[directCamerasFocalsCalibration] Error: |det(Mf - x Mg)| = &quot;</span> &lt;&lt; ABS(<a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(A)) &lt;&lt; std::endl;
+<a name="l00428"></a>00428                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00429"></a>00429                 }
+<a name="l00430"></a>00430 
+<a name="l00431"></a>00431         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> vals;
+<a name="l00432"></a>00432         <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, vals);
+<a name="l00433"></a>00433         vals = vals / vals[3];
+<a name="l00434"></a>00434 
+<a name="l00435"></a>00435         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  f = U*getX(r, s, vals[0], vals[1], vals[2])*V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>(),
+<a name="l00436"></a>00436                                         gx = U*getCofactorX(r, s, vals[0], vals[1], vals[2])*V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>() * x;
+<a name="l00437"></a>00437 
+<a name="l00438"></a>00438         <span class="comment">// Solve k1, k2 from equations:</span>
+<a name="l00439"></a>00439         <span class="comment">//      k1 = a1; k1 = a2;</span>
+<a name="l00440"></a>00440         <span class="comment">//      k2 = a3; k2 = a4;</span>
+<a name="l00441"></a>00441         <span class="comment">//      k1*a6 - k2*a5 = 0;</span>
+<a name="l00442"></a>00442         <span class="keyword">const</span> <span class="keywordtype">double</span>    a1 = sqrt(ABS(f(0,2) / gx(0,2))),
+<a name="l00443"></a>00443                         a2 = sqrt(ABS(f(1,2) / gx(1,2))),
+<a name="l00444"></a>00444                         a3 = sqrt(ABS(gx(2,0) / f(2,0))),
+<a name="l00445"></a>00445                         a4 = sqrt(ABS(gx(2,1) / f(2,1))),
+<a name="l00446"></a>00446                         a5 = sqrt(ABS(f(2,2))),
+<a name="l00447"></a>00447                         a6 = sqrt(ABS(gx(2,2)));
+<a name="l00448"></a>00448 
+<a name="l00449"></a>00449         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  coeffsMatrix(5,2, (<span class="keywordtype">double</span>[5*2]){ 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, a6, -a5 });
+<a name="l00450"></a>00450         <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>  objectivesVector(5, (<span class="keywordtype">double</span>[5]){ a1, a2, a3, a4, 0.0 });
+<a name="l00451"></a>00451         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> xVector;
+<a name="l00452"></a>00452         <a class="code" href="group__qvmatrixalgebra.html#gac5e38c9a7f64b9c7785f4d353c0b9ada" title="Solves the linear system  for the unknown vector , using the singular value decomposition...">solveBySingularValueDecomposition</a>(coeffsMatrix, xVector, objectivesVector);
+<a name="l00453"></a>00453 
+<a name="l00454"></a>00454         <span class="comment">// This error should be almost zero.</span>
+<a name="l00455"></a>00455         <span class="keyword">const</span> <span class="keywordtype">double</span> equationsError = (coeffsMatrix * xVector - objectivesVector).norm2();
+<a name="l00456"></a>00456         <span class="keywordflow">if</span> (equationsError &gt; 1e-8)
+<a name="l00457"></a>00457                 {
+<a name="l00458"></a>00458                 std::cout &lt;&lt; <span class="stringliteral">&quot;[directCamerasFocalsCalibration] Error: norm of residuals for linear equations is not close to zero: &quot;</span> &lt;&lt; equationsError &lt;&lt; std::endl;
+<a name="l00459"></a>00459                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00460"></a>00460                 }
+<a name="l00461"></a>00461 
+<a name="l00462"></a>00462         f1 = 1.0/xVector[0];
+<a name="l00463"></a>00463         f2 = 1.0/xVector[1];
+<a name="l00464"></a>00464 
+<a name="l00465"></a>00465         <span class="keywordflow">if</span> ( (isnan(f1) or isnan(f2)))
+<a name="l00466"></a>00466                 {
+<a name="l00467"></a>00467                 std::cout &lt;&lt; <span class="stringliteral">&quot;[directCamerasFocalsCalibration] Got NaN values for focals.&quot;</span> &lt;&lt; std::endl;
+<a name="l00468"></a>00468                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00469"></a>00469                 }
+<a name="l00470"></a>00470 
+<a name="l00471"></a>00471         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00472"></a>00472         }
+<a name="l00473"></a>00473 
+<a name="l00474"></a>00474 <span class="comment">// Creation of a quadratic function class type</span>
+<a name="l00475"></a>00475 <span class="keywordtype">double</span> calibrationErrorForFundamentalMatrix(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;F, <span class="keyword">const</span> <span class="keywordtype">double</span> f1, <span class="keyword">const</span> <span class="keywordtype">double</span> f2)
+<a name="l00476"></a>00476         {
+<a name="l00477"></a>00477         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> estimatedE = <a class="code" href="classQVMatrix.html#abcfe032545b49448a2a064a7952f7ece" title="Gets the diagonal of the matrix.">QVMatrix::diagonal</a>(<a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(f2, f2, 1.0)) * F * <a class="code" href="classQVMatrix.html#abcfe032545b49448a2a064a7952f7ece" title="Gets the diagonal of the matrix.">QVMatrix::diagonal</a>(<a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(f1, f1, 1.0));
+<a name="l00478"></a>00478 
+<a name="l00479"></a>00479         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> sv;
+<a name="l00480"></a>00480         <a class="code" href="group__qvmatrixalgebra.html#ga5d6aa6239753252830669883619f5da7" title="Gets the singular values of a matrix.">singularValues</a>(estimatedE, sv);
+<a name="l00481"></a>00481 
+<a name="l00482"></a>00482         <span class="keywordflow">return</span> 1.0 - sv[1]/sv[0];
+<a name="l00483"></a>00483         }
+<a name="l00484"></a>00484 
+<a name="l00485"></a>00485 <span class="keywordtype">double</span> QVCalibrationErrorFunction::evaluate(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;x)
+<a name="l00486"></a>00486         {
+<a name="l00487"></a>00487         <span class="keyword">const</span> <span class="keywordtype">double</span> error = calibrationErrorForFundamentalMatrix(F, x[0], x[1]);
+<a name="l00488"></a>00488         <span class="keywordflow">return</span> error;
+<a name="l00489"></a>00489         }
+<a name="l00490"></a>00490 
+<a name="l00491"></a>00491 QVCalibrationErrorFunction::QVCalibrationErrorFunction(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;F): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>, double&gt;(), F(F)
+<a name="l00492"></a>00492         { }
+<a name="l00493"></a>00493 
+<a name="l00494"></a>00494 <span class="keywordtype">void</span> getPointMatchingsVariance( <span class="keyword">const</span> QList&lt;QPointFMatching&gt; matchings,
+<a name="l00495"></a>00495                                 <span class="keyword">const</span> <span class="keywordtype">double</span> cx1, <span class="keyword">const</span> <span class="keywordtype">double</span> cy1, <span class="keyword">const</span> <span class="keywordtype">double</span> cx2, <span class="keyword">const</span> <span class="keywordtype">double</span> cy2,
+<a name="l00496"></a>00496                                 <span class="keywordtype">double</span> &amp;variance1, <span class="keywordtype">double</span> &amp;variance2)
+<a name="l00497"></a>00497         {
+<a name="l00498"></a>00498         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> m1x, m1y, m2x, m2y;
+<a name="l00499"></a>00499         <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00500"></a>00500                 {
+<a name="l00501"></a>00501                 m1x &lt;&lt; matching.first.x() - cx1;
+<a name="l00502"></a>00502                 m1y &lt;&lt; matching.first.y() - cy1;
+<a name="l00503"></a>00503                 m2x &lt;&lt; matching.second.x() - cx2;
+<a name="l00504"></a>00504                 m2y &lt;&lt; matching.second.y() -cy2;
+<a name="l00505"></a>00505                 }
+<a name="l00506"></a>00506 
+<a name="l00507"></a>00507         variance1 = 0.5*(m1x.<a class="code" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860" title="Standard deviation.">variance</a>() + m1y.<a class="code" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860" title="Standard deviation.">variance</a>());
+<a name="l00508"></a>00508         variance2 = 0.5*(m2x.<a class="code" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860" title="Standard deviation.">variance</a>() + m2y.<a class="code" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860" title="Standard deviation.">variance</a>());
+<a name="l00509"></a>00509         }
+<a name="l00510"></a>00510 
+<a name="l00511"></a>00511 <span class="comment">//calibrateCamerasFocals</span>
+<a name="l00512"></a><a class="code" href="group__qvprojectivegeometry.html#gabb623dbd849917dc8f20dbcbf775ff22">00512</a> <span class="keywordtype">bool</span> <a class="code" href="group__qvprojectivegeometry.html#gabb623dbd849917dc8f20dbcbf775ff22" title="Estimates the focal lengths for two cameras,.">getCameraFocals</a>(   <span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings,
+<a name="l00513"></a>00513                                                 <span class="keywordtype">double</span> &amp;focal1, <span class="keywordtype">double</span> &amp;focal2,
+<a name="l00514"></a>00514                                                 <span class="keyword">const</span> QPointF principalPoint1,
+<a name="l00515"></a>00515                                                 <span class="keyword">const</span> QPointF principalPoint2,
+<a name="l00516"></a>00516                                                 <span class="keyword">const</span> <a class="code" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7" title="GSL multidimensional minimization algorithms using gradient information.">GSLMultiminFDFMinimizerType</a> gslMinimizerAlgorithm,
+<a name="l00517"></a>00517                                                 <span class="keyword">const</span> <span class="keywordtype">int</span> optimizationIterations)
+<a name="l00518"></a>00518         {
+<a name="l00519"></a>00519         <span class="keyword">const</span> <span class="keywordtype">double</span>    cx1 = principalPoint1.x(),
+<a name="l00520"></a>00520                                         cy1 = principalPoint1.y(),
+<a name="l00521"></a>00521                                         cx2 = principalPoint2.x(),
+<a name="l00522"></a>00522                                         cy2 = principalPoint2.y();
+<a name="l00523"></a>00523 
+<a name="l00524"></a>00524         <span class="comment">// Correct variance of the point projections.</span>
+<a name="l00525"></a>00525         <span class="keywordtype">double</span> variance1, variance2;
+<a name="l00526"></a>00526         getPointMatchingsVariance(matchings, cx1, cy1, cx2, cy2, variance1, variance2);
+<a name="l00527"></a>00527 
+<a name="l00528"></a>00528         <span class="comment">// Use standard deviation for initial focal correction.</span>
+<a name="l00529"></a>00529         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  Q1 = <a class="code" href="classQVMatrix.html#a953207e797ad5c2f8477d3507dbcf86b" title="Creates an intrinsic camera calibration matrix.">QVMatrix::cameraCalibrationMatrix</a>(sqrt(variance1), 1.0, cx1, cy1, 0.0),
+<a name="l00530"></a>00530                                         Q2 = <a class="code" href="classQVMatrix.html#a953207e797ad5c2f8477d3507dbcf86b" title="Creates an intrinsic camera calibration matrix.">QVMatrix::cameraCalibrationMatrix</a>(sqrt(variance2), 1.0, cx2, cy2, 0.0);
+<a name="l00531"></a>00531 
+<a name="l00532"></a>00532         <span class="keyword">const</span> QList&lt;QPointFMatching&gt; correctedMatchings = correctIntrinsics(Q1, Q2, matchings);
+<a name="l00533"></a>00533 
+<a name="l00534"></a>00534 <span class="preprocessor">        #ifdef QVOPENCV</span>
+<a name="l00535"></a>00535 <span class="preprocessor"></span>        <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> F = <a class="code" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b" title="Obtains the fundamental matrix between two images, using the 8 point algorithm.">cvFindFundamentalMat</a>(correctedMatchings);
+<a name="l00536"></a>00536 <span class="preprocessor">        #else</span>
+<a name="l00537"></a>00537 <span class="preprocessor"></span>        <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> F = <a class="code" href="group__qvprojectivegeometry.html#ga721c81d3a9e9c7c2e09f5867241c7021" title="Obtains the fundamental matrix between two images using the 8-point algorithm.">computeFundamentalMatrix</a>(correctedMatchings);
+<a name="l00538"></a>00538 <span class="preprocessor">        #endif</span>
+<a name="l00539"></a>00539 <span class="preprocessor"></span>
+<a name="l00540"></a>00540         <span class="keywordflow">if</span> (F == <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>())
+<a name="l00541"></a>00541                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00542"></a>00542 
+<a name="l00543"></a>00543         <span class="comment">// Estimate initial focals.</span>
+<a name="l00544"></a>00544         <span class="keywordtype">double</span> f1, f2;
+<a name="l00545"></a>00545         <span class="keywordflow">if</span> (not directCamerasFocalsCalibration(F, f1, f2))
+<a name="l00546"></a>00546                 {
+<a name="l00547"></a>00547                 std::cout &lt;&lt; <span class="stringliteral">&quot;[calibrateCamerasFocals] Direct method for focals failed. Initializing focals to 1.0.&quot;</span> &lt;&lt; std::endl;
+<a name="l00548"></a>00548                 f1 = 1.0;
+<a name="l00549"></a>00549                 f2 = 1.0;
+<a name="l00550"></a>00550                 }
+<a name="l00551"></a>00551 
+<a name="l00552"></a>00552         <span class="comment">// Optimize focals.</span>
+<a name="l00553"></a>00553         QVCalibrationErrorFunction error(F);
+<a name="l00554"></a>00554         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> fs(2);
+<a name="l00555"></a>00555         fs[0] = f1;
+<a name="l00556"></a>00556         fs[1] = f2;
+<a name="l00557"></a>00557         <a class="code" href="group__qvnumericalanalysis.html#gad5edc708c8725e70dc43ad236729d6e5" title="Wrapper to GSL multivariate function minimization using gradient information.">qvGSLMinimizeFDF</a>(error, fs, gslMinimizerAlgorithm, optimizationIterations);
+<a name="l00558"></a>00558         f1 = fs[0];
+<a name="l00559"></a>00559         f2 = fs[1];
+<a name="l00560"></a>00560 
+<a name="l00561"></a>00561         focal1 = f1 * sqrt(variance1),
+<a name="l00562"></a>00562         focal2 = f2 * sqrt(variance2);
+<a name="l00563"></a>00563 
+<a name="l00564"></a>00564         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00565"></a>00565         }
+<a name="l00566"></a>00566 
+<a name="l00567"></a>00567 <span class="comment">// -----------------------------------------------------</span>
+<a name="l00568"></a>00568 
+<a name="l00569"></a>00569 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

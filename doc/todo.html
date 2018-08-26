@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="todo">Todo List </a></h1><p><a class="anchor" id="_todo000001"></a> </p>
+<dl>
+<dt>Page <a class="el" href="BlockSynchronization.html">Block synchronization</a>  </dt>
+<dd><p class="startdd">Event connections are in fact implemented through the same signal-slot mechanism of Qt. We should document here an example of use.</p>
+<p></p>
+<p>Same for sequential links: identical semantics to synchronous links, but blocks linked with these links execute in the same logical thread, which can affect performance -positively or negatively, depending on several circumstances-. In any case, sequential and synchronous links are completely interchangeable without affecting program correctness. Again, we should document here another example of use.</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000102"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#ga6592d7adcbca1d12882e1f68e3fbb3a9">checkForNaNValues</a> (const QList&lt; QVCameraPose &gt; &amp;cameraPoses) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000103"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#gaf0ef3cb35d54cb93528315bcd249147a">checkForNaNValues</a> (const QList&lt; QV3DPointF &gt; &amp;points3D) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000104"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#ga0cbfa4194c9c11fa7a17c81056be0d1e">checkForNaNValues</a> (const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000046"></a> </p>
+<dl>
+<dt>Member <a class="el" href="macros_8h.html#af5414c6a3786023ef4b0faae8de42947">COMPOSE_ROI</a> (DestImage, SrcImage, DestROIOffset, incW, incH) </dt>
+<dd>quitar esa comprobación. La función IPP debería devolver error, caso de que no funcione correctamente. </dd>
+</dl>
+<p><a class="anchor" id="_todo000049"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippIDEAIF.html#ga73c5dc108bb6d97fd453fc600af1a6aa">Copy</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;src1, const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;src2, const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;src3, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 3 &gt;</a> &amp;dest, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd><p class="startdd">Problema con las funciones IPP: al llamar a una función no inline con la misma imagen de entrada que de salida, por ejemplo:</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000050"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippIDEAIF.html#ga7f0973b25a15a08b6888214d635fa630">Copy</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 3 &gt;</a> &amp;src, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;dest1, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;dest2, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;dest3, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd>Document. </dd>
+</dl>
+<p><a class="anchor" id="_todo000051"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippIDEAIF.html#ga9668431696a9bc7920b01ea433735810">Copy</a> (const QVImage&lt; sFloat, 3 &gt; &amp;src, QVImage&lt; sFloat, 1 &gt; &amp;dest1, QVImage&lt; sFloat, 1 &gt; &amp;dest2, QVImage&lt; sFloat, 1 &gt; &amp;dest3, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd>Document. </dd>
+</dl>
+<p><a class="anchor" id="_todo000094"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#ga88e5c045a99ad4e58d312ccee761860d">correctIntrinsics</a> (const QList&lt; QVMatrix &gt; &amp;Ks, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointsProjections) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000032"></a> </p>
+<dl>
+<dt>Member <a class="el" href="qvimage_8cpp.html#ac61503d19209be27099ee5247271d02f">CREATE_IPLIMAGE_CONSTRUCTOR</a> (TYPE, C, DEPTH) </dt>
+<dd>Check IplImage is compatible with actual image </dd>
+</dl>
+<p><a class="anchor" id="_todo000043"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6">fastMaximalPoints</a> (const QVImage&lt; sFloat &gt; &amp;image, const double threshold=1.0, const int windowSize=2) </dt>
+<dd>document this </dd>
+</dl>
+<p><a class="anchor" id="_todo000038"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519">FilterDoG</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;image, <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;result) </dt>
+<dd><p class="startdd">document this</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000037"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b">FilterHarrisCornerResponseImage</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;image, QVImage&lt; sFloat &gt; &amp;result, int aperture=3, int avgwindow=5, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd><p class="startdd">document this</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000040"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9">FilterHessianCornerResponseImage</a> (const QVImage&lt; sFloat &gt; &amp;image, QVImage&lt; sFloat &gt; &amp;result, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd><p class="startdd">document this</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000045"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13">FilterLocalMax</a> (const QVImage&lt; sFloat &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;dest, uInt colMaskSize, uInt rowMaskSize, sFloat threshold=0) </dt>
+<dd><ul>
+<li>Fix resulting image ROI, obtain maximums restricted to the ROI.</li>
+<li>Use IPP functions to obtain the result.</li>
+</ul>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000106"></a> </p>
+<dl>
+<dt>File <a class="el" href="filterSelector_8cpp.html">filterSelector.cpp</a>  </dt>
+<dd><p class="startdd">Detailed description should follow.</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000042"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#gaacf3624cc8f531fccb9a436878af3fba">FilterSeparable</a> (const QVImage&lt; sFloat, 1 &gt; &amp;image, QVImage&lt; sFloat, 1 &gt; &amp;dest, const <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;rowFilter, const <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;colFilter, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd><p class="startdd">document this</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000058"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#gaafd238c384d328ca51834ff1671731da">HistogramRange</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;src, QList&lt; uChar &gt; values) </dt>
+<dd><p class="startdd">fill pLevels array with values from QList 'values'</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000057"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">InpaintFreeC1</a> (IppiInpaintState_8u_C1R *pState) </dt>
+<dd>Document. </dd>
+</dl>
+<p><a class="anchor" id="_todo000055"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">InpaintFreeC3</a> (IppiInpaintState_8u_C3R *pState) </dt>
+<dd>Document. </dd>
+</dl>
+<p><a class="anchor" id="_todo000056"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">InpaintInitAllocC1</a> (IppiInpaintState_8u_C1R **pState, const QVImage&lt; sFloat &gt; &amp;distances, const <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;mask, const sFloat radius, const IppiInpaintFlag flag) </dt>
+<dd>Document. </dd>
+</dl>
+<p><a class="anchor" id="_todo000054"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">InpaintInitAllocC3</a> (IppiInpaintState_8u_C3R **pState, const QVImage&lt; sFloat &gt; &amp;distances, const <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;mask, const sFloat radius, const IppiInpaintFlag flag) </dt>
+<dd>Document. </dd>
+</dl>
+<p><a class="anchor" id="_todo000096"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#gafe66d3df96f6c69ab795e2a070865dad">invertCheirality</a> (QList&lt; QVCameraPose &gt; &amp;cameraPoses, QList&lt; QV3DPointF &gt; &amp;points3D) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000087"></a> </p>
+<dl>
+<dt>Member <a class="el" href="qvtensor_8cpp.html#a9f6c707bf7e995fe6dd73e3701196345">leviCivitaAux</a> (double *data, QVTensorIndexator &amp;indexator, int index, bool parity=true) </dt>
+<dd>Esto debería ser innecesario. </dd>
+</dl>
+<p><a class="anchor" id="_todo000077"></a> </p>
+<dl>
+<dt>Member <a class="el" href="qvprojective_8cpp.html#aefe2c68264497da296129eb3c0cc8ed4">linearCameraCenterResection</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;R, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; QV3DPointF &gt; &amp;points3D) </dt>
+<dd>Resolver el sistema linear de forma más eficiente. </dd>
+</dl>
+<p><a class="anchor" id="_todo000105"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#gaab6ac97055fa83864cb3bcad712008b7">linearCameraPairInitialization</a> (const QVector&lt; QPointFMatching &gt; &amp;matchings, <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Rt1, <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Rt2) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000044"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">maximalPoints</a> (const QVImage&lt; sFloat &gt; &amp;image, const double threshold=1.0, const int windowRadius=2) </dt>
+<dd><p class="startdd">document this</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000036"></a> </p>
+<dl>
+<dt>Member <a class="el" href="qvip_8cpp.html#ad59b48c43b863530b8ef45a61ef250e7">myFloodFill</a> (<a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;image, uInt x, uInt y, uInt value, uInt minVal, uInt maxVal) </dt>
+<dd>this function is deprecated: erase it and replace calls to it by IPP's flood fill function. </dd>
+</dl>
+<p><a class="anchor" id="_todo000072"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvmath.html#gaabdd51683148ac1153014120c7558b89">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) </dt>
+<dd>detailed description should follow </dd>
+</dl>
+<p><a class="anchor" id="_todo000089"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvmath.html#ga9eb3c76cb24443e2ff28327bc2c194d2">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector) </dt>
+<dd>detailed description should follow </dd>
+</dl>
+<p><a class="anchor" id="_todo000073"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvmath.html#ga20cb79175099f4623dc53a96d9f1ce6c">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) </dt>
+<dd>detailed description should follow </dd>
+</dl>
+<p><a class="anchor" id="_todo000074"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvmath.html#gaa3314730bd45d74b2a4f3cb8bd3fa0fa">qHash</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) </dt>
+<dd>detailed description should follow </dd>
+</dl>
+<p><a class="anchor" id="_todo000090"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvmath.html#gaba2fa16f67dd829053ea94d47f956692">qHash</a> (const <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector) </dt>
+<dd>detailed description should follow </dd>
+</dl>
+<p><a class="anchor" id="_todo000027"></a> </p>
+<dl>
+<dt>Class <a class="el" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a>  </dt>
+<dd><p class="startdd">document this class</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000030"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">QVComponentTree::QVComponentTree</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;image, bool inverseTree=false, bool useAlternative=false) </dt>
+<dd><p class="startdd">Check sum of childs for node equals numChilds(node)</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000060"></a> </p>
+<dl>
+<dt>Member <a class="el" href="qvmath_2qvmath_8h.html#ae0d784f6af76701f920a314685c9e33b">qvFactorial</a> (const int n) </dt>
+<dd>document </dd>
+</dl>
+<p><a class="anchor" id="_todo000019"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVFunctionPlot.html#aa8ba7ec0e6cd3d38dfe0285724370103">QVFunctionPlot::QVFunctionPlot</a> (const QString name=QString(), bool time=true, int step=10, QWidget *parent=0) </dt>
+<dd>los parámetros de configuración de los widgets numericplot e histogramplot puedan ser propiedades dinámicas. </dd>
+</dl>
+<p><a class="anchor" id="_todo000031"></a> </p>
+<dl>
+<dt>Class <a class="el" href="classQVGenericImage.html">QVGenericImage</a>  </dt>
+<dd>eliminar el sufijo 'get' de todas las funciones. getCols -&gt; cols, getRows -&gt; rows </dd>
+</dl>
+<p><a class="anchor" id="_todo000028"></a> </p>
+<dl>
+<dt>Class <a class="el" href="classQVHarrisPointDetector.html">QVHarrisPointDetector</a>  </dt>
+<dd><p class="startdd">document this class</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000020"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVHistogramPlot.html#aa8867e4f56ea321b8ff57a1200fe0866">QVHistogramPlot::QVHistogramPlot</a> (const QString name=QString(), bool time=true, int step=10, double maxim=0, double minim=0, QWidget *parent=0) </dt>
+<dd>los parámetros de configuración de los widgets numericplot e histogramplot puedan ser propiedades dinámicas. </dd>
+</dl>
+<p><a class="anchor" id="_todo000035"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVImage.html#a711605fe3079ed219867bd0c121a6726">QVImage::operator!=</a> (const QVImage&lt; Type, Channels &gt; &amp;img) const  </dt>
+<dd><p class="startdd">Shouldn't ignore dimensions in caparisons, and only check if region of interest content are the same?</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000034"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVImage.html#a4415e3727eb0d435036c75a58c41bf10">QVImage::QVImage</a> (const QString &amp;filename) </dt>
+<dd>document this function </dd>
+</dl>
+<p><a class="anchor" id="_todo000033"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvip.html#gad6b87d2e7576cd2ad65bddfbd1d05271">QVIMAGE_COL_INCREMENT_PTR</a> (IMAGE) </dt>
+<dd>Las macros de acceso a pixel secuenciales no funcionan. Revisar. </dd>
+</dl>
+<p><a class="anchor" id="_todo000024"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd">QVImageCanvas::linkSelectedPolyline</a> (<a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinationContainer, QString destinationPropName) </dt>
+<dd>expand this documentation </dd>
+</dl>
+<p><a class="anchor" id="_todo000025"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4">QVImageCanvas::linkSelectedRectangle</a> (<a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinationContainer, QString destinationPropName) </dt>
+<dd>expand this documentation </dd>
+</dl>
+<p><a class="anchor" id="_todo000023"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVImageCanvas.html#a1cf2eec22039d5793791a3109348bcfe">QVImageCanvas::setPrintTags</a> (const QString &amp;name, const bool &amp;printTags) </dt>
+<dd>document </dd>
+</dl>
+<p><a class="anchor" id="_todo000004"></a> </p>
+<dl>
+<dt>Group <a class="el" href="group__qvip.html">qvip</a>  </dt>
+<dd>Expand this documentation </dd>
+</dl>
+<p><a class="anchor" id="_todo000003"></a> </p>
+<dl>
+<dt>Group <a class="el" href="group__qvippblocks.html">qvippblocks</a>  </dt>
+<dd>Documentar. </dd>
+</dl>
+<p><a class="anchor" id="_todo000064"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#abcbf2346a9cf0a62444d7a9254890952">QVMatrix::addition</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) const  </dt>
+<dd>use blas function cblas_axpy for data add </dd>
+</dl>
+<p><a class="anchor" id="_todo000061"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a30f99ef8af0ff9f3997143d389698b71">QVMatrix::elementProduct</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) const  </dt>
+<dd>use Blas </dd>
+</dl>
+<p><a class="anchor" id="_todo000071"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a77b34335086bb9e12d7d72398c608e75">QVMatrix::getSubmatrix</a> (const int firstRow, const int lastRow, const int firstCol, const int lastCol) const  </dt>
+<dd>This method is very slow. Optimize it with blas code. </dd>
+</dl>
+<p><a class="anchor" id="_todo000065"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a383f8068c7fe6e793807e20542f779d1">QVMatrix::inlineAddition</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) </dt>
+<dd>use blas function cblas_axpy for data add </dd>
+</dl>
+<p><a class="anchor" id="_todo000075"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a12aec43704cd3577bea5fd127343aee0">QVMatrix::rowHomogeneousNormalize</a> () const  </dt>
+<dd><p class="startdd">explain homogeneous normalization</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000069"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#af1286b0c208cec68dd42e5411b210081">QVMatrix::scalarAdd</a> (const double value) const  </dt>
+<dd>use blas function? </dd>
+</dl>
+<p><a class="anchor" id="_todo000068"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#ab87d29d63b8f41ff3f4a812a813f7718">QVMatrix::scalarDivide</a> (const double value) const  </dt>
+<dd>use blas function? </dd>
+</dl>
+<p><a class="anchor" id="_todo000067"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a75ac95f4f6c88b4354e4e8aeab5b13a1">QVMatrix::scalarProduct</a> (const double value) const  </dt>
+<dd>use blas function? </dd>
+</dl>
+<p><a class="anchor" id="_todo000070"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a6980327fe32d68ae6028482a8a96200e">QVMatrix::scalarSubstract</a> (const double value) const  </dt>
+<dd>use blas function? </dd>
+</dl>
+<p><a class="anchor" id="_todo000063"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#ae6b416b2be44685dab80600afd239ed4">QVMatrix::set</a> (const double value) </dt>
+<dd>use blas function cblas_axpy for data add </dd>
+</dl>
+<p><a class="anchor" id="_todo000066"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#ac65404c74ffc0f41f6d22a3fd6914f8a">QVMatrix::substract</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix) const  </dt>
+<dd>use blas function cblas_axpy for data add </dd>
+</dl>
+<p><a class="anchor" id="_todo000062"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e">QVMatrix::transpose</a> () const  </dt>
+<dd>use blas function cblas_axpy for this </dd>
+</dl>
+<p><a class="anchor" id="_todo000005"></a> </p>
+<dl>
+<dt>Group <a class="el" href="group__qvmplayer.html">qvmplayer</a>  </dt>
+<dd><p class="startdd">expand this documentation</p>
+<p></p>
+<p>expand this documentation</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000029"></a> </p>
+<dl>
+<dt>Class <a class="el" href="classQVMSERDetector.html">QVMSERDetector</a>  </dt>
+<dd><p class="startdd">document this class</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000007"></a> </p>
+<dl>
+<dt>Group <a class="el" href="group__qvqwt.html">qvqwt</a>  </dt>
+<dd>Documentar. </dd>
+</dl>
+<p><a class="anchor" id="_todo000078"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVSparseBlockMatrix.html#a36a11e4a75005686b522407e67136b0c">QVSparseBlockMatrix::dotProduct</a> (const <a class="el" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;other, const bool transposeFirstOperand=false, const bool transposeSecondOperand=false) const  </dt>
+<dd>mejorar operador de incremento para matrices </dd>
+</dl>
+<p><a class="anchor" id="_todo000079"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVSparseBlockMatrix.html#adb286c7dbcf46f0d134bff43bab37e0c">QVSparseBlockMatrix::dotProduct</a> (const <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector, const bool transposeMatrix=false) const  </dt>
+<dd>mejorar operador de incremento para vectores </dd>
+</dl>
+<p><a class="anchor" id="_todo000081"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVTensor.html#ac1d43563ea2215db9d9e710cba7e0246">QVTensor::add</a> (const <a class="el" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> &amp;tensor) const  </dt>
+<dd><p class="startdd">check tensor valences are compatible </p>
+<p class="enddd">use blas function cblas_axpy for data add </p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000080"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVTensor.html#a66f3349e05d25669238e817363af2829">QVTensor::equals</a> (const <a class="el" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> &amp;tensor) const  </dt>
+<dd>assert para comprobar que el tamaño del buffer de datos de ambos tensores se corresponde con su valencia </dd>
+</dl>
+<p><a class="anchor" id="_todo000085"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVTensor.html#a5fca8e41cab78d5f664b33dc355abbb9">QVTensor::outerProduct</a> (const <a class="el" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> &amp;tensor) const  </dt>
+<dd>: to be done. </dd>
+</dl>
+<p><a class="anchor" id="_todo000088"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVTensor.html#ab571f6752903ec1dea3c6d02be465e8b">QVTensor::QVTensor</a> (const QVTensorValence &amp;indexList=QVTensorValence()) </dt>
+<dd>check that no indexes are repeated in the indexList, even covariated ones </dd>
+</dl>
+<p><a class="anchor" id="_todo000086"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVTensor.html#afce34958c46236f2332c04c886d54333">QVTensor::renameIndexes</a> (const QVTensorValence &amp;indexList) const  </dt>
+<dd>Assert for valence (variance/covariance and size) of new and old indexes is equivalent really? no, just check dimensions are compatible. </dd>
+</dl>
+<p><a class="anchor" id="_todo000083"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVTensor.html#a9c310f3902d33a4572b36147b887a3a5">QVTensor::substract</a> (const <a class="el" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> &amp;tensor) const  </dt>
+<dd><p class="startdd">check tensor valences are compatible </p>
+<p class="enddd">use blas function cblas_axpy for data substraction </p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000091"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classQVVector.html#a6d8a9cae85983ca7a0f2ddc3c4e79117">QVVector::operator+=</a> (const <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector) </dt>
+<dd>use blas </dd>
+</dl>
+<p><a class="anchor" id="_todo000097"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#ga55fc8cf62fcfa41cbbed9952aace4556">reconstructionError</a> (const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000098"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#ga24c3d362f20077a851e8539e4bc73aa4">reconstructionError</a> (const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000099"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#gaa4ff677564f869aed7cdbce781788cc9">reconstructionError</a> (const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const QVector&lt; bool &gt; &amp;evaluateTracking) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000100"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#gafbe2b84faffa62f5838ac22a3b6d2026">reconstructionError</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Rt1, const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Rt2, const QList&lt; QV3DPointF &gt; &amp;points3D, const QVector&lt; QPointFMatching &gt; &amp;matchings) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000101"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#ga17abbe105d91613411f3de1d8cbd9bc3">reconstructionErrorResiduals</a> (const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000076"></a> </p>
+<dl>
+<dt>Member <a class="el" href="qvmatrixalgebra_8cpp.html#a2a11aaeedc4d76975389706a8e27defc">regressionLine</a> (const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;points) </dt>
+<dd>esto no funciona. </dd>
+</dl>
+<p><a class="anchor" id="_todo000053"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">RGBToYUV420</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 3 &gt;</a> &amp;src, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;dst1, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;dst2, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;dst3, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd>document this </dd>
+</dl>
+<p><a class="anchor" id="_todo000039"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvipp.html#gaa9474c9f380746aaa24f9997bada59f5">SobelCornerResponseImage</a> (const QVImage&lt; sFloat &gt; &amp;image, QVImage&lt; sFloat &gt; &amp;result) </dt>
+<dd><p class="startdd">document this</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000092"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvros.html#gad93da3ae76d4c1cebbdd6b7dbd29d662">sSBAOptimization</a> (const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointsProjections, QList&lt; QVCameraPose &gt; &amp;refinedCameraPoses, QList&lt; QV3DPointF &gt; &amp;refinedPoints3D, int &amp;time_sSBA, const int numIters=1, const double lambda=1e-3, const int useCSparse=SBA_SPARSE_CHOLESKY, const int numFixedCameras=1, double initTolCG=1.0e-8, const int maxItersCG=100) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000095"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvsfm.html#gafea767e25db8e80b1822b8a1499776fa">testCheirality</a> (const QList&lt; QVCameraPose &gt; cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; calibratedPointsProjections) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000059"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b">WarpPerspective</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;src, <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a> &amp;dest, const <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;rectifyingHomography, int interpolation=IPPI_INTER_LINEAR, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd><p class="startdd">Document this function</p>
+<p class="enddd"></p>
+</dd>
+</dl>
+<p><a class="anchor" id="_todo000093"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvbundler.html#ga845a9d3c24f78c74a60964d4ae1a509a">writeMatchingsToBundlerMatchingsFile</a> (const QString &amp;fileName, const <a class="el" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph</a>&lt; QVector&lt; QVIndexPair &gt; &gt; &amp;matchings) </dt>
+<dd>Document this. </dd>
+</dl>
+<p><a class="anchor" id="_todo000052"></a> </p>
+<dl>
+<dt>Member <a class="el" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">YUV420ToRGB</a> (const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;srcY, const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;srcU, const <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a> &amp;srcV, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 3 &gt;</a> &amp;destRGB, const QPoint &amp;destROIOffset=QPoint(0, 0)) </dt>
+<dd>document this </dd>
+</dl>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvsfm/laSBA/sba-1.6/sba_chkjac.c</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;float.h&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;compiler.h&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;sba.h&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#define emalloc(sz)       emalloc_(__FILE__, __LINE__, sz)</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a>00031 <span class="preprocessor">#define FABS(x)           (((x)&gt;=0)? (x) : -(x))</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="comment">/* auxiliary memory allocation routine with error checking */</span>
+<a name="l00035"></a>00035 <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> *emalloc_(<span class="keywordtype">char</span> *file, <span class="keywordtype">int</span> line, <span class="keywordtype">size_t</span> sz)
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037 <span class="keywordtype">void</span> *ptr;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039   ptr=(<span class="keywordtype">void</span> *)malloc(sz);
+<a name="l00040"></a>00040   <span class="keywordflow">if</span>(ptr==NULL){
+<a name="l00041"></a>00041     fprintf(stderr, <span class="stringliteral">&quot;SBA: memory allocation request for %u bytes failed in file %s, line %d, exiting&quot;</span>, sz, file, line);
+<a name="l00042"></a>00042     exit(1);
+<a name="l00043"></a>00043   }
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045   <span class="keywordflow">return</span> ptr;
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="comment">/* </span>
+<a name="l00049"></a>00049 <span class="comment"> * Check the jacobian of a projection function in nvars variables</span>
+<a name="l00050"></a>00050 <span class="comment"> * evaluated at a point p, for consistency with the function itself.</span>
+<a name="l00051"></a>00051 <span class="comment"> * Expert version</span>
+<a name="l00052"></a>00052 <span class="comment"> *</span>
+<a name="l00053"></a>00053 <span class="comment"> * Based on fortran77 subroutine CHKDER by</span>
+<a name="l00054"></a>00054 <span class="comment"> * Burton S. Garbow, Kenneth E. Hillstrom, Jorge J. More</span>
+<a name="l00055"></a>00055 <span class="comment"> * Argonne National Laboratory. MINPACK project. March 1980.</span>
+<a name="l00056"></a>00056 <span class="comment"> *</span>
+<a name="l00057"></a>00057 <span class="comment"> *</span>
+<a name="l00058"></a>00058 <span class="comment"> * func points to a function from R^{nvars} --&gt; R^{nobs}: Given a p in R^{nvars}</span>
+<a name="l00059"></a>00059 <span class="comment"> *      it yields hx in R^{nobs}</span>
+<a name="l00060"></a>00060 <span class="comment"> * jacf points to a function implementing the jacobian of func, whose consistency with</span>
+<a name="l00061"></a>00061 <span class="comment"> *     func is to be tested. Given a p in R^{nvars}, jacf computes into the nvis*(Asz+Bsz)</span>
+<a name="l00062"></a>00062 <span class="comment"> *     matrix jac the jacobian of func at p. Note the jacobian is sparse, consisting of</span>
+<a name="l00063"></a>00063 <span class="comment"> *     all A_ij, B_ij and that row i of jac corresponds to the gradient of the i-th</span>
+<a name="l00064"></a>00064 <span class="comment"> *     component of func, evaluated at p.</span>
+<a name="l00065"></a>00065 <span class="comment"> * p is an input array of length nvars containing the point of evaluation.</span>
+<a name="l00066"></a>00066 <span class="comment"> * idxij, rcidxs, rcsubs, ncon, mcon, cnp, pnp, mnp are as usual. Note that if cnp=0 or</span>
+<a name="l00067"></a>00067 <span class="comment"> *     pnp=0 a jacobian corresponding resp. to motion or camera parameters</span>
+<a name="l00068"></a>00068 <span class="comment"> *     only is assumed.</span>
+<a name="l00069"></a>00069 <span class="comment"> * func_adata, jac_adata point to possible additional data and are passed</span>
+<a name="l00070"></a>00070 <span class="comment"> *     uninterpreted to func, jacf respectively.</span>
+<a name="l00071"></a>00071 <span class="comment"> * err is an array of length nobs. On output, err contains measures</span>
+<a name="l00072"></a>00072 <span class="comment"> *     of correctness of the respective gradients. if there is</span>
+<a name="l00073"></a>00073 <span class="comment"> *     no severe loss of significance, then if err[i] is 1.0 the</span>
+<a name="l00074"></a>00074 <span class="comment"> *     i-th gradient is correct, while if err[i] is 0.0 the i-th</span>
+<a name="l00075"></a>00075 <span class="comment"> *     gradient is incorrect. For values of err between 0.0 and 1.0,</span>
+<a name="l00076"></a>00076 <span class="comment"> *     the categorization is less certain. In general, a value of</span>
+<a name="l00077"></a>00077 <span class="comment"> *     err[i] greater than 0.5 indicates that the i-th gradient is</span>
+<a name="l00078"></a>00078 <span class="comment"> *     probably correct, while a value of err[i] less than 0.5</span>
+<a name="l00079"></a>00079 <span class="comment"> *     indicates that the i-th gradient is probably incorrect.</span>
+<a name="l00080"></a>00080 <span class="comment"> *</span>
+<a name="l00081"></a>00081 <span class="comment"> * CAUTION: THIS FUNCTION IS NOT 100% FOOLPROOF. The</span>
+<a name="l00082"></a>00082 <span class="comment"> * following excerpt comes from CHKDER&#39;s documentation:</span>
+<a name="l00083"></a>00083 <span class="comment"> *</span>
+<a name="l00084"></a>00084 <span class="comment"> *     &quot;The function does not perform reliably if cancellation or</span>
+<a name="l00085"></a>00085 <span class="comment"> *     rounding errors cause a severe loss of significance in the</span>
+<a name="l00086"></a>00086 <span class="comment"> *     evaluation of a function. therefore, none of the components</span>
+<a name="l00087"></a>00087 <span class="comment"> *     of p should be unusually small (in particular, zero) or any</span>
+<a name="l00088"></a>00088 <span class="comment"> *     other value which may cause loss of significance.&quot;</span>
+<a name="l00089"></a>00089 <span class="comment"> */</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="keywordtype">void</span> sba_motstr_chkjac_x(
+<a name="l00092"></a>00092     <span class="keywordtype">void</span> (*func)(<span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">double</span> *hx, <span class="keywordtype">void</span> *adata),
+<a name="l00093"></a>00093     <span class="keywordtype">void</span> (*jacf)(<span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">double</span> *jac, <span class="keywordtype">void</span> *adata),
+<a name="l00094"></a>00094     <span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">int</span> ncon, <span class="keywordtype">int</span> mcon, <span class="keywordtype">int</span> cnp, <span class="keywordtype">int</span> pnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00095"></a>00095 {
+<a name="l00096"></a>00096 <span class="keyword">const</span> <span class="keywordtype">double</span> factor=100.0, one=1.0, zero=0.0;
+<a name="l00097"></a>00097 <span class="keywordtype">double</span> *fvec, *fjac, *pp, *fvecp, *buf, *err;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="keywordtype">int</span> nvars, nobs, m, n, Asz, Bsz, ABsz, nnz;
+<a name="l00100"></a>00100 <span class="keyword">register</span> <span class="keywordtype">int</span> i, j, ii, jj;
+<a name="l00101"></a>00101 <span class="keywordtype">double</span> eps, epsf, temp, epsmch, epslog;
+<a name="l00102"></a>00102 <span class="keyword">register</span> <span class="keywordtype">double</span> *ptr1, *ptr2, *pab;
+<a name="l00103"></a>00103 <span class="keywordtype">double</span> *pa, *pb;
+<a name="l00104"></a>00104 <span class="keywordtype">int</span> fvec_sz, pp_sz, fvecp_sz, numerr=0;
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106   nobs=idxij-&gt;nnz*mnp;
+<a name="l00107"></a>00107   n=idxij-&gt;nr; m=idxij-&gt;nc;
+<a name="l00108"></a>00108   nvars=m*cnp + n*pnp;
+<a name="l00109"></a>00109   epsmch=DBL_EPSILON;
+<a name="l00110"></a>00110   eps=sqrt(epsmch);
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112   Asz=mnp*cnp; Bsz=mnp*pnp; ABsz=Asz+Bsz;
+<a name="l00113"></a>00113   fjac=(<span class="keywordtype">double</span> *)emalloc(idxij-&gt;nnz*ABsz*<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115   fvec_sz=fvecp_sz=nobs;
+<a name="l00116"></a>00116   pp_sz=nvars;
+<a name="l00117"></a>00117   buf=(<span class="keywordtype">double</span> *)emalloc((fvec_sz + pp_sz + fvecp_sz)*<span class="keyword">sizeof</span>(double));
+<a name="l00118"></a>00118   fvec=buf;
+<a name="l00119"></a>00119   pp=fvec+fvec_sz;
+<a name="l00120"></a>00120   fvecp=pp+pp_sz;
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122   err=(<span class="keywordtype">double</span> *)emalloc(nobs*<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124   <span class="comment">/* compute fvec=func(p) */</span>
+<a name="l00125"></a>00125   (*func)(p, idxij, rcidxs, rcsubs, fvec, func_adata);
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127   <span class="comment">/* compute the jacobian at p */</span>
+<a name="l00128"></a>00128   (*jacf)(p, idxij, rcidxs, rcsubs, fjac, jac_adata);
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130   <span class="comment">/* compute pp */</span>
+<a name="l00131"></a>00131   <span class="keywordflow">for</span>(j=0; j&lt;nvars; ++j){
+<a name="l00132"></a>00132     temp=eps*FABS(p[j]);
+<a name="l00133"></a>00133     <span class="keywordflow">if</span>(temp==zero) temp=eps;
+<a name="l00134"></a>00134     pp[j]=p[j]+temp;
+<a name="l00135"></a>00135   }
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137   <span class="comment">/* compute fvecp=func(pp) */</span>
+<a name="l00138"></a>00138   (*func)(pp, idxij, rcidxs, rcsubs, fvecp, func_adata);
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140   epsf=factor*epsmch;
+<a name="l00141"></a>00141   epslog=log10(eps);
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143   <span class="keywordflow">for</span>(i=0; i&lt;nobs; ++i)
+<a name="l00144"></a>00144     err[i]=zero;
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146   pa=p;
+<a name="l00147"></a>00147   pb=p + m*cnp;
+<a name="l00148"></a>00148   <span class="keywordflow">for</span>(i=0; i&lt;n; ++i){
+<a name="l00149"></a>00149     nnz=sba_crsm_row_elmidxs(idxij, i, rcidxs, rcsubs); <span class="comment">/* find nonzero A_ij, B_ij, j=0...m-1, actual column numbers in rcsubs */</span>
+<a name="l00150"></a>00150     <span class="keywordflow">for</span>(j=0; j&lt;nnz; ++j){
+<a name="l00151"></a>00151       ptr2=err + idxij-&gt;val[rcidxs[j]]*mnp; <span class="comment">// set ptr2 to point into err</span>
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153       <span class="keywordflow">if</span>(cnp &amp;&amp; rcsubs[j]&gt;=mcon){ <span class="comment">// A_ij is nonzero</span>
+<a name="l00154"></a>00154         ptr1=fjac + idxij-&gt;val[rcidxs[j]]*ABsz; <span class="comment">// set ptr1 to point to A_ij</span>
+<a name="l00155"></a>00155         pab=pa + rcsubs[j]*cnp;
+<a name="l00156"></a>00156         <span class="keywordflow">for</span>(jj=0; jj&lt;cnp; ++jj){
+<a name="l00157"></a>00157           temp=FABS(pab[jj]);
+<a name="l00158"></a>00158           <span class="keywordflow">if</span>(temp==zero) temp=one;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160           <span class="keywordflow">for</span>(ii=0; ii&lt;mnp; ++ii)
+<a name="l00161"></a>00161             ptr2[ii]+=temp*ptr1[ii*cnp+jj];
+<a name="l00162"></a>00162         }
+<a name="l00163"></a>00163       }
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165       <span class="keywordflow">if</span>(pnp &amp;&amp; i&gt;=ncon){ <span class="comment">// B_ij is nonzero</span>
+<a name="l00166"></a>00166         ptr1=fjac + idxij-&gt;val[rcidxs[j]]*ABsz + Asz; <span class="comment">// set ptr1 to point to B_ij</span>
+<a name="l00167"></a>00167         pab=pb + i*pnp;
+<a name="l00168"></a>00168         <span class="keywordflow">for</span>(jj=0; jj&lt;pnp; ++jj){
+<a name="l00169"></a>00169           temp=FABS(pab[jj]);
+<a name="l00170"></a>00170           <span class="keywordflow">if</span>(temp==zero) temp=one;
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172           <span class="keywordflow">for</span>(ii=0; ii&lt;mnp; ++ii)
+<a name="l00173"></a>00173             ptr2[ii]+=temp*ptr1[ii*pnp+jj];
+<a name="l00174"></a>00174         }
+<a name="l00175"></a>00175       }
+<a name="l00176"></a>00176     }
+<a name="l00177"></a>00177   }
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179   <span class="keywordflow">for</span>(i=0; i&lt;nobs; ++i){
+<a name="l00180"></a>00180     temp=one;
+<a name="l00181"></a>00181     <span class="keywordflow">if</span>(fvec[i]!=zero &amp;&amp; fvecp[i]!=zero &amp;&amp; FABS(fvecp[i]-fvec[i])&gt;=epsf*FABS(fvec[i]))
+<a name="l00182"></a>00182         temp=eps*FABS((fvecp[i]-fvec[i])/eps - err[i])/(FABS(fvec[i])+FABS(fvecp[i]));
+<a name="l00183"></a>00183     err[i]=one;
+<a name="l00184"></a>00184     <span class="keywordflow">if</span>(temp&gt;epsmch &amp;&amp; temp&lt;eps)
+<a name="l00185"></a>00185         err[i]=(log10(temp) - epslog)/epslog;
+<a name="l00186"></a>00186     <span class="keywordflow">if</span>(temp&gt;=eps) err[i]=zero;
+<a name="l00187"></a>00187   }
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189   free(fjac);
+<a name="l00190"></a>00190   free(buf);
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192   <span class="keywordflow">for</span>(i=0; i&lt;n; ++i){
+<a name="l00193"></a>00193     nnz=sba_crsm_row_elmidxs(idxij, i, rcidxs, rcsubs); <span class="comment">/* find nonzero err_ij, j=0...m-1 */</span>
+<a name="l00194"></a>00194     <span class="keywordflow">for</span>(j=0; j&lt;nnz; ++j){
+<a name="l00195"></a>00195       <span class="keywordflow">if</span>(i&lt;ncon &amp;&amp; rcsubs[j]&lt;mcon) <span class="keywordflow">continue</span>; <span class="comment">// corresponding gradients are taken to be zero</span>
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197       ptr1=err + idxij-&gt;val[rcidxs[j]]*mnp; <span class="comment">// set ptr1 to point into err</span>
+<a name="l00198"></a>00198       <span class="keywordflow">for</span>(ii=0; ii&lt;mnp; ++ii)
+<a name="l00199"></a>00199         <span class="keywordflow">if</span>(ptr1[ii]&lt;=0.5){
+<a name="l00200"></a>00200           fprintf(stderr, <span class="stringliteral">&quot;SBA: gradient %d (corresponding to element %d of the projection of point %d on camera %d) is %s (err=%g)\n&quot;</span>,
+<a name="l00201"></a>00201                   idxij-&gt;val[rcidxs[j]]*mnp+ii, ii, i, rcsubs[j], (ptr1[ii]==0.0)? <span class="stringliteral">&quot;wrong&quot;</span> : <span class="stringliteral">&quot;probably wrong&quot;</span>, ptr1[ii]);
+<a name="l00202"></a>00202           ++numerr;
+<a name="l00203"></a>00203         }
+<a name="l00204"></a>00204     }
+<a name="l00205"></a>00205   }
+<a name="l00206"></a>00206   <span class="keywordflow">if</span>(numerr) fprintf(stderr, <span class="stringliteral">&quot;SBA: found %d suspicious gradients out of %d\n\n&quot;</span>, numerr, nobs);
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208   free(err);
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210   <span class="keywordflow">return</span>;
+<a name="l00211"></a>00211 }
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213 <span class="keywordtype">void</span> sba_mot_chkjac_x(
+<a name="l00214"></a>00214     <span class="keywordtype">void</span> (*func)(<span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">double</span> *hx, <span class="keywordtype">void</span> *adata),
+<a name="l00215"></a>00215     <span class="keywordtype">void</span> (*jacf)(<span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">double</span> *jac, <span class="keywordtype">void</span> *adata),
+<a name="l00216"></a>00216     <span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">int</span> mcon, <span class="keywordtype">int</span> cnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00217"></a>00217 {
+<a name="l00218"></a>00218   sba_motstr_chkjac_x(func, jacf, p, idxij, rcidxs, rcsubs, 0, mcon, cnp, 0, mnp, func_adata, jac_adata);
+<a name="l00219"></a>00219 }
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221 <span class="keywordtype">void</span> sba_str_chkjac_x(
+<a name="l00222"></a>00222     <span class="keywordtype">void</span> (*func)(<span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">double</span> *hx, <span class="keywordtype">void</span> *adata),
+<a name="l00223"></a>00223     <span class="keywordtype">void</span> (*jacf)(<span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">double</span> *jac, <span class="keywordtype">void</span> *adata),
+<a name="l00224"></a>00224     <span class="keywordtype">double</span> *p, <span class="keyword">struct</span> sba_crsm *idxij, <span class="keywordtype">int</span> *rcidxs, <span class="keywordtype">int</span> *rcsubs, <span class="keywordtype">int</span> ncon, <span class="keywordtype">int</span> pnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00225"></a>00225 {
+<a name="l00226"></a>00226   sba_motstr_chkjac_x(func, jacf, p, idxij, rcidxs, rcsubs, ncon, 0, 0, pnp, mnp, func_adata, jac_adata);
+<a name="l00227"></a>00227 }
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229 <span class="preprocessor">#if 0</span>
+<a name="l00230"></a>00230 <span class="preprocessor"></span><span class="comment">/* Routines for directly checking the jacobians supplied to the simple drivers.</span>
+<a name="l00231"></a>00231 <span class="comment"> * They shouldn&#39;t be necessary since these jacobians can be verified indirectly</span>
+<a name="l00232"></a>00232 <span class="comment"> * through the expert sba_XXX_chkjac_x() routines.</span>
+<a name="l00233"></a>00233 <span class="comment"> */</span>
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235 <span class="comment">/*****************************************************************************************/</span>
+<a name="l00236"></a>00236 <span class="comment">// Sample code for using sba_motstr_chkjac():</span>
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238   <span class="keywordflow">for</span>(i=ncon; i&lt;n; ++i)
+<a name="l00239"></a>00239     <span class="keywordflow">for</span>(j=mcon; j&lt;m; ++j){
+<a name="l00240"></a>00240       <span class="keywordflow">if</span>(!vmask[i*m+j]) <span class="keywordflow">continue</span>; <span class="comment">// point i does not appear in image j</span>
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242     sba_motstr_chkjac(proj, projac, p+j*cnp, p+m*cnp+i*pnp, j, i, cnp, pnp, mnp, adata, adata);
+<a name="l00243"></a>00243   }
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245 
+<a name="l00246"></a>00246 <span class="comment">/*****************************************************************************************/</span>
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249 <span class="comment">/* union used for passing pointers to the user-supplied functions for the motstr/mot/str simple drivers */</span>
+<a name="l00250"></a>00250 <span class="keyword">union </span>proj_projac{
+<a name="l00251"></a>00251   <span class="keyword">struct</span>{
+<a name="l00252"></a>00252     void (*proj)(<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *xij, <span class="keywordtype">void</span> *adata);
+<a name="l00253"></a>00253     void (*projac)(<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *Aij, <span class="keywordtype">double</span> *Bij, <span class="keywordtype">void</span> *adata);
+<a name="l00254"></a>00254   } motstr;
+<a name="l00255"></a>00255 
+<a name="l00256"></a>00256   <span class="keyword">struct</span>{
+<a name="l00257"></a>00257     void (*proj)(<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *xij, <span class="keywordtype">void</span> *adata);
+<a name="l00258"></a>00258     void (*projac)(<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *Aij, <span class="keywordtype">void</span> *adata);
+<a name="l00259"></a>00259   } mot;
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261   <span class="keyword">struct</span>{
+<a name="l00262"></a>00262     void (*proj)(<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *xij, <span class="keywordtype">void</span> *adata);
+<a name="l00263"></a>00263     void (*projac)(<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *Bij, <span class="keywordtype">void</span> *adata);
+<a name="l00264"></a>00264   } str;
+<a name="l00265"></a>00265 };
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268 <span class="comment">/* </span>
+<a name="l00269"></a>00269 <span class="comment"> * Check the jacobian of a projection function in cnp+pnp variables</span>
+<a name="l00270"></a>00270 <span class="comment"> * evaluated at a point p, for consistency with the function itself.</span>
+<a name="l00271"></a>00271 <span class="comment"> * Simple version of the above, NOT to be called directly</span>
+<a name="l00272"></a>00272 <span class="comment"> *</span>
+<a name="l00273"></a>00273 <span class="comment"> * Based on fortran77 subroutine CHKDER by</span>
+<a name="l00274"></a>00274 <span class="comment"> * Burton S. Garbow, Kenneth E. Hillstrom, Jorge J. More</span>
+<a name="l00275"></a>00275 <span class="comment"> * Argonne National Laboratory. MINPACK project. March 1980.</span>
+<a name="l00276"></a>00276 <span class="comment"> *</span>
+<a name="l00277"></a>00277 <span class="comment"> *</span>
+<a name="l00278"></a>00278 <span class="comment"> * proj points to a function from R^{cnp+pnp} --&gt; R^{mnp}: Given a p=(aj, bi) in R^{cnp+pnp}</span>
+<a name="l00279"></a>00279 <span class="comment"> *      it yields hx in R^{mnp}</span>
+<a name="l00280"></a>00280 <span class="comment"> * projac points to a function implementing the jacobian of func, whose consistency with proj</span>
+<a name="l00281"></a>00281 <span class="comment"> *     is to be tested. Given a p in R^{cnp+pnp}, jacf computes into the matrix jac=[Aij | Bij]</span>
+<a name="l00282"></a>00282 <span class="comment"> *     jacobian of proj at p. Note that row i of jac corresponds to the gradient of the i-th</span>
+<a name="l00283"></a>00283 <span class="comment"> *     component of proj, evaluated at p.</span>
+<a name="l00284"></a>00284 <span class="comment"> * aj, bi are input arrays of lengths cnp, pnp containing the parameters for the point of</span>
+<a name="l00285"></a>00285 <span class="comment"> *     evaluation, i.e. j-th camera and i-th point</span>
+<a name="l00286"></a>00286 <span class="comment"> * jj, ii specify the point (ii) whose projection jacobian in image (jj) is being checked</span>
+<a name="l00287"></a>00287 <span class="comment"> * cnp, pnp, mnp are as usual. Note that if cnp=0 or</span>
+<a name="l00288"></a>00288 <span class="comment"> *     pnp=0 a jacobian corresponding resp. to motion or camera parameters</span>
+<a name="l00289"></a>00289 <span class="comment"> *     only is assumed.</span>
+<a name="l00290"></a>00290 <span class="comment"> * func_adata, jac_adata point to possible additional data and are passed</span>
+<a name="l00291"></a>00291 <span class="comment"> *     uninterpreted to func, jacf respectively.</span>
+<a name="l00292"></a>00292 <span class="comment"> * err is an array of length mnp. On output, err contains measures</span>
+<a name="l00293"></a>00293 <span class="comment"> *     of correctness of the respective gradients. if there is</span>
+<a name="l00294"></a>00294 <span class="comment"> *     no severe loss of significance, then if err[i] is 1.0 the</span>
+<a name="l00295"></a>00295 <span class="comment"> *     i-th gradient is correct, while if err[i] is 0.0 the i-th</span>
+<a name="l00296"></a>00296 <span class="comment"> *     gradient is incorrect. For values of err between 0.0 and 1.0,</span>
+<a name="l00297"></a>00297 <span class="comment"> *     the categorization is less certain. In general, a value of</span>
+<a name="l00298"></a>00298 <span class="comment"> *     err[i] greater than 0.5 indicates that the i-th gradient is</span>
+<a name="l00299"></a>00299 <span class="comment"> *     probably correct, while a value of err[i] less than 0.5</span>
+<a name="l00300"></a>00300 <span class="comment"> *     indicates that the i-th gradient is probably incorrect.</span>
+<a name="l00301"></a>00301 <span class="comment"> *</span>
+<a name="l00302"></a>00302 <span class="comment"> * CAUTION: THIS FUNCTION IS NOT 100% FOOLPROOF. The</span>
+<a name="l00303"></a>00303 <span class="comment"> * following excerpt comes from CHKDER&#39;s documentation:</span>
+<a name="l00304"></a>00304 <span class="comment"> *</span>
+<a name="l00305"></a>00305 <span class="comment"> *     &quot;The function does not perform reliably if cancellation or</span>
+<a name="l00306"></a>00306 <span class="comment"> *     rounding errors cause a severe loss of significance in the</span>
+<a name="l00307"></a>00307 <span class="comment"> *     evaluation of a function. therefore, none of the components</span>
+<a name="l00308"></a>00308 <span class="comment"> *     of p should be unusually small (in particular, zero) or any</span>
+<a name="l00309"></a>00309 <span class="comment"> *     other value which may cause loss of significance.&quot;</span>
+<a name="l00310"></a>00310 <span class="comment"> */</span>
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312 <span class="keyword">static</span> <span class="keywordtype">void</span> sba_chkjac(
+<a name="l00313"></a>00313     <span class="keyword">union</span> proj_projac *funcs, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> cnp, <span class="keywordtype">int</span> pnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00314"></a>00314 {
+<a name="l00315"></a>00315 <span class="keyword">const</span> <span class="keywordtype">double</span> factor=100.0, one=1.0, zero=0.0;
+<a name="l00316"></a>00316 <span class="keywordtype">double</span> *fvec, *fjac, *Aij, *Bij, *ajp, *bip, *fvecp, *buf, *err;
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318 <span class="keywordtype">int</span> Asz, Bsz;
+<a name="l00319"></a>00319 <span class="keyword">register</span> <span class="keywordtype">int</span> i, j;
+<a name="l00320"></a>00320 <span class="keywordtype">double</span> eps, epsf, temp, epsmch, epslog;
+<a name="l00321"></a>00321 <span class="keywordtype">int</span> fvec_sz, ajp_sz, bip_sz, fvecp_sz, err_sz, numerr=0;
+<a name="l00322"></a>00322 
+<a name="l00323"></a>00323   epsmch=DBL_EPSILON;
+<a name="l00324"></a>00324   eps=sqrt(epsmch);
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326   Asz=mnp*cnp; Bsz=mnp*pnp;
+<a name="l00327"></a>00327   fjac=(<span class="keywordtype">double</span> *)emalloc((Asz+Bsz)*<span class="keyword">sizeof</span>(double));
+<a name="l00328"></a>00328   Aij=fjac;
+<a name="l00329"></a>00329   Bij=Aij+Asz;
+<a name="l00330"></a>00330 
+<a name="l00331"></a>00331   fvec_sz=fvecp_sz=mnp;
+<a name="l00332"></a>00332   ajp_sz=cnp; bip_sz=pnp;
+<a name="l00333"></a>00333   err_sz=mnp;
+<a name="l00334"></a>00334   buf=(<span class="keywordtype">double</span> *)emalloc((fvec_sz + ajp_sz + bip_sz + fvecp_sz + err_sz)*<span class="keyword">sizeof</span>(double));
+<a name="l00335"></a>00335   fvec=buf;
+<a name="l00336"></a>00336   ajp=fvec+fvec_sz;
+<a name="l00337"></a>00337   bip=ajp+ajp_sz;
+<a name="l00338"></a>00338   fvecp=bip+bip_sz;
+<a name="l00339"></a>00339   err=fvecp+fvecp_sz;
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341   <span class="comment">/* compute fvec=proj(p), p=(aj, bi) &amp; the jacobian at p */</span>
+<a name="l00342"></a>00342   <span class="keywordflow">if</span>(cnp &amp;&amp; pnp){
+<a name="l00343"></a>00343     (*(funcs-&gt;motstr.proj))(jj, ii, aj, bi, fvec, func_adata);
+<a name="l00344"></a>00344     (*(funcs-&gt;motstr.projac))(jj, ii, aj, bi, Aij, Bij, jac_adata);
+<a name="l00345"></a>00345   }
+<a name="l00346"></a>00346   <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cnp){
+<a name="l00347"></a>00347     (*(funcs-&gt;mot.proj))(jj, ii, aj, fvec, func_adata);
+<a name="l00348"></a>00348     (*(funcs-&gt;mot.projac))(jj, ii, aj, Aij, jac_adata);
+<a name="l00349"></a>00349   }
+<a name="l00350"></a>00350   <span class="keywordflow">else</span>{
+<a name="l00351"></a>00351     (*(funcs-&gt;str.proj))(jj, ii, bi, fvec, func_adata);
+<a name="l00352"></a>00352     (*(funcs-&gt;str.projac))(jj, ii, bi, Bij, jac_adata);
+<a name="l00353"></a>00353   }
+<a name="l00354"></a>00354 
+<a name="l00355"></a>00355   <span class="comment">/* compute pp, pp=(ajp, bip) */</span>
+<a name="l00356"></a>00356   <span class="keywordflow">for</span>(j=0; j&lt;cnp; ++j){
+<a name="l00357"></a>00357     temp=eps*FABS(aj[j]);
+<a name="l00358"></a>00358     <span class="keywordflow">if</span>(temp==zero) temp=eps;
+<a name="l00359"></a>00359     ajp[j]=aj[j]+temp;
+<a name="l00360"></a>00360   }
+<a name="l00361"></a>00361   <span class="keywordflow">for</span>(j=0; j&lt;pnp; ++j){
+<a name="l00362"></a>00362     temp=eps*FABS(bi[j]);
+<a name="l00363"></a>00363     <span class="keywordflow">if</span>(temp==zero) temp=eps;
+<a name="l00364"></a>00364     bip[j]=bi[j]+temp;
+<a name="l00365"></a>00365   }
+<a name="l00366"></a>00366 
+<a name="l00367"></a>00367   <span class="comment">/* compute fvecp=proj(pp) */</span>
+<a name="l00368"></a>00368   <span class="keywordflow">if</span>(cnp &amp;&amp; pnp)
+<a name="l00369"></a>00369     (*(funcs-&gt;motstr.proj))(jj, ii, ajp, bip, fvecp, func_adata);
+<a name="l00370"></a>00370   <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cnp)
+<a name="l00371"></a>00371     (*(funcs-&gt;mot.proj))(jj, ii, ajp, fvecp, func_adata);
+<a name="l00372"></a>00372   <span class="keywordflow">else</span>
+<a name="l00373"></a>00373     (*(funcs-&gt;str.proj))(jj, ii, bip, fvecp, func_adata);
+<a name="l00374"></a>00374 
+<a name="l00375"></a>00375   epsf=factor*epsmch;
+<a name="l00376"></a>00376   epslog=log10(eps);
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378   <span class="keywordflow">for</span>(i=0; i&lt;mnp; ++i)
+<a name="l00379"></a>00379     err[i]=zero;
+<a name="l00380"></a>00380 
+<a name="l00381"></a>00381   <span class="keywordflow">for</span>(j=0; j&lt;cnp; ++j){
+<a name="l00382"></a>00382     temp=FABS(aj[j]);
+<a name="l00383"></a>00383     <span class="keywordflow">if</span>(temp==zero) temp=one;
+<a name="l00384"></a>00384 
+<a name="l00385"></a>00385     <span class="keywordflow">for</span>(i=0; i&lt;mnp; ++i)
+<a name="l00386"></a>00386       err[i]+=temp*Aij[i*cnp+j];
+<a name="l00387"></a>00387   }
+<a name="l00388"></a>00388   <span class="keywordflow">for</span>(j=0; j&lt;pnp; ++j){
+<a name="l00389"></a>00389     temp=FABS(bi[j]);
+<a name="l00390"></a>00390     <span class="keywordflow">if</span>(temp==zero) temp=one;
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392     <span class="keywordflow">for</span>(i=0; i&lt;mnp; ++i)
+<a name="l00393"></a>00393       err[i]+=temp*Bij[i*pnp+j];
+<a name="l00394"></a>00394   }
+<a name="l00395"></a>00395 
+<a name="l00396"></a>00396   <span class="keywordflow">for</span>(i=0; i&lt;mnp; ++i){
+<a name="l00397"></a>00397     temp=one;
+<a name="l00398"></a>00398     <span class="keywordflow">if</span>(fvec[i]!=zero &amp;&amp; fvecp[i]!=zero &amp;&amp; FABS(fvecp[i]-fvec[i])&gt;=epsf*FABS(fvec[i]))
+<a name="l00399"></a>00399         temp=eps*FABS((fvecp[i]-fvec[i])/eps - err[i])/(FABS(fvec[i])+FABS(fvecp[i]));
+<a name="l00400"></a>00400     err[i]=one;
+<a name="l00401"></a>00401     <span class="keywordflow">if</span>(temp&gt;epsmch &amp;&amp; temp&lt;eps)
+<a name="l00402"></a>00402         err[i]=(log10(temp) - epslog)/epslog;
+<a name="l00403"></a>00403     <span class="keywordflow">if</span>(temp&gt;=eps) err[i]=zero;
+<a name="l00404"></a>00404   }
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406   <span class="keywordflow">for</span>(i=0; i&lt;mnp; ++i)
+<a name="l00407"></a>00407     <span class="keywordflow">if</span>(err[i]&lt;=0.5){
+<a name="l00408"></a>00408       fprintf(stderr, <span class="stringliteral">&quot;SBA: gradient %d (corresponding to element %d of the projection of point %d on camera %d) is %s (err=%g)\n&quot;</span>,
+<a name="l00409"></a>00409                 i, i, ii, jj, (err[i]==0.0)? <span class="stringliteral">&quot;wrong&quot;</span> : <span class="stringliteral">&quot;probably wrong&quot;</span>, err[i]);
+<a name="l00410"></a>00410       ++numerr;
+<a name="l00411"></a>00411   }
+<a name="l00412"></a>00412   <span class="keywordflow">if</span>(numerr) fprintf(stderr, <span class="stringliteral">&quot;SBA: found %d suspicious gradients out of %d\n\n&quot;</span>, numerr, mnp);
+<a name="l00413"></a>00413 
+<a name="l00414"></a>00414   free(fjac);
+<a name="l00415"></a>00415   free(buf);
+<a name="l00416"></a>00416 
+<a name="l00417"></a>00417   <span class="keywordflow">return</span>;
+<a name="l00418"></a>00418 }
+<a name="l00419"></a>00419 
+<a name="l00420"></a>00420 <span class="keywordtype">void</span> sba_motstr_chkjac(
+<a name="l00421"></a>00421     <span class="keywordtype">void</span> (*proj)(<span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *xij, <span class="keywordtype">void</span> *adata),
+<a name="l00422"></a>00422     <span class="keywordtype">void</span> (*projac)(<span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *Aij, <span class="keywordtype">double</span> *Bij, <span class="keywordtype">void</span> *adata),
+<a name="l00423"></a>00423     <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> cnp, <span class="keywordtype">int</span> pnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00424"></a>00424 {
+<a name="l00425"></a>00425 <span class="keyword">union </span>proj_projac funcs;
+<a name="l00426"></a>00426 
+<a name="l00427"></a>00427   funcs.motstr.proj=proj;
+<a name="l00428"></a>00428   funcs.motstr.projac=projac;
+<a name="l00429"></a>00429 
+<a name="l00430"></a>00430   sba_chkjac(&amp;funcs, aj, bi, jj, ii, cnp, pnp, mnp, func_adata, jac_adata);
+<a name="l00431"></a>00431 }
+<a name="l00432"></a>00432 
+<a name="l00433"></a>00433 <span class="keywordtype">void</span> sba_mot_chkjac(
+<a name="l00434"></a>00434     <span class="keywordtype">void</span> (*proj)(<span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *xij, <span class="keywordtype">void</span> *adata),
+<a name="l00435"></a>00435     <span class="keywordtype">void</span> (*projac)(<span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *Aij, <span class="keywordtype">void</span> *adata),
+<a name="l00436"></a>00436     <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> cnp, <span class="keywordtype">int</span> pnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00437"></a>00437 {
+<a name="l00438"></a>00438 <span class="keyword">union </span>proj_projac funcs;
+<a name="l00439"></a>00439 
+<a name="l00440"></a>00440   funcs.mot.proj=proj;
+<a name="l00441"></a>00441   funcs.mot.projac=projac;
+<a name="l00442"></a>00442 
+<a name="l00443"></a>00443   sba_chkjac(&amp;funcs, aj, NULL, jj, ii, cnp, 0, mnp, func_adata, jac_adata);
+<a name="l00444"></a>00444 }
+<a name="l00445"></a>00445 
+<a name="l00446"></a>00446 <span class="keywordtype">void</span> sba_str_chkjac(
+<a name="l00447"></a>00447     <span class="keywordtype">void</span> (*proj)(<span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *xij, <span class="keywordtype">void</span> *adata),
+<a name="l00448"></a>00448     <span class="keywordtype">void</span> (*projac)(<span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">double</span> *bi, <span class="keywordtype">double</span> *Bij, <span class="keywordtype">void</span> *adata),
+<a name="l00449"></a>00449     <span class="keywordtype">double</span> *aj, <span class="keywordtype">double</span> *bi, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> cnp, <span class="keywordtype">int</span> pnp, <span class="keywordtype">int</span> mnp, <span class="keywordtype">void</span> *func_adata, <span class="keywordtype">void</span> *jac_adata)
+<a name="l00450"></a>00450 {
+<a name="l00451"></a>00451 <span class="keyword">union </span>proj_projac funcs;
+<a name="l00452"></a>00452 
+<a name="l00453"></a>00453   funcs.str.proj=proj;
+<a name="l00454"></a>00454   funcs.str.projac=projac;
+<a name="l00455"></a>00455 
+<a name="l00456"></a>00456   sba_chkjac(&amp;funcs, NULL, bi, jj, ii, 0, pnp, mnp, func_adata, jac_adata);
+<a name="l00457"></a>00457 }
+<a name="l00458"></a>00458 <span class="preprocessor">#endif </span><span class="comment">/* 0 */</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

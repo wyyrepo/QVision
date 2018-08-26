@@ -1,0 +1,1310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Structure from motion</h1>
+<p>Several classes and functions related to structure from motion.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Modules</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvbundler.html">Read and write intermediate files for the Bundler application.</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Functionality to read from and write to intermediate files for the Bundler application.</p>
+<p><a href="http://phototour.cs.washington.edu/bundler/">Bundler</a> is an open source application for incremental SfM visual reconstruction. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gad245d4a452046e18d3e4854398add123">globalEpipolarAdjustment</a> (const int numIterations, const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;initialCameraPoses, const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;reducedMatricesGraph, const QVector&lt; bool &gt; &amp;freeCameras, const double lambda=1e-3, const bool adaptativeLambda=true, const TQVSparseSolve_Method solveMethod=DEFAULT_TQVSPARSESOLVE_METHOD, const int secondLevelIterations=10)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Refine the camera poses using epipolar geometry constraints.  <a href="#gad245d4a452046e18d3e4854398add123"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga729a711984f709024f3e532219efb6b8">globalEpipolarAdjustment</a> (const int numIterations, const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;initialCameraPoses, const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;reducedMatricesGraph, const double lambda=1e-3, const bool adaptativeLambda=true, const TQVSparseSolve_Method solveMethod=DEFAULT_TQVSPARSESOLVE_METHOD, const int secondLevelIterations=10)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Refine the camera poses using epipolar geometry constraints.  <a href="#ga729a711984f709024f3e532219efb6b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA</a> (const int numIterations, const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;initialCameraPoses, const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;reducedMatricesGraph, const int numFreeCameras=1, const double lambda=1e-3, const bool adaptativeLambda=true, const TQVSparseSolve_Method solveMethod=DEFAULT_TQVSPARSESOLVE_METHOD, const int secondLevelIterations=10)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Incremental GEA refinement.  <a href="#ga854751f95bc2cd345b9f5cceaea3b192"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga528d393cab737319ae4b2d6447c5cccc">getReducedMatrices</a> (const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &gt; &amp;pointLists, const bool normalize=true, const TGEA_decomposition_method decomposition_method=GEA_CHOLESKY_DECOMPOSITION, const bool gsl=true, const double choleskyLambda=0.0, const int minPointCorrespondences=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the reduced matrices for a reconstruction.  <a href="#ga528d393cab737319ae4b2d6447c5cccc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga3a9458f96d471267a14514a22642507e">getReducedMatrices</a> (const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &gt; &amp;pointLists, const bool normalize=true, const TGEA_decomposition_method decomposition_method=GEA_CHOLESKY_DECOMPOSITION, const bool gsl=true, const double choleskyLambda=0.0, const int minPointCorrespondences=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the reduced matrices for a reconstruction from the list of point correspondences detected between each view-pair in a reconstruction.  <a href="#ga3a9458f96d471267a14514a22642507e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QList<br class="typebreak"/>
+&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gae214f6f61331a85f59b5b9ed655332c3">getPointMatchingsLists</a> (const QList&lt; QHash&lt; int, QPointF &gt; &gt; pointProjections, const int numCams, const int minPointCorrespondences=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the list of point correspondences detected between each view-pair in a reconstruction.  <a href="#gae214f6f61331a85f59b5b9ed655332c3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QVector<br class="typebreak"/>
+&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga20979b415197687de5b70baf9dfa2417">getPointMatchingsListsVec</a> (const QList&lt; QHash&lt; int, QPointF &gt; &gt; pointProjections, const int numCams, const int minPointCorrespondences=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the list of point correspondences detected between each view-pair in a reconstruction.  <a href="#ga20979b415197687de5b70baf9dfa2417"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QHash&lt; int, QPointF &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga88e5c045a99ad4e58d312ccee761860d">correctIntrinsics</a> (const QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;Ks, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointsProjections)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Corrects linear intrinsic calibration from a set of point projections.  <a href="#ga88e5c045a99ad4e58d312ccee761860d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gafea767e25db8e80b1822b8a1499776fa">testCheirality</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; calibratedPointsProjections)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Test correct camera cheirality.  <a href="#gafea767e25db8e80b1822b8a1499776fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gafe66d3df96f6c69ab795e2a070865dad">invertCheirality</a> (QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Swaps the cheirality of the camera poses and 3D points contained in a SfM reconstruction.  <a href="#gafe66d3df96f6c69ab795e2a070865dad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga55fc8cf62fcfa41cbbed9952aace4556">reconstructionError</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate the mean reprojection error of a reconstruction.  <a href="#ga55fc8cf62fcfa41cbbed9952aace4556"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga24c3d362f20077a851e8539e4bc73aa4">reconstructionError</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate the mean reprojection error of a reconstruction.  <a href="#ga24c3d362f20077a851e8539e4bc73aa4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gaa4ff677564f869aed7cdbce781788cc9">reconstructionError</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const QVector&lt; bool &gt; &amp;evaluateTracking)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate the mean reprojection error of a pair-wise reconstruction.  <a href="#gaa4ff677564f869aed7cdbce781788cc9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gafbe2b84faffa62f5838ac22a3b6d2026">reconstructionError</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Rt1, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Rt2, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate the mean reprojection error of a pair-wise reconstruction.  <a href="#gafbe2b84faffa62f5838ac22a3b6d2026"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga17abbe105d91613411f3de1d8cbd9bc3">reconstructionErrorResiduals</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate the residuals of a reconstruction.  <a href="#ga17abbe105d91613411f3de1d8cbd9bc3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga6592d7adcbca1d12882e1f68e3fbb3a9">checkForNaNValues</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check for NaN values in a list of camera poses.  <a href="#ga6592d7adcbca1d12882e1f68e3fbb3a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gaf0ef3cb35d54cb93528315bcd249147a">checkForNaNValues</a> (const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check for NaN values in a list of 3D points.  <a href="#gaf0ef3cb35d54cb93528315bcd249147a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga0cbfa4194c9c11fa7a17c81056be0d1e">checkForNaNValues</a> (const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check for NaN values in a list of point trackings.  <a href="#ga0cbfa4194c9c11fa7a17c81056be0d1e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gaab6ac97055fa83864cb3bcad712008b7">linearCameraPairInitialization</a> (const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Rt1, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Rt2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialize the projection matrices of two views in a reconstruction, provided a list of point matchings.  <a href="#gaab6ac97055fa83864cb3bcad712008b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#ga934b4f0190cd3442f11b875608941829">readSfMReconstruction</a> (const QString &amp;path, QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;cameraCalibrations, QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointsProjections)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a SfM reconstruction from a file or files. This function loads a SfM reconstruction from three different file formats. The function detects the correct file format automatically, depending on the type (directory or file), and the headers of the files.  <a href="#ga934b4f0190cd3442f11b875608941829"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsfm.html#gaa8c336259c5d54dc09ad6fe8ab1ddb91">readReconstruction_NVM</a> (const QString fileName, QList&lt; QString &gt; &amp;imageFiles, QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;cameraCalibrationMatrices, QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameraPoses, QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, QList&lt; QColor &gt; &amp;rgbColors, QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a SfM reconstruction from a NVM file.  <a href="#gaa8c336259c5d54dc09ad6fe8ab1ddb91"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Several classes and functions related to structure from motion. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gad245d4a452046e18d3e4854398add123"></a><!-- doxytag: member="geaoptimization.h::globalEpipolarAdjustment" ref="gad245d4a452046e18d3e4854398add123" args="(const int numIterations, const QList&lt; QVCameraPose &gt; &amp;initialCameraPoses, const QVDirectedGraph&lt; QVMatrix &gt; &amp;reducedMatricesGraph, const QVector&lt; bool &gt; &amp;freeCameras, const double lambda=1e&#45;3, const bool adaptativeLambda=true, const TQVSparseSolve_Method solveMethod=DEFAULT_TQVSPARSESOLVE_METHOD, const int secondLevelIterations=10)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVCameraPose.html">QVCameraPose</a>&gt; globalEpipolarAdjustment </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numIterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>initialCameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>reducedMatricesGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; bool &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>freeCameras</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>lambda</em> = <code>1e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>adaptativeLambda</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gaacdaea1a26a36293bfb60ca30909ba42">TQVSparseSolve_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>solveMethod</em> = <code>DEFAULT_TQVSPARSESOLVE_METHOD</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>secondLevelIterations</em> = <code>10</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Refine the camera poses using epipolar geometry constraints. </p>
+<p>This is the main function for GEA. Refines the set of camera poses, provided a directed graph containing the reduced M matrices representing the epipolar relationship between each pair of views in the reconstruction.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>numIterations</em>&nbsp;</td><td>Number of iterations to optimize the camera poses. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>initialCameraPoses</em>&nbsp;</td><td>Initial camera poses. One for each view. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>reducedMatricesGraph</em>&nbsp;</td><td>Directed graph containing a reduced matrix for each pair of views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>freeCameras</em>&nbsp;</td><td>Vector containing a boolean for each camera, indicating wether this camera is fixed, or not in the optimization. Useful for incremental optimization. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lambda</em>&nbsp;</td><td>Lambda parameter to increase the diagonal of the Hessian matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>adaptativeLambda</em>&nbsp;</td><td>If true, the lambda value to increment the diagonal of the second level system is scaled with the mean value of the trace. Useful with reconstructions containing large number of views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>solveMethod</em>&nbsp;</td><td>Method to solve the second level system. You need to configure QVision to use MKL or CHOLMOD (see file 'config.pri') in order to use MKL and CHOLMOD versions of the sparse solver. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>secondLevelIterations</em>&nbsp;</td><td>Number of iterations in the second level resolution of the linear system. Applied only when the param solveMethod is QVMKL_ISS or QVSCG.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>list of optimized camera poses. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00792">792</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga729a711984f709024f3e532219efb6b8"></a><!-- doxytag: member="geaoptimization.h::globalEpipolarAdjustment" ref="ga729a711984f709024f3e532219efb6b8" args="(const int numIterations, const QList&lt; QVCameraPose &gt; &amp;initialCameraPoses, const QVDirectedGraph&lt; QVMatrix &gt; &amp;reducedMatricesGraph, const double lambda=1e&#45;3, const bool adaptativeLambda=true, const TQVSparseSolve_Method solveMethod=DEFAULT_TQVSPARSESOLVE_METHOD, const int secondLevelIterations=10)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVCameraPose.html">QVCameraPose</a>&gt; globalEpipolarAdjustment </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numIterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>initialCameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>reducedMatricesGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>lambda</em> = <code>1e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>adaptativeLambda</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gaacdaea1a26a36293bfb60ca30909ba42">TQVSparseSolve_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>solveMethod</em> = <code>DEFAULT_TQVSPARSESOLVE_METHOD</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>secondLevelIterations</em> = <code>10</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Refine the camera poses using epipolar geometry constraints. </p>
+<p>This is an overloaded function provided by convenience. Every camera is included in the optimization, so no camera is fixed.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvsfm.html#ga729a711984f709024f3e532219efb6b8" title="Refine the camera poses using epipolar geometry constraints.">globalEpipolarAdjustment</a></dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>numIterations</em>&nbsp;</td><td>Number of iterations to optimize the camera poses. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>initialCameraPoses</em>&nbsp;</td><td>Initial camera poses. One for each view. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>reducedMatricesGraph</em>&nbsp;</td><td>Directed graph containing a reduced matrix for each pair of views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lambda</em>&nbsp;</td><td>Lambda parameter to increase the diagonal of the Hessian matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>adaptativeLambda</em>&nbsp;</td><td>If true, the lambda value to increment the diagonal of the second level system is scaled with the mean value of the trace. Useful with reconstructions containing large number of views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>solveMethod</em>&nbsp;</td><td>Method to solve the second level system. You need to configure QVision to use MKL or CHOLMOD (see file 'config.pri') in order to use MKL and CHOLMOD versions of the sparse solver. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>secondLevelIterations</em>&nbsp;</td><td>Number of iterations in the second level resolution of the linear system. Applied only when the param solveMethod is QVMKL_ISS or QVSCG.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>list of optimized camera poses. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00775">775</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga729a711984f709024f3e532219efb6b8">globalEpipolarAdjustment()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga854751f95bc2cd345b9f5cceaea3b192"></a><!-- doxytag: member="geaoptimization.h::incrementalGEA" ref="ga854751f95bc2cd345b9f5cceaea3b192" args="(const int numIterations, const QList&lt; QVCameraPose &gt; &amp;initialCameraPoses, const QVDirectedGraph&lt; QVMatrix &gt; &amp;reducedMatricesGraph, const int numFreeCameras=1, const double lambda=1e&#45;3, const bool adaptativeLambda=true, const TQVSparseSolve_Method solveMethod=DEFAULT_TQVSPARSESOLVE_METHOD, const int secondLevelIterations=10)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVCameraPose.html">QVCameraPose</a>&gt; incrementalGEA </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numIterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>initialCameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>reducedMatricesGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numFreeCameras</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>lambda</em> = <code>1e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>adaptativeLambda</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gaacdaea1a26a36293bfb60ca30909ba42">TQVSparseSolve_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>solveMethod</em> = <code>DEFAULT_TQVSPARSESOLVE_METHOD</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>secondLevelIterations</em> = <code>10</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Incremental GEA refinement. </p>
+<p>This function applies the GEA refinement on the view poses of a reconstruction. Unlike </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvsfm.html#ga729a711984f709024f3e532219efb6b8" title="Refine the camera poses using epipolar geometry constraints.">globalEpipolarAdjustment</a> this function optimizes the pose of a reduced set of the views in the reconstruction, leaving the rest of the poses unchanged. It can be used to perform real-time camera tracking. Optimizing the last views in the reconstruction (for example, the last 10 views added to the map) can be performed in real time, and prevents tracing failure significantly.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>numIterations</em>&nbsp;</td><td>Number of iterations to optimize the camera poses. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>initialCameraPoses</em>&nbsp;</td><td>Initial camera poses. One for each view. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>reducedMatricesGraph</em>&nbsp;</td><td>Directed graph containing a reduced matrix for each pair of views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numFreeCameras</em>&nbsp;</td><td>Number of views to optimize. The optimized views are the last ones inserted in the reconstruction (tail of initialCameraPoses list). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lambda</em>&nbsp;</td><td>Lambda parameter to increase the diagonal of the Hessian matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>adaptativeLambda</em>&nbsp;</td><td>If true, the lambda value added to the diagonal of the Hessian at the second level system is scaled with the mean value of the trace. Useful with reconstructions containing large number of views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>solveMethod</em>&nbsp;</td><td>Method to solve the second level system. You need to configure QVision to use MKL or CHOLMOD (see file 'config.pri') in order to use MKL and CHOLMOD versions of the sparse solver. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>secondLevelIterations</em>&nbsp;</td><td>Number of iterations in the second level resolution of the linear system. Applied only when the param solveMethod is QVMKL_ISS or QVSCG.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>list of optimized camera poses. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00924">924</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga528d393cab737319ae4b2d6447c5cccc"></a><!-- doxytag: member="geaoptimization.h::getReducedMatrices" ref="ga528d393cab737319ae4b2d6447c5cccc" args="(const QVDirectedGraph&lt; QList&lt; QPointFMatching &gt; &gt; &amp;pointLists, const bool normalize=true, const TGEA_decomposition_method decomposition_method=GEA_CHOLESKY_DECOMPOSITION, const bool gsl=true, const double choleskyLambda=0.0, const int minPointCorrespondences=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt;<a class="el" href="classQVMatrix.html">QVMatrix</a>&gt; getReducedMatrices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointLists</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>normalize</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TGEA_decomposition_method&nbsp;</td>
+          <td class="paramname"> <em>decomposition_method</em> = <code>GEA_CHOLESKY_DECOMPOSITION</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>gsl</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>choleskyLambda</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minPointCorrespondences</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the reduced matrices for a reconstruction. </p>
+<p>This function obtains the reduced matrices corresponding to each view pair in a reconstruction, provided the set of point correspondences between those view pairs.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pointLists</em>&nbsp;</td><td>Contains the lists of point correspondences. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>normalize</em>&nbsp;</td><td>Perform pre-normalization of the point matchings. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>decomposition_method</em>&nbsp;</td><td>Select which decomposition of the reduced matrices is performed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gsl</em>&nbsp;</td><td>Select GSL to perform the decomposition. If false, LAPACK is used where available, which is a slower option for the size of the matrices to decompose (<img class="formulaInl" alt="$ 9 \times 9 $" src="form_230.png"/>). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>choleskyLambda</em>&nbsp;</td><td>Adds this value to the diagonal elements of the reduced matrix before decomposing. Avoid decomposing singular matrices using cholesky. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minPointCorrespondences</em>&nbsp;</td><td>Only reduced measurement matrices estimated from a number of point correspondences equal or larger to this value are included in the resulting graph.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A directed graph containing the reduced matrices. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00142">142</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3a9458f96d471267a14514a22642507e"></a><!-- doxytag: member="geaoptimization.h::getReducedMatrices" ref="ga3a9458f96d471267a14514a22642507e" args="(const QVDirectedGraph&lt; QVector&lt; QPointFMatching &gt; &gt; &amp;pointLists, const bool normalize=true, const TGEA_decomposition_method decomposition_method=GEA_CHOLESKY_DECOMPOSITION, const bool gsl=true, const double choleskyLambda=0.0, const int minPointCorrespondences=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt;<a class="el" href="classQVMatrix.html">QVMatrix</a>&gt; getReducedMatrices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointLists</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>normalize</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TGEA_decomposition_method&nbsp;</td>
+          <td class="paramname"> <em>decomposition_method</em> = <code>GEA_CHOLESKY_DECOMPOSITION</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>gsl</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>choleskyLambda</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minPointCorrespondences</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the reduced matrices for a reconstruction from the list of point correspondences detected between each view-pair in a reconstruction. </p>
+<p>This function obtains the reduced matrices corresponding to each view pair in a reconstruction, provided the set of point correspondences between those view pairs.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pointLists</em>&nbsp;</td><td>Contains the lists of point correspondences. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>normalize</em>&nbsp;</td><td>Perform pre-normalization of the point matchings. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>decomposition_method</em>&nbsp;</td><td>Select which decomposition of the reduced matrices is performed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gsl</em>&nbsp;</td><td>Select GSL to perform the decomposition. If false, LAPACK is used where available, which is a slower option for the size of the matrices to decompose (<img class="formulaInl" alt="$ 9 \times 9 $" src="form_230.png"/>). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>choleskyLambda</em>&nbsp;</td><td>Adds this value to the diagonal elements of the reduced matrix before decomposing. Avoid decomposing singular matrices using Cholesky decomposition. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minPointCorrespondences</em>&nbsp;</td><td>Only reduced measurement matrices estimated from a number of point correspondences equal or larger to this value are included in the resulting graph.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A directed graph containing the reduced matrices. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00166">166</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae214f6f61331a85f59b5b9ed655332c3"></a><!-- doxytag: member="geaoptimization.h::getPointMatchingsLists" ref="gae214f6f61331a85f59b5b9ed655332c3" args="(const QList&lt; QHash&lt; int, QPointF &gt; &gt; pointProjections, const int numCams, const int minPointCorrespondences=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QList&lt;<a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>&gt; &gt; getPointMatchingsLists </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minPointCorrespondences</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the list of point correspondences detected between each view-pair in a reconstruction. </p>
+<p>This function obtains the reduced matrices corresponding to each view pair in a reconstruction, provided the set of point correspondences between those view pairs.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pointProjections</em>&nbsp;</td><td>Data structure containing the point projections for each 3D point and view where it is visible. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numCams</em>&nbsp;</td><td>Number of total views in the reconstruction. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>munPointCorrespondences</em>&nbsp;</td><td>Do not return point correspondence lists containing less than this quantity of point matchings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A directed graph containing the lists of point correspondences. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00049">49</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga20979b415197687de5b70baf9dfa2417"></a><!-- doxytag: member="geaoptimization.h::getPointMatchingsListsVec" ref="ga20979b415197687de5b70baf9dfa2417" args="(const QList&lt; QHash&lt; int, QPointF &gt; &gt; pointProjections, const int numCams, const int minPointCorrespondences=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph</a>&lt; QVector&lt;<a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>&gt; &gt; getPointMatchingsListsVec </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>numCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minPointCorrespondences</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the list of point correspondences detected between each view-pair in a reconstruction. </p>
+<p>This function obtains the reduced matrices corresponding to each view pair in a reconstruction, provided the set of point correspondences between those view pairs.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pointProjections</em>&nbsp;</td><td>Data structure containing the point projections for each 3D point and view where it is visible. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numCams</em>&nbsp;</td><td>Number of total views in the reconstruction. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>munPointCorrespondences</em>&nbsp;</td><td>Do not return point correspondence lists containing less than this quantity of point matchings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A directed graph containing the lists of point correspondences. </dd></dl>
+
+<p>Definition at line <a class="el" href="geaoptimization_8cpp_source.html#l00330">330</a> of file <a class="el" href="geaoptimization_8cpp_source.html">geaoptimization.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga88e5c045a99ad4e58d312ccee761860d"></a><!-- doxytag: member="qvsfm.h::correctIntrinsics" ref="ga88e5c045a99ad4e58d312ccee761860d" args="(const QList&lt; QVMatrix &gt; &amp;Ks, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointsProjections)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QHash&lt; int, QPointF&gt; &gt; correctIntrinsics </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>Ks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointsProjections</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Corrects linear intrinsic calibration from a set of point projections. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000094">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00143">143</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafea767e25db8e80b1822b8a1499776fa"></a><!-- doxytag: member="qvsfm.h::testCheirality" ref="gafea767e25db8e80b1822b8a1499776fa" args="(const QList&lt; QVCameraPose &gt; cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; calibratedPointsProjections)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool testCheirality </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt;&nbsp;</td>
+          <td class="paramname"> <em>calibratedPointsProjections</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test correct camera cheirality. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000095">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00163">163</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvros.html#gad93da3ae76d4c1cebbdd6b7dbd29d662">sSBAOptimization()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafe66d3df96f6c69ab795e2a070865dad"></a><!-- doxytag: member="qvsfm.h::invertCheirality" ref="gafe66d3df96f6c69ab795e2a070865dad" args="(QList&lt; QVCameraPose &gt; &amp;cameraPoses, QList&lt; QV3DPointF &gt; &amp;points3D)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void invertCheirality </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Swaps the cheirality of the camera poses and 3D points contained in a SfM reconstruction. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000096">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00178">178</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga55fc8cf62fcfa41cbbed9952aace4556"></a><!-- doxytag: member="qvsfm.h::reconstructionError" ref="ga55fc8cf62fcfa41cbbed9952aace4556" args="(const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double reconstructionError </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate the mean reprojection error of a reconstruction. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000097">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00266">266</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga24c3d362f20077a851e8539e4bc73aa4"></a><!-- doxytag: member="qvsfm.h::reconstructionError" ref="ga24c3d362f20077a851e8539e4bc73aa4" args="(const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double reconstructionError </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate the mean reprojection error of a reconstruction. </p>
+<p>This is an overloaded version of the function <a class="el" href="group__qvsfm.html#gafbe2b84faffa62f5838ac22a3b6d2026">reconstructionError</a> which evaluates the reprojection error of a list of camera poses and a set of point trackings, estimating the point locations with a linear initialization.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000098">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00192">192</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa4ff677564f869aed7cdbce781788cc9"></a><!-- doxytag: member="qvsfm.h::reconstructionError" ref="gaa4ff677564f869aed7cdbce781788cc9" args="(const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const QVector&lt; bool &gt; &amp;evaluateTracking)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double reconstructionError </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; bool &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>evaluateTracking</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate the mean reprojection error of a pair-wise reconstruction. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000099">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00288">288</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafbe2b84faffa62f5838ac22a3b6d2026"></a><!-- doxytag: member="qvsfm.h::reconstructionError" ref="gafbe2b84faffa62f5838ac22a3b6d2026" args="(const QVMatrix &amp;Rt1, const QVMatrix &amp;Rt2, const QList&lt; QV3DPointF &gt; &amp;points3D, const QVector&lt; QPointFMatching &gt; &amp;matchings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double reconstructionError </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Rt1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Rt2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate the mean reprojection error of a pair-wise reconstruction. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000100">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00309">309</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga17abbe105d91613411f3de1d8cbd9bc3"></a><!-- doxytag: member="qvsfm.h::reconstructionErrorResiduals" ref="ga17abbe105d91613411f3de1d8cbd9bc3" args="(const QList&lt; QVCameraPose &gt; &amp;cameraPoses, const QList&lt; QV3DPointF &gt; &amp;points3D, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> reconstructionErrorResiduals </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointTrackings</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate the residuals of a reconstruction. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000101">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00327">327</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6592d7adcbca1d12882e1f68e3fbb3a9"></a><!-- doxytag: member="qvsfm.h::checkForNaNValues" ref="ga6592d7adcbca1d12882e1f68e3fbb3a9" args="(const QList&lt; QVCameraPose &gt; &amp;cameraPoses)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkForNaNValues </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check for NaN values in a list of camera poses. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if any of the parameters of one or more of the camera poses contains a NaN value, false otherwise.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000102">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00345">345</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf0ef3cb35d54cb93528315bcd249147a"></a><!-- doxytag: member="qvsfm.h::checkForNaNValues" ref="gaf0ef3cb35d54cb93528315bcd249147a" args="(const QList&lt; QV3DPointF &gt; &amp;points3D)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkForNaNValues </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check for NaN values in a list of 3D points. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if any of the parameters of one or more of the points contains a NaN value, false otherwise.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000103">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00360">360</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0cbfa4194c9c11fa7a17c81056be0d1e"></a><!-- doxytag: member="qvsfm.h::checkForNaNValues" ref="ga0cbfa4194c9c11fa7a17c81056be0d1e" args="(const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkForNaNValues </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointTrackings</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check for NaN values in a list of point trackings. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if any of the projections in the tracks contains a NaN value, false otherwise.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000104">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00375">375</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaab6ac97055fa83864cb3bcad712008b7"></a><!-- doxytag: member="qvsfm.h::linearCameraPairInitialization" ref="gaab6ac97055fa83864cb3bcad712008b7" args="(const QVector&lt; QPointFMatching &gt; &amp;matchings, QVMatrix &amp;Rt1, QVMatrix &amp;Rt2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool linearCameraPairInitialization </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Rt1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Rt2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialize the projection matrices of two views in a reconstruction, provided a list of point matchings. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>List of point matchings detected between the two views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Rt1</em>&nbsp;</td><td>Estimated projection matrix for first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Rt2</em>&nbsp;</td><td>Estimated projection matrix for second image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the estimation was successful, false otherwise.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000105">Todo:</a></b></dt><dd>Document this. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsfm_8cpp_source.html#l00039">39</a> of file <a class="el" href="qvsfm_8cpp_source.html">qvsfm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga934b4f0190cd3442f11b875608941829"></a><!-- doxytag: member="readSfMReconstruction.h::readSfMReconstruction" ref="ga934b4f0190cd3442f11b875608941829" args="(const QString &amp;path, QList&lt; QVMatrix &gt; &amp;cameraCalibrations, QList&lt; QVCameraPose &gt; &amp;cameraPoses, QList&lt; QV3DPointF &gt; &amp;points3D, QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointsProjections)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool readSfMReconstruction </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraCalibrations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointsProjections</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Loads a SfM reconstruction from a file or files. This function loads a SfM reconstruction from three different file formats. The function detects the correct file format automatically, depending on the type (directory or file), and the headers of the files. </p>
+<p>The readable file formats are:</p>
+<ul>
+<li>
+<p class="startli"><b>laSBA demo file format:</b> the parameter <em>path</em> contains the path to a directory containing the following files:</p>
+<ul>
+<li>pts.txt (containing the points).</li>
+<li>cams.txt (containing the camera poses).</li>
+<li>calib.txt (containing the intrinsic calibration matrices for each camera).</li>
+</ul>
+<p>The format of these files is the same used by the example applications included in the <a href="http://www.ics.forth.gr/~lourakis/sba/">laSBA</a> package. This is an extract from the file 'README.txt' describing these formats: </p>
+<div class="fragment"><pre class="fragment">eucsbademo accepts 3 file names as arguments:
+They are the initial estimates <span class="keywordflow">for</span> the camera motion (i.e. pose) parameters, the initial
+estimates for the 3D point parameters along with the 3D points image projections and the
+camera intrinsic calibration parameters. The file for the camera motion parameters has a
+separate line for every camera (i.e. frame), each line containing 7 parameters (a 4
+element quaternion for rotation and a 3 element vector for translation). Rotation
+quaternions have the scalar part as their first element, i.e. a rotation by angle TH
+around the unit vector U=(Ux, Uy, Uz) should be specified as
+cos(TH/2) Ux*sin(TH/2) Uy*sin(TH/2) Uz*sin(TH/2).
+The file for 3D points and image projections is made up of lines of the form 
+
+X Y Z  NFRAMES  FRAME0 x0 y0  FRAME1 x1 y1 ...
+
+each corresponding to a single 3D point. X Y Z are the points&#39; Euclidean 3D coordinates,
+NFRAMES the total number of images in which the points&#39; projections are available and each
+of the NFRAMES subsequent triplets FRAME x y specifies that the 3D point in question projects
+to pixel x y in image FRAME. For example, the line
+
+100.0 200.0 300.0 3  2 270.0 114.1 4 234.2 321.7 5 173.6 425.8
+
+specifies the 3D point (100.0, 200.0, 300.0) projecting to the 3 points (270.0, 114.1),
+(234.2, 321.7) and (173.6, 425.8) in images 2, 4 and 5 respectively. Pixel coordinates
+are measured using the common convention, i.e. from the top left corner of images with
+the positive x axis running from left to right and y from top to bottom. Camera and 3D
+point indices count from 0.
+</pre></div> <p class="endli"></p>
+</li>
+<li>
+<p class="startli"><b><em>BAITL</em> data-set file format:</b> The file specified in the <em>path</em> parameter must follow the format of the data-sets referenced by the paper <em>Bundle Adjustment in the Large</em></p>
+<p>These data-sets were obtained with the <a href="http://phototour.cs.washington.edu/bundler/">Bundler</a> SfM system. You can find a description for this file format <a href="http://grail.cs.washington.edu/projects/bal/">here</a>. </p>
+<p class="endli"></p>
+</li>
+<li>
+<b>Bundler output format:</b> this is the standard file format for the output of the <a href="http://phototour.cs.washington.edu/bundler/">Bundler</a> SfM system. A description of the format follows: <div class="fragment"><pre class="fragment">Bundler produces files typically called <span class="stringliteral">&#39;bundle_*.out&#39;</span> (we<span class="stringliteral">&#39;ll call</span>
+<span class="stringliteral">these &quot;bundle files&quot;).  With the default commands, Bundler outputs a</span>
+<span class="stringliteral">bundle file called &#39;</span>bundle_&lt;n&gt;.out<span class="stringliteral">&#39; containing the current state of</span>
+<span class="stringliteral">the scene after each set of images has been registered (n = the number</span>
+<span class="stringliteral">of currently registered cameras).  After all possible images have been</span>
+<span class="stringliteral">registered, Bundler outputs a final file named &#39;</span>bundle.out<span class="stringliteral">&#39;.  In</span>
+<span class="stringliteral">addition, a &quot;ply&quot; file containing the reconstructed cameras and points</span>
+<span class="stringliteral">is written after each round.  These ply files can be viewed with the</span>
+<span class="stringliteral">&quot;scanalyze&quot; mesh viewer, available at</span>
+<span class="stringliteral">http://graphics.stanford.edu/software/scanalyze/.</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">The bundle files contain the estimated scene and camera geometry have</span>
+<span class="stringliteral">the following format:</span>
+<span class="stringliteral"></span>
+<span class="stringliteral"># Bundle file v0.3</span>
+<span class="stringliteral">&lt;num_cameras&gt; &lt;num_points&gt;   [two integers]</span>
+<span class="stringliteral">&lt;camera1&gt;</span>
+<span class="stringliteral">&lt;camera2&gt;</span>
+<span class="stringliteral">...</span>
+<span class="stringliteral">&lt;cameraN&gt;</span>
+<span class="stringliteral">&lt;point1&gt;</span>
+<span class="stringliteral">&lt;point2&gt;</span>
+<span class="stringliteral">...</span>
+<span class="stringliteral">&lt;pointM&gt;</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">Each camera entry &lt;cameraI&gt; contains the estimated camera intrinsics</span>
+<span class="stringliteral">and extrinsics, and has the form:</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">&lt;f&gt; &lt;k1&gt; &lt;k2&gt;   [the focal length, followed by two radial distortion coeffs]</span>
+<span class="stringliteral">&lt;R&gt;             [a 3x3 matrix representing the camera rotation]</span>
+<span class="stringliteral">&lt;t&gt;             [a 3-vector describing the camera translation]</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">The cameras are specified in the order they appear in the list of</span>
+<span class="stringliteral">images.</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">Each point entry &lt;pointI&gt; has the form:</span>
+<span class="stringliteral">&lt;position&gt;      [a 3-vector describing the 3D position of the point]</span>
+<span class="stringliteral">&lt;color&gt;         [a 3-vector describing the RGB color of the point]</span>
+<span class="stringliteral">&lt;view list&gt;     [a list of views the point is visible in]</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">The view list begins with the length of the list (i.e., the number of</span>
+<span class="stringliteral">cameras the point is visible in).  The list is then given as a list of</span>
+<span class="stringliteral">quadruplets &lt;camera&gt; &lt;key&gt; &lt;x&gt; &lt;y&gt;, where &lt;camera&gt; is a camera index,</span>
+<span class="stringliteral">&lt;key&gt; the index of the SIFT keypoint where the point was detected in</span>
+<span class="stringliteral">that camera, and &lt;x&gt; and &lt;y&gt; are the detected positions of that</span>
+<span class="stringliteral">keypoint.  Both indices are 0-based (e.g., if camera 0 appears in the</span>
+<span class="stringliteral">list, this corresponds to the first camera in the scene file and the</span>
+<span class="stringliteral">first image in &quot;list.txt&quot;).  </span>
+<span class="stringliteral"></span>
+<span class="stringliteral">We use a pinhole camera model; the parameters we estimate for each</span>
+<span class="stringliteral">camera are a focal length (f), two radial distortion parameters (k1</span>
+<span class="stringliteral">and k2), a rotation (R), and translation (t), as described in the file</span>
+<span class="stringliteral">specification above.  The formula for projecting a 3D point X into a</span>
+<span class="stringliteral">camera (R, t, f) is:</span>
+<span class="stringliteral"></span>
+<span class="stringliteral">    P = R * X + t       (conversion from world to camera coordinates)</span>
+<span class="stringliteral">    p = -P / P.z        (perspective division)</span>
+<span class="stringliteral">    p&#39;</span> = f * r(p) * p   (conversion to pixel coordinates)
+
+where P.z is the third coordinate of P.  In the last equation, r(p) is
+a function that computes a scaling factor to undo the radial
+distortion:
+
+r(p) = 1.0 + k1 * ||p||^2 + k2 * ||p||^4.
+
+This gives a projection in pixels, where the origin of the image is
+the center of the image, the positive x-axis points right, and the
+positive y-axis points up (in addition, in the camera coordinate
+system, the positive z-axis points backwards, so the camera is looking
+down the negative z-axis, as in OpenGL).
+
+Finally, the equations above imply that the camera viewing direction
+is:
+
+    R&#39; * [0 0 -1]&#39;  (i.e., the third row of R or third column of R&#39;)
+
+(where &#39; indicates the transpose of a matrix or vector).
+
+and the 3D position of a camera is 
+
+    -R&#39; * t .
+</pre></div>  </li>
+</ul>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>path</em>&nbsp;</td><td>Path to the file (formats Bundler or BAITL), or directory (format laSBA) containing the files for the reconstruction. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cameraCalibrations</em>&nbsp;</td><td>Output parameter containing the intrinsic calibration matrices for the cameras in the reconstruction. The list can contain either one matrix for each camera, or a single common calibration matrix for every view in the reconstruction if their calibration is the same. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cameraPoses</em>&nbsp;</td><td>On output, contains the camera poses for the views in the reconstruction. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points3D</em>&nbsp;</td><td>On output contains the 3D points. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pointsProjection</em>&nbsp;</td><td>Output list. Each element contains the image projections of one of the 3D points, on each view it is visible. The projection of the i-th 3D point, on the j-th view can be accessed with the expression 'pointTrackings[i][j]'. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="readSfMReconstruction_8cpp_source.html#l00816">816</a> of file <a class="el" href="readSfMReconstruction_8cpp_source.html">readSfMReconstruction.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa8c336259c5d54dc09ad6fe8ab1ddb91"></a><!-- doxytag: member="readSfMReconstruction.h::readReconstruction_NVM" ref="gaa8c336259c5d54dc09ad6fe8ab1ddb91" args="(const QString fileName, QList&lt; QString &gt; &amp;imageFiles, QList&lt; QVMatrix &gt; &amp;cameraCalibrationMatrices, QList&lt; QVCameraPose &gt; &amp;cameraPoses, QList&lt; QV3DPointF &gt; &amp;points3D, QList&lt; QColor &gt; &amp;rgbColors, QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointTrackings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool readReconstruction_NVM </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QString &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageFiles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraCalibrationMatrices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QColor &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>rgbColors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointTrackings</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Loads a SfM reconstruction from a NVM file. </p>
+<p>This function loads a SfM reconstruction from the reconstruction files provided by the <a href="http://homes.cs.washington.edu/~ccwu/vsfm/doc.html">Visual SfM</a> application. The function detects the correct file format automatically, depending on the type (directory or file), and the headers of the files.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>Path to the .NVM file containing the reconstruction. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageFiles</em>&nbsp;</td><td>List of paths to the input image files. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cameraCalibrations</em>&nbsp;</td><td>Output parameter containing the intrinsic calibration matrices for the cameras in the reconstruction. The list can contain either one matrix for each camera, or a single common calibration matrix for every view in the reconstruction if their calibration is the same. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cameraPoses</em>&nbsp;</td><td>On output, contains the camera poses for the views in the reconstruction. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points3D</em>&nbsp;</td><td>On output contains the 3D points. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pointTrackings</em>&nbsp;</td><td>Projection trackings for the 3D points. Each element in this list contains the image projections of one of the 3D points, on each view it is visible. The projection of the i-th 3D point, on the j-th view can be accessed with the expression 'pointTrackings[i][j]'. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="readSfMReconstruction_8cpp_source.html#l00222">222</a> of file <a class="el" href="readSfMReconstruction_8cpp_source.html">readSfMReconstruction.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,1345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Computer Vision<br/>
+<small>
+[<a class="el" href="group__qvipp.html">IPP wrapper functions</a>]</small>
+</h1>
+<p>Functions for computer vision.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7">CannyGetSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function Canny.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function Canny. Initializes dimensions for that buffer image, appropriated for canny algorithm.  <a href="#ga81da042e746aff629cf0e0f45b0f9cb7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920">MinEigenValGetBufferSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, uInt apertureSize=5, uInt avgWindow=5)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function MinEigenValGet.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function MinEigenVal. Initializes dimensions for that buffer image, appropriated for that algorithm.  <a href="#ga4a7017e5e9b0df7161ffc48285f3d920"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function family FloodFill.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function family FloodFill. Initializes dimensions for that buffer image, appropriated for that algorithm.  <a href="#ga73a7041aec616aeba0095fde7d82fa06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gab2eadd7360e07f47881c2727bf28b2df">MinEigenVal</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;dest, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, uInt apertureSize=3, uInt avgWindow=5, IppiKernelType kernel=ippKernelSobel, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculates the minimal eigen value of image blocks for corner detection.This function takes a block around the pixel and computes the first derivatives Dx and Dy.  <a href="#gab2eadd7360e07f47881c2727bf28b2df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd">FastMarchingGetBufferSize</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocates size in a buffer image for temporary data for function FastMarching.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function FastMarching. Initializes dimensions for that buffer image, appropriated for that algorithm.  <a href="#gac12eb7e0069535465549c2ab63cd50cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">InpaintInitAllocC3</a> (IppiInpaintState_8u_C3R **pState, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;distances, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;mask, const sFloat radius, const IppiInpaintFlag flag)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">InpaintFreeC3</a> (IppiInpaintState_8u_C3R *pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">InpaintInitAllocC1</a> (IppiInpaintState_8u_C1R **pState, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;distances, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;mask, const sFloat radius, const IppiInpaintFlag flag)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">InpaintFreeC1</a> (IppiInpaintState_8u_C1R *pState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gae06195554922c14fa17f8e73ab847995">FloodFillRange4Connected</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;img, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, uInt seedX, uInt seedY, uChar newVal, uChar minDelta, uChar maxDelta)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs flood filling of pixels with values in the specified range in the connected area on an image.This function performs flood filling of the group of connected pixels in the seed pixel neighborhoods whose pixel values <img class="formulaInl" alt="$ v_i $" src="form_12.png"/> satisfies the following condition:  <a href="#gae06195554922c14fa17f8e73ab847995"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga651729e62b24103aa10667c463c64fed">FloodFillGradient4Connected</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;img, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, uInt seedX, uInt seedY, uChar newVal, uChar minDelta, uChar maxDelta)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs gradient flood filling of connected area on an image.This function performs flood filling of the group of connected pixels in the seed pixel neighborhoods whose pixel values v satisfies the following conditions:  <a href="#ga651729e62b24103aa10667c463c64fed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga6998ed9960561b8625418fb9eb36193a">FindPeaks3x3</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sInt, 1 &gt; &amp;img, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, QList&lt; QPoint &gt; &amp;points, sInt threshold, IppiNorm norm, uInt border, uInt maxPeakCount)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold value.This function detects local maximum pixels in the source image, and stores their coordinates in the <em>points</em> point list. The neighborhood O(i, j) for the search is defined by the parameter norm. The number of detected maximums is returned in pPeakCount[0]. The operation is stopped The function requires a working image buffer whose size should be computed by the function <a class="el" href="group__qvippCV.html#ga7fa265712f0b703595cee942cc1138c5">FindPeaks3x3GetBufferSize</a> beforehand.  <a href="#ga6998ed9960561b8625418fb9eb36193a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gaf57d3f8198b223e288df4078625685cc">FindPeaks3x3</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;img, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer, QList&lt; QPoint &gt; &amp;points, sFloat threshold, IppiNorm norm, uInt border, uInt maxPeakCount)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold value.  <a href="#gaf57d3f8198b223e288df4078625685cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga4b54dbfc2853fe49efdefc6142c7918b">FindPeaks3x3GetBufferSize</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sInt, 1 &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the size of the working buffer for the peak search.This function computes the size of the working image buffer required for the function FindPeaks3x3. The image buffer can be used to filter images with ROI width that is less than or equal to the image ROI width.  <a href="#ga4b54dbfc2853fe49efdefc6142c7918b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga7fa265712f0b703595cee942cc1138c5">FindPeaks3x3GetBufferSize</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;image, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the size of the working buffer for the peak search.  <a href="#ga7fa265712f0b703595cee942cc1138c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a">Canny</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrcDx, <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrcDy, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDstEdges, const sFloat lowThresh, const sFloat highThresh, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pBuffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates binary image of source's image edges, using derivatives of the first order.  <a href="#ga56269a74576283f8743352552aadc12a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gafab0c2a310a7e2050ea95b61324820e9">Canny</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDx, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDy, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDstEdges, const sFloat lowThresh, const sFloat highThresh, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pBuffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates binary image of source's image edges, using derivatives of the first order.  <a href="#gafab0c2a310a7e2050ea95b61324820e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga6610bc68ec46cd944b93444fc5001b90">MinEigenVal</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pMinEigenVal, const IppiKernelType kernType, const int apertureSize, const int avgWindow, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pBuffer, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate minimal eigen value of 2x2 autocorrelation gradient matrix for every pixel.  <a href="#ga6610bc68ec46cd944b93444fc5001b90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#gaf6656a4313795ffc3b9467f3cc306006">DistanceTransform_5x5</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pDst, sInt &amp;pMetrics, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiDistanceTransform_5x5_8u16u_C1R.  <a href="#gaf6656a4313795ffc3b9467f3cc306006"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga7f456ffa2169dd985fb607bd0a66a33a">FastMarching</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat radius, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pBuffer, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate distance transform by fast marching method.  <a href="#ga7f456ffa2169dd985fb607bd0a66a33a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga130796a6842e97aaf115d50585c76930">Inpaint</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, IppiInpaintState_8u_C1R &amp;pState, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Restores damaged image area by direct inpainting.  <a href="#ga130796a6842e97aaf115d50585c76930"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippCV.html#ga98c2e411ea0d93a9437cf6ac73b03515">Inpaint</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pDst, IppiInpaintState_8u_C1R &amp;pState, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Restores damaged image area by direct inpainting.  <a href="#ga98c2e411ea0d93a9437cf6ac73b03515"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Functions for computer vision. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga81da042e746aff629cf0e0f45b0f9cb7"></a><!-- doxytag: member="qvipp.h::CannyGetSize" ref="ga81da042e746aff629cf0e0f45b0f9cb7" args="(const QVGenericImage &amp;src, QVImage&lt; uChar &gt; &amp;buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CannyGetSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allocates size in a buffer image for temporary data for function Canny.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function Canny. Initializes dimensions for that buffer image, appropriated for canny algorithm. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image to apply later Canny operator. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>buffer image to initialize for further operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#gafab0c2a310a7e2050ea95b61324820e9" title="Creates binary image of source&#39;s image edges, using derivatives of the first...">Canny</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00207">207</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7">CannyGetSize()</a>, and <a class="el" href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd">FastMarchingGetBufferSize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4a7017e5e9b0df7161ffc48285f3d920"></a><!-- doxytag: member="qvipp.h::MinEigenValGetBufferSize" ref="ga4a7017e5e9b0df7161ffc48285f3d920" args="(const QVGenericImage &amp;src, QVImage&lt; uChar &gt; &amp;buffer, uInt apertureSize=5, uInt avgWindow=5)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEigenValGetBufferSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>apertureSize</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>avgWindow</em> = <code>5</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allocates size in a buffer image for temporary data for function MinEigenValGet.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function MinEigenVal. Initializes dimensions for that buffer image, appropriated for that algorithm. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image to apply later MinEigenVal function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>buffer image to initialize for further operations. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>apertureSize</em>&nbsp;</td><td>Size (in pixels) of the derivative operator used by the function, possible values are 3 or 5. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>avgWindow</em>&nbsp;</td><td>Size of the blurring window in pixels, possible values are 3 or 5. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga6610bc68ec46cd944b93444fc5001b90" title="Calculate minimal eigen value of 2x2 autocorrelation gradient matrix for every pixel...">MinEigenVal</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00200">200</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b">FilterHarrisCornerResponseImage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga73a7041aec616aeba0095fde7d82fa06"></a><!-- doxytag: member="qvipp.h::FloodFillGetSize" ref="ga73a7041aec616aeba0095fde7d82fa06" args="(const QVGenericImage &amp;src, QVImage&lt; uChar &gt; &amp;buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FloodFillGetSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allocates size in a buffer image for temporary data for function family FloodFill.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function family FloodFill. Initializes dimensions for that buffer image, appropriated for that algorithm. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image to apply later flood fill function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>buffer image to initialize for further operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>FloodFillRange </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00294">294</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab2eadd7360e07f47881c2727bf28b2df"></a><!-- doxytag: member="qvipp.h::MinEigenVal" ref="gab2eadd7360e07f47881c2727bf28b2df" args="(const QVImage&lt; uChar &gt; &amp;src, QVImage&lt; sFloat &gt; &amp;dest, QVImage&lt; uChar &gt; &amp;buffer, uInt apertureSize=3, uInt avgWindow=5, IppiKernelType kernel=ippKernelSobel, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEigenVal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>apertureSize</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>avgWindow</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppiKernelType&nbsp;</td>
+          <td class="paramname"> <em>kernel</em> = <code>ippKernelSobel</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculates the minimal eigen value of image blocks for corner detection.This function takes a block around the pixel and computes the first derivatives Dx and Dy. </p>
+<p>This operation is performed for every pixel of the image using either Sobel or Scharr kernel in accordance with the kernType parameter.</p>
+<p>The size of the Sobel kernel may be specified the parameter apertureSize. If this parameter is set to 3 - the function used 3x3 kernel, if it set to 5 - the function uses 5x5 kernel.</p>
+<p>Only 3x3 size is available for the Scharr kernel, therefore the parameter apertureSize must be set to 3 if the Scharr kernel is used.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dest</em>&nbsp;</td><td>destination image to hold the minimal eigen values. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>image to hold temporary data during function operations. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>apertureSize</em>&nbsp;</td><td>Size (in pixels) of the derivative operator used by the function, possible values are 3 or 5. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>avgWindow</em>&nbsp;</td><td>Size of the blurring window in pixels, possible values are 3 (3x3 mask size) or 5 (5x5 mask size). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>kernel</em>&nbsp;</td><td>Specifies the type of kernel used to compute derivatives, possible values are:</p>
+<ul>
+<li>ippKernelSobel. Values for aperture size can be 3, or 5.</li>
+<li>ippKernelScharr. Value for aperture size can only be 3. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920" title="Allocates size in a buffer image for temporary data for function MinEigenValGet.This...">MinEigenValGetBufferSize</a> </dd></dl>
+
+<p>Referenced by <a class="el" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b">FilterHarrisCornerResponseImage()</a>, <a class="el" href="group__qvippCV.html#ga6610bc68ec46cd944b93444fc5001b90">MinEigenVal()</a>, and <a class="el" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920">MinEigenValGetBufferSize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac12eb7e0069535465549c2ab63cd50cd"></a><!-- doxytag: member="qvipp.h::FastMarchingGetBufferSize" ref="gac12eb7e0069535465549c2ab63cd50cd" args="(const QVGenericImage &amp;image, QVImage&lt; uChar &gt; &amp;buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FastMarchingGetBufferSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allocates size in a buffer image for temporary data for function FastMarching.This function should be applied to any <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image to be used as a buffer image for function FastMarching. Initializes dimensions for that buffer image, appropriated for that algorithm. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>source image to apply Fast Marching algorithm. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>buffer image to initialize for further operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga7f456ffa2169dd985fb607bd0a66a33a" title="Calculate distance transform by fast marching method.">FastMarching</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00214">214</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae87027225d01eb6d7c21e9a67dccfba2"></a><!-- doxytag: member="qvipp.h::InpaintInitAllocC3" ref="gae87027225d01eb6d7c21e9a67dccfba2" args="(IppiInpaintState_8u_C3R **pState, const QVImage&lt; sFloat &gt; &amp;distances, const QVImage&lt; uChar &gt; &amp;mask, const sFloat radius, const IppiInpaintFlag flag)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InpaintInitAllocC3 </td>
+          <td>(</td>
+          <td class="paramtype">IppiInpaintState_8u_C3R **&nbsp;</td>
+          <td class="paramname"> <em>pState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>distances</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppiInpaintFlag&nbsp;</td>
+          <td class="paramname"> <em>flag</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000054">Todo:</a></b></dt><dd>Document. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00222">222</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa5005f5f4b588cdc58fe17ddd7cecf84"></a><!-- doxytag: member="qvipp.h::InpaintFreeC3" ref="gaa5005f5f4b588cdc58fe17ddd7cecf84" args="(IppiInpaintState_8u_C3R *pState)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InpaintFreeC3 </td>
+          <td>(</td>
+          <td class="paramtype">IppiInpaintState_8u_C3R *&nbsp;</td>
+          <td class="paramname"> <em>pState</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000055">Todo:</a></b></dt><dd>Document. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00229">229</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4bd093b7fbf6a2e95e439172dfc2d538"></a><!-- doxytag: member="qvipp.h::InpaintInitAllocC1" ref="ga4bd093b7fbf6a2e95e439172dfc2d538" args="(IppiInpaintState_8u_C1R **pState, const QVImage&lt; sFloat &gt; &amp;distances, const QVImage&lt; uChar &gt; &amp;mask, const sFloat radius, const IppiInpaintFlag flag)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InpaintInitAllocC1 </td>
+          <td>(</td>
+          <td class="paramtype">IppiInpaintState_8u_C1R **&nbsp;</td>
+          <td class="paramname"> <em>pState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>distances</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppiInpaintFlag&nbsp;</td>
+          <td class="paramname"> <em>flag</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000056">Todo:</a></b></dt><dd>Document. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00234">234</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa3504383d51c52be55503ba6925192af"></a><!-- doxytag: member="qvipp.h::InpaintFreeC1" ref="gaa3504383d51c52be55503ba6925192af" args="(IppiInpaintState_8u_C1R *pState)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InpaintFreeC1 </td>
+          <td>(</td>
+          <td class="paramtype">IppiInpaintState_8u_C1R *&nbsp;</td>
+          <td class="paramname"> <em>pState</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000057">Todo:</a></b></dt><dd>Document. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvipp_8cpp_source.html#l00241">241</a> of file <a class="el" href="qvipp_8cpp_source.html">qvipp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae06195554922c14fa17f8e73ab847995"></a><!-- doxytag: member="qvipp.h::FloodFillRange4Connected" ref="gae06195554922c14fa17f8e73ab847995" args="(QVImage&lt; uChar &gt; &amp;img, QVImage&lt; uChar &gt; &amp;buffer, uInt seedX, uInt seedY, uChar newVal, uChar minDelta, uChar maxDelta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FloodFillRange4Connected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>seedX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>seedY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>newVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>minDelta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>maxDelta</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs flood filling of pixels with values in the specified range in the connected area on an image.This function performs flood filling of the group of connected pixels in the seed pixel neighborhoods whose pixel values <img class="formulaInl" alt="$ v_i $" src="form_12.png"/> satisfies the following condition: </p>
+<p><img class="formulaInl" alt="$ v_i - minDelta \leq v_0 \leq v_i + maxDelta $" src="form_13.png"/></p>
+<p>where <img class="formulaInl" alt="$ v_0 $" src="form_14.png"/> is the pixel value of the seed point. Values of these pixel is set to the <em>newVal</em> value.</p>
+<p>The function check 4-connected neighborhood of each pixel, i.e., side neighbors.</p>
+<p>The function requires a temporary buffer whose size should be computed with the function <a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize</a> beforehand.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>img</em>&nbsp;</td><td>image to flood fill. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>temporary buffer image previously initialized with <a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>seedX</em>&nbsp;</td><td>column coordinate for the seed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>seedY</em>&nbsp;</td><td>row coordinate for the seed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>newVal</em>&nbsp;</td><td>Value to fill with for one-channel data. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minDelta</em>&nbsp;</td><td>Minimum difference between neighbor pixels for one-channel data. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxDelta</em>&nbsp;</td><td>Maximum difference between neighbor pixels for one-channel data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06" title="Allocates size in a buffer image for temporary data for function family FloodFill...">FloodFillGetSize</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga651729e62b24103aa10667c463c64fed"></a><!-- doxytag: member="qvipp.h::FloodFillGradient4Connected" ref="ga651729e62b24103aa10667c463c64fed" args="(QVImage&lt; uChar &gt; &amp;img, QVImage&lt; uChar &gt; &amp;buffer, uInt seedX, uInt seedY, uChar newVal, uChar minDelta, uChar maxDelta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FloodFillGradient4Connected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>seedX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>seedY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>newVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>minDelta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar&nbsp;</td>
+          <td class="paramname"> <em>maxDelta</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs gradient flood filling of connected area on an image.This function performs flood filling of the group of connected pixels in the seed pixel neighborhoods whose pixel values v satisfies the following conditions: </p>
+<p><img class="formulaInl" alt="$ v_0 – d_{lw} \leq v \leq v_0 + d_{up} $" src="form_15.png"/></p>
+<p>where <img class="formulaInl" alt="$ v_0 $" src="form_14.png"/> is the value of at least one of the current pixel neighbors, which already belongs to the refilled area, and <img class="formulaInl" alt="$ d_{lw} $" src="form_16.png"/>, dup are minDelta, maxDelta, respectively. Values of these pixel is set to the newVal value.</p>
+<p>The function check 4-connected neighborhood of each pixel, i.e., side neighbors.</p>
+<p>The function requires a temporary buffer whose size should be computed with the function <a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize</a> beforehand.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>img</em>&nbsp;</td><td>image to flood fill. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>temporary buffer image previously initialized with <a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">FloodFillGetSize</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>seedX</em>&nbsp;</td><td>column coordinate for the seed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>seedY</em>&nbsp;</td><td>row coordinate for the seed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>newVal</em>&nbsp;</td><td>Value to fill with for one-channel data. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minDelta</em>&nbsp;</td><td>Minimum difference between neighbor pixels for one-channel data. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxDelta</em>&nbsp;</td><td>Maximum difference between neighbor pixels for one-channel data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06" title="Allocates size in a buffer image for temporary data for function family FloodFill...">FloodFillGetSize</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6998ed9960561b8625418fb9eb36193a"></a><!-- doxytag: member="qvipp.h::FindPeaks3x3" ref="ga6998ed9960561b8625418fb9eb36193a" args="(const QVImage&lt; sInt, 1 &gt; &amp;img, QVImage&lt; uChar &gt; &amp;buffer, QList&lt; QPoint &gt; &amp;points, sInt threshold, IppiNorm norm, uInt border, uInt maxPeakCount)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FindPeaks3x3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sInt, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QPoint &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sInt&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppiNorm&nbsp;</td>
+          <td class="paramname"> <em>norm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>border</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>maxPeakCount</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold value.This function detects local maximum pixels in the source image, and stores their coordinates in the <em>points</em> point list. The neighborhood O(i, j) for the search is defined by the parameter norm. The number of detected maximums is returned in pPeakCount[0]. The operation is stopped The function requires a working image buffer whose size should be computed by the function <a class="el" href="group__qvippCV.html#ga7fa265712f0b703595cee942cc1138c5">FindPeaks3x3GetBufferSize</a> beforehand. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>img</em>&nbsp;</td><td>image to obtain from peaks. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>buffer image initiated beforehand by the function <a class="el" href="group__qvippCV.html#ga7fa265712f0b703595cee942cc1138c5">FindPeaks3x3GetBufferSize</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points</em>&nbsp;</td><td>QPoint list to store the resulting point list. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>threshold value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>norm</em>&nbsp;</td><td>Specifies type of the norm to form the mask for maximum search:</p>
+<ul>
+<li>ippiNormInf. Infinity norm (8-connectivity, 3x3 rectangular mask);</li>
+<li>ippiNormL1. L1 norm (4-connectivity, 3x3 cross mask). </li>
+</ul>
+</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>border</em>&nbsp;</td><td>Border value, only pixel with distance from the edge of the image greater than border are processed. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxPeakCount</em>&nbsp;</td><td>Maximum number of peaks. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga7fa265712f0b703595cee942cc1138c5" title="Computes the size of the working buffer for the peak search.">FindPeaks3x3GetBufferSize</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf57d3f8198b223e288df4078625685cc"></a><!-- doxytag: member="qvipp.h::FindPeaks3x3" ref="gaf57d3f8198b223e288df4078625685cc" args="(const QVImage&lt; sFloat, 1 &gt; &amp;img, QVImage&lt; uChar &gt; &amp;buffer, QList&lt; QPoint &gt; &amp;points, sFloat threshold, IppiNorm norm, uInt border, uInt maxPeakCount)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FindPeaks3x3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QPoint &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sFloat&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppiNorm&nbsp;</td>
+          <td class="paramname"> <em>norm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>border</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>maxPeakCount</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold value. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga6998ed9960561b8625418fb9eb36193a" title="Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold...">FindPeaks3x3(const QVImage&lt;sInt, 1&gt; &amp;, QVImage&lt;uChar&gt; &amp;, QList&lt;QPoint&gt; &amp;, sInt, IppiNorm, uInt, uInt)</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4b54dbfc2853fe49efdefc6142c7918b"></a><!-- doxytag: member="qvipp.h::FindPeaks3x3GetBufferSize" ref="ga4b54dbfc2853fe49efdefc6142c7918b" args="(const QVImage&lt; sInt, 1 &gt; &amp;image, QVImage&lt; uChar &gt; &amp;buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FindPeaks3x3GetBufferSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sInt, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the size of the working buffer for the peak search.This function computes the size of the working image buffer required for the function FindPeaks3x3. The image buffer can be used to filter images with ROI width that is less than or equal to the image ROI width. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>source image to apply later filter. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>buffer image to initialize for further operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>FindPeaks3x3(const QVImage&lt;sInt, 1&gt; &amp;, QVImage&lt;uChar&gt; &amp;, sInt, IppiNorm, uInt, QList&lt;QPoint&gt; &amp;) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7fa265712f0b703595cee942cc1138c5"></a><!-- doxytag: member="qvipp.h::FindPeaks3x3GetBufferSize" ref="ga7fa265712f0b703595cee942cc1138c5" args="(const QVImage&lt; sFloat, 1 &gt; &amp;image, QVImage&lt; uChar &gt; &amp;buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FindPeaks3x3GetBufferSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Computes the size of the working buffer for the peak search. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#ga4b54dbfc2853fe49efdefc6142c7918b" title="Computes the size of the working buffer for the peak search.This function computes...">FindPeaks3x3GetBufferSize(const QVImage&lt;sInt,1&gt; &amp;, QVImage&lt;uChar&gt; &amp;)</a> </dd>
+<dd>
+<a class="el" href="group__qvippCV.html#gaf57d3f8198b223e288df4078625685cc" title="Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold...">FindPeaks3x3</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga56269a74576283f8743352552aadc12a"></a><!-- doxytag: member="qvippfunctions.h::Canny" ref="ga56269a74576283f8743352552aadc12a" args="(QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrcDx, QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrcDy, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDstEdges, const sFloat lowThresh, const sFloat highThresh, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pBuffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Canny </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDstEdges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>lowThresh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>highThresh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pBuffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates binary image of source's image edges, using derivatives of the first order. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCanny_16s8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDx</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDx</em> and step number <em>srcDxStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDy</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDy</em> and step number <em>srcDyStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDstEdges</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDstEdges</em> and step number <em>dstEdgeStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lowThresh</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>highThresh</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pBuffer</em>&nbsp;</td><td>Data buffer image, corresponding to parameter named <em>pBuffer</em> from the original IPP function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04671">4671</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a">Canny()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafab0c2a310a7e2050ea95b61324820e9"></a><!-- doxytag: member="qvippfunctions.h::Canny" ref="gafab0c2a310a7e2050ea95b61324820e9" args="(QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDx, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDy, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDstEdges, const sFloat lowThresh, const sFloat highThresh, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pBuffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Canny </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDstEdges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>lowThresh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>highThresh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pBuffer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates binary image of source's image edges, using derivatives of the first order. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCanny_32f8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDx</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDx</em> and step number <em>srcDxStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDy</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDy</em> and step number <em>srcDyStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDstEdges</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDstEdges</em> and step number <em>dstEdgeStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lowThresh</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>highThresh</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pBuffer</em>&nbsp;</td><td>Data buffer image, corresponding to parameter named <em>pBuffer</em> from the original IPP function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04690">4690</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6610bc68ec46cd944b93444fc5001b90"></a><!-- doxytag: member="qvippfunctions.h::MinEigenVal" ref="ga6610bc68ec46cd944b93444fc5001b90" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pMinEigenVal, const IppiKernelType kernType, const int apertureSize, const int avgWindow, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pBuffer, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MinEigenVal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pMinEigenVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppiKernelType&nbsp;</td>
+          <td class="paramname"> <em>kernType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>apertureSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>avgWindow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculate minimal eigen value of 2x2 autocorrelation gradient matrix for every pixel. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiMinEigenVal_8u32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pMinEigenVal</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pMinEigenVal</em> and step number <em>minValStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>kernType</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>apertureSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>avgWindow</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pBuffer</em>&nbsp;</td><td>Data buffer image, corresponding to parameter named <em>pBuffer</em> from the original IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04709">4709</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf6656a4313795ffc3b9467f3cc306006"></a><!-- doxytag: member="qvippfunctions.h::DistanceTransform_5x5" ref="gaf6656a4313795ffc3b9467f3cc306006" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uShort, 1 &gt; &amp;qvimage_pDst, sInt &amp;pMetrics, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DistanceTransform_5x5 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sInt &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMetrics</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiDistanceTransform_5x5_8u16u_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDistanceTransform_5x5_8u16u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMetrics</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04731">4731</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippCV.html#gaf6656a4313795ffc3b9467f3cc306006">DistanceTransform_5x5()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7f456ffa2169dd985fb607bd0a66a33a"></a><!-- doxytag: member="qvippfunctions.h::FastMarching" ref="ga7f456ffa2169dd985fb607bd0a66a33a" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat radius, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pBuffer, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FastMarching </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculate distance transform by fast marching method. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiFastMarching_8u32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>radius</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pBuffer</em>&nbsp;</td><td>Data buffer image, corresponding to parameter named <em>pBuffer</em> from the original IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04748">4748</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippCV.html#ga7f456ffa2169dd985fb607bd0a66a33a">FastMarching()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga130796a6842e97aaf115d50585c76930"></a><!-- doxytag: member="qvippfunctions.h::Inpaint" ref="ga130796a6842e97aaf115d50585c76930" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, IppiInpaintState_8u_C1R &amp;pState, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Inpaint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppiInpaintState_8u_C1R &amp;&nbsp;</td>
+          <td class="paramname"> <em>pState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restores damaged image area by direct inpainting. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiInpaint_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pState</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04766">4766</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippCV.html#ga130796a6842e97aaf115d50585c76930">Inpaint()</a>, <a class="el" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">InpaintFreeC1()</a>, <a class="el" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">InpaintFreeC3()</a>, <a class="el" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">InpaintInitAllocC1()</a>, and <a class="el" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">InpaintInitAllocC3()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga98c2e411ea0d93a9437cf6ac73b03515"></a><!-- doxytag: member="qvippfunctions.h::Inpaint" ref="ga98c2e411ea0d93a9437cf6ac73b03515" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 3 &gt; &amp;qvimage_pDst, IppiInpaintState_8u_C1R &amp;pState, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Inpaint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppiInpaintState_8u_C1R &amp;&nbsp;</td>
+          <td class="paramname"> <em>pState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restores damaged image area by direct inpainting. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiInpaint_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pState</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l04783">4783</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

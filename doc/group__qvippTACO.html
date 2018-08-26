@@ -1,0 +1,1475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Threshold and Compare Operations<br/>
+<small>
+[<a class="el" href="group__qvipp.html">IPP wrapper functions</a>]</small>
+</h1>
+<p>Image processing functions that operate on a pixel-by-pixel basis: threshold and compare functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gacd62d11907e730545925ec5c6187f5d2">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;src1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;src2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;dest, IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images using a specified compare operation.  <a href="#gacd62d11907e730545925ec5c6187f5d2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga77b7a868f7a786532ffe2e75648e3be9">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;src1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;src2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;dest, IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images using a specified compare operation.  <a href="#ga77b7a868f7a786532ffe2e75648e3be9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gac27da4e0acffc5bd1929bb0419721499">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;src1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;src2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;dest, IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images using a specified compare operation.  <a href="#gac27da4e0acffc5bd1929bb0419721499"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gada5e790176ab9e695b9b70ae399ffb2b">Threshold</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar threshold, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="#gada5e790176ab9e695b9b70ae399ffb2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga3361cfde0459936c9b0230d2ef55c4bb">Threshold</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar threshold, const IppCmpOp ippCmpOp=ippCmpEq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="#ga3361cfde0459936c9b0230d2ef55c4bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gab34166991312a59e85cb3d5209f5a360">Threshold</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pDst, const sShort threshold, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="#gab34166991312a59e85cb3d5209f5a360"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gab5f0e6c39cf555e24d89d5000989ab9c">Threshold</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const sShort threshold, const IppCmpOp ippCmpOp=ippCmpEq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="#gab5f0e6c39cf555e24d89d5000989ab9c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga131f9596c97bc91239abc708174c2383">Threshold</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat threshold, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="#ga131f9596c97bc91239abc708174c2383"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga2312100aaea82f18fdfbdc070c3cfbfa">Threshold</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const sFloat threshold, const IppCmpOp ippCmpOp=ippCmpEq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="#ga2312100aaea82f18fdfbdc070c3cfbfa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga587b93bed357cb8d79cf5a4bddc0b69f">Threshold_Val</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar threshold, const uChar value, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of pixel values.  <a href="#ga587b93bed357cb8d79cf5a4bddc0b69f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gad637cf4b5ecaf9adc73af637afee3bfb">Threshold_Val</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar threshold, const uChar value, const IppCmpOp ippCmpOp=ippCmpEq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of pixel values.  <a href="#gad637cf4b5ecaf9adc73af637afee3bfb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga7e60040e8ac3466d096087fe8551690a">Threshold_Val</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const sShort threshold, const sShort value, const IppCmpOp ippCmpOp=ippCmpEq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of pixel values.  <a href="#ga7e60040e8ac3466d096087fe8551690a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gae5d02b5fbfd80d84d1d71d627a2528cc">Threshold_Val</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat threshold, const sFloat value, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of pixel values.  <a href="#gae5d02b5fbfd80d84d1d71d627a2528cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga2250a029f253c1340f18299f1f302ed6">Threshold_Val</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const sFloat threshold, const sFloat value, const IppCmpOp ippCmpOp=ippCmpEq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of pixel values.  <a href="#ga2250a029f253c1340f18299f1f302ed6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga25082b30820f150a44ce266a33a3371c">Threshold_LTValGTVal</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar thresholdLT, const uChar valueLT, const uChar thresholdGT, const uChar valueGT, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs double thresholding of pixel values.  <a href="#ga25082b30820f150a44ce266a33a3371c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga9a523ef5b761a46de6dc2cea6f70305a">Threshold_LTValGTVal</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat thresholdLT, const sFloat valueLT, const sFloat thresholdGT, const sFloat valueGT, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs double thresholding of pixel values.  <a href="#ga9a523ef5b761a46de6dc2cea6f70305a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gaf8eb6e174a20b48eebcbf80f3c04b37d">ComputeThreshold_Otsu</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, uChar &amp;pThreshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate Otsu theshold value of images.  <a href="#gaf8eb6e174a20b48eebcbf80f3c04b37d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gacfe8d6c3fe355a5ebbfd5d919411f787">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiCompare_8u_C1R.  <a href="#gacfe8d6c3fe355a5ebbfd5d919411f787"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gad7fae6b566f583201254e828b3a4ffa1">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pSrc1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pSrc2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiCompare_16u_C1R.  <a href="#gad7fae6b566f583201254e828b3a4ffa1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gacaabf5a19e82207efaf6f159c4c92b3f">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;qvimage_pSrc2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiCompare_16s_C1R.  <a href="#gacaabf5a19e82207efaf6f159c4c92b3f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#gafc7daab15b67d9a1c3548f6480664f48">Compare</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc1, const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc2, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiCompare_32f_C1R.  <a href="#gafc7daab15b67d9a1c3548f6480664f48"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga57cc9276708cb5ff3dace1640356af0d">CompareC</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, const uChar value, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions.  <a href="#ga57cc9276708cb5ff3dace1640356af0d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippTACO.html#ga32057694e355d7ff974784416e40c883">CompareC</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, const sFloat value, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions.  <a href="#ga32057694e355d7ff974784416e40c883"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Image processing functions that operate on a pixel-by-pixel basis: threshold and compare functions. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gacd62d11907e730545925ec5c6187f5d2"></a><!-- doxytag: member="qvipp.h::Compare" ref="gacd62d11907e730545925ec5c6187f5d2" args="(const QVImage&lt; uShort, 3 &gt; &amp;src1, const QVImage&lt; uShort, 3 &gt; &amp;src2, QVImage&lt; uChar &gt; &amp;dest, IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares pixel values of two images using a specified compare operation. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>void Compare(const QVImage&lt;uChar&gt; &amp;, const QVImage&lt;uChar&gt; &amp;src2, QVImage&lt;uChar&gt; &amp;, IppCmpOp) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga77b7a868f7a786532ffe2e75648e3be9"></a><!-- doxytag: member="qvipp.h::Compare" ref="ga77b7a868f7a786532ffe2e75648e3be9" args="(const QVImage&lt; sShort, 3 &gt; &amp;src1, const QVImage&lt; sShort, 3 &gt; &amp;src2, QVImage&lt; uChar &gt; &amp;dest, IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares pixel values of two images using a specified compare operation. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>void Compare(const QVImage&lt;uChar&gt; &amp;, const QVImage&lt;uChar&gt; &amp;src2, QVImage&lt;uChar&gt; &amp;, IppCmpOp) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac27da4e0acffc5bd1929bb0419721499"></a><!-- doxytag: member="qvipp.h::Compare" ref="gac27da4e0acffc5bd1929bb0419721499" args="(const QVImage&lt; sFloat, 3 &gt; &amp;src1, const QVImage&lt; sFloat, 3 &gt; &amp;src2, QVImage&lt; uChar &gt; &amp;dest, IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares pixel values of two images using a specified compare operation. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>void Compare(const QVImage&lt;uChar&gt; &amp;, const QVImage&lt;uChar&gt; &amp;src2, QVImage&lt;uChar&gt; &amp;, IppCmpOp) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gada5e790176ab9e695b9b70ae399ffb2b"></a><!-- doxytag: member="qvippfunctions.h::Threshold" ref="gada5e790176ab9e695b9b70ae399ffb2b" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar threshold, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of an image using the specified level. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03048">3048</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVThreshold__sFloatC1Block.html#a142b927f61ba017a5b4159877d54449b">QVThreshold_sFloatC1Block::iterate()</a>, <a class="el" href="classQVThreshold__uCharC1Block.html#a6ca4deba3bb425c7612500795d79e3af">QVThreshold_uCharC1Block::iterate()</a>, and <a class="el" href="group__qvippTACO.html#gada5e790176ab9e695b9b70ae399ffb2b">Threshold()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3361cfde0459936c9b0230d2ef55c4bb"></a><!-- doxytag: member="qvippfunctions.h::Threshold" ref="ga3361cfde0459936c9b0230d2ef55c4bb" args="(QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar threshold, const IppCmpOp ippCmpOp=ippCmpEq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of an image using the specified level. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_8u_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03066">3066</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab34166991312a59e85cb3d5209f5a360"></a><!-- doxytag: member="qvippfunctions.h::Threshold" ref="gab34166991312a59e85cb3d5209f5a360" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sShort, 1 &gt; &amp;qvimage_pDst, const sShort threshold, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sShort&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of an image using the specified level. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_16s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03079">3079</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab5f0e6c39cf555e24d89d5000989ab9c"></a><!-- doxytag: member="qvippfunctions.h::Threshold" ref="gab5f0e6c39cf555e24d89d5000989ab9c" args="(QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const sShort threshold, const IppCmpOp ippCmpOp=ippCmpEq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sShort&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of an image using the specified level. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_16s_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03097">3097</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga131f9596c97bc91239abc708174c2383"></a><!-- doxytag: member="qvippfunctions.h::Threshold" ref="ga131f9596c97bc91239abc708174c2383" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat threshold, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of an image using the specified level. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03110">3110</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2312100aaea82f18fdfbdc070c3cfbfa"></a><!-- doxytag: member="qvippfunctions.h::Threshold" ref="ga2312100aaea82f18fdfbdc070c3cfbfa" args="(QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const sFloat threshold, const IppCmpOp ippCmpOp=ippCmpEq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of an image using the specified level. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_32f_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03128">3128</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga587b93bed357cb8d79cf5a4bddc0b69f"></a><!-- doxytag: member="qvippfunctions.h::Threshold_Val" ref="ga587b93bed357cb8d79cf5a4bddc0b69f" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar threshold, const uChar value, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_Val </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_Val_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03141">3141</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippTACO.html#ga587b93bed357cb8d79cf5a4bddc0b69f">Threshold_Val()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad637cf4b5ecaf9adc73af637afee3bfb"></a><!-- doxytag: member="qvippfunctions.h::Threshold_Val" ref="gad637cf4b5ecaf9adc73af637afee3bfb" args="(QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar threshold, const uChar value, const IppCmpOp ippCmpOp=ippCmpEq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_Val </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_Val_8u_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03161">3161</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7e60040e8ac3466d096087fe8551690a"></a><!-- doxytag: member="qvippfunctions.h::Threshold_Val" ref="ga7e60040e8ac3466d096087fe8551690a" args="(QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrcDst, const sShort threshold, const sShort value, const IppCmpOp ippCmpOp=ippCmpEq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_Val </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sShort&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sShort&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_Val_16s_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03176">3176</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae5d02b5fbfd80d84d1d71d627a2528cc"></a><!-- doxytag: member="qvippfunctions.h::Threshold_Val" ref="gae5d02b5fbfd80d84d1d71d627a2528cc" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat threshold, const sFloat value, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_Val </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_Val_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03191">3191</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2250a029f253c1340f18299f1f302ed6"></a><!-- doxytag: member="qvippfunctions.h::Threshold_Val" ref="ga2250a029f253c1340f18299f1f302ed6" args="(QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrcDst, const sFloat threshold, const sFloat value, const IppCmpOp ippCmpOp=ippCmpEq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_Val </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_Val_32f_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03211">3211</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga25082b30820f150a44ce266a33a3371c"></a><!-- doxytag: member="qvippfunctions.h::Threshold_LTValGTVal" ref="ga25082b30820f150a44ce266a33a3371c" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar thresholdLT, const uChar valueLT, const uChar thresholdGT, const uChar valueGT, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_LTValGTVal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>thresholdLT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>valueLT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>thresholdGT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>valueGT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs double thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_LTValGTVal_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>thresholdLT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>valueLT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>thresholdGT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>valueGT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03226">3226</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippTACO.html#ga25082b30820f150a44ce266a33a3371c">Threshold_LTValGTVal()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9a523ef5b761a46de6dc2cea6f70305a"></a><!-- doxytag: member="qvippfunctions.h::Threshold_LTValGTVal" ref="ga9a523ef5b761a46de6dc2cea6f70305a" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const sFloat thresholdLT, const sFloat valueLT, const sFloat thresholdGT, const sFloat valueGT, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Threshold_LTValGTVal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>thresholdLT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>valueLT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>thresholdGT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>valueGT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs double thresholding of pixel values. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiThreshold_LTValGTVal_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>thresholdLT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>valueLT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>thresholdGT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>valueGT</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03248">3248</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf8eb6e174a20b48eebcbf80f3c04b37d"></a><!-- doxytag: member="qvippfunctions.h::ComputeThreshold_Otsu" ref="gaf8eb6e174a20b48eebcbf80f3c04b37d" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, uChar &amp;pThreshold)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ComputeThreshold_Otsu </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pThreshold</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculate Otsu theshold value of images. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiComputeThreshold_Otsu_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pThreshold</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03271">3271</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippTACO.html#gaf8eb6e174a20b48eebcbf80f3c04b37d">ComputeThreshold_Otsu()</a>, and <a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html#a54b8fac4af1b266cb60eb09c834b21c8">QVComputeThreshold_Otsu_uCharC1Block::iterate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacfe8d6c3fe355a5ebbfd5d919411f787"></a><!-- doxytag: member="qvippfunctions.h::Compare" ref="gacfe8d6c3fe355a5ebbfd5d919411f787" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc1, const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc2, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiCompare_8u_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCompare_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc1</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc1</em> and step number <em>src1Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc2</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc2</em> and step number <em>src2Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03282">3282</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad7fae6b566f583201254e828b3a4ffa1"></a><!-- doxytag: member="qvippfunctions.h::Compare" ref="gad7fae6b566f583201254e828b3a4ffa1" args="(const QVImage&lt; uShort, 1 &gt; &amp;qvimage_pSrc1, const QVImage&lt; uShort, 1 &gt; &amp;qvimage_pSrc2, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiCompare_16u_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCompare_16u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc1</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc1</em> and step number <em>src1Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc2</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc2</em> and step number <em>src2Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03301">3301</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacaabf5a19e82207efaf6f159c4c92b3f"></a><!-- doxytag: member="qvippfunctions.h::Compare" ref="gacaabf5a19e82207efaf6f159c4c92b3f" args="(const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc1, const QVImage&lt; sShort, 1 &gt; &amp;qvimage_pSrc2, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiCompare_16s_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCompare_16s_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc1</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc1</em> and step number <em>src1Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc2</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc2</em> and step number <em>src2Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03320">3320</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafc7daab15b67d9a1c3548f6480664f48"></a><!-- doxytag: member="qvippfunctions.h::Compare" ref="gafc7daab15b67d9a1c3548f6480664f48" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc1, const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc2, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compare </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiCompare_32f_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCompare_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc1</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc1</em> and step number <em>src1Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc2</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc2</em> and step number <em>src2Step</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03339">3339</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga57cc9276708cb5ff3dace1640356af0d"></a><!-- doxytag: member="qvippfunctions.h::CompareC" ref="ga57cc9276708cb5ff3dace1640356af0d" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, const uChar value, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CompareC </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCompareC_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03358">3358</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippTACO.html#ga57cc9276708cb5ff3dace1640356af0d">CompareC()</a>, <a class="el" href="classQVCompareC__sFloatC1Block.html#a530e27b34dca8bff45faff1a63f57e14">QVCompareC_sFloatC1Block::iterate()</a>, and <a class="el" href="classQVCompareC__uCharC1Block.html#a6fb837d869be7c1b11f32c6a4da2a165">QVCompareC_uCharC1Block::iterate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga32057694e355d7ff974784416e40c883"></a><!-- doxytag: member="qvippfunctions.h::CompareC" ref="ga32057694e355d7ff974784416e40c883" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, const sFloat value, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const IppCmpOp ippCmpOp=ippCmpEq, const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CompareC </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sFloat&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IppCmpOp&nbsp;</td>
+          <td class="paramname"> <em>ippCmpOp</em> = <code>ippCmpEq</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiCompareC_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ippCmpOp</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03376">3376</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

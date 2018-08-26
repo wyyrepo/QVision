@@ -1,0 +1,1170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvpropertycontainer.cpp</h1><a href="qvpropertycontainer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QVDisjointSet&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;QVPropertyContainer&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 uint QVPropertyContainer::maxIdent = 0;
+<a name="l00029"></a>00029 <span class="comment">// QVPropertyContainerInformer QVPropertyContainer::globalInformer;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="classQVPropertyContainer.html#af7b6ad165bd7d4ce2fa489a0dad182a7">00031</a> <a class="code" href="classQVPropertyContainer.html#af7b6ad165bd7d4ce2fa489a0dad182a7" title="Constructs a QVPropertyContainer with a given string identifier.">QVPropertyContainer::QVPropertyContainer</a>(<span class="keyword">const</span> QString name):
+<a name="l00032"></a>00032     name(name), errorString(), variants(), safelyCopiedVariants(), minimum(),
+<a name="l00033"></a>00033     maximum(), _info(), io_flags(), link_flags(), insertion_order(),
+<a name="l00034"></a>00034     inputLinks(), outputLinks(), master(this), deepLevel(0)
+<a name="l00035"></a>00035     {
+<a name="l00036"></a>00036     ident = getNewIdent();
+<a name="l00037"></a>00037     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::QVPropertyContainer(&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00038"></a>00038     <span class="keywordflow">if</span>(qvApp == NULL)
+<a name="l00039"></a>00039         {
+<a name="l00040"></a>00040         QString str = <span class="stringliteral">&quot;QVPropertyContainer::QVPropertyContainer(): holder &quot;</span> + name +
+<a name="l00041"></a>00041                       <span class="stringliteral">&quot;: property holders cannot be created before the &quot;</span> +
+<a name="l00042"></a>00042                       <span class="stringliteral">&quot;QVApplication instance. Aborting now.&quot;</span>;
+<a name="l00043"></a>00043         std::cerr &lt;&lt; qPrintable(str) &lt;&lt; std::endl;
+<a name="l00044"></a>00044         exit(1);
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046     <span class="keywordflow">else</span>
+<a name="l00047"></a>00047         {
+<a name="l00048"></a>00048         qvApp-&gt;registerQVPropertyContainer(<span class="keyword">this</span>);
+<a name="l00049"></a>00049 <span class="comment">//              QVPropertyContainer::globalInformer.emitChange(QVPropertyContainerChange(this, QVPropertyContainerChange::ContainerAdd));</span>
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051     slavesByLevel.append(QList&lt;QVPropertyContainer *&gt;());
+<a name="l00052"></a>00052     slavesByLevel[0].append(<span class="keyword">this</span>);
+<a name="l00053"></a>00053     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::QVPropertyContainer(&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;) &lt;- return&quot;</span>;
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055 
+<a name="l00056"></a><a class="code" href="classQVPropertyContainer.html#a374d59d823846e4e2db24b0198add780">00056</a> <a class="code" href="classQVPropertyContainer.html#af7b6ad165bd7d4ce2fa489a0dad182a7" title="Constructs a QVPropertyContainer with a given string identifier.">QVPropertyContainer::QVPropertyContainer</a>(<span class="keyword">const</span> <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;cont):
+<a name="l00057"></a>00057     name(cont.name), ident(cont.ident), errorString(cont.errorString), variants(cont.variants),
+<a name="l00058"></a>00058     safelyCopiedVariants(cont.safelyCopiedVariants), minimum(cont.minimum), maximum(cont.maximum),
+<a name="l00059"></a>00059     _info(cont._info), io_flags(cont.io_flags), link_flags(cont.link_flags), insertion_order(cont.insertion_order),
+<a name="l00060"></a>00060     RWLock(), inputLinks(cont.inputLinks), outputLinks(cont.outputLinks), master(this), deepLevel(0)
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::QVPropertyContainer(&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00063"></a>00063     <span class="keywordflow">if</span>(qvApp == NULL)
+<a name="l00064"></a>00064         {
+<a name="l00065"></a>00065         QString str = <span class="stringliteral">&quot;QVPropertyContainer::QVPropertyContainer(): holder &quot;</span> + name +
+<a name="l00066"></a>00066                       <span class="stringliteral">&quot;: property holders cannot be created before the &quot;</span> +
+<a name="l00067"></a>00067                       <span class="stringliteral">&quot;QVApplication instance. Aborting now.&quot;</span>;
+<a name="l00068"></a>00068         std::cerr &lt;&lt; qPrintable(str) &lt;&lt; std::endl;
+<a name="l00069"></a>00069         exit(1);
+<a name="l00070"></a>00070         }
+<a name="l00071"></a>00071     <span class="keywordflow">else</span>
+<a name="l00072"></a>00072         {
+<a name="l00073"></a>00073         qvApp-&gt;registerQVPropertyContainer(<span class="keyword">this</span>);
+<a name="l00074"></a>00074 <span class="comment">//              QVPropertyContainer::globalInformer.emitChange(QVPropertyContainerChange(this, QVPropertyContainerChange::ContainerAdd));</span>
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076     slavesByLevel.append(QList&lt;QVPropertyContainer *&gt;());
+<a name="l00077"></a>00077     slavesByLevel[0].append(<span class="keyword">this</span>);
+<a name="l00078"></a>00078     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::QVPropertyContainer(&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;) &lt;- return&quot;</span>;
+<a name="l00079"></a>00079     }
+<a name="l00080"></a>00080 
+<a name="l00081"></a><a class="code" href="classQVPropertyContainer.html#a959fb67110a55c37b138e66929fe88e9">00081</a> <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp; <a class="code" href="classQVPropertyContainer.html#a959fb67110a55c37b138e66929fe88e9" title="Copy operator.">QVPropertyContainer::operator=</a>(<span class="keyword">const</span> <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;cont)
+<a name="l00082"></a>00082     {
+<a name="l00083"></a>00083     name = cont.name;
+<a name="l00084"></a>00084     ident = cont.ident;
+<a name="l00085"></a>00085     errorString = cont.errorString;
+<a name="l00086"></a>00086     variants = cont.variants;
+<a name="l00087"></a>00087     safelyCopiedVariants = cont.safelyCopiedVariants;
+<a name="l00088"></a>00088     minimum = cont.minimum;
+<a name="l00089"></a>00089     maximum = cont.maximum;
+<a name="l00090"></a>00090     _info = cont._info;
+<a name="l00091"></a>00091     io_flags = cont.io_flags;
+<a name="l00092"></a>00092     link_flags = cont.link_flags;
+<a name="l00093"></a>00093     insertion_order = cont.insertion_order;
+<a name="l00094"></a>00094     inputLinks = cont.inputLinks;
+<a name="l00095"></a>00095     outputLinks = cont.outputLinks;
+<a name="l00096"></a>00096     master = <span class="keyword">this</span>;
+<a name="l00097"></a>00097     deepLevel = 0;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099     slavesByLevel.append(QList&lt;QVPropertyContainer *&gt;());
+<a name="l00100"></a>00100     slavesByLevel[0].append(<span class="keyword">this</span>);
+<a name="l00101"></a>00101     informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::All));
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00103"></a>00103     }
+<a name="l00104"></a>00104 
+<a name="l00105"></a><a class="code" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">00105</a> <a class="code" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8" title="Virtual destructor.">QVPropertyContainer::~QVPropertyContainer</a>()
+<a name="l00106"></a>00106     {
+<a name="l00107"></a>00107     <span class="keywordflow">if</span>(qvApp != NULL)
+<a name="l00108"></a>00108         qvApp-&gt;deregisterQVPropertyContainer(<span class="keyword">this</span>);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     <a class="code" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124" title="Completely unlinks a property holder.">unlink</a>();
+<a name="l00111"></a>00111     <a class="code" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86" title="Read linked input properties from other QVPropertyContainer&amp;#39;s.">readInputProperties</a>();
+<a name="l00112"></a>00112     <a class="code" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a" title="Write linked output properties to other QVPropertyContainer&amp;#39;s.">writeOutputProperties</a>();
+<a name="l00113"></a>00113     informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::ContainerDel));
+<a name="l00114"></a>00114     }
+<a name="l00115"></a>00115 
+<a name="l00116"></a><a class="code" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f">00116</a> <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f" title="Sets a new string identifier for a QVPropertyContainer.">QVPropertyContainer::setName</a>(<span class="keyword">const</span> QString name)
+<a name="l00117"></a>00117     { this-&gt;name = name; informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::Name)); }
+<a name="l00118"></a>00118 
+<a name="l00119"></a><a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85">00119</a> <span class="keyword">const</span> QString <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">QVPropertyContainer::getName</a>()<span class="keyword"> const</span>
+<a name="l00120"></a>00120 <span class="keyword">    </span>{ <span class="keywordflow">return</span> this-&gt;name; }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e">00122</a> uint <a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">QVPropertyContainer::getId</a>()<span class="keyword"> const</span>
+<a name="l00123"></a>00123 <span class="keyword">    </span>{ <span class="keywordflow">return</span> this-&gt;ident; }
+<a name="l00124"></a>00124 
+<a name="l00125"></a><a class="code" href="classQVPropertyContainer.html#afe5a790ea61bbd0f964a4c1387230579">00125</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#afe5a790ea61bbd0f964a4c1387230579" title="Compare operator.">QVPropertyContainer::operator==</a>(<span class="keyword">const</span> <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;cont)<span class="keyword"> const</span>
+<a name="l00126"></a>00126 <span class="keyword">    </span>{ <span class="keywordflow">return</span> (ident == cont.ident); }
+<a name="l00127"></a>00127 
+<a name="l00128"></a><a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc">00128</a> QList&lt;QString&gt; <a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">QVPropertyContainer::getPropertyList</a>()<span class="keyword"> const</span>
+<a name="l00129"></a>00129 <span class="keyword">    </span>{ <span class="keywordflow">return</span> variants.keys(); }
+<a name="l00130"></a>00130 
+<a name="l00131"></a><a class="code" href="classQVPropertyContainer.html#a1f397287bc9c69b22aec208bddcc1d23">00131</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a1f397287bc9c69b22aec208bddcc1d23" title="Check whether the property holder has a given property.">QVPropertyContainer::containsProperty</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00132"></a>00132 <span class="keyword">    </span>{ <span class="keywordflow">return</span> variants.contains(name); }
+<a name="l00133"></a>00133 
+<a name="l00134"></a><a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3">00134</a> <span class="keywordtype">int</span> <a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3" title="Given a property identifying QString (see getPropertyList() function above), returns...">QVPropertyContainer::getPropertyType</a>(<span class="keyword">const</span> QString name, <span class="keywordtype">bool</span> *ok)<span class="keyword"> const</span>
+<a name="l00135"></a>00135 <span class="keyword">    </span>{
+<a name="l00136"></a>00136     <span class="keywordflow">if</span>(not checkExists(name,<span class="stringliteral">&quot;QVPropertyContainer::getPropertyType()&quot;</span>))
+<a name="l00137"></a>00137         {
+<a name="l00138"></a>00138         <span class="keywordflow">if</span>(ok != NULL) *ok = FALSE;
+<a name="l00139"></a>00139         <span class="keywordflow">return</span> QVariant::Invalid;
+<a name="l00140"></a>00140         }
+<a name="l00141"></a>00141     <span class="keywordflow">if</span>(ok != NULL) *ok = TRUE;
+<a name="l00142"></a>00142     QVariant variant = variants.value(name);
+<a name="l00143"></a>00143     <span class="keywordflow">return</span> variant.userType();
+<a name="l00144"></a>00144     }
+<a name="l00145"></a>00145 
+<a name="l00146"></a><a class="code" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92">00146</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92" title="De-registers a property in the property holder.">QVPropertyContainer::removeProperty</a>(<span class="keyword">const</span> QString name)
+<a name="l00147"></a>00147     {
+<a name="l00148"></a>00148     <span class="keywordflow">if</span>(not checkExists(name,<span class="stringliteral">&quot;QVPropertyContainer::removeProperty()&quot;</span>))
+<a name="l00149"></a>00149         <span class="keywordflow">return</span> FALSE;
+<a name="l00150"></a>00150     this-&gt;variants.remove(name);
+<a name="l00151"></a>00151     this-&gt;safelyCopiedVariants.remove(name);
+<a name="l00152"></a>00152     this-&gt;minimum.remove(name);
+<a name="l00153"></a>00153     this-&gt;maximum.remove(name);
+<a name="l00154"></a>00154     this-&gt;_info.remove(name);
+<a name="l00155"></a>00155     this-&gt;io_flags.remove(name);
+<a name="l00156"></a>00156     <span class="keywordtype">int</span> i = this-&gt;insertion_order.indexOf(name);
+<a name="l00157"></a>00157     this-&gt;insertion_order.removeAt(i);
+<a name="l00158"></a>00158     informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::PropertyDel, name));
+<a name="l00159"></a>00159     <span class="keywordflow">return</span> TRUE;
+<a name="l00160"></a>00160     }
+<a name="l00161"></a>00161 <span class="comment">/*</span>
+<a name="l00162"></a>00162 <span class="comment">bool QVPropertyContainer::setPropertyRange(const QString name, const double &amp; minimum, const double &amp; maximum)</span>
+<a name="l00163"></a>00163 <span class="comment">    {</span>
+<a name="l00164"></a>00164 <span class="comment">    std::cerr &lt;&lt; &quot;WARNING: setPropertyRange() is deprecated. Specify range in the function addProperty instead.&quot; &lt;&lt; std::endl;</span>
+<a name="l00165"></a>00165 <span class="comment">    if(not checkExists(name,&quot;QVPropertyContainer::setPropertyRange()&quot;))</span>
+<a name="l00166"></a>00166 <span class="comment">        return FALSE;</span>
+<a name="l00167"></a>00167 <span class="comment">    if(minimum &lt;= getPropertyValue&lt;double&gt;(name) and</span>
+<a name="l00168"></a>00168 <span class="comment">        maximum &gt;= getPropertyValue&lt;double&gt;(name))</span>
+<a name="l00169"></a>00169 <span class="comment">        {</span>
+<a name="l00170"></a>00170 <span class="comment">            this-&gt;minimum[name] = QVariant::fromValue(minimum);</span>
+<a name="l00171"></a>00171 <span class="comment">            this-&gt;maximum[name] = QVariant::fromValue(maximum);</span>
+<a name="l00172"></a>00172 <span class="comment">            return TRUE;</span>
+<a name="l00173"></a>00173 <span class="comment">        } else {</span>
+<a name="l00174"></a>00174 <span class="comment">            QString str =  &quot;QVPropertyContainer::setPropertyRange(): property &quot; +</span>
+<a name="l00175"></a>00175 <span class="comment">                           name + &quot; in holder &quot; + getName() + &quot; has value &quot; +</span>
+<a name="l00176"></a>00176 <span class="comment">                           QString(&quot;%1&quot;).arg(getPropertyValue&lt;double&gt;(name)) +</span>
+<a name="l00177"></a>00177 <span class="comment">                           &quot;, which is not valid for the range [&quot; +</span>
+<a name="l00178"></a>00178 <span class="comment">                           QString(&quot;%1,%2&quot;).arg(minimum).arg(maximum) + &quot;].&quot; ;</span>
+<a name="l00179"></a>00179 <span class="comment">            setLastError(str);</span>
+<a name="l00180"></a>00180 <span class="comment">            if(qvApp-&gt;isRunning()) {</span>
+<a name="l00181"></a>00181 <span class="comment">                std::cerr &lt;&lt; qPrintable(&quot;Warning: &quot; + str + &quot;\n&quot;);</span>
+<a name="l00182"></a>00182 <span class="comment">            } // Otherwise, qApp will show the error and won&#39;t start the program.</span>
+<a name="l00183"></a>00183 <span class="comment">            return FALSE;</span>
+<a name="l00184"></a>00184 <span class="comment">        }</span>
+<a name="l00185"></a>00185 <span class="comment">    }</span>
+<a name="l00186"></a>00186 <span class="comment"></span>
+<a name="l00187"></a>00187 <span class="comment">bool QVPropertyContainer::setPropertyRange(QString name, int &amp; minimum, int &amp; maximum)</span>
+<a name="l00188"></a>00188 <span class="comment">    { return setPropertyRange(name, static_cast&lt;double&gt;(minimum), static_cast&lt;double&gt;(maximum)); }</span>
+<a name="l00189"></a>00189 <span class="comment">*/</span>
+<a name="l00190"></a><a class="code" href="classQVPropertyContainer.html#ad4d7d822be0be35b9d6549a5abf718e1">00190</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#ad4d7d822be0be35b9d6549a5abf718e1" title="Tells if a range has been set for the property.">QVPropertyContainer::hasRange</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00191"></a>00191 <span class="keyword">    </span>{ <span class="keywordflow">return</span> maximum.contains(name) and minimum.contains(name); }
+<a name="l00192"></a>00192 
+<a name="l00193"></a><a class="code" href="classQVPropertyContainer.html#a81d9c28ff7aefe940b058d80a47eb93a">00193</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a81d9c28ff7aefe940b058d80a47eb93a" title="Tells if a property is of the input type.">QVPropertyContainer::isInput</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00194"></a>00194 <span class="keyword">    </span>{ <span class="keywordflow">return</span> (io_flags[name] &amp; inputFlag);};
+<a name="l00195"></a>00195 
+<a name="l00196"></a><a class="code" href="classQVPropertyContainer.html#aa6edef6dbc24d47a88ebe7768eb0bbf0">00196</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#aa6edef6dbc24d47a88ebe7768eb0bbf0" title="Tells if a property is of the output type.">QVPropertyContainer::isOutput</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00197"></a>00197 <span class="keyword">    </span>{ <span class="keywordflow">return</span> (io_flags[name] &amp; outputFlag);};
+<a name="l00198"></a>00198 
+<a name="l00199"></a><a class="code" href="classQVPropertyContainer.html#aec4486b670bdda79321ad447323e3c06">00199</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#aec4486b670bdda79321ad447323e3c06" title="Tells if a property can be modified through the GUI.">QVPropertyContainer::isGUIInvisible</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00200"></a>00200 <span class="keyword">    </span>{ <span class="keywordflow">return</span> (io_flags[name] &amp; guiInvisible);};
+<a name="l00201"></a>00201 
+<a name="l00202"></a><a class="code" href="classQVPropertyContainer.html#ab3711d136b3af5497ee180d6a2665844">00202</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#ab3711d136b3af5497ee180d6a2665844" title="Tells if a property is of the input type and is linked.">QVPropertyContainer::isLinkedInput</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00203"></a>00203 <span class="keyword">    </span>{ <span class="keywordflow">return</span> (link_flags[name] &amp; linkedInputFlag);};
+<a name="l00204"></a>00204 
+<a name="l00205"></a><a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a">00205</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">QVPropertyContainer::isLinkedOutput</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00206"></a>00206 <span class="keyword">    </span>{ <span class="keywordflow">return</span> (link_flags[name] &amp; linkedOutputFlag);};
+<a name="l00207"></a>00207 
+<a name="l00208"></a><a class="code" href="classQVPropertyContainer.html#a253156f365b20fa2e0accc82dff1284f">00208</a> QVariant <a class="code" href="classQVPropertyContainer.html#a253156f365b20fa2e0accc82dff1284f" title="Method to get the value of a property as a QVariant.">QVPropertyContainer::getPropertyQVariantValue</a>(<span class="keyword">const</span> QString name, <span class="keywordtype">bool</span> *ok)<span class="keyword"> const</span>
+<a name="l00209"></a>00209 <span class="keyword">    </span>{
+<a name="l00210"></a>00210     <span class="keywordflow">if</span> (not checkExists(name,<span class="stringliteral">&quot;QVPropertyContainer::getPropertyQVariantValue()&quot;</span>)) {
+<a name="l00211"></a>00211         <span class="keywordflow">if</span>(ok != NULL) *ok = FALSE;
+<a name="l00212"></a>00212     } <span class="keywordflow">else</span> {
+<a name="l00213"></a>00213         <span class="keywordflow">if</span>(ok != NULL) *ok = TRUE;
+<a name="l00214"></a>00214     }
+<a name="l00215"></a>00215     <span class="keywordflow">return</span> variants[name];
+<a name="l00216"></a>00216     }
+<a name="l00217"></a>00217 
+<a name="l00218"></a><a class="code" href="classQVPropertyContainer.html#afbbd3b9914406c1e237d9443ea5fa48b">00218</a> QString <a class="code" href="classQVPropertyContainer.html#afbbd3b9914406c1e237d9443ea5fa48b" title="Method to get the info QString for int typed property.">QVPropertyContainer::getPropertyInfo</a>(<span class="keyword">const</span> QString name, <span class="keywordtype">bool</span> *ok)<span class="keyword"> const</span>
+<a name="l00219"></a>00219 <span class="keyword">    </span>{
+<a name="l00220"></a>00220     <span class="keywordflow">if</span>(not checkExists(name,<span class="stringliteral">&quot;QVPropertyContainer::getPropertyInfo()&quot;</span>)) {
+<a name="l00221"></a>00221         <span class="keywordflow">if</span>(ok != NULL) *ok = FALSE;
+<a name="l00222"></a>00222     } <span class="keywordflow">else</span> {
+<a name="l00223"></a>00223         <span class="keywordflow">if</span>(ok != NULL) *ok = TRUE;
+<a name="l00224"></a>00224     }
+<a name="l00225"></a>00225     <span class="keywordflow">return</span> this-&gt;_info[name];
+<a name="l00226"></a>00226     }
+<a name="l00227"></a>00227 
+<a name="l00228"></a><a class="code" href="classQVPropertyContainer.html#a14303586bf0de35498002c984408735f">00228</a> QString <a class="code" href="classQVPropertyContainer.html#a14303586bf0de35498002c984408735f" title="Gets the (possible) last error string.">QVPropertyContainer::getLastError</a>()<span class="keyword"> const</span>
+<a name="l00229"></a>00229 <span class="keyword">    </span>{
+<a name="l00230"></a>00230     <span class="keywordflow">return</span> errorString;
+<a name="l00231"></a>00231     }
+<a name="l00232"></a>00232 
+<a name="l00233"></a><a class="code" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">00233</a> <span class="keyword">const</span> QString <a class="code" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4" title="Formatted description of properties (useful to show help).">QVPropertyContainer::infoInputProperties</a>()<span class="keyword"> const</span>
+<a name="l00234"></a>00234 <span class="keyword">    </span>{
+<a name="l00235"></a>00235     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::infoInputProperties(&quot;</span> &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237     QString info = QString(<span class="stringliteral">&quot;Input parameters for &quot;</span>) + <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() + QString(<span class="stringliteral">&quot;:\n&quot;</span>);
+<a name="l00238"></a>00238     <span class="keywordtype">bool</span> emptyInfo=TRUE;
+<a name="l00239"></a>00239 
+<a name="l00240"></a>00240     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::infoInputProperties(): Properties &quot;</span> &lt;&lt; insertion_order;
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242     <span class="keywordflow">foreach</span> (QString property, insertion_order)
+<a name="l00243"></a>00243     <span class="comment">//QListIterator&lt;QString&gt; i(insertion_order);</span>
+<a name="l00244"></a>00244     <span class="comment">//while (i.hasNext())</span>
+<a name="l00245"></a>00245         {
+<a name="l00246"></a>00246         <span class="comment">//const QString property = i.next();</span>
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248         <span class="keywordflow">if</span>( not <a class="code" href="classQVPropertyContainer.html#a81d9c28ff7aefe940b058d80a47eb93a" title="Tells if a property is of the input type.">isInput</a>(property) )
+<a name="l00249"></a>00249             <span class="keywordflow">continue</span>;
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251         <span class="keywordtype">bool</span> printableProperty = TRUE;
+<a name="l00252"></a>00252         QString propertyInfo(<span class="stringliteral">&quot;  --&quot;</span> + property + <span class="stringliteral">&quot;=&quot;</span>);
+<a name="l00253"></a>00253 
+<a name="l00254"></a>00254         <span class="keywordflow">switch</span>(<a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3" title="Given a property identifying QString (see getPropertyList() function above), returns...">getPropertyType</a>(property))
+<a name="l00255"></a>00255             {
+<a name="l00256"></a>00256             <span class="keywordflow">case</span> QVariant::String:
+<a name="l00257"></a>00257                 propertyInfo += QString() + <span class="stringliteral">&quot;[text] &quot;</span> + <span class="stringliteral">&quot;(def. &#39;&quot;</span> + getPropertyValue&lt;QString&gt;(property) + <span class="stringliteral">&quot;&#39;) &quot;</span>;
+<a name="l00258"></a>00258                 <span class="keywordflow">break</span>;
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260             <span class="keywordflow">case</span> QVariant::Double:
+<a name="l00261"></a>00261                 propertyInfo += ( (maximum.contains(property) and minimum.contains(property))?
+<a name="l00262"></a>00262                     <span class="stringliteral">&quot;[&quot;</span> + QString().setNum(getPropertyMinimum&lt;double&gt;(property)) + <span class="stringliteral">&quot;...&quot;</span>
+<a name="l00263"></a>00263                         + QString().setNum(getPropertyMaximum&lt;double&gt;(property)) + <span class="stringliteral">&quot;] &quot;</span>:
+<a name="l00264"></a>00264                     <span class="stringliteral">&quot;[double] &quot;</span> ) + <span class="stringliteral">&quot;(def. &quot;</span>+ QString().setNum(getPropertyValue&lt;double&gt;(property)) + <span class="stringliteral">&quot;) &quot;</span>;
+<a name="l00265"></a>00265                 <span class="keywordflow">break</span>;
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267             <span class="keywordflow">case</span> QVariant::Int:
+<a name="l00268"></a>00268                 propertyInfo += ( (maximum.contains(property) and minimum.contains(property))?
+<a name="l00269"></a>00269                     <span class="stringliteral">&quot;[&quot;</span> + QString().setNum(getPropertyMinimum&lt;int&gt;(property)) + <span class="stringliteral">&quot;...&quot;</span> +
+<a name="l00270"></a>00270                         QString().setNum(getPropertyMaximum&lt;int&gt;(property)) + <span class="stringliteral">&quot;] &quot;</span>:
+<a name="l00271"></a>00271                     <span class="stringliteral">&quot;[int] &quot;</span> ) + <span class="stringliteral">&quot;(def. &quot;</span>+ QString().setNum(getPropertyValue&lt;int&gt;(property)) + <span class="stringliteral">&quot;) &quot;</span>;
+<a name="l00272"></a>00272                 <span class="keywordflow">break</span>;
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274             <span class="keywordflow">case</span> QVariant::Bool:
+<a name="l00275"></a>00275                 propertyInfo += <span class="stringliteral">&quot;[true,false]&quot;</span> + (getPropertyValue&lt;bool&gt;(property) ?
+<a name="l00276"></a>00276                                 QString(<span class="stringliteral">&quot; (def. true) &quot;</span>):QString(<span class="stringliteral">&quot;(def. false) &quot;</span>));
+<a name="l00277"></a>00277                 <span class="keywordflow">break</span>;
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279             <span class="keywordflow">default</span>:
+<a name="l00280"></a>00280                 printableProperty = FALSE;
+<a name="l00281"></a>00281                 <span class="keywordflow">break</span>;
+<a name="l00282"></a>00282             }
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284         <span class="keywordflow">if</span> (printableProperty)
+<a name="l00285"></a>00285             {
+<a name="l00286"></a>00286             info += propertyInfo + <a class="code" href="classQVPropertyContainer.html#afbbd3b9914406c1e237d9443ea5fa48b" title="Method to get the info QString for int typed property.">getPropertyInfo</a>(property).rightJustified(100-propertyInfo.split(<span class="charliteral">&#39;\n&#39;</span>).last().length(),<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.\n&quot;</span>;
+<a name="l00287"></a>00287             emptyInfo=FALSE;
+<a name="l00288"></a>00288             }
+<a name="l00289"></a>00289         }
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291     qDebug() &lt;&lt; <span class="stringliteral">&quot;QVPropertyContainer::infoInputProperties(&quot;</span> &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() &lt;&lt; <span class="stringliteral">&quot;) &lt;~ return&quot;</span>;
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293     <span class="keywordflow">if</span>(emptyInfo)
+<a name="l00294"></a>00294         <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;&quot;</span>);
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296     <span class="keywordflow">return</span> info;
+<a name="l00297"></a>00297     }
+<a name="l00298"></a>00298 
+<a name="l00299"></a>00299 <span class="keywordtype">bool</span> QVPropertyContainer::correctRange(<span class="keyword">const</span> QString name, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; value)<span class="keyword"> const</span>
+<a name="l00300"></a>00300 <span class="keyword">    </span>{
+<a name="l00301"></a>00301     <span class="keywordflow">if</span>(not maximum.contains(name) and not minimum.contains(name))
+<a name="l00302"></a>00302         <span class="keywordflow">return</span> TRUE;
+<a name="l00303"></a>00303     <span class="keywordtype">double</span> maximum = getPropertyMaximum&lt;double&gt;(name);
+<a name="l00304"></a>00304     <span class="keywordtype">double</span> minimum = getPropertyMinimum&lt;double&gt;(name);
+<a name="l00305"></a>00305     <span class="keywordflow">if</span>(minimum &lt;= value and maximum &gt;= value)
+<a name="l00306"></a>00306         <span class="keywordflow">return</span> TRUE;
+<a name="l00307"></a>00307     <span class="keywordflow">else</span>
+<a name="l00308"></a>00308         {
+<a name="l00309"></a>00309         QString str =  <span class="stringliteral">&quot;QVPropertyContainer::setPropertyValue(): value &quot;</span> +
+<a name="l00310"></a>00310                        QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(value) + <span class="stringliteral">&quot; for property &quot;</span> +
+<a name="l00311"></a>00311                        name + <span class="stringliteral">&quot; in holder &quot;</span> + <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() +
+<a name="l00312"></a>00312                        <span class="stringliteral">&quot;is not valid for the specified range [&quot;</span> +
+<a name="l00313"></a>00313                        QString(<span class="stringliteral">&quot;%1,%2&quot;</span>).arg(minimum).arg(maximum) +
+<a name="l00314"></a>00314                        <span class="stringliteral">&quot;]&quot;</span> ;
+<a name="l00315"></a>00315         <a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a" title="Sets an error string message.">setLastError</a>(str);
+<a name="l00316"></a>00316         <span class="keywordflow">if</span>(qvApp-&gt;isRunning())
+<a name="l00317"></a>00317             {
+<a name="l00318"></a>00318             std::cerr &lt;&lt; qPrintable(<span class="stringliteral">&quot;Warning: &quot;</span> + str + <span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00319"></a>00319             } <span class="comment">// Otherwise, qApp will show the error and won&#39;t start the program.</span>
+<a name="l00320"></a>00320         <span class="keywordflow">return</span> FALSE;
+<a name="l00321"></a>00321         }
+<a name="l00322"></a>00322     }
+<a name="l00323"></a>00323 
+<a name="l00324"></a>00324 <span class="keywordtype">bool</span> QVPropertyContainer::correctRange(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; value)<span class="keyword"> const</span>
+<a name="l00325"></a>00325 <span class="keyword">    </span>{ <span class="keywordflow">return</span> correctRange(QString(name),static_cast&lt;double&gt;(value)); }
+<a name="l00326"></a>00326 
+<a name="l00327"></a>00327 <span class="keywordtype">bool</span> QVPropertyContainer::correctRange(QString name, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; value)<span class="keyword"> const</span>
+<a name="l00328"></a>00328 <span class="keyword">    </span>{ <span class="keywordflow">return</span> correctRange(name,static_cast&lt;double&gt;(value)); }
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330 <span class="keywordtype">bool</span> QVPropertyContainer::checkExists(<span class="keyword">const</span> QString name, <span class="keyword">const</span> QString methodname)<span class="keyword"> const</span>
+<a name="l00331"></a>00331 <span class="keyword">    </span>{
+<a name="l00332"></a>00332     <span class="keywordflow">if</span>(not variants.contains(name))
+<a name="l00333"></a>00333         {
+<a name="l00334"></a>00334         QString str =  methodname + <span class="stringliteral">&quot;: property &quot;</span> + name +
+<a name="l00335"></a>00335                        <span class="stringliteral">&quot; doesn&#39;t exists in holder &quot;</span> + <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() + <span class="stringliteral">&quot;.&quot;</span>;
+<a name="l00336"></a>00336         <a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a" title="Sets an error string message.">setLastError</a>(str);
+<a name="l00337"></a>00337         <span class="keywordflow">if</span>(qvApp-&gt;isRunning()) {
+<a name="l00338"></a>00338             std::cerr &lt;&lt; qPrintable(<span class="stringliteral">&quot;Warning: &quot;</span> + str + <span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00339"></a>00339         } <span class="comment">// Otherwise, qApp will show the error and won&#39;t start the program.</span>
+<a name="l00340"></a>00340         <span class="keywordflow">return</span> FALSE;
+<a name="l00341"></a>00341         } <span class="keywordflow">else</span> {
+<a name="l00342"></a>00342         <span class="keywordflow">return</span> TRUE;
+<a name="l00343"></a>00343         }
+<a name="l00344"></a>00344     }
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346 <span class="keywordtype">bool</span> QVPropertyContainer::checkIsNewProperty(<span class="keyword">const</span> QString name, <span class="keyword">const</span> QString methodname)<span class="keyword"> const</span>
+<a name="l00347"></a>00347 <span class="keyword">    </span>{
+<a name="l00348"></a>00348     <span class="keywordflow">if</span>(variants.contains(name))
+<a name="l00349"></a>00349         {
+<a name="l00350"></a>00350         QString str =  methodname + <span class="stringliteral">&quot;(): property &quot;</span> + name +
+<a name="l00351"></a>00351                        <span class="stringliteral">&quot; already exists in holder &quot;</span> + <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() + <span class="stringliteral">&quot;.&quot;</span>;
+<a name="l00352"></a>00352         <a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a" title="Sets an error string message.">setLastError</a>(str);
+<a name="l00353"></a>00353         <span class="keywordflow">if</span>(qvApp-&gt;isRunning()) {
+<a name="l00354"></a>00354             std::cerr &lt;&lt; qPrintable(<span class="stringliteral">&quot;Warning: &quot;</span> + str + <span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00355"></a>00355         } <span class="comment">// Otherwise, qApp will show the error and won&#39;t start the program.</span>
+<a name="l00356"></a>00356         <span class="keywordflow">return</span> FALSE;
+<a name="l00357"></a>00357         } <span class="keywordflow">else</span> {
+<a name="l00358"></a>00358         <span class="keywordflow">return</span> TRUE;
+<a name="l00359"></a>00359         }
+<a name="l00360"></a>00360     }
+<a name="l00361"></a>00361 
+<a name="l00363"></a>00363 
+<a name="l00364"></a><a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">00364</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(QString prop_orig, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp_dest, QString prop_dest, <a class="code" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">LinkType</a> link_type)
+<a name="l00365"></a>00365     {
+<a name="l00366"></a>00366     <span class="keywordtype">bool</span> ok1,ok2;
+<a name="l00367"></a>00367     QString errMsg;
+<a name="l00368"></a>00368     <span class="keywordtype">int</span> t1,t2;
+<a name="l00369"></a>00369     <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp_err=NULL;
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371     t1 = this-&gt;<a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3" title="Given a property identifying QString (see getPropertyList() function above), returns...">getPropertyType</a>(prop_orig,&amp;ok1);
+<a name="l00372"></a>00372     t2 = qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3" title="Given a property identifying QString (see getPropertyList() function above), returns...">getPropertyType</a>(prop_dest,&amp;ok2);
+<a name="l00373"></a>00373     <span class="keywordflow">if</span>(qvApp-&gt;isRunning())
+<a name="l00374"></a>00374         {
+<a name="l00375"></a>00375         qvp_err = <span class="keyword">this</span>;
+<a name="l00376"></a>00376         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Property holder %1:&quot;</span>
+<a name="l00377"></a>00377                     <span class="stringliteral">&quot;Cannot link properties after launching QVApplication.\n&quot;</span>)
+<a name="l00378"></a>00378                     .arg(prop_orig).arg(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00379"></a>00379         }
+<a name="l00380"></a>00380     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">this</span> == qvp_dest)
+<a name="l00381"></a>00381         {
+<a name="l00382"></a>00382         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Property holder %1: cannot link a QVPropertyContainer with itself.\n&quot;</span>).arg(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00383"></a>00383         qvp_err = <span class="keyword">this</span>;
+<a name="l00384"></a>00384         }
+<a name="l00385"></a>00385     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(not ok1)
+<a name="l00386"></a>00386         {
+<a name="l00387"></a>00387         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Property %1 does not exist in property holder %2.\n&quot;</span>)
+<a name="l00388"></a>00388                 .arg(prop_orig).arg(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00389"></a>00389         qvp_err = <span class="keyword">this</span>;
+<a name="l00390"></a>00390         }
+<a name="l00391"></a>00391     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (not ok2)
+<a name="l00392"></a>00392         {
+<a name="l00393"></a>00393         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Property %1 does not exist in property holder %2.\n&quot;</span>)
+<a name="l00394"></a>00394                 .arg(prop_dest).arg(qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00395"></a>00395         qvp_err = qvp_dest;
+<a name="l00396"></a>00396         }
+<a name="l00397"></a>00397     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(t1 != t2)
+<a name="l00398"></a>00398         {
+<a name="l00399"></a>00399         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Properties %1 and %2 of QVPropertyContainers %3 and %4 respectively are not of the same type.\n&quot;</span>).arg(prop_orig).arg(prop_dest).arg(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>()).arg(qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00400"></a>00400         qvp_err = <span class="keyword">this</span>;
+<a name="l00401"></a>00401         }
+<a name="l00402"></a>00402     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(not (this-&gt;io_flags[prop_orig] &amp; outputFlag))
+<a name="l00403"></a>00403         {
+<a name="l00404"></a>00404         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Property %1 of property holder %2 is not of Output type, and cannot be linked as such.\n&quot;</span>).arg(prop_orig).arg(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00405"></a>00405         qvp_err = <span class="keyword">this</span>;
+<a name="l00406"></a>00406         }
+<a name="l00407"></a>00407     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(not (qvp_dest-&gt;io_flags[prop_dest] &amp; inputFlag))
+<a name="l00408"></a>00408         {
+<a name="l00409"></a>00409         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): Property %1 property holder %2 is not of Input type, and cannot be linked as such.\n&quot;</span>).arg(prop_dest).arg(qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>());
+<a name="l00410"></a>00410         qvp_err = qvp_dest;
+<a name="l00411"></a>00411         }
+<a name="l00412"></a>00412     <span class="keywordflow">else</span> <span class="keywordflow">if</span>( (link_type == SequentialLink) &amp;&amp; (!ProcessPosibleSequentialLink(qvp_dest)) )
+<a name="l00413"></a>00413         {
+<a name="l00414"></a>00414         errMsg = QString(<span class="stringliteral">&quot;QVPropertyContainer::linkProperty(): A new link cannot generate a cycle of SequentialLinks.\n&quot;</span>);
+<a name="l00415"></a>00415         qvp_err = <span class="keyword">this</span>;
+<a name="l00416"></a>00416         }
+<a name="l00417"></a>00417 
+<a name="l00418"></a>00418     <span class="keywordflow">if</span>(errMsg != QString())
+<a name="l00419"></a>00419         {
+<a name="l00420"></a>00420         qvp_err-&gt;<a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a" title="Sets an error string message.">setLastError</a>(errMsg);
+<a name="l00421"></a>00421         <span class="keywordflow">if</span>(qvApp-&gt;isRunning()) {
+<a name="l00422"></a>00422             std::cerr &lt;&lt; qPrintable(<span class="stringliteral">&quot;Warning: &quot;</span> + errMsg + <span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00423"></a>00423         } <span class="comment">// Otherwise, qApp will show the error and won&#39;t start the program.</span>
+<a name="l00424"></a>00424         <span class="keywordflow">return</span> FALSE;
+<a name="l00425"></a>00425         }
+<a name="l00426"></a>00426     <span class="keywordflow">else</span>
+<a name="l00427"></a>00427         {
+<a name="l00428"></a>00428         QVPropertyContainerLink *link = <span class="keyword">new</span> QVPropertyContainerLink(<span class="keyword">this</span>,prop_orig,qvp_dest,prop_dest,link_type);
+<a name="l00429"></a>00429         this-&gt;outputLinks[prop_orig].push_back(link);
+<a name="l00430"></a>00430         this-&gt;link_flags[prop_orig] |= linkedOutputFlag;
+<a name="l00431"></a>00431         <span class="comment">// We add a new method &quot;addInputLink(prop_dest, link);&quot; instead of doing</span>
+<a name="l00432"></a>00432         <span class="comment">// &quot;qvp_dest-&gt;inputLinks[prop_dest] = link; qvp_dest-&gt;link_flags[prop_dest] |= linkedInputFlag;&quot;, for</span>
+<a name="l00433"></a>00433         <span class="comment">// qvp_dest to emit a signal saying that its links were changed.</span>
+<a name="l00434"></a>00434         qvp_dest-&gt;addInputLink(prop_dest, link);
+<a name="l00435"></a>00435 
+<a name="l00436"></a>00436         <span class="comment">// Now, we initialize the shared state, simply protected by the</span>
+<a name="l00437"></a>00437         <span class="comment">// corresponding RWLock:</span>
+<a name="l00438"></a>00438         this-&gt;RWLock.lockForWrite();
+<a name="l00439"></a>00439         safelyCopiedVariants[prop_orig] = variants[prop_orig];
+<a name="l00440"></a>00440         this-&gt;RWLock.unlock();
+<a name="l00441"></a>00441 
+<a name="l00442"></a>00442         <span class="keywordflow">if</span> (link_type == QVPropertyContainer::AsynchronousLink)
+<a name="l00443"></a>00443             informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::LinkAdd, this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), prop_orig, qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), prop_dest,FALSE,FALSE));
+<a name="l00444"></a>00444         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (link_type == QVPropertyContainer::SynchronousLink)
+<a name="l00445"></a>00445             informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::LinkAdd, this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), prop_orig, qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), prop_dest,TRUE, FALSE));
+<a name="l00446"></a>00446         <span class="keywordflow">else</span>
+<a name="l00447"></a>00447             informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::LinkAdd, this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), prop_orig, qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), qvp_dest-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), prop_dest,FALSE, TRUE));
+<a name="l00448"></a>00448 
+<a name="l00449"></a>00449         <span class="keywordflow">return</span> TRUE;
+<a name="l00450"></a>00450         }
+<a name="l00451"></a>00451     }
+<a name="l00452"></a>00452 
+<a name="l00453"></a>00453 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinyContainer, QString destinyPropertyName, LinkType linkType)
+<a name="l00454"></a>00454     {
+<a name="l00455"></a>00455     <span class="keywordflow">if</span> (linkUnspecifiedOutputProperty(destinyContainer, destinyPropertyName, linkType))
+<a name="l00456"></a>00456         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00457"></a>00457     <span class="keywordflow">else</span>        {
+<a name="l00458"></a>00458         std::cerr &lt;&lt; <span class="stringliteral">&quot;ERROR: QVPropertyContainer::linkProperty(): source container &quot;</span> &lt;&lt; qPrintable(<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>()) &lt;&lt; <span class="stringliteral">&quot; can&#39;t handle unspecified output properties linking&quot;</span> &lt;&lt; std::endl;
+<a name="l00459"></a>00459         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00460"></a>00460         }
+<a name="l00461"></a>00461     }
+<a name="l00462"></a>00462 
+<a name="l00463"></a>00463 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(QString sourcePropertyName, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinyContainer, LinkType linkType)
+<a name="l00464"></a>00464     {
+<a name="l00465"></a>00465     <span class="keywordflow">if</span> (destinyContainer-&gt;linkUnspecifiedInputProperty(<span class="keyword">this</span>, sourcePropertyName, linkType))
+<a name="l00466"></a>00466         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00467"></a>00467     <span class="keywordflow">else</span>        {
+<a name="l00468"></a>00468         std::cerr &lt;&lt; <span class="stringliteral">&quot;ERROR: QVPropertyContainer::linkProperty(): destination container &quot;</span> &lt;&lt; qPrintable(destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>()) &lt;&lt; <span class="stringliteral">&quot; can&#39;t handle unspecified input properties linking&quot;</span> &lt;&lt; std::endl;
+<a name="l00469"></a>00469         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00470"></a>00470         }
+<a name="l00471"></a>00471     }
+<a name="l00472"></a>00472 
+<a name="l00473"></a><a class="code" href="classQVPropertyContainer.html#a22e133082a9bd25818ce52c51cc9e3aa">00473</a> <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *container, <a class="code" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">LinkType</a> linkType)
+<a name="l00474"></a>00474     {
+<a name="l00475"></a>00475     QList&lt;QString&gt; localProper = <a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList</a>();
+<a name="l00476"></a>00476     QList&lt;QString&gt; inputProper = container-&gt;<a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList</a>();
+<a name="l00477"></a>00477 
+<a name="l00478"></a>00478     qSort(localProper.begin(), localProper.end());
+<a name="l00479"></a>00479     qSort(inputProper.begin(), inputProper.end());
+<a name="l00480"></a>00480 
+<a name="l00481"></a>00481     <span class="keywordtype">int</span> i=0, l=0;
+<a name="l00482"></a>00482     <span class="keywordflow">while</span> ( (i &lt; inputProper.size()) &amp;&amp; (l &lt; localProper.size()) )
+<a name="l00483"></a>00483         {
+<a name="l00484"></a>00484         QString localName = localProper[l];
+<a name="l00485"></a>00485         QString inputName = inputProper[i];
+<a name="l00486"></a>00486         <span class="keywordflow">if</span> (
+<a name="l00487"></a>00487             (localName == inputName) &amp;&amp; <span class="comment">// si tienen el mismo nombre</span>
+<a name="l00488"></a>00488             (<a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3" title="Given a property identifying QString (see getPropertyList() function above), returns...">getPropertyType</a>(localName) == container-&gt;<a class="code" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3" title="Given a property identifying QString (see getPropertyList() function above), returns...">getPropertyType</a>(inputName)) &amp;&amp; <span class="comment">// si tienen el mismo tipo</span>
+<a name="l00489"></a>00489             (io_flags[localName] &amp; outputFlag) &amp;&amp; <span class="comment">// si una es de entrada</span>
+<a name="l00490"></a>00490             (container-&gt;io_flags[inputName] &amp; inputFlag) &amp;&amp; <span class="comment">// y otra de salida</span>
+<a name="l00491"></a>00491             (!(io_flags[localName] &amp; internalProp)) &amp;&amp; <span class="comment">// y no son propiedades internas</span>
+<a name="l00492"></a>00492             (!(container-&gt;io_flags[inputName] &amp; internalProp))
+<a name="l00493"></a>00493            )
+<a name="l00494"></a>00494             <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(localProper[l], container, inputProper[i], linkType);
+<a name="l00495"></a>00495 
+<a name="l00496"></a>00496         <span class="keywordflow">if</span>(localName &lt;= inputName) l++;
+<a name="l00497"></a>00497         <span class="keywordflow">if</span>(localName &gt;= inputName) i++;
+<a name="l00498"></a>00498         }
+<a name="l00499"></a>00499     }
+<a name="l00500"></a>00500 
+<a name="l00502"></a>00502 
+<a name="l00503"></a>00503 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(QString prop_orig, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;qvp_dest, QString prop_dest, LinkType link_type)
+<a name="l00504"></a>00504     {
+<a name="l00505"></a>00505     <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(prop_orig, &amp;qvp_dest, prop_dest, link_type);
+<a name="l00506"></a>00506     }
+<a name="l00507"></a>00507 
+<a name="l00508"></a>00508 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;destinyContainer, QString destinyPropertyName, LinkType linkType)
+<a name="l00509"></a>00509     {
+<a name="l00510"></a>00510     <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(&amp;destinyContainer, destinyPropertyName, linkType);
+<a name="l00511"></a>00511     }
+<a name="l00512"></a>00512 
+<a name="l00513"></a>00513 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(QString sourcePropertyName, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;destinyContainer, LinkType linkType)
+<a name="l00514"></a>00514     {
+<a name="l00515"></a>00515     <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(sourcePropertyName, &amp;destinyContainer, linkType);
+<a name="l00516"></a>00516     }
+<a name="l00517"></a>00517 
+<a name="l00518"></a>00518 <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::linkProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;container, LinkType linkType)
+<a name="l00519"></a>00519     {
+<a name="l00520"></a>00520     <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(&amp;container, linkType);
+<a name="l00521"></a>00521     }
+<a name="l00522"></a>00522 
+<a name="l00524"></a>00524 
+<a name="l00525"></a>00525 <span class="keywordtype">bool</span> QVPropertyContainer::linkUnspecifiedInputProperty(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *srcCont, QString srcProp, LinkType linkType)
+<a name="l00526"></a>00526     {
+<a name="l00527"></a>00527     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#a1f397287bc9c69b22aec208bddcc1d23" title="Check whether the property holder has a given property.">containsProperty</a>(srcProp))
+<a name="l00528"></a>00528         <span class="keywordflow">return</span> srcCont-&gt;<a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(srcProp, <span class="keyword">this</span>, srcProp, linkType);
+<a name="l00529"></a>00529     <span class="keywordflow">else</span>
+<a name="l00530"></a>00530         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00531"></a>00531     }
+<a name="l00532"></a>00532 
+<a name="l00533"></a>00533 <span class="keywordtype">bool</span> QVPropertyContainer::linkUnspecifiedOutputProperty(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *dstCont, QString dstProp, LinkType linkType)
+<a name="l00534"></a>00534     {
+<a name="l00535"></a>00535     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#a1f397287bc9c69b22aec208bddcc1d23" title="Check whether the property holder has a given property.">containsProperty</a>(dstProp))
+<a name="l00536"></a>00536         <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(dstProp, dstCont, dstProp, linkType);
+<a name="l00537"></a>00537     <span class="keywordflow">else</span>
+<a name="l00538"></a>00538         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00539"></a>00539     }
+<a name="l00540"></a>00540 
+<a name="l00542"></a>00542 
+<a name="l00543"></a>00543 <span class="keywordtype">void</span> QVPropertyContainer::addInputLink(QString prop_dest, QVPropertyContainerLink *link)
+<a name="l00544"></a>00544     {
+<a name="l00545"></a>00545     inputLinks[prop_dest] = link;
+<a name="l00546"></a>00546     link_flags[prop_dest] |= linkedInputFlag;
+<a name="l00547"></a>00547     }
+<a name="l00548"></a>00548 
+<a name="l00549"></a><a class="code" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81">00549</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81" title="Unlinks properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::unlinkProperty</a>(QString origName, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destCont, QString destName)
+<a name="l00550"></a>00550     {
+<a name="l00551"></a>00551     QList&lt;QVPropertyContainerLink*&gt; linkList = outputLinks[origName];
+<a name="l00552"></a>00552     <span class="keywordflow">foreach</span>(QVPropertyContainerLink* link, linkList) {
+<a name="l00553"></a>00553         <span class="keywordflow">if</span> ( (link-&gt;qvp_orig == <span class="keyword">this</span>) &amp;&amp; (link-&gt;prop_orig == origName) &amp;&amp;
+<a name="l00554"></a>00554             (link-&gt;qvp_dest == destCont) &amp;&amp; (link-&gt;prop_dest == destName) ) {
+<a name="l00555"></a>00555             <span class="keywordflow">if</span> (!link-&gt;markedForDeletion) {
+<a name="l00556"></a>00556                 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226" title="Check if a property is linked Sequentialy.">isSequential</a> = (link-&gt;link_type == SequentialLink) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00557"></a>00557                 link-&gt;markedForDeletion = TRUE;
+<a name="l00558"></a>00558                 <span class="comment">// Protect against a possible pending acquire() for our output</span>
+<a name="l00559"></a>00559                 <span class="comment">// in other holders:</span>
+<a name="l00560"></a>00560                 link-&gt;SyncSemaphoreOut.release();
+<a name="l00561"></a>00561                 destCont-&gt;treatUnlinkInputProperty(destName, <span class="keyword">this</span>, origName);
+<a name="l00562"></a>00562                 <span class="comment">// This ProcessSequentialUnlink cannot generate a core for acceding to all group nodes</span>
+<a name="l00563"></a>00563                 <span class="comment">// because the two QVPropertyContainer&#39;s are in the same thread and its unlinks</span>
+<a name="l00564"></a>00564                 <span class="comment">// are doing sequentialy</span>
+<a name="l00565"></a>00565                 <span class="keywordflow">if</span> (isSequential) ProcessSequentialUnlink(<span class="keyword">this</span>, destCont);
+<a name="l00566"></a>00566                 informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::LinkDel, this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), origName, destCont-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), destCont-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), destName));
+<a name="l00567"></a>00567             }
+<a name="l00568"></a>00568             <span class="keywordflow">return</span> TRUE;
+<a name="l00569"></a>00569         }
+<a name="l00570"></a>00570     }
+<a name="l00571"></a>00571     <span class="keywordflow">return</span> FALSE;
+<a name="l00572"></a>00572     }
+<a name="l00573"></a>00573 
+<a name="l00574"></a>00574 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81" title="Unlinks properties among QVPropertyContainer&amp;#39;s.">QVPropertyContainer::unlinkProperty</a>(QString origName, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;destCont, QString destName)
+<a name="l00575"></a>00575     {
+<a name="l00576"></a>00576     <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81" title="Unlinks properties among QVPropertyContainer&amp;#39;s.">unlinkProperty</a>(origName, &amp;destCont, destName);
+<a name="l00577"></a>00577     }
+<a name="l00578"></a>00578 
+<a name="l00579"></a>00579 <span class="keywordtype">bool</span> QVPropertyContainer::treatUnlinkInputProperty(QString, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *, QString)
+<a name="l00580"></a>00580     {
+<a name="l00581"></a>00581     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00582"></a>00582     }
+<a name="l00583"></a>00583 
+<a name="l00584"></a><a class="code" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">00584</a> <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124" title="Completely unlinks a property holder.">QVPropertyContainer::unlink</a>()
+<a name="l00585"></a>00585 {
+<a name="l00586"></a>00586     <span class="keywordflow">foreach</span>(QVPropertyContainerLink* link, inputLinks.values()) {
+<a name="l00587"></a>00587         <span class="keywordflow">if</span> (!link-&gt;markedForDeletion) {
+<a name="l00588"></a>00588             <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226" title="Check if a property is linked Sequentialy.">isSequential</a> = (link-&gt;link_type == SequentialLink) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00589"></a>00589             link-&gt;markedForDeletion = TRUE;
+<a name="l00590"></a>00590             <span class="comment">// Protect against a possible pending acquire() from our input</span>
+<a name="l00591"></a>00591             <span class="comment">// in other holders:</span>
+<a name="l00592"></a>00592             link-&gt;SyncSemaphoreIn.release();
+<a name="l00593"></a>00593             <span class="comment">// This ProcessSequentialUnlink cannot generate a core for acceding to all group nodes</span>
+<a name="l00594"></a>00594             <span class="comment">// because the two QVPropertyContainer&#39;s are in the same thread and its unlinks</span>
+<a name="l00595"></a>00595             <span class="comment">// are doing sequentialy</span>
+<a name="l00596"></a>00596             <span class="keywordflow">if</span> (isSequential) ProcessSequentialUnlink(link-&gt;qvp_orig, link-&gt;qvp_dest);
+<a name="l00597"></a>00597             informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::LinkDel, link-&gt;qvp_orig_name, link-&gt;qvp_orig_id, link-&gt;prop_orig, link-&gt;qvp_dest_name, link-&gt;qvp_dest_id, link-&gt;prop_dest));
+<a name="l00598"></a>00598         }
+<a name="l00599"></a>00599     }
+<a name="l00600"></a>00600 
+<a name="l00601"></a>00601     <span class="keywordflow">foreach</span>(QList&lt;QVPropertyContainerLink*&gt; linkList, outputLinks.values()) {
+<a name="l00602"></a>00602         <span class="keywordflow">foreach</span>(QVPropertyContainerLink* link, linkList) {
+<a name="l00603"></a>00603             <span class="keywordflow">if</span> (!link-&gt;markedForDeletion) {
+<a name="l00604"></a>00604                 <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226" title="Check if a property is linked Sequentialy.">isSequential</a> = (link-&gt;link_type == SequentialLink) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00605"></a>00605                 link-&gt;markedForDeletion = TRUE;
+<a name="l00606"></a>00606                 <span class="comment">// Protect against a possible pending acquire() for our output</span>
+<a name="l00607"></a>00607                 <span class="comment">// in other holders:</span>
+<a name="l00608"></a>00608                 link-&gt;SyncSemaphoreOut.release();
+<a name="l00609"></a>00609                 <span class="keywordflow">if</span> (link-&gt;qvp_dest != NULL) link-&gt;qvp_dest-&gt;treatUnlinkInputProperty(link-&gt;prop_dest, <span class="keyword">this</span>, link-&gt;prop_orig);
+<a name="l00610"></a>00610                 <span class="comment">// This ProcessSequentialUnlink cannot generate a core for acceding to all group nodes</span>
+<a name="l00611"></a>00611                 <span class="comment">// because the two QVPropertyContainer&#39;s are in the same thread and its unlinks</span>
+<a name="l00612"></a>00612                 <span class="comment">// are doing sequentialy</span>
+<a name="l00613"></a>00613                 <span class="keywordflow">if</span> (isSequential) ProcessSequentialUnlink(link-&gt;qvp_orig, link-&gt;qvp_dest);
+<a name="l00614"></a>00614                 informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::LinkDel, link-&gt;qvp_orig_name, link-&gt;qvp_orig_id, link-&gt;prop_orig, link-&gt;qvp_dest_name, link-&gt;qvp_dest_id, link-&gt;prop_dest));
+<a name="l00615"></a>00615             }
+<a name="l00616"></a>00616         }
+<a name="l00617"></a>00617     }
+<a name="l00618"></a>00618 }
+<a name="l00619"></a>00619 
+<a name="l00620"></a><a class="code" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86">00620</a> <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86" title="Read linked input properties from other QVPropertyContainer&amp;#39;s.">QVPropertyContainer::readInputProperties</a>()
+<a name="l00621"></a>00621     {
+<a name="l00622"></a>00622     <span class="comment">// We read every linked input property from its source, protecting</span>
+<a name="l00623"></a>00623     <span class="comment">// the read with a standard RWLock (that here we just lock for read).</span>
+<a name="l00624"></a>00624     <span class="comment">// The only caveat is that if a property is synchronously read, then</span>
+<a name="l00625"></a>00625     <span class="comment">// we must wait for the producer to write it first. We implement that</span>
+<a name="l00626"></a>00626     <span class="comment">// by waiting on the SyncSemaphoreOut of the link. Also, in this</span>
+<a name="l00627"></a>00627     <span class="comment">// case when we finish reading the property, we signal every possible</span>
+<a name="l00628"></a>00628     <span class="comment">// waiting writer that, regarding this specific link, it can write now</span>
+<a name="l00629"></a>00629     <span class="comment">// a new value if it needs to, because we have read the old value yet.</span>
+<a name="l00630"></a>00630     <span class="comment">// This is implemented by releasing the SyncSemaphoreIn associated to</span>
+<a name="l00631"></a>00631     <span class="comment">// the link.</span>
+<a name="l00632"></a>00632     QMutableMapIterator&lt;QString, QVPropertyContainerLink*&gt; i(inputLinks);
+<a name="l00633"></a>00633     <span class="keywordflow">while</span> (i.hasNext()) {
+<a name="l00634"></a>00634         i.next();
+<a name="l00635"></a>00635         QVPropertyContainerLink *link = i.value();
+<a name="l00636"></a>00636 
+<a name="l00637"></a>00637         <span class="comment">// Possible link deletion:</span>
+<a name="l00638"></a>00638         <span class="keywordflow">if</span>(link-&gt;markedForDeletion) {
+<a name="l00639"></a>00639             i.remove();
+<a name="l00640"></a>00640             toDeleteLink(link);
+<a name="l00641"></a>00641         }
+<a name="l00642"></a>00642         <span class="keywordflow">else</span> {
+<a name="l00643"></a>00643             <span class="keywordflow">if</span>(link-&gt;link_type == SynchronousLink) {
+<a name="l00644"></a>00644                 link-&gt;SyncSemaphoreOut.acquire();
+<a name="l00645"></a>00645             }
+<a name="l00646"></a>00646             <span class="keywordflow">if</span> (link-&gt;link_type != SequentialLink)
+<a name="l00647"></a>00647                 link-&gt;qvp_orig-&gt;RWLock.lockForRead();
+<a name="l00648"></a>00648             <span class="comment">//this-&gt;setPropertyValueQVariant(link-&gt;prop_dest,link-&gt;qvp_orig-&gt;safelyCopiedVariants[link-&gt;prop_orig]);</span>
+<a name="l00649"></a>00649             this-&gt;variants[link-&gt;prop_dest] = link-&gt;qvp_orig-&gt;safelyCopiedVariants[link-&gt;prop_orig];
+<a name="l00650"></a>00650             <span class="keywordflow">if</span> (link-&gt;link_type != SequentialLink)
+<a name="l00651"></a>00651                 link-&gt;qvp_orig-&gt;RWLock.unlock();
+<a name="l00652"></a>00652             <span class="keywordflow">if</span>(link-&gt;link_type == SynchronousLink) {
+<a name="l00653"></a>00653                 link-&gt;SyncSemaphoreIn.release();
+<a name="l00654"></a>00654             }
+<a name="l00655"></a>00655         }
+<a name="l00656"></a>00656     }
+<a name="l00657"></a>00657     informer.emitChange(QVPropertyContainerChange(this-&gt;<a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>(), this-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>(), QVPropertyContainerChange::PropertiesValues));
+<a name="l00658"></a>00658 }
+<a name="l00659"></a>00659 
+<a name="l00660"></a><a class="code" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a">00660</a> <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a" title="Write linked output properties to other QVPropertyContainer&amp;#39;s.">QVPropertyContainer::writeOutputProperties</a>()
+<a name="l00661"></a>00661     {
+<a name="l00662"></a>00662     QMutableMapIterator&lt;QString, QList&lt;QVPropertyContainerLink*&gt; &gt;i(outputLinks);
+<a name="l00663"></a>00663 
+<a name="l00664"></a>00664     <span class="comment">// For every QVP synchronously linked to this QVP&#39;s output, we ask</span>
+<a name="l00665"></a>00665     <span class="comment">// for permision to write a new output (that will only be possible if</span>
+<a name="l00666"></a>00666     <span class="comment">// all of these QVP&#39;s have read their inputs already):</span>
+<a name="l00667"></a>00667     <span class="keywordtype">bool</span> someSequential = <span class="keyword">false</span>;
+<a name="l00668"></a>00668     <span class="keywordflow">while</span> (i.hasNext()) {
+<a name="l00669"></a>00669         i.next();
+<a name="l00670"></a>00670         QListIterator&lt;QVPropertyContainerLink*&gt; j(i.value());
+<a name="l00671"></a>00671         <span class="keywordflow">while</span>(j.hasNext()) {
+<a name="l00672"></a>00672             QVPropertyContainerLink *link = j.next();
+<a name="l00673"></a>00673             <span class="keywordflow">if</span>(link-&gt;link_type == SynchronousLink and not link-&gt;markedForDeletion) {
+<a name="l00674"></a>00674                 link-&gt;SyncSemaphoreIn.acquire();
+<a name="l00675"></a>00675             }
+<a name="l00676"></a>00676             <span class="keywordflow">else</span> <span class="keywordflow">if</span>(link-&gt;link_type == SequentialLink and not link-&gt;markedForDeletion) {
+<a name="l00677"></a>00677                 someSequential = <span class="keyword">true</span>;
+<a name="l00678"></a>00678             }
+<a name="l00679"></a>00679         }
+<a name="l00680"></a>00680     }
+<a name="l00681"></a>00681 
+<a name="l00682"></a>00682     <span class="comment">// Now, we write a new coherent state, simply protected by the</span>
+<a name="l00683"></a>00683     <span class="comment">// corresponding RWLock:</span>
+<a name="l00684"></a>00684     i.toFront();
+<a name="l00685"></a>00685     <span class="keywordflow">if</span> (!someSequential)
+<a name="l00686"></a>00686         this-&gt;RWLock.lockForWrite();
+<a name="l00687"></a>00687     <span class="keywordflow">while</span> (i.hasNext()) {
+<a name="l00688"></a>00688         i.next();
+<a name="l00689"></a>00689         QString prop_orig = i.key();
+<a name="l00690"></a>00690         safelyCopiedVariants[prop_orig] = variants[prop_orig];
+<a name="l00691"></a>00691     }
+<a name="l00692"></a>00692     <span class="keywordflow">if</span> (!someSequential)
+<a name="l00693"></a>00693         this-&gt;RWLock.unlock();
+<a name="l00694"></a>00694 
+<a name="l00695"></a>00695     <span class="comment">// Finally, we signal to QVP&#39;s synchronously linked to this QVP&#39;s output</span>
+<a name="l00696"></a>00696     <span class="comment">// that there is a new coherent output, by releasing the corresponding</span>
+<a name="l00697"></a>00697     <span class="comment">// semaphore.</span>
+<a name="l00698"></a>00698     i.toFront();
+<a name="l00699"></a>00699     <span class="keywordflow">while</span> (i.hasNext()) {
+<a name="l00700"></a>00700         i.next();
+<a name="l00701"></a>00701         QMutableListIterator&lt;QVPropertyContainerLink*&gt; j(i.value());
+<a name="l00702"></a>00702         <span class="keywordflow">while</span>(j.hasNext()) {
+<a name="l00703"></a>00703             QVPropertyContainerLink *link = j.next();
+<a name="l00704"></a>00704             <span class="keywordflow">if</span>(link-&gt;link_type == SynchronousLink and not link-&gt;markedForDeletion) {
+<a name="l00705"></a>00705                 link-&gt;SyncSemaphoreOut.release();
+<a name="l00706"></a>00706             }
+<a name="l00707"></a>00707             <span class="comment">// Possible link deletion:</span>
+<a name="l00708"></a>00708             <span class="keywordflow">if</span>(link-&gt;markedForDeletion) {
+<a name="l00709"></a>00709                 j.remove();
+<a name="l00710"></a>00710                 toDeleteLink(link);
+<a name="l00711"></a>00711                 <span class="keywordflow">if</span>(i.value().isEmpty()) {
+<a name="l00712"></a>00712                     i.remove();
+<a name="l00713"></a>00713                     <span class="keywordflow">break</span>;
+<a name="l00714"></a>00714                 }
+<a name="l00715"></a>00715             }
+<a name="l00716"></a>00716         }
+<a name="l00717"></a>00717     }
+<a name="l00718"></a>00718 }
+<a name="l00719"></a>00719 
+<a name="l00720"></a>00720 <span class="keywordtype">void</span> QVPropertyContainer::toDeleteLink(QVPropertyContainerLink* link)
+<a name="l00721"></a>00721     {
+<a name="l00722"></a>00722         <span class="keywordflow">if</span> (link-&gt;qvp_orig == <span class="keyword">this</span>) {
+<a name="l00723"></a>00723             link-&gt;qvp_orig = NULL;
+<a name="l00724"></a>00724         }
+<a name="l00725"></a>00725         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (link-&gt;qvp_dest == <span class="keyword">this</span>) {
+<a name="l00726"></a>00726             link-&gt;qvp_dest = NULL;
+<a name="l00727"></a>00727         }
+<a name="l00728"></a>00728 
+<a name="l00729"></a>00729         <span class="keywordflow">if</span> ((link-&gt;qvp_orig == NULL) &amp;&amp; (link-&gt;qvp_dest == NULL)) <span class="keyword">delete</span> link;
+<a name="l00730"></a>00730     }
+<a name="l00731"></a>00731 
+<a name="l00732"></a><a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a">00732</a> <span class="keywordtype">void</span> <a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a" title="Sets an error string message.">QVPropertyContainer::setLastError</a>(QString str)<span class="keyword"> const</span>
+<a name="l00733"></a>00733 <span class="keyword">    </span>{ errorString = str; }
+<a name="l00734"></a>00734 
+<a name="l00735"></a><a class="code" href="classQVPropertyContainer.html#a350c0c7a337fb173dbfe5b384cc615eb">00735</a> <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *<a class="code" href="classQVPropertyContainer.html#a350c0c7a337fb173dbfe5b384cc615eb" title="Gets the source QVPropertyContainer of a given property.">QVPropertyContainer::getSourceContainer</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00736"></a>00736 <span class="keyword">    </span>{
+<a name="l00737"></a>00737         <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinks = getInputLinks();
+<a name="l00738"></a>00738         <span class="keywordflow">if</span> (inLinks.contains(name))
+<a name="l00739"></a>00739             <span class="keywordflow">return</span> inLinks.value(name)-&gt;qvp_orig;
+<a name="l00740"></a>00740 
+<a name="l00741"></a>00741         <span class="keywordflow">return</span> NULL;
+<a name="l00742"></a>00742     }
+<a name="l00743"></a>00743 
+<a name="l00744"></a><a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027">00744</a> QList&lt;QVPropertyContainer *&gt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">QVPropertyContainer::getDestinyContainers</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00745"></a>00745 <span class="keyword">    </span>{
+<a name="l00746"></a>00746         QList&lt;QVPropertyContainer *&gt; list;
+<a name="l00747"></a>00747 
+<a name="l00748"></a>00748         <span class="keywordflow">if</span> (outputLinks.contains(name))
+<a name="l00749"></a>00749             <span class="keywordflow">foreach</span>(QVPropertyContainerLink* link, outputLinks.value(name))
+<a name="l00750"></a>00750                 <span class="keywordflow">if</span> ( (link-&gt;qvp_dest != NULL) &amp;&amp; (!list.contains(link-&gt;qvp_dest)) ) list.append(link-&gt;qvp_dest);
+<a name="l00751"></a>00751 
+<a name="l00752"></a>00752         <span class="keywordflow">return</span> list;
+<a name="l00753"></a>00753     }
+<a name="l00754"></a>00754 
+<a name="l00755"></a><a class="code" href="classQVPropertyContainer.html#aa88d1097bf52887c07e8cf1b15e98791">00755</a> QString <a class="code" href="classQVPropertyContainer.html#aa88d1097bf52887c07e8cf1b15e98791" title="Gets the source property name of a given property.">QVPropertyContainer::getSourceProperty</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00756"></a>00756 <span class="keyword">    </span>{
+<a name="l00757"></a>00757         <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinks = getInputLinks();
+<a name="l00758"></a>00758         <span class="keywordflow">if</span> (inLinks.contains(name))
+<a name="l00759"></a>00759             <span class="keywordflow">return</span> inLinks.value(name)-&gt;prop_orig;
+<a name="l00760"></a>00760 
+<a name="l00761"></a>00761         <span class="keywordflow">return</span> QString();
+<a name="l00762"></a>00762     }
+<a name="l00763"></a>00763 
+<a name="l00764"></a><a class="code" href="classQVPropertyContainer.html#adaa8f8488392d3080b7fa22613371356">00764</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#adaa8f8488392d3080b7fa22613371356" title="Check if a property is linked syncronously.">QVPropertyContainer::isSynchronous</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00765"></a>00765 <span class="keyword">    </span>{
+<a name="l00766"></a>00766         <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinks = getInputLinks();
+<a name="l00767"></a>00767         <span class="keywordflow">if</span> (inLinks.contains(name))
+<a name="l00768"></a>00768             <span class="keywordflow">return</span> (inLinks.value(name)-&gt;link_type == SynchronousLink);
+<a name="l00769"></a>00769 
+<a name="l00770"></a>00770         <span class="keywordflow">return</span> FALSE;
+<a name="l00771"></a>00771     }
+<a name="l00772"></a>00772 
+<a name="l00773"></a><a class="code" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226">00773</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226" title="Check if a property is linked Sequentialy.">QVPropertyContainer::isSequential</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l00774"></a>00774 <span class="keyword">    </span>{
+<a name="l00775"></a>00775         <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinks = getInputLinks();
+<a name="l00776"></a>00776         <span class="keywordflow">if</span> (inLinks.contains(name))
+<a name="l00777"></a>00777             <span class="keywordflow">return</span> (inLinks.value(name)-&gt;link_type == SequentialLink);
+<a name="l00778"></a>00778 
+<a name="l00779"></a>00779         <span class="keywordflow">return</span> FALSE;
+<a name="l00780"></a>00780     }
+<a name="l00781"></a>00781 
+<a name="l00782"></a><a class="code" href="classQVPropertyContainer.html#afc35c0aeca52288aec5a095e139e9c40">00782</a> <span class="keywordtype">bool</span> <a class="code" href="classQVPropertyContainer.html#afc35c0aeca52288aec5a095e139e9c40" title="Check if a group of QVPropertyContainers are synchronously or Sequentialy linked...">QVPropertyContainer::areSynchronized</a>(<span class="keyword">const</span> QList&lt;QVPropertyContainer *&gt; conts)
+<a name="l00783"></a>00783     {
+<a name="l00784"></a>00784     <a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> dSet(conts.size());
+<a name="l00785"></a>00785 
+<a name="l00786"></a>00786     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; conts.size(); i++)
+<a name="l00787"></a>00787         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i+1; j &lt; conts.size(); j++) <span class="comment">// for each pair of container</span>
+<a name="l00788"></a>00788             {
+<a name="l00789"></a>00789             <span class="keywordtype">bool</span> find = <span class="keyword">false</span>; <span class="comment">// only need one syncrhonous property to be synchronized</span>
+<a name="l00790"></a>00790 
+<a name="l00791"></a>00791             <span class="keywordflow">if</span> (conts.at(i)-&gt;getId() == conts.at(j)-&gt;getId()) <span class="comment">// if they are the same container, they are synchronized</span>
+<a name="l00792"></a>00792                 {
+<a name="l00793"></a>00793                 dSet.unify(i, j); <span class="comment">// unify their sets</span>
+<a name="l00794"></a>00794                 find = <span class="keyword">true</span>;
+<a name="l00795"></a>00795                 }
+<a name="l00796"></a>00796             <span class="keywordflow">if</span> (!find)
+<a name="l00797"></a>00797                 {
+<a name="l00798"></a>00798                 <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinksI = conts.at(i)-&gt;getInputLinks();
+<a name="l00799"></a>00799                 <span class="keywordflow">foreach</span>(QVPropertyContainerLink* proConLink, inLinksI.values())        <span class="comment">// for each first container&#39;s linked input property</span>
+<a name="l00800"></a>00800                     <span class="keywordflow">if</span> ( (proConLink-&gt;qvp_orig_id == conts.at(j)-&gt;getId()) &amp;&amp;         <span class="comment">// if is linked from second container</span>
+<a name="l00801"></a>00801                          (proConLink-&gt;link_type != AsynchronousLink)               ) <span class="comment">// and is a synchronous link</span>
+<a name="l00802"></a>00802                         {
+<a name="l00803"></a>00803                         dSet.unify(i, j); <span class="comment">// unify their sets</span>
+<a name="l00804"></a>00804                         find = <span class="keyword">true</span>;
+<a name="l00805"></a>00805                         <span class="keywordflow">break</span>;
+<a name="l00806"></a>00806                         }
+<a name="l00807"></a>00807                 }
+<a name="l00808"></a>00808             <span class="keywordflow">if</span> (!find)
+<a name="l00809"></a>00809                 {
+<a name="l00810"></a>00810                 <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinksJ = conts.at(j)-&gt;getInputLinks();
+<a name="l00811"></a>00811                 <span class="keywordflow">foreach</span>(QVPropertyContainerLink* proConLink, inLinksJ.values())        <span class="comment">// for each second container&#39;s linked input property</span>
+<a name="l00812"></a>00812                     <span class="keywordflow">if</span> ( (proConLink-&gt;qvp_orig_id == conts.at(i)-&gt;getId()) &amp;&amp;         <span class="comment">// if is linked from first container</span>
+<a name="l00813"></a>00813                          (proConLink-&gt;link_type != AsynchronousLink)               ) <span class="comment">// and is a synchronous link</span>
+<a name="l00814"></a>00814                         {
+<a name="l00815"></a>00815                         dSet.unify(i, j); <span class="comment">// unify their sets</span>
+<a name="l00816"></a>00816                         <span class="keywordflow">break</span>;
+<a name="l00817"></a>00817                         }
+<a name="l00818"></a>00818                 }
+<a name="l00819"></a>00819             }
+<a name="l00820"></a>00820 
+<a name="l00821"></a>00821     <span class="keywordflow">return</span> (dSet.numberOfSets() == 1);
+<a name="l00822"></a>00822     }
+<a name="l00823"></a>00823 
+<a name="l00824"></a>00824 <span class="keyword">template</span> &lt;&gt; <span class="keywordtype">bool</span> QVPropertyContainer::parseArgument&lt;bool&gt;(<span class="keyword">const</span> QString parameter, <span class="keyword">const</span> QString value)
+<a name="l00825"></a>00825     {
+<a name="l00826"></a>00826     <span class="keywordflow">if</span> (value.toLower() == <span class="stringliteral">&quot;true&quot;</span> || value.toLower() == <span class="stringliteral">&quot;false&quot;</span>)
+<a name="l00827"></a>00827         {
+<a name="l00828"></a>00828         <span class="comment">//variants[parameter] = QVariant::fromValue&lt;bool&gt;(value.toLower() == &quot;true&quot;);</span>
+<a name="l00829"></a>00829         setPropertyValue&lt;bool&gt;(parameter,value.toLower() == <span class="stringliteral">&quot;true&quot;</span>);
+<a name="l00830"></a>00830         <span class="keywordflow">return</span> TRUE;
+<a name="l00831"></a>00831         }
+<a name="l00832"></a>00832     <span class="keywordflow">else</span> {
+<a name="l00833"></a>00833         errorString = <span class="stringliteral">&quot;QVPropertyContainer::parseArgument(): holder &quot;</span> + getName() +
+<a name="l00834"></a>00834                     <span class="stringliteral">&quot;: value &quot;</span> + value +
+<a name="l00835"></a>00835                     <span class="stringliteral">&quot; is not a valid boolean value for parameter &quot;</span> +
+<a name="l00836"></a>00836                     parameter + <span class="stringliteral">&quot;.\n&quot;</span>;
+<a name="l00837"></a>00837         <span class="keywordflow">return</span> FALSE;
+<a name="l00838"></a>00838         }
+<a name="l00839"></a>00839     }
+<a name="l00840"></a>00840 
+<a name="l00841"></a>00841 <span class="keyword">template</span> &lt;&gt; <span class="keywordtype">bool</span> QVPropertyContainer::parseArgument&lt;int&gt;(<span class="keyword">const</span> QString parameter, <span class="keyword">const</span> QString value)
+<a name="l00842"></a>00842     {
+<a name="l00843"></a>00843     <span class="keywordtype">bool</span> okInt;
+<a name="l00844"></a>00844     <span class="keywordtype">int</span> intValue = value.toInt(&amp;okInt);
+<a name="l00845"></a>00845     <span class="keywordflow">if</span>(not okInt)
+<a name="l00846"></a>00846         {
+<a name="l00847"></a>00847         errorString = <span class="stringliteral">&quot;QVPropertyContainer::parseArgument(): holder &quot;</span> + getName() +
+<a name="l00848"></a>00848                     <span class="stringliteral">&quot;: value &quot;</span> + value +
+<a name="l00849"></a>00849                     <span class="stringliteral">&quot; is not a valid integer value for parameter &quot;</span> +
+<a name="l00850"></a>00850                     parameter + <span class="stringliteral">&quot;.\n&quot;</span>;
+<a name="l00851"></a>00851         <span class="keywordflow">return</span> FALSE;
+<a name="l00852"></a>00852         }
+<a name="l00853"></a>00853     <span class="comment">//variants[parameter] = QVariant::fromValue&lt;int&gt;(intValue);</span>
+<a name="l00854"></a>00854     setPropertyValue&lt;int&gt;(parameter,intValue);
+<a name="l00855"></a>00855     <span class="keywordflow">return</span> TRUE;
+<a name="l00856"></a>00856     }
+<a name="l00857"></a>00857 
+<a name="l00858"></a>00858 <span class="keyword">template</span> &lt;&gt; <span class="keywordtype">bool</span> QVPropertyContainer::parseArgument&lt;float&gt;(<span class="keyword">const</span> QString parameter, <span class="keyword">const</span> QString value)
+<a name="l00859"></a>00859 {
+<a name="l00860"></a>00860     <span class="keywordtype">bool</span> okFloat;
+<a name="l00861"></a>00861     <span class="keywordtype">float</span> floatValue = value.toFloat(&amp;okFloat);
+<a name="l00862"></a>00862     <span class="keywordflow">if</span>(not okFloat)     {
+<a name="l00863"></a>00863         errorString = <span class="stringliteral">&quot;QVPropertyContainer::parseArgument(): holder &quot;</span> + getName() +
+<a name="l00864"></a>00864                 <span class="stringliteral">&quot;: value &quot;</span> + value +
+<a name="l00865"></a>00865                 <span class="stringliteral">&quot; is not a valid float value for parameter &quot;</span> +
+<a name="l00866"></a>00866                 parameter + <span class="stringliteral">&quot;.\n&quot;</span>;
+<a name="l00867"></a>00867     <span class="keywordflow">return</span> FALSE;
+<a name="l00868"></a>00868     }
+<a name="l00869"></a>00869     <span class="comment">//variants[parameter] = QVariant::fromValue&lt;float&gt;(floatValue);</span>
+<a name="l00870"></a>00870     setPropertyValue&lt;float&gt;(parameter,floatValue);
+<a name="l00871"></a>00871 
+<a name="l00872"></a>00872     <span class="keywordflow">return</span> TRUE;
+<a name="l00873"></a>00873 }
+<a name="l00874"></a>00874 
+<a name="l00875"></a>00875 <span class="keyword">template</span> &lt;&gt; <span class="keywordtype">bool</span> QVPropertyContainer::parseArgument&lt;double&gt;(<span class="keyword">const</span> QString parameter, <span class="keyword">const</span> QString value)
+<a name="l00876"></a>00876     {
+<a name="l00877"></a>00877     <span class="keywordtype">bool</span> okDouble;
+<a name="l00878"></a>00878     <span class="keywordtype">double</span> doubleValue = value.toDouble(&amp;okDouble);
+<a name="l00879"></a>00879     <span class="keywordflow">if</span>(not okDouble)
+<a name="l00880"></a>00880         {
+<a name="l00881"></a>00881         errorString = <span class="stringliteral">&quot;QVPropertyContainer::parseArgument(): holder &quot;</span> + getName() +
+<a name="l00882"></a>00882                     <span class="stringliteral">&quot;: value &quot;</span> + value +
+<a name="l00883"></a>00883                     <span class="stringliteral">&quot; is not a valid double value for parameter &quot;</span> +
+<a name="l00884"></a>00884                     parameter + <span class="stringliteral">&quot;.\n&quot;</span>;
+<a name="l00885"></a>00885         <span class="keywordflow">return</span> FALSE;
+<a name="l00886"></a>00886         }
+<a name="l00887"></a>00887     <span class="comment">//variants[parameter] = QVariant::fromValue&lt;double&gt;(doubleValue);</span>
+<a name="l00888"></a>00888     setPropertyValue&lt;double&gt;(parameter,doubleValue);
+<a name="l00889"></a>00889 
+<a name="l00890"></a>00890     <span class="keywordflow">return</span> TRUE;
+<a name="l00891"></a>00891     }
+<a name="l00892"></a>00892 
+<a name="l00893"></a>00893 <span class="keyword">template</span> &lt;&gt; <span class="keywordtype">bool</span> QVPropertyContainer::parseArgument&lt;QString&gt;(<span class="keyword">const</span> QString parameter, <span class="keyword">const</span> QString value)
+<a name="l00894"></a>00894     {
+<a name="l00895"></a>00895     <span class="comment">//variants[parameter] = QVariant::fromValue&lt;QString&gt;(value);</span>
+<a name="l00896"></a>00896     setPropertyValue&lt;QString&gt;(parameter,value);
+<a name="l00897"></a>00897     <span class="keywordflow">return</span> TRUE;
+<a name="l00898"></a>00898     }
+<a name="l00899"></a>00899 
+<a name="l00900"></a>00900 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l00901"></a>00901 <span class="keywordtype">bool</span> QVPropertyContainer::ProcessPosibleSequentialLink(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destCont)
+<a name="l00902"></a>00902     {
+<a name="l00903"></a>00903         <span class="comment">// Return false if the link will generate a sequential links cicle</span>
+<a name="l00904"></a>00904         <span class="keywordflow">if</span> (haveSyncPrecursor(destCont))
+<a name="l00905"></a>00905             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00906"></a>00906 
+<a name="l00907"></a>00907         <span class="comment">// If they are sequentiely connected yet, do nothing</span>
+<a name="l00908"></a>00908         <span class="keywordflow">if</span> (destCont-&gt;haveSyncPrecursor(<span class="keyword">this</span>))
+<a name="l00909"></a>00909             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00910"></a>00910 
+<a name="l00911"></a>00911         <span class="comment">// Update de deeps</span>
+<a name="l00912"></a>00912         destCont-&gt;updateDeep(deepLevel);
+<a name="l00913"></a>00913 
+<a name="l00914"></a>00914         <span class="comment">// choose the new master of the join group</span>
+<a name="l00915"></a>00915         <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *winnerMaster, *loserMaster;
+<a name="l00916"></a>00916         <span class="keywordflow">if</span> (this-&gt;master-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>() &lt; destCont-&gt;master-&gt;<a class="code" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e" title="Retrieves identifier uint of the object.">getId</a>()) {
+<a name="l00917"></a>00917             winnerMaster = this-&gt;master;
+<a name="l00918"></a>00918             loserMaster = destCont-&gt;master;
+<a name="l00919"></a>00919         }
+<a name="l00920"></a>00920         <span class="keywordflow">else</span> {
+<a name="l00921"></a>00921             winnerMaster = destCont-&gt;master;
+<a name="l00922"></a>00922             loserMaster = this-&gt;master;
+<a name="l00923"></a>00923         }
+<a name="l00924"></a>00924 
+<a name="l00925"></a>00925         <span class="comment">// change the masters of the group&#39;s items</span>
+<a name="l00926"></a>00926         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; loserMaster-&gt;slavesByLevel.size(); i++) {
+<a name="l00927"></a>00927             <span class="keywordflow">if</span>(winnerMaster-&gt;slavesByLevel.size() &lt;= i)
+<a name="l00928"></a>00928                 winnerMaster-&gt;slavesByLevel.append(QList&lt;QVPropertyContainer *&gt;());
+<a name="l00929"></a>00929 
+<a name="l00930"></a>00930             QList&lt;QVPropertyContainer *&gt; level = loserMaster-&gt;slavesByLevel[i];
+<a name="l00931"></a>00931             <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *slave, level) {
+<a name="l00932"></a>00932                 slave-&gt;master = winnerMaster;
+<a name="l00933"></a>00933                 winnerMaster-&gt;slavesByLevel[i].append(slave);
+<a name="l00934"></a>00934             }
+<a name="l00935"></a>00935         }
+<a name="l00936"></a>00936 
+<a name="l00937"></a>00937         <span class="comment">// update the old master (looser master)</span>
+<a name="l00938"></a>00938         <span class="keywordflow">foreach</span>(QList&lt;QVPropertyContainer *&gt; level, loserMaster-&gt;slavesByLevel) {
+<a name="l00939"></a>00939             loserMaster-&gt;slavesByLevel.removeAll(level);
+<a name="l00940"></a>00940         }
+<a name="l00941"></a>00941 
+<a name="l00942"></a>00942         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00943"></a>00943     }
+<a name="l00944"></a>00944 
+<a name="l00945"></a>00945 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l00946"></a>00946 <span class="keywordtype">void</span> QVPropertyContainer::updateDeep(<span class="keywordtype">int</span> origDeep)
+<a name="l00947"></a>00947      {
+<a name="l00948"></a>00948         <span class="keywordtype">int</span> newDeep = origDeep + 1; <span class="comment">// sets its minim deep</span>
+<a name="l00949"></a>00949         <span class="keywordflow">foreach</span>(QVPropertyContainerLink* inLink, getInputLinks()) { <span class="comment">// calculate the new deep</span>
+<a name="l00950"></a>00950             <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *cont = inLink-&gt;qvp_orig;
+<a name="l00951"></a>00951             <span class="keywordflow">if</span> ( (cont != NULL) &amp;&amp; (inLink-&gt;markedForDeletion == FALSE) &amp;&amp; (inLink-&gt;link_type == SequentialLink) )
+<a name="l00952"></a>00952                 <span class="keywordflow">if</span> (cont-&gt;deepLevel &gt;= newDeep)
+<a name="l00953"></a>00953                     newDeep = cont-&gt;deepLevel + 1;
+<a name="l00954"></a>00954         }
+<a name="l00955"></a>00955 
+<a name="l00956"></a>00956         <span class="keywordflow">if</span> (newDeep != deepLevel) { <span class="comment">// if the deep changes, change his level position, his deep, and his successors deep</span>
+<a name="l00957"></a>00957             master-&gt;slavesByLevel[deepLevel].removeAll(<span class="keyword">this</span>);
+<a name="l00958"></a>00958             deepLevel = newDeep;
+<a name="l00959"></a>00959 
+<a name="l00960"></a>00960             <span class="keywordflow">while</span>(master-&gt;slavesByLevel.size() &lt;= deepLevel)
+<a name="l00961"></a>00961                 master-&gt;slavesByLevel.append(QList&lt;QVPropertyContainer *&gt;());
+<a name="l00962"></a>00962             master-&gt;slavesByLevel[deepLevel].append(<span class="keyword">this</span>);
+<a name="l00963"></a>00963 
+<a name="l00964"></a>00964             <span class="keywordflow">foreach</span>(QString prop, <a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList</a>())
+<a name="l00965"></a>00965                 <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *container, getDestinySequentialContainers(prop))
+<a name="l00966"></a>00966                     container-&gt;updateDeep(deepLevel);
+<a name="l00967"></a>00967         }
+<a name="l00968"></a>00968     }
+<a name="l00969"></a>00969 
+<a name="l00970"></a>00970 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l00971"></a>00971 <span class="keywordtype">void</span> QVPropertyContainer::ProcessSequentialUnlink(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *origCont, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destCont)
+<a name="l00972"></a>00972     {
+<a name="l00973"></a>00973         <span class="comment">// if the group still join do nothing</span>
+<a name="l00974"></a>00974         <span class="keywordflow">if</span> (destCont-&gt;haveSyncPrecursor(origCont)) <span class="keywordflow">return</span>;
+<a name="l00975"></a>00975 
+<a name="l00976"></a>00976         <span class="comment">// if origCont is in the masterless subgroup, they becomes a new master</span>
+<a name="l00977"></a>00977         <span class="keywordflow">if</span>( (origCont-&gt;master != origCont) &amp;&amp; !origCont-&gt;haveSyncPrecursor(origCont-&gt;master) &amp;&amp; !origCont-&gt;master-&gt;haveSyncPrecursor(origCont) ) {
+<a name="l00978"></a>00978             <span class="comment">// changes all subgroup master</span>
+<a name="l00979"></a>00979             origCont-&gt;changeMaster(origCont);
+<a name="l00980"></a>00980             origCont-&gt;propagateBackwardMasterChange(origCont);
+<a name="l00981"></a>00981             origCont-&gt;propagateForwardMasterChange(origCont);
+<a name="l00982"></a>00982 
+<a name="l00983"></a>00983             <span class="comment">// update its (and its succesors) deep</span>
+<a name="l00984"></a>00984             origCont-&gt;updateDeep(-1);
+<a name="l00985"></a>00985 
+<a name="l00986"></a>00986             <span class="comment">// they must update other subgroup deep</span>
+<a name="l00987"></a>00987             destCont-&gt;updateDeep(-1);
+<a name="l00988"></a>00988         }
+<a name="l00989"></a>00989         <span class="comment">// if destCont is in the masterless subgroup, they becomes a new master</span>
+<a name="l00990"></a>00990         <span class="keywordflow">else</span> <span class="keywordflow">if</span>( (destCont-&gt;master != destCont) &amp;&amp; !destCont-&gt;haveSyncPrecursor(destCont-&gt;master) &amp;&amp; !destCont-&gt;master-&gt;haveSyncPrecursor(destCont) ) {
+<a name="l00991"></a>00991             <span class="comment">// changes all subgroup master</span>
+<a name="l00992"></a>00992             destCont-&gt;propagateBackwardMasterChange(destCont);
+<a name="l00993"></a>00993             destCont-&gt;propagateForwardMasterChange(destCont);
+<a name="l00994"></a>00994             destCont-&gt;changeMaster(destCont);
+<a name="l00995"></a>00995 
+<a name="l00996"></a>00996             <span class="comment">// update its (and its succesors) deep</span>
+<a name="l00997"></a>00997             destCont-&gt;updateDeep(-1);
+<a name="l00998"></a>00998         }
+<a name="l00999"></a>00999     }
+<a name="l01000"></a>01000 
+<a name="l01001"></a>01001 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l01002"></a>01002 <span class="keywordtype">bool</span> QVPropertyContainer::haveSyncPrecursor(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *precursor)
+<a name="l01003"></a>01003     {
+<a name="l01004"></a>01004         <span class="keywordflow">foreach</span>(QString prop, <a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList</a>()) {
+<a name="l01005"></a>01005             <span class="keywordflow">if</span> (<span class="comment">/*isSynchronous(prop) || */</span><a class="code" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226" title="Check if a property is linked Sequentialy.">isSequential</a>(prop)) {
+<a name="l01006"></a>01006                 <span class="keyword">const</span> QMap&lt;QString, QVPropertyContainerLink* &gt; inLinks = getInputLinks();
+<a name="l01007"></a>01007                 <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *cont = inLinks.value(prop)-&gt;qvp_orig;
+<a name="l01008"></a>01008                 <span class="keywordflow">if</span> ( (cont != NULL) &amp;&amp; (inLinks.value(prop)-&gt;markedForDeletion == FALSE) )
+<a name="l01009"></a>01009                     <span class="keywordflow">if</span> ( (precursor == cont) || (cont-&gt;haveSyncPrecursor(precursor)) ) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l01010"></a>01010             }
+<a name="l01011"></a>01011         }
+<a name="l01012"></a>01012         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l01013"></a>01013     }
+<a name="l01014"></a>01014 
+<a name="l01015"></a>01015 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l01016"></a>01016 <span class="keywordtype">void</span> QVPropertyContainer::propagateBackwardMasterChange(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *newMaster)
+<a name="l01017"></a>01017     {
+<a name="l01018"></a>01018         <span class="keywordflow">foreach</span>(QVPropertyContainerLink *link, getInputLinks()) {
+<a name="l01019"></a>01019             <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *cont = link-&gt;qvp_orig;
+<a name="l01020"></a>01020             <span class="keywordflow">if</span> ( (cont != NULL) &amp;&amp; (link-&gt;markedForDeletion == FALSE) &amp;&amp; (link-&gt;link_type == SequentialLink) &amp;&amp; (cont-&gt;master != newMaster) ) {
+<a name="l01021"></a>01021                 cont-&gt;changeMaster(newMaster);
+<a name="l01022"></a>01022                 cont-&gt;propagateBackwardMasterChange(newMaster);
+<a name="l01023"></a>01023                 cont-&gt;propagateForwardMasterChange(newMaster);
+<a name="l01024"></a>01024             }
+<a name="l01025"></a>01025         }
+<a name="l01026"></a>01026 
+<a name="l01027"></a>01027     }
+<a name="l01028"></a>01028 
+<a name="l01029"></a>01029 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l01030"></a>01030 <span class="keywordtype">void</span> QVPropertyContainer::propagateForwardMasterChange(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *newMaster)
+<a name="l01031"></a>01031     {
+<a name="l01032"></a>01032         <span class="keywordflow">foreach</span>(QString prop, <a class="code" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList</a>()) {
+<a name="l01033"></a>01033             <span class="keywordflow">foreach</span>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *container, getDestinySequentialContainers(prop)) {
+<a name="l01034"></a>01034                 <span class="keywordflow">if</span> (container-&gt;master != newMaster) {
+<a name="l01035"></a>01035                     container-&gt;changeMaster(newMaster);
+<a name="l01036"></a>01036                     container-&gt;propagateForwardMasterChange(newMaster);
+<a name="l01037"></a>01037                     container-&gt;propagateBackwardMasterChange(newMaster);
+<a name="l01038"></a>01038                 }
+<a name="l01039"></a>01039             }
+<a name="l01040"></a>01040         }
+<a name="l01041"></a>01041     }
+<a name="l01042"></a>01042 
+<a name="l01043"></a>01043 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l01044"></a>01044 <span class="keywordtype">void</span> QVPropertyContainer::changeMaster(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *newMaster)
+<a name="l01045"></a>01045     {
+<a name="l01046"></a>01046         master-&gt;slavesByLevel[deepLevel].removeAll(<span class="keyword">this</span>);
+<a name="l01047"></a>01047         master = newMaster;
+<a name="l01048"></a>01048 
+<a name="l01049"></a>01049         <span class="keywordflow">while</span>(master-&gt;slavesByLevel.size() &lt;= deepLevel)
+<a name="l01050"></a>01050             master-&gt;slavesByLevel.append(QList&lt;QVPropertyContainer *&gt;());
+<a name="l01051"></a>01051         master-&gt;slavesByLevel[deepLevel].append(<span class="keyword">this</span>);
+<a name="l01052"></a>01052     }
+<a name="l01053"></a>01053 
+<a name="l01054"></a>01054 <span class="comment">// the sequential subgraphs cannot have cicles</span>
+<a name="l01055"></a>01055 QList&lt;QVPropertyContainer *&gt; QVPropertyContainer::getDestinySequentialContainers(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>
+<a name="l01056"></a>01056 <span class="keyword">    </span>{
+<a name="l01057"></a>01057         QList&lt;QVPropertyContainer *&gt; list;
+<a name="l01058"></a>01058 
+<a name="l01059"></a>01059         <span class="keywordflow">if</span> (outputLinks.contains(name))
+<a name="l01060"></a>01060             <span class="keywordflow">foreach</span>(QVPropertyContainerLink* link, outputLinks.value(name)) {
+<a name="l01061"></a>01061                 <span class="keywordflow">if</span> ( (link-&gt;qvp_dest != NULL) &amp;&amp;
+<a name="l01062"></a>01062                      (link-&gt;markedForDeletion == FALSE) &amp;&amp;
+<a name="l01063"></a>01063                      (!list.contains(link-&gt;qvp_dest)) &amp;&amp;
+<a name="l01064"></a>01064                      (link-&gt;link_type == SequentialLink) ) list.append(link-&gt;qvp_dest);
+<a name="l01065"></a>01065             }
+<a name="l01066"></a>01066 
+<a name="l01067"></a>01067         <span class="keywordflow">return</span> list;
+<a name="l01068"></a>01068     }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

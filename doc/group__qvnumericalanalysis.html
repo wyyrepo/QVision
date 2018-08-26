@@ -1,0 +1,909 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Numerical analisis and function minimization<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1>
+<p>Function optimization and numerical derivative evaluation.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFunction.html">QVFunction&lt; Input, Output &gt;</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Base class for function objects.  <a href="classQVFunction.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVJacobian.html">QVJacobian</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Class to create jacobian functions.  <a href="classQVJacobian.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a> { <a class="el" href="group__qvnumericalanalysis.html#ggaf94804b1e1dc7c0e9af0999d68440f70ae769900a9fc183f3501fc0fdc412ddb9">GoldenSection</a> =  0, 
+<a class="el" href="group__qvnumericalanalysis.html#ggaf94804b1e1dc7c0e9af0999d68440f70ab32254721628cea0eeef60a390f0ca16">BrentMinimization</a> =  1
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>GSL Minimization algorithms. </p>
+ <a href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> { <a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a5d65b522cf13b9975a0fee9ab4f07b0e">ConjugateFR</a> =  0, 
+<a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a2c6a593f8b4eafd33170df4f5db2bc9d">ConjugatePR</a> =  1, 
+<a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a1af5c2e022b228fc7e5b331e6d335c4b">VectorBFGS</a> =  2, 
+<a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a815b31aa2c26e45abdbaf05ef58c1943">SteepestDescent</a> =  3
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>GSL multidimensional minimization algorithms using gradient information. </p>
+ <a href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">GSLMultiminFDFSolverType</a> { <a class="el" href="group__qvnumericalanalysis.html#ggaa1d694d467425bf3cfbdf949ef0faed5a1bbb22ad7e6a45514c3e6022a2e50526">LMScaledDerivative</a> =  0, 
+<a class="el" href="group__qvnumericalanalysis.html#ggaa1d694d467425bf3cfbdf949ef0faed5a47a6ed26f8d738391705fb14057484eb">LMDerivative</a> =  1
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>GSL multidimensional solving. </p>
+ <a href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga4d2e455ca93f788e1ec97d942171c8ef">qvEstimateGradient</a> (<a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, const <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const double h=1e-6)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the gradient vector for the function using the forward two-points rule for the derivative approximation.  <a href="#ga4d2e455ca93f788e1ec97d942171c8ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gadd02b7275fd52c76e9cb406031b4392c">qvEstimateJacobian</a> (<a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;function, const <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const double h=1e-6)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the Jacobian matrix for the function using the forward two-points rule for the derivative approximation.  <a href="#gadd02b7275fd52c76e9cb406031b4392c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gabe23aebe828a863a2d5bc305b5258179">qvEstimateHessian</a> (<a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, const <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const double h=1e-3)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the hessian matrix for the function using the forward two-point rule for the derivative approximation.  <a href="#gabe23aebe828a863a2d5bc305b5258179"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gad5edc708c8725e70dc43ad236729d6e5">qvGSLMinimizeFDF</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> gslMinimizerAlgorithm=ConjugateFR, const int maxIterations=100, const double maxGradientNorm=1e-3, const double step=0.01, const double tol=1e-4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wrapper to GSL multivariate function minimization using gradient information.  <a href="#gad5edc708c8725e70dc43ad236729d6e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga0dfcc84308d4ec8b2cb2d11a59251e9c">qvGSLMinimizeFDF</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;gradientFunction, <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> gslMinimizerAlgorithm=ConjugateFR, const int maxIterations=100, const double maxGradientNorm=1e-3, const double step=0.01, const double tol=1e-4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wrapper to GSL multivariate function minimization using gradient information.  <a href="#ga0dfcc84308d4ec8b2cb2d11a59251e9c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga035c2ca4bd03efc36129a9c618e18eee">qvGSLSolveFDF</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;function, const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;functionJacobian, <a class="el" href="classQVVector.html">QVVector</a> &amp;x, const <a class="el" href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">GSLMultiminFDFSolverType</a> gslSolverAlgorithm=LMScaledDerivative, const int maxIterations=100, const double maxAbsErr=1e-4, const double maxRelErr=1e-4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Solves a non-linear system of equations.  <a href="#ga035c2ca4bd03efc36129a9c618e18eee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga19129c12d25402096905b2cd34529d26">qvGSLMinimize</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; double, double &gt; &amp;function, double &amp;x, double &amp;lower, double &amp;upper, const <a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a> gslMinimizerAlgorithm=BrentMinimization, const int maxIterations=100, const double absoluteError=1e-3, const double relativeError=0.0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wrapper to GSL function minimization.  <a href="#ga19129c12d25402096905b2cd34529d26"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Function optimization and numerical derivative evaluation. </p>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="gaf94804b1e1dc7c0e9af0999d68440f70"></a><!-- doxytag: member="qvnumericalanalysis.h::GSLMinFMinimizer" ref="gaf94804b1e1dc7c0e9af0999d68440f70" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>GSL Minimization algorithms. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvnumericalanalysis.html#ga19129c12d25402096905b2cd34529d26" title="Wrapper to GSL function minimization.">qvGSLMinimize</a> </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaf94804b1e1dc7c0e9af0999d68440f70ae769900a9fc183f3501fc0fdc412ddb9"></a><!-- doxytag: member="GoldenSection" ref="ggaf94804b1e1dc7c0e9af0999d68440f70ae769900a9fc183f3501fc0fdc412ddb9" args="" -->GoldenSection</em>&nbsp;</td><td>
+<p>The golden section algorithm. The simplest method of bracketing the minimum of a function. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaf94804b1e1dc7c0e9af0999d68440f70ab32254721628cea0eeef60a390f0ca16"></a><!-- doxytag: member="BrentMinimization" ref="ggaf94804b1e1dc7c0e9af0999d68440f70ab32254721628cea0eeef60a390f0ca16" args="" -->BrentMinimization</em>&nbsp;</td><td>
+<p>The Brent minimization algorithm. Combines a parabolic interpolation with the golden section algorithm. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html#l00093">93</a> of file <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html">qvnumericalanalysis.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad24495d3074466956a7da56fabf2d0e7"></a><!-- doxytag: member="qvnumericalanalysis.h::GSLMultiminFDFMinimizerType" ref="gad24495d3074466956a7da56fabf2d0e7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>GSL multidimensional minimization algorithms using gradient information. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvnumericalanalysis.html#ga0dfcc84308d4ec8b2cb2d11a59251e9c" title="Wrapper to GSL multivariate function minimization using gradient information.">qvGSLMinimizeFDF</a> </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggad24495d3074466956a7da56fabf2d0e7a5d65b522cf13b9975a0fee9ab4f07b0e"></a><!-- doxytag: member="ConjugateFR" ref="ggad24495d3074466956a7da56fabf2d0e7a5d65b522cf13b9975a0fee9ab4f07b0e" args="" -->ConjugateFR</em>&nbsp;</td><td>
+<p>Fletcher-Reeves conjugate gradient algorithm. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad24495d3074466956a7da56fabf2d0e7a2c6a593f8b4eafd33170df4f5db2bc9d"></a><!-- doxytag: member="ConjugatePR" ref="ggad24495d3074466956a7da56fabf2d0e7a2c6a593f8b4eafd33170df4f5db2bc9d" args="" -->ConjugatePR</em>&nbsp;</td><td>
+<p>Polak-Ribiere conjugate gradient algorithm. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad24495d3074466956a7da56fabf2d0e7a1af5c2e022b228fc7e5b331e6d335c4b"></a><!-- doxytag: member="VectorBFGS" ref="ggad24495d3074466956a7da56fabf2d0e7a1af5c2e022b228fc7e5b331e6d335c4b" args="" -->VectorBFGS</em>&nbsp;</td><td>
+<p>Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad24495d3074466956a7da56fabf2d0e7a815b31aa2c26e45abdbaf05ef58c1943"></a><!-- doxytag: member="SteepestDescent" ref="ggad24495d3074466956a7da56fabf2d0e7a815b31aa2c26e45abdbaf05ef58c1943" args="" -->SteepestDescent</em>&nbsp;</td><td>
+<p>The steepest descent algorithm. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html#l00108">108</a> of file <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html">qvnumericalanalysis.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa1d694d467425bf3cfbdf949ef0faed5"></a><!-- doxytag: member="qvnumericalanalysis.h::GSLMultiminFDFSolverType" ref="gaa1d694d467425bf3cfbdf949ef0faed5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">GSLMultiminFDFSolverType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>GSL multidimensional solving. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvnumericalanalysis.html#ga035c2ca4bd03efc36129a9c618e18eee" title="Solves a non-linear system of equations.">qvGSLSolveFDF</a> </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaa1d694d467425bf3cfbdf949ef0faed5a1bbb22ad7e6a45514c3e6022a2e50526"></a><!-- doxytag: member="LMScaledDerivative" ref="ggaa1d694d467425bf3cfbdf949ef0faed5a1bbb22ad7e6a45514c3e6022a2e50526" args="" -->LMScaledDerivative</em>&nbsp;</td><td>
+<p>Scaled Levenberg-Marquardt algorithm. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1d694d467425bf3cfbdf949ef0faed5a47a6ed26f8d738391705fb14057484eb"></a><!-- doxytag: member="LMDerivative" ref="ggaa1d694d467425bf3cfbdf949ef0faed5a47a6ed26f8d738391705fb14057484eb" args="" -->LMDerivative</em>&nbsp;</td><td>
+<p>Non-scaled (faster) Levenberg-Marquardt algorithm. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html#l00127">127</a> of file <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html">qvnumericalanalysis.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga4d2e455ca93f788e1ec97d942171c8ef"></a><!-- doxytag: member="qvnumericalanalysis.h::qvEstimateGradient" ref="ga4d2e455ca93f788e1ec97d942171c8ef" args="(QVFunction&lt; QVVector, double &gt; &amp;function, const QVVector &amp;point, const double h=1e&#45;6)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classQVVector.html">QVVector</a> qvEstimateGradient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>h</em> = <code>1e-6</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estimates the gradient vector for the function using the forward two-points rule for the derivative approximation. </p>
+<p>This function obtains a numerical approximation of the gradient at a given point for a function. The forward derivative formula is used to estimate each partial derivative value, component of the gradient vector:</p>
+<p><img class="formulaInl" alt="$ \frac{ \partial f}{ \partial x_i} \left( \textbf{x} \right) = \lim_{h\to 0}{f(x_1, \ldots, x_i + h, \ldots, x_n)-f(x_1, \ldots, x_i, \ldots, x_n)\over h}$" src="form_150.png"/></p>
+<p>The function to estimate the gradient is provided as a <a class="el" href="classQVFunction.html">QVFunction</a> object.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>object containing the function to estimate gradient. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Point to evaluate the gradient vector. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>Increment coeficient for the derivative formula. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvnumericalanalysis_8cpp_source.html#l00028">28</a> of file <a class="el" href="qvnumericalanalysis_8cpp_source.html">qvnumericalanalysis.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvnumericalanalysis.html#gabe23aebe828a863a2d5bc305b5258179">qvEstimateHessian()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gadd02b7275fd52c76e9cb406031b4392c"></a><!-- doxytag: member="qvnumericalanalysis.h::qvEstimateJacobian" ref="gadd02b7275fd52c76e9cb406031b4392c" args="(QVFunction&lt; QVVector, QVVector &gt; &amp;function, const QVVector &amp;point, const double h=1e&#45;6)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classQVMatrix.html">QVMatrix</a> qvEstimateJacobian </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>h</em> = <code>1e-6</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estimates the Jacobian matrix for the function using the forward two-points rule for the derivative approximation. </p>
+<p>This function obtains a numerical approximation of the Jacobian of a <img class="formulaInl" alt="$ R^n \to R^m $" src="form_36.png"/> function at a given point. The forward derivative formula is used to estimate each partial derivative value, component of the Jacobian:</p>
+<p><img class="formulaInl" alt="$ \frac{ \partial f}{ \partial x_i} \left( \textbf{x} \right) = \lim_{h\to 0}{f(x_1, \ldots, x_i + h, \ldots, x_n)-f(x_1, \ldots, x_i, \ldots, x_n)\over h}$" src="form_150.png"/></p>
+<p>The function to estimate the gradient is provided as a <a class="el" href="classQVFunction.html">QVFunction</a> object.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>function object to estimate Jacobian. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Point to evaluate the Jacobian matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>Increment coeficient for the derivative formula. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvnumericalanalysis_8cpp_source.html#l00042">42</a> of file <a class="el" href="qvnumericalanalysis_8cpp_source.html">qvnumericalanalysis.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabe23aebe828a863a2d5bc305b5258179"></a><!-- doxytag: member="qvnumericalanalysis.h::qvEstimateHessian" ref="gabe23aebe828a863a2d5bc305b5258179" args="(QVFunction&lt; QVVector, double &gt; &amp;function, const QVVector &amp;point, const double h=1e&#45;3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classQVMatrix.html">QVMatrix</a> qvEstimateHessian </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>h</em> = <code>1e-3</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estimates the hessian matrix for the function using the forward two-point rule for the derivative approximation. </p>
+<p>This function obtains a numerical approximation of the hessian matrix at a given pointfor a function. The following formula is used to compute the components fo the hessian matrix:</p>
+<p><img class="formulaInl" alt="$ H_{i, j}(f) = \frac{ f(x_1, \ldots, x_i + h, \ldots, x_j + h, \ldots, x_n) + f(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_n) f(x_1, \ldots, x_i + h, \ldots, x_j, \ldots, x_n) + f(x_1, \ldots, x_i, \ldots, x_j + h, \ldots, x_n) }{h^2}$" src="form_151.png"/></p>
+<p>It is derived from the forward derivative formula used to estimate each partial derivative value:</p>
+<p><img class="formulaInl" alt="$ \frac{ \partial f}{ \partial x_i} \left( \textbf{x} \right) = \lim_{h\to 0}{f(x_1, \ldots, x_i + h, \ldots, x_n)-f(x_1, \ldots, x_i, \ldots, x_n)\over h}$" src="form_150.png"/></p>
+<p>The function to estimate the hessian is provided as a <a class="el" href="classQVFunction.html">QVFunction</a> object.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>object containing the function to estimate hessian. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Point to evaluate the hessian matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>Increment coeficient for the derivative formula. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvnumericalanalysis_8cpp_source.html#l00058">58</a> of file <a class="el" href="qvnumericalanalysis_8cpp_source.html">qvnumericalanalysis.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad5edc708c8725e70dc43ad236729d6e5"></a><!-- doxytag: member="qvnumericalanalysis.h::qvGSLMinimizeFDF" ref="gad5edc708c8725e70dc43ad236729d6e5" args="(const QVFunction&lt; QVVector, double &gt; &amp;function, QVVector &amp;point, const GSLMultiminFDFMinimizerType gslMinimizerAlgorithm=ConjugateFR, const int maxIterations=100, const double maxGradientNorm=1e&#45;3, const double step=0.01, const double tol=1e&#45;4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qvGSLMinimizeFDF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a>&nbsp;</td>
+          <td class="paramname"> <em>gslMinimizerAlgorithm</em> = <code>ConjugateFR</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxIterations</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>maxGradientNorm</em> = <code>1e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>step</em> = <code>0.01</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>tol</em> = <code>1e-4</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Wrapper to GSL multivariate function minimization using gradient information. </p>
+<p>This function minimizes a multivariate function contained in a <a class="el" href="classQVFunction.html">QVFunction</a> object, using the GSL functionality for that purpose. The gradient of that function is estimated using the <a class="el" href="group__qvnumericalanalysis.html#ga4d2e455ca93f788e1ec97d942171c8ef">qvEstimateGradient</a> function, and is used in the minimization process.</p>
+<p>An usage example follows: </p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvnumericalanalysis.h&gt;</span>
+
+<span class="comment">// Creation of a quadratic function class type</span>
+<span class="keyword">class </span>QuadraticFunction: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;QVVector, double&gt;
+    {
+    <span class="keyword">private</span>:
+        <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A;
+        <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b;
+        <span class="keyword">const</span> <span class="keywordtype">double</span> c;
+
+        <span class="keywordtype">double</span> evaluate(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;x)
+            {
+            <span class="keywordflow">return</span> x*A*x + b*x + c;
+            }
+
+    <span class="keyword">public</span>:
+        QuadraticFunction(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;A, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;b, <span class="keyword">const</span> <span class="keywordtype">double</span> c): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>, double&gt;(),
+            A(A), b(b), c(c)
+            { }
+    };
+
+<span class="comment">// Main code</span>
+<span class="keywordtype">int</span> main()
+    {
+    <span class="comment">// Example quadratic function object creation</span>
+    <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A = <a class="code" href="classQVMatrix.html#aa51c7a1ffb2ec8c9f56cd4c10ad61e81" title="Creates a zero matrix.">QVMatrix::zeros</a>(3,3);
+    <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(3,0);
+    <span class="keywordtype">double</span> c;
+
+    A(0,0) = 70;        A(1,1) = 11;    A(2,2) = 130;
+    b = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(3); b[0] = -100; b[1] = 20; b[2] = -30;
+    c = 100;
+
+    QuadraticFunction f(A, b, c);
+
+    <span class="comment">// Function minimization</span>
+    <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> minimum(3,0);
+    <a class="code" href="group__qvnumericalanalysis.html#gad5edc708c8725e70dc43ad236729d6e5" title="Wrapper to GSL multivariate function minimization using gradient information.">qvGSLMinimizeFDF</a>(f, minimum);
+
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Function minimum value = &quot;</span> &lt;&lt; f(minimum) &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Reached at point = &quot;</span> &lt;&lt; minimum &lt;&lt; std::endl;;
+    }
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>Object containing the function to minimize. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Starting point for the minimization. This vector will contain the obtained minimum when the function returns. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gslMinimizerAlgorithm</em>&nbsp;</td><td>Minimization algorithm. See enumeration <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> for possible values. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxIterations</em>&nbsp;</td><td>Maximum number of steps to perform by the minimization. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxGradientNorm</em>&nbsp;</td><td>Minimal value of the gradient size (norm 2) to stop the minimization when reached. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>step</em>&nbsp;</td><td>Corresponds to parameter <em>step</em> for the <em>gsl_multimin_fdfminimizer_set</em> function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tol</em>&nbsp;</td><td>Corresponds to parameter <em>tol</em> for the <em>gsl_multimin_fdfminimizer_set</em> function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>The GSL compatibility must be enabled to use this function. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the search was successful. False else. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7" title="GSL multidimensional minimization algorithms using gradient information.">GSLMultiminFDFMinimizerType</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvnumericalanalysis_8cpp_source.html#l00100">100</a> of file <a class="el" href="qvnumericalanalysis_8cpp_source.html">qvnumericalanalysis.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#gabb623dbd849917dc8f20dbcbf775ff22">getCameraFocals()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0dfcc84308d4ec8b2cb2d11a59251e9c"></a><!-- doxytag: member="qvnumericalanalysis.h::qvGSLMinimizeFDF" ref="ga0dfcc84308d4ec8b2cb2d11a59251e9c" args="(const QVFunction&lt; QVVector, double &gt; &amp;function, const QVFunction&lt; QVVector, QVVector &gt; &amp;gradientFunction, QVVector &amp;point, const GSLMultiminFDFMinimizerType gslMinimizerAlgorithm=ConjugateFR, const int maxIterations=100, const double maxGradientNorm=1e&#45;3, const double step=0.01, const double tol=1e&#45;4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qvGSLMinimizeFDF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>gradientFunction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a>&nbsp;</td>
+          <td class="paramname"> <em>gslMinimizerAlgorithm</em> = <code>ConjugateFR</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxIterations</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>maxGradientNorm</em> = <code>1e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>step</em> = <code>0.01</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>tol</em> = <code>1e-4</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Wrapper to GSL multivariate function minimization using gradient information. </p>
+<p>This is an overloaded version of the function qvGSLMinimizeFDF(QVFunction&lt;QVVector, double&gt; &amp;, QVVector &amp;, const GSLMultiminFDFMinimizerType, const int, const double, const double, const double) provided for convenience.</p>
+<p>The real gradient of the function is used in the form of a vector function object, instead of the numerical approximation <a class="el" href="group__qvnumericalanalysis.html#ga4d2e455ca93f788e1ec97d942171c8ef">qvEstimateGradient</a> to the gradient, which is less accurate and generally less efficient. An example code usage follows:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvnumericalanalysis.h&gt;</span>
+
+<span class="comment">// Creation of a quadratic function class type</span>
+<span class="keyword">class </span>QuadraticFunction: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;QVVector, double&gt;
+    {
+    <span class="keyword">private</span>:
+        <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A;
+        <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b;
+        <span class="keyword">const</span> <span class="keywordtype">double</span> c;
+
+        <span class="keywordtype">double</span> evaluate(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;x)
+            {
+            <span class="keywordflow">return</span> x*A*x + b*x + c;
+            }
+
+    <span class="keyword">public</span>:
+        QuadraticFunction(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;A, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;b, <span class="keyword">const</span> <span class="keywordtype">double</span> c): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>, double&gt;(),
+            A(A), b(b), c(c)
+            { }
+    };
+
+<span class="comment">// Creation of a quadratic vector function class type, corresponding to the gradient of the previous function</span>
+<span class="keyword">class </span>QuadraticFunctionGradient: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;QVVector, QVVector&gt;
+    {
+    <span class="keyword">private</span>:
+        <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A;
+        <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b;
+        <span class="keyword">const</span> <span class="keywordtype">double</span> c;
+
+        <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> evaluate(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;x)
+            {
+            <span class="keywordflow">return</span> A*x*2 + b;
+            }
+
+    <span class="keyword">public</span>:
+        QuadraticFunctionGradient(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;A, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;b, <span class="keyword">const</span> <span class="keywordtype">double</span> c): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>, <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>&gt;(),
+            A(A), b(b), c(c)
+            { }
+    };
+
+<span class="comment">// Main code</span>
+<span class="keywordtype">int</span> main()
+    {
+    <span class="comment">// Example quadratic function and corresponding gradient objects creation</span>
+    <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A = <a class="code" href="classQVMatrix.html#aa51c7a1ffb2ec8c9f56cd4c10ad61e81" title="Creates a zero matrix.">QVMatrix::zeros</a>(3,3);
+    <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(3,0);
+    <span class="keywordtype">double</span> c;
+
+    A(0,0) = 70;        A(1,1) = 11;    A(2,2) = 130;
+    b = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(3); b[0] = -100; b[1] = 20; b[2] = -30;
+    c = 100;
+
+    QuadraticFunction           f(A, b, c);
+    QuadraticFunctionGradient   g(A, b, c);
+
+    <span class="comment">// Function minimization</span>
+    <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> minimum(3,0);
+    <a class="code" href="group__qvnumericalanalysis.html#gad5edc708c8725e70dc43ad236729d6e5" title="Wrapper to GSL multivariate function minimization using gradient information.">qvGSLMinimizeFDF</a>(f, g, minimum);
+
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Function minimum value = &quot;</span> &lt;&lt; f(minimum) &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Reached at point = &quot;</span> &lt;&lt; minimum &lt;&lt; std::endl;
+    }
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>Object containing the function to minimize. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gradientFunction</em>&nbsp;</td><td>Object containing the gradient vector function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Starting point for the minimization. This vector will contain the obtained minimum when the function returns. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gslMinimizerAlgorithm</em>&nbsp;</td><td>Minimization algorithm. See enumeration <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> for possible values. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxIterations</em>&nbsp;</td><td>Maximum number of steps to perform the minimization. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxGradientNorm</em>&nbsp;</td><td>Minimal value of the gradient size (norm 2) to stop the minimization when reached. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>step</em>&nbsp;</td><td>Corresponds to parameter <em>step</em> for the <em>gsl_multimin_fdfminimizer_set</em> function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tol</em>&nbsp;</td><td>Corresponds to parameter <em>tol</em> for the <em>gsl_multimin_fdfminimizer_set</em> function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>The GSL compatibility must be enabled to use this function. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the search was successful. False else. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>qvGSLMinimizeFDF(QVFunction&lt;QVVector, double&gt; &amp;, QVVector &amp;, const GSLMultiminFDFMinimizerType, const int, const double, const double, const double) </dd>
+<dd>
+<a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7" title="GSL multidimensional minimization algorithms using gradient information.">GSLMultiminFDFMinimizerType</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvnumericalanalysis_8cpp_source.html#l00167">167</a> of file <a class="el" href="qvnumericalanalysis_8cpp_source.html">qvnumericalanalysis.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga035c2ca4bd03efc36129a9c618e18eee"></a><!-- doxytag: member="qvnumericalanalysis.h::qvGSLSolveFDF" ref="ga035c2ca4bd03efc36129a9c618e18eee" args="(const QVFunction&lt; QVVector, QVVector &gt; &amp;function, const QVFunction&lt; QVVector, QVMatrix &gt; &amp;functionJacobian, QVVector &amp;x, const GSLMultiminFDFSolverType gslSolverAlgorithm=LMScaledDerivative, const int maxIterations=100, const double maxAbsErr=1e&#45;4, const double maxRelErr=1e&#45;4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qvGSLSolveFDF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>functionJacobian</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">GSLMultiminFDFSolverType</a>&nbsp;</td>
+          <td class="paramname"> <em>gslSolverAlgorithm</em> = <code>LMScaledDerivative</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxIterations</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>maxAbsErr</em> = <code>1e-4</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>maxRelErr</em> = <code>1e-4</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Solves a non-linear system of equations. </p>
+<p>This function uses a nonlinear least-squares optimization procedure to obtain a solution for a system of equations. The input of this functions is a function object, containing a <img class="formulaInl" alt="$ R^n \to R^m $" src="form_36.png"/> function, that maps the input variables for the system, to the vector of residual values of the system of equations.</p>
+<p>The function uses the Levenberg-Marquardt optimization algoritm to find an aproximation to a valid solution, starting from an initial guess of the solution.</p>
+<p>The optimization finishes when performing a fixed number of maximum iterations. Also, a stopping criteria is applied. The convergence is tested by comparing the last step <em>dx</em> with the absolute error <em>maxAbsErr</em> and relative error <em>maxRelErr</em> to the current position <em>x</em>. The test is true if the following condition is achieved:</p>
+<p><img class="formulaInl" alt="$ \|\partial x_i\| \leq maxAbsErr + maxRelErr \| x_i \| $" src="form_152.png"/></p>
+<p>In that case the function stops and returns the point where the function returns the minimum value.</p>
+<p>The following code is an usage example of this function. It fits an exponential model on some input measurements:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvnumericalanalysis.h&gt;</span>
+<span class="keyword">class </span>FittingErrorFunction: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;QVVector, QVVector&gt;
+        {
+        <span class="keyword">private</span>:
+        <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x, y;
+
+                <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> evaluate(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;v)
+                        {
+            <span class="comment">// Evaluate the function</span>
+            <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(y.size(), 0.0);
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; y.size(); i++)
+                result[i] = v[0] * exp (-v[1] * <span class="keywordtype">double</span>(x[i])) + v[2];
+
+            <span class="comment">// Return residuals</span>
+            <span class="keywordflow">return</span> result - y;
+            }
+
+        <span class="keyword">public</span>:
+            FittingErrorFunction(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;x, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;y): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>, <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>&gt;(), x(x), y(y) { }
+            };
+
+<span class="keyword">class </span>FittingErrorFunctionJacobian: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;QVVector, QVMatrix&gt;
+        {
+        <span class="keyword">private</span>:
+        <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x, y;
+
+                <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> evaluate(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;v)
+                        {
+            FittingErrorFunction error(x, y);
+            <span class="keywordflow">return</span> <a class="code" href="group__qvnumericalanalysis.html#gadd02b7275fd52c76e9cb406031b4392c" title="Estimates the Jacobian matrix for the function using the forward two-points rule...">qvEstimateJacobian</a>(error, v);
+            }
+
+        <span class="keyword">public</span>:
+            FittingErrorFunctionJacobian(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;x, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;y): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>&gt;(), x(x), y(y) { }
+            };
+
+<span class="keywordtype">int</span> main()
+    {
+    <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x, y;
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 40; i++)
+        {
+        x &lt;&lt; double(i);
+        y &lt;&lt; 1.0 + 5 * exp (-0.1 * <span class="keywordtype">double</span>(i));
+        }
+
+    <span class="comment">// Create initial guess, and objective functions.</span>
+    <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v(3, 0.0);
+    FittingErrorFunction function(x, y);
+    FittingErrorFunctionJacobian functionJacobian(x, y);
+
+    <a class="code" href="group__qvnumericalanalysis.html#ga035c2ca4bd03efc36129a9c618e18eee" title="Solves a non-linear system of equations.">qvGSLSolveFDF</a> (function, functionJacobian, v, <a class="code" href="group__qvnumericalanalysis.html#ggaa1d694d467425bf3cfbdf949ef0faed5a1bbb22ad7e6a45514c3e6022a2e50526" title="Scaled Levenberg-Marquardt algorithm.">LMScaledDerivative</a>, 500);
+
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Solution for the system obtained at &quot;</span> &lt;&lt; v &lt;&lt; std::endl;
+    }
+</pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd>The GSL compatibility must be enabled to use this function. </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>Function representing the residuals of the system of equations. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>functionJacobian</em>&nbsp;</td><td>Jacobian of the residual function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>Initial guess of the solution. Also, the minimum value will be stored in this variable. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gslSolverAlgorithm</em>&nbsp;</td><td>The algorithm to perform minimization. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxIterations</em>&nbsp;</td><td>Maximum number of iterations to perform optimization. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxAbsErr</em>&nbsp;</td><td>Maximal absolute error in the optimization stop condition. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxRelErr</em>&nbsp;</td><td>Maximal relative error in the optimization stop condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga19129c12d25402096905b2cd34529d26"></a><!-- doxytag: member="qvnumericalanalysis.h::qvGSLMinimize" ref="ga19129c12d25402096905b2cd34529d26" args="(const QVFunction&lt; double, double &gt; &amp;function, double &amp;x, double &amp;lower, double &amp;upper, const GSLMinFMinimizer gslMinimizerAlgorithm=BrentMinimization, const int maxIterations=100, const double absoluteError=1e&#45;3, const double relativeError=0.0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qvGSLMinimize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; double, double &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>upper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a>&nbsp;</td>
+          <td class="paramname"> <em>gslMinimizerAlgorithm</em> = <code>BrentMinimization</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxIterations</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>absoluteError</em> = <code>1e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>relativeError</em> = <code>0.0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Wrapper to GSL function minimization. </p>
+<p>This function uses the GSL to obtain the minimum of a function, provided in a <a class="el" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a> object. An example code usage follows:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvnumericalanalysis.h&gt;</span>
+
+<span class="comment">// Creation of a sinoidal function class type</span>
+<span class="keyword">class </span>SinoidalFunction: <span class="keyword">public</span> <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;double, double&gt;
+    {
+    <span class="keyword">private</span>:
+        <span class="keywordtype">double</span> evaluate(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;x)<span class="keyword"> const</span>
+<span class="keyword">            </span>{
+            <span class="keywordflow">return</span> cos(x) + 1.0;
+            }
+
+    <span class="keyword">public</span>:
+        SinoidalFunction(): <a class="code" href="classQVFunction.html" title="Base class for function objects.">QVFunction</a>&lt;double, double&gt;() { };
+    };
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+    {
+    <span class="keyword">const</span> SinoidalFunction function;
+    <span class="keywordtype">double</span> x = 2.0, lower = 0.0, upper = 6.0;
+
+    <a class="code" href="group__qvnumericalanalysis.html#ga19129c12d25402096905b2cd34529d26" title="Wrapper to GSL function minimization.">qvGSLMinimize</a>(function, x, lower, upper);
+
+    printf (<span class="stringliteral">&quot;Minimum found at %.7f\n&quot;</span>, x);
+
+    exit(0);
+    }
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>function</em>&nbsp;</td><td>Object containing the function to minimize. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>Starting value for the minimization. This variable will contain the obtained minimum when the function returns. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gslMinimizerAlgorithm</em>&nbsp;</td><td>Minimization algorithm. See enumeration <a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a> for possible values. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lower</em>&nbsp;</td><td>Minimal value for the search range. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>upper</em>&nbsp;</td><td>Maximum value for the search range. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxIterations</em>&nbsp;</td><td>Maximum number of steps to perform the minimization. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxGradientNorm</em>&nbsp;</td><td>Minimal value of the gradient size (norm 2) to stop the minimization when reached. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>absoluteError</em>&nbsp;</td><td>Corresponds to parameter <em>epsabs</em> for the <em>gsl_min_test_interval</em> function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>relativeError</em>&nbsp;</td><td>Corresponds to parameter <em>epsrel</em> for the <em>gsl_min_test_interval</em> function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>The GSL compatibility must be enabled to use this function. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the search was successful. False else. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvnumericalanalysis.html#ga0dfcc84308d4ec8b2cb2d11a59251e9c" title="Wrapper to GSL multivariate function minimization using gradient information.">qvGSLMinimizeFDF</a> </dd>
+<dd>
+<a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70" title="GSL Minimization algorithms.">GSLMinFMinimizer</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvnumericalanalysis_8cpp_source.html#l00302">302</a> of file <a class="el" href="qvnumericalanalysis_8cpp_source.html">qvnumericalanalysis.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

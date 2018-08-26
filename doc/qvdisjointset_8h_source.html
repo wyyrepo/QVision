@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvdisjointset.h</h1><a href="qvdisjointset_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVDISJOINTSET_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVDISJOINTSET_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#define INDEX(Col, Row) (Row*cols + Col)</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span>
+<a name="l00128"></a><a class="code" href="classQVDisjointSet.html">00128</a> <span class="keyword">class </span><a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a>
+<a name="l00129"></a>00129     {
+<a name="l00130"></a>00130     <span class="keyword">public</span>:
+<a name="l00137"></a>00137         <a class="code" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b" title="Constructs a disjoint set.">QVDisjointSet</a>(uInt numElements);
+<a name="l00138"></a>00138 
+<a name="l00154"></a>00154         <a class="code" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b" title="Constructs a disjoint set.">QVDisjointSet</a>(uInt cols, uInt rows);
+<a name="l00155"></a>00155 
+<a name="l00169"></a>00169         <a class="code" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b" title="Constructs a disjoint set.">QVDisjointSet</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;image);
+<a name="l00170"></a>00170 
+<a name="l00172"></a>00172                 <a class="code" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b" title="Constructs a disjoint set.">QVDisjointSet</a>(<span class="keyword">const</span> <a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> &amp;other);
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174         <span class="comment">//~QVDisjointSet();</span>
+<a name="l00175"></a>00175 
+<a name="l00192"></a><a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be">00192</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(QPoint p)
+<a name="l00193"></a>00193             {
+<a name="l00194"></a>00194             Q_ASSERT_X(cols &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;Number of columns equals 0&quot;</span>);
+<a name="l00195"></a>00195             Q_ASSERT_X(rows &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;Number of rows equals 0&quot;</span>);
+<a name="l00196"></a>00196 
+<a name="l00198"></a>00198             Q_ASSERT_X(QRect(0,0,cols, rows).contains(p), <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;QPoint out of image bounds&quot;</span>);
+<a name="l00199"></a>00199             <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(INDEX(p.x(), p.y()));
+<a name="l00200"></a>00200             }
+<a name="l00201"></a>00201 
+<a name="l00220"></a><a class="code" href="classQVDisjointSet.html#aecc85e8893897ff5f1caabc0c3cf27a9">00220</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(uInt col, uInt row)
+<a name="l00221"></a>00221             {
+<a name="l00222"></a>00222             Q_ASSERT_X(cols &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;Number of columns equals 0&quot;</span>);
+<a name="l00223"></a>00223             Q_ASSERT_X(rows &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;Number of rows equals 0&quot;</span>);
+<a name="l00224"></a>00224             Q_ASSERT_X(QRect(0,0,cols, rows).contains(QPoint(col, row)),
+<a name="l00225"></a>00225                     <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;QPoint out of image bounds&quot;</span>);
+<a name="l00226"></a>00226             <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(INDEX(col, row));
+<a name="l00227"></a>00227             }
+<a name="l00228"></a>00228 
+<a name="l00234"></a><a class="code" href="classQVDisjointSet.html#aef6e9f646b8f08e1dc0c22a8afcb46e0">00234</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(uInt <a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41" title="Gets the number corresponding to the given point, in the integer set.">index</a>)
+<a name="l00235"></a>00235             {
+<a name="l00236"></a>00236             Q_ASSERT_X(index &lt; elements, <span class="stringliteral">&quot;QVDisjointSet::find&quot;</span>, <span class="stringliteral">&quot;Index exceeds number of elements&quot;</span>);
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238             <span class="keywordflow">if</span> (parent[index] == index)
+<a name="l00239"></a>00239                 <span class="keywordflow">return</span> index;
+<a name="l00240"></a>00240 
+<a name="l00241"></a>00241             <span class="keywordflow">if</span> (parent[parent[index]] != parent[index])
+<a name="l00242"></a>00242                 parent[index] = <a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(parent[index]);
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244             <span class="keywordflow">return</span> parent[index];
+<a name="l00245"></a>00245             }
+<a name="l00246"></a>00246 
+<a name="l00265"></a><a class="code" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e">00265</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify</a>(QPoint p1, QPoint p2)
+<a name="l00266"></a>00266             {
+<a name="l00267"></a>00267             Q_ASSERT_X(cols &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;Number of columns equals 0&quot;</span>);
+<a name="l00268"></a>00268             Q_ASSERT_X(rows &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;Number of rows equals 0&quot;</span>);
+<a name="l00269"></a>00269             Q_ASSERT_X(QRect(0,0,cols, rows).contains(p1), <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;First QPoint out of image bounds&quot;</span>);
+<a name="l00270"></a>00270             Q_ASSERT_X(QRect(0,0,cols, rows).contains(p2), <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;Second QPoint out of image bounds&quot;</span>);
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272             <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify</a>(INDEX(p1.x(),p1.y()),INDEX(p2.x(),p2.y()));
+<a name="l00273"></a>00273             }
+<a name="l00274"></a>00274 
+<a name="l00294"></a><a class="code" href="classQVDisjointSet.html#abb8eb0283fbda257f635f3920e6d232f">00294</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify</a>(uInt c1, uInt r1, uInt c2, uInt r2)
+<a name="l00295"></a>00295             {
+<a name="l00296"></a>00296             Q_ASSERT_X(cols &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;Number of columns equals 0&quot;</span>);
+<a name="l00297"></a>00297             Q_ASSERT_X(rows &gt; 0, <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;Number of rows equals 0&quot;</span>);
+<a name="l00298"></a>00298             Q_ASSERT_X(QRect(0,0,cols, rows).contains(QPoint(c1, r1)),
+<a name="l00299"></a>00299                     <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;First QPoint out of image bounds&quot;</span>);
+<a name="l00300"></a>00300             Q_ASSERT_X(QRect(0,0,cols, rows).contains(QPoint(c2, r2)),
+<a name="l00301"></a>00301                     <span class="stringliteral">&quot;QVDisjointSet::unify&quot;</span>, <span class="stringliteral">&quot;Second QPoint out of image bounds&quot;</span>);
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303             <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify</a>(INDEX(c1,r1),INDEX(c2,r2));
+<a name="l00304"></a>00304             }
+<a name="l00305"></a>00305 
+<a name="l00315"></a>00315         uInt <a class="code" href="classQVDisjointSet.html#a092d79e584f33905948f5e812fdb963e" title="Joins two subsets of points.">unify</a>(uInt index1, uInt index2);
+<a name="l00316"></a>00316 
+<a name="l00321"></a><a class="code" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84">00321</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84" title="Gets the number of elements contained in the set that includes the given element...">getSetCardinality</a>(<span class="keyword">const</span> QPoint &amp;p1) { <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84" title="Gets the number of elements contained in the set that includes the given element...">getSetCardinality</a>(INDEX(p1.x(), p1.y())); }
+<a name="l00322"></a>00322 
+<a name="l00328"></a><a class="code" href="classQVDisjointSet.html#a1351654178fe3c4053c0476db3c9be67">00328</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a1351654178fe3c4053c0476db3c9be67" title="Gets the number of elements contained in the set that uncles the given element.">getSetCardinality</a>(uInt col, uInt row)       { <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#a1351654178fe3c4053c0476db3c9be67" title="Gets the number of elements contained in the set that uncles the given element.">getSetCardinality</a>(INDEX(col, row)); }
+<a name="l00329"></a>00329 
+<a name="l00334"></a><a class="code" href="classQVDisjointSet.html#a4b41d194508953d51987a6f5a9f2bcc5">00334</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a59327bbf6e60cbb00d23af810192ad84" title="Gets the number of elements contained in the set that includes the given element...">getSetCardinality</a>(uInt <a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41" title="Gets the number corresponding to the given point, in the integer set.">index</a>)
+<a name="l00335"></a>00335             {
+<a name="l00336"></a>00336             Q_ASSERT(count[<a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(index)] &gt; 0);
+<a name="l00337"></a>00337             <span class="keywordflow">return</span> count[<a class="code" href="classQVDisjointSet.html#adb359c333540ac1d8a7e820f799c63be" title="Overloaded version of find, for partitions over the set of points contained in an...">find</a>(index)];
+<a name="l00338"></a>00338             }
+<a name="l00339"></a>00339 
+<a name="l00343"></a><a class="code" href="classQVDisjointSet.html#a51e16b7f3b5df034c3231ca92242c4c3">00343</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a51e16b7f3b5df034c3231ca92242c4c3" title="Gets the number of different subgroups contained in the disjoint set.">numberOfSets</a>()<span class="keyword"> const        </span>{ <span class="keywordflow">return</span> sets; }
+<a name="l00344"></a>00344 
+<a name="l00349"></a><a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41">00349</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41" title="Gets the number corresponding to the given point, in the integer set.">index</a>(QPoint p)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> INDEX(p.x(), p.y()); }
+<a name="l00350"></a>00350 
+<a name="l00356"></a><a class="code" href="classQVDisjointSet.html#a208c4013bbd70ec527d3b7a7f1790467">00356</a>         <span class="keyword">inline</span> uInt <a class="code" href="classQVDisjointSet.html#a208c4013bbd70ec527d3b7a7f1790467" title="Gets the number corresponding to the given point, in the integer set.">index</a>(uInt col, uInt row)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> INDEX(col, row); }
+<a name="l00357"></a>00357 
+<a name="l00364"></a><a class="code" href="classQVDisjointSet.html#a688371533eece0d10111053c6f05076f">00364</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classQVDisjointSet.html#a688371533eece0d10111053c6f05076f" title="Checks if a given element is the root of its set.">isRootElement</a>(uInt col, uInt row)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVDisjointSet.html#a688371533eece0d10111053c6f05076f" title="Checks if a given element is the root of its set.">isRootElement</a>(INDEX(col, row)); }
+<a name="l00365"></a>00365 
+<a name="l00376"></a><a class="code" href="classQVDisjointSet.html#abbaef0cb2a1ad2d6fd217e294b6090f1">00376</a>         <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classQVDisjointSet.html#abbaef0cb2a1ad2d6fd217e294b6090f1" title="Checks if a given element is the root of its set.">isRootElement</a>(uInt <a class="code" href="classQVDisjointSet.html#a1e8ca8f33af020cce71d5d92b9bbcc41" title="Gets the number corresponding to the given point, in the integer set.">index</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> parent[index] == index; }
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378     <span class="keyword">private</span>:
+<a name="l00379"></a>00379         uInt cols, rows, elements, sets;
+<a name="l00380"></a>00380                 QVector&lt;uInt&gt; parent, rank, count;
+<a name="l00381"></a>00381                 <span class="comment">//uInt *parent, *rank, *count;</span>
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383         <span class="keywordtype">void</span> makeSet();
+<a name="l00384"></a>00384         <span class="comment">//void allocData();</span>
+<a name="l00385"></a>00385         <span class="comment">//void freeData();</span>
+<a name="l00386"></a>00386     };
+<a name="l00387"></a>00387 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

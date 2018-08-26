@@ -1,0 +1,604 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li class="current"><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="functions.html"><span>All</span></a></li>
+      <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="functions.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_0x62.html#index_b"><span>b</span></a></li>
+      <li><a href="functions_0x63.html#index_c"><span>c</span></a></li>
+      <li><a href="functions_0x64.html#index_d"><span>d</span></a></li>
+      <li><a href="functions_0x65.html#index_e"><span>e</span></a></li>
+      <li><a href="functions_0x66.html#index_f"><span>f</span></a></li>
+      <li><a href="functions_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="functions_0x68.html#index_h"><span>h</span></a></li>
+      <li><a href="functions_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_0x6a.html#index_j"><span>j</span></a></li>
+      <li><a href="functions_0x6b.html#index_k"><span>k</span></a></li>
+      <li><a href="functions_0x6c.html#index_l"><span>l</span></a></li>
+      <li><a href="functions_0x6d.html#index_m"><span>m</span></a></li>
+      <li><a href="functions_0x6e.html#index_n"><span>n</span></a></li>
+      <li><a href="functions_0x6f.html#index_o"><span>o</span></a></li>
+      <li><a href="functions_0x70.html#index_p"><span>p</span></a></li>
+      <li class="current"><a href="functions_0x71.html#index_q"><span>q</span></a></li>
+      <li><a href="functions_0x72.html#index_r"><span>r</span></a></li>
+      <li><a href="functions_0x73.html#index_s"><span>s</span></a></li>
+      <li><a href="functions_0x74.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="functions_0x78.html#index_x"><span>x</span></a></li>
+      <li><a href="functions_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_0x7a.html#index_z"><span>z</span></a></li>
+      <li><a href="functions_0x7e.html#index_~"><span>~</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+Here is a list of all documented class members with links to the class documentation for each member:
+
+<h3><a class="anchor" id="index_q">- q -</a></h3><ul>
+<li>quaternionProduct()
+: <a class="el" href="classQVQuaternion.html#ad6537490c23f56408af1db33b3f20d93">QVQuaternion</a>
+</li>
+<li>quit()
+: <a class="el" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50">QVApplication</a>
+</li>
+<li>quitItems()
+: <a class="el" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6">QVApplication</a>
+</li>
+<li>QV2DMap()
+: <a class="el" href="classQV2DMap.html#ab5eb8ccd6a25a52245439811d0a72fae">QV2DMap</a>
+</li>
+<li>QV3DPointF()
+: <a class="el" href="classQV3DPointF.html#ad7d033bc066de0c029a60ac24347c878">QV3DPointF</a>
+</li>
+<li>QVAbs_sFloatC1Block()
+: <a class="el" href="classQVAbs__sFloatC1Block.html#aa7ff2ea8eaf7a127cfa2670ee1cf474f">QVAbs_sFloatC1Block</a>
+</li>
+<li>QVAbs_sShortC1Block()
+: <a class="el" href="classQVAbs__sShortC1Block.html#ab7ccd753e9663dabccb16ec6b3aefdd7">QVAbs_sShortC1Block</a>
+</li>
+<li>QVAbsDiff_sFloatC1Block()
+: <a class="el" href="classQVAbsDiff__sFloatC1Block.html#ace43c1c2d36a51a99f6f52daf5567635">QVAbsDiff_sFloatC1Block</a>
+</li>
+<li>QVAbsDiff_uCharC1Block()
+: <a class="el" href="classQVAbsDiff__uCharC1Block.html#ada6bb4bcf9e953da40502f873f9f155b">QVAbsDiff_uCharC1Block</a>
+</li>
+<li>QVAdd_sFloatC1Block()
+: <a class="el" href="classQVAdd__sFloatC1Block.html#acea85efcdfaceb5aa215f9b7cf56b788">QVAdd_sFloatC1Block</a>
+</li>
+<li>QVAdd_sFloatC3Block()
+: <a class="el" href="classQVAdd__sFloatC3Block.html#ada6fd1fc97c0e37ed0b39e0b30a25ae6">QVAdd_sFloatC3Block</a>
+</li>
+<li>QVAdd_uCharC1Block()
+: <a class="el" href="classQVAdd__uCharC1Block.html#a4df175584e42c13e1fc1d55e7cc542f8">QVAdd_uCharC1Block</a>
+</li>
+<li>QVAdd_uCharC3Block()
+: <a class="el" href="classQVAdd__uCharC3Block.html#ad3793f7acb5bf6005321e3a60790bafa">QVAdd_uCharC3Block</a>
+</li>
+<li>QVAddC_sFloatC1Block()
+: <a class="el" href="classQVAddC__sFloatC1Block.html#abcbb71fb756e5af0d6c1ca6041e85d5a">QVAddC_sFloatC1Block</a>
+</li>
+<li>QVAddC_uCharC1Block()
+: <a class="el" href="classQVAddC__uCharC1Block.html#aa97216f55423a65e717ecd6f618ae69a">QVAddC_uCharC1Block</a>
+</li>
+<li>QVAnd_sIntC1Block()
+: <a class="el" href="classQVAnd__sIntC1Block.html#a44261df2933e670b11109931bddcef47">QVAnd_sIntC1Block</a>
+</li>
+<li>QVAnd_sIntC3Block()
+: <a class="el" href="classQVAnd__sIntC3Block.html#a107f7242fa878461da162ad2ba40f3ef">QVAnd_sIntC3Block</a>
+</li>
+<li>QVAnd_uCharC1Block()
+: <a class="el" href="classQVAnd__uCharC1Block.html#af0b3d97e0f780085a735c78108842b77">QVAnd_uCharC1Block</a>
+</li>
+<li>QVAnd_uCharC3Block()
+: <a class="el" href="classQVAnd__uCharC3Block.html#adfb8175173088334c74dd76beb6cc960">QVAnd_uCharC3Block</a>
+</li>
+<li>QVAnd_uShortC1Block()
+: <a class="el" href="classQVAnd__uShortC1Block.html#a3d679713a300b1906b72c7847f8f0343">QVAnd_uShortC1Block</a>
+</li>
+<li>QVAnd_uShortC3Block()
+: <a class="el" href="classQVAnd__uShortC3Block.html#ab2f38b7645bc04cea58f252badfbd084">QVAnd_uShortC3Block</a>
+</li>
+<li>QVAndC_uCharC1Block()
+: <a class="el" href="classQVAndC__uCharC1Block.html#a42fcf3c7cfd0555e43ee568a28a0d121">QVAndC_uCharC1Block</a>
+</li>
+<li>QVApplication()
+: <a class="el" href="classQVApplication.html#a5e44b11b3ac56a53fcef81bcf6b96d13">QVApplication</a>
+</li>
+<li>QVBaseReader()
+: <a class="el" href="classQVBaseReader.html#a23a3327d489d81c6d7954f108bb40d53">QVBaseReader</a>
+</li>
+<li>QVBRIEFDetector()
+: <a class="el" href="classQVBRIEFDetector.html#a919f31539fe65e0a476a5fe6a0ed2fb9">QVBRIEFDetector</a>
+</li>
+<li>QVCameraPose()
+: <a class="el" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11">QVCameraPose</a>
+</li>
+<li>QVCombinationIterator()
+: <a class="el" href="classQVCombinationIterator.html#a6e11a666b1c9ffcb06a6cc2a74b4f0ba">QVCombinationIterator</a>
+</li>
+<li>QVCompare_sFloatC1Block()
+: <a class="el" href="classQVCompare__sFloatC1Block.html#aba926f3c3311a2e67f38a9a7504794d4">QVCompare_sFloatC1Block</a>
+</li>
+<li>QVCompare_uCharC1Block()
+: <a class="el" href="classQVCompare__uCharC1Block.html#af3761370062de6bdbb4dd749e92ad6e5">QVCompare_uCharC1Block</a>
+</li>
+<li>QVCompareC_sFloatC1Block()
+: <a class="el" href="classQVCompareC__sFloatC1Block.html#aef3fc50a4cc7da7a1805891270bfabc7">QVCompareC_sFloatC1Block</a>
+</li>
+<li>QVCompareC_uCharC1Block()
+: <a class="el" href="classQVCompareC__uCharC1Block.html#ac75179e0b812b01f8a135688a55c7caa">QVCompareC_uCharC1Block</a>
+</li>
+<li>QVComplex()
+: <a class="el" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78">QVComplex</a>
+</li>
+<li>QVComponentTree()
+: <a class="el" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">QVComponentTree</a>
+</li>
+<li>QVComputeThreshold_Otsu_uCharC1Block()
+: <a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html#a26ec90f787ad59cb33840980300861dd">QVComputeThreshold_Otsu_uCharC1Block</a>
+</li>
+<li>QVConvert_sFloatuCharC1Block()
+: <a class="el" href="classQVConvert__sFloatuCharC1Block.html#a56d7a08f3561f6443ce6ad0228fc7d8e">QVConvert_sFloatuCharC1Block</a>
+</li>
+<li>QVConvert_sFloatuCharC3Block()
+: <a class="el" href="classQVConvert__sFloatuCharC3Block.html#a3ccaf9ea7b05bed61a23610baf91eb3f">QVConvert_sFloatuCharC3Block</a>
+</li>
+<li>QVConvert_uCharsFloatC1Block()
+: <a class="el" href="classQVConvert__uCharsFloatC1Block.html#aec2dfd6d1fce559ed36d80b0dd1490ab">QVConvert_uCharsFloatC1Block</a>
+</li>
+<li>QVConvert_uCharsFloatC3Block()
+: <a class="el" href="classQVConvert__uCharsFloatC3Block.html#ada29a364c5b5fb0d0168f0e6a362dbdc">QVConvert_uCharsFloatC3Block</a>
+</li>
+<li>QVCUDAImage()
+: <a class="el" href="classQVCUDAImage.html#a5df4a46ef6067e31e061ba2d42c8da4a">QVCUDAImage&lt; Type, Channels &gt;</a>
+</li>
+<li>QVDefaultGUI()
+: <a class="el" href="classQVDefaultGUI.html#a571b5d5e73ef8f174cbf9e9407ea7561">QVDefaultGUI</a>
+</li>
+<li>QVDesignerGUI()
+: <a class="el" href="classQVDesignerGUI.html#aa34bfa007333098027262b5cfac89f71">QVDesignerGUI</a>
+</li>
+<li>QVDirectedGraph()
+: <a class="el" href="classQVDirectedGraph.html#a4fba1639845e007caed01a403dfea1ba">QVDirectedGraph&lt; Element &gt;</a>
+</li>
+<li>QVDisjointSet()
+: <a class="el" href="classQVDisjointSet.html#aa5ca745800720b7234d2455e72a3301b">QVDisjointSet</a>
+</li>
+<li>QVDiv_sFloatC1Block()
+: <a class="el" href="classQVDiv__sFloatC1Block.html#a8018040af42c86e7f2cf31abbe3a1a65">QVDiv_sFloatC1Block</a>
+</li>
+<li>QVDiv_sFloatC3Block()
+: <a class="el" href="classQVDiv__sFloatC3Block.html#a305496e35df360d96d611934cb45b6ed">QVDiv_sFloatC3Block</a>
+</li>
+<li>QVDiv_uCharC1Block()
+: <a class="el" href="classQVDiv__uCharC1Block.html#adfd3fbc291b67755612508ea02852142">QVDiv_uCharC1Block</a>
+</li>
+<li>QVDiv_uCharC3Block()
+: <a class="el" href="classQVDiv__uCharC3Block.html#a0d82a0ce04c4afe77a31fa8aace48048">QVDiv_uCharC3Block</a>
+</li>
+<li>QVDivC_sFloatC1Block()
+: <a class="el" href="classQVDivC__sFloatC1Block.html#a6789948fddbec1ba7849dbe458af4430">QVDivC_sFloatC1Block</a>
+</li>
+<li>QVDivC_uCharC1Block()
+: <a class="el" href="classQVDivC__uCharC1Block.html#a3aa4b40f3b59f6e75e262ee0bc7dcae8">QVDivC_uCharC1Block</a>
+</li>
+<li>QVEuclideanMapping3()
+: <a class="el" href="classQVEuclideanMapping3.html#a3891f71137a302d43d89dc8b3a624bde">QVEuclideanMapping3</a>
+</li>
+<li>QVFilterBox_sFloatC1Block()
+: <a class="el" href="classQVFilterBox__sFloatC1Block.html#a8c4adbf8342f504fbaf8a3192868f859">QVFilterBox_sFloatC1Block</a>
+</li>
+<li>QVFilterBox_uCharC1Block()
+: <a class="el" href="classQVFilterBox__uCharC1Block.html#ad2968f16d9776a5dc00e49324a8deffb">QVFilterBox_uCharC1Block</a>
+</li>
+<li>QVFilterBox_uCharC3Block()
+: <a class="el" href="classQVFilterBox__uCharC3Block.html#a577efe21e540eb6602f9e2963e68e525">QVFilterBox_uCharC3Block</a>
+</li>
+<li>QVFilterGauss_sFloatC1Block()
+: <a class="el" href="classQVFilterGauss__sFloatC1Block.html#a84c686e78a6fcfa736c523313a317eb8">QVFilterGauss_sFloatC1Block</a>
+</li>
+<li>QVFilterGauss_sFloatC3Block()
+: <a class="el" href="classQVFilterGauss__sFloatC3Block.html#a57b8db44004556a4dad649ea7f697de6">QVFilterGauss_sFloatC3Block</a>
+</li>
+<li>QVFilterGauss_uCharC1Block()
+: <a class="el" href="classQVFilterGauss__uCharC1Block.html#a158e23bbc6c0d9055ed8158a0e42e6be">QVFilterGauss_uCharC1Block</a>
+</li>
+<li>QVFilterGauss_uCharC3Block()
+: <a class="el" href="classQVFilterGauss__uCharC3Block.html#aaea82a2040c4b2ece17592d5d4101d6d">QVFilterGauss_uCharC3Block</a>
+</li>
+<li>QVFilterHipass_sFloatC1Block()
+: <a class="el" href="classQVFilterHipass__sFloatC1Block.html#ad56ff7ee6a9bd8e4e348c52cfff98057">QVFilterHipass_sFloatC1Block</a>
+</li>
+<li>QVFilterHipass_sFloatC3Block()
+: <a class="el" href="classQVFilterHipass__sFloatC3Block.html#a54e16f1d267529d30e6ec9cc54910610">QVFilterHipass_sFloatC3Block</a>
+</li>
+<li>QVFilterHipass_uCharC1Block()
+: <a class="el" href="classQVFilterHipass__uCharC1Block.html#afeb8896c8f27d8d650f99709cdd79ba4">QVFilterHipass_uCharC1Block</a>
+</li>
+<li>QVFilterHipass_uCharC3Block()
+: <a class="el" href="classQVFilterHipass__uCharC3Block.html#ab96ab8cc5fed21daaa37020b314d74d7">QVFilterHipass_uCharC3Block</a>
+</li>
+<li>QVFilterLaplace_sFloatC1Block()
+: <a class="el" href="classQVFilterLaplace__sFloatC1Block.html#a570020b2a5be50ac678b60c21d74f509">QVFilterLaplace_sFloatC1Block</a>
+</li>
+<li>QVFilterLaplace_uCharC1Block()
+: <a class="el" href="classQVFilterLaplace__uCharC1Block.html#a21d2b6d9fd20f09f810730fbc91995f2">QVFilterLaplace_uCharC1Block</a>
+</li>
+<li>QVFilterLowpass_sFloatC1Block()
+: <a class="el" href="classQVFilterLowpass__sFloatC1Block.html#af9d2e0db0e6593b57b2c95e0bed89394">QVFilterLowpass_sFloatC1Block</a>
+</li>
+<li>QVFilterLowpass_uCharC1Block()
+: <a class="el" href="classQVFilterLowpass__uCharC1Block.html#a463f0340d071f8b9db61ee99ec64eca2">QVFilterLowpass_uCharC1Block</a>
+</li>
+<li>QVFilterMax_sFloatC1Block()
+: <a class="el" href="classQVFilterMax__sFloatC1Block.html#adfb1739f84d29faf796209da099a8abe">QVFilterMax_sFloatC1Block</a>
+</li>
+<li>QVFilterMax_uCharC1Block()
+: <a class="el" href="classQVFilterMax__uCharC1Block.html#aa8da0cec63cca331bd074236abc69315">QVFilterMax_uCharC1Block</a>
+</li>
+<li>QVFilterMax_uCharC3Block()
+: <a class="el" href="classQVFilterMax__uCharC3Block.html#a42f0cc0fdad7f4a387a1e463aa98ddcd">QVFilterMax_uCharC3Block</a>
+</li>
+<li>QVFilterMedian_uCharC1Block()
+: <a class="el" href="classQVFilterMedian__uCharC1Block.html#abbb87bdaf67f75b50ce7e16d1137551d">QVFilterMedian_uCharC1Block</a>
+</li>
+<li>QVFilterMedian_uCharC3Block()
+: <a class="el" href="classQVFilterMedian__uCharC3Block.html#a84653631b5cc5db3b14624be447b2732">QVFilterMedian_uCharC3Block</a>
+</li>
+<li>QVFilterMedianHoriz_uCharC1Block()
+: <a class="el" href="classQVFilterMedianHoriz__uCharC1Block.html#aeec2ddcf1ac85169fc3cd9cbc538581c">QVFilterMedianHoriz_uCharC1Block</a>
+</li>
+<li>QVFilterMin_sFloatC1Block()
+: <a class="el" href="classQVFilterMin__sFloatC1Block.html#afb4ee7d3c887b0a552118df67264703b">QVFilterMin_sFloatC1Block</a>
+</li>
+<li>QVFilterMin_uCharC1Block()
+: <a class="el" href="classQVFilterMin__uCharC1Block.html#a5b40efb0be7cc11d9288401a24f379a9">QVFilterMin_uCharC1Block</a>
+</li>
+<li>QVFilterMin_uCharC3Block()
+: <a class="el" href="classQVFilterMin__uCharC3Block.html#a86dcdb02f1fa8a37e91fbc68701e61e7">QVFilterMin_uCharC3Block</a>
+</li>
+<li>QVFilterSobelHorizMask_sFloatC1Block()
+: <a class="el" href="classQVFilterSobelHorizMask__sFloatC1Block.html#a35c67c456a9f27aeed7ed8870389990e">QVFilterSobelHorizMask_sFloatC1Block</a>
+</li>
+<li>QVFilterSobelVertMask_sFloatC1Block()
+: <a class="el" href="classQVFilterSobelVertMask__sFloatC1Block.html#a12777a668324c98219eb18e179dcb401">QVFilterSobelVertMask_sFloatC1Block</a>
+</li>
+<li>QVFunctionPlot()
+: <a class="el" href="classQVFunctionPlot.html#aa8ba7ec0e6cd3d38dfe0285724370103">QVFunctionPlot</a>
+</li>
+<li>QVGenericImage()
+: <a class="el" href="classQVGenericImage.html#ab7f12de40f9f2eb3604ca4965c32408e">QVGenericImage</a>
+</li>
+<li>QVGUI()
+: <a class="el" href="classQVGUI.html#a12db299f1c86e5f5cbc6a7dc523cccad">QVGUI</a>
+</li>
+<li>QVHistogramPlot()
+: <a class="el" href="classQVHistogramPlot.html#aa8867e4f56ea321b8ff57a1200fe0866">QVHistogramPlot</a>
+</li>
+<li>QVImage()
+: <a class="el" href="classQVImage.html#a87e4a3ea6bc2db99d0fe170ac8b21b1f">QVImage&lt; Type, Channels &gt;</a>
+</li>
+<li>QVImageCanvas()
+: <a class="el" href="classQVImageCanvas.html#ac08d9d360747bbc0ccf2db3664813217">QVImageCanvas</a>
+</li>
+<li>QVIndexedStringList()
+: <a class="el" href="classQVIndexedStringList.html#afd285301048be2225ef77c42c46a4470">QVIndexedStringList</a>
+</li>
+<li>QVJacobian()
+: <a class="el" href="classQVJacobian.html#a80a18a6461a81210db021fe51e3a3efc">QVJacobian</a>
+</li>
+<li>QVKeypoint()
+: <a class="el" href="classQVKeypoint.html#a148b5e81b32cafe6406c40034b0f47e8">QVKeypoint</a>
+</li>
+<li>QVKLTFeatureTracking()
+: <a class="el" href="classQVKLTFeatureTracking.html#ae822060d0c32bd4b9fa2ced7ebac8e14">QVKLTFeatureTracking</a>
+</li>
+<li>QVKLTTracker()
+: <a class="el" href="classQVKLTTracker.html#af77f1ffb76ad088fac619b304e93bfdc">QVKLTTracker</a>
+</li>
+<li>QVLn_sFloatC1Block()
+: <a class="el" href="classQVLn__sFloatC1Block.html#a8a95350a561890205b76765633d047fd">QVLn_sFloatC1Block</a>
+</li>
+<li>QVLn_sFloatC3Block()
+: <a class="el" href="classQVLn__sFloatC3Block.html#a91bcad33bbbc806db991be1e4e39b578">QVLn_sFloatC3Block</a>
+</li>
+<li>QVLShiftC_uCharC1Block()
+: <a class="el" href="classQVLShiftC__uCharC1Block.html#a819f283672348c6e05ec6db128693a18">QVLShiftC_uCharC1Block</a>
+</li>
+<li>QVMatrix()
+: <a class="el" href="classQVMatrix.html#abc05373f1061e5bcc5a2b14c4935b87f">QVMatrix</a>
+</li>
+<li>QVMax_sFloatC1Block()
+: <a class="el" href="classQVMax__sFloatC1Block.html#ab9cb451448c1810ec3d6bfe275a7e395">QVMax_sFloatC1Block</a>
+</li>
+<li>QVMax_uCharC1Block()
+: <a class="el" href="classQVMax__uCharC1Block.html#a43993c792d4cdb62b0c93ea72d83b88f">QVMax_uCharC1Block</a>
+</li>
+<li>QVMean_uCharC1Block()
+: <a class="el" href="classQVMean__uCharC1Block.html#aacdc111d59ed9e245aee123b31a74e88">QVMean_uCharC1Block</a>
+</li>
+<li>QVMin_sFloatC1Block()
+: <a class="el" href="classQVMin__sFloatC1Block.html#a631799c3225399c975b8e14694bd1c6e">QVMin_sFloatC1Block</a>
+</li>
+<li>QVMin_uCharC1Block()
+: <a class="el" href="classQVMin__uCharC1Block.html#acf65e0dbbeb78c4d7e019fd8d7ff37dd">QVMin_uCharC1Block</a>
+</li>
+<li>QVMul_sFloatC1Block()
+: <a class="el" href="classQVMul__sFloatC1Block.html#a51a9a93953855bd3480bbfc8d05b80ce">QVMul_sFloatC1Block</a>
+</li>
+<li>QVMul_sFloatC3Block()
+: <a class="el" href="classQVMul__sFloatC3Block.html#a1c72d185de514b22d3b42bca32b419e6">QVMul_sFloatC3Block</a>
+</li>
+<li>QVMul_uCharC1Block()
+: <a class="el" href="classQVMul__uCharC1Block.html#a7d58fc80293febdad91a9a9dc5b304c0">QVMul_uCharC1Block</a>
+</li>
+<li>QVMul_uCharC3Block()
+: <a class="el" href="classQVMul__uCharC3Block.html#a981ab63752705eae62b70a9eb46fa346">QVMul_uCharC3Block</a>
+</li>
+<li>QVMulC_sFloatC1Block()
+: <a class="el" href="classQVMulC__sFloatC1Block.html#ac3e8c14335e4b4cf833a8968838dd595">QVMulC_sFloatC1Block</a>
+</li>
+<li>QVMulC_uCharC1Block()
+: <a class="el" href="classQVMulC__uCharC1Block.html#a5b2537632bef52524bbcc70b8be2175d">QVMulC_uCharC1Block</a>
+</li>
+<li>QVMulScale_uCharC1Block()
+: <a class="el" href="classQVMulScale__uCharC1Block.html#a120a5928850274189fea22e7abb30fec">QVMulScale_uCharC1Block</a>
+</li>
+<li>QVMulScale_uCharC3Block()
+: <a class="el" href="classQVMulScale__uCharC3Block.html#a28e83986778c488ffeb812373af77de2">QVMulScale_uCharC3Block</a>
+</li>
+<li>QVNot_uCharC1Block()
+: <a class="el" href="classQVNot__uCharC1Block.html#a51a8524676d7aa69a433f5b37fb4ca26">QVNot_uCharC1Block</a>
+</li>
+<li>QVNot_uCharC3Block()
+: <a class="el" href="classQVNot__uCharC3Block.html#aa3f766bcc91dcb8b1887f8c3c2a1b9c4">QVNot_uCharC3Block</a>
+</li>
+<li>QVOr_sIntC1Block()
+: <a class="el" href="classQVOr__sIntC1Block.html#a349dfa143cbbbf5611af2f80293372f4">QVOr_sIntC1Block</a>
+</li>
+<li>QVOr_sIntC3Block()
+: <a class="el" href="classQVOr__sIntC3Block.html#a9b719ce5dfd52c3e74357995edb48728">QVOr_sIntC3Block</a>
+</li>
+<li>QVOr_uCharC1Block()
+: <a class="el" href="classQVOr__uCharC1Block.html#acdb83e8b799b802b118270a75cab4351">QVOr_uCharC1Block</a>
+</li>
+<li>QVOr_uCharC3Block()
+: <a class="el" href="classQVOr__uCharC3Block.html#af0e680f095a6eccc1995f2f695b5a0e9">QVOr_uCharC3Block</a>
+</li>
+<li>QVOr_uShortC1Block()
+: <a class="el" href="classQVOr__uShortC1Block.html#aae2b4b7e329389793e4c0801e9715236">QVOr_uShortC1Block</a>
+</li>
+<li>QVOr_uShortC3Block()
+: <a class="el" href="classQVOr__uShortC3Block.html#a3ce1b4b328e545381441dca8fa1d41f4">QVOr_uShortC3Block</a>
+</li>
+<li>QVOrC_uCharC1Block()
+: <a class="el" href="classQVOrC__uCharC1Block.html#a5b2bdb927b604a27e629634c649e1f2f">QVOrC_uCharC1Block</a>
+</li>
+<li>QVPermutation()
+: <a class="el" href="classQVPermutation.html#a218af07edade4214f789f5259c35a6f1">QVPermutation</a>
+</li>
+<li>QVProcessingBlock()
+: <a class="el" href="classQVProcessingBlock.html#a68ff2767d04f952f5654514145bb32d8">QVProcessingBlock</a>
+</li>
+<li>QVPropertyContainer()
+: <a class="el" href="classQVPropertyContainer.html#af7b6ad165bd7d4ce2fa489a0dad182a7">QVPropertyContainer</a>
+</li>
+<li>QVPROSAC()
+: <a class="el" href="classQVPROSAC.html#af6a74baf34bd19fce071f43235b945e6">QVPROSAC&lt; Element, Model &gt;</a>
+</li>
+<li>QVQuaternion()
+: <a class="el" href="classQVQuaternion.html#a34ab38090cece0117f5b85c403ff4b95">QVQuaternion</a>
+</li>
+<li>QVRANSAC()
+: <a class="el" href="classQVRANSAC.html#a50f5de1745380c4225a454d1ca923305">QVRANSAC&lt; Element, Model &gt;</a>
+</li>
+<li>QVRGBToGray_sFloatC3C1Block()
+: <a class="el" href="classQVRGBToGray__sFloatC3C1Block.html#a3329609077f4f77f99afdd9bc8e18cd0">QVRGBToGray_sFloatC3C1Block</a>
+</li>
+<li>QVRGBToGray_uCharC3C1Block()
+: <a class="el" href="classQVRGBToGray__uCharC3C1Block.html#a7fcc082f439f61bf246de41d62224c9c">QVRGBToGray_uCharC3C1Block</a>
+</li>
+<li>QVRShiftC_uCharC1Block()
+: <a class="el" href="classQVRShiftC__uCharC1Block.html#a03edee6467c22c6482e40804a74b4824">QVRShiftC_uCharC1Block</a>
+</li>
+<li>QVSiftFeature()
+: <a class="el" href="classQVSiftFeature.html#a5f1dc4d07785597da2b83e8735142d30">QVSiftFeature</a>
+</li>
+<li>QVSparseBlockMatrix()
+: <a class="el" href="classQVSparseBlockMatrix.html#ab9081555cc33e341accab96fb4bb9d70">QVSparseBlockMatrix</a>
+</li>
+<li>QVSqr_sFloatC1Block()
+: <a class="el" href="classQVSqr__sFloatC1Block.html#a65d0671528da5691ffc04a8e103db4e9">QVSqr_sFloatC1Block</a>
+</li>
+<li>QVSub_sFloatC1Block()
+: <a class="el" href="classQVSub__sFloatC1Block.html#a731933e280dc9eeb8dd82888f1ee5917">QVSub_sFloatC1Block</a>
+</li>
+<li>QVSub_sFloatC3Block()
+: <a class="el" href="classQVSub__sFloatC3Block.html#a31df3bae4a569cd3bdd674e72572d2cf">QVSub_sFloatC3Block</a>
+</li>
+<li>QVSub_uCharC1Block()
+: <a class="el" href="classQVSub__uCharC1Block.html#a3218d31b07b24341b4ba45b46c996eee">QVSub_uCharC1Block</a>
+</li>
+<li>QVSub_uCharC3Block()
+: <a class="el" href="classQVSub__uCharC3Block.html#a03e67c396dc52146f9957fbc4b6d0ba6">QVSub_uCharC3Block</a>
+</li>
+<li>QVSubC_sFloatC1Block()
+: <a class="el" href="classQVSubC__sFloatC1Block.html#a7d505440b4df2637c9f34446ba9b4608">QVSubC_sFloatC1Block</a>
+</li>
+<li>QVSubC_uCharC1Block()
+: <a class="el" href="classQVSubC__uCharC1Block.html#ab1a8a8e684cd9e8f8f706cf69be5e5d6">QVSubC_uCharC1Block</a>
+</li>
+<li>QVSum_uCharC1Block()
+: <a class="el" href="classQVSum__uCharC1Block.html#a1d9b10c632f277dfeb50501f49e1e323">QVSum_uCharC1Block</a>
+</li>
+<li>QVTensor()
+: <a class="el" href="classQVTensor.html#ab571f6752903ec1dea3c6d02be465e8b">QVTensor</a>
+</li>
+<li>QVTensorIndex()
+: <a class="el" href="classQVTensorIndex.html#a9c5c35da6befcd58f25c5baea2df151d">QVTensorIndex</a>
+</li>
+<li>QVThreshold_sFloatC1Block()
+: <a class="el" href="classQVThreshold__sFloatC1Block.html#adce53f854d84407b6766ccd41c4bdbbf">QVThreshold_sFloatC1Block</a>
+</li>
+<li>QVThreshold_uCharC1Block()
+: <a class="el" href="classQVThreshold__uCharC1Block.html#aaee623518624010e920b829d2a43a16d">QVThreshold_uCharC1Block</a>
+</li>
+<li>QVTrackingManager()
+: <a class="el" href="classQVTrackingManager.html#a46d277759f98350538c1dc826ae08f3a">QVTrackingManager</a>
+</li>
+<li>QVUKF()
+: <a class="el" href="classQVUKF.html#a03c50b23aa537c66bdf42c98f54611df">QVUKF</a>
+</li>
+<li>QVVector()
+: <a class="el" href="classQVVector.html#ad5f4b0a665b20f1589cb7717bd2bb907">QVVector</a>
+</li>
+<li>QVVectorMap()
+: <a class="el" href="classQVVectorMap.html#acf02b25b01f231f2c0d7d9952cbe586f">QVVectorMap</a>
+</li>
+<li>QVVideoReader()
+: <a class="el" href="classQVVideoReader.html#aa00f0803b14d9e6a9751f877d27eec83">QVVideoReader</a>
+</li>
+<li>QVVideoReaderBlock()
+: <a class="el" href="classQVVideoReaderBlock.html#a62f11462d833180a28b76150299b651e">QVVideoReaderBlock</a>
+</li>
+<li>QVXor_sIntC1Block()
+: <a class="el" href="classQVXor__sIntC1Block.html#af464ef0930d4bee0f141f783239a612c">QVXor_sIntC1Block</a>
+</li>
+<li>QVXor_sIntC3Block()
+: <a class="el" href="classQVXor__sIntC3Block.html#aba0b53aacd9a3ceaf4ca6049befd82f2">QVXor_sIntC3Block</a>
+</li>
+<li>QVXor_uCharC1Block()
+: <a class="el" href="classQVXor__uCharC1Block.html#a7993239906f7aef9af89d8a2c8fcbb0d">QVXor_uCharC1Block</a>
+</li>
+<li>QVXor_uCharC3Block()
+: <a class="el" href="classQVXor__uCharC3Block.html#a9117062d0aab6539e103674421fc1ad6">QVXor_uCharC3Block</a>
+</li>
+<li>QVXor_uShortC1Block()
+: <a class="el" href="classQVXor__uShortC1Block.html#a7eb21818b1311d2842dea2340ca03ab6">QVXor_uShortC1Block</a>
+</li>
+<li>QVXor_uShortC3Block()
+: <a class="el" href="classQVXor__uShortC3Block.html#a4e31fdb34b5168565a7df8ec03192f14">QVXor_uShortC3Block</a>
+</li>
+<li>QVXorC_uCharC1Block()
+: <a class="el" href="classQVXorC__uCharC1Block.html#a4cf26312e8489badbe77edb9003237ce">QVXorC_uCharC1Block</a>
+</li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

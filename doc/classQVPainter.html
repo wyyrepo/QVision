@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVPainter Class Reference</h1><!-- doxytag: class="QVPainter" -->
+<p>Inherits from QPainter to allow versatile drawing on a <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> object.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvcanvas_8h_source.html">QVPainter</a>&gt;</code></p>
+
+<p><a href="classQVPainter-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#ac3a7669110b0fa478eb28b19ad1f5014">drawQVImage</a> (<a class="el" href="classQVGenericImage.html">QVGenericImage</a> *image, bool adaptsize=TRUE, float low=0.0, float high=255.0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a <a class="el" href="classQVImage.html">QVImage</a>&lt;T,n&gt; of any type <em>T</em> and size <em>n</em> in the corresponding <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>.  <a href="#ac3a7669110b0fa478eb28b19ad1f5014"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#af213d51b59f8ed1254adb8f2df8f4f98">drawTextUnscaled</a> (const QPointF &amp;position, const QString &amp;text)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a given pixel position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming.  <a href="#af213d51b59f8ed1254adb8f2df8f4f98"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#a80c883678ef165e3ab1bd4277b16a708">drawTextUnscaled</a> (const QPoint &amp;position, const QString &amp;text)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a given pixel position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming.  <a href="#a80c883678ef165e3ab1bd4277b16a708"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#a47388fef21cdf479232f806250421aad">drawTextUnscaled</a> (const QRectF &amp;rectangle, int flags, const QString &amp;text, QRectF *boundingRect=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a given rectangle of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming.  <a href="#a47388fef21cdf479232f806250421aad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#a3973f25acbc04f1d8c44584726ce2750">drawTextUnscaled</a> (const QRect &amp;rectangle, int flags, const QString &amp;text, QRect *boundingRect=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a given rectangle of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming.  <a href="#a3973f25acbc04f1d8c44584726ce2750"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#a1c5a3b3c4733c928d5ced4ad12715082">drawTextUnscaled</a> (int x, int y, const QString &amp;text)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a given position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming.  <a href="#a1c5a3b3c4733c928d5ced4ad12715082"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#a3342fcc0c7e9383e019386aedb268c80">drawTextUnscaled</a> (int x, int y, int width, int height, int flags, const QString &amp;text, QRect *boundingRect=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a given position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming.  <a href="#a3342fcc0c7e9383e019386aedb268c80"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPainter.html#ad8052d85738f12c62c6b26fcc924aac3">drawTextUnscaled</a> (const QRectF &amp;rectangle, const QString &amp;text, const QTextOption &amp;option=QTextOption())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws text in a <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming, using the specified option to control its positioning and orientation.  <a href="#ad8052d85738f12c62c6b26fcc924aac3"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Inherits from QPainter to allow versatile drawing on a <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> object. </p>
+<p>Nobody except internally the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> class should create or destroy QVPainters, so you do not need to construct this kind of objects. You will only need to use them through the <a class="el" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">QVImageCanvas::getQVPainter()</a> method when subclassing <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> (see documentation on this last class for coding examples). </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8h_source.html#l00050">50</a> of file <a class="el" href="qvcanvas_8h_source.html">qvcanvas.h</a>.</p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac3a7669110b0fa478eb28b19ad1f5014"></a><!-- doxytag: member="QVPainter::drawQVImage" ref="ac3a7669110b0fa478eb28b19ad1f5014" args="(QVGenericImage *image, bool adaptsize=TRUE, float low=0.0, float high=255.0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawQVImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVGenericImage.html">QVGenericImage</a> *&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>adaptsize</em> = <code>TRUE</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>low</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>high</em> = <code>255.0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws a <a class="el" href="classQVImage.html">QVImage</a>&lt;T,n&gt; of any type <em>T</em> and size <em>n</em> in the corresponding <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>. </p>
+<p>Draws a <a class="el" href="classQVImage.html">QVImage</a>&lt;T,n&gt; of any type <em>T</em> and size <em>n</em> in the corresponding <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>. The image is drawn according to its current ROI (position and size). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td><a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> to draw. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>adaptsize</em>&nbsp;</td><td>If true, the QVImageArea is rescaled according to the image drawn. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>low</em>&nbsp;</td><td>Float value which will correspond to darkest (black) colour. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>high</em>&nbsp;</td><td>Float value which will correspond to brightest (white) colour. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00055">55</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af213d51b59f8ed1254adb8f2df8f4f98"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="af213d51b59f8ed1254adb8f2df8f4f98" args="(const QPointF &amp;position, const QString &amp;text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a given pixel position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00061">61</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80c883678ef165e3ab1bd4277b16a708"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="a80c883678ef165e3ab1bd4277b16a708" args="(const QPoint &amp;position, const QString &amp;text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a given pixel position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText-9">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00070">70</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a47388fef21cdf479232f806250421aad"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="a47388fef21cdf479232f806250421aad" args="(const QRectF &amp;rectangle, int flags, const QString &amp;text, QRectF *boundingRect=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">const QRectF &amp;&nbsp;</td>
+          <td class="paramname"> <em>rectangle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRectF *&nbsp;</td>
+          <td class="paramname"> <em>boundingRect</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a given rectangle of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText-10">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00079">79</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3973f25acbc04f1d8c44584726ce2750"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="a3973f25acbc04f1d8c44584726ce2750" args="(const QRect &amp;rectangle, int flags, const QString &amp;text, QRect *boundingRect=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">const QRect &amp;&nbsp;</td>
+          <td class="paramname"> <em>rectangle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRect *&nbsp;</td>
+          <td class="paramname"> <em>boundingRect</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a given rectangle of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText-11">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00093">93</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c5a3b3c4733c928d5ced4ad12715082"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="a1c5a3b3c4733c928d5ced4ad12715082" args="(int x, int y, const QString &amp;text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a given position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText-12">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00107">107</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3342fcc0c7e9383e019386aedb268c80"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="a3342fcc0c7e9383e019386aedb268c80" args="(int x, int y, int width, int height, int flags, const QString &amp;text, QRect *boundingRect=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRect *&nbsp;</td>
+          <td class="paramname"> <em>boundingRect</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a given position of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText-13">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00116">116</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8052d85738f12c62c6b26fcc924aac3"></a><!-- doxytag: member="QVPainter::drawTextUnscaled" ref="ad8052d85738f12c62c6b26fcc924aac3" args="(const QRectF &amp;rectangle, const QString &amp;text, const QTextOption &amp;option=QTextOption())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPainter::drawTextUnscaled </td>
+          <td>(</td>
+          <td class="paramtype">const QRectF &amp;&nbsp;</td>
+          <td class="paramname"> <em>rectangle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QTextOption &amp;&nbsp;</td>
+          <td class="paramname"> <em>option</em> = <code>QTextOption()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws text in a <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> which does not scale with zooming, using the specified option to control its positioning and orientation. </p>
+<p>See corresponding (scaled) method <a href="http://doc.qt.nokia.com/4.7/qpainter.html#drawText-14">QPainter::drawText()</a> for details on input parameters. </p>
+
+<p>Definition at line <a class="el" href="qvcanvas_8cpp_source.html#l00130">130</a> of file <a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/qvguiblocks/<a class="el" href="qvcanvas_8h_source.html">qvcanvas.h</a></li>
+<li>src/qvblockprogramming/qvguiblocks/<a class="el" href="qvcanvas_8cpp_source.html">qvcanvas.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

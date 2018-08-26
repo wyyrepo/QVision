@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvip/qvgenericimage.h</h1><a href="qvgenericimage_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVGENERICIMAGE_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVGENERICIMAGE_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;<a class="code" href="qvdefines_8h.html" title="File from the QVision library.">qvdefines.h</a>&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QRect&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QPoint&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QSize&gt;</span>
+<a name="l00034"></a>00034 
+<a name="l00067"></a><a class="code" href="classQVGenericImage.html">00067</a> <span class="keyword">class </span><a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a>
+<a name="l00068"></a>00068         {
+<a name="l00069"></a>00069         <span class="keyword">public</span>:
+<a name="l00073"></a><a class="code" href="classQVGenericImage.html#ab7f12de40f9f2eb3604ca4965c32408e">00073</a>                 <a class="code" href="classQVGenericImage.html#ab7f12de40f9f2eb3604ca4965c32408e" title="Default constructor.">QVGenericImage</a> (): roi(0,0,0,0), anchor(QPoint(0,0))                                    { }
+<a name="l00074"></a>00074 
+<a name="l00078"></a><a class="code" href="classQVGenericImage.html#a09e3239f3dc0c2e33140f79e63102549">00078</a>                 <a class="code" href="classQVGenericImage.html#a09e3239f3dc0c2e33140f79e63102549" title="Copy constructor.">QVGenericImage</a>(<a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> <span class="keyword">const</span> &amp;img): roi(img.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>()), anchor(img.<a class="code" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6" title="Obtains actual anchor point for the image.">getAnchor</a>())   { }
+<a name="l00079"></a>00079 
+<a name="l00081"></a><a class="code" href="classQVGenericImage.html#aec5bf087d3d27cc34ed83520056caef6">00081</a>                 <span class="keyword">virtual</span> <a class="code" href="classQVGenericImage.html#aec5bf087d3d27cc34ed83520056caef6" title="Virtual destructor for QVGenericImage.">~QVGenericImage</a> ()                                                              { };
+<a name="l00082"></a>00082 
+<a name="l00086"></a>00086                 <span class="keyword">virtual</span> uInt    <a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>()       <span class="keyword">const</span>   = 0;
+<a name="l00087"></a>00087 
+<a name="l00091"></a>00091                 <span class="keyword">virtual</span> uInt    <a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>()       <span class="keyword">const</span>   = 0;
+<a name="l00092"></a>00092 
+<a name="l00101"></a>00101                 <span class="keyword">virtual</span> uInt    <a class="code" href="classQVGenericImage.html#a73b40cb2faa1943637116da270da800d" title="Virtual method for getting the row step of the image.">getStep</a>()       <span class="keyword">const</span>   = 0;
+<a name="l00102"></a>00102 
+<a name="l00111"></a><a class="code" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999">00111</a>                 QSize   <a class="code" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999" title="Virtual method for getting the size of the image.">getSize</a>()<span class="keyword">               const   </span>{ <span class="keywordflow">return</span> QSize(<a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>(), <a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>()); };
+<a name="l00112"></a>00112 
+<a name="l00119"></a>00119                 <span class="keyword">virtual</span> uInt    <a class="code" href="classQVGenericImage.html#a3dde18969f0fe8ed9079d21540e3fc13" title="Virtual method for getting the number of channels of the image.">getChannels</a>()   <span class="keyword">const</span>   = 0;
+<a name="l00120"></a>00120 
+<a name="l00127"></a>00127                 <span class="keyword">virtual</span> uInt    <a class="code" href="classQVGenericImage.html#a7429b1cdaa57edfcd7edfad8204c9024" title="Virtual method for getting bit depth of the image, in bytes.">getTypeSize</a>()   <span class="keyword">const</span>   = 0;
+<a name="l00128"></a>00128 
+<a name="l00135"></a>00135                 <span class="keyword">virtual</span> uInt    <a class="code" href="classQVGenericImage.html#a93cd55976a2289ba45d154c210597ea3" title="Virtual method for getting data size for the image.">getDataSize</a>()   <span class="keyword">const</span>   = 0;
+<a name="l00136"></a>00136 
+<a name="l00143"></a><a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4">00143</a>                 <span class="keyword">const</span> QRect &amp;   <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>()<span class="keyword">        const   </span>{ <span class="keywordflow">return</span> roi; }
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145                 <span class="comment">// ROI operations</span>
+<a name="l00153"></a><a class="code" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">00153</a> <span class="comment"></span>                <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77" title="Resets the region of interest of the image.">resetROI</a>()                         { <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(0,0,<a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>(), <a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>()); }
+<a name="l00154"></a>00154 
+<a name="l00163"></a><a class="code" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff">00163</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff" title="Reduces the region of interest of the image, in a given amount of pixels.">erodeROI</a>(uInt cols, uInt rows)
+<a name="l00164"></a>00164                         { <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().x()+cols, <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().y()+rows, <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width()-2*cols, <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height()-2*rows); }
+<a name="l00165"></a>00165 
+<a name="l00174"></a><a class="code" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7">00174</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7" title="Increments the region of interest of the image, in a given amount of pixels.">dilateROI</a>(uInt cols, uInt rows)
+<a name="l00175"></a>00175                         { <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().x()-cols, <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().y()-rows, <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width()+2*cols, <a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height()+2*rows); }
+<a name="l00176"></a>00176 
+<a name="l00188"></a><a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">00188</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uInt w, uInt h) { <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(QRect(x,y,w,h)); }
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190                 <span class="comment">// @brief Sets the image ROI to contain the whole image, except a margin around the borders.</span>
+<a name="l00191"></a>00191                 <span class="comment">//</span>
+<a name="l00192"></a>00192                 <span class="comment">// Check the section @ref TheIPPWrapperFunctions for further documentation about the ROI of an image.</span>
+<a name="l00193"></a>00193                 <span class="comment">//</span>
+<a name="l00194"></a>00194                 <span class="comment">// @param margin size of the border.</span>
+<a name="l00195"></a>00195                 <span class="keywordtype">void</span> setMargin(<span class="keywordtype">int</span> margin)
+<a name="l00196"></a>00196                         { <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(margin, margin, <a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>() - 2*margin, <a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>() -2*margin); }
+<a name="l00197"></a>00197 
+<a name="l00205"></a><a class="code" href="classQVGenericImage.html#ab23d43163b77335b855e7c5b4278b92f">00205</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(<span class="keyword">const</span> QRect &amp;rect)
+<a name="l00206"></a>00206                         {
+<a name="l00207"></a>00207                         <span class="comment">//std::cout &lt;&lt; &quot;-------------------------&quot; &lt;&lt; std::endl;</span>
+<a name="l00208"></a>00208                         <span class="comment">//std::cout &lt;&lt; &quot;x = &quot; &lt;&lt; rect.x() &lt;&lt; std::endl;</span>
+<a name="l00209"></a>00209                         <span class="comment">//std::cout &lt;&lt; &quot;y = &quot; &lt;&lt; rect.y() &lt;&lt; std::endl;</span>
+<a name="l00210"></a>00210                         <span class="comment">//std::cout &lt;&lt; &quot;w = &quot; &lt;&lt; rect.width() &lt;&lt; std::endl;</span>
+<a name="l00211"></a>00211                         <span class="comment">//std::cout &lt;&lt; &quot;h = &quot; &lt;&lt; rect.height() &lt;&lt; std::endl;</span>
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213                         <span class="comment">//std::cout &lt;&lt; &quot;cols = &quot; &lt;&lt; getCols() &lt;&lt; std::endl;</span>
+<a name="l00214"></a>00214                         <span class="comment">//std::cout &lt;&lt; &quot;rows = &quot; &lt;&lt; getRows() &lt;&lt; std::endl;</span>
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216                         Q_ASSERT_X(rect.x() &gt;= 0,<span class="stringliteral">&quot;QVGenericImage::setROI()&quot;</span>,<span class="stringliteral">&quot;QRect.x() is less than zero&quot;</span>);
+<a name="l00217"></a>00217                         Q_ASSERT_X(rect.y() &gt;= 0,<span class="stringliteral">&quot;QVGenericImage::setROI()&quot;</span>,<span class="stringliteral">&quot;QRect.y() is less than zero&quot;</span>);
+<a name="l00218"></a>00218                         Q_ASSERT_X(rect.x()+rect.width() &lt;= (int) <a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>(),<span class="stringliteral">&quot;QVGenericImage::setROI()&quot;</span>,<span class="stringliteral">&quot;x + width &gt; columns&quot;</span>);
+<a name="l00219"></a>00219                         Q_ASSERT_X(rect.y()+rect.height() &lt;= (int) <a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>(),<span class="stringliteral">&quot;QVGenericImage::setROI()&quot;</span>,<span class="stringliteral">&quot;y + height &gt; rows&quot;</span>);
+<a name="l00220"></a>00220                         roi = rect;
+<a name="l00221"></a>00221                         }
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223                 <span class="comment">// Anchor operations</span>
+<a name="l00224"></a>00224 
+<a name="l00230"></a><a class="code" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6">00230</a>                 <span class="keyword">const</span> QPoint &amp;  <a class="code" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6" title="Obtains actual anchor point for the image.">getAnchor</a>()<span class="keyword">     const   </span>{ <span class="keywordflow">return</span> anchor; }
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232 
+<a name="l00235"></a><a class="code" href="classQVGenericImage.html#a41e7573cc04595e3e854ed37c599b1e9">00235</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#a41e7573cc04595e3e854ed37c599b1e9" title="Set anchor point of the image to pixel (0,0).">resetAnchor</a>()                      { <a class="code" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac" title="Set anchor point of the image.">setAnchor</a>(0,0); }
+<a name="l00236"></a>00236 
+<a name="l00241"></a><a class="code" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac">00241</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac" title="Set anchor point of the image.">setAnchor</a>(<span class="keywordtype">int</span> col, <span class="keywordtype">int</span> row)        { <a class="code" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac" title="Set anchor point of the image.">setAnchor</a>(QPoint(col,row)); }
+<a name="l00242"></a>00242 
+<a name="l00246"></a><a class="code" href="classQVGenericImage.html#aec61e6f1c101fdc0d7350addf3aa3f2a">00246</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac" title="Set anchor point of the image.">setAnchor</a>(<span class="keyword">const</span> QPoint &amp;point)
+<a name="l00247"></a>00247                         {
+<a name="l00248"></a>00248                         Q_ASSERT_X(point.x()&gt;=0,<span class="stringliteral">&quot;QVGenericImage::setAnchor()&quot;</span>,<span class="stringliteral">&quot;horizontal value for anchor is less than zero&quot;</span>);
+<a name="l00249"></a>00249                         Q_ASSERT_X(point.y()&gt;=0,<span class="stringliteral">&quot;QVGenericImage::setAnchor()&quot;</span>,<span class="stringliteral">&quot;vertical value for anchor is less than zero&quot;</span>);
+<a name="l00250"></a>00250                         Q_ASSERT_X((<a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>() == 0) or (point.x() &lt; (int) <a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>()),<span class="stringliteral">&quot;QVGenericImage::setAnchor()&quot;</span>,<span class="stringliteral">&quot;horizontal value exceeds cols&quot;</span>);
+<a name="l00251"></a>00251                         Q_ASSERT_X((<a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>() == 0) or (point.y() &lt; (int) <a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>()),<span class="stringliteral">&quot;QVGenericImage::setAnchor()&quot;</span>,<span class="stringliteral">&quot;vertical value exceeds rows&quot;</span>);
+<a name="l00252"></a>00252                         anchor = point;
+<a name="l00253"></a>00253                         }
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255                 <span class="comment">// Type operations</span>
+<a name="l00260"></a>00260 <span class="comment"></span>                <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classQVGenericImage.html#a11b4c13e54a1e89d735c12f9cbec277f" title="Obtain a char string identifying the type of the image. real image contained in the...">getTypeQString</a>() <span class="keyword">const</span> = 0;
+<a name="l00261"></a>00261 
+<a name="l00287"></a><a class="code" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59">00287</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59" title="Check whether an image is compatible in type with another image, provided its type...">isCompatibleWith</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *qvImageClassName)<span class="keyword"> const</span>
+<a name="l00288"></a>00288 <span class="keyword">                        </span>{
+<a name="l00289"></a>00289                         Q_ASSERT_X(qvImageClassName!= NULL,<span class="stringliteral">&quot;QVGenericImage::isCompatibleWith()&quot;</span>,<span class="stringliteral">&quot;class name string is NULL&quot;</span>);
+<a name="l00290"></a>00290                         <span class="keywordflow">return</span> (0 == strcmp(this-&gt;<a class="code" href="classQVGenericImage.html#a11b4c13e54a1e89d735c12f9cbec277f" title="Obtain a char string identifying the type of the image. real image contained in the...">getTypeQString</a>(),qvImageClassName));
+<a name="l00291"></a>00291                         }
+<a name="l00292"></a>00292 
+<a name="l00300"></a><a class="code" href="classQVGenericImage.html#afded424f68a2cefbb0ac6ffdebdfc160">00300</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59" title="Check whether an image is compatible in type with another image, provided its type...">isCompatibleWith</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> *image)<span class="keyword"> const</span>
+<a name="l00301"></a>00301 <span class="keyword">                        </span>{
+<a name="l00302"></a>00302                         Q_ASSERT_X(image!= NULL,<span class="stringliteral">&quot;QVGenericImage::isCompatibleWith()&quot;</span>,<span class="stringliteral">&quot;NULL pointer&quot;</span>);
+<a name="l00303"></a>00303                         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59" title="Check whether an image is compatible in type with another image, provided its type...">isCompatibleWith</a>(image-&gt;<a class="code" href="classQVGenericImage.html#a11b4c13e54a1e89d735c12f9cbec277f" title="Obtain a char string identifying the type of the image. real image contained in the...">getTypeQString</a>());
+<a name="l00304"></a>00304                         }
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306         <span class="keyword">protected</span>:
+<a name="l00307"></a>00307                 QRect roi;
+<a name="l00308"></a>00308                 QPoint anchor;
+<a name="l00309"></a>00309         };
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312 <span class="preprocessor">#endif // QVGENERICIMAGE_H</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

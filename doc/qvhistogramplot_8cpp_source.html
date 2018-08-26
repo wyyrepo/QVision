@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvguiblocks/qvhistogramplot.cpp</h1><a href="qvhistogramplot_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="qvhistogramplot_8h.html" title="File from the QVision library.">qvhistogramplot.h</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;qwt_interval_data.h&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;qwt_scale_draw.h&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;qwt_scale_div.h&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;qwt_scale_engine.h&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QResizeEvent&gt;</span>
+<a name="l00033"></a>00033 
+<a name="l00035"></a><a class="code" href="classQVHistogramPlot.html#aa8867e4f56ea321b8ff57a1200fe0866">00035</a> <a class="code" href="classQVHistogramPlot.html#aa8867e4f56ea321b8ff57a1200fe0866" title="Constructs a QVHistogramPlot with a given string identifier, and a iteration&amp;#39;s...">QVHistogramPlot::QVHistogramPlot</a>(<span class="keyword">const</span> QString name, <span class="keywordtype">bool</span> time, <span class="keywordtype">int</span> step, <span class="keywordtype">double</span> maxim, <span class="keywordtype">double</span> minim, QWidget *parent):
+<a name="l00036"></a>00036         <a class="code" href="classQVPlot.html" title="Class for plot block&amp;#39;s graphs.">QVPlot</a>(name, false, false, false, true, time, step, parent), histItem(), max(maxim), min(minim), maxAxisNumbers(10)
+<a name="l00037"></a>00037         {
+<a name="l00038"></a>00038         histItem.setColor(Qt::darkCyan);
+<a name="l00039"></a>00039         enableAxis(0,<span class="keyword">true</span>);
+<a name="l00040"></a>00040         enableAxis(2,<span class="keyword">true</span>);
+<a name="l00041"></a>00041         setAxisScaleDraw(QwtPlot::xBottom, <span class="keyword">new</span> QwtScaleDraw());
+<a name="l00042"></a>00042         setAxisTitle(QwtPlot::xBottom, <span class="stringliteral">&quot;Index&quot;</span>);
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="classQVHistogramPlot.html#afc8ddb5ab9180dcb7be5e64559f63693">00045</a> <span class="keywordtype">bool</span> <a class="code" href="classQVHistogramPlot.html#afc8ddb5ab9180dcb7be5e64559f63693" title="Links properties from blocks. This method safely links properties from blocks in...">QVHistogramPlot::linkUnspecifiedInputProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *sourceContainer, QString sourcePropName, LinkType linkType)
+<a name="l00046"></a>00046         {
+<a name="l00047"></a>00047         <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>* block;
+<a name="l00048"></a>00048         <span class="keywordflow">if</span>((block = dynamic_cast&lt;QVProcessingBlock*&gt;(sourceContainer)) != NULL)
+<a name="l00049"></a>00049                 {
+<a name="l00050"></a>00050                 <span class="keywordflow">if</span> ( block-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; QList&lt;double&gt; &gt;(sourcePropName) || block-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; QVector&lt;double&gt; &gt;(sourcePropName) )
+<a name="l00051"></a>00051                         <span class="keywordflow">return</span> <a class="code" href="classQVHistogramPlot.html#afc8ddb5ab9180dcb7be5e64559f63693" title="Links properties from blocks. This method safely links properties from blocks in...">QVPlot::linkUnspecifiedInputProperty</a>(block, sourcePropName, linkType);
+<a name="l00052"></a>00052                 <span class="keywordflow">else</span>
+<a name="l00053"></a>00053                         {
+<a name="l00054"></a>00054                         std::cerr &lt;&lt; <span class="stringliteral">&quot;Warning: a histogramplot can only be linked to a QList&lt;double&gt; or QVector&lt;double&gt; property.&quot;</span> &lt;&lt; std::endl;
+<a name="l00055"></a>00055                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00056"></a>00056                         }
+<a name="l00057"></a>00057                 }
+<a name="l00058"></a>00058         <span class="keywordflow">else</span>
+<a name="l00059"></a>00059                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 QStringList QVHistogramPlot::getPropertyCurvNames(QString propertyName)<span class="keyword"> const</span>
+<a name="l00063"></a>00063 <span class="keyword">        </span>{
+<a name="l00064"></a>00064         QStringList names;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <span class="keyword">const</span> <span class="keywordtype">int</span> auxListSize = isType&lt; QList&lt;double&gt; &gt;(propertyName)? getPropertyValue&lt; QList&lt;double&gt; &gt;(propertyName).size():
+<a name="l00067"></a>00067                                 isType&lt; QVector&lt;double&gt; &gt;(propertyName)? getPropertyValue&lt; QVector&lt;double&gt; &gt;(propertyName).size(): -1;
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; auxListSize; i++)
+<a name="l00070"></a>00070                 names &lt;&lt; QString::number(i);
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072         <span class="keywordflow">return</span> names;
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 QList&lt;double&gt; QVHistogramPlot::getPropertyCurvValues(QString propertyName)<span class="keyword"> const</span>
+<a name="l00076"></a>00076 <span class="keyword">        </span>{
+<a name="l00077"></a>00077         <span class="keywordflow">if</span> (isType&lt; QList&lt;double&gt; &gt;(propertyName))
+<a name="l00078"></a>00078                 <span class="keywordflow">return</span> getPropertyValue&lt; QList&lt;double&gt; &gt;(propertyName);
+<a name="l00079"></a>00079         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isType&lt; QVector&lt;double&gt; &gt;(propertyName))
+<a name="l00080"></a>00080                 <span class="keywordflow">return</span> getPropertyValue&lt; QVector&lt;double&gt; &gt;(propertyName).toList();
+<a name="l00081"></a>00081         <span class="keywordflow">else</span>
+<a name="l00082"></a>00082                 std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR 34: Love unknown error codes?&quot;</span> &lt;&lt; std::endl;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084         <span class="keywordflow">return</span> QList&lt;double&gt;();
+<a name="l00085"></a>00085         }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 QList&lt;int&gt; QVHistogramPlot::getPropertyCurvOrders(QString propertyName)<span class="keyword"> const</span>
+<a name="l00088"></a>00088 <span class="keyword">        </span>{
+<a name="l00089"></a>00089         QList&lt;int&gt; order;
+<a name="l00090"></a>00090         <span class="comment">//const int auxListSize = getPropertyValue&lt; QList&lt;double&gt; &gt;(property).size();</span>
+<a name="l00091"></a>00091         <span class="comment">//QList&lt;double&gt; auxList = getPropertyValue&lt; QList&lt;double&gt; &gt;(property);</span>
+<a name="l00092"></a>00092         <span class="keyword">const</span> <span class="keywordtype">int</span> auxListSize = isType&lt; QList&lt;double&gt; &gt;(propertyName)? getPropertyValue&lt; QList&lt;double&gt; &gt;(propertyName).size():
+<a name="l00093"></a>00093                                 isType&lt; QVector&lt;double&gt; &gt;(propertyName)? getPropertyValue&lt; QVector&lt;double&gt; &gt;(propertyName).size(): -1;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= auxListSize; i++)
+<a name="l00096"></a>00096         <span class="comment">//for (int i = 1; i &lt;= auxList.size(); i++)</span>
+<a name="l00097"></a>00097                 order &lt;&lt; i;
+<a name="l00098"></a>00098         <span class="keywordflow">return</span> order;
+<a name="l00099"></a>00099         }
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="keywordtype">void</span> QVHistogramPlot::init()
+<a name="l00102"></a>00102         {
+<a name="l00103"></a>00103         <span class="keywordflow">if</span> (initied)
+<a name="l00104"></a>00104                 {
+<a name="l00105"></a>00105                 std::cerr &lt;&lt; <span class="stringliteral">&quot;Warning: a plot can&#39;t be initied more than one time.&quot;</span> &lt;&lt; std::endl;
+<a name="l00106"></a>00106                 <span class="keywordflow">return</span>;
+<a name="l00107"></a>00107                 }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109         histItem.attach(<span class="keyword">this</span>);
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111         readInputProperties();
+<a name="l00112"></a>00112         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; linkCont.size(); i++)
+<a name="l00113"></a>00113                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; linkCont[i].properties.size(); j++)
+<a name="l00114"></a>00114                         {
+<a name="l00115"></a>00115                         <span class="keyword">const</span> QStringList curvNames = getPropertyCurvNames(linkCont[i].properties[j].name);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = curvNames.size()-1; k &gt;= 0; k--)
+<a name="l00118"></a>00118                                 {
+<a name="l00119"></a>00119                                 QString finalName = curvNames.at(k) + QString(<span class="stringliteral">&quot; (%1)&quot;</span>).arg(linkCont[i].<span class="keywordtype">id</span>);
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121                                 QwtPlotCurve * qwtpc = <span class="keyword">new</span> QwtPlotCurve(finalName);
+<a name="l00122"></a>00122                                 <span class="keywordflow">if</span> (byTime) linkCont[i].properties[j].curves.prepend(Curve(curvNames.at(k), qwtpc, 1));
+<a name="l00123"></a>00123                                 <span class="keywordflow">else</span>        linkCont[i].properties[j].curves.prepend(Curve(curvNames.at(k), qwtpc, linkCont.size()+1));
+<a name="l00124"></a>00124                                 haveCurves = TRUE;
+<a name="l00125"></a>00125                                 }
+<a name="l00126"></a>00126                         }
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128         <span class="keywordflow">if</span> (byTime) timer = startTimer(nStep * 10); <span class="comment">// nStep * 10 ms</span>
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130         initied = <span class="keyword">true</span>;
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="keywordtype">void</span> QVHistogramPlot::insertNewFlags(<span class="keywordtype">int</span> cont, <span class="keywordtype">int</span> prop)
+<a name="l00134"></a>00134         {
+<a name="l00135"></a>00135         <span class="keyword">const</span> QStringList curvNames = getPropertyCurvNames(linkCont[cont].properties[prop].name);
+<a name="l00136"></a>00136         <span class="keywordflow">if</span> ( (linkCont.size() &gt; cont) &amp;&amp; (linkCont[cont].properties.size() &gt; prop) &amp;&amp; (curvNames.size() &gt; linkCont[cont].properties[prop].curves.size()) )
+<a name="l00137"></a>00137                 {
+<a name="l00138"></a>00138                 <span class="keyword">const</span> QList&lt;int&gt; curvOrders = getPropertyCurvOrders(linkCont[cont].properties[prop].name);
+<a name="l00139"></a>00139                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; curvOrders.size(); i++)
+<a name="l00140"></a>00140                         <span class="keywordflow">if</span> (curvOrders.at(i) &gt; linkCont[cont].properties[prop].curves.size())
+<a name="l00141"></a>00141                                 {
+<a name="l00142"></a>00142                                 QString finalName = curvNames.at(i) + QString(<span class="stringliteral">&quot; (%1)&quot;</span>).arg(linkCont[cont].<span class="keywordtype">id</span>);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144                                 QwtPlotCurve * qwtpc = <span class="keyword">new</span> QwtPlotCurve(finalName);
+<a name="l00145"></a>00145                                 <span class="keywordflow">if</span> (byTime) linkCont[cont].properties[prop].curves.insert(i, Curve(curvNames.at(i), qwtpc, 1));
+<a name="l00146"></a>00146                                 <span class="keywordflow">else</span>        linkCont[cont].properties[prop].curves.insert(i, Curve(curvNames.at(i), qwtpc, linkCont.size()+1));
+<a name="l00147"></a>00147                                 haveCurves = TRUE;
+<a name="l00148"></a>00148                                 }
+<a name="l00149"></a>00149                 }
+<a name="l00150"></a>00150         }
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152 <span class="keywordtype">void</span> QVHistogramPlot::advancePlot()
+<a name="l00153"></a>00153         {
+<a name="l00154"></a>00154         <span class="keywordflow">if</span> (!haveCurves)
+<a name="l00155"></a>00155                 {
+<a name="l00156"></a>00156                 std::cerr &lt;&lt; <span class="stringliteral">&quot;QVPlot internal error: early call to advancePlot.&quot;</span> &lt;&lt; std::endl;
+<a name="l00157"></a>00157                 <span class="keywordflow">return</span>;
+<a name="l00158"></a>00158                 }
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160         <span class="comment">// update data</span>
+<a name="l00161"></a>00161         <span class="keywordtype">int</span> numValues = 0;
+<a name="l00162"></a>00162         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; linkCont.size(); i++)
+<a name="l00163"></a>00163                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; linkCont[i].properties.size(); j++) {
+<a name="l00164"></a>00164                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = 0; k &lt; linkCont[i].properties[j].curves.size(); k++)
+<a name="l00165"></a>00165                                 {
+<a name="l00166"></a>00166                                 <span class="comment">// update the new value</span>
+<a name="l00167"></a>00167                                 <span class="keywordflow">if</span> (byTime)     linkCont[i].properties[j].curves[k].history[0] = linkCont[i].properties[j].curves[k].temp[0];
+<a name="l00168"></a>00168                                 <span class="keywordflow">else</span>            linkCont[i].properties[j].curves[k].history[0] = linkCont[i].properties[j].curves[k].temp[(iterationIndex%(linkCont.size()+1))];
+<a name="l00169"></a>00169                                 }
+<a name="l00170"></a>00170                         <span class="keywordflow">if</span> (numValues &lt; linkCont[i].properties[j].curves.size()) numValues = linkCont[i].properties[j].curves.size();
+<a name="l00171"></a>00171                 }
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173         QwtArray&lt;QwtDoubleInterval&gt; intervals(numValues);
+<a name="l00174"></a>00174         QwtArray&lt;double&gt; values(numValues);
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176         <span class="comment">// curve update</span>
+<a name="l00177"></a>00177         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; linkCont.size(); i++)
+<a name="l00178"></a>00178                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; linkCont[i].properties.size(); j++) {
+<a name="l00179"></a>00179                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = 0; k &lt; linkCont[i].properties[j].curves.size(); k++)
+<a name="l00180"></a>00180                                 {
+<a name="l00181"></a>00181                                 <span class="keywordflow">if</span> (values[k] &lt; linkCont[i].properties[j].curves[k].history[0]) values[k] = linkCont[i].properties[j].curves[k].history[0];
+<a name="l00182"></a>00182                                 intervals[k] = QwtDoubleInterval(<span class="keywordtype">double</span>(k)-0.5, <span class="keywordtype">double</span>(k+1)-0.5);
+<a name="l00183"></a>00183                                 }
+<a name="l00184"></a>00184                 }
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186         <span class="comment">// scroll bottom axis, scaled like an index</span>
+<a name="l00187"></a>00187         <span class="keywordtype">int</span> scaleShow = MAX(numValues/maxAxisNumbers, 1);
+<a name="l00188"></a>00188         setAxisScaleDiv(QwtPlot::xBottom, axisScaleEngine(QwtPlot::xBottom)-&gt;divideScale(-0.5, <span class="keywordtype">double</span>(numValues)-0.5, 1, 1, scaleShow));
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190         histItem.setData(QwtIntervalData(intervals, values));
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192         <span class="comment">// adjust left axis (using the visible values&#39;s maximum)</span>
+<a name="l00193"></a>00193         <span class="keywordflow">if</span> (max == 0)
+<a name="l00194"></a>00194                 {
+<a name="l00195"></a>00195                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; linkCont.size(); i++)
+<a name="l00196"></a>00196                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; linkCont[i].properties.size(); j++)
+<a name="l00197"></a>00197                                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = 0; k &lt; linkCont[i].properties[j].curves.size(); k++)
+<a name="l00198"></a>00198                                         <span class="keywordflow">if</span> (max &lt; linkCont[i].properties[j].curves[k].history[0]) max = linkCont[i].properties[j].curves[k].history[0];
+<a name="l00199"></a>00199                 max = 1.1 *max;
+<a name="l00200"></a>00200                 setAxisScale(QwtPlot::yLeft, min, max);
+<a name="l00201"></a>00201                 max = 0;
+<a name="l00202"></a>00202                 }
+<a name="l00203"></a>00203         <span class="keywordflow">else</span> setAxisScale(QwtPlot::yLeft, min, max);
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205         <span class="comment">// and replot</span>
+<a name="l00206"></a>00206         replot();
+<a name="l00207"></a>00207         }
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="keywordtype">void</span> QVHistogramPlot::resizeEvent(QResizeEvent * e)
+<a name="l00212"></a>00212         {
+<a name="l00213"></a>00213                 QVPlot::resizeEvent(e);
+<a name="l00214"></a>00214                 maxAxisNumbers = e-&gt;size().width() / 50;
+<a name="l00215"></a>00215         }
+<a name="l00216"></a>00216 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,889 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVSparseBlockMatrix Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVSparseBlockMatrix" -->
+<p>Implementation of sparse block matrices.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvsparseblockmatrix_8h_source.html">QVSparseBlockMatrix</a>&gt;</code></p>
+
+<p><a href="classQVSparseBlockMatrix-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a68980a03b57f59475b79e2549e86faa0">QVSparseBlockMatrix</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor for the <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> class.  <a href="#a68980a03b57f59475b79e2549e86faa0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#ab9081555cc33e341accab96fb4bb9d70">QVSparseBlockMatrix</a> (const int majorRows, const int majorCols, const int minorRows, const int minorCols)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create a sparse block matrix of a given size.  <a href="#ab9081555cc33e341accab96fb4bb9d70"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a9a4eac5be3b17f2ac05ae249cf9c5a11">QVSparseBlockMatrix</a> (const int majorRows, const int majorCols, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create a sparse block matrix from a dense matrix.  <a href="#a9a4eac5be3b17f2ac05ae249cf9c5a11"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a202dae52dc2ec0501ceddc53ffc31aac">getMajorRows</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get majorRows from a sparse block matrix.  <a href="#a202dae52dc2ec0501ceddc53ffc31aac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a6cb89146c9191b915b8f493f0be6becc">getMajorCols</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get majorCols from a sparse block matrix.  <a href="#a6cb89146c9191b915b8f493f0be6becc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6">getMinorRows</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get minorRows from a sparse block matrix.  <a href="#af6637b61809a2d386d8d6ea3078a96b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#ad606f1e2fe760064d0494e7c133dbed7">getMinorCols</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get minorCols from a sparse block matrix.  <a href="#ad606f1e2fe760064d0494e7c133dbed7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#aa626b58871ac2f8758e4e766630d8795">operator QVMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert a sparse block matrix into an ordinary matrix.  <a href="#aa626b58871ac2f8758e4e766630d8795"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a0cb729d3480d161417812d5ddbc2b378">setBlock</a> (const int majorRow, const int majorCol, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;M)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set a data block.  <a href="#a0cb729d3480d161417812d5ddbc2b378"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a19d8143ac0013bb30353199eaf75b990">getBlock</a> (const int majorRow, const int majorCol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a data block.  <a href="#a19d8143ac0013bb30353199eaf75b990"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a3890f927a8d052fb3f62c5826ac6ffef">isNullBlock</a> (const int majorRow, const int majorCol) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate if a block contains zero values.  <a href="#a3890f927a8d052fb3f62c5826ac6ffef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a41e42237298152cf3b3da6e0e7e79c01">getBlockRowIndexes</a> (const int majorRow) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">List of non-zero blocks in a block-row.  <a href="#a41e42237298152cf3b3da6e0e7e79c01"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a27365e05775fdd2fc655f065d173f163">operator*</a> (const <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Product operator for sparse block matrices.  <a href="#a27365e05775fdd2fc655f065d173f163"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a4589e6f5a82165b4159168805258ad4f">operator*</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sparse block matrix-vector product.  <a href="#a4589e6f5a82165b4159168805258ad4f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a36a11e4a75005686b522407e67136b0c">dotProduct</a> (const <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;other, const bool transposeFirstOperand=false, const bool transposeSecondOperand=false) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dot product for sparse block matrices.  <a href="#a36a11e4a75005686b522407e67136b0c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#adb286c7dbcf46f0d134bff43bab37e0c">dotProduct</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector, const bool transposeMatrix=false) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dot product for sparse block matrices with vectors.  <a href="#adb286c7dbcf46f0d134bff43bab37e0c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#a603b844cfe6c0102ee10cd3dee2563c2">operator=</a> (const <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy operator.  <a href="#a603b844cfe6c0102ee10cd3dee2563c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#ab96a97d0790f3925632b6e5706278947">clear</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set matrix to zero.  <a href="#ab96a97d0790f3925632b6e5706278947"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSparseBlockMatrix.html#af2826bfd4440734cf95c6d16099f15b2">randomSquare</a> (const int NB, const int N, const double NZProb, const bool symmetric=true, const bool positive=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generates a random square sparse block matrix The sparse block matrix must have compatible block sizes, and major sizes, with the vecto size.  <a href="#af2826bfd4440734cf95c6d16099f15b2"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of sparse block matrices. </p>
+<p>Each sparse block matrix is implemented as a bidimensional array of <a class="el" href="classQVMatrix.html">QVMatrix</a> objects. The sparse matrices have two kind of indexes: major indexes, that access the bidimensional array, and minor indexes, that access elements in the matrix objects inside the cells of the array.</p>
+<p>The following is an example sparse matrix of size <img class="formulaInl" alt="$ 15 \times 12 $" src="form_200.png"/>. It contains 12 blocks (or submatrices) of size <img class="formulaInl" alt="$ 3 \times 5 $" src="form_201.png"/> (minor dimensions), arranged in an array of size <img class="formulaInl" alt="$ 4 \times 3 $" src="form_202.png"/> (major dimensions):</p>
+<div align="center">
+<img src="sparse-matrix.png" alt="sparse-matrix.png"/>
+</div>
+<p>Such matrix can be created with the following code:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> sparseM(4,3,3,5);
+</pre></div><p>Initially, the matrix is created empty. To initialize the blocks that contain elements different from zero, we can use the method setBlock:</p>
+<div class="fragment"><pre class="fragment">sparseM.setBlock(0, 0, <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5));
+sparseM.setBlock(0, 2, <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5));
+sparseM.setBlock(1, 1, <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5));
+sparseM.setBlock(2, 0, <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5));
+sparseM.setBlock(2, 2, <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5));
+sparseM.setBlock(3, 0, <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5));
+</pre></div><p>The [] operator can substitute the <a class="el" href="classQVSparseBlockMatrix.html#a0cb729d3480d161417812d5ddbc2b378">setBlock</a> method. The previous code is equivalent to the following code:</p>
+<div class="fragment"><pre class="fragment">sparseM[0][0] = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5);
+sparseM[0][2] = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5);
+sparseM[1][1] = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5);
+sparseM[2][0] = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5);
+sparseM[2][2] = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5);
+sparseM[3][0] = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,5);
+</pre></div><p>However, it is recomendable to use the method <a class="el" href="classQVSparseBlockMatrix.html#a0cb729d3480d161417812d5ddbc2b378">setBlock</a> to initialize the contents of the blocks in the sparse matrices. The latter method performs several checks on the dimensions of the input matrices, and the ranges of the sparse matrix, to avoid invalid matrix assignments.</p>
+<p>The previous code example initializes the non-zero blocks of the sparse matrix with matrices containing random values, but other matrices with compatible dimensions could of course be used as well.</p>
+<p>We can convert the sparse matrix to a dense <a class="el" href="classQVMatrix.html">QVMatrix</a> and print it on the console:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = sparseM;
+std::cout &lt;&lt; <span class="stringliteral">&quot;M = &quot;</span> &lt;&lt; M &lt;&lt; std::endl;
+</pre></div><p>The console output of the previous code will be the following:</p>
+<div class="fragment"><pre class="fragment">M = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (12, 15)
+[
+    [ 0.3943 0.7682 0.5134 0.6069 0.4009 0.0000 0.0000 0.0000 0.0000 0.0000 0.8391 0.9727 0.8915 0.9493 0.3488 ]
+    [ 0.7984 0.5539 0.9161 0.2428 0.1088 0.0000 0.0000 0.0000 0.0000 0.0000 0.2960 0.7713 0.3524 0.0860 0.0200 ]
+    [ 0.1975 0.6288 0.7172 0.8041 0.2182 0.0000 0.0000 0.0000 0.0000 0.0000 0.5242 0.7699 0.9190 0.6632 0.0630 ]
+    [ 0.0000 0.0000 0.0000 0.0000 0.0000 0.9706 0.7602 0.9318 0.3540 0.3303 0.0000 0.0000 0.0000 0.0000 0.0000 ]
+    [ 0.0000 0.0000 0.0000 0.0000 0.0000 0.8509 0.6677 0.7209 0.1659 0.8933 0.0000 0.0000 0.0000 0.0000 0.0000 ]
+    [ 0.0000 0.0000 0.0000 0.0000 0.0000 0.5397 0.0392 0.7385 0.8800 0.6866 0.0000 0.0000 0.0000 0.0000 0.0000 ]
+    [ 0.5886 0.8147 0.9201 0.2810 0.2762 0.0000 0.0000 0.0000 0.0000 0.0000 0.1260 0.3831 0.2444 0.7450 0.2400 ]
+    [ 0.8586 0.9109 0.8810 0.3074 0.4165 0.0000 0.0000 0.0000 0.0000 0.0000 0.7604 0.3686 0.7321 0.9501 0.7326 ]
+    [ 0.9239 0.2158 0.4319 0.2261 0.9068 0.0000 0.0000 0.0000 0.0000 0.0000 0.9350 0.2322 0.7934 0.5215 0.9674 ]
+    [ 0.7597 0.2046 0.1578 0.0540 0.1803 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 ]
+    [ 0.1349 0.8196 0.2043 0.0723 0.3916 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 ]
+    [ 0.0782 0.7555 0.1254 0.9230 0.8196 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 ]
+]
+</pre></div><p>One very interesting thing to do with sparse matrices is, of course, solving (sparse) linear systems of equations involving a sparse matrix of coefficients. You can do that using the SparseSolve function from the matrix algebra module of QVision. Here is an example, which solves the system <img class="formulaInl" alt="$ C x = b $" src="form_203.png"/>, with:</p>
+<p><img class="formulaInl" alt="$ C = \left( \begin{array}{ccccc} 9 &amp; 1.5 &amp; 6.0 &amp; 0.75 &amp; 3.0 \\ 1.5 &amp; 0.5 &amp; 0.0 &amp; 0.0 &amp; 0.0 \\ 6.0 &amp; 0.0 &amp; 12.0 &amp; 0.0 &amp; 0.0 \\ 0.75 &amp; 0.0 &amp; 0.0 &amp; 0.625 &amp; 0.0 \\ 3.0 &amp; 0.0 &amp; 0.0 &amp; 0.0 &amp; 16.0 \\ \end{array} \right) $" src="form_204.png"/></p>
+<p>and</p>
+<p><img class="formulaInl" alt="$ b = \left( \begin{array}{c} 1.0 \\ 2.0 \\ 3.0 \\ 4.0 \\ 5.0 \\ \end{array} \right) $" src="form_205.png"/></p>
+<p>Observe that the C matrix is symmetric and positive definite, in this example.</p>
+<p>Here is the corresponding code (in this simple example, each individual subblock matrix is simply of size 1x1):</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;iostream&gt;</span>
+<span class="preprocessor">#include &lt;QVMatrix&gt;</span>
+<span class="preprocessor">#include &lt;QVVector&gt;</span>
+<span class="preprocessor">#include &lt;QVSparseBlockMatrix&gt;</span>
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+{
+        <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> C(5,5,1,1);
+
+        C.setBlock(0,0,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,9.0));
+        C.setBlock(0,1,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,1.5));
+        C.setBlock(0,2,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,6.0));
+        C.setBlock(0,3,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,0.75));
+        C.setBlock(0,4,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,3.0));
+        C.setBlock(1,1,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,0.5));
+        C.setBlock(2,2,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,12.0));
+        C.setBlock(3,3,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,0.625));
+        C.setBlock(4,4,<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(1,1,16.0));
+
+        <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x , b = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>() &lt;&lt; 1.0 &lt;&lt; 2.0 &lt;&lt; 3.0 &lt;&lt; 4.0 &lt;&lt; 5.0 ;
+
+        <span class="comment">// First true stands for symmetric, second for positive definite matrix:</span>
+        <a class="code" href="group__qvmatrixalgebra.html#gaf7293f186086b4b233cf51046f016158" title="Solves a sparse system of linear equations, taking advantage of sparseness to accelerate...">sparseSolve</a>(C, x, b, <span class="keyword">true</span> , <span class="keyword">true</span>, <a class="code" href="group__qvmatrixalgebra.html#ggaacdaea1a26a36293bfb60ca30909ba42a1a4b4a69b2ed71568ebe6c71ed7672cd" title="Intel MKL direct sparse solver.">QVMKL_DSS</a>);
+
+        std::cout &lt;&lt; <span class="stringliteral">&quot;Vector b:&quot;</span> &lt;&lt; b &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+        std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix C:&quot;</span> &lt;&lt; C &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+        std::cout &lt;&lt; <span class="stringliteral">&quot;Vector x:&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+}
+</pre></div><p>The solution vector x for this example is:</p>
+<p><img class="formulaInl" alt="$ x = \left( \begin{array}{c} -326.333 \\ 983.0 \\ 163.417 \\ 398.0 \\ 61.5 \\ \end{array} \right) $" src="form_206.png"/></p>
+<p>Note that in this case only the upper triangular part of the C matrix has to be initialized (because it is symmetric, as indicated by the 'true' second argument to the <a class="el" href="group__qvmatrixalgebra.html#gaf7293f186086b4b233cf51046f016158">sparseSolve</a> function). Also, the 'true' in the third argument indicates to the underlying solver that the C matrix is positive definite, a fact which can be used to accelerate computation. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00172">172</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a68980a03b57f59475b79e2549e86faa0"></a><!-- doxytag: member="QVSparseBlockMatrix::QVSparseBlockMatrix" ref="a68980a03b57f59475b79e2549e86faa0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVSparseBlockMatrix::QVSparseBlockMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor for the <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> class. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00180">180</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9081555cc33e341accab96fb4bb9d70"></a><!-- doxytag: member="QVSparseBlockMatrix::QVSparseBlockMatrix" ref="ab9081555cc33e341accab96fb4bb9d70" args="(const int majorRows, const int majorCols, const int minorRows, const int minorCols)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVSparseBlockMatrix::QVSparseBlockMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorCols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minorRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minorCols</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a sparse block matrix of a given size. </p>
+<p>This constructor creates a sparse matrix of size <img class="formulaInl" alt="$ majorRows minorRows \times majorCols minorCols $" src="form_207.png"/>. Every element of the matrix will contain the <img class="formulaInl" alt="$ 0 $" src="form_208.png"/> value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>majorRows</em>&nbsp;</td><td>Number of rows of block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>majorCols</em>&nbsp;</td><td>Number of columns of block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minorRows</em>&nbsp;</td><td>Number of rows of the block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minorCols</em>&nbsp;</td><td>Number of columns of the block matrices. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00201">201</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a4eac5be3b17f2ac05ae249cf9c5a11"></a><!-- doxytag: member="QVSparseBlockMatrix::QVSparseBlockMatrix" ref="a9a4eac5be3b17f2ac05ae249cf9c5a11" args="(const int majorRows, const int majorCols, const QVMatrix &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVSparseBlockMatrix::QVSparseBlockMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorCols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a sparse block matrix from a dense matrix. </p>
+<p>This constructor creates a sparse matrix of size <img class="formulaInl" alt="$ (majorRows * minorRows) \times (majorCols * minorCols) $" src="form_209.png"/>. The elements of the sparse matrix will be initialized with the contents of the matrix passed by parameter (adequately partitioned in blocks of the given size, and with any zero submatrix of the input matrix conveniently "supressed" from the internal representation).</p>
+<p>The following two identities must hold when calling this method (otherwise, it will fail):</p>
+<ul>
+<li>(other.getRows() / majorRows) * majorRows == other.getRows()</li>
+<li>(other.getCols() / majorCols) * majorCols == other.getCols()</li>
+</ul>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>majorRows</em>&nbsp;</td><td>Number of rows of block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>majorCols</em>&nbsp;</td><td>Number of columns of block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minorRows</em>&nbsp;</td><td>Number of rows of the block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minorCols</em>&nbsp;</td><td>Number of columns of the block matrices. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>other</em>&nbsp;</td><td>Dense matrix containing the values to initialize the sparse matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00221">221</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a202dae52dc2ec0501ceddc53ffc31aac"></a><!-- doxytag: member="QVSparseBlockMatrix::getMajorRows" ref="a202dae52dc2ec0501ceddc53ffc31aac" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVSparseBlockMatrix::getMajorRows </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get majorRows from a sparse block matrix. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00243">243</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, and <a class="el" href="group__qvmatrixalgebra.html#gaf7293f186086b4b233cf51046f016158">sparseSolve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6cb89146c9191b915b8f493f0be6becc"></a><!-- doxytag: member="QVSparseBlockMatrix::getMajorCols" ref="a6cb89146c9191b915b8f493f0be6becc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVSparseBlockMatrix::getMajorCols </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get majorCols from a sparse block matrix. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00246">246</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, <a class="el" href="group__qvmatrixalgebra.html#gada28dcc8be2cf1b93f3b1f201cafdb88">solveHomogeneous()</a>, and <a class="el" href="group__qvmatrixalgebra.html#gaf7293f186086b4b233cf51046f016158">sparseSolve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6637b61809a2d386d8d6ea3078a96b6"></a><!-- doxytag: member="QVSparseBlockMatrix::getMinorRows" ref="af6637b61809a2d386d8d6ea3078a96b6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVSparseBlockMatrix::getMinorRows </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get minorRows from a sparse block matrix. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00249">249</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, and <a class="el" href="group__qvmatrixalgebra.html#gaf7293f186086b4b233cf51046f016158">sparseSolve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad606f1e2fe760064d0494e7c133dbed7"></a><!-- doxytag: member="QVSparseBlockMatrix::getMinorCols" ref="ad606f1e2fe760064d0494e7c133dbed7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVSparseBlockMatrix::getMinorCols </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get minorCols from a sparse block matrix. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00252">252</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, <a class="el" href="group__qvmatrixalgebra.html#gada28dcc8be2cf1b93f3b1f201cafdb88">solveHomogeneous()</a>, and <a class="el" href="group__qvmatrixalgebra.html#gaf7293f186086b4b233cf51046f016158">sparseSolve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa626b58871ac2f8758e4e766630d8795"></a><!-- doxytag: member="QVSparseBlockMatrix::operator QVMatrix" ref="aa626b58871ac2f8758e4e766630d8795" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVSparseBlockMatrix::operator <a class="el" href="classQVMatrix.html">QVMatrix</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert a sparse block matrix into an ordinary matrix. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00255">255</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cb729d3480d161417812d5ddbc2b378"></a><!-- doxytag: member="QVSparseBlockMatrix::setBlock" ref="a0cb729d3480d161417812d5ddbc2b378" args="(const int majorRow, const int majorCol, const QVMatrix &amp;M)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVSparseBlockMatrix::setBlock </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorCol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>M</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set a data block. </p>
+<p>You can set a block submatrix in the sparse matrix with this method. The following two lines of code are equivalent: </p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> M(10,20, 3, 3);
+ [...]
+ M[7][10] = <a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(3);
+ M.setBlock(7,10, <a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(3));
+</pre></div><p> Setting the block of a sparse matrix using this method is safer than with the [] operators. This method will check the index ranges, and the correct size of the input matrix for the block. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>majorRow</em>&nbsp;</td><td>Row index of the block, inside the sparse matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>majorCol</em>&nbsp;</td><td>Column index of the block, inside the sparse matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>M</em>&nbsp;</td><td>Matrix with the contents of the block. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00288">288</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, and <a class="el" href="classQVSparseBlockMatrix.html#af2826bfd4440734cf95c6d16099f15b2">randomSquare()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19d8143ac0013bb30353199eaf75b990"></a><!-- doxytag: member="QVSparseBlockMatrix::getBlock" ref="a19d8143ac0013bb30353199eaf75b990" args="(const int majorRow, const int majorCol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a>&amp; QVSparseBlockMatrix::getBlock </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorCol</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a data block. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00314">314</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3890f927a8d052fb3f62c5826ac6ffef"></a><!-- doxytag: member="QVSparseBlockMatrix::isNullBlock" ref="a3890f927a8d052fb3f62c5826ac6ffef" args="(const int majorRow, const int majorCol) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVSparseBlockMatrix::isNullBlock </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorCol</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate if a block contains zero values. </p>
+<p>This function can be used to evaluate if a block is undefined in the block-sparse matrix.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the block matrix is Null. This implies that every element of the block matrix is zero. A false value on the output does not imply that the elements of the block matrix differ from zero in any case. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00339">339</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a41e42237298152cf3b3da6e0e7e79c01"></a><!-- doxytag: member="QVSparseBlockMatrix::getBlockRowIndexes" ref="a41e42237298152cf3b3da6e0e7e79c01" args="(const int majorRow) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;int&gt; QVSparseBlockMatrix::getBlockRowIndexes </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>majorRow</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>List of non-zero blocks in a block-row. </p>
+<p>This function returns a list of the blocks in a block-row of the sparse matrix which are non-zero. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>majorRow</em>&nbsp;</td><td>block-row index. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00393">393</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a27365e05775fdd2fc655f065d173f163"></a><!-- doxytag: member="QVSparseBlockMatrix::operator*" ref="a27365e05775fdd2fc655f065d173f163" args="(const QVSparseBlockMatrix &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> QVSparseBlockMatrix::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Product operator for sparse block matrices. </p>
+<p>The sparse block matrices must have compatible block sizes, and major sizes. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>other</em>&nbsp;</td><td>factor for the product operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00403">403</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4589e6f5a82165b4159168805258ad4f"></a><!-- doxytag: member="QVSparseBlockMatrix::operator*" ref="a4589e6f5a82165b4159168805258ad4f" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVSparseBlockMatrix::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sparse block matrix-vector product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>vector to multiply by. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00408">408</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36a11e4a75005686b522407e67136b0c"></a><!-- doxytag: member="QVSparseBlockMatrix::dotProduct" ref="a36a11e4a75005686b522407e67136b0c" args="(const QVSparseBlockMatrix &amp;other, const bool transposeFirstOperand=false, const bool transposeSecondOperand=false) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> QVSparseBlockMatrix::dotProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>transposeFirstOperand</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>transposeSecondOperand</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Dot product for sparse block matrices. </p>
+<p>The sparse block matrices must have compatible block sizes, and major sizes. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>other</em>&nbsp;</td><td>factor for the product operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000078">Todo:</a></b></dt><dd>mejorar operador de incremento para matrices </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8cpp_source.html#l00043">43</a> of file <a class="el" href="qvsparseblockmatrix_8cpp_source.html">qvsparseblockmatrix.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>, <a class="el" href="classQVSparseBlockMatrix.html#a27365e05775fdd2fc655f065d173f163">operator*()</a>, and <a class="el" href="classQVSparseBlockMatrix.html#af2826bfd4440734cf95c6d16099f15b2">randomSquare()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb286c7dbcf46f0d134bff43bab37e0c"></a><!-- doxytag: member="QVSparseBlockMatrix::dotProduct" ref="adb286c7dbcf46f0d134bff43bab37e0c" args="(const QVVector &amp;vector, const bool transposeMatrix=false) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVSparseBlockMatrix::dotProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>transposeMatrix</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Dot product for sparse block matrices with vectors. </p>
+<p>The sparse block matrix must have compatible block sizes, and major sizes, with the vecto size </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vector</em>&nbsp;</td><td>factor for the product operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000079">Todo:</a></b></dt><dd>mejorar operador de incremento para vectores </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8cpp_source.html#l00100">100</a> of file <a class="el" href="qvsparseblockmatrix_8cpp_source.html">qvsparseblockmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a603b844cfe6c0102ee10cd3dee2563c2"></a><!-- doxytag: member="QVSparseBlockMatrix::operator=" ref="a603b844cfe6c0102ee10cd3dee2563c2" args="(const QVSparseBlockMatrix &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp; QVSparseBlockMatrix::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy operator. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8cpp_source.html#l00144">144</a> of file <a class="el" href="qvsparseblockmatrix_8cpp_source.html">qvsparseblockmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab96a97d0790f3925632b6e5706278947"></a><!-- doxytag: member="QVSparseBlockMatrix::clear" ref="ab96a97d0790f3925632b6e5706278947" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVSparseBlockMatrix::clear </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set matrix to zero. </p>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8h_source.html#l00430">430</a> of file <a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2826bfd4440734cf95c6d16099f15b2"></a><!-- doxytag: member="QVSparseBlockMatrix::randomSquare" ref="af2826bfd4440734cf95c6d16099f15b2" args="(const int NB, const int N, const double NZProb, const bool symmetric=true, const bool positive=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a> QVSparseBlockMatrix::randomSquare </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>NB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>NZProb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>symmetric</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>positive</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generates a random square sparse block matrix The sparse block matrix must have compatible block sizes, and major sizes, with the vecto size. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NB</em>&nbsp;</td><td>number of row (=column) blocks </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NB</em>&nbsp;</td><td>number of rows (=columns) by block </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NZProb</em>&nbsp;</td><td>probability of a block of being of different from zero (out of diagonal) in generated matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>symmetric</em>&nbsp;</td><td>if the matrix to be generated should be symmetric </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>positive</em>&nbsp;</td><td>if the matrix to be generated should be positive definite </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the generated sparse square block matrix </dd></dl>
+
+<p>Definition at line <a class="el" href="qvsparseblockmatrix_8cpp_source.html#l00165">165</a> of file <a class="el" href="qvsparseblockmatrix_8cpp_source.html">qvsparseblockmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvsparseblockmatrix_8h_source.html">qvsparseblockmatrix.h</a></li>
+<li>src/qvmath/<a class="el" href="qvsparseblockmatrix_8cpp_source.html">qvsparseblockmatrix.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

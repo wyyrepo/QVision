@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvsampleconsensus.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef QVRANSAC_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define QVRANSAC_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QMap&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00122"></a><a class="code" href="classQVRANSAC.html">00122</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Model&gt; <span class="keyword">class </span><a class="code" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124     <span class="keyword">protected</span>:
+<a name="l00125"></a>00125         <span class="keywordtype">int</span> sampleSetSize, minInliers, iteration;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127         <span class="comment">// To use after initialization</span>
+<a name="l00128"></a>00128         QList&lt; Element &gt; elements;
+<a name="l00129"></a>00129         <span class="keywordtype">bool</span> continueCondition;
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131         <span class="comment">// To return to the user.</span>
+<a name="l00132"></a>00132         QList&lt;Element&gt; bestInliers;
+<a name="l00133"></a>00133         Model bestModel;
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> init()
+<a name="l00136"></a>00136             {
+<a name="l00137"></a>00137             <span class="comment">// Check if there are enough in-liners to work.</span>
+<a name="l00138"></a>00138             <span class="keywordflow">if</span> (elements.size() &lt; sampleSetSize)
+<a name="l00139"></a>00139                 <span class="keywordflow">return</span> continueCondition = <span class="keyword">false</span>;
+<a name="l00140"></a>00140             <span class="keywordflow">else</span>
+<a name="l00141"></a>00141                 <span class="keywordflow">return</span> continueCondition = <span class="keyword">true</span>;
+<a name="l00142"></a>00142             }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145         <span class="keyword">virtual</span> <span class="keyword">const</span> QList&lt; Element &gt; getNewTentativeInliersSet()
+<a name="l00146"></a>00146             {
+<a name="l00147"></a>00147                         QVector&lt;int&gt; indexes;
+<a name="l00148"></a>00148                         indexes.reserve(this-&gt;sampleSetSize);
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;sampleSetSize; i++)
+<a name="l00151"></a>00151                                 {
+<a name="l00152"></a>00152                                 <span class="keywordtype">int</span> index = RANDOM(0, this-&gt;elements.size()-1);
+<a name="l00153"></a>00153                                 <span class="comment">// Do not include the same element twice.</span>
+<a name="l00154"></a>00154                                 <span class="keywordflow">while</span>( indexes.contains(index) )
+<a name="l00155"></a>00155                                         index = RANDOM(0, this-&gt;elements.size()-1);
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157                 <span class="comment">//result.append(this-&gt;elements.at( index ));</span>
+<a name="l00158"></a>00158                                 indexes &lt;&lt; index;
+<a name="l00159"></a>00159                                 }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161             QList&lt; Element &gt; result;
+<a name="l00162"></a>00162                         result.reserve(indexes.count());
+<a name="l00163"></a>00163                         <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> index, indexes)
+<a name="l00164"></a>00164                 result &lt;&lt; this-&gt;elements.at( index );
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166             <span class="keywordflow">return</span> result;
+<a name="l00167"></a>00167             }
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169     <span class="keyword">public</span>:
+<a name="l00176"></a><a class="code" href="classQVRANSAC.html#a50f5de1745380c4225a454d1ca923305">00176</a>         <a class="code" href="classQVRANSAC.html#a50f5de1745380c4225a454d1ca923305" title="Constructor for QVRANSAC class.">QVRANSAC</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> sampleSetSize, <span class="keyword">const</span> <span class="keywordtype">int</span> minInliers):sampleSetSize(sampleSetSize), minInliers(minInliers) { }
+<a name="l00177"></a>00177 
+<a name="l00185"></a>00185         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899" title="Generate a model from a set of observations.">fit</a>(<span class="keyword">const</span> QList&lt;Element&gt; &amp;elementList, Model &amp;model) = 0;
+<a name="l00186"></a>00186 
+<a name="l00194"></a>00194         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classQVRANSAC.html#a79fd586329d3e77aab2bfec0d7666012" title="Check if an observation fits in a model.">test</a>(<span class="keyword">const</span> Model &amp;model, <span class="keyword">const</span> Element &amp;element) = 0;
+<a name="l00195"></a>00195 
+<a name="l00201"></a><a class="code" href="classQVRANSAC.html#a7470d21ea8b806df5ee83405b05d14f1">00201</a>         <span class="keywordtype">void</span> <a class="code" href="classQVRANSAC.html#a7470d21ea8b806df5ee83405b05d14f1" title="Adds a data sample to the observations set.">addElement</a>(<span class="keyword">const</span> Element &amp;element)                                 { elements.append(element); }
+<a name="l00202"></a>00202 
+<a name="l00208"></a><a class="code" href="classQVRANSAC.html#ad45b090b62c67943d269fa25855b71ce">00208</a>         <span class="keyword">const</span> Model &amp; <a class="code" href="classQVRANSAC.html#ad45b090b62c67943d269fa25855b71ce" title="Gets the best model obtained in a search.">getBestModel</a>()<span class="keyword"> const                                      </span>{ <span class="keywordflow">return</span> bestModel; }
+<a name="l00209"></a>00209 
+<a name="l00215"></a><a class="code" href="classQVRANSAC.html#a28bbe6479b1babf7398e1b3215435e67">00215</a>         <span class="keyword">const</span> QList&lt;Element&gt; &amp; <a class="code" href="classQVRANSAC.html#a28bbe6479b1babf7398e1b3215435e67" title="Gets the data elements matching with the best model.">getBestInliers</a>()<span class="keyword"> const                           </span>{ <span class="keywordflow">return</span> bestInliers; }
+<a name="l00216"></a>00216 
+<a name="l00222"></a><a class="code" href="classQVRANSAC.html#a69241e87115f9030f0da68c720117970">00222</a>         <span class="keywordtype">int</span> <a class="code" href="classQVRANSAC.html#a69241e87115f9030f0da68c720117970" title="Gets the number of iterations performed in a search.">getIterations</a>()<span class="keyword"> const                                               </span>{ <span class="keywordflow">return</span> iteration; }
+<a name="l00223"></a>00223 
+<a name="l00231"></a><a class="code" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5">00231</a>         <span class="keywordtype">bool</span> <a class="code" href="classQVRANSAC.html#a33fbf94a2d5f7df09202d97d505a0ea5" title="Starts a RANSAC search.">iterate</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> maxIterations)
+<a name="l00232"></a>00232             {
+<a name="l00233"></a>00233             <span class="keywordflow">if</span> (!init())
+<a name="l00234"></a>00234                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00235"></a>00235 
+<a name="l00236"></a>00236             iteration = 0;
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238             <span class="keywordflow">while</span>(continueCondition &amp;&amp; (iteration++) &lt; maxIterations)
+<a name="l00239"></a>00239                 {
+<a name="l00240"></a>00240                 <span class="comment">// Get new feasible maybe model.</span>
+<a name="l00241"></a>00241                 Model tentativeModel;
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243                 <span class="comment">// If no feasible model was found, continue with the next tentative set.</span>
+<a name="l00244"></a>00244                 <span class="keywordflow">if</span> (!<a class="code" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899" title="Generate a model from a set of observations.">fit</a>(getNewTentativeInliersSet(), tentativeModel))
+<a name="l00245"></a>00245                     <span class="keywordflow">continue</span>;
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247                 <span class="comment">// Else, get consensus set.</span>
+<a name="l00248"></a>00248                 QList&lt;Element&gt; inliersSet;
+<a name="l00249"></a>00249                 <span class="keywordflow">foreach</span> (Element element, elements)
+<a name="l00250"></a>00250                     <span class="keywordflow">if</span> (<a class="code" href="classQVRANSAC.html#a79fd586329d3e77aab2bfec0d7666012" title="Check if an observation fits in a model.">test</a>(tentativeModel, element))
+<a name="l00251"></a>00251                         inliersSet.append(element);
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253                 <span class="comment">// Get consensus model.</span>
+<a name="l00254"></a>00254                 <span class="keywordflow">if</span> (inliersSet.size() &gt;= minInliers )
+<a name="l00255"></a>00255                     {
+<a name="l00256"></a>00256                     <a class="code" href="classQVRANSAC.html#a0d8bec0d4c7201e3821b0106db079899" title="Generate a model from a set of observations.">fit</a>(inliersSet, tentativeModel);
+<a name="l00257"></a>00257                     bestModel = tentativeModel;
+<a name="l00258"></a>00258                     bestInliers = inliersSet;
+<a name="l00259"></a>00259                     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00260"></a>00260                     }
+<a name="l00261"></a>00261                 }
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00264"></a>00264             }
+<a name="l00265"></a>00265     };
+<a name="l00266"></a>00266 
+<a name="l00290"></a><a class="code" href="classQVPROSAC.html">00290</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Model&gt; <span class="keyword">class </span><a class="code" href="classQVPROSAC.html" title="Implementation of PROSAC, an extension to RANSAC (see QVRANSAC).">QVPROSAC</a>: <span class="keyword">public</span> <a class="code" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>&lt;Element, Model&gt;
+<a name="l00291"></a>00291     {
+<a name="l00292"></a>00292     <span class="keyword">protected</span>:
+<a name="l00293"></a>00293         QMap&lt;double, Element &gt; elementsMap;
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295 <span class="preprocessor">        #ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00296"></a>00296 <span class="preprocessor"></span>        <span class="keyword">virtual</span> <span class="keyword">const</span> QList&lt; Element &gt; getNewTentativeInliersSet()
+<a name="l00297"></a>00297             {
+<a name="l00298"></a>00298             <span class="keyword">const</span> <span class="keywordtype">int</span> maxSize = 2* log(this-&gt;<a class="code" href="classQVRANSAC.html#a69241e87115f9030f0da68c720117970" title="Gets the number of iterations performed in a search.">getIterations</a>()) / log(2);
+<a name="l00299"></a>00299             QList&lt; Element &gt; result;
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;sampleSetSize; i++)
+<a name="l00302"></a>00302                 result.append(this-&gt;elements.at( RANDOM(0, MAX(this-&gt;sampleSetSize, maxSize-1)) ));
+<a name="l00303"></a>00303 
+<a name="l00304"></a>00304             <span class="keywordflow">return</span> result;
+<a name="l00305"></a>00305             }
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307         <span class="keywordtype">bool</span> init()
+<a name="l00308"></a>00308             {
+<a name="l00309"></a>00309             <span class="keyword">const</span> QList&lt;double&gt; preferenceList = elementsMap.uniqueKeys();
+<a name="l00310"></a>00310             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; preferenceList.size(); i++)
+<a name="l00311"></a>00311                 this-&gt;elements += elementsMap.values(preferenceList.at(i));
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313             <span class="keywordflow">return</span> <a class="code" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC&lt;Element, Model&gt;::init</a>();
+<a name="l00314"></a>00314             }
+<a name="l00315"></a>00315 <span class="preprocessor">        #endif</span>
+<a name="l00316"></a>00316 <span class="preprocessor"></span>
+<a name="l00317"></a>00317     <span class="keyword">public</span>:
+<a name="l00324"></a><a class="code" href="classQVPROSAC.html#af6a74baf34bd19fce071f43235b945e6">00324</a>         <a class="code" href="classQVPROSAC.html#af6a74baf34bd19fce071f43235b945e6" title="Constructor for QVPROSAC class.">QVPROSAC</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> sampleSetSize, <span class="keyword">const</span> <span class="keywordtype">int</span> minInliers): <a class="code" href="classQVRANSAC.html" title="Implementation of RANSAC, a robust statistical model fitting algorithm.">QVRANSAC</a>&lt;Element, Model&gt;(sampleSetSize, minInliers) { }
+<a name="l00325"></a>00325 
+<a name="l00333"></a><a class="code" href="classQVPROSAC.html#ad61ec53963bf7ad440ba942748748888">00333</a>         <span class="keywordtype">void</span> <a class="code" href="classQVPROSAC.html#ad61ec53963bf7ad440ba942748748888" title="Starts a PROSAC search.">addElement</a>(<span class="keyword">const</span> Element &amp;element, <span class="keyword">const</span> <span class="keywordtype">double</span> preference = 0)
+<a name="l00334"></a>00334             { elementsMap.insertMulti(preference, element); }
+<a name="l00335"></a>00335     };
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

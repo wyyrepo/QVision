@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvgpukltflow/qvklttracker.cpp</h1><a href="qvklttracker_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QVKLTTracker&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="classQVKLTTracker.html#a4999f87522dc7fe65ce4f2b6a890a06b">00027</a> <a class="code" href="classQVKLTTracker.html#af77f1ffb76ad088fac619b304e93bfdc" title="Default constructor Do nothing.">QVKLTTracker::QVKLTTracker</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> trackWithGain,
+<a name="l00028"></a>00028                            <span class="keywordtype">int</span> featuresWidth , <span class="keywordtype">int</span> featuresHeight,
+<a name="l00029"></a>00029                            <span class="keywordtype">int</span> nIterations, <span class="keywordtype">int</span> nLevels, <span class="keywordtype">int</span> levelSkip,<span class="keywordtype">int</span> windowWidth,
+<a name="l00030"></a>00030                            <span class="keywordtype">float</span> trackBorderMargin, <span class="keywordtype">float</span> detectBorderMargin,
+<a name="l00031"></a>00031                            <span class="keywordtype">float</span> convergenceThreshold, <span class="keywordtype">float</span> SSD_Threshold,
+<a name="l00032"></a>00032                            <span class="keywordtype">int</span> minDistance, <span class="keywordtype">float</span> minCornerness) {
+<a name="l00033"></a>00033     KLT_SequenceTrackerConfig cfg;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035     cfg.nIterations = nIterations;
+<a name="l00036"></a>00036     cfg.nLevels = nLevels;
+<a name="l00037"></a>00037     cfg.levelSkip = levelSkip;
+<a name="l00038"></a>00038     cfg.trackBorderMargin = trackBorderMargin;
+<a name="l00039"></a>00039     cfg.convergenceThreshold = convergenceThreshold;
+<a name="l00040"></a>00040     cfg.SSD_Threshold = SSD_Threshold;
+<a name="l00041"></a>00041     cfg.trackWithGain = trackWithGain;
+<a name="l00042"></a>00042     cfg.minDistance = minDistance;
+<a name="l00043"></a>00043     cfg.minCornerness = minCornerness;
+<a name="l00044"></a>00044     cfg.detectBorderMargin = detectBorderMargin;
+<a name="l00045"></a>00045     cfg.windowWidth = windowWidth;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     tracker = <span class="keyword">new</span> KLT_SequenceTracker(cfg);
+<a name="l00048"></a>00048     tracker-&gt;allocate(width, height, nLevels, featuresWidth, featuresHeight);
+<a name="l00049"></a>00049     nFeatures = featuresHeight * featuresWidth;
+<a name="l00050"></a>00050     feat = <span class="keyword">new</span> KLT_TrackedFeature[nFeatures];
+<a name="l00051"></a>00051     trackID = <span class="keyword">new</span> <span class="keywordtype">int</span> [nFeatures];
+<a name="l00052"></a>00052     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;nFeatures; i++) {
+<a name="l00053"></a>00053         trackID[i] = 0;
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055     lastID = 1;
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="classQVKLTTracker.html#ae2de72693116f879c6c07d017e719408">00058</a> <a class="code" href="classQVKLTTracker.html#ae2de72693116f879c6c07d017e719408" title="Deallocate the tracker from the GPU.">QVKLTTracker::~QVKLTTracker</a>() {
+<a name="l00059"></a>00059     tracker-&gt;deallocate();
+<a name="l00060"></a>00060     <span class="keyword">delete</span> tracker;
+<a name="l00061"></a>00061     <span class="keyword">delete</span> feat;
+<a name="l00062"></a>00062     <span class="keyword">delete</span> trackID;
+<a name="l00063"></a>00063 }
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="keywordtype">void</span> QVKLTTracker::updateHashTable(QHash&lt;int,QVKLTTrackerFeature&gt; &amp;features,<span class="keywordtype">int</span> width,<span class="keywordtype">int</span> height) {
+<a name="l00066"></a>00066     <span class="comment">// features-&gt;clear(); // Really not needed.</span>
+<a name="l00067"></a>00067     <span class="comment">// std::cout &lt;&lt; &quot;features-&gt;size() before = &quot; &lt;&lt; features-&gt;size() &lt;&lt; std::endl;</span>
+<a name="l00068"></a>00068     <span class="comment">// int sum0 = 0,sum1 = 0,sum2 = 0;</span>
+<a name="l00069"></a>00069     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;nFeatures; i++) {
+<a name="l00070"></a>00070         <span class="keywordflow">if</span>(feat[i].status == 0) { <span class="comment">// Succesfully tracked feature.</span>
+<a name="l00071"></a>00071             <span class="comment">// We update the corresponding feature in the hash:</span>
+<a name="l00072"></a>00072             features.insert(trackID[i],
+<a name="l00073"></a>00073                              <a class="code" href="classQVKLTTrackerFeature.html" title="Image feature location used by the GPU-KLT tracker.">QVKLTTrackerFeature</a>(feat[i].pos[0]*width, feat[i].pos[1]*height,
+<a name="l00074"></a>00074                                                   feat[i].gain));
+<a name="l00075"></a>00075             <span class="comment">// sum0++;</span>
+<a name="l00076"></a>00076         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (feat[i].status &gt; 0) { <span class="comment">// New detected feature.</span>
+<a name="l00077"></a>00077             <span class="comment">// First, remove old feature from hash if new feature substitutes an old one which was</span>
+<a name="l00078"></a>00078             <span class="comment">// not successfully tracked:</span>
+<a name="l00079"></a>00079             <span class="keywordflow">if</span>(trackID[i] != 0)
+<a name="l00080"></a>00080                 features.remove(trackID[i]);
+<a name="l00081"></a>00081             <span class="comment">// Now we add the new feature to the hash:</span>
+<a name="l00082"></a>00082             trackID[i] = lastID;
+<a name="l00083"></a>00083             lastID++;
+<a name="l00084"></a>00084             features.insert(trackID[i],
+<a name="l00085"></a>00085                              <a class="code" href="classQVKLTTrackerFeature.html" title="Image feature location used by the GPU-KLT tracker.">QVKLTTrackerFeature</a>(feat[i].pos[0]*width, feat[i].pos[1]*height,
+<a name="l00086"></a>00086                                                  feat[i].gain));
+<a name="l00087"></a>00087             <span class="comment">// sum1++;</span>
+<a name="l00088"></a>00088         } <span class="keywordflow">else</span> { <span class="comment">// feat[i].status &lt; 0 -&gt; lost feature.</span>
+<a name="l00089"></a>00089             <span class="comment">// Remove old feature from hash (if it really existed in the hash):</span>
+<a name="l00090"></a>00090             <span class="keywordflow">if</span>(trackID[i] != 0)
+<a name="l00091"></a>00091                 features.remove(trackID[i]);
+<a name="l00092"></a>00092             <span class="comment">// sum2++;</span>
+<a name="l00093"></a>00093         }
+<a name="l00094"></a>00094     }
+<a name="l00095"></a>00095     <span class="comment">//std::cout &lt;&lt; &quot;sum0 = &quot; &lt;&lt; sum0 &lt;&lt; &quot;   sum1 = &quot; &lt;&lt; sum1 &lt;&lt; &quot;   sum2 = &quot; &lt;&lt; sum2 &lt;&lt; std::endl;</span>
+<a name="l00096"></a>00096     <span class="comment">//std::cout &lt;&lt; &quot;features-&gt;size() after = &quot; &lt;&lt; features-&gt;size() &lt;&lt; std::endl;</span>
+<a name="l00097"></a>00097     <span class="comment">//std::cout &lt;&lt; &quot;lastID = &quot; &lt;&lt; lastID &lt;&lt; std::endl;</span>
+<a name="l00098"></a>00098 }
+<a name="l00099"></a>00099 
+<a name="l00100"></a><a class="code" href="classQVKLTTracker.html#a6047e10322f0d4ed95ad61a787fdfebb">00100</a> <span class="keywordtype">void</span> <a class="code" href="classQVKLTTracker.html#a6047e10322f0d4ed95ad61a787fdfebb" title="Detect all features in image from scratch.">QVKLTTracker::detect</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;image, QHash&lt;int,QVKLTTrackerFeature&gt; &amp;features) {
+<a name="l00101"></a>00101     <span class="keywordtype">int</span> nDetectedFeatures = 0;
+<a name="l00102"></a>00102     <span class="keywordtype">int</span> width = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), height = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104     tracker-&gt;detect((V3D_GPU::uchar *)image.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), nDetectedFeatures, feat);
+<a name="l00105"></a>00105     <span class="comment">// std::cout &lt;&lt; &quot;nDetectedFeatures = &quot; &lt;&lt; nDetectedFeatures &lt;&lt; std::endl;</span>
+<a name="l00106"></a>00106     updateHashTable(features,width,height);
+<a name="l00107"></a>00107     tracker-&gt;advanceFrame();
+<a name="l00108"></a>00108 }
+<a name="l00109"></a>00109 
+<a name="l00110"></a><a class="code" href="classQVKLTTracker.html#affe245d7de2e04d06d4bca4439d80009">00110</a> <span class="keywordtype">void</span> <a class="code" href="classQVKLTTracker.html#affe245d7de2e04d06d4bca4439d80009" title="Detect new features while respecting old ones.">QVKLTTracker::redetect</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;image, QHash&lt;int,QVKLTTrackerFeature&gt; &amp;features) {
+<a name="l00111"></a>00111     <span class="keywordtype">int</span> nNewFeatures;
+<a name="l00112"></a>00112     <span class="keywordtype">int</span> width = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), height = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114     tracker-&gt;redetect((V3D_GPU::uchar *)image.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), nNewFeatures, feat);
+<a name="l00115"></a>00115     <span class="comment">// std::cout &lt;&lt; &quot;nNewFeatures = &quot; &lt;&lt; nNewFeatures &lt;&lt; std::endl;</span>
+<a name="l00116"></a>00116     updateHashTable(features,width,height);
+<a name="l00117"></a>00117     tracker-&gt;advanceFrame();
+<a name="l00118"></a>00118 }
+<a name="l00119"></a>00119 
+<a name="l00120"></a><a class="code" href="classQVKLTTracker.html#a03abf973b520dbd9ce624c5977b973ba">00120</a> <span class="keywordtype">void</span> <a class="code" href="classQVKLTTracker.html#a03abf973b520dbd9ce624c5977b973ba" title="Track features in the hash.">QVKLTTracker::track</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;image, QHash&lt;int,QVKLTTrackerFeature&gt; &amp;features) {
+<a name="l00121"></a>00121     <span class="keywordtype">int</span> nPresentFeatures;
+<a name="l00122"></a>00122     <span class="keywordtype">int</span> width = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), height = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     tracker-&gt;track((V3D_GPU::uchar *)image.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), nPresentFeatures, feat);
+<a name="l00125"></a>00125     <span class="comment">// std::cout &lt;&lt; &quot;nPresentFeatures = &quot; &lt;&lt; nPresentFeatures &lt;&lt; std::endl;</span>
+<a name="l00126"></a>00126     updateHashTable(features,width,height);
+<a name="l00127"></a>00127     tracker-&gt;advanceFrame();
+<a name="l00128"></a>00128 }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

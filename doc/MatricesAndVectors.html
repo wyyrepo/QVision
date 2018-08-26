@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="MatricesAndVectors">Matrices and vectors </a></h1><p>In the QVision framework, matrices and vectors are represented as objects. These objects are created from the <a class="el" href="classQVMatrix.html">QVMatrix</a> and <a class="el" href="classQVVector.html">QVVector</a> classes respectively.</p>
+<p>They offer constructors, operators and methods to perform several operations.</p>
+<h2><a class="anchor" id="MatrixInitialization">
+Matrix and vector initialization</a></h2>
+<p>The <a class="el" href="classQVMatrix.html">QVMatrix</a> and <a class="el" href="classQVVector.html">QVVector</a> classes have several constructors. The matrix <b>default constructor</b> creates a 1x1 size matrix:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a 1x1 matrix</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A;
+</pre></div><p> while the default constructor for the <a class="el" href="classQVVector.html">QVVector</a> class creates an empty vector:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates an empty vector</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v;
+</pre></div><p>These constructors are useful for completeness. Another constructor creates matrices and vectors specifying their size, and a default value for their content values:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a matrix of size 3x4, containing the value 1.0 in every element.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3, 4, 1.0);
+
+<span class="comment">// Creates a vector of size 5, containing the value 2.0 in every element.</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v(5, 2.0);
+</pre></div><p>You can omit the default value, to create matrices and vectors with uninitialized contents: </p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a matrix of size 3x4, containing unspecified element values.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3, 4);
+
+<span class="comment">// Creates a vector of size 5, containing unspecified element values.</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v(5);
+</pre></div><p>There is a constructor to initialize the matrix and vector elements from a C array of double values:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">double</span>  matrix_values[12] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 },
+        vector_values[5] = { 1.0, 2.0, 3.0, 4.0, 5.0 };
+
+<span class="comment">// Creates a matrix containing the values of the array &#39;matrix_values&#39;, in row order.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A2(3,4, matrix_values);
+
+<span class="comment">// Creates a vector containing the values of the array &#39;vector_values&#39;.</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v2(5, vector_values);
+</pre></div><p>A <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> can also be initialized from a <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>. Since <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> itself inherits from QVector, which in turn can be populated with elements using the &lt;&lt; operator, the following code is perfectly valid to initialize aa 4x4 matrix:</p>
+<div class="fragment"><pre class="fragment">    A = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(4,4,<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>() &lt;&lt; 1 &lt;&lt; 2 &lt;&lt; 3 &lt;&lt; 4
+                                &lt;&lt; 2 &lt;&lt; 3 &lt;&lt; 4 &lt;&lt; 5
+                                &lt;&lt; 3 &lt;&lt; 4 &lt;&lt; 5 &lt;&lt; 6
+                                &lt;&lt; 4 &lt;&lt; 5 &lt;&lt; 6 &lt;&lt; 7);
+</pre></div><p>You can also convert a <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> to a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (as row or as column):</p>
+<div class="fragment"><pre class="fragment">    A = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>() &lt;&lt; 1 &lt;&lt; 2 &lt;&lt; 3,<span class="keyword">true</span>);
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix A:&quot;</span> &lt;&lt; A &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    A = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>() &lt;&lt; 1 &lt;&lt; 2 &lt;&lt; 3,<span class="keyword">false</span>);
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix A:&quot;</span> &lt;&lt; A &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+</pre></div><p>There are also adequate conversions for gsl_matrix, gsl_vector (GSL) and a CvMat (OpenCV). See reference documentation of the <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> and <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> for details.</p>
+<p>A list of QPointF's (also of QVVector's, QVector&lt;double&gt;) can be directly used to initialize a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>:</p>
+<div class="fragment"><pre class="fragment">    A = QList&lt;QPointF&gt;() &lt;&lt; QPointF(1,2) &lt;&lt; QPointF(2,3) &lt;&lt; QPointF(3,4) &lt;&lt; QPointF(4,5);
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix A:&quot;</span> &lt;&lt; A &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+</pre></div><p>You can also convert a matrix to a list of QVVectors (also QVVector's, QVector&lt;double&gt;):</p>
+<div class="fragment"><pre class="fragment">    QList&lt;QVVector&gt; list = A;
+    <span class="keywordflow">foreach</span>(<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v,list) {
+        std::cout &lt;&lt; <span class="stringliteral">&quot;vector=&quot;</span> &lt;&lt; v &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> ;
+    }
+</pre></div><p>And you can also initialize a rotation matrix from a <a class="el" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a>: </p>
+<div class="fragment"><pre class="fragment">    <span class="comment">// A = QVQuaternion(); // Deprecated, but still valid.</span>
+    <a class="code" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a> q; <span class="comment">// Equivalent.</span>
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Quaternion q:&quot;</span> &lt;&lt; q &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    A = q.<a class="code" href="classQVQuaternion.html#a00c343b8018cfc98536b13ff31341751" title="Gets the rotation matrix corresponding to the Quaternion.">toRotationMatrix</a>();
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix A:&quot;</span> &lt;&lt; A &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+</pre></div><p>A last kind of constructor is the <b>copy constructor</b>. These constructors initialize the contents of a matrix, or a vector, from the contents of another matrix, or vector:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Matrix &#39;A3&#39; will replicate the size and contents of matrix &#39;A&#39;.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A3 = A;
+
+<span class="comment">// Vector &#39;v3&#39; will replicate the size and contents of vector &#39;v&#39;.</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v3 = v;
+</pre></div><h2><a class="anchor" id="MatrixVectorElementAccess">
+Accessing the elements of matrices and vectors</a></h2>
+<p>The matrix and vectors elements can be accessed with the operator ():</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Create a matrix of size 3x4, with its elements uninitialized.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A4(3,4);
+
+<span class="comment">// Initialize each element &#39;i,j&#39; of the matrix, to the value &#39;i*j&#39;</span>
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+                A4(i,j) = i*j;
+
+<span class="comment">// Create a vector of size 4, with its elements uninitialized.</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v4[4];
+
+<span class="comment">// Copy the last column of matrix &#39;A4&#39; in the vector &#39;v4&#39;, element by element.</span>
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)
+        v4(i) = A4(2,j);
+</pre></div><dl class="note"><dt><b>Note:</b></dt><dd>In the case of QVVectors, the [] access operator is also available, and can be faster than the () operator.</dd></dl>
+<h2><a class="anchor" id="MatrixIO">
+Storing and loading matrices to/from files.</a></h2>
+<p>A matrix can be stored in a file, in a plain text format, using the functions <a class="el" href="group__qvmath.html#gae1e1afa78741e92ed46d20b70830a4fc">readQVMatrixFromFile</a> and <a class="el" href="group__qvmath.html#ga9ead752411a6772cfd7d75051cdc677e">writeQVMatrixToFile</a>. These functions can read or write only a matrix, from a single file. An example usage of these functions is the following:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a random matrix of size 3x4</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,4);
+
+<span class="comment">// Stores that matrix in the file &#39;test.txt&#39;.</span>
+<a class="code" href="group__qvmath.html#ga9ead752411a6772cfd7d75051cdc677e" title="Writes the content of a QVMatrix object in an ASCII file.">writeQVMatrixToFile</a>(<span class="stringliteral">&quot;test.txt&quot;</span>, M);
+
+<span class="comment">// Retrieve the matrix stored in file &#39;test.txt&#39;, in matrix variable &#39;M2&#39;.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M2;
+<a class="code" href="group__qvmath.html#gae1e1afa78741e92ed46d20b70830a4fc" title="Reads the content of a QVMatrix object from an ASCII file.">readQVMatrixFromFile</a>(<span class="stringliteral">&quot;test.txt&quot;</span>, M2);
+</pre></div><p>That code stores in a text file of name <em>test.txt</em> a randomly initialized matrix of 3x4 elements. The text file will contain something like the following text, describing the matrix saved in the file:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> (3, 4)
+[
+    [ 0.128115 0.968417 0.053520 0.024858 ]
+    [ 0.856481 0.031511 0.710598 0.217373 ]
+    [ 0.892742 0.400330 0.548256 0.519458 ]
+]
+</pre></div><h2><a class="anchor" id="MatrixComposition">
+Matrix appending operators</a></h2>
+<p>Two matrices of size mxn and pxn can be appended vertically using the ampersand operator &amp;, to create a matrix of size (m+p)xn:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(10,20), B(7, 20);
+
+<span class="comment">// Init the contents of &#39;A&#39; and &#39;B&#39;</span>
+[ ... ]
+
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> C = A &amp; B;
+</pre></div><p>The resulting content of the matrix C can be expressed with the following equation:</p>
+<p><img class="formulaInl" alt="$ C = \left( \begin{array}{c} A \\ B \\ \end{array} \right) $" src="form_0.png"/></p>
+<p>Similarly, the pipe operator | can be used to append horizontally two matrices of size nxm and nxp, to create a new matrix of size nx(m+p):</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(20,10), B(20, 7);
+
+<span class="comment">// Init the contents of &#39;A&#39; and &#39;B&#39;</span>
+[ ... ]
+
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> C = A | B;
+</pre></div><p>The resulting content of the matrix C can be expressed with the following equation:</p>
+<p><img class="formulaInl" alt="$ C = \left( \begin{array}{cc} A &amp; B \\ \end{array} \right) $" src="form_1.png"/></p>
+<p>The following is an extended example, which appends several matrices, to create the following matrix:</p>
+<p><img class="formulaInl" alt="$ C = \left( \begin{array}{c|c} I &amp; 0 \\ \hline 0 &amp; A \\ \end{array} \right) $" src="form_2.png"/></p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(4,4);
+
+<span class="comment">// Init the contents of &#39;A&#39;</span>
+[ ... ]
+
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> C =    ( <a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(3) | <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(3,4,0.0) ) &amp;
+                ( <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(4,3,0.0)     | A                 );
+</pre></div><h2><a class="anchor" id="MatrixVectorAritmeticalOperators">
+Aritmetical operators for matrices and vectors</a></h2>
+<p>Matrices and vectors redefine the following arithmetical operators: +, -, *, /, and ^. They can be used to naturally operate with matrices, vectors, and scalar numbers.</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Create matrix &#39;A&#39; of size 3x3, and containing random values.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>        A = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,3),
+                B = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,3);
+
+<span class="comment">// PURE MATRIX OPERATION.</span>
+<span class="comment">// Multiply &#39;A&#39; and &#39;B&#39; matrices.</span>
+std::cout &lt;&lt; A*B &lt;&lt; std::endl;
+
+<span class="comment">// Solve &#39;X&#39; in the linear equation system</span>
+<span class="comment">//      XB = A</span>
+<span class="comment">// Where &#39;X&#39; is a 3x3 matrix.</span>
+std::cout &lt;&lt; A/B &lt;&lt; std::endl;
+
+<span class="comment">// Add the elements of both matrices &#39;A&#39; and &#39;B&#39;.</span>
+std::cout &lt;&lt; A+B &lt;&lt; std::endl;
+
+<span class="comment">// SCALAR WITH MATRIX OPERATION.</span>
+<span class="comment">// Multiply each element of &#39;A&#39; by the scalar value 2.0.</span>
+std::cout &lt;&lt; A*2.0 &lt;&lt; std::endl;
+std::cout &lt;&lt; 2.0*A &lt;&lt; std::endl;
+
+<span class="comment">// Add scalar 2.0 to every element of the matrix &#39;A&#39;.</span>
+std::cout &lt;&lt; 2.0 + A &lt;&lt; std::endl;
+std::cout &lt;&lt; A + 2.0  &lt;&lt; std::endl;
+
+<span class="comment">// VECTOR WITH MATRIX OPERATION.</span>
+<span class="comment">// Create randomly initialized vectors.</span>
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,1), w = <a class="code" href="classQVMatrix.html#ad2840553c7fa2cf81c8ce982db34b7b4" title="Creates a matrix of random values.">QVMatrix::random</a>(3,1);
+
+<span class="comment">// Multiply the matrix &#39;A&#39; by the column vector &#39;v&#39;.</span>
+<span class="comment">// Matrix &#39;A&#39; must have the same number of columns, than the size of vector &#39;v&#39;.</span>
+std::cout &lt;&lt; A*v &lt;&lt; std::endl;
+
+<span class="comment">// Multiply the row vector &#39;v&#39; by the matrix &#39;A&#39;.</span>
+<span class="comment">// Matrix &#39;A&#39; must have the same number of rows, than the size of vector &#39;v&#39;.</span>
+std::cout &lt;&lt; v*A &lt;&lt; std::endl;
+
+<span class="comment">// PURE VECTOR OPERATION.</span>
+<span class="comment">// Perform scalar product of vectors &#39;v&#39; and &#39;w&#39;.</span>
+std::cout &lt;&lt; v*w &lt;&lt; std::endl;
+
+<span class="comment">// Obtain vector product of vectors &#39;v&#39; and &#39;w&#39; (only for vectors of dimension 3).</span>
+std::cout &lt;&lt; v^w &lt;&lt; std::endl;
+</pre></div><h2><a class="anchor" id="OtherOperations">
+Other operations with matrices and vectors.</a></h2>
+<p>Besides the standard arithmetic operations, the library also offers many other typical operations for matrices/vectors:</p>
+<ul>
+<li>For matrices: generation of random, zeros, identity and diagonal matrices, 2D and 3D rotation / scale / translation matrices; transpose operation, norm and trace of a matrix, reshaping (same data, new dimensions), submatrix extraction, determinant, etc.</li>
+</ul>
+<ul>
+<li>For vectors: random, gauss and mexican hat vector generation, subvector extraction, max / min / mean / median / sum / variance / enthropy of the elements of the vector,</li>
+</ul>
+<p>See reference documentation of classes <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> and <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> for details.</p>
+<h2><a class="anchor" id="MatrixFactorizations">
+Matrix factorizations</a></h2>
+<p>The QVision offers wrapper functions to most of the GSL and Lapack (MKL versions) matrix factorization routines. Take a look at the module <a class="el" href="group__qvmatrixalgebra.html">Matrix Algebra</a> for a comprehensive list of these matrix decomposition methods. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

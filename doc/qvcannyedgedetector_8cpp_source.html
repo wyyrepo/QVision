@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvprocessingblocks/qvcannyedgedetector.cpp</h1><a href="qvcannyedgedetector_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QVPolyline&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QVCannyEdgeDetector&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span>QVCannyEdgeDetector::QVCannyEdgeDetector(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+<a name="l00032"></a>00032         {
+<a name="l00033"></a>00033         addProperty&lt;double&gt;(<span class="stringliteral">&quot;cannyHigh&quot;</span>, inputFlag, 150, <span class="stringliteral">&quot;High threshold for Canny operator&quot;</span>, 50, 1000);
+<a name="l00034"></a>00034         addProperty&lt;double&gt;(<span class="stringliteral">&quot;cannyLow&quot;</span>, inputFlag, 50, <span class="stringliteral">&quot;Low threshold for Canny operator&quot;</span>, 10, 500);
+<a name="l00035"></a>00035         addProperty&lt;bool&gt;(<span class="stringliteral">&quot;applyIPE&quot;</span>, inputFlag, FALSE, <span class="stringliteral">&quot;If we want to apply the IPE algorithm&quot;</span>);
+<a name="l00036"></a>00036         addProperty&lt;double&gt;(<span class="stringliteral">&quot;paramIPE&quot;</span>, inputFlag, 5.0, <span class="stringliteral">&quot;IPE parameter (max. allowed distance to line)&quot;</span>, 1.0, 25.0);
+<a name="l00037"></a>00037         addProperty&lt;bool&gt;(<span class="stringliteral">&quot;intersectLines&quot;</span>, inputFlag, TRUE, <span class="stringliteral">&quot;If we want IPE to postprocess polyline (intersecting lines)&quot;</span>);
+<a name="l00038"></a>00038         addProperty&lt;int&gt;(<span class="stringliteral">&quot;minLengthContour&quot;</span>, inputFlag, 25, <span class="stringliteral">&quot;Minimal length of a contour to be considered&quot;</span>, 1, 150);
+<a name="l00039"></a>00039         <span class="comment">//addProperty&lt;int&gt;(&quot;showNothingCannyImage&quot;, inputFlag, 0, &quot;If we want nothing|Canny|original image to be shown&quot;,0,2);</span>
+<a name="l00040"></a>00040         <span class="comment">//addProperty&lt;bool&gt;(&quot;showContours&quot;, inputFlag, TRUE, &quot;If we want contours to be shown&quot;);</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Output image&quot;</span>, outputFlag);
+<a name="l00043"></a>00043         addProperty&lt; QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>, inputFlag|outputFlag);
+<a name="l00044"></a>00044         addProperty&lt; QList&lt;QVPolyline&gt; &gt;(<span class="stringliteral">&quot;Output contours&quot;</span>, outputFlag);
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="keywordtype">void</span> <a class="code" href="classQVCannyEdgeDetector.html#a4ea16e03e6ba5d2dbd69447052999698" title="Function to be defined in subclasses with processing code.">QVCannyEdgeDetector::iterate</a>()
+<a name="l00048"></a>00048         {
+<a name="l00049"></a>00049         <span class="comment">// 0. Read input parameters</span>
+<a name="l00050"></a>00050         <span class="keyword">const</span> <span class="keywordtype">double</span> cannyHigh = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;cannyHigh&quot;</span>);
+<a name="l00051"></a>00051         <span class="keyword">const</span> <span class="keywordtype">double</span> cannyLow = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;cannyLow&quot;</span>);
+<a name="l00052"></a>00052         <span class="keyword">const</span> <span class="keywordtype">bool</span> applyIPE = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;applyIPE&quot;</span>);
+<a name="l00053"></a>00053         <span class="keyword">const</span> <span class="keywordtype">double</span> paramIPE = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;paramIPE&quot;</span>);
+<a name="l00054"></a>00054         <span class="keyword">const</span> <span class="keywordtype">bool</span> intersectLines = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;intersectLines&quot;</span>);
+<a name="l00055"></a>00055         <span class="keyword">const</span> <span class="keywordtype">int</span> minLengthContour = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;minLengthContour&quot;</span>);
+<a name="l00056"></a>00056         <span class="comment">//const int showNothingCannyImage = getPropertyValue&lt;int&gt;(&quot;showNothingCannyImage&quot;);</span>
+<a name="l00057"></a>00057         <span class="comment">//const bool showContours = getPropertyValue&lt;bool&gt;(&quot;showContours&quot;);</span>
+<a name="l00058"></a>00058         <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> image = getPropertyValue&lt; QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>);
+<a name="l00059"></a>00059         <span class="keyword">const</span> uInt cols = image.getCols(), rows = image.getRows();
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> imageFloat(cols, rows), dX(cols, rows), dY(cols, rows), dXNeg(cols, rows);
+<a name="l00062"></a>00062         <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> canny(cols, rows), buffer;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="comment">// 1. Convert image from uChar to sShort</span>
+<a name="l00065"></a>00065         Convert(image, imageFloat);
+<a name="l00066"></a>00066         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Convert image from uChar to sShort&quot;</span>);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="comment">// 2. Obtain horizontal and vertical gradients from image</span>
+<a name="l00069"></a>00069         <a class="code" href="group__qvippFF.html#ga80cdf87494c982146fbaf42fa4e1886f" title="QVision wrapper function for IPP&amp;#39;s ippiFilterSobelHorizMask_32f_C1R.">FilterSobelHorizMask</a>(imageFloat,dY);
+<a name="l00070"></a>00070         <a class="code" href="group__qvippFF.html#gac4c214ba6435857ee9874d2103e99418" title="QVision wrapper function for IPP&amp;#39;s ippiFilterSobelVertMask_32f_C1R.">FilterSobelVertMask</a>(imageFloat,dX);
+<a name="l00071"></a>00071         <a class="code" href="group__qvippIAALO.html#gadc8a14bd103bb45afa43950ce454f2fd" title="Adds, subtracts, or multiplies pixel values of an image and a constant, and places...">MulC</a>(dX, -1, dXNeg);
+<a name="l00072"></a>00072         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Obtain horizontal and vertical gradients from image&quot;</span>);
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">// 3. Apply Canny operator</span>
+<a name="l00075"></a>00075         <a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7" title="Allocates size in a buffer image for temporary data for function Canny.This function...">CannyGetSize</a>(canny, buffer);
+<a name="l00076"></a>00076         <a class="code" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a" title="Creates binary image of source&amp;#39;s image edges, using derivatives of the first...">Canny</a>(dXNeg, dY, canny, cannyLow,cannyHigh, buffer);
+<a name="l00077"></a>00077         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Apply Canny operator&quot;</span>);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <span class="comment">// 4. Get contours</span>
+<a name="l00080"></a>00080         <span class="keyword">const</span> QList&lt;QVPolyline&gt; contourList = <a class="code" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6" title="Obtains a list of the 8-connected pixel lines in the imageThis function can be used...">getLineContoursThreshold8Connectivity</a>(canny, 128);
+<a name="l00081"></a>00081         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Get contours&quot;</span>);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         QList&lt;QVPolyline&gt; outputList;
+<a name="l00084"></a>00084         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> contour,contourList)
+<a name="l00085"></a>00085                 <span class="keywordflow">if</span>(contour.size() &gt; minLengthContour)
+<a name="l00086"></a>00086                         {
+<a name="l00087"></a>00087 <span class="preprocessor">                        #ifdef QVMATRIXALGEBRA_AVAILABLE</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>                        <span class="keywordflow">if</span>(applyIPE)
+<a name="l00089"></a>00089                                 {
+<a name="l00090"></a>00090                                 <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> IPEcontour;
+<a name="l00091"></a>00091                                 <a class="code" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff" title="Eliminates points of a polyline of small shape contribution using the IPE algorithmThis...">IterativePointElimination</a>(contour, IPEcontour, paramIPE, FALSE, intersectLines);
+<a name="l00092"></a>00092                                 outputList.append(IPEcontour);
+<a name="l00093"></a>00093                                 }
+<a name="l00094"></a>00094                         <span class="keywordflow">else</span>
+<a name="l00095"></a>00095 <span class="preprocessor">                        #endif // QVMATRIXALGEBRA_AVAILABLE</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>                                outputList.append(contour);
+<a name="l00097"></a>00097                         }
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;IPE on contours&quot;</span>);
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101         <span class="comment">// 5. Publish resulting data</span>
+<a name="l00102"></a>00102         <span class="comment">// Always show Canny image.</span>
+<a name="l00103"></a>00103         <span class="comment">//if(showNothingCannyImage == 1)</span>
+<a name="l00104"></a>00104         setPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Output image&quot;</span>,canny);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106         <span class="comment">//else if(showNothingCannyImage == 2)</span>
+<a name="l00107"></a>00107         <span class="comment">//      setPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(&quot;Output image&quot;,image);</span>
+<a name="l00108"></a>00108         <span class="comment">/*else  {</span>
+<a name="l00109"></a>00109 <span class="comment">                QVImage&lt;uChar&gt; whiteImage(cols, rows);</span>
+<a name="l00110"></a>00110 <span class="comment">                Set(255, whiteImage);</span>
+<a name="l00111"></a>00111 <span class="comment">                setPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(&quot;Output image&quot;,whiteImage);</span>
+<a name="l00112"></a>00112 <span class="comment">                }*/</span>
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114         <span class="comment">//if(showContours)</span>
+<a name="l00115"></a>00115         <span class="comment">// Always publish contour list</span>
+<a name="l00116"></a>00116         setPropertyValue&lt; QList&lt; QVPolyline&gt; &gt;(<span class="stringliteral">&quot;Output contours&quot;</span>,outputList);
+<a name="l00117"></a>00117         <span class="comment">//else</span>
+<a name="l00118"></a>00118         <span class="comment">//setPropertyValue&lt; QList&lt; QVPolyline&gt; &gt;(&quot;Output contours&quot;,QList&lt;QVPolyline&gt;());</span>
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Publish results&quot;</span>);
+<a name="l00121"></a>00121         }
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

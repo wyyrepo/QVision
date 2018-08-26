@@ -1,0 +1,12 @@
+for METHOD in GSL_EIGENSYMM GSL_EIGENSYMM_ONLY LAPACK_DSYEV LAPACK_DSYEV_ONLY
+do
+  echo -ne $METHOD
+  for SIZE in 5 50 100 500
+  do
+    echo -ne "\n${SIZE}x${SIZE}: " 
+    ./Eigen-test --Rows=${SIZE} --show_residuals=true --method=$METHOD | grep "Eigen" | grep "residual" | tr "\n" " "      
+  done
+  echo
+done
+
+

@@ -1,0 +1,18 @@
+for DECOMPOSITION in QR QL RQ LQ
+do
+  for METHOD in GSL_HOUSEHOLDER_THIN_QR GSL_HOUSEHOLDER_FULL_QR LAPACK_THIN_DGEQR2 LAPACK_FULL_DGEQR2
+  do
+    echo -ne ${DECOMPOSITION} - ${METHOD}
+    for SIZE1 in 5 100
+    do
+      for SIZE2 in 5 100
+      do
+	echo -ne "\n${SIZE1}x${SIZE2}: " 
+	./QR-QL-RQ-LQ-test --Rows=${SIZE1} --Cols=${SIZE2} --show_residuals=true --method=$METHOD --decomposition=$DECOMPOSITION 2>&1 | grep $DECOMPOSITION | grep "residual" | tr "\n" " "
+      done
+    done
+    echo
+  done
+done
+
+

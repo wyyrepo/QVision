@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="TheGUI">Graphical user interface </a></h1><dl class="note"><dt><b>Note:</b></dt><dd>Except the <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a>, the graphical user interface widgets described in this section require the QWT library to be installed in the system, and the QVision to be compiled to use it. See section OptionalLibraries for more info about this.</dd></dl>
+<h2><a class="anchor" id="GUIBlocks">
+Graphical user interface blocks</a></h2>
+<p>Creating powerful graphical user interfaces in QVision applications is quite simple.</p>
+<p>The framework includes a versatile set of graphical blocks, which can perform several tasks while the application is running: offer the user control over several aspects of application, show resulting output data from the processing blocks (like images, point lists, etc...), inspect the execution performance, etc...</p>
+<p>The group qvgui contains these ready-to-use graphical blocks. Some of the most important are:</p>
+<ul>
+<li><a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a> Offers control and inspection for several aspects of the application for the user at execution time:<ul>
+<li>Control on the input parameters for the processing blocks.</li>
+<li>Control on the flow of the video input sources.</li>
+<li>Inspect the execution performance of the different blocks and algorithms.</li>
+</ul>
+</li>
+<li><a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> Can display images, lists of 2D points, lines and polylines.</li>
+<li><a class="el" href="classQVNumericPlot.html">QVNumericPlot</a> Plot the output numerical values produced by one or several processing blocks through time.</li>
+<li><a class="el" href="classQVHistogramPlot.html">QVHistogramPlot</a> Plot 2D histograms, or display lists of numerical values as an histogram display.</li>
+<li><a class="el" href="classQVCPUPlot.html">QVCPUPlot</a> Plots the CPU performance of the different processing blocks.</li>
+</ul>
+<h2><a class="anchor" id="CPUPerformanceMeasurement">
+CPU performance measurement with the QVCPUPlot</a></h2>
+<p>The developer of a processing block class can divide the processing of each call to the <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function in a sequence of different stages whose computing times he wants to measure. The programmer must simply use calls to the <a class="el" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127">QVProcessingBlock::timeFlag()</a> function to mark the desired computing stages. For example, the following code of the <em>iterate</em> method of a processing block</p>
+<div class="fragment"><pre class="fragment">MyBlock::iterate()
+        {
+        [...]
+        timeFlag(<span class="stringliteral">&quot;Read parameters&quot;</span>);
+        [...]
+        timeFlag(<span class="stringliteral">&quot;Call to getComponentTree for low areas&quot;</span>);
+        [...]
+        timeFlag(<span class="stringliteral">&quot;Prune low areas from image&quot;</span>);
+        [...some other processing stages and corresponding timeFlag<span class="stringliteral">&#39;s...]</span>
+<span class="stringliteral">        }</span>
+</pre></div><p>will set some performance <em>breakpoints</em> in the function. The <a class="el" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127">QVProcessingBlock::timeFlag()</a> function logs the time elapsed between each two of those breakpoints, and stores the time statistics in the processing block. The performance times can be later displayed by simply pressing the CPU statistics button in the tab of the desired processing block, at the default GUI window. Of course, the computational load of these timeFlags is extremely low, and they can be used ubiquitously without almost affecting global performance.</p>
+<p>Here is a screen-shot for the above coding example:</p>
+<div align="center">
+<img src="componenttree_cpustat.png" alt="componenttree_cpustat.png"/>
+</div>
+<p>For advanced users, which could not be interested in using the default GUI, the class <a class="el" href="classQVCPUPlot.html">QVCPUPlot</a> can still be used to display the CPU usage statistics of a processing block. For example, the following main function</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> main()
+        {
+        [...]
+        MyBlock myBlock(<span class="stringliteral">&quot;name&quot;</span>);
+        [...]
+        <a class="code" href="classQVCPUPlot.html" title="Class for plot graphs of block&amp;#39;s cpustat properties.">QVCPUPlot</a> cpuPlot(<span class="stringliteral">&quot;CPU Plot&quot;</span>, <span class="keyword">true</span>, 10);
+        cpuPlot.linkProperty(myBlock);  
+        }
+</pre></div><p>will create in execution time the following window, displaying time statistics for the different time segments specified with the <a class="el" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127">QVProcessingBlock::timeFlag()</a> method, just as before.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>CPU stat plot depends on <em>real</em> execution time between time flags, so when two or more processing blocks compete for one CPU, times can differ a lot with respect to executions in environments in which each processing block runs on its own CPU. </dd></dl>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

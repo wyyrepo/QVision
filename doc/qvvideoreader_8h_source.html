@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvio/qvvideoreader.h</h1><a href="qvvideoreader_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *   Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *   &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *   University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *   This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *   QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *   it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *   published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *   QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *   GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *   You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *   License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVVIDEOREADER_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVVIDEOREADER_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">class </span><a class="code" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>;
+<a name="l00032"></a>00032 
+<a name="l00164"></a><a class="code" href="classQVVideoReader.html">00164</a> <span class="keyword">class </span><a class="code" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a> : <span class="keyword">public</span> QObject
+<a name="l00165"></a>00165     {
+<a name="l00166"></a>00166     Q_OBJECT
+<a name="l00167"></a>00167     <span class="keyword">public</span>:
+<a name="l00171"></a><a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b">00171</a>         <span class="keyword">enum</span> <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604b" title="Open options for a video source. Combine them using OR (|) to form a valid QVVideoReader::OpenOption...">OpenOption</a> {
+<a name="l00173"></a><a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0">00173</a>             <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0" title="Default options: don&amp;#39;t include any of the other options.">Default</a> = 0x0,
+<a name="l00176"></a><a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d">00176</a>             <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d">RealTime</a> = 0x1,
+<a name="l00178"></a><a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd">00178</a>             <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd" title="(Mplayer only) Make mplayer deinterlace the image (odd lines).">Deinterlaced</a> = 0x2,
+<a name="l00180"></a><a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3">00180</a>             <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3" title="Continue from the beginning of the video source when it reaches the end.">NoLoop</a> = 0x4
+<a name="l00181"></a>00181         };
+<a name="l00184"></a><a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0">00184</a>         <span class="keyword">typedef</span> QFlags&lt;OpenOption&gt; <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">OpenOptions</a>;
+<a name="l00185"></a>00185         <span class="comment">//Q_DECLARE_FLAGS(OpenOptions,OpenOption);</span>
+<a name="l00186"></a>00186 
+<a name="l00188"></a><a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421">00188</a>         <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00190"></a><a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96">00190</a>             <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96" title="Source outputs YUV images by default.">YUVMode</a>= 0,
+<a name="l00192"></a><a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337">00192</a>             <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337" title="Source outputs RGB images by default.">RGBMode</a> = 1,
+<a name="l00194"></a><a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36">00194</a>             <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421aaade5d3cb39ca255bd2a8537a8fa9e36" title="Source outputs gray only (BW) images by default.">GrayOnlyMode</a> = 2
+<a name="l00195"></a>00195         } <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">TSourceMode</a>;
+<a name="l00196"></a>00196 
+<a name="l00198"></a>00198         <a class="code" href="classQVVideoReader.html#aa00f0803b14d9e6a9751f877d27eec83" title="Constructs a QVVideoReader.">QVVideoReader</a>();
+<a name="l00199"></a>00199 
+<a name="l00201"></a>00201         <a class="code" href="classQVVideoReader.html#a918bc822f2b44d3504e19d1cf770c9ce" title="Destroys a QVVideoReader.">~QVVideoReader</a>();
+<a name="l00202"></a>00202 
+<a name="l00224"></a>00224         <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c" title="Opens a video source given by its URL, trying to use requested options, mode, speed...">open</a>(  <span class="keyword">const</span> QString &amp; url_string,
+<a name="l00225"></a>00225                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_cols,
+<a name="l00226"></a>00226                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_rows,
+<a name="l00227"></a>00227                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_fps,
+<a name="l00228"></a>00228                     <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">OpenOptions</a> &amp; opts,
+<a name="l00229"></a>00229                     <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">TSourceMode</a> &amp; source_mode);
+<a name="l00230"></a>00230 
+<a name="l00239"></a><a class="code" href="classQVVideoReader.html#a9db072c89f20cf111f014bf8d9a48cc6">00239</a>         <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c" title="Opens a video source given by its URL, trying to use requested options, mode, speed...">open</a>(<span class="keyword">const</span> QString &amp; url_string)
+<a name="l00240"></a>00240             {
+<a name="l00241"></a>00241             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> suggested_cols = 0, suggested_rows = 0, suggested_fps = 0;
+<a name="l00242"></a>00242             <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">OpenOptions</a> suggested_opts = <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0" title="Default options: don&amp;#39;t include any of the other options.">Default</a>;
+<a name="l00243"></a>00243             <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">TSourceMode</a> source_mode = <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96" title="Source outputs YUV images by default.">YUVMode</a>;
+<a name="l00244"></a>00244             <span class="keywordflow">return</span> <a class="code" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c" title="Opens a video source given by its URL, trying to use requested options, mode, speed...">open</a>(url_string,suggested_cols,suggested_rows,suggested_fps,suggested_opts,source_mode);
+<a name="l00245"></a>00245             }
+<a name="l00246"></a>00246 
+<a name="l00254"></a>00254         <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140" title="Grabs next frame in video source, saving corresponding image(s) in class internal...">grab</a>();
+<a name="l00255"></a>00255 
+<a name="l00262"></a>00262         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#a7c9765c5ed51cdf2349e456dc7a6f3f2" title="Gets current frame in the form of a gray image.">getGrayImage</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageGray);
+<a name="l00263"></a>00263 
+<a name="l00270"></a>00270         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093" title="Gets current frame in the form of a 3 channel RGB image.">getRGBImage</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> &amp; imageRGB);
+<a name="l00271"></a>00271 
+<a name="l00280"></a>00280         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093" title="Gets current frame in the form of a 3 channel RGB image.">getRGBImage</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageR, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageG, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageB);
+<a name="l00281"></a>00281 
+<a name="l00292"></a>00292         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#af79c7379cbbfc613b64d21a74eb7f8eb" title="Gets current frame in the form of a gray image channel (Y) and two chrominance image...">getYUVImage</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageY, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageU, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageV);
+<a name="l00293"></a>00293 
+<a name="l00299"></a>00299         <span class="keywordtype">int</span> <a class="code" href="classQVVideoReader.html#afea030febc7f6e776968d10079002e37" title="Gets the length of the video source.">getLength</a>() <span class="keyword">const</span>;
+<a name="l00300"></a>00300 
+<a name="l00306"></a>00306         <span class="keywordtype">int</span> <a class="code" href="classQVVideoReader.html#ac169b0d7746551424f5ef4fe471a9c7d" title="Gets the current position in the video source.">getPos</a>() <span class="keyword">const</span>;
+<a name="l00307"></a>00307 
+<a name="l00308"></a>00308     <span class="keyword">public</span> slots:
+<a name="l00312"></a>00312         <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReader.html#ab9f4cfa4e439e0bb5ffd377e514de091" title="Closes the video source.">close</a>();
+<a name="l00313"></a>00313 
+<a name="l00314"></a>00314 
+<a name="l00320"></a>00320         <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReader.html#aef184d33d65b5e7cca33189a148f1037" title="Tries to move to a given position in the video source (if possible).">seek</a>(<span class="keywordtype">int</span> pos);
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322     signals:
+<a name="l00324"></a>00324         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#a24596d37c6e4c6098f2460d22b9c33c8" title="Signal emitted when video source has been opened.">sourceOpened</a>();
+<a name="l00325"></a>00325 
+<a name="l00327"></a>00327         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#a887bd81fc95920d2fd8123949db59086" title="Signal emitted when video source has been closed.">sourceClosed</a>();
+<a name="l00328"></a>00328 
+<a name="l00330"></a>00330         <span class="keywordtype">void</span> <a class="code" href="classQVVideoReader.html#a1953e03f3e394000b4f322838af2bc85" title="Signal emitted when a new frame has been grabbed.">newGrab</a>();
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332     <span class="keyword">public</span>:
+<a name="l00336"></a><a class="code" href="classQVVideoReader.html#a9aec25744053d21fb2b56f37e5187843">00336</a>         <span class="keyword">const</span> QString <a class="code" href="classQVVideoReader.html#a9aec25744053d21fb2b56f37e5187843" title="Returns the complete URL of the video source.">getURL</a>()<span class="keyword"> const            </span>{ <span class="keywordflow">return</span> url; };
+<a name="l00337"></a>00337 
+<a name="l00341"></a><a class="code" href="classQVVideoReader.html#aca5a2e877a2fac39ada8b47382849881">00341</a>         <span class="keyword">const</span> QString <a class="code" href="classQVVideoReader.html#aca5a2e877a2fac39ada8b47382849881" title="Returns the scheme of the video source.">getScheme</a>()<span class="keyword"> const         </span>{ <span class="keywordflow">return</span> scheme; };
+<a name="l00342"></a>00342 
+<a name="l00346"></a><a class="code" href="classQVVideoReader.html#a05af873ddd0778c8d34a7fe5adc00a1d">00346</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classQVVideoReader.html#a05af873ddd0778c8d34a7fe5adc00a1d" title="Returns the number of cols for current frame in the video source.">getCols</a>()<span class="keyword"> const            </span>{ <span class="keywordflow">return</span> cols; };
+<a name="l00347"></a>00347 
+<a name="l00351"></a><a class="code" href="classQVVideoReader.html#a7e64e124eec398f4fb0dbf4263d1bb96">00351</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classQVVideoReader.html#a7e64e124eec398f4fb0dbf4263d1bb96" title="Returns the number of rows for current frame in the video source.">getRows</a>()<span class="keyword"> const            </span>{ <span class="keywordflow">return</span> rows; };
+<a name="l00352"></a>00352 
+<a name="l00356"></a><a class="code" href="classQVVideoReader.html#a096e32912c250dad3e827f1282e1a0ba">00356</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classQVVideoReader.html#a096e32912c250dad3e827f1282e1a0ba" title="Returns the number of frames per second of the video source.">getFPS</a>()<span class="keyword"> const             </span>{ <span class="keywordflow">return</span> fps; };
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358     <span class="keyword">private</span>:
+<a name="l00359"></a>00359         QString url, scheme;
+<a name="l00360"></a>00360         <span class="keywordtype">bool</span> changing_size;
+<a name="l00361"></a>00361         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cols, rows, fps, frames_grabbed;
+<a name="l00362"></a>00362         <span class="keywordtype">bool</span> camera_opened, live_camera, end_of_video;
+<a name="l00363"></a>00363         <span class="keywordtype">bool</span> availableGray,availableRGB3,availableYUV,availableRGB;
+<a name="l00364"></a>00364 
+<a name="l00365"></a>00365         <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> imgGray;
+<a name="l00366"></a>00366         <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imgRGB;
+<a name="l00367"></a>00367         <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> imgY, imgU, imgV;
+<a name="l00368"></a>00368         <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> imgR, imgG, imgB;
+<a name="l00369"></a>00369 
+<a name="l00370"></a>00370         <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">OpenOptions</a> open_options;
+<a name="l00371"></a>00371         <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">TSourceMode</a> source_mode;
+<a name="l00372"></a>00372         <a class="code" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a> *base_reader;
+<a name="l00373"></a>00373     };
+<a name="l00374"></a>00374 
+<a name="l00375"></a>00375 <span class="comment">// Opening flags | operator:</span>
+<a name="l00376"></a>00376 Q_DECLARE_OPERATORS_FOR_FLAGS(<a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a>);
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378 <span class="preprocessor">#endif //QVVIDEOREADER</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,56 @@
+/*
+ *	Copyright (C) 2008, 2009, 2010, 2011, 2012. PARP Research Group.
+ *	<http://perception.inf.um.es>
+ *	University of Murcia, Spain.
+ *
+ *	This file is part of the QVision library.
+ *
+ *	QVision is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU Lesser General Public License as
+ *	published by the Free Software Foundation, version 3 of the License.
+ *
+ *	QVision is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU Lesser General Public License for more details.
+ *
+ *	You should have received a copy of the GNU Lesser General Public
+ *	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+#ifndef WORKERDIALOG_H
+#define WORKERDIALOG_H
+
+#include <QDialog>
+#include "../../qvparamsinspectorwidget.h"
+#include "../../qvblockinterfacesmall.h"
+
+class QVProcessingBlock;
+
+#ifndef DOXYGEN_IGNORE_THIS
+
+class BlockDialog: public QDialog
+{
+	Q_OBJECT
+	
+	public:
+		BlockDialog(QVProcessingBlock *block, QWidget *parent = 0);
+
+		/// @brief Gets the QVParamsInspectorWidget's QVPropertyContainerInformer.
+		///
+		/// The QVParamsInspectorWidget's QVPropertyContainerInformer is the object in charge of emit the changes of the QVPropertyContainer.
+		///
+		/// @return the QVParamsInspectorWidget's QVPropertyContainerInformer.
+		QVPropertyContainerInformer *getInformer() { return inspector.getInformer(); }
+
+		uint getNodeId() { return inspector.getId(); }
+
+	private:
+		QVParamsInspectorWidget inspector;
+		QVProcessingBlockInterfaceSmall interface_;
+
+		QVBoxLayout *vboxlayout;
+};
+#endif
+#endif

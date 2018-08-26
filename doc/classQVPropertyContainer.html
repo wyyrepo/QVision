@@ -1,0 +1,1907 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVPropertyContainer Class Reference<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1><!-- doxytag: class="QVPropertyContainer" -->
+<p>Base class for dynamic property container objects.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>&gt;</code></p>
+
+<p>Inherited by <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a>, and <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a>.</p>
+
+<p><a href="classQVPropertyContainer-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">LinkType</a> </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Semantics for a link between QVPropertyContainers. </p>
+ <a href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#aac9662fa8dbe182c8b0e5c01252b58e1">PropertyFlag</a> </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Flags for each property. </p>
+ <a href="classQVPropertyContainer.html#aac9662fa8dbe182c8b0e5c01252b58e1">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#af7b6ad165bd7d4ce2fa489a0dad182a7">QVPropertyContainer</a> (const QString name=QString())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> with a given string identifier.  <a href="#af7b6ad165bd7d4ce2fa489a0dad182a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a374d59d823846e4e2db24b0198add780">QVPropertyContainer</a> (const <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;cont)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#a374d59d823846e4e2db24b0198add780"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a959fb67110a55c37b138e66929fe88e9">operator=</a> (const <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;cont)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy operator.  <a href="#a959fb67110a55c37b138e66929fe88e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual destructor.  <a href="#abd41c5852adee4c1dbffeefe2f3041d8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f">setName</a> (const QString name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets a new string identifier for a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>.  <a href="#a4571a5d7470e88fb2dd8595421c5967f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85">getName</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves identifier QString of the object.  <a href="#a82e880a6c160f3780bc8f7b822fbbd85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e">getId</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves identifier uint of the object.  <a href="#a79e08d0500b8dcd0c15cdadb4e3d9a7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#afe5a790ea61bbd0f964a4c1387230579">operator==</a> (const <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;cont) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare operator.  <a href="#afe5a790ea61bbd0f964a4c1387230579"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc">getPropertyList</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets list of properties of the <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>.  <a href="#ad841530f023ade63674be20b9677b3cc"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">QList&lt; QString &gt;&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a99342ac4665ab8a2dcd00b3bc7b38695">getPropertyListByType</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the names of the properties of a given type.  <a href="#a99342ac4665ab8a2dcd00b3bc7b38695"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4">isType</a> (QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks if a property is of a given type.  <a href="#afdd65a88f713e0031ac4847485acfce4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a1f397287bc9c69b22aec208bddcc1d23">containsProperty</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check whether the property holder has a given property.  <a href="#a1f397287bc9c69b22aec208bddcc1d23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3">getPropertyType</a> (const QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Given a property identifying QString (see <a class="el" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList()</a> function above), returns the type of the property.  <a href="#acabf023fd31ca114618a8f1e9e0215a3"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ae2cd8d4bea91574bed4c1863a13d6171">addProperty</a> (const QString name, const PropertyFlags flags=inputFlag, const Type &amp;value=Type(), const QString info=QString(&quot;(Info not available)&quot;))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Registers a new property in the property holder.  <a href="#ae2cd8d4bea91574bed4c1863a13d6171"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#af14a72f894b51d5d95d8197c0af3b38f">addProperty</a> (const QString name, const PropertyFlags flags, const Type &amp;value, const QString info, const Type &amp;minValue, const Type &amp;maxValue)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Registers a new property in the property holder.  <a href="#af14a72f894b51d5d95d8197c0af3b38f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a3e13ed40e1ae121c9d4442a33ce6cf0d">addPropertyFromQVariant</a> (const QString &amp;name, const PropertyFlags flags, QVariant variant, const QString info)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Registers a new property in the property holder.  <a href="#a3e13ed40e1ae121c9d4442a33ce6cf0d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92">removeProperty</a> (const QString name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">De-registers a property in the property holder.  <a href="#ad221d2ac61352d7af1aaac7df46a5b92"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ad4d7d822be0be35b9d6549a5abf718e1">hasRange</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a range has been set for the property.  <a href="#ad4d7d822be0be35b9d6549a5abf718e1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PropertyFlags&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a9044690763a61b2da16735cdf42968f8">getPropertyFlags</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns flags for a property.  <a href="#a9044690763a61b2da16735cdf42968f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a81d9c28ff7aefe940b058d80a47eb93a">isInput</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a property is of the input type.  <a href="#a81d9c28ff7aefe940b058d80a47eb93a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#aa6edef6dbc24d47a88ebe7768eb0bbf0">isOutput</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a property is of the output type.  <a href="#aa6edef6dbc24d47a88ebe7768eb0bbf0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#aec4486b670bdda79321ad447323e3c06">isGUIInvisible</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a property can be modified through the GUI.  <a href="#aec4486b670bdda79321ad447323e3c06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ab3711d136b3af5497ee180d6a2665844">isLinkedInput</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a property is of the input type and is linked.  <a href="#ab3711d136b3af5497ee180d6a2665844"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a">isLinkedOutput</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a property is of the output type and is linked.  <a href="#ad16cc60565b7e43255149a53e44bce3a"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c">setPropertyValue</a> (const QString name, const Type &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets value for property.  <a href="#a0dc180ef52afef64e3d2522c91e7118c"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">Type&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#affc6008202b566e68ab20cec8b16a7ee">getPropertyValue</a> (const QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method to get the actual value of a property.  <a href="#affc6008202b566e68ab20cec8b16a7ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVariant&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a253156f365b20fa2e0accc82dff1284f">getPropertyQVariantValue</a> (const QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method to get the value of a property as a QVariant.  <a href="#a253156f365b20fa2e0accc82dff1284f"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">Type&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#aa522f5a0b43093ca4ef90c72a499344d">getPropertyMaximum</a> (const QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method to get the maximum value for a property.  <a href="#aa522f5a0b43093ca4ef90c72a499344d"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">Type&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a61a8accaec52384a4b0980a2fd0c2899">getPropertyMinimum</a> (const QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method to get the minimum value for a property.  <a href="#a61a8accaec52384a4b0980a2fd0c2899"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#afbbd3b9914406c1e237d9443ea5fa48b">getPropertyInfo</a> (const QString name, bool *ok=NULL) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method to get the info QString for int typed property.  <a href="#afbbd3b9914406c1e237d9443ea5fa48b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a14303586bf0de35498002c984408735f">getLastError</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the (possible) last error string.  <a href="#a14303586bf0de35498002c984408735f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">infoInputProperties</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Formatted description of properties (useful to show help).  <a href="#a5d4ecfa7b8aa6e25223898df82ada1f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">linkProperty</a> (QString sourcePropName, <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *destinyContainer, QString destinyPropName, <a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">LinkType</a> linkType=AsynchronousLink)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Links properties among QVPropertyContainer's.  <a href="#abd2a991c0bc91cee684ff3ffc80825dd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a22e133082a9bd25818ce52c51cc9e3aa">linkProperty</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *container, <a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">LinkType</a> linkType=AsynchronousLink)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Links properties among QVPropertyContainer's.  <a href="#a22e133082a9bd25818ce52c51cc9e3aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81">unlinkProperty</a> (QString origName, <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *destCont, QString destName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unlinks properties among QVPropertyContainer's.  <a href="#a2ed8fb74ec14fc91dd90f6cd961f4a81"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">unlink</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Completely unlinks a property holder.  <a href="#a08d44d0b9b36725186124549a1dfc124"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVPropertyContainerInformer *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a8c64c9c1074995778dbf8d517cd1c479">getInformer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the QVPropertyContainerInformer.  <a href="#a8c64c9c1074995778dbf8d517cd1c479"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a350c0c7a337fb173dbfe5b384cc615eb">getSourceContainer</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the source <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> of a given property.  <a href="#a350c0c7a337fb173dbfe5b384cc615eb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027">getDestinyContainers</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the destiny QVPropertyContainers of a given property.  <a href="#a1bd21ac401e6d79a29430712e5a72027"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#aa88d1097bf52887c07e8cf1b15e98791">getSourceProperty</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the source property name of a given property.  <a href="#aa88d1097bf52887c07e8cf1b15e98791"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#adaa8f8488392d3080b7fa22613371356">isSynchronous</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if a property is linked syncronously.  <a href="#adaa8f8488392d3080b7fa22613371356"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226">isSequential</a> (const QString name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if a property is linked Sequentialy.  <a href="#a344fd4ac42cb3290c0ec1fe069036226"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#afc35c0aeca52288aec5a095e139e9c40">areSynchronized</a> (const QList&lt; <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> * &gt; containers)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if a group of QVPropertyContainers are synchronously or Sequentialy linked.  <a href="#afc35c0aeca52288aec5a095e139e9c40"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86">readInputProperties</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read linked input properties from other QVPropertyContainer's.  <a href="#a386412d3d7d011283034086a89173f86"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a">writeOutputProperties</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write linked output properties to other QVPropertyContainer's.  <a href="#a858a9653531337be74ffc081065bb31a"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ab72d3b0e61346e8c05a4e7dca767dc40">parseArgument</a> (const QString parameter, const QString value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Parses a property value from a string.  <a href="#ab72d3b0e61346e8c05a4e7dca767dc40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a">setLastError</a> (QString str) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an error string message.  <a href="#ab915024bd1988b45719b7bb65921105a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPropertyContainer.html#af99e1dca90060534310833741d66518e">inputPropertyBlock</a> (QString prop) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the origin block's id of a input property.  <a href="#af99e1dca90060534310833741d66518e"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Base class for dynamic property container objects. </p>
+<p>This is the parent class for any object in the QVision framework capable of containing or sharing values through the use of dynamic properties. This class offers methods to register new properties, update and obtain the contained value, and retrieve listings of dynamic property identifiers and types contained in the object, amongst other things.</p>
+<p>This class emits "changed" signals when it is changed (change the container name or a property value, add/remove a property, add/remove a link, or copy from other <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>). In each signal emited it passes a QVPropertyContainerChange indicating the type and position of the change, in order to let include observer objects for the property containers structure.</p>
+<p>It has a static global informer, that can be get with getGlobalInformer(), that emits "changed" signals when a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> is created or destroyed.</p>
+<p>For further information about them, see section <a class="el" href="CreatingCustomProcessingBlocks.html">Creating custom processing blocks</a>. </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00083">83</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a71d6042e94adbb6c46814e3593973a76"></a><!-- doxytag: member="QVPropertyContainer::LinkType" ref="a71d6042e94adbb6c46814e3593973a76" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">QVPropertyContainer::LinkType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Semantics for a link between QVPropertyContainers. </p>
+<p>If a link between a source property of a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> object A and a corresponding destination property of another one B is declared as synchronous, it means that every time that the <a class="el" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86" title="Read linked input properties from other QVPropertyContainer&#39;s.">readInputProperties()</a> method is executed on B, the system assures that one (and just one) corresponding call to the <a class="el" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a" title="Write linked output properties to other QVPropertyContainer&#39;s.">writeOutputProperties()</a> has been previously executed on A. In the (common) case of a link between two QVThread's, that would mean, for example, that each running of the source QVThread corresponds exactly to another (posterior) running of the destination QVThread.</p>
+<p>That is equivalent to say that every data produced by the source is always consumed by the destination, so no data is ever "lost" in that sense. The obvious cost is that both threads will have to run at the speed of the slowest, of course.</p>
+<p>An alternative is an asynchronous link, in which the only thing that the system assures on the properties read by the destination is that, in the case of a multiple link (several input properties of B connected to several corresponding output properties of B), all of them correspond to the same iteration of the source (more precisely, to the last execution of the <a class="el" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a" title="Write linked output properties to other QVPropertyContainer&#39;s.">writeOutputProperties()</a> method in A, independently of the specific sequence number of that iteration). We say that the output is 'coherent' in all the properties linked this way. But, as has been already said, the iterations are not linked in the temporal sense, so, for example, for the case of QVThreads, both could run asynchronously, and at different speeds.</p>
+<p>Other alternative is an sequential link, in witch the system assures nothing because the two <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> will be in the same thread and will be executed in a secuencial mode. When a group of QVPropertyContainers are linked whith sequential link, they choose a master <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> and the others have a reference to it. In this case the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> will not create threads for the no-master <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>, and if they are QVProcessingBlocks they will be moved and executed by his master's thread.</p>
+<p>See also the <a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&#39;s.">QVPropertyContainer::linkProperty()</a> method. </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00128">128</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac9662fa8dbe182c8b0e5c01252b58e1"></a><!-- doxytag: member="QVPropertyContainer::PropertyFlag" ref="aac9662fa8dbe182c8b0e5c01252b58e1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classQVPropertyContainer.html#aac9662fa8dbe182c8b0e5c01252b58e1">QVPropertyContainer::PropertyFlag</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Flags for each property. </p>
+<p>Currently, if a property is of the "input type" and/or "output type" are the only supported flags. </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00134">134</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af7b6ad165bd7d4ce2fa489a0dad182a7"></a><!-- doxytag: member="QVPropertyContainer::QVPropertyContainer" ref="af7b6ad165bd7d4ce2fa489a0dad182a7" args="(const QString name=QString())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVPropertyContainer::QVPropertyContainer </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>QString()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> with a given string identifier. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifier for the object to be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00031">31</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a374d59d823846e4e2db24b0198add780"></a><!-- doxytag: member="QVPropertyContainer::QVPropertyContainer" ref="a374d59d823846e4e2db24b0198add780" args="(const QVPropertyContainer &amp;cont)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVPropertyContainer::QVPropertyContainer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>cont</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cont</em>&nbsp;</td><td>property container to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00056">56</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd41c5852adee4c1dbffeefe2f3041d8"></a><!-- doxytag: member="QVPropertyContainer::~QVPropertyContainer" ref="abd41c5852adee4c1dbffeefe2f3041d8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVPropertyContainer::~QVPropertyContainer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual destructor. </p>
+<p>Frees the <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>, and all its associated links. Besides, this destructor can (and in many cases should!) also be reimplemented in subclasses. </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00105">105</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a959fb67110a55c37b138e66929fe88e9"></a><!-- doxytag: member="QVPropertyContainer::operator=" ref="a959fb67110a55c37b138e66929fe88e9" args="(const QVPropertyContainer &amp;cont)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp; QVPropertyContainer::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>cont</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cont</em>&nbsp;</td><td>property container to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00081">81</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4571a5d7470e88fb2dd8595421c5967f"></a><!-- doxytag: member="QVPropertyContainer::setName" ref="a4571a5d7470e88fb2dd8595421c5967f" args="(const QString name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPropertyContainer::setName </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a new string identifier for a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>New string identifier for the object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00116">116</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82e880a6c160f3780bc8f7b822fbbd85"></a><!-- doxytag: member="QVPropertyContainer::getName" ref="a82e880a6c160f3780bc8f7b822fbbd85" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString QVPropertyContainer::getName </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves identifier QString of the object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>QString identifying the property holder object. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00119">119</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a3e13ed40e1ae121c9d4442a33ce6cf0d">addPropertyFromQVariant()</a>, <a class="el" href="classQVPropertyContainer.html#aa522f5a0b43093ca4ef90c72a499344d">getPropertyMaximum()</a>, <a class="el" href="classQVPropertyContainer.html#a61a8accaec52384a4b0980a2fd0c2899">getPropertyMinimum()</a>, <a class="el" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">infoInputProperties()</a>, <a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">linkProperty()</a>, <a class="el" href="classQVPropertyContainer.html#a959fb67110a55c37b138e66929fe88e9">operator=()</a>, <a class="el" href="classQVPropertyContainer.html#ab72d3b0e61346e8c05a4e7dca767dc40">parseArgument()</a>, <a class="el" href="classQVImageCanvas.html#ac08d9d360747bbc0ccf2db3664813217">QVImageCanvas::QVImageCanvas()</a>, <a class="el" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86">readInputProperties()</a>, <a class="el" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92">removeProperty()</a>, <a class="el" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f">setName()</a>, <a class="el" href="classQVProcessingBlock.html#af9896015375318688fb78012a08cddfb">QVProcessingBlock::setPrintStatsFrequency()</a>, <a class="el" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c">setPropertyValue()</a>, <a class="el" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">unlink()</a>, <a class="el" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81">unlinkProperty()</a>, and <a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79e08d0500b8dcd0c15cdadb4e3d9a7e"></a><!-- doxytag: member="QVPropertyContainer::getId" ref="a79e08d0500b8dcd0c15cdadb4e3d9a7e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint QVPropertyContainer::getId </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves identifier uint of the object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>uint identifying the property holder object, begining to 1. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00122">122</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a3e13ed40e1ae121c9d4442a33ce6cf0d">addPropertyFromQVariant()</a>, <a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">linkProperty()</a>, <a class="el" href="classQVPropertyContainer.html#a959fb67110a55c37b138e66929fe88e9">operator=()</a>, <a class="el" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86">readInputProperties()</a>, <a class="el" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92">removeProperty()</a>, <a class="el" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f">setName()</a>, <a class="el" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c">setPropertyValue()</a>, <a class="el" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">unlink()</a>, <a class="el" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81">unlinkProperty()</a>, and <a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe5a790ea61bbd0f964a4c1387230579"></a><!-- doxytag: member="QVPropertyContainer::operator==" ref="afe5a790ea61bbd0f964a4c1387230579" args="(const QVPropertyContainer &amp;cont) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>cont</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare operator. </p>
+<p>Compare the PropertyContainers id;</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cont</em>&nbsp;</td><td>property container to be compared. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00125">125</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad841530f023ade63674be20b9677b3cc"></a><!-- doxytag: member="QVPropertyContainer::getPropertyList" ref="ad841530f023ade63674be20b9677b3cc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QString &gt; QVPropertyContainer::getPropertyList </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets list of properties of the <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>. </p>
+<p>Retrieves the names of the properties registered in the property holder, in a QStringList. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>QStringList of names of properties in the object. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00128">128</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a22e133082a9bd25818ce52c51cc9e3aa">linkProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99342ac4665ab8a2dcd00b3bc7b38695"></a><!-- doxytag: member="QVPropertyContainer::getPropertyListByType" ref="a99342ac4665ab8a2dcd00b3bc7b38695" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt; QVPropertyContainer::getPropertyListByType </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the names of the properties of a given type. </p>
+<p>Retrieves the names of those properties, registered in the property holder, which hold values of the type given by the template parameter, in a QStringList. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>QList of identifying QStrings. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00197">197</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afdd65a88f713e0031ac4847485acfce4"></a><!-- doxytag: member="QVPropertyContainer::isType" ref="afdd65a88f713e0031ac4847485acfce4" args="(QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isType </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if a property is of a given type. </p>
+<p>Returns true if type passed as template parameter equals type of value contained in a property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>QString identifying the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if property has same type as parameter template. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00217">217</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59">QVVideoReaderBlock::linkProperty()</a>, <a class="el" href="classQVHistogramPlot.html#afc8ddb5ab9180dcb7be5e64559f63693">QVHistogramPlot::linkUnspecifiedInputProperty()</a>, and <a class="el" href="classQVFunctionPlot.html#a2e52710028159044f7c9ffd044f03b9f">QVFunctionPlot::linkUnspecifiedInputProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f397287bc9c69b22aec208bddcc1d23"></a><!-- doxytag: member="QVPropertyContainer::containsProperty" ref="a1f397287bc9c69b22aec208bddcc1d23" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::containsProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check whether the property holder has a given property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>QString identifying the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> contains a property with the given name, otherwise returns false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00131">131</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acabf023fd31ca114618a8f1e9e0215a3"></a><!-- doxytag: member="QVPropertyContainer::getPropertyType" ref="acabf023fd31ca114618a8f1e9e0215a3" args="(const QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVPropertyContainer::getPropertyType </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Given a property identifying QString (see <a class="el" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc" title="Gets list of properties of the QVPropertyContainer.">getPropertyList()</a> function above), returns the type of the property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>QString identifying the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a <a href="http://doc.trolltech.com/qtopia4.2/qvariant.html#Type-enum">QVariant::Type</a> value. Note that user defined properties will return value. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00134">134</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">infoInputProperties()</a>, and <a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">linkProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2cd8d4bea91574bed4c1863a13d6171"></a><!-- doxytag: member="QVPropertyContainer::addProperty" ref="ae2cd8d4bea91574bed4c1863a13d6171" args="(const QString name, const PropertyFlags flags=inputFlag, const Type &amp;value=Type(), const QString info=QString(&quot;(Info not available)&quot;))" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::addProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PropertyFlags&nbsp;</td>
+          <td class="paramname"> <em>flags</em> = <code>inputFlag</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Type &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em> = <code>Type()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>info</em> = <code>QString(&quot;(Info&nbsp;not&nbsp;available)&quot;)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registers a new property in the property holder. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the new property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Initial value for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>Info string for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>Whether the property is input, output, or both. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if property was correctly added, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00255">255</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af14a72f894b51d5d95d8197c0af3b38f"></a><!-- doxytag: member="QVPropertyContainer::addProperty" ref="af14a72f894b51d5d95d8197c0af3b38f" args="(const QString name, const PropertyFlags flags, const Type &amp;value, const QString info, const Type &amp;minValue, const Type &amp;maxValue)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::addProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PropertyFlags&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Type &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Type &amp;&nbsp;</td>
+          <td class="paramname"> <em>minValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Type &amp;&nbsp;</td>
+          <td class="paramname"> <em>maxValue</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registers a new property in the property holder. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the new property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Initial value for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>Info string for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>Whether the property is input, output, or both. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minValue</em>&nbsp;</td><td>Minimum value for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxValue</em>&nbsp;</td><td>Maximum value for the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if property was correctly added, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00276">276</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e13ed40e1ae121c9d4442a33ce6cf0d"></a><!-- doxytag: member="QVPropertyContainer::addPropertyFromQVariant" ref="a3e13ed40e1ae121c9d4442a33ce6cf0d" args="(const QString &amp;name, const PropertyFlags flags, QVariant variant, const QString info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::addPropertyFromQVariant </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PropertyFlags&nbsp;</td>
+          <td class="paramname"> <em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVariant&nbsp;</td>
+          <td class="paramname"> <em>variant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>info</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registers a new property in the property holder. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the new property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>Whether the property is input, output, or both. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>variant</em>&nbsp;</td><td>Initial QVariant value for the property </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>Info string for the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if property was correctly added, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00296">296</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#ae2cd8d4bea91574bed4c1863a13d6171">addProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad221d2ac61352d7af1aaac7df46a5b92"></a><!-- doxytag: member="QVPropertyContainer::removeProperty" ref="ad221d2ac61352d7af1aaac7df46a5b92" args="(const QString name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::removeProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>De-registers a property in the property holder. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if property was correctly removed, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00146">146</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4d7d822be0be35b9d6549a5abf718e1"></a><!-- doxytag: member="QVPropertyContainer::hasRange" ref="ad4d7d822be0be35b9d6549a5abf718e1" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::hasRange </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a range has been set for the property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if there exist a range for the property. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00190">190</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9044690763a61b2da16735cdf42968f8"></a><!-- doxytag: member="QVPropertyContainer::getPropertyFlags" ref="a9044690763a61b2da16735cdf42968f8" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PropertyFlags QVPropertyContainer::getPropertyFlags </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns flags for a property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Flags for the property. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00335">335</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81d9c28ff7aefe940b058d80a47eb93a"></a><!-- doxytag: member="QVPropertyContainer::isInput" ref="a81d9c28ff7aefe940b058d80a47eb93a" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isInput </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a property is of the input type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the property is of the input type. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00193">193</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">infoInputProperties()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6edef6dbc24d47a88ebe7768eb0bbf0"></a><!-- doxytag: member="QVPropertyContainer::isOutput" ref="aa6edef6dbc24d47a88ebe7768eb0bbf0" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isOutput </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a property is of the output type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the property is of the output type. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00196">196</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec4486b670bdda79321ad447323e3c06"></a><!-- doxytag: member="QVPropertyContainer::isGUIInvisible" ref="aec4486b670bdda79321ad447323e3c06" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isGUIInvisible </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a property can be modified through the GUI. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the property will not be visible and editable through the GUI. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00199">199</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3711d136b3af5497ee180d6a2665844"></a><!-- doxytag: member="QVPropertyContainer::isLinkedInput" ref="ab3711d136b3af5497ee180d6a2665844" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isLinkedInput </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a property is of the input type and is linked. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the property is of the input type and is linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00202">202</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad16cc60565b7e43255149a53e44bce3a"></a><!-- doxytag: member="QVPropertyContainer::isLinkedOutput" ref="ad16cc60565b7e43255149a53e44bce3a" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isLinkedOutput </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a property is of the output type and is linked. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the property is of the output type and is linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00205">205</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0dc180ef52afef64e3d2522c91e7118c"></a><!-- doxytag: member="QVPropertyContainer::setPropertyValue" ref="a0dc180ef52afef64e3d2522c91e7118c" args="(const QString name, const Type &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::setPropertyValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Type &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets value for property. </p>
+<p>If the property is not writable, this function will return false, and won't change property value. Besides, if there is a [minimum,maximum] range and the value is not in it, also fails to set the value. In both cases the function issues a warning through stderr, and returns false. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifying QString for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>Value to set the property with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the value was set successfully. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00377">377</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affc6008202b566e68ab20cec8b16a7ee"></a><!-- doxytag: member="QVPropertyContainer::getPropertyValue" ref="affc6008202b566e68ab20cec8b16a7ee" args="(const QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Type QVPropertyContainer::getPropertyValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method to get the actual value of a property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifying QString for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Actual value for the property. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00398">398</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a253156f365b20fa2e0accc82dff1284f"></a><!-- doxytag: member="QVPropertyContainer::getPropertyQVariantValue" ref="a253156f365b20fa2e0accc82dff1284f" args="(const QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVariant QVPropertyContainer::getPropertyQVariantValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method to get the value of a property as a QVariant. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifying QString for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Actual value for the property. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00208">208</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa522f5a0b43093ca4ef90c72a499344d"></a><!-- doxytag: member="QVPropertyContainer::getPropertyMaximum" ref="aa522f5a0b43093ca4ef90c72a499344d" args="(const QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Type QVPropertyContainer::getPropertyMaximum </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method to get the maximum value for a property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifying QString for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Maximum value for the property. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00422">422</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61a8accaec52384a4b0980a2fd0c2899"></a><!-- doxytag: member="QVPropertyContainer::getPropertyMinimum" ref="a61a8accaec52384a4b0980a2fd0c2899" args="(const QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Type QVPropertyContainer::getPropertyMinimum </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method to get the minimum value for a property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifying QString for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Minimum value for the property. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00449">449</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afbbd3b9914406c1e237d9443ea5fa48b"></a><!-- doxytag: member="QVPropertyContainer::getPropertyInfo" ref="afbbd3b9914406c1e237d9443ea5fa48b" args="(const QString name, bool *ok=NULL) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QVPropertyContainer::getPropertyInfo </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&nbsp;</td>
+          <td class="paramname"> <em>ok</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method to get the info QString for int typed property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Identifying QString for the property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ok</em>&nbsp;</td><td>Pointer to bool value which is set to true if property exists, and to false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The info QString about the property, if defined. Empty QString otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00218">218</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">infoInputProperties()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14303586bf0de35498002c984408735f"></a><!-- doxytag: member="QVPropertyContainer::getLastError" ref="a14303586bf0de35498002c984408735f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QVPropertyContainer::getLastError </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the (possible) last error string. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A QString indicating the last error that occurred in an operation on the the property, if defined. Empty QString otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00228">228</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVApplication.html#a26cebe56daf97da9bc5f881d3d5abe2d">QVApplication::processArguments()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d4ecfa7b8aa6e25223898df82ada1f4"></a><!-- doxytag: member="QVPropertyContainer::infoInputProperties" ref="a5d4ecfa7b8aa6e25223898df82ada1f4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString QVPropertyContainer::infoInputProperties </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Formatted description of properties (useful to show help). </p>
+<p>Obtains a human readable description QString of all the object's properties that have some associated info (otherwise they are ignored). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>QString containing human readable list of properties, and info about them. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00233">233</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd2a991c0bc91cee684ff3ffc80825dd"></a><!-- doxytag: member="QVPropertyContainer::linkProperty" ref="abd2a991c0bc91cee684ff3ffc80825dd" args="(QString sourcePropName, QVPropertyContainer *destinyContainer, QString destinyPropName, LinkType linkType=AsynchronousLink)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::linkProperty </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>sourcePropName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>destinyContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>destinyPropName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">LinkType</a>&nbsp;</td>
+          <td class="paramname"> <em>linkType</em> = <code>AsynchronousLink</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Links properties among QVPropertyContainer's. </p>
+<p>This method safely links properties among property holders in a thread safe manner. It is mainly used when programming multithreaded applications -with multiple QVProcessingBlocks-, but also, for example, when linking blocks (running in an independent thread) with GUI widgets (running in the main thread).</p>
+<p>The pointer this corresponds to the source <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>.</p>
+<p>See also <a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">QVPropertyContainer::LinkType</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sourcePropName</em>&nbsp;</td><td>Identifying QString for the source property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destinyContainer</em>&nbsp;</td><td>Pointer to the destination <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destinyPropName</em>&nbsp;</td><td>Identifying QString for the destination property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>linkType</em>&nbsp;</td><td>Synchronous or asynchronous. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if the connection went OK, FALSE otherwise (for example, due to type mismatch, some of the properties does not exists, or whatever). </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00364">364</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a22e133082a9bd25818ce52c51cc9e3aa">linkProperty()</a>, <a class="el" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59">QVVideoReaderBlock::linkProperty()</a>, <a class="el" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd">QVImageCanvas::linkSelectedPolyline()</a>, and <a class="el" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4">QVImageCanvas::linkSelectedRectangle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22e133082a9bd25818ce52c51cc9e3aa"></a><!-- doxytag: member="QVPropertyContainer::linkProperty" ref="a22e133082a9bd25818ce52c51cc9e3aa" args="(QVPropertyContainer *container, LinkType linkType=AsynchronousLink)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPropertyContainer::linkProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">LinkType</a>&nbsp;</td>
+          <td class="paramname"> <em>linkType</em> = <code>AsynchronousLink</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Links properties among QVPropertyContainer's. </p>
+<p>This method safely links all input properties from a container with the same name and type output current container's properties, holders in a thread safe manner. It is mainly used when programming multithreaded applications -with multiple QVProcessingBlocks-, but also, for example, when linking blocks (running in an independent thread) with GUI widgets (running in the main thread).</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>container</em>&nbsp;</td><td>Pointer to the destination <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>linkType</em>&nbsp;</td><td>Synchronous or asynchronous. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00473">473</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ed8fb74ec14fc91dd90f6cd961f4a81"></a><!-- doxytag: member="QVPropertyContainer::unlinkProperty" ref="a2ed8fb74ec14fc91dd90f6cd961f4a81" args="(QString origName, QVPropertyContainer *destCont, QString destName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::unlinkProperty </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>origName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>destCont</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>destName</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unlinks properties among QVPropertyContainer's. </p>
+<p>This method safely ulinks properties among property holders in a thread safe manner.</p>
+<p>The pointer this corresponds to the source <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>.</p>
+<p>See also <a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">QVPropertyContainer::LinkType</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>origName</em>&nbsp;</td><td>Identifying QString for the source property. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destCont</em>&nbsp;</td><td>Pointer to the destination <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destName</em>&nbsp;</td><td>Identifying QString for the destination property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if the disconnection went OK, FALSE otherwise (for example, due to type mismatch, some of the properties does not exists, or whatever). </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00549">549</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08d44d0b9b36725186124549a1dfc124"></a><!-- doxytag: member="QVPropertyContainer::unlink" ref="a08d44d0b9b36725186124549a1dfc124" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPropertyContainer::unlink </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Completely unlinks a property holder. </p>
+<p>Deletes all the input and output links associated to the holder. Of course, all the corresponding necessary unlinks in other property holders are also performed. </p>
+
+<p>Reimplemented in <a class="el" href="classQVImageCanvas.html#acb1465e8ce2eb8aa0a95967724489b6d">QVImageCanvas</a>.</p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00584">584</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc35c0aeca52288aec5a095e139e9c40"></a><!-- doxytag: member="QVPropertyContainer::areSynchronized" ref="afc35c0aeca52288aec5a095e139e9c40" args="(const QList&lt; QVPropertyContainer * &gt; containers)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::areSynchronized </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> * &gt;&nbsp;</td>
+          <td class="paramname"> <em>containers</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if a group of QVPropertyContainers are synchronously or Sequentialy linked. </p>
+<p>Check if a group of QVPropertyContainers are synchronously or Sequentialy linked. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>containers</em>&nbsp;</td><td>List of <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> to be Checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00782">782</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c64c9c1074995778dbf8d517cd1c479"></a><!-- doxytag: member="QVPropertyContainer::getInformer" ref="a8c64c9c1074995778dbf8d517cd1c479" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVPropertyContainerInformer* QVPropertyContainer::getInformer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the QVPropertyContainerInformer. </p>
+<p>The QVPropertyContainerInformer is the object in charge of emit the changes of the <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the QVPropertyContainerInformer. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00569">569</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a350c0c7a337fb173dbfe5b384cc615eb"></a><!-- doxytag: member="QVPropertyContainer::getSourceContainer" ref="a350c0c7a337fb173dbfe5b384cc615eb" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> * QVPropertyContainer::getSourceContainer </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the source <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> of a given property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The source <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>, NULL if is not linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00735">735</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bd21ac401e6d79a29430712e5a72027"></a><!-- doxytag: member="QVPropertyContainer::getDestinyContainers" ref="a1bd21ac401e6d79a29430712e5a72027" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> * &gt; QVPropertyContainer::getDestinyContainers </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the destiny QVPropertyContainers of a given property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The destiny QVPropertyContainers, a empty list if is not linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00744">744</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa88d1097bf52887c07e8cf1b15e98791"></a><!-- doxytag: member="QVPropertyContainer::getSourceProperty" ref="aa88d1097bf52887c07e8cf1b15e98791" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QVPropertyContainer::getSourceProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the source property name of a given property. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The source property name, a void QString if is not linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00755">755</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adaa8f8488392d3080b7fa22613371356"></a><!-- doxytag: member="QVPropertyContainer::isSynchronous" ref="adaa8f8488392d3080b7fa22613371356" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isSynchronous </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if a property is linked syncronously. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if a property is linked synchronously, FALSE if is not linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00764">764</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a344fd4ac42cb3290c0ec1fe069036226"></a><!-- doxytag: member="QVPropertyContainer::isSequential" ref="a344fd4ac42cb3290c0ec1fe069036226" args="(const QString name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::isSequential </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if a property is linked Sequentialy. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if a property is linked Sequentialy, FALSE if is not linked. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00773">773</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">unlink()</a>, and <a class="el" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81">unlinkProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a386412d3d7d011283034086a89173f86"></a><!-- doxytag: member="QVPropertyContainer::readInputProperties" ref="a386412d3d7d011283034086a89173f86" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPropertyContainer::readInputProperties </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Read linked input properties from other QVPropertyContainer's. </p>
+<p>This is a protected function that should be called from the subclasses of <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> just before starting to use any input property linked to another property holder (for example, just before the iterate() function in a <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>, or just before the viewer() function in a QVCanvas). </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00620">620</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a858a9653531337be74ffc081065bb31a"></a><!-- doxytag: member="QVPropertyContainer::writeOutputProperties" ref="a858a9653531337be74ffc081065bb31a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPropertyContainer::writeOutputProperties </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write linked output properties to other QVPropertyContainer's. </p>
+<p>This is a protected function that should be called from the subclasses of <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> just after having a new set of output properties ready to be read by another property holder (for example, just after the iterate() function in a <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>, or just after the viewer() function in a QVCanvas). The effect is that a coherent state of the linked output properties is saved, so other QVPropertyContainer's can safely read from it -while we can be writing new values corresponding to a new iteration-. </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00660">660</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab72d3b0e61346e8c05a4e7dca767dc40"></a><!-- doxytag: member="QVPropertyContainer::parseArgument" ref="ab72d3b0e61346e8c05a4e7dca767dc40" args="(const QString parameter, const QString value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVPropertyContainer::parseArgument&lt; QString &gt; </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>parameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Parses a property value from a string. </p>
+<p>Parses a QString containing the value for a property (mainly useful when initializing it from the command line). <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> implements a series of default parsers (namely for bool, int, double and QString properties). But the method is templatized to allow customization of the parsed QString, if we wish to add new parameter types in the subclasses. In that case, users should specialize the corresponding template this way:<br/>
+ </p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">template</span> &lt;&gt; <span class="keywordtype">bool</span> MyDerivedQVPropertyContainer::parseArgument&lt;MyType&gt;(<span class="keyword">const</span> QString parameter, <span class="keyword">const</span> QString value)
+ {
+     <span class="keywordtype">bool</span> ok;
+     MyType myVar1 = myParserForMyType1(value,&amp;ok);
+     <span class="keywordflow">if</span>(ok) { <span class="comment">// parsing OK</span>
+          setPropertyValue&lt;MyType&gt;(parameter,myVar1);
+          <span class="keywordflow">return</span> TRUE;
+     } <span class="keywordflow">else</span> { <span class="comment">// parsing failed</span>
+          QString errorString = <span class="stringliteral">&quot;MyDerivedQVPropertyContainer::parseArgument(): holder &quot;</span>
+          + <a class="code" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85" title="Retrieves identifier QString of the object.">getName</a>() + <span class="stringliteral">&quot;: value &quot;</span> + value
+          + <span class="stringliteral">&quot; is not a valid MyType value for parameter &quot;</span> + parameter + <span class="stringliteral">&quot;.\n&quot;</span>;
+          <a class="code" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a" title="Sets an error string message.">setLastError</a>(errorString);
+          <span class="keywordflow">return</span> FALSE;
+     }
+ }
+</pre></div><p> The format of the input params in the command line should be the following: <br/>
+ <code>--</code>[holder:]&lt;name&gt;=&lt;value&gt; <br/>
+ where</p>
+<ul>
+<li><b>holder</b> is the (optional) name of the property holder.</li>
+<li><b>name</b> is the name of the property.</li>
+<li><b>value</b> is the value to initialize the property. <dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>parameter</em>&nbsp;</td><td>The name of the property to be set. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>QString from which to obtain the value.</td></tr>
+  </table>
+  </dd>
+</dl>
+If the optional holder name is not present, any holder which has a property with name 'name' is assigned the corresponding parsed value. </li>
+</ul>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00871">871</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab915024bd1988b45719b7bb65921105a"></a><!-- doxytag: member="QVPropertyContainer::setLastError" ref="ab915024bd1988b45719b7bb65921105a" args="(QString str) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVPropertyContainer::setLastError </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>str</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets an error string message. </p>
+<p>Sets an error string message corresponding to the last error that occurred in an operation on the <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> (if such an error occurred). If no error occurred since the creation of the object, the string will be empty. The method is const because it only modifies the error message (which is mutable), not the object itself. </p>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8cpp_source.html#l00732">732</a> of file <a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVPropertyContainer.html#aa522f5a0b43093ca4ef90c72a499344d">getPropertyMaximum()</a>, <a class="el" href="classQVPropertyContainer.html#a61a8accaec52384a4b0980a2fd0c2899">getPropertyMinimum()</a>, and <a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">linkProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af99e1dca90060534310833741d66518e"></a><!-- doxytag: member="QVPropertyContainer::inputPropertyBlock" ref="af99e1dca90060534310833741d66518e" args="(QString prop) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint QVPropertyContainer::inputPropertyBlock </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the origin block's id of a input property. </p>
+<p>Obtains the origin block's id of a input property. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Block's id if exist the property, or 0 if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvpropertycontainer_8h_source.html#l00695">695</a> of file <a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/<a class="el" href="qvpropertycontainer_8h_source.html">qvpropertycontainer.h</a></li>
+<li>src/qvblockprogramming/<a class="el" href="qvpropertycontainer_8cpp_source.html">qvpropertycontainer.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

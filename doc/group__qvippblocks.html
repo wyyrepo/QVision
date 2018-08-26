@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Blocks for the IPP functions<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1>
+<p>Set of blocks corresponding to the IPP functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVConvert__uCharsFloatC1Block.html">QVConvert_uCharsFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts pixel values of an image from one bit depth to another.  <a href="classQVConvert__uCharsFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVConvert__uCharsFloatC3Block.html">QVConvert_uCharsFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts pixel values of an image from one bit depth to another.  <a href="classQVConvert__uCharsFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVConvert__sFloatuCharC1Block.html">QVConvert_sFloatuCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts pixel values of an image from one bit depth to another.  <a href="classQVConvert__sFloatuCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVConvert__sFloatuCharC3Block.html">QVConvert_sFloatuCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts pixel values of an image from one bit depth to another.  <a href="classQVConvert__sFloatuCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAdd__uCharC1Block.html">QVAdd_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add image to accumulator.  <a href="classQVAdd__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAdd__uCharC3Block.html">QVAdd_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add image to accumulator.  <a href="classQVAdd__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAdd__sFloatC1Block.html">QVAdd_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add image to accumulator.  <a href="classQVAdd__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAdd__sFloatC3Block.html">QVAdd_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add image to accumulator.  <a href="classQVAdd__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAddC__uCharC1Block.html">QVAddC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAddC_8u_C1RSfs.  <a href="classQVAddC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAddC__sFloatC1Block.html">QVAddC_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAddC_32f_C1R.  <a href="classQVAddC__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMul__uCharC1Block.html">QVMul_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image.  <a href="classQVMul__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMul__uCharC3Block.html">QVMul_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image.  <a href="classQVMul__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMul__sFloatC3Block.html">QVMul_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image.  <a href="classQVMul__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMul__sFloatC1Block.html">QVMul_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image.  <a href="classQVMul__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMulC__uCharC1Block.html">QVMulC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds, subtracts, or multiplies pixel values of an image and a constant, and places the results in the same image.  <a href="classQVMulC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMulC__sFloatC1Block.html">QVMulC_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds, subtracts, or multiplies pixel values of an image and a constant, and places the results in the same image.  <a href="classQVMulC__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMulScale__uCharC1Block.html">QVMulScale_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMulScale_8u_C1R.  <a href="classQVMulScale__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMulScale__uCharC3Block.html">QVMulScale_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiMulScale_8u_C3R.  <a href="classQVMulScale__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSub__uCharC1Block.html">QVSub_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiSub_8u_C1RSfs.  <a href="classQVSub__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSub__uCharC3Block.html">QVSub_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiSub_8u_C3RSfs.  <a href="classQVSub__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSub__sFloatC1Block.html">QVSub_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiSub_32f_C1R.  <a href="classQVSub__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSub__sFloatC3Block.html">QVSub_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiSub_32f_C3R.  <a href="classQVSub__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSubC__uCharC1Block.html">QVSubC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiSubC_8u_C1RSfs.  <a href="classQVSubC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSubC__sFloatC1Block.html">QVSubC_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiSubC_32f_C1R.  <a href="classQVSubC__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDiv__uCharC1Block.html">QVDiv_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image.  <a href="classQVDiv__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDiv__uCharC3Block.html">QVDiv_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image.  <a href="classQVDiv__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDiv__sFloatC3Block.html">QVDiv_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image.  <a href="classQVDiv__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDiv__sFloatC1Block.html">QVDiv_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image.  <a href="classQVDiv__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDivC__uCharC1Block.html">QVDivC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides pixel values of a source image by a constant and places the scaled results in the same image.  <a href="classQVDivC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVDivC__sFloatC1Block.html">QVDivC_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Divides pixel values of a source image by a constant and places the scaled results in the same image.  <a href="classQVDivC__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAbs__sShortC1Block.html">QVAbs_sShortC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes absolute value of each pixel of a source image and places results in the destination image; for in-place flavors - in the same source image.  <a href="classQVAbs__sShortC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAbs__sFloatC1Block.html">QVAbs_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes absolute value of each pixel of a source image and places results in the destination image; for in-place flavors - in the same source image.  <a href="classQVAbs__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAbsDiff__uCharC1Block.html">QVAbsDiff_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate absolute difference between corresponding pixels of the two images or between image pixels and scalar.  <a href="classQVAbsDiff__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAbsDiff__sFloatC1Block.html">QVAbsDiff_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate absolute difference between corresponding pixels of the two images or between image pixels and scalar.  <a href="classQVAbsDiff__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSqr__sFloatC1Block.html">QVSqr_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Squares pixel values of an image and places results in the destination image; for in-place flavors - in the same image.  <a href="classQVSqr__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVLn__sFloatC1Block.html">QVLn_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the natural logarithm of each pixel values of a source image and places the results in the destination image; for in-place flavors - in the same image.  <a href="classQVLn__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVLn__sFloatC3Block.html">QVLn_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the natural logarithm of each pixel values of a source image and places the results in the destination image; for in-place flavors - in the same image.  <a href="classQVLn__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAnd__uCharC1Block.html">QVAnd_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAnd_8u_C1R.  <a href="classQVAnd__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAnd__uCharC3Block.html">QVAnd_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAnd_8u_C3R.  <a href="classQVAnd__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAnd__uShortC1Block.html">QVAnd_uShortC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAnd_16u_C1R.  <a href="classQVAnd__uShortC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAnd__uShortC3Block.html">QVAnd_uShortC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAnd_16u_C3R.  <a href="classQVAnd__uShortC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAnd__sIntC1Block.html">QVAnd_sIntC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAnd_32s_C1R.  <a href="classQVAnd__sIntC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAnd__sIntC3Block.html">QVAnd_sIntC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAnd_32s_C3R.  <a href="classQVAnd__sIntC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOr__uCharC1Block.html">QVOr_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOr_8u_C1R.  <a href="classQVOr__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOr__uCharC3Block.html">QVOr_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOr_8u_C3R.  <a href="classQVOr__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOr__uShortC1Block.html">QVOr_uShortC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOr_16u_C1R.  <a href="classQVOr__uShortC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOr__uShortC3Block.html">QVOr_uShortC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOr_16u_C3R.  <a href="classQVOr__uShortC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOr__sIntC1Block.html">QVOr_sIntC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOr_32s_C1R.  <a href="classQVOr__sIntC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOr__sIntC3Block.html">QVOr_sIntC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOr_32s_C3R.  <a href="classQVOr__sIntC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXor__uCharC1Block.html">QVXor_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXor_8u_C1R.  <a href="classQVXor__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXor__uCharC3Block.html">QVXor_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXor_8u_C3R.  <a href="classQVXor__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXor__uShortC1Block.html">QVXor_uShortC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXor_16u_C1R.  <a href="classQVXor__uShortC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXor__uShortC3Block.html">QVXor_uShortC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXor_16u_C3R.  <a href="classQVXor__uShortC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXor__sIntC1Block.html">QVXor_sIntC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXor_32s_C1R.  <a href="classQVXor__sIntC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXor__sIntC3Block.html">QVXor_sIntC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXor_32s_C3R.  <a href="classQVXor__sIntC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVNot__uCharC1Block.html">QVNot_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs corresponding bitwise logical operation between pixels of two image (AndC OrC XorC - between pixel of the source image and a constant).  <a href="classQVNot__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVNot__uCharC3Block.html">QVNot_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs corresponding bitwise logical operation between pixels of two image (AndC OrC XorC - between pixel of the source image and a constant).  <a href="classQVNot__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVAndC__uCharC1Block.html">QVAndC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiAndC_8u_C1R.  <a href="classQVAndC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVOrC__uCharC1Block.html">QVOrC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiOrC_8u_C1R.  <a href="classQVOrC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVXorC__uCharC1Block.html">QVXorC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiXorC_8u_C1R.  <a href="classQVXorC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVLShiftC__uCharC1Block.html">QVLShiftC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiLShiftC_8u_C1R.  <a href="classQVLShiftC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRShiftC__uCharC1Block.html">QVRShiftC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiRShiftC_8u_C1R.  <a href="classQVRShiftC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRGBToGray__uCharC3C1Block.html">QVRGBToGray_uCharC3C1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts an RGB image to gray scale (fixed coefficients).  <a href="classQVRGBToGray__uCharC3C1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRGBToGray__sFloatC3C1Block.html">QVRGBToGray_sFloatC3C1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts an RGB image to gray scale (fixed coefficients).  <a href="classQVRGBToGray__sFloatC3C1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVThreshold__uCharC1Block.html">QVThreshold_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="classQVThreshold__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVThreshold__sFloatC1Block.html">QVThreshold_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs thresholding of an image using the specified level.  <a href="classQVThreshold__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html">QVComputeThreshold_Otsu_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate Otsu theshold value of images.  <a href="classQVComputeThreshold__Otsu__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCompare__uCharC1Block.html">QVCompare_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiCompare_8u_C1R.  <a href="classQVCompare__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCompare__sFloatC1Block.html">QVCompare_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiCompare_32f_C1R.  <a href="classQVCompare__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCompareC__uCharC1Block.html">QVCompareC_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions.  <a href="classQVCompareC__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCompareC__sFloatC1Block.html">QVCompareC_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions.  <a href="classQVCompareC__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterBox__uCharC1Block.html">QVFilterBox_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterBox_8u_C1R.  <a href="classQVFilterBox__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterBox__uCharC3Block.html">QVFilterBox_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterBox_8u_C3R.  <a href="classQVFilterBox__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterBox__sFloatC1Block.html">QVFilterBox_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterBox_32f_C1R.  <a href="classQVFilterBox__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMin__uCharC1Block.html">QVFilterMin_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the "min" filter to an image.  <a href="classQVFilterMin__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMin__uCharC3Block.html">QVFilterMin_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the "min" filter to an image.  <a href="classQVFilterMin__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMin__sFloatC1Block.html">QVFilterMin_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the "min" filter to an image.  <a href="classQVFilterMin__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMax__uCharC1Block.html">QVFilterMax_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the "max" filter to an image.  <a href="classQVFilterMax__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMax__uCharC3Block.html">QVFilterMax_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the "max" filter to an image.  <a href="classQVFilterMax__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMax__sFloatC1Block.html">QVFilterMax_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies the "max" filter to an image.  <a href="classQVFilterMax__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMedian__uCharC1Block.html">QVFilterMedian_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Filters an image using a box median filter.  <a href="classQVFilterMedian__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMedian__uCharC3Block.html">QVFilterMedian_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Filters an image using a box median filter.  <a href="classQVFilterMedian__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterMedianHoriz__uCharC1Block.html">QVFilterMedianHoriz_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs horizontal median filtering.  <a href="classQVFilterMedianHoriz__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterSobelHorizMask__sFloatC1Block.html">QVFilterSobelHorizMask_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterSobelHorizMask_32f_C1R.  <a href="classQVFilterSobelHorizMask__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterSobelVertMask__sFloatC1Block.html">QVFilterSobelVertMask_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterSobelVertMask_32f_C1R.  <a href="classQVFilterSobelVertMask__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterLaplace__uCharC1Block.html">QVFilterLaplace_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterLaplace_8u_C1R.  <a href="classQVFilterLaplace__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterLaplace__sFloatC1Block.html">QVFilterLaplace_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterLaplace_32f_C1R.  <a href="classQVFilterLaplace__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterGauss__uCharC1Block.html">QVFilterGauss_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterGauss_8u_C1R.  <a href="classQVFilterGauss__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterGauss__sFloatC1Block.html">QVFilterGauss_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterGauss_32f_C1R.  <a href="classQVFilterGauss__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterGauss__uCharC3Block.html">QVFilterGauss_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterGauss_8u_C3R.  <a href="classQVFilterGauss__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterGauss__sFloatC3Block.html">QVFilterGauss_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterGauss_32f_C3R.  <a href="classQVFilterGauss__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterHipass__uCharC1Block.html">QVFilterHipass_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterHipass_8u_C1R.  <a href="classQVFilterHipass__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterHipass__uCharC3Block.html">QVFilterHipass_uCharC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterHipass_8u_C3R.  <a href="classQVFilterHipass__uCharC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterHipass__sFloatC1Block.html">QVFilterHipass_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterHipass_32f_C1R.  <a href="classQVFilterHipass__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterHipass__sFloatC3Block.html">QVFilterHipass_sFloatC3Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterHipass_32f_C3R.  <a href="classQVFilterHipass__sFloatC3Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterLowpass__uCharC1Block.html">QVFilterLowpass_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterLowpass_8u_C1R.  <a href="classQVFilterLowpass__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVFilterLowpass__sFloatC1Block.html">QVFilterLowpass_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiFilterLowpass_32f_C1R.  <a href="classQVFilterLowpass__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSum__uCharC1Block.html">QVSum_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the sum of image pixel values.  <a href="classQVSum__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMean__uCharC1Block.html">QVMean_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the mean of image pixel values.  <a href="classQVMean__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMin__uCharC1Block.html">QVMin_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="classQVMin__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMin__sFloatC1Block.html">QVMin_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the minimum of image pixel values.  <a href="classQVMin__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMax__uCharC1Block.html">QVMax_uCharC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="classQVMax__uCharC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMax__sFloatC1Block.html">QVMax_sFloatC1Block</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computes the maximum of image pixel values.  <a href="classQVMax__sFloatC1Block.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QMap&lt; QString, QString &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippblocks.html#ga1883f25501e43b27bfa546e9bd7771f3">getQVIPPBlocksNames</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provides a full list of the names of all IPP blocks.  <a href="#ga1883f25501e43b27bfa546e9bd7771f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippblocks.html#ga6d6ed97ce3edab2cd8dfdf4e4edcb3ae">newQVIPPBlock</a> (QString type, QString name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates an IPP block object, given its class name.  <a href="#ga6d6ed97ce3edab2cd8dfdf4e4edcb3ae"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Set of blocks corresponding to the IPP functions. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Documentar. </dd></dl>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga1883f25501e43b27bfa546e9bd7771f3"></a><!-- doxytag: member="qvippblocks.h::getQVIPPBlocksNames" ref="ga1883f25501e43b27bfa546e9bd7771f3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QMap&lt;QString, QString&gt; getQVIPPBlocksNames </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provides a full list of the names of all IPP blocks. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a list of QString objects, corresponding to the names of the IPP blocks </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippblocks.html#ga6d6ed97ce3edab2cd8dfdf4e4edcb3ae" title="Creates an IPP block object, given its class name.">newQVIPPBlock</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvippblocks_8cpp_source.html#l00027">27</a> of file <a class="el" href="qvippblocks_8cpp_source.html">qvippblocks.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6d6ed97ce3edab2cd8dfdf4e4edcb3ae"></a><!-- doxytag: member="qvippblocks.h::newQVIPPBlock" ref="ga6d6ed97ce3edab2cd8dfdf4e4edcb3ae" args="(QString type, QString name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a>* newQVIPPBlock </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an IPP block object, given its class name. </p>
+<p>This function can be used as a block object factory. Given the class name of an IPP block included in the QVision framework, this function returns a pointer to a newly created block of that type.</p>
+<p>Any QVision application can dynamically obtain the full list of class names of IPP blocks included in the framework with the function <a class="el" href="group__qvippblocks.html#ga1883f25501e43b27bfa546e9bd7771f3">getQVIPPBlocksNames</a>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>name of the type of the block </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>name which will be asigned to the new block object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to a new block object, or NULL if no ipp block class exists in the QVision </dd></dl>
+
+<p>Definition at line <a class="el" href="qvippblocks_8cpp_source.html#l00138">138</a> of file <a class="el" href="qvippblocks_8cpp_source.html">qvippblocks.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

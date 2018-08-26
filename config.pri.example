@@ -1,0 +1,295 @@
+#
+#   Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.
+#   <http://perception.inf.um.es>
+#   University of Murcia, Spain.
+#
+#   This file is part of the QVision library.
+#
+#   QVision is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Lesser General Public License as
+#   published by the Free Software Foundation, version 3 of the License.
+#
+#   QVision is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU Lesser General Public License for more details.
+#
+#   You should have received a copy of the GNU Lesser General Public
+#   License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+#
+
+################################
+#
+#   File config.pri.example
+#
+#   Rename this file to "config.pri". Modify the following lines following the
+#   instructions in the comments to configure the library for your system.
+#   Finally use the 'qmake' tool from the Qt library to create the 'Makefile'
+#   to compile the library.
+#
+#   Note: insert/delete the '#' symbol at the beginning of each line to
+#   comment/uncomment it.
+#
+
+##################### Basic configuration ################################################
+
+######## Install directory ##########
+#   Directory where QVision will be installed. Set it to the route where you
+#   want to install QVision's library binary, include and documentation files.
+#   It can be in your home directory, or anywhere in the system.
+#   Make sure to compile the library to a directory where you have write
+#   permissions.
+#
+# INSTALL_PATH="D:\Programme\QVision"
+# INSTALL_PATH="/usr/local/QVision"
+
+######## Compilation mode ##########
+#   Uncomment this line if you want to significantly speed up QVision applications by
+#   deactivating Qt's assert checking and debug information printing.
+#
+# CONFIG += release
+
+######## Debug printing ##########
+#   Comment this line if you want to enable debug information printing.
+#
+DEFINES += QT_NO_DEBUG_OUTPUT
+
+##################### Interoperability with other libraries ###############################
+
+############ GSL ############
+#   GSL is optional. Notice that some of the mathematical functionality contained
+#   in the qvmath module will not be included in the QVision if the GSL is not present.
+#   The GSL library includes a BLAS implementation which will be used by the QVision to
+#   speed up matrix and vector operations.
+#
+# CONFIG += qvgsl
+
+# Specify GSL install path for the Windows version of the GSL library, which can be found at:
+#
+#   <a href="http://gnuwin32.sourceforge.net/packages/gsl.htm">http://gnuwin32.sourceforge.net/packages/gsl.htm</a>
+#
+# Uncomment this line only when compiling for Windows.
+#
+# GSL_PATH="D:\GnuWin32"
+
+######## MPlayer ######
+#   Uncomment this line to enable MPlayer compatibility. This adds MPlayer related
+#   functionality in the QVision, that uses the MPlayer as a back-end application
+#   to read from a wide set of video sources.
+#   The MPlayer also requires the IPP library compatibility to be enabled.
+#   NOTE: Unfortunately QVision cannot currently use the MPlayer for video input
+#   on Windows due to some portability problems found with certain Linux functionality.
+#
+# CONFIG += qvmplayer
+
+#   The variable MPLAYER_BINARY_PATH should contain the full path to the mplayer
+#   binary file in the system.
+#
+MPLAYER_BINARY_PATH="/usr/bin/mplayer"
+
+######## QWT ##########
+#   Uncomment this line to enable QWT compatibility.
+#   Also, it adds several widgets based on the QWT, the Designer being amongst them.
+#   NOTE: this compatibility is only available for Linux.
+#
+# CONFIG += qvqwt
+
+#   The variable QWT_INCLUDE must contain the path to the include files for the
+#   QWT library. The variable QWT_LIB_BINARY must be set to the path to the QWT
+#   library binary file (generally named 'libqwt-$versionid.so').
+#
+QWT_INCLUDE="/usr/include/qwt-qt4/"
+QWT_LIB_BINARY="/usr/lib/libqwt-qt4.so"
+
+######## OpenCV #######
+#   Uncomment this line to enable OpenCV compatibility.
+#
+# CONFIG += qvopencv
+
+#   Uncomment the following lines if you want to manually provide the installation
+#   path and version for the OpenCV library. Set the content of the following variable with
+#   the path to the OpenCV library. This path must contain the directory 'include', and
+#   depending on the OpenCV version, perhaps the 'modules' directory.
+#   If this line is commented, the QVision will try to automatically configure
+#   the OpenCV using the pkg-config tool (Linux only).
+#
+# OPENCV_PATH="D:\OpenCV2.3\"
+
+# Absolute path to binary files for the OpenCV library (extensions '.so', '.a', '.lib' or '.dll').
+# OPENCV_LIB_PATH="/usr/src/OpenCV-2.2.0/lib"
+
+######## Octave lib ##########
+#   Uncomment this line to enable Octave lib compatibility.
+#   NOTE 1: this compatibility is currently only available for Linux.
+#	NOTE 2: due to a naming conflict, the QVision cannot be linked simultaneously against
+#	the Octave and ROS libraries.
+#
+# CONFIG += qvoctave
+
+#   Path to the octave library headers
+OCTAVELIB_PATH_HEADERS=""
+
+#   Path to the octave library binaries
+OCTAVELIB_PATH_BIN=""
+
+######## CGAL compatibility #########
+#   Uncomment this line to enable CGAL compatibility.
+#   NOTE: this compatibility is currently only available for Linux.
+#
+# CONFIG += qvcgal
+
+######## LAPACK linear algebra package ########
+#   Uncomment this line to enable compatibility with LAPACK linear algebra package.
+#   This enables the matrix algebra functionality for the QVision.
+#   NOTE: this option is currently only available for Linux.
+#
+# CONFIG += qvlapack
+
+#   Uncomment one of the following lines to enable LAPACK use. Uncomment DYNAMIC if you want
+#   to compile against the dynamic version of LAPACK. If you want to compile against the ATLAS
+#   implementations of BLAS/LAPACK, you should uncomment STATIC-ATLAS:
+# LAPACK_VERSION = DYNAMIC
+# LAPACK_VERSION = STATIC-ATLAS
+
+# Specify in this variable the absolute path to the binary file 'libatlas.a'.
+# (Only in case of compiling against the ATLAS library):
+ATLAS_LIBRARY_PATH = "/usr/lib/"
+
+######## Intel Composer ################
+#   Uncomment this line if you have installed 'composer' in your system.
+#   This will automatically link to the IPP and the MKL libraries if they are
+#   included in the Composer installation.
+#
+#   NOTE: the Composer can provide the IPP and/or MKL libraries by itself. Thus this option can produce
+#   a conflict if enabled together with 'qvipp' and 'qvmkl' options. You should include the IPP or MKL
+#   libraries either from the 'composer', or from standalone installations.
+#
+# CONFIG += qvcomposer
+
+#   Uncomment the following line to link against the 64 bits library binaries.
+#   If commented, the QVision will link against the 32 bits library binaries of the
+#   Intel Composer (IPP and MKL libraries also).
+# CONFIG += arch64
+
+#   Specify in the following variable the install path of the 'composer' package.
+#
+COMPOSER_PATH="/opt/c_studio/composerxe"
+
+######## Intel's IPP ########
+#   Uncomment this line to enable standalone compatibility with Intel's IPP library.
+#   Also the wrapper functions for the IPP will be included in the QVision.
+#
+# CONFIG += qvipp
+
+#   The variable IPP_PATH should contain the IPP library installation path, up
+#   to the version number of the IPP library version.
+#
+IPP_PATH="/opt/intel/ipp/5.3/ia32/"
+
+######## Intel's MKL ########
+#   Uncomment this line to enable standalone compatibility with Intel's MKL library.
+#   The MKL library includes a BLAS implementation which will be used by the QVision to
+#   speed up matrix and vector operations. It also includes a LAPACK implementation, which
+#   enables the matrix algebra functionality for the QVision.
+#   NOTE: enabling the MKL compatibility overrides any other LAPACK / ATLAS compatibility.
+#
+# CONFIG += qvmkl
+
+#   The variable MKL_PATH should contain the MKL installation path, up
+#   to the version number of the MKL library version.
+#   The variable MKL_LIB_PATH should contain the MKL library installation path, up
+#   to the place where the correct library files (32 or 64 bits) are located.
+#
+MKL_PATH="/opt/intel/mkl/10.0.1.014/"
+MKL_LIB_PATH="/opt/intel/mkl/10.0.1.014/lib/32/"
+
+######## Intel C++ Compiler #########
+#   Uncomment this line to compile using the Intel C++ Compiler
+#   NOTE: this compatibility is currently only available for Linux.
+#
+# CONFIG += qvicc
+
+######## ROS ###################
+#   Uncomment this line to enable compatibility with the ROS libraries:
+#   ROS (Robot Operating System) provides libraries and tools to help
+#   software developers create robot applications. It provides hardware
+#   abstraction, device drivers, libraries, visualizers, message-passing,
+#   package management, and more.
+#   QVision was tested with the cturtle distribution of ROS.
+#	NOTE: due to a naming conflict, the QVision cannot link simultaneously against
+#	the Octave and ROS libraries.
+#
+# CONFIG += qvros
+
+# Specify the path to the ROS library.
+ROS_PATH="/opt/ros/cturtle"
+
+######## CHOLMOD ##########
+#   Uncomment this line to enable compatibility with the CHOLMOD library.
+#   CHOLMOD is a set of ANSI C routines for sparse Cholesky factorization:
+#   http://www.cise.ufl.edu/research/sparse/cholmod/
+#   NOTE: ROS incorporates its own distribution of CHOLMOD. If ROS compatibility is enabled,
+#   QVision will automatically use it, so it is not necessary to uncomment this line.
+#
+# CONFIG += qvcholmod
+
+# Path to the CHOLMOD library.
+CHOLMOD_PATH="/opt/ros/cturtle/stacks/vslam/suitesparse"
+
+######## CUDA Toolkit ##########
+#   Uncomment the following line to enable compatibility with the CUDA Toolkit
+#   (Using CUDA libraries from QVision projects).
+#   You can download the last version of the toolkit here:
+#   http://developer.nvidia.com/cuda-downloads
+#
+# CONFIG += qvcudatoolkit
+
+# Instalation path for the CUDA Toolkit.
+CUDA_TOOLKIT_PATH="/usr/local/cuda"
+
+######## SIFT GPU ##############
+#   SIFT GPU functionality. Uncomment the following line to link against Changchang Wu GPU SIFT
+#   implementation, and to enable the wrapper functions for QVision data-types.
+#   NOTE: compiling QVision against SIFTGPU requires also compiling against the CUDA Toolkit.
+#		Read the previous section of this file.
+#
+# CONFIG += qvsiftgpu
+
+#   You must download and compile the code from the following URL:
+#   http://www.cs.unc.edu/~ccwu/siftgpu/
+#   and insert the corresponding paths to the header and library binary files in the following
+#   variables:
+# Path to 'libsiftgpu.*' binary files:
+SIFTGPU_LIB_PATH="/usr/src/SiftGPU/bin/"
+
+# Path to 'SiftGPU.h' header file:
+SIFTGPU_HEADER_PATH="/usr/src/SiftGPU/src/SiftGPU/"
+
+######## GPU-KLT+FLOW software ########
+#   GPU-KLT+FLOW is a software that performs KLT feature tracking and optical flow in the GPU hardware.
+#   Uncomment this line to enable the corresponding QVision wrapper functions for this software:
+#
+# CONFIG += qvgpukltflow
+
+#   You can find more information about GPU-KLT+FLOW and its source files in the following URL:
+#
+#   http://www.inf.ethz.ch/personal/chzach/opensource.html
+#
+#   Once compiled, specify the path to the binary file 'libV3D.a' and the directories 'Math', 'GL', 'Shaders'
+#   and containing the header files in the following variable:
+GPU_KLT_PATH="/usr/src/GPU-KLT+FLOW-1.0"
+
+#   This variable must contain the path to the source shader files ('*.cg') included in the distribution
+#   of the GPU-KLT+FLOW software:
+V3D_SHADER_PATH="/usr/src/GPU-KLT+FLOW-1.0/GL/Shaders"
+
+######## CUDA #########
+#   Uncomment this line to enable CUDA compatibility (CUDA source code in QVision projects).
+#    Actually this is an experimental feature, not fully operational.
+#   NOTE: this compatibility is only available for Linux.
+# CONFIG += qvcuda
+
+#   Path to CUDA and to CUDA SDK (this last one to use cutil library).
+#
+# CUDA_DIR = $$system(which nvcc | sed 's,/bin/nvcc$,,')
+# CUDA_UTIL_DIR=/usr/local/NVIDIA_CUDA_SDK

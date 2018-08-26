@@ -1,0 +1,887 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVProcessingBlock Class Reference<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1><!-- doxytag: class="QVProcessingBlock" --><!-- doxytag: inherits="QVPropertyContainer" -->
+<p>Base class for Block threads.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvprocessingblock_8h_source.html">QVProcessingBlock</a>&gt;</code></p>
+
+<p>Inherits <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a>.</p>
+
+<p>Inherited by ARProcessingBlock, CannyBlock, ComponentTreeBlock, ContourExtractorBlock, ContourPainter, MyProcessingBlock, MyProcessingBlock, <a class="el" href="classQVAbs__sFloatC1Block.html">QVAbs_sFloatC1Block</a>, <a class="el" href="classQVAbs__sShortC1Block.html">QVAbs_sShortC1Block</a>, <a class="el" href="classQVAbsDiff__sFloatC1Block.html">QVAbsDiff_sFloatC1Block</a>, <a class="el" href="classQVAbsDiff__uCharC1Block.html">QVAbsDiff_uCharC1Block</a>, <a class="el" href="classQVAdd__sFloatC1Block.html">QVAdd_sFloatC1Block</a>, <a class="el" href="classQVAdd__sFloatC3Block.html">QVAdd_sFloatC3Block</a>, <a class="el" href="classQVAdd__uCharC1Block.html">QVAdd_uCharC1Block</a>, <a class="el" href="classQVAdd__uCharC3Block.html">QVAdd_uCharC3Block</a>, <a class="el" href="classQVAddC__sFloatC1Block.html">QVAddC_sFloatC1Block</a>, <a class="el" href="classQVAddC__uCharC1Block.html">QVAddC_uCharC1Block</a>, <a class="el" href="classQVAnd__sIntC1Block.html">QVAnd_sIntC1Block</a>, <a class="el" href="classQVAnd__sIntC3Block.html">QVAnd_sIntC3Block</a>, <a class="el" href="classQVAnd__uCharC1Block.html">QVAnd_uCharC1Block</a>, <a class="el" href="classQVAnd__uCharC3Block.html">QVAnd_uCharC3Block</a>, <a class="el" href="classQVAnd__uShortC1Block.html">QVAnd_uShortC1Block</a>, <a class="el" href="classQVAnd__uShortC3Block.html">QVAnd_uShortC3Block</a>, <a class="el" href="classQVAndC__uCharC1Block.html">QVAndC_uCharC1Block</a>, <a class="el" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a>, <a class="el" href="classQVCompare__sFloatC1Block.html">QVCompare_sFloatC1Block</a>, <a class="el" href="classQVCompare__uCharC1Block.html">QVCompare_uCharC1Block</a>, <a class="el" href="classQVCompareC__sFloatC1Block.html">QVCompareC_sFloatC1Block</a>, <a class="el" href="classQVCompareC__uCharC1Block.html">QVCompareC_uCharC1Block</a>, <a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html">QVComputeThreshold_Otsu_uCharC1Block</a>, <a class="el" href="classQVConvert__sFloatuCharC1Block.html">QVConvert_sFloatuCharC1Block</a>, <a class="el" href="classQVConvert__sFloatuCharC3Block.html">QVConvert_sFloatuCharC3Block</a>, <a class="el" href="classQVConvert__uCharsFloatC1Block.html">QVConvert_uCharsFloatC1Block</a>, <a class="el" href="classQVConvert__uCharsFloatC3Block.html">QVConvert_uCharsFloatC3Block</a>, <a class="el" href="classQVDiv__sFloatC1Block.html">QVDiv_sFloatC1Block</a>, <a class="el" href="classQVDiv__sFloatC3Block.html">QVDiv_sFloatC3Block</a>, <a class="el" href="classQVDiv__uCharC1Block.html">QVDiv_uCharC1Block</a>, <a class="el" href="classQVDiv__uCharC3Block.html">QVDiv_uCharC3Block</a>, <a class="el" href="classQVDivC__sFloatC1Block.html">QVDivC_sFloatC1Block</a>, <a class="el" href="classQVDivC__uCharC1Block.html">QVDivC_uCharC1Block</a>, <a class="el" href="classQVFilterBox__sFloatC1Block.html">QVFilterBox_sFloatC1Block</a>, <a class="el" href="classQVFilterBox__uCharC1Block.html">QVFilterBox_uCharC1Block</a>, <a class="el" href="classQVFilterBox__uCharC3Block.html">QVFilterBox_uCharC3Block</a>, <a class="el" href="classQVFilterGauss__sFloatC1Block.html">QVFilterGauss_sFloatC1Block</a>, <a class="el" href="classQVFilterGauss__sFloatC3Block.html">QVFilterGauss_sFloatC3Block</a>, <a class="el" href="classQVFilterGauss__uCharC1Block.html">QVFilterGauss_uCharC1Block</a>, <a class="el" href="classQVFilterGauss__uCharC3Block.html">QVFilterGauss_uCharC3Block</a>, <a class="el" href="classQVFilterHipass__sFloatC1Block.html">QVFilterHipass_sFloatC1Block</a>, <a class="el" href="classQVFilterHipass__sFloatC3Block.html">QVFilterHipass_sFloatC3Block</a>, <a class="el" href="classQVFilterHipass__uCharC1Block.html">QVFilterHipass_uCharC1Block</a>, <a class="el" href="classQVFilterHipass__uCharC3Block.html">QVFilterHipass_uCharC3Block</a>, <a class="el" href="classQVFilterLaplace__sFloatC1Block.html">QVFilterLaplace_sFloatC1Block</a>, <a class="el" href="classQVFilterLaplace__uCharC1Block.html">QVFilterLaplace_uCharC1Block</a>, <a class="el" href="classQVFilterLowpass__sFloatC1Block.html">QVFilterLowpass_sFloatC1Block</a>, <a class="el" href="classQVFilterLowpass__uCharC1Block.html">QVFilterLowpass_uCharC1Block</a>, <a class="el" href="classQVFilterMax__sFloatC1Block.html">QVFilterMax_sFloatC1Block</a>, <a class="el" href="classQVFilterMax__uCharC1Block.html">QVFilterMax_uCharC1Block</a>, <a class="el" href="classQVFilterMax__uCharC3Block.html">QVFilterMax_uCharC3Block</a>, <a class="el" href="classQVFilterMedian__uCharC1Block.html">QVFilterMedian_uCharC1Block</a>, <a class="el" href="classQVFilterMedian__uCharC3Block.html">QVFilterMedian_uCharC3Block</a>, <a class="el" href="classQVFilterMedianHoriz__uCharC1Block.html">QVFilterMedianHoriz_uCharC1Block</a>, <a class="el" href="classQVFilterMin__sFloatC1Block.html">QVFilterMin_sFloatC1Block</a>, <a class="el" href="classQVFilterMin__uCharC1Block.html">QVFilterMin_uCharC1Block</a>, <a class="el" href="classQVFilterMin__uCharC3Block.html">QVFilterMin_uCharC3Block</a>, <a class="el" href="classQVFilterSobelHorizMask__sFloatC1Block.html">QVFilterSobelHorizMask_sFloatC1Block</a>, <a class="el" href="classQVFilterSobelVertMask__sFloatC1Block.html">QVFilterSobelVertMask_sFloatC1Block</a>, <a class="el" href="classQVHarrisPointDetector.html">QVHarrisPointDetector</a>, QVHessianPointDetector, <a class="el" href="classQVLn__sFloatC1Block.html">QVLn_sFloatC1Block</a>, <a class="el" href="classQVLn__sFloatC3Block.html">QVLn_sFloatC3Block</a>, <a class="el" href="classQVLShiftC__uCharC1Block.html">QVLShiftC_uCharC1Block</a>, <a class="el" href="classQVMax__sFloatC1Block.html">QVMax_sFloatC1Block</a>, <a class="el" href="classQVMax__uCharC1Block.html">QVMax_uCharC1Block</a>, <a class="el" href="classQVMean__uCharC1Block.html">QVMean_uCharC1Block</a>, <a class="el" href="classQVMin__sFloatC1Block.html">QVMin_sFloatC1Block</a>, <a class="el" href="classQVMin__uCharC1Block.html">QVMin_uCharC1Block</a>, <a class="el" href="classQVMSERDetector.html">QVMSERDetector</a>, <a class="el" href="classQVMul__sFloatC1Block.html">QVMul_sFloatC1Block</a>, <a class="el" href="classQVMul__sFloatC3Block.html">QVMul_sFloatC3Block</a>, <a class="el" href="classQVMul__uCharC1Block.html">QVMul_uCharC1Block</a>, <a class="el" href="classQVMul__uCharC3Block.html">QVMul_uCharC3Block</a>, <a class="el" href="classQVMulC__sFloatC1Block.html">QVMulC_sFloatC1Block</a>, <a class="el" href="classQVMulC__uCharC1Block.html">QVMulC_uCharC1Block</a>, <a class="el" href="classQVMulScale__uCharC1Block.html">QVMulScale_uCharC1Block</a>, <a class="el" href="classQVMulScale__uCharC3Block.html">QVMulScale_uCharC3Block</a>, <a class="el" href="classQVNot__uCharC1Block.html">QVNot_uCharC1Block</a>, <a class="el" href="classQVNot__uCharC3Block.html">QVNot_uCharC3Block</a>, <a class="el" href="classQVOr__sIntC1Block.html">QVOr_sIntC1Block</a>, <a class="el" href="classQVOr__sIntC3Block.html">QVOr_sIntC3Block</a>, <a class="el" href="classQVOr__uCharC1Block.html">QVOr_uCharC1Block</a>, <a class="el" href="classQVOr__uCharC3Block.html">QVOr_uCharC3Block</a>, <a class="el" href="classQVOr__uShortC1Block.html">QVOr_uShortC1Block</a>, <a class="el" href="classQVOr__uShortC3Block.html">QVOr_uShortC3Block</a>, <a class="el" href="classQVOrC__uCharC1Block.html">QVOrC_uCharC1Block</a>, <a class="el" href="classQVRGBToGray__sFloatC3C1Block.html">QVRGBToGray_sFloatC3C1Block</a>, <a class="el" href="classQVRGBToGray__uCharC3C1Block.html">QVRGBToGray_uCharC3C1Block</a>, <a class="el" href="classQVRShiftC__uCharC1Block.html">QVRShiftC_uCharC1Block</a>, <a class="el" href="classQVSqr__sFloatC1Block.html">QVSqr_sFloatC1Block</a>, <a class="el" href="classQVSub__sFloatC1Block.html">QVSub_sFloatC1Block</a>, <a class="el" href="classQVSub__sFloatC3Block.html">QVSub_sFloatC3Block</a>, <a class="el" href="classQVSub__uCharC1Block.html">QVSub_uCharC1Block</a>, <a class="el" href="classQVSub__uCharC3Block.html">QVSub_uCharC3Block</a>, <a class="el" href="classQVSubC__sFloatC1Block.html">QVSubC_sFloatC1Block</a>, <a class="el" href="classQVSubC__uCharC1Block.html">QVSubC_uCharC1Block</a>, <a class="el" href="classQVSum__uCharC1Block.html">QVSum_uCharC1Block</a>, <a class="el" href="classQVThreshold__sFloatC1Block.html">QVThreshold_sFloatC1Block</a>, <a class="el" href="classQVThreshold__uCharC1Block.html">QVThreshold_uCharC1Block</a>, <a class="el" href="classQVVideoReaderBlock.html">QVVideoReaderBlock</a>, <a class="el" href="classQVXor__sIntC1Block.html">QVXor_sIntC1Block</a>, <a class="el" href="classQVXor__sIntC3Block.html">QVXor_sIntC3Block</a>, <a class="el" href="classQVXor__uCharC1Block.html">QVXor_uCharC1Block</a>, <a class="el" href="classQVXor__uCharC3Block.html">QVXor_uCharC3Block</a>, <a class="el" href="classQVXor__uShortC1Block.html">QVXor_uShortC1Block</a>, <a class="el" href="classQVXor__uShortC3Block.html">QVXor_uShortC3Block</a>, <a class="el" href="classQVXorC__uCharC1Block.html">QVXorC_uCharC1Block</a>, <a class="el" href="classQVYUV4MPEG2WriterBlock.html">QVYUV4MPEG2WriterBlock</a>, and UserInteract.</p>
+
+<p><a href="classQVProcessingBlock-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">TBlockStatus</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e">Running</a>, 
+<a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5af2ff917aa66dc170044ea731082c50d7">RunningOneStep</a>, 
+<a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7">Paused</a>, 
+<a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a598549c56ecfbe02fbc7a71825bde564">Stopped</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a24d46237cabfd686cbdb35b20b193baa">Finished</a>
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Different states in which a block object can be. </p>
+ <a href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a4f5ffa9798933d22a8959bf95d5ce6c7">pause</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set block status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7">QVProcessingBlock::Paused</a>.  <a href="#a4f5ffa9798933d22a8959bf95d5ce6c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a8ba2deff4679f67891e0aafe2a1d1c14">unPause</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set block status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e">QVProcessingBlock::Running</a>.  <a href="#a8ba2deff4679f67891e0aafe2a1d1c14"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a3f4dd477633e707ec876aa5f8677d18c">step</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set block status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5af2ff917aa66dc170044ea731082c50d7">QVProcessingBlock::RunningOneStep</a>.  <a href="#a3f4dd477633e707ec876aa5f8677d18c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#ace1cb7c1c822c3f4b32782528a3b9a99">stop</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finish block execution.  <a href="#ace1cb7c1c822c3f4b32782528a3b9a99"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499">finish</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finish block execution.  <a href="#afacc54ae592d0b6da15476b6b9238499"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095">processTrigger</a> (const QString name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Process trigger activations in the block.  <a href="#adb13844954356bd9ed1bfbe97d731095"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a2be02b18fe1e03a2dd3a51b589e61f69">startIteration</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signal emited before each call to <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function.  <a href="#a2be02b18fe1e03a2dd3a51b589e61f69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a1924b55e68860c62099885a8700ef7ab">endIteration</a> (uint id, int iteration)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signal emited after each call to <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function.  <a href="#a1924b55e68860c62099885a8700ef7ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#af6d73eb86583ac05cc86e9dcd2da4f19">statusUpdate</a> (<a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">QVProcessingBlock::TBlockStatus</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Signal emited when block changes its status.  <a href="#af6d73eb86583ac05cc86e9dcd2da4f19"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a68ff2767d04f952f5654514145bb32d8">QVProcessingBlock</a> (const QString name=QString())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor for <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> class.  <a href="#a68ff2767d04f952f5654514145bb32d8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a1ead8ef597583070ddd3ec57b1154f05">QVProcessingBlock</a> (const <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy Constructor for the <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> class.  <a href="#a1ead8ef597583070ddd3ec57b1154f05"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#aefcffc7b413c1640f4c1f0f245736f2d">~QVProcessingBlock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor for <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> class.  <a href="#aefcffc7b413c1640f4c1f0f245736f2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">iterate</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function to be defined in subclasses with processing code.  <a href="#a0283c799776e0c938538de0b0ae6b463"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a511e811818f28903b60631a550f86b55">setMinimumDelay</a> (int ms)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets a minimum ms delay for each iteration (default is 0).  <a href="#a511e811818f28903b60631a550f86b55"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#aba2598b540740b3836d431836efd5d6d">isFinished</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function that can be used to check finish status of block.  <a href="#aba2598b540740b3836d431836efd5d6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a794e129d5ad9d8356a9d5c363cfda4b1">isPaused</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function that can be used to check paused status of block.  <a href="#a794e129d5ad9d8356a9d5c363cfda4b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#ae01629a378633a1a029e02fc2fd483b6">isStopped</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function that can be used to check stopped status of block.  <a href="#ae01629a378633a1a029e02fc2fd483b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a386b50b1697d0404a9dc56e337ed4fb0">isRunning</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function that can be used to check running status of block.  <a href="#a386b50b1697d0404a9dc56e337ed4fb0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">TBlockStatus</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a37bbb1533327b59c24daa736d7de67e3">getStatus</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function to obtain the status of the block.  <a href="#a37bbb1533327b59c24daa736d7de67e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a95c56bae078a84bf689b7ee8073bcf7c">getIteration</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function to obtain the number of iteration the block has performed.  <a href="#a95c56bae078a84bf689b7ee8073bcf7c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#aea1b1735900c3fccdbe183cc335504cf">isStatsEnabled</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function to obtain if the stats are enabled.  <a href="#aea1b1735900c3fccdbe183cc335504cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVStat&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#aca59123fcdd242d3c7a867cfc942d1bb">getCpuStat</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets CpuStat object for the block.  <a href="#aca59123fcdd242d3c7a867cfc942d1bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#af9896015375318688fb78012a08cddfb">setPrintStatsFrequency</a> (int freq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Prints CpuStat object for the block.  <a href="#af9896015375318688fb78012a08cddfb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a762e6a292423b4ab842fe6e858550262">printStats</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Prints CpuStat object for the block.  <a href="#a762e6a292423b4ab842fe6e858550262"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a26a8c3ab6758620d7cb328f4dd60b860">addTrigger</a> (QString name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a trigger to the block.  <a href="#a26a8c3ab6758620d7cb328f4dd60b860"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#addab1a41d0a9e7bbdfe47f8b81283ffc">getTriggerList</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the list of triggers (as a QStringList) for the block.  <a href="#addab1a41d0a9e7bbdfe47f8b81283ffc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127">timeFlag</a> (const QString flag)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stablish a performance breakpoint in the execution of the block.  <a href="#a61f390e8790a77175a6d6e1049a9d127"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Base class for Block threads. </p>
+<p>This class can be used to construct processing blocks for the <a class="el" href="BlockSynchronization.html#WorkerDesignPattern">Further reading about block programming: The Worker design pattern</a>. Block threads classes should inherit from <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>, and implement abstract function <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate</a>, with the body of the function code</p>
+<p>For further info about block programming see section IntroductionToBlockProgramming. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00045">45</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a1a629009a666814593cd3f50198b24c5"></a><!-- doxytag: member="QVProcessingBlock::TBlockStatus" ref="a1a629009a666814593cd3f50198b24c5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">QVProcessingBlock::TBlockStatus</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Different states in which a block object can be. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e"></a><!-- doxytag: member="Running" ref="a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e" args="" -->Running</em>&nbsp;</td><td>
+<p>Block is running. <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function will be called continuously, until slots <a class="el" href="classQVProcessingBlock.html#a4f5ffa9798933d22a8959bf95d5ce6c7">pause()</a> or <a class="el" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499">finish()</a> are called. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a1a629009a666814593cd3f50198b24c5af2ff917aa66dc170044ea731082c50d7"></a><!-- doxytag: member="RunningOneStep" ref="a1a629009a666814593cd3f50198b24c5af2ff917aa66dc170044ea731082c50d7" args="" -->RunningOneStep</em>&nbsp;</td><td>
+<p>Block will execute <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function once, and then will change to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7">Paused</a> status. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7"></a><!-- doxytag: member="Paused" ref="a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7" args="" -->Paused</em>&nbsp;</td><td>
+<p>Block is paused. It won't call function <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a>, or finish execution thread, until slots <a class="el" href="classQVProcessingBlock.html#a8ba2deff4679f67891e0aafe2a1d1c14">unPause()</a> or <a class="el" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499">finish()</a> are called respectively. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a1a629009a666814593cd3f50198b24c5a598549c56ecfbe02fbc7a71825bde564"></a><!-- doxytag: member="Stopped" ref="a1a629009a666814593cd3f50198b24c5a598549c56ecfbe02fbc7a71825bde564" args="" -->Stopped</em>&nbsp;</td><td>
+<p>Block is stopped. It won't call function <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> (but don't block its conected sychronous blocks), or finish execution thread, until slots <a class="el" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499">finish()</a> are called respectively. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a1a629009a666814593cd3f50198b24c5a24d46237cabfd686cbdb35b20b193baa"></a><!-- doxytag: member="Finished" ref="a1a629009a666814593cd3f50198b24c5a24d46237cabfd686cbdb35b20b193baa" args="" -->Finished</em>&nbsp;</td><td>
+<p>Block is finished. Execution thread ended. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00051">51</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a68ff2767d04f952f5654514145bb32d8"></a><!-- doxytag: member="QVProcessingBlock::QVProcessingBlock" ref="a68ff2767d04f952f5654514145bb32d8" args="(const QString name=QString())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVProcessingBlock::QVProcessingBlock </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>QString()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> class. </p>
+<p>Inits block, and set it's status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e">Running</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>the (optional) name given to the block. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8cpp_source.html#l00035">35</a> of file <a class="el" href="qvprocessingblock_8cpp_source.html">qvprocessingblock.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ead8ef597583070ddd3ec57b1154f05"></a><!-- doxytag: member="QVProcessingBlock::QVProcessingBlock" ref="a1ead8ef597583070ddd3ec57b1154f05" args="(const QVProcessingBlock &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVProcessingBlock::QVProcessingBlock </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy Constructor for the <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> class. </p>
+<p>Creates a new block form a given block. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>other</em>&nbsp;</td><td>the given block. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8cpp_source.html#l00071">71</a> of file <a class="el" href="qvprocessingblock_8cpp_source.html">qvprocessingblock.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aefcffc7b413c1640f4c1f0f245736f2d"></a><!-- doxytag: member="QVProcessingBlock::~QVProcessingBlock" ref="aefcffc7b413c1640f4c1f0f245736f2d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVProcessingBlock::~QVProcessingBlock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor for <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> class. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8cpp_source.html#l00078">78</a> of file <a class="el" href="qvprocessingblock_8cpp_source.html">qvprocessingblock.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0283c799776e0c938538de0b0ae6b463"></a><!-- doxytag: member="QVProcessingBlock::iterate" ref="a0283c799776e0c938538de0b0ae6b463" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void QVProcessingBlock::iterate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to be defined in subclasses with processing code. </p>
+<p>This function should contain the code to process data, that will be executed continuously until block is finished. </p>
+
+<p>Reimplemented in <a class="el" href="classQVYUV4MPEG2WriterBlock.html#a8415b935790095a9463e6d4fde1342a7">QVYUV4MPEG2WriterBlock</a>, <a class="el" href="classQVCannyEdgeDetector.html#a4ea16e03e6ba5d2dbd69447052999698">QVCannyEdgeDetector</a>, <a class="el" href="classQVHarrisPointDetector.html#ad300c660b658e8f98e6b37e8cd3608b6">QVHarrisPointDetector</a>, <a class="el" href="classQVConvert__uCharsFloatC1Block.html#ab6c55b5107411cdb71b92d5d727f2bcd">QVConvert_uCharsFloatC1Block</a>, <a class="el" href="classQVConvert__uCharsFloatC3Block.html#aa12af1ed3aea5124b073164d6e91aad6">QVConvert_uCharsFloatC3Block</a>, <a class="el" href="classQVConvert__sFloatuCharC1Block.html#a34937d8588c3495036f1ce416e195306">QVConvert_sFloatuCharC1Block</a>, <a class="el" href="classQVConvert__sFloatuCharC3Block.html#a6bc520f9557e5ff180401accbaef12c7">QVConvert_sFloatuCharC3Block</a>, <a class="el" href="classQVAdd__uCharC1Block.html#aceb4225d26c5d387c408cc92443788a4">QVAdd_uCharC1Block</a>, <a class="el" href="classQVAdd__uCharC3Block.html#a59768a53c0246a1dc77d8afc7f5893d3">QVAdd_uCharC3Block</a>, <a class="el" href="classQVAdd__sFloatC1Block.html#a2643279ec2fc5a6a0d152396b67ffae0">QVAdd_sFloatC1Block</a>, <a class="el" href="classQVAdd__sFloatC3Block.html#aee11674d366b3fbbe200d27317b8538a">QVAdd_sFloatC3Block</a>, <a class="el" href="classQVAddC__uCharC1Block.html#a500c0532186703585a8702428cfca694">QVAddC_uCharC1Block</a>, <a class="el" href="classQVAddC__sFloatC1Block.html#a6e1d043d2de95716741402ef26ccad57">QVAddC_sFloatC1Block</a>, <a class="el" href="classQVMul__uCharC1Block.html#add21f30448026390ea68909e1cddc61e">QVMul_uCharC1Block</a>, <a class="el" href="classQVMul__uCharC3Block.html#a5e972370967178ea6e623e87576428f1">QVMul_uCharC3Block</a>, <a class="el" href="classQVMul__sFloatC3Block.html#a45e969ce2f8743a6958b534eaa3b4530">QVMul_sFloatC3Block</a>, <a class="el" href="classQVMul__sFloatC1Block.html#a63337ebd1fe3daf4c7895f4cb53f348e">QVMul_sFloatC1Block</a>, <a class="el" href="classQVMulC__uCharC1Block.html#a1b65b8451ad845fc1105e659aab4ec29">QVMulC_uCharC1Block</a>, <a class="el" href="classQVMulC__sFloatC1Block.html#a181411a4aeb44e34e95c4d6fe33e7eed">QVMulC_sFloatC1Block</a>, <a class="el" href="classQVMulScale__uCharC1Block.html#a30d39bff97ed1fd59690a2aa8d7f8062">QVMulScale_uCharC1Block</a>, <a class="el" href="classQVMulScale__uCharC3Block.html#aafddae0af313815a9f687c6b85f04691">QVMulScale_uCharC3Block</a>, <a class="el" href="classQVSub__uCharC1Block.html#afa4cf374df880a2fd899886a52dd2021">QVSub_uCharC1Block</a>, <a class="el" href="classQVSub__uCharC3Block.html#a7904135b4775d7b24a792b10b273accd">QVSub_uCharC3Block</a>, <a class="el" href="classQVSub__sFloatC1Block.html#aa204a7326a5677a563c7fd39f3d78989">QVSub_sFloatC1Block</a>, <a class="el" href="classQVSub__sFloatC3Block.html#ac9b04980da0faee962af540bcbafd556">QVSub_sFloatC3Block</a>, <a class="el" href="classQVSubC__uCharC1Block.html#a992da0bcd18d5eca8b10d32e85e3b7fd">QVSubC_uCharC1Block</a>, <a class="el" href="classQVSubC__sFloatC1Block.html#a3344b08dd81023179d53342c211ec414">QVSubC_sFloatC1Block</a>, <a class="el" href="classQVDiv__uCharC1Block.html#a6987d3ebe28d1eb9b9a6ddddb3e6fa8c">QVDiv_uCharC1Block</a>, <a class="el" href="classQVDiv__uCharC3Block.html#affcbd2edfacc2eda29114789ab1adf80">QVDiv_uCharC3Block</a>, <a class="el" href="classQVDiv__sFloatC3Block.html#a88f636597c98782ead84038c504b3eb9">QVDiv_sFloatC3Block</a>, <a class="el" href="classQVDiv__sFloatC1Block.html#a6867f8cf10989a1bf3597b910104a624">QVDiv_sFloatC1Block</a>, <a class="el" href="classQVDivC__uCharC1Block.html#aefbc725c55b44782ddf88d14c7eb1993">QVDivC_uCharC1Block</a>, <a class="el" href="classQVDivC__sFloatC1Block.html#af7bc06fd6dd7ed5234ecdddd9bb5ae46">QVDivC_sFloatC1Block</a>, <a class="el" href="classQVAbs__sShortC1Block.html#a05ea836da4a2096534186d2d2c4381aa">QVAbs_sShortC1Block</a>, <a class="el" href="classQVAbs__sFloatC1Block.html#a1237ae1768bf0eff119cdf72a5903f2b">QVAbs_sFloatC1Block</a>, <a class="el" href="classQVAbsDiff__uCharC1Block.html#a51b1aff6a97f4e55bce3c98e5192f738">QVAbsDiff_uCharC1Block</a>, <a class="el" href="classQVAbsDiff__sFloatC1Block.html#a5904dc43925143acf8b4cc85342f10bb">QVAbsDiff_sFloatC1Block</a>, <a class="el" href="classQVSqr__sFloatC1Block.html#aba4f5a38d1af7b38d7b85b4720221e39">QVSqr_sFloatC1Block</a>, <a class="el" href="classQVLn__sFloatC1Block.html#a57c541a774c3be906a0cac0a9423f7da">QVLn_sFloatC1Block</a>, <a class="el" href="classQVLn__sFloatC3Block.html#af6c2f3440940b23a06528c2cdfe4f65b">QVLn_sFloatC3Block</a>, <a class="el" href="classQVAnd__uCharC1Block.html#a7fb9cbfd5457632728b6d5a377652cc3">QVAnd_uCharC1Block</a>, <a class="el" href="classQVAnd__uCharC3Block.html#a2c191f2acf50ac33959602ab709908d2">QVAnd_uCharC3Block</a>, <a class="el" href="classQVAnd__uShortC1Block.html#afa4ab635682999ce9b8929cafb694d3f">QVAnd_uShortC1Block</a>, <a class="el" href="classQVAnd__uShortC3Block.html#a94dbb43c0f3227b1c3b6cc43e220691a">QVAnd_uShortC3Block</a>, <a class="el" href="classQVAnd__sIntC1Block.html#a3e9675cf627a18f18490f097ba4ca321">QVAnd_sIntC1Block</a>, <a class="el" href="classQVAnd__sIntC3Block.html#a71ca94f8c3aa4242b881c677d47830aa">QVAnd_sIntC3Block</a>, <a class="el" href="classQVOr__uCharC1Block.html#a20513e6e3fc3e92d3e27576f6504d52b">QVOr_uCharC1Block</a>, <a class="el" href="classQVOr__uCharC3Block.html#a2b71ef6990600f7cd63b0c87a7daa28e">QVOr_uCharC3Block</a>, <a class="el" href="classQVOr__uShortC1Block.html#af890a57acf5bfae6a1192bd697bb998c">QVOr_uShortC1Block</a>, <a class="el" href="classQVOr__uShortC3Block.html#af2a39954047bd2d586271bb1a87df41b">QVOr_uShortC3Block</a>, <a class="el" href="classQVOr__sIntC1Block.html#ab4b2b501aa5dfd9e042da069d785183a">QVOr_sIntC1Block</a>, <a class="el" href="classQVOr__sIntC3Block.html#a09cf8e3cbd8651f74561987587c5bc35">QVOr_sIntC3Block</a>, <a class="el" href="classQVXor__uCharC1Block.html#a93fa885cdf779ccdd60e4d29ed64daac">QVXor_uCharC1Block</a>, <a class="el" href="classQVXor__uCharC3Block.html#a606a74c55a91dacd973aadf056c08942">QVXor_uCharC3Block</a>, <a class="el" href="classQVXor__uShortC1Block.html#a0f25ec73405b0712abbbdc4e703a562d">QVXor_uShortC1Block</a>, <a class="el" href="classQVXor__uShortC3Block.html#ad39d239c2de3f653f957ab179678e1e1">QVXor_uShortC3Block</a>, <a class="el" href="classQVXor__sIntC1Block.html#abde72b37f0f7ad059a1cc3c5547681a2">QVXor_sIntC1Block</a>, <a class="el" href="classQVXor__sIntC3Block.html#af69cd8dbede4164176edc403077e0e7a">QVXor_sIntC3Block</a>, <a class="el" href="classQVNot__uCharC1Block.html#a53687b1b32c355c43f581c1e269a9660">QVNot_uCharC1Block</a>, <a class="el" href="classQVNot__uCharC3Block.html#add180ca03a02ab581a76bf789d3afbf9">QVNot_uCharC3Block</a>, <a class="el" href="classQVAndC__uCharC1Block.html#a958c77cb600ccf557adb2b4aae98e511">QVAndC_uCharC1Block</a>, <a class="el" href="classQVOrC__uCharC1Block.html#a92b025b09ac133d15c47c0fcaf29f07d">QVOrC_uCharC1Block</a>, <a class="el" href="classQVXorC__uCharC1Block.html#a3902c6d9899f099bf561b1001cbade01">QVXorC_uCharC1Block</a>, <a class="el" href="classQVLShiftC__uCharC1Block.html#acdfd1432079f32a122b990842ad3e2d5">QVLShiftC_uCharC1Block</a>, <a class="el" href="classQVRShiftC__uCharC1Block.html#a866a24f191bd7b31d7005ea6d690b89f">QVRShiftC_uCharC1Block</a>, <a class="el" href="classQVRGBToGray__uCharC3C1Block.html#ac6b6bf66e6bc9c8b250b439158c61de3">QVRGBToGray_uCharC3C1Block</a>, <a class="el" href="classQVRGBToGray__sFloatC3C1Block.html#a929d7bea801892e20965272402ca7b8e">QVRGBToGray_sFloatC3C1Block</a>, <a class="el" href="classQVThreshold__uCharC1Block.html#a6ca4deba3bb425c7612500795d79e3af">QVThreshold_uCharC1Block</a>, <a class="el" href="classQVThreshold__sFloatC1Block.html#a142b927f61ba017a5b4159877d54449b">QVThreshold_sFloatC1Block</a>, <a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html#a54b8fac4af1b266cb60eb09c834b21c8">QVComputeThreshold_Otsu_uCharC1Block</a>, <a class="el" href="classQVCompare__uCharC1Block.html#a68f44f323f69f0a54bdbf763ee3ee53d">QVCompare_uCharC1Block</a>, <a class="el" href="classQVCompare__sFloatC1Block.html#aba1cc7d93075f8888b6fe5febc906272">QVCompare_sFloatC1Block</a>, <a class="el" href="classQVCompareC__uCharC1Block.html#a6fb837d869be7c1b11f32c6a4da2a165">QVCompareC_uCharC1Block</a>, <a class="el" href="classQVCompareC__sFloatC1Block.html#a530e27b34dca8bff45faff1a63f57e14">QVCompareC_sFloatC1Block</a>, <a class="el" href="classQVFilterBox__uCharC1Block.html#aa9d68de1b06e7812a1b3237b0cc9730b">QVFilterBox_uCharC1Block</a>, <a class="el" href="classQVFilterBox__uCharC3Block.html#a843d1c1624e5e6359bc596bdb1348ab7">QVFilterBox_uCharC3Block</a>, <a class="el" href="classQVFilterBox__sFloatC1Block.html#afb38b2f7c088c2bec50a58c7ec691f1a">QVFilterBox_sFloatC1Block</a>, <a class="el" href="classQVFilterMin__uCharC1Block.html#a6c50683299316e8a918b4f12e6cda079">QVFilterMin_uCharC1Block</a>, <a class="el" href="classQVFilterMin__uCharC3Block.html#ad20d471c11a24f54ef63f9658fd6d961">QVFilterMin_uCharC3Block</a>, <a class="el" href="classQVFilterMin__sFloatC1Block.html#a8587f794d266c93ba2d61109d652f193">QVFilterMin_sFloatC1Block</a>, <a class="el" href="classQVFilterMax__uCharC1Block.html#ab22c45ef63b09202ae86ed70e22f3759">QVFilterMax_uCharC1Block</a>, <a class="el" href="classQVFilterMax__uCharC3Block.html#a38cdd73f2a6253b0f2237e944eb22964">QVFilterMax_uCharC3Block</a>, <a class="el" href="classQVFilterMax__sFloatC1Block.html#accbf158313aa7c27ecde0c236b388457">QVFilterMax_sFloatC1Block</a>, <a class="el" href="classQVFilterMedian__uCharC1Block.html#a8a8e38fb48e39e93c704fd0b18d44320">QVFilterMedian_uCharC1Block</a>, <a class="el" href="classQVFilterMedian__uCharC3Block.html#a71965cbce58a6b09ebc74efab598c736">QVFilterMedian_uCharC3Block</a>, <a class="el" href="classQVFilterMedianHoriz__uCharC1Block.html#a64e97e90cfdd8757b6dcc1f9ce57b2fc">QVFilterMedianHoriz_uCharC1Block</a>, <a class="el" href="classQVFilterSobelHorizMask__sFloatC1Block.html#a0e84e56f24e60d22c299e705f1dd0fb7">QVFilterSobelHorizMask_sFloatC1Block</a>, <a class="el" href="classQVFilterSobelVertMask__sFloatC1Block.html#a725b785d37db66d6cf5ad79ddc03e2b0">QVFilterSobelVertMask_sFloatC1Block</a>, <a class="el" href="classQVFilterLaplace__uCharC1Block.html#a167d6ee3b93d27e9c2a21f2d0750dbf9">QVFilterLaplace_uCharC1Block</a>, <a class="el" href="classQVFilterLaplace__sFloatC1Block.html#ab601a0ea4dd4be85a80882dd8efe3c5b">QVFilterLaplace_sFloatC1Block</a>, <a class="el" href="classQVFilterGauss__uCharC1Block.html#a09201a99e2a08b5ddd655740d14be5af">QVFilterGauss_uCharC1Block</a>, <a class="el" href="classQVFilterGauss__sFloatC1Block.html#aafb95b09b8c8701e4e713af4e1806e52">QVFilterGauss_sFloatC1Block</a>, <a class="el" href="classQVFilterGauss__uCharC3Block.html#a19ae95c1a23ffef7b713b0f58d503acf">QVFilterGauss_uCharC3Block</a>, <a class="el" href="classQVFilterGauss__sFloatC3Block.html#afbb9b1076311fa31052e3fe979bb0304">QVFilterGauss_sFloatC3Block</a>, <a class="el" href="classQVFilterHipass__uCharC1Block.html#acfc5eb72fb03159e9adc59a8f3108f68">QVFilterHipass_uCharC1Block</a>, <a class="el" href="classQVFilterHipass__uCharC3Block.html#a38718ce291779ae80c5163f945c59571">QVFilterHipass_uCharC3Block</a>, <a class="el" href="classQVFilterHipass__sFloatC1Block.html#a2b4a7cf5327f3e8ba65cd8e43bf1636c">QVFilterHipass_sFloatC1Block</a>, <a class="el" href="classQVFilterHipass__sFloatC3Block.html#a06edee0150b77675731cd3354af2b08a">QVFilterHipass_sFloatC3Block</a>, <a class="el" href="classQVFilterLowpass__uCharC1Block.html#aaef606505e76274a11883c87f658238d">QVFilterLowpass_uCharC1Block</a>, <a class="el" href="classQVFilterLowpass__sFloatC1Block.html#a2478cdc731374bea35d7907771c608f4">QVFilterLowpass_sFloatC1Block</a>, <a class="el" href="classQVSum__uCharC1Block.html#a42e3ab178437fa4102b5f52e7659794a">QVSum_uCharC1Block</a>, <a class="el" href="classQVMean__uCharC1Block.html#af64822b14102ec7f8278ee597fa902ff">QVMean_uCharC1Block</a>, <a class="el" href="classQVMin__uCharC1Block.html#a53258697aaf7c8b9f82b023eae0fb24a">QVMin_uCharC1Block</a>, <a class="el" href="classQVMin__sFloatC1Block.html#a0e34bef2a7f115b4f8a52b6b96f590e1">QVMin_sFloatC1Block</a>, <a class="el" href="classQVMax__uCharC1Block.html#a52ef49fb07f3cb6ca4cf05f13c9b5772">QVMax_uCharC1Block</a>, <a class="el" href="classQVMax__sFloatC1Block.html#a632b953a0b466383a1d8e0433d248378">QVMax_sFloatC1Block</a>, and <a class="el" href="classQVMSERDetector.html#a2ef41a5e02f6fe1d9513fdf5cd78fc70">QVMSERDetector</a>.</p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00091">91</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a511e811818f28903b60631a550f86b55"></a><!-- doxytag: member="QVProcessingBlock::setMinimumDelay" ref="a511e811818f28903b60631a550f86b55" args="(int ms)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::setMinimumDelay </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ms</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a minimum ms delay for each iteration (default is 0). </p>
+<p>This function should be called to establish a minimum delay for each iteration (that is, it should be used to limit the speed at which the block iterates). Of course, if the real processing iteration time is longer than the delay set with this function, it will not have any visible effect.</p>
+<p>Warning: due to underlying operating system time management imprecissions, low values (typically under 40 ms) of this parameter can result in longer delays than expected. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00104">104</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba2598b540740b3836d431836efd5d6d"></a><!-- doxytag: member="QVProcessingBlock::isFinished" ref="aba2598b540740b3836d431836efd5d6d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVProcessingBlock::isFinished </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function that can be used to check finish status of block. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if block is finished. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00108">108</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a794e129d5ad9d8356a9d5c363cfda4b1"></a><!-- doxytag: member="QVProcessingBlock::isPaused" ref="a794e129d5ad9d8356a9d5c363cfda4b1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVProcessingBlock::isPaused </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function that can be used to check paused status of block. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if block is paused. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00112">112</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae01629a378633a1a029e02fc2fd483b6"></a><!-- doxytag: member="QVProcessingBlock::isStopped" ref="ae01629a378633a1a029e02fc2fd483b6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVProcessingBlock::isStopped </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function that can be used to check stopped status of block. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if block is stopped. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00116">116</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a386b50b1697d0404a9dc56e337ed4fb0"></a><!-- doxytag: member="QVProcessingBlock::isRunning" ref="a386b50b1697d0404a9dc56e337ed4fb0" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVProcessingBlock::isRunning </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function that can be used to check running status of block. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if block is running. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00120">120</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a37bbb1533327b59c24daa736d7de67e3"></a><!-- doxytag: member="QVProcessingBlock::getStatus" ref="a37bbb1533327b59c24daa736d7de67e3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">TBlockStatus</a> QVProcessingBlock::getStatus </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to obtain the status of the block. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>status of the block. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00124">124</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95c56bae078a84bf689b7ee8073bcf7c"></a><!-- doxytag: member="QVProcessingBlock::getIteration" ref="a95c56bae078a84bf689b7ee8073bcf7c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVProcessingBlock::getIteration </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to obtain the number of iteration the block has performed. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of times that the <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">iterate()</a> function has been called. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00128">128</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea1b1735900c3fccdbe183cc335504cf"></a><!-- doxytag: member="QVProcessingBlock::isStatsEnabled" ref="aea1b1735900c3fccdbe183cc335504cf" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVProcessingBlock::isStatsEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to obtain if the stats are enabled. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>if the stats are enabled. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00132">132</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca59123fcdd242d3c7a867cfc942d1bb"></a><!-- doxytag: member="QVProcessingBlock::getCpuStat" ref="aca59123fcdd242d3c7a867cfc942d1bb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVStat QVProcessingBlock::getCpuStat </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets CpuStat object for the block. </p>
+<p>Every block has a CpuStat type object that mantains cpu time performance for different parts (code fragments) of function <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">iterate()</a>. This object is updated in method <a class="el" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127">timeFlag()</a>, when establishing a performance breakpoint in the execution of the block.</p>
+<p>If th stats are disabled, return an empty QVStat.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>constant reference to block's CpuStat object. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00144">144</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9896015375318688fb78012a08cddfb"></a><!-- doxytag: member="QVProcessingBlock::setPrintStatsFrequency" ref="af9896015375318688fb78012a08cddfb" args="(int freq)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::setPrintStatsFrequency </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>freq</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints CpuStat object for the block. </p>
+<p>Periodically prints performance statistics for the block. If the stats are disabled, do nothing.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>freq</em>&nbsp;</td><td>The frequency (iterations) whitch prints the stats. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00156">156</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVProcessingBlock.html#a68ff2767d04f952f5654514145bb32d8">QVProcessingBlock()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a762e6a292423b4ab842fe6e858550262"></a><!-- doxytag: member="QVProcessingBlock::printStats" ref="a762e6a292423b4ab842fe6e858550262" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::printStats </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints CpuStat object for the block. </p>
+<p>Prints performance statistics for the block. If the stats are disabled, do nothing. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00171">171</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26a8c3ab6758620d7cb328f4dd60b860"></a><!-- doxytag: member="QVProcessingBlock::addTrigger" ref="a26a8c3ab6758620d7cb328f4dd60b860" args="(QString name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::addTrigger </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds a trigger to the block. </p>
+<p>Triggers are just named actions that can be called upon a <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> to change it's state, initialize itself, or whatever action the programmer considers convenient, in a completely asynchronous manner. When added to a block, they will depict a button in the corresponding property widget in the interface, that will do a call to <a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095">processTrigger()</a> function when pressed.</p>
+<p>This method is provided just for convenience. The same effect could be achieved just by adding a new slot when subclassing <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>, and connecting it to a button clicked signal. But using this generic function avoids the programmer to have to declare the new block class as a Q_OBJECT, if he just needs the trigger functionality, and does not want to declare any other signals or slots in his new block class. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095" title="Process trigger activations in the block.">processTrigger()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00195">195</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="addab1a41d0a9e7bbdfe47f8b81283ffc"></a><!-- doxytag: member="QVProcessingBlock::getTriggerList" ref="addab1a41d0a9e7bbdfe47f8b81283ffc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QStringList QVProcessingBlock::getTriggerList </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the list of triggers (as a QStringList) for the block. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00198">198</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61f390e8790a77175a6d6e1049a9d127"></a><!-- doxytag: member="QVProcessingBlock::timeFlag" ref="a61f390e8790a77175a6d6e1049a9d127" args="(const QString flag)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::timeFlag </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>flag</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stablish a performance breakpoint in the execution of the block. </p>
+<p>This function should be used in the body of <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">iterate()</a> function, to establish a performance breakpoint, at which the execution time will be statistically measured.</p>
+<p>If the stats are disabled, do nothing.</p>
+<p>These statistics can be plotted through the graphical user interface (see BlockWidget section at the <a class="el" href="classQVGUI.html">QVGUI</a> documentation), creating a <a class="el" href="classQVCPUPlot.html">QVCPUPlot</a> object, or to the user console if the parameter <em>--"print stats"=true</em> was used in the application command line. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00212">212</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVMax__sFloatC1Block.html#a632b953a0b466383a1d8e0433d248378">QVMax_sFloatC1Block::iterate()</a>, <a class="el" href="classQVMax__uCharC1Block.html#a52ef49fb07f3cb6ca4cf05f13c9b5772">QVMax_uCharC1Block::iterate()</a>, <a class="el" href="classQVMin__sFloatC1Block.html#a0e34bef2a7f115b4f8a52b6b96f590e1">QVMin_sFloatC1Block::iterate()</a>, <a class="el" href="classQVMin__uCharC1Block.html#a53258697aaf7c8b9f82b023eae0fb24a">QVMin_uCharC1Block::iterate()</a>, <a class="el" href="classQVMean__uCharC1Block.html#af64822b14102ec7f8278ee597fa902ff">QVMean_uCharC1Block::iterate()</a>, <a class="el" href="classQVSum__uCharC1Block.html#a42e3ab178437fa4102b5f52e7659794a">QVSum_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterLowpass__sFloatC1Block.html#a2478cdc731374bea35d7907771c608f4">QVFilterLowpass_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterLowpass__uCharC1Block.html#aaef606505e76274a11883c87f658238d">QVFilterLowpass_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterHipass__sFloatC3Block.html#a06edee0150b77675731cd3354af2b08a">QVFilterHipass_sFloatC3Block::iterate()</a>, <a class="el" href="classQVFilterHipass__sFloatC1Block.html#a2b4a7cf5327f3e8ba65cd8e43bf1636c">QVFilterHipass_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterHipass__uCharC3Block.html#a38718ce291779ae80c5163f945c59571">QVFilterHipass_uCharC3Block::iterate()</a>, <a class="el" href="classQVFilterHipass__uCharC1Block.html#acfc5eb72fb03159e9adc59a8f3108f68">QVFilterHipass_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterGauss__sFloatC3Block.html#afbb9b1076311fa31052e3fe979bb0304">QVFilterGauss_sFloatC3Block::iterate()</a>, <a class="el" href="classQVFilterGauss__uCharC3Block.html#a19ae95c1a23ffef7b713b0f58d503acf">QVFilterGauss_uCharC3Block::iterate()</a>, <a class="el" href="classQVFilterGauss__sFloatC1Block.html#aafb95b09b8c8701e4e713af4e1806e52">QVFilterGauss_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterGauss__uCharC1Block.html#a09201a99e2a08b5ddd655740d14be5af">QVFilterGauss_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterLaplace__sFloatC1Block.html#ab601a0ea4dd4be85a80882dd8efe3c5b">QVFilterLaplace_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterLaplace__uCharC1Block.html#a167d6ee3b93d27e9c2a21f2d0750dbf9">QVFilterLaplace_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterSobelVertMask__sFloatC1Block.html#a725b785d37db66d6cf5ad79ddc03e2b0">QVFilterSobelVertMask_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterSobelHorizMask__sFloatC1Block.html#a0e84e56f24e60d22c299e705f1dd0fb7">QVFilterSobelHorizMask_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterMedianHoriz__uCharC1Block.html#a64e97e90cfdd8757b6dcc1f9ce57b2fc">QVFilterMedianHoriz_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterMedian__uCharC3Block.html#a71965cbce58a6b09ebc74efab598c736">QVFilterMedian_uCharC3Block::iterate()</a>, <a class="el" href="classQVFilterMedian__uCharC1Block.html#a8a8e38fb48e39e93c704fd0b18d44320">QVFilterMedian_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterMax__sFloatC1Block.html#accbf158313aa7c27ecde0c236b388457">QVFilterMax_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterMax__uCharC3Block.html#a38cdd73f2a6253b0f2237e944eb22964">QVFilterMax_uCharC3Block::iterate()</a>, <a class="el" href="classQVFilterMax__uCharC1Block.html#ab22c45ef63b09202ae86ed70e22f3759">QVFilterMax_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterMin__sFloatC1Block.html#a8587f794d266c93ba2d61109d652f193">QVFilterMin_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterMin__uCharC3Block.html#ad20d471c11a24f54ef63f9658fd6d961">QVFilterMin_uCharC3Block::iterate()</a>, <a class="el" href="classQVFilterMin__uCharC1Block.html#a6c50683299316e8a918b4f12e6cda079">QVFilterMin_uCharC1Block::iterate()</a>, <a class="el" href="classQVFilterBox__sFloatC1Block.html#afb38b2f7c088c2bec50a58c7ec691f1a">QVFilterBox_sFloatC1Block::iterate()</a>, <a class="el" href="classQVFilterBox__uCharC3Block.html#a843d1c1624e5e6359bc596bdb1348ab7">QVFilterBox_uCharC3Block::iterate()</a>, <a class="el" href="classQVFilterBox__uCharC1Block.html#aa9d68de1b06e7812a1b3237b0cc9730b">QVFilterBox_uCharC1Block::iterate()</a>, <a class="el" href="classQVCompareC__sFloatC1Block.html#a530e27b34dca8bff45faff1a63f57e14">QVCompareC_sFloatC1Block::iterate()</a>, <a class="el" href="classQVCompareC__uCharC1Block.html#a6fb837d869be7c1b11f32c6a4da2a165">QVCompareC_uCharC1Block::iterate()</a>, <a class="el" href="classQVCompare__sFloatC1Block.html#aba1cc7d93075f8888b6fe5febc906272">QVCompare_sFloatC1Block::iterate()</a>, <a class="el" href="classQVCompare__uCharC1Block.html#a68f44f323f69f0a54bdbf763ee3ee53d">QVCompare_uCharC1Block::iterate()</a>, <a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html#a54b8fac4af1b266cb60eb09c834b21c8">QVComputeThreshold_Otsu_uCharC1Block::iterate()</a>, <a class="el" href="classQVThreshold__sFloatC1Block.html#a142b927f61ba017a5b4159877d54449b">QVThreshold_sFloatC1Block::iterate()</a>, <a class="el" href="classQVThreshold__uCharC1Block.html#a6ca4deba3bb425c7612500795d79e3af">QVThreshold_uCharC1Block::iterate()</a>, <a class="el" href="classQVRGBToGray__sFloatC3C1Block.html#a929d7bea801892e20965272402ca7b8e">QVRGBToGray_sFloatC3C1Block::iterate()</a>, <a class="el" href="classQVRGBToGray__uCharC3C1Block.html#ac6b6bf66e6bc9c8b250b439158c61de3">QVRGBToGray_uCharC3C1Block::iterate()</a>, <a class="el" href="classQVRShiftC__uCharC1Block.html#a866a24f191bd7b31d7005ea6d690b89f">QVRShiftC_uCharC1Block::iterate()</a>, <a class="el" href="classQVLShiftC__uCharC1Block.html#acdfd1432079f32a122b990842ad3e2d5">QVLShiftC_uCharC1Block::iterate()</a>, <a class="el" href="classQVXorC__uCharC1Block.html#a3902c6d9899f099bf561b1001cbade01">QVXorC_uCharC1Block::iterate()</a>, <a class="el" href="classQVOrC__uCharC1Block.html#a92b025b09ac133d15c47c0fcaf29f07d">QVOrC_uCharC1Block::iterate()</a>, <a class="el" href="classQVAndC__uCharC1Block.html#a958c77cb600ccf557adb2b4aae98e511">QVAndC_uCharC1Block::iterate()</a>, <a class="el" href="classQVNot__uCharC3Block.html#add180ca03a02ab581a76bf789d3afbf9">QVNot_uCharC3Block::iterate()</a>, <a class="el" href="classQVNot__uCharC1Block.html#a53687b1b32c355c43f581c1e269a9660">QVNot_uCharC1Block::iterate()</a>, <a class="el" href="classQVXor__sIntC3Block.html#af69cd8dbede4164176edc403077e0e7a">QVXor_sIntC3Block::iterate()</a>, <a class="el" href="classQVXor__sIntC1Block.html#abde72b37f0f7ad059a1cc3c5547681a2">QVXor_sIntC1Block::iterate()</a>, <a class="el" href="classQVXor__uShortC3Block.html#ad39d239c2de3f653f957ab179678e1e1">QVXor_uShortC3Block::iterate()</a>, <a class="el" href="classQVXor__uShortC1Block.html#a0f25ec73405b0712abbbdc4e703a562d">QVXor_uShortC1Block::iterate()</a>, <a class="el" href="classQVXor__uCharC3Block.html#a606a74c55a91dacd973aadf056c08942">QVXor_uCharC3Block::iterate()</a>, <a class="el" href="classQVXor__uCharC1Block.html#a93fa885cdf779ccdd60e4d29ed64daac">QVXor_uCharC1Block::iterate()</a>, <a class="el" href="classQVOr__sIntC3Block.html#a09cf8e3cbd8651f74561987587c5bc35">QVOr_sIntC3Block::iterate()</a>, <a class="el" href="classQVOr__sIntC1Block.html#ab4b2b501aa5dfd9e042da069d785183a">QVOr_sIntC1Block::iterate()</a>, <a class="el" href="classQVOr__uShortC3Block.html#af2a39954047bd2d586271bb1a87df41b">QVOr_uShortC3Block::iterate()</a>, <a class="el" href="classQVOr__uShortC1Block.html#af890a57acf5bfae6a1192bd697bb998c">QVOr_uShortC1Block::iterate()</a>, <a class="el" href="classQVOr__uCharC3Block.html#a2b71ef6990600f7cd63b0c87a7daa28e">QVOr_uCharC3Block::iterate()</a>, <a class="el" href="classQVOr__uCharC1Block.html#a20513e6e3fc3e92d3e27576f6504d52b">QVOr_uCharC1Block::iterate()</a>, <a class="el" href="classQVAnd__sIntC3Block.html#a71ca94f8c3aa4242b881c677d47830aa">QVAnd_sIntC3Block::iterate()</a>, <a class="el" href="classQVAnd__sIntC1Block.html#a3e9675cf627a18f18490f097ba4ca321">QVAnd_sIntC1Block::iterate()</a>, <a class="el" href="classQVAnd__uShortC3Block.html#a94dbb43c0f3227b1c3b6cc43e220691a">QVAnd_uShortC3Block::iterate()</a>, <a class="el" href="classQVAnd__uShortC1Block.html#afa4ab635682999ce9b8929cafb694d3f">QVAnd_uShortC1Block::iterate()</a>, <a class="el" href="classQVAnd__uCharC3Block.html#a2c191f2acf50ac33959602ab709908d2">QVAnd_uCharC3Block::iterate()</a>, <a class="el" href="classQVAnd__uCharC1Block.html#a7fb9cbfd5457632728b6d5a377652cc3">QVAnd_uCharC1Block::iterate()</a>, <a class="el" href="classQVLn__sFloatC3Block.html#af6c2f3440940b23a06528c2cdfe4f65b">QVLn_sFloatC3Block::iterate()</a>, <a class="el" href="classQVLn__sFloatC1Block.html#a57c541a774c3be906a0cac0a9423f7da">QVLn_sFloatC1Block::iterate()</a>, <a class="el" href="classQVSqr__sFloatC1Block.html#aba4f5a38d1af7b38d7b85b4720221e39">QVSqr_sFloatC1Block::iterate()</a>, <a class="el" href="classQVAbsDiff__sFloatC1Block.html#a5904dc43925143acf8b4cc85342f10bb">QVAbsDiff_sFloatC1Block::iterate()</a>, <a class="el" href="classQVAbsDiff__uCharC1Block.html#a51b1aff6a97f4e55bce3c98e5192f738">QVAbsDiff_uCharC1Block::iterate()</a>, <a class="el" href="classQVAbs__sFloatC1Block.html#a1237ae1768bf0eff119cdf72a5903f2b">QVAbs_sFloatC1Block::iterate()</a>, <a class="el" href="classQVAbs__sShortC1Block.html#a05ea836da4a2096534186d2d2c4381aa">QVAbs_sShortC1Block::iterate()</a>, <a class="el" href="classQVDivC__sFloatC1Block.html#af7bc06fd6dd7ed5234ecdddd9bb5ae46">QVDivC_sFloatC1Block::iterate()</a>, <a class="el" href="classQVDivC__uCharC1Block.html#aefbc725c55b44782ddf88d14c7eb1993">QVDivC_uCharC1Block::iterate()</a>, <a class="el" href="classQVDiv__sFloatC1Block.html#a6867f8cf10989a1bf3597b910104a624">QVDiv_sFloatC1Block::iterate()</a>, <a class="el" href="classQVDiv__sFloatC3Block.html#a88f636597c98782ead84038c504b3eb9">QVDiv_sFloatC3Block::iterate()</a>, <a class="el" href="classQVDiv__uCharC3Block.html#affcbd2edfacc2eda29114789ab1adf80">QVDiv_uCharC3Block::iterate()</a>, <a class="el" href="classQVDiv__uCharC1Block.html#a6987d3ebe28d1eb9b9a6ddddb3e6fa8c">QVDiv_uCharC1Block::iterate()</a>, <a class="el" href="classQVSubC__sFloatC1Block.html#a3344b08dd81023179d53342c211ec414">QVSubC_sFloatC1Block::iterate()</a>, <a class="el" href="classQVSubC__uCharC1Block.html#a992da0bcd18d5eca8b10d32e85e3b7fd">QVSubC_uCharC1Block::iterate()</a>, <a class="el" href="classQVSub__sFloatC3Block.html#ac9b04980da0faee962af540bcbafd556">QVSub_sFloatC3Block::iterate()</a>, <a class="el" href="classQVSub__sFloatC1Block.html#aa204a7326a5677a563c7fd39f3d78989">QVSub_sFloatC1Block::iterate()</a>, <a class="el" href="classQVSub__uCharC3Block.html#a7904135b4775d7b24a792b10b273accd">QVSub_uCharC3Block::iterate()</a>, <a class="el" href="classQVSub__uCharC1Block.html#afa4cf374df880a2fd899886a52dd2021">QVSub_uCharC1Block::iterate()</a>, <a class="el" href="classQVMulScale__uCharC3Block.html#aafddae0af313815a9f687c6b85f04691">QVMulScale_uCharC3Block::iterate()</a>, <a class="el" href="classQVMulScale__uCharC1Block.html#a30d39bff97ed1fd59690a2aa8d7f8062">QVMulScale_uCharC1Block::iterate()</a>, <a class="el" href="classQVMulC__sFloatC1Block.html#a181411a4aeb44e34e95c4d6fe33e7eed">QVMulC_sFloatC1Block::iterate()</a>, <a class="el" href="classQVMulC__uCharC1Block.html#a1b65b8451ad845fc1105e659aab4ec29">QVMulC_uCharC1Block::iterate()</a>, <a class="el" href="classQVMul__sFloatC1Block.html#a63337ebd1fe3daf4c7895f4cb53f348e">QVMul_sFloatC1Block::iterate()</a>, <a class="el" href="classQVMul__sFloatC3Block.html#a45e969ce2f8743a6958b534eaa3b4530">QVMul_sFloatC3Block::iterate()</a>, <a class="el" href="classQVMul__uCharC3Block.html#a5e972370967178ea6e623e87576428f1">QVMul_uCharC3Block::iterate()</a>, <a class="el" href="classQVMul__uCharC1Block.html#add21f30448026390ea68909e1cddc61e">QVMul_uCharC1Block::iterate()</a>, <a class="el" href="classQVAddC__sFloatC1Block.html#a6e1d043d2de95716741402ef26ccad57">QVAddC_sFloatC1Block::iterate()</a>, <a class="el" href="classQVAddC__uCharC1Block.html#a500c0532186703585a8702428cfca694">QVAddC_uCharC1Block::iterate()</a>, <a class="el" href="classQVAdd__sFloatC3Block.html#aee11674d366b3fbbe200d27317b8538a">QVAdd_sFloatC3Block::iterate()</a>, <a class="el" href="classQVAdd__sFloatC1Block.html#a2643279ec2fc5a6a0d152396b67ffae0">QVAdd_sFloatC1Block::iterate()</a>, <a class="el" href="classQVAdd__uCharC3Block.html#a59768a53c0246a1dc77d8afc7f5893d3">QVAdd_uCharC3Block::iterate()</a>, <a class="el" href="classQVAdd__uCharC1Block.html#aceb4225d26c5d387c408cc92443788a4">QVAdd_uCharC1Block::iterate()</a>, <a class="el" href="classQVConvert__sFloatuCharC3Block.html#a6bc520f9557e5ff180401accbaef12c7">QVConvert_sFloatuCharC3Block::iterate()</a>, <a class="el" href="classQVConvert__sFloatuCharC1Block.html#a34937d8588c3495036f1ce416e195306">QVConvert_sFloatuCharC1Block::iterate()</a>, <a class="el" href="classQVConvert__uCharsFloatC3Block.html#aa12af1ed3aea5124b073164d6e91aad6">QVConvert_uCharsFloatC3Block::iterate()</a>, and <a class="el" href="classQVConvert__uCharsFloatC1Block.html#ab6c55b5107411cdb71b92d5d727f2bcd">QVConvert_uCharsFloatC1Block::iterate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f5ffa9798933d22a8959bf95d5ce6c7"></a><!-- doxytag: member="QVProcessingBlock::pause" ref="a4f5ffa9798933d22a8959bf95d5ce6c7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::pause </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set block status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7">QVProcessingBlock::Paused</a>. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00221">221</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ba2deff4679f67891e0aafe2a1d1c14"></a><!-- doxytag: member="QVProcessingBlock::unPause" ref="a8ba2deff4679f67891e0aafe2a1d1c14" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::unPause </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set block status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e">QVProcessingBlock::Running</a>. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00225">225</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f4dd477633e707ec876aa5f8677d18c"></a><!-- doxytag: member="QVProcessingBlock::step" ref="a3f4dd477633e707ec876aa5f8677d18c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::step </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set block status to <a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5af2ff917aa66dc170044ea731082c50d7">QVProcessingBlock::RunningOneStep</a>. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00229">229</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace1cb7c1c822c3f4b32782528a3b9a99"></a><!-- doxytag: member="QVProcessingBlock::stop" ref="ace1cb7c1c822c3f4b32782528a3b9a99" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::stop </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finish block execution. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00233">233</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afacc54ae592d0b6da15476b6b9238499"></a><!-- doxytag: member="QVProcessingBlock::finish" ref="afacc54ae592d0b6da15476b6b9238499" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::finish </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finish block execution. </p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00237">237</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6">QVApplication::quitItems()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb13844954356bd9ed1bfbe97d731095"></a><!-- doxytag: member="QVProcessingBlock::processTrigger" ref="adb13844954356bd9ed1bfbe97d731095" args="(const QString name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void QVProcessingBlock::processTrigger </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Process trigger activations in the block. </p>
+<p>Triggers are just named actions that can be called upon a <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> to change it's state, initialize itself, or whatever action the programmer considers convenient, in a completely asynchronous manner.</p>
+<p>When added to a block, they will depict a button in the corresponding property widget in the interface, that will do a call to <a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095">QVProcessingBlock::processTrigger()</a> function when pressed. Use <a class="el" href="classQVProcessingBlock.html#a26a8c3ab6758620d7cb328f4dd60b860">addTrigger</a> to add triggers to a block, and redefine this function to capture their activations. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVProcessingBlock.html#a26a8c3ab6758620d7cb328f4dd60b860" title="Adds a trigger to the block.">QVProcessingBlock::addTrigger()</a> </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>the name of the trigger that was activated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classQVYUV4MPEG2WriterBlock.html#a17239cfc004026881d091eee541ff509">QVYUV4MPEG2WriterBlock</a>.</p>
+
+<p>Definition at line <a class="el" href="qvprocessingblock_8h_source.html#l00253">253</a> of file <a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2be02b18fe1e03a2dd3a51b589e61f69"></a><!-- doxytag: member="QVProcessingBlock::startIteration" ref="a2be02b18fe1e03a2dd3a51b589e61f69" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::startIteration </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signal emited before each call to <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1924b55e68860c62099885a8700ef7ab"></a><!-- doxytag: member="QVProcessingBlock::endIteration" ref="a1924b55e68860c62099885a8700ef7ab" args="(uint id, int iteration)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::endIteration </td>
+          <td>(</td>
+          <td class="paramtype">uint&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>iteration</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signal emited after each call to <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock::iterate()</a> function. </p>
+
+</div>
+</div>
+<a class="anchor" id="af6d73eb86583ac05cc86e9dcd2da4f19"></a><!-- doxytag: member="QVProcessingBlock::statusUpdate" ref="af6d73eb86583ac05cc86e9dcd2da4f19" args="(QVProcessingBlock::TBlockStatus)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVProcessingBlock::statusUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">QVProcessingBlock::TBlockStatus</a>&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Signal emited when block changes its status. </p>
+
+<p>Referenced by <a class="el" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499">finish()</a>, <a class="el" href="classQVProcessingBlock.html#a4f5ffa9798933d22a8959bf95d5ce6c7">pause()</a>, <a class="el" href="classQVProcessingBlock.html#a3f4dd477633e707ec876aa5f8677d18c">step()</a>, <a class="el" href="classQVProcessingBlock.html#ace1cb7c1c822c3f4b32782528a3b9a99">stop()</a>, and <a class="el" href="classQVProcessingBlock.html#a8ba2deff4679f67891e0aafe2a1d1c14">unPause()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/<a class="el" href="qvprocessingblock_8h_source.html">qvprocessingblock.h</a></li>
+<li>src/qvblockprogramming/<a class="el" href="qvprocessingblock_8cpp_source.html">qvprocessingblock.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvvector.cpp</h1><a href="qvvector_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;QVVector&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QVMatrix&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="classQVVector.html#a8fa57e8d00d704003a7928d4593f250f">00029</a> <a class="code" href="classQVVector.html#a87f1f96ea24455e4629c3938a3a235c1" title="Default constructor for QVVector.">QVVector::QVVector</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix): QVector&lt;double&gt;(matrix.getCols() * matrix.getRows())
+<a name="l00030"></a>00030         {
+<a name="l00031"></a>00031         <span class="keyword">const</span> <span class="keywordtype">int</span> n = size();
+<a name="l00032"></a>00032         <span class="keyword">const</span> <span class="keywordtype">double</span> *matrixData = matrix.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>();
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; n; i++)
+<a name="l00035"></a>00035                 <span class="keyword">operator</span>[](i) = matrixData[i];
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="classQVVector.html#a9f5e5261bace97f7f315444be9992790">00038</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#a9f5e5261bace97f7f315444be9992790" title="Vector dot product.">QVVector::dotProduct</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const</span>
+<a name="l00039"></a>00039 <span class="keyword">        </span>{
+<a name="l00040"></a>00040         Q_ASSERT(size() == vector.size());
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         <span class="keywordtype">double</span> accum = 0;
+<a name="l00043"></a>00043         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00044"></a>00044                 accum += at(i) * vector[i];
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046         <span class="keywordflow">return</span> accum;
+<a name="l00047"></a>00047         }
+<a name="l00048"></a>00048 
+<a name="l00049"></a><a class="code" href="classQVVector.html#aa2784fe126cba704e1801fcfa3b36e30">00049</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#aa2784fe126cba704e1801fcfa3b36e30" title="Vector cross product.">QVVector::crossProduct</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const</span>
+<a name="l00050"></a>00050 <span class="keyword">        </span>{
+<a name="l00051"></a>00051         Q_ASSERT(size() == vector.size());
+<a name="l00052"></a>00052         Q_ASSERT(size() == 3);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         <span class="keyword">const</span> <span class="keywordtype">double</span>    *source1 = data(),
+<a name="l00055"></a>00055                         *source2 = vector.data();
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="keyword">const</span> <span class="keywordtype">double</span>    x1 = source1[0], y1 = source1[1], z1 = source1[2],
+<a name="l00058"></a>00058                         x2 = source2[0], y2 = source2[1], z2 = source2[2];
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v(3);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <span class="keywordtype">double</span>  *destination = v.data();
+<a name="l00063"></a>00063         destination[0] = -y2*z1 + y1*z2;
+<a name="l00064"></a>00064         destination[1] = x2*z1 - x1*z2;
+<a name="l00065"></a>00065         destination[2] = -x2*y1 + x1*y2;
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         <span class="keywordflow">return</span> v;
+<a name="l00068"></a>00068         }
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="classQVVector.html#a6c796d6ed02dd3b04db75e97e92b7fcb">00070</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="classQVVector.html#a6c796d6ed02dd3b04db75e97e92b7fcb" title="Outer product with another vector (to obtain a matrix).">QVVector::outerProduct</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const</span>
+<a name="l00071"></a>00071 <span class="keyword">        </span>{
+<a name="l00072"></a>00072         <span class="keyword">const</span> <span class="keywordtype">int</span> m = size(), n = vector.size();
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result(m,n);
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         <span class="keywordtype">double</span> *rptr = result.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00077"></a>00077         <span class="keyword">const</span> <span class="keywordtype">double</span> *v1ptr = this-&gt;data(), *v2ptr;
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;m; i++) {
+<a name="l00080"></a>00080             v2ptr = vector.data();
+<a name="l00081"></a>00081             <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {
+<a name="l00082"></a>00082                 (*rptr) = (*v1ptr) * (*v2ptr); <span class="comment">// result(i,j) = (*this)[i] * vector[j];</span>
+<a name="l00083"></a>00083                 rptr++;
+<a name="l00084"></a>00084                 v2ptr++;
+<a name="l00085"></a>00085             }
+<a name="l00086"></a>00086             v1ptr++;
+<a name="l00087"></a>00087         }
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="keywordflow">return</span> result;
+<a name="l00090"></a>00090         }
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="classQVVector.html#a01773daae3598db0ab634c0d4c12c383">00092</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#acf83ad762d4111599f3a0b8dafd5d981" title="Vector dot product.">QVVector::operator*</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;matrix)<span class="keyword"> const</span>
+<a name="l00093"></a>00093 <span class="keyword">        </span>{
+<a name="l00094"></a>00094         Q_ASSERT(size() == matrix.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>());
+<a name="l00095"></a>00095         <span class="keywordflow">if</span> (size() != matrix.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>())
+<a name="l00096"></a>00096                 {
+<a name="l00097"></a>00097                 std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR: tried to multiply matrices with incompatible sizes at QVMatrix::dotProduct(const QVMatrix &amp;matrix).&quot;</span> &lt;&lt; std::endl
+<a name="l00098"></a>00098                         &lt;&lt; <span class="stringliteral">&quot;\tVector size:\t&quot;</span> &lt;&lt; size() &lt;&lt; std::endl
+<a name="l00099"></a>00099                         &lt;&lt; <span class="stringliteral">&quot;\tMatrix dimensions:\t&quot;</span> &lt;&lt; matrix.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; matrix.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>() &lt;&lt; std::endl;
+<a name="l00100"></a>00100                 exit(1);
+<a name="l00101"></a>00101                 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="keywordflow">return</span> matrix.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(*<span class="keyword">this</span>, <span class="keyword">true</span>);
+<a name="l00104"></a>00104         }
+<a name="l00105"></a>00105 
+<a name="l00106"></a><a class="code" href="classQVVector.html#a15bf38ec2d56c24537e118b11bdd1ad7">00106</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a15bf38ec2d56c24537e118b11bdd1ad7" title="Vector add.">QVVector::add</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const</span>
+<a name="l00107"></a>00107 <span class="keyword">        </span>{
+<a name="l00108"></a>00108         Q_ASSERT(size() == vector.size());
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(size());
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112         <span class="keyword">const</span> <span class="keywordtype">double</span>    *source1 = data(),
+<a name="l00113"></a>00113                         *source2 = vector.data();
+<a name="l00114"></a>00114         <span class="keywordtype">double</span>  *destination = result.data();
+<a name="l00115"></a>00115                 
+<a name="l00116"></a>00116         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00117"></a>00117                 destination[i] = source1[i] + source2[i];
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119         <span class="keywordflow">return</span> result;
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="classQVVector.html#a6aeacd80798f80447989c0cb016c7a48">00122</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a6aeacd80798f80447989c0cb016c7a48" title="Vector substraction.">QVVector::substract</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const</span>
+<a name="l00123"></a>00123 <span class="keyword">        </span>{
+<a name="l00124"></a>00124         Q_ASSERT(size() == vector.size());
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(size());
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128         <span class="keyword">const</span> <span class="keywordtype">double</span>    *source1 = data(),
+<a name="l00129"></a>00129                         *source2 = vector.data();
+<a name="l00130"></a>00130         <span class="keywordtype">double</span>  *destination = result.data();
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00133"></a>00133                 destination[i] = source1[i] - source2[i];
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135         <span class="keywordflow">return</span> result;
+<a name="l00136"></a>00136         }
+<a name="l00137"></a>00137 
+<a name="l00138"></a><a class="code" href="classQVVector.html#acd3cdacd7ad33bfd723ce694a707f5e7">00138</a> <span class="keywordtype">bool</span> <a class="code" href="classQVVector.html#acd3cdacd7ad33bfd723ce694a707f5e7" title="Compare operator.">QVVector::equals</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const</span>
+<a name="l00139"></a>00139 <span class="keyword">        </span>{
+<a name="l00140"></a>00140         <span class="keywordflow">if</span> (size() != vector.size())
+<a name="l00141"></a>00141                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143         <span class="keyword">const</span> <span class="keywordtype">double</span>    *source1 = data(),
+<a name="l00144"></a>00144                         *source2 = vector.data();
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00147"></a>00147                 <span class="keywordflow">if</span> (source1[i] != source2[i])
+<a name="l00148"></a>00148                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00151"></a>00151         }
+<a name="l00152"></a>00152 
+<a name="l00153"></a><a class="code" href="classQVVector.html#af8e81c72e88b61e1f9a8d118f8120c23">00153</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#af8e81c72e88b61e1f9a8d118f8120c23" title="Obtains the vector in homogeneous coordinates.">QVVector::homogeneousCoordinates</a>()<span class="keyword"> const</span>
+<a name="l00154"></a>00154 <span class="keyword">        </span>{
+<a name="l00155"></a>00155         <span class="keywordflow">return</span> <a class="code" href="classQVVector.html#a87f1f96ea24455e4629c3938a3a235c1" title="Default constructor for QVVector.">QVVector</a>(*<span class="keyword">this</span>) &lt;&lt; 1;
+<a name="l00156"></a>00156         };
+<a name="l00157"></a>00157 
+<a name="l00158"></a><a class="code" href="classQVVector.html#a70bc159ef037b663898798140f1d2a59">00158</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="classQVVector.html#a70bc159ef037b663898798140f1d2a59" title="Obtain the matrix corresponding to the matrix multiplication notation for the vector...">QVVector::crossProductMatrix</a>()<span class="keyword"> const</span>
+<a name="l00159"></a>00159 <span class="keyword">        </span>{
+<a name="l00160"></a>00160         Q_ASSERT(size() == 3);
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result(3,3);
+<a name="l00163"></a>00163         result(0,0) = 0;        result(0,1) = -at(2);   result(0,2) = at(1);
+<a name="l00164"></a>00164         result(1,0) = at(2);    result(1,1) = 0;        result(1,2) = -at(0);
+<a name="l00165"></a>00165         result(2,0) = -at(1);   result(2,1) = at(0);    result(2,2) = 0;
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167         <span class="keywordflow">return</span> result;
+<a name="l00168"></a>00168         }
+<a name="l00169"></a>00169 
+<a name="l00170"></a><a class="code" href="classQVVector.html#a54fddac966be9af0f7fce89b87b5cd48">00170</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="classQVVector.html#a54fddac966be9af0f7fce89b87b5cd48" title="Returns this vector in the form of a row matrix.">QVVector::toRowMatrix</a>()<span class="keyword"> const</span>
+<a name="l00171"></a>00171 <span class="keyword">        </span>{
+<a name="l00172"></a>00172         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result(1,size());
+<a name="l00173"></a>00173         result.<a class="code" href="classQVMatrix.html#ad8684520b5095fb350022fc9acb0dba8" title="Sets a row of the matrix.">setRow</a>(0,*<span class="keyword">this</span>);
+<a name="l00174"></a>00174         <span class="keywordflow">return</span> result;
+<a name="l00175"></a>00175         }
+<a name="l00176"></a>00176 
+<a name="l00177"></a><a class="code" href="classQVVector.html#a57387ffc7c1b3ee7de38adb5155d3707">00177</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="classQVVector.html#a57387ffc7c1b3ee7de38adb5155d3707" title="Returns this vector in the form of a column matrix.">QVVector::toColumnMatrix</a>()<span class="keyword"> const</span>
+<a name="l00178"></a>00178 <span class="keyword">        </span>{
+<a name="l00179"></a>00179         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result(size(),1);
+<a name="l00180"></a>00180         result.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(0,*<span class="keyword">this</span>);
+<a name="l00181"></a>00181         <span class="keywordflow">return</span> result;
+<a name="l00182"></a>00182         }
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184 
+<a name="l00185"></a><a class="code" href="classQVVector.html#a615053c57c2d85dce8b77622debdab9f">00185</a> <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a615053c57c2d85dce8b77622debdab9f" title="Vector of Gaussian distributed values.">QVVector::gaussianVector</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> radius, <span class="keyword">const</span> <span class="keywordtype">double</span> sigma)
+<a name="l00186"></a>00186         {
+<a name="l00187"></a>00187         <span class="keyword">const</span> <span class="keywordtype">float</span> sigma2 = sigma * sigma;
+<a name="l00188"></a>00188         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(2*radius+1);
+<a name="l00189"></a>00189         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=-radius;j&lt;=radius;j++)
+<a name="l00190"></a>00190                 result[j+radius] = (<span class="keywordtype">float</span>)expf(-((<span class="keywordtype">double</span>)j*j)/(2.0*sigma2));
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192         <span class="keyword">const</span> <span class="keywordtype">double</span> regularizer = sqrt(2*PI*sigma2);
+<a name="l00193"></a>00193         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt; result.size();i++)
+<a name="l00194"></a>00194                 result[i] /= regularizer;
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196         <span class="keywordflow">return</span> result;
+<a name="l00197"></a>00197         }
+<a name="l00198"></a>00198 
+<a name="l00199"></a><a class="code" href="classQVVector.html#ac550cb33a94138c6a55901bc2dc23558">00199</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#ac550cb33a94138c6a55901bc2dc23558" title="Creates a vector of random values.">QVVector::random</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> size)
+<a name="l00200"></a>00200         {
+<a name="l00201"></a>00201         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(size);
+<a name="l00202"></a>00202         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)
+<a name="l00203"></a>00203                 result[i] = (<span class="keywordtype">double</span>)ABS(rand()) / (double)RAND_MAX;
+<a name="l00204"></a>00204         <span class="keywordflow">return</span> result;
+<a name="l00205"></a>00205         }
+<a name="l00206"></a>00206 
+<a name="l00207"></a><a class="code" href="classQVVector.html#a2423f32fab62271dd0dc0dfb6ba6f4cb">00207</a> <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a2423f32fab62271dd0dc0dfb6ba6f4cb" title="Vector of mexican hat wavelet distributed values.">QVVector::mexicanHatWaveletVector</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> radius, <span class="keyword">const</span> <span class="keywordtype">double</span> sigma)
+<a name="l00208"></a>00208         {
+<a name="l00209"></a>00209         <span class="keyword">const</span> <span class="keywordtype">float</span> sigma2 = sigma * sigma;
+<a name="l00210"></a>00210         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(2*radius+1);
+<a name="l00211"></a>00211         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=-radius;j&lt;=radius;j++)
+<a name="l00212"></a>00212                 result[j+radius] = (1-((<span class="keywordtype">double</span>)j*j)/sigma2)*(float)expf(-((<span class="keywordtype">double</span>)j*j)/(2.0*sigma2));
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214         <span class="keyword">const</span> <span class="keywordtype">double</span> regularizer = sqrt(2*PI*sigma2*sigma);
+<a name="l00215"></a>00215         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt; result.size();i++)
+<a name="l00216"></a>00216                 result[i] /= regularizer;
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218         <span class="keywordflow">return</span> result;
+<a name="l00219"></a>00219         }
+<a name="l00220"></a>00220 
+<a name="l00221"></a><a class="code" href="classQVVector.html#acc2df5760c4935341efc23f5b483a5a3">00221</a> <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#af8e81c72e88b61e1f9a8d118f8120c23" title="Obtains the vector in homogeneous coordinates.">QVVector::homogeneousCoordinates</a>(<span class="keyword">const</span> QPointF &amp;point)
+<a name="l00222"></a>00222         {
+<a name="l00223"></a>00223         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(3, 1);
+<a name="l00224"></a>00224         result[0] = point.x(); result[1] = point.y();
+<a name="l00225"></a>00225         <span class="keywordflow">return</span> result;
+<a name="l00226"></a>00226         }
+<a name="l00227"></a>00227 
+<a name="l00229"></a>00229 
+<a name="l00230"></a><a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05">00230</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">QVVector::norm2</a>()<span class="keyword"> const</span>
+<a name="l00231"></a>00231 <span class="keyword">        </span>{
+<a name="l00232"></a>00232         <span class="keywordflow">return</span> sqrt(*<span class="keyword">this</span> * *<span class="keyword">this</span>);
+<a name="l00233"></a>00233         }
+<a name="l00234"></a>00234 
+<a name="l00235"></a><a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df">00235</a> <span class="keywordtype">bool</span> <a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">QVVector::containsNaN</a>()<span class="keyword"> const</span>
+<a name="l00236"></a>00236 <span class="keyword">        </span>{
+<a name="l00237"></a>00237         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;  i &lt; size(); i++)
+<a name="l00238"></a>00238                 <span class="keywordflow">if</span> (isnan(<span class="keyword">operator</span>[](i)))
+<a name="l00239"></a>00239                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00240"></a>00240 
+<a name="l00241"></a>00241         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00242"></a>00242         }
+<a name="l00243"></a>00243 
+<a name="l00244"></a><a class="code" href="classQVVector.html#a42c4fb1fe1e48c0936d662052f84bba0">00244</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a42c4fb1fe1e48c0936d662052f84bba0" title="Normalize vector.">QVVector::normalize</a>()<span class="keyword">  const</span>
+<a name="l00245"></a>00245 <span class="keyword">        </span>{
+<a name="l00246"></a>00246         <span class="keywordflow">return</span> <a class="code" href="classQVVector.html#ac1035ab17b6b4095c66fbc27cd3dff65" title="Scalar division.">operator/</a>(<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>());
+<a name="l00247"></a>00247         }
+<a name="l00248"></a>00248 
+<a name="l00249"></a><a class="code" href="classQVVector.html#a4d544afa97822276b94ba2174023b362">00249</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a4d544afa97822276b94ba2174023b362" title="Gets the absolute values of the vector elements.">QVVector::abs</a>()<span class="keyword"> const</span>
+<a name="l00250"></a>00250 <span class="keyword">        </span>{
+<a name="l00251"></a>00251         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result (size());
+<a name="l00252"></a>00252         
+<a name="l00253"></a>00253         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;  i &lt; size(); i++)
+<a name="l00254"></a>00254                 result[i] = ABS(<span class="keyword">operator</span>[](i));
+<a name="l00255"></a>00255         <span class="keywordflow">return</span> result;
+<a name="l00256"></a>00256         }
+<a name="l00257"></a>00257 
+<a name="l00258"></a><a class="code" href="classQVVector.html#a6695f3c638ef5e1eb50df4d48d6f6a99">00258</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#a6695f3c638ef5e1eb50df4d48d6f6a99" title="Maximal value contained in the vector.">QVVector::max</a>()<span class="keyword"> const</span>
+<a name="l00259"></a>00259 <span class="keyword">        </span>{
+<a name="l00260"></a>00260         <span class="keywordtype">double</span> result = operator[](0);
+<a name="l00261"></a>00261         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;  i &lt; size(); i++)
+<a name="l00262"></a>00262                 result = MAX(<span class="keyword">operator</span>[](i), result);
+<a name="l00263"></a>00263         <span class="keywordflow">return</span> result;
+<a name="l00264"></a>00264         }
+<a name="l00265"></a>00265 
+<a name="l00266"></a><a class="code" href="classQVVector.html#ad25060e9173730d6e1d5a1a116389fe0">00266</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#ad25060e9173730d6e1d5a1a116389fe0" title="Minimal value contained in the vector.">QVVector::min</a>()<span class="keyword"> const</span>
+<a name="l00267"></a>00267 <span class="keyword">        </span>{
+<a name="l00268"></a>00268         <span class="keywordtype">double</span> result = operator[](0);
+<a name="l00269"></a>00269         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;  i &lt; size(); i++)
+<a name="l00270"></a>00270                 result = MIN(<span class="keyword">operator</span>[](i), result);
+<a name="l00271"></a>00271         <span class="keywordflow">return</span> result;
+<a name="l00272"></a>00272         }
+<a name="l00273"></a>00273 
+<a name="l00274"></a><a class="code" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646">00274</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646" title="Accumulated value.">QVVector::sum</a>()<span class="keyword"> const</span>
+<a name="l00275"></a>00275 <span class="keyword">        </span>{
+<a name="l00276"></a>00276         <span class="keywordtype">double</span> accum = 0;
+<a name="l00277"></a>00277         <span class="keywordflow">foreach</span>(<span class="keywordtype">double</span> value, *<span class="keyword">this</span>)
+<a name="l00278"></a>00278                 accum += value;
+<a name="l00279"></a>00279                 
+<a name="l00280"></a>00280         <span class="keywordflow">return</span> accum;
+<a name="l00281"></a>00281         }
+<a name="l00282"></a>00282 
+<a name="l00283"></a><a class="code" href="classQVVector.html#a34778251c3900cac4b2e19269fd9be2f">00283</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#a34778251c3900cac4b2e19269fd9be2f" title="Mean value.">QVVector::mean</a>()<span class="keyword"> const</span>
+<a name="l00284"></a>00284 <span class="keyword">        </span>{
+<a name="l00285"></a>00285         <span class="keywordflow">return</span> <a class="code" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646" title="Accumulated value.">sum</a>() / (double) size();
+<a name="l00286"></a>00286         }
+<a name="l00287"></a>00287 
+<a name="l00288"></a><a class="code" href="classQVVector.html#aada9281a571f1a7ef99b161af80b38be">00288</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#aada9281a571f1a7ef99b161af80b38be" title="Median value.">QVVector::median</a>()<span class="keyword"> const</span>
+<a name="l00289"></a>00289 <span class="keyword">        </span>{
+<a name="l00290"></a>00290         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> sortedV = *<span class="keyword">this</span>;
+<a name="l00291"></a>00291         qSort(sortedV.begin(), sortedV.end());
+<a name="l00292"></a>00292         
+<a name="l00293"></a>00293         <span class="keywordflow">return</span> sortedV[sortedV.size() / 2];
+<a name="l00294"></a>00294         }
+<a name="l00295"></a>00295 
+<a name="l00296"></a><a class="code" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860">00296</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#ac58dcee99e36a0d26cf006aafb6cb860" title="Standard deviation.">QVVector::variance</a>()<span class="keyword"> const</span>
+<a name="l00297"></a>00297 <span class="keyword">        </span>{
+<a name="l00298"></a>00298         <span class="keyword">const</span> <span class="keywordtype">double</span> avg = <a class="code" href="classQVVector.html#a34778251c3900cac4b2e19269fd9be2f" title="Mean value.">mean</a>();
+<a name="l00299"></a>00299         <span class="keywordtype">double</span> accum = 0;
+<a name="l00300"></a>00300         <span class="keywordflow">foreach</span>(<span class="keywordtype">double</span> value, *<span class="keyword">this</span>)
+<a name="l00301"></a>00301                 accum += POW2(value - avg);
+<a name="l00302"></a>00302                 
+<a name="l00303"></a>00303         <span class="keywordflow">return</span> accum / (double) (size());
+<a name="l00304"></a>00304         }
+<a name="l00305"></a>00305 
+<a name="l00306"></a><a class="code" href="classQVVector.html#a25d1e2fa44bf8ecd106a241e7d93211b">00306</a> <span class="keywordtype">double</span> <a class="code" href="classQVVector.html#a25d1e2fa44bf8ecd106a241e7d93211b" title="Shannon&amp;#39;s entropy of a probability state vector.">QVVector::entropy</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> base)<span class="keyword"> const</span>
+<a name="l00307"></a>00307 <span class="keyword">        </span>{
+<a name="l00308"></a>00308         <span class="keyword">const</span> <span class="keywordtype">double</span> s = <a class="code" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646" title="Accumulated value.">sum</a>();
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310         <span class="keywordtype">double</span> e = 0;
+<a name="l00311"></a>00311         <span class="keywordflow">foreach</span>(<span class="keywordtype">double</span> value, *<span class="keyword">this</span>)
+<a name="l00312"></a>00312                 e += (value == 0)? 0 : value * log(value / s);
+<a name="l00313"></a>00313 
+<a name="l00314"></a>00314         <span class="keywordflow">return</span> - e / (s * log(base));
+<a name="l00315"></a>00315         }
+<a name="l00316"></a>00316 
+<a name="l00317"></a><a class="code" href="classQVVector.html#abf6f01233d14e8be796a5919981ff2f5">00317</a> <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#abf6f01233d14e8be796a5919981ff2f5" title="Gets the location of the element with the maximal value.">QVVector::maxIndex</a>()<span class="keyword"> const</span>
+<a name="l00318"></a>00318 <span class="keyword">        </span>{
+<a name="l00319"></a>00319         <span class="keywordflow">if</span> (size() &lt;= 0)
+<a name="l00320"></a>00320                 <span class="keywordflow">return</span> -1;
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322         <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#abf6f01233d14e8be796a5919981ff2f5" title="Gets the location of the element with the maximal value.">maxIndex</a> = 0;
+<a name="l00323"></a>00323         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; size(); i++)
+<a name="l00324"></a>00324                 <span class="keywordflow">if</span> (<span class="keyword">operator</span>[](i) &gt; operator[](maxIndex))
+<a name="l00325"></a>00325                         maxIndex = i;
+<a name="l00326"></a>00326         <span class="keywordflow">return</span> maxIndex;
+<a name="l00327"></a>00327         }
+<a name="l00328"></a>00328 
+<a name="l00329"></a><a class="code" href="classQVVector.html#a06bba5625933ab01a23a2f901eae9049">00329</a> <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#a06bba5625933ab01a23a2f901eae9049" title="Gets the location of the element with the minimal value.">QVVector::minIndex</a>()<span class="keyword"> const</span>
+<a name="l00330"></a>00330 <span class="keyword">        </span>{
+<a name="l00331"></a>00331         <span class="keywordflow">if</span> (size() &lt;= 0)
+<a name="l00332"></a>00332                 <span class="keywordflow">return</span> -1;
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334         <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#a06bba5625933ab01a23a2f901eae9049" title="Gets the location of the element with the minimal value.">minIndex</a> = 0;
+<a name="l00335"></a>00335         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; size(); i++)
+<a name="l00336"></a>00336                 <span class="keywordflow">if</span> (<span class="keyword">operator</span>[](i) &lt; operator[](minIndex))
+<a name="l00337"></a>00337                         minIndex = i;
+<a name="l00338"></a>00338         <span class="keywordflow">return</span> minIndex;
+<a name="l00339"></a>00339         }
+<a name="l00340"></a>00340 
+<a name="l00341"></a><a class="code" href="classQVVector.html#a677b0a1980da08a66e67b15d95a46dda">00341</a> <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#a677b0a1980da08a66e67b15d95a46dda" title="Gets the index of the element with the maximal absolute value.">QVVector::maxAbsIndex</a>()<span class="keyword"> const</span>
+<a name="l00342"></a>00342 <span class="keyword">        </span>{
+<a name="l00343"></a>00343         <span class="keywordflow">if</span> (size() &lt;= 0)
+<a name="l00344"></a>00344                 <span class="keywordflow">return</span> -1;
+<a name="l00345"></a>00345                         
+<a name="l00346"></a>00346         <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#abf6f01233d14e8be796a5919981ff2f5" title="Gets the location of the element with the maximal value.">maxIndex</a> = 0;
+<a name="l00347"></a>00347         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; size(); i++)
+<a name="l00348"></a>00348                 <span class="keywordflow">if</span> ( ABS(<span class="keyword">operator</span>[](i)) &gt; ABS(<span class="keyword">operator</span>[](maxIndex)) )
+<a name="l00349"></a>00349                         maxIndex = i;
+<a name="l00350"></a>00350                 
+<a name="l00351"></a>00351         <span class="keywordflow">return</span> maxIndex;
+<a name="l00352"></a>00352         }
+<a name="l00353"></a>00353 
+<a name="l00354"></a><a class="code" href="classQVVector.html#a746718c9e2c3a046938dcc6e44b5c1a1">00354</a> <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#a746718c9e2c3a046938dcc6e44b5c1a1" title="Gets the index of the element with the minimal absolute value.">QVVector::minAbsIndex</a>()<span class="keyword"> const</span>
+<a name="l00355"></a>00355 <span class="keyword">        </span>{
+<a name="l00356"></a>00356         <span class="keywordflow">if</span> (size() &lt;= 0)
+<a name="l00357"></a>00357                 <span class="keywordflow">return</span> -1;
+<a name="l00358"></a>00358                         
+<a name="l00359"></a>00359         <span class="keywordtype">int</span> <a class="code" href="classQVVector.html#a06bba5625933ab01a23a2f901eae9049" title="Gets the location of the element with the minimal value.">minIndex</a> = 0;
+<a name="l00360"></a>00360         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; size(); i++)
+<a name="l00361"></a>00361                 <span class="keywordflow">if</span> ( ABS(<span class="keyword">operator</span>[](i)) &lt; ABS(<span class="keyword">operator</span>[](minIndex)) )
+<a name="l00362"></a>00362                         minIndex = i;
+<a name="l00363"></a>00363         
+<a name="l00364"></a>00364         <span class="keywordflow">return</span> minIndex;
+<a name="l00365"></a>00365         }
+<a name="l00366"></a>00366 
+<a name="l00367"></a><a class="code" href="classQVVector.html#a4bad482bf1ebb4d38c2e3a8c16047f7a">00367</a> <span class="keywordtype">void</span> <a class="code" href="classQVVector.html#a4bad482bf1ebb4d38c2e3a8c16047f7a" title="Set vector elements to a value.">QVVector::set</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)
+<a name="l00368"></a>00368         {
+<a name="l00369"></a>00369         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00370"></a>00370                 <span class="keyword">operator</span>[](i) =  value;
+<a name="l00371"></a>00371         };
+<a name="l00372"></a>00372 
+<a name="l00373"></a><a class="code" href="classQVVector.html#a3206fc1db84f548568298c6326b7c0fa">00373</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a3206fc1db84f548568298c6326b7c0fa" title="Obtains a sub-vector containing a given range of elements from the original vector...">QVVector::subVector</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> firstIndex, <span class="keyword">const</span> <span class="keywordtype">int</span> lastIndex)<span class="keyword"> const</span>
+<a name="l00374"></a>00374 <span class="keyword">        </span>{
+<a name="l00375"></a>00375         Q_ASSERT(0 &lt;= firstIndex);
+<a name="l00376"></a>00376         Q_ASSERT(firstIndex &lt;= lastIndex);
+<a name="l00377"></a>00377         Q_ASSERT(lastIndex &lt; this-&gt;size());
+<a name="l00378"></a>00378 
+<a name="l00379"></a>00379         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(lastIndex - firstIndex +1);
+<a name="l00380"></a>00380         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> r = 0, i = firstIndex; i &lt;= lastIndex; i++, r++)
+<a name="l00381"></a>00381                 result[r] = <span class="keyword">operator</span>[](i);
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383         <span class="keywordflow">return</span> result;
+<a name="l00384"></a>00384         };
+<a name="l00385"></a>00385 
+<a name="l00386"></a><a class="code" href="classQVVector.html#a943a6862968b73e8d42b18096b992875">00386</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a943a6862968b73e8d42b18096b992875" title="Scalar division.">QVVector::scalarDivision</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword"> const</span>
+<a name="l00387"></a>00387 <span class="keyword">        </span>{
+<a name="l00388"></a>00388         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result = *<span class="keyword">this</span>;
+<a name="l00389"></a>00389         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00390"></a>00390                 result[i] /= value;
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392         <span class="keywordflow">return</span> result;
+<a name="l00393"></a>00393         };
+<a name="l00394"></a>00394 
+<a name="l00395"></a><a class="code" href="classQVVector.html#a752f2f2f18796a3bc883236dea74908e">00395</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a752f2f2f18796a3bc883236dea74908e" title="Scalar addition.">QVVector::scalarAdd</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword"> const</span>
+<a name="l00396"></a>00396 <span class="keyword">        </span>{
+<a name="l00397"></a>00397         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result = *<span class="keyword">this</span>;
+<a name="l00398"></a>00398         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00399"></a>00399                 result[i] += value;
+<a name="l00400"></a>00400 
+<a name="l00401"></a>00401         <span class="keywordflow">return</span> result;
+<a name="l00402"></a>00402         };
+<a name="l00403"></a>00403 
+<a name="l00404"></a><a class="code" href="classQVVector.html#a67a7bf9f5130d269aaf8601da877a1aa">00404</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a67a7bf9f5130d269aaf8601da877a1aa" title="Scalar substraction.">QVVector::scalarSubstract</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword"> const</span>
+<a name="l00405"></a>00405 <span class="keyword">        </span>{
+<a name="l00406"></a>00406         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result = *<span class="keyword">this</span>;
+<a name="l00407"></a>00407         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00408"></a>00408                 result[i] -= value;
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410         <span class="keywordflow">return</span> result;
+<a name="l00411"></a>00411         };
+<a name="l00412"></a>00412 
+<a name="l00413"></a><a class="code" href="classQVVector.html#a7783edc2a21a8d5002ae377ec2a82027">00413</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a7783edc2a21a8d5002ae377ec2a82027" title="Scalar multiplication.">QVVector::scalarMultiplication</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword"> const</span>
+<a name="l00414"></a>00414 <span class="keyword">        </span>{
+<a name="l00415"></a>00415         std::cout &lt;&lt; <span class="stringliteral">&quot;DEPRECATED: QVVector::scalarMultiplication(). Use QVVector::scalarProduct() instead&quot;</span> &lt;&lt; std::endl;
+<a name="l00416"></a>00416         <span class="keywordflow">return</span> <a class="code" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead" title="Scalar multiplication.">scalarProduct</a>(value);
+<a name="l00417"></a>00417         }
+<a name="l00418"></a>00418 
+<a name="l00419"></a><a class="code" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead">00419</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead" title="Scalar multiplication.">QVVector::scalarProduct</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value)<span class="keyword"> const</span>
+<a name="l00420"></a>00420 <span class="keyword">        </span>{
+<a name="l00421"></a>00421         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result = *<span class="keyword">this</span>;
+<a name="l00422"></a>00422         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size(); i++)
+<a name="l00423"></a>00423                 result[i] *= value;
+<a name="l00424"></a>00424         <span class="keywordflow">return</span> result;
+<a name="l00425"></a>00425         };
+<a name="l00426"></a>00426 
+<a name="l00427"></a>00427 
+<a name="l00428"></a><a class="code" href="group__qvmath.html#ga9eb3c76cb24443e2ff28327bc2c194d2">00428</a> std::ostream&amp; operator &lt;&lt; ( std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector )
+<a name="l00429"></a>00429         {
+<a name="l00430"></a>00430         <span class="keyword">const</span> <span class="keywordtype">int</span> size = vector.size();
+<a name="l00431"></a>00431 
+<a name="l00432"></a>00432         os &lt;&lt; <span class="stringliteral">&quot;QVVector (&quot;</span> &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;) [ &quot;</span>;
+<a name="l00433"></a>00433 
+<a name="l00434"></a>00434         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)
+<a name="l00435"></a>00435                 os &lt;&lt; qPrintable(QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(vector[i], -8, <span class="charliteral">&#39;f&#39;</span>, 6)) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00436"></a>00436 
+<a name="l00437"></a>00437         os &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;
+<a name="l00438"></a>00438         <span class="keywordflow">return</span> os;
+<a name="l00439"></a>00439         }
+<a name="l00440"></a>00440 
+<a name="l00441"></a><a class="code" href="group__qvmath.html#gaba2fa16f67dd829053ea94d47f956692">00441</a> uint qHash(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)
+<a name="l00442"></a>00442         {
+<a name="l00443"></a>00443         <span class="keyword">const</span> <span class="keywordtype">int</span> size = vector.size();
+<a name="l00444"></a>00444         <span class="keywordtype">double</span> accum = 0;
+<a name="l00445"></a>00445         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)
+<a name="l00446"></a>00446                 accum += vector[i] / vector[size-i-1];
+<a name="l00447"></a>00447 
+<a name="l00448"></a>00448         <span class="keywordflow">return</span> (uint) ((100000 * accum) / ((<span class="keywordtype">double</span>) size));
+<a name="l00449"></a>00449         }
+<a name="l00450"></a>00450 
+<a name="l00451"></a>00451 
+<a name="l00452"></a><a class="code" href="qvvector_8h.html#a9680d9a2f115495d01c447083bde7ef1">00452</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="qvmatrix_8cpp.html#a487146b8bf0d9fa878ac70f07db27ba9" title="Matrix-scalar product.">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)
+<a name="l00453"></a>00453         {
+<a name="l00454"></a>00454         <span class="keywordflow">return</span> vector.<a class="code" href="classQVVector.html#a0a5c3fd6110fbd8643c618434687eead" title="Scalar multiplication.">scalarProduct</a>(value);
+<a name="l00455"></a>00455         }
+<a name="l00456"></a>00456 
+<a name="l00457"></a><a class="code" href="qvvector_8h.html#a3152598eef07afd036bee3a6c16da74e">00457</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="qvmatrix_8cpp.html#a7bd034eee5dffb1811c3012483e57f81" title="Matrix-scalar addition.">operator+</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)
+<a name="l00458"></a>00458         {
+<a name="l00459"></a>00459         <span class="keywordflow">return</span> vector.<a class="code" href="classQVVector.html#a752f2f2f18796a3bc883236dea74908e" title="Scalar addition.">scalarAdd</a>(value);
+<a name="l00460"></a>00460         }
+<a name="l00461"></a>00461 
+<a name="l00462"></a><a class="code" href="qvvector_8h.html#ab3bb42e9d7856acc187642be54e517a5">00462</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="qvmatrix_8cpp.html#a5f3ee33a44f26d22ea440be723fe2858" title="Matrix-scalar substraction operator.">operator-</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> value, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)
+<a name="l00463"></a>00463         {
+<a name="l00464"></a>00464         <span class="keywordflow">return</span> vector.<a class="code" href="classQVVector.html#a67a7bf9f5130d269aaf8601da877a1aa" title="Scalar substraction.">scalarSubstract</a>(value);
+<a name="l00465"></a>00465         }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,15 @@
+for METHOD in GSL_LU LAPACK_DGETRF
+do
+  echo -ne $METHOD
+  for SIZE1 in 5 100
+  do
+    for SIZE2 in 5 100
+    do
+      echo -ne "\n${SIZE1}x${SIZE2}: " 
+      ./LU-test --Rows=${SIZE1} --Cols=${SIZE2} --RHS_size=-1 --show_residuals=true --method=$METHOD 2>&1 | grep "LU" | grep -E "residual|works only|overdetermined" | tr "\n" " "
+    done
+  done
+  echo
+done
+
+

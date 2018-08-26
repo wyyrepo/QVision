@@ -1,0 +1,486 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvioblocks/qvvideoreaderblock.cpp</h1><a href="qvvideoreaderblock_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QTimer&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#ifdef QVIPP</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#endif</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a>00031 <span class="preprocessor">#ifdef QVOPENCV</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#include &lt;opencv/cv.h&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#endif</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QVVideoReaderBlock&gt;</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="preprocessor">#define DEFAULT_IMAGE_SIZE 128</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00040"></a><a class="code" href="classQVVideoReaderBlock.html#a62f11462d833180a28b76150299b651e">00040</a> <a class="code" href="classQVVideoReaderBlock.html#a62f11462d833180a28b76150299b651e" title="Constructor for QVVideoReaderBlock class.">QVVideoReaderBlock::QVVideoReaderBlock</a>(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+<a name="l00041"></a>00041     {
+<a name="l00042"></a>00042     <span class="comment">// Input properties:</span>
+<a name="l00043"></a>00043     addProperty&lt;bool&gt;(<span class="stringliteral">&quot;NoLoop&quot;</span>, inputFlag, FALSE,<span class="stringliteral">&quot;If the camera should be opened in no loop mode&quot;</span>);
+<a name="l00044"></a>00044     addProperty&lt;bool&gt;(<span class="stringliteral">&quot;Deinterlaced&quot;</span>, inputFlag, FALSE,<span class="stringliteral">&quot;If input image should be deinterlaced&quot;</span>);
+<a name="l00045"></a>00045     addProperty&lt;QString&gt;(<span class="stringliteral">&quot;URL&quot;</span>, inputFlag, QString(<span class="stringliteral">&quot;#0&quot;</span>),<span class="stringliteral">&quot;URL of the video source to read&quot;</span>);
+<a name="l00046"></a>00046     addProperty&lt;int&gt;(<span class="stringliteral">&quot;Cols&quot;</span>, inputFlag, 0, <span class="stringliteral">&quot;Suggested number of columns of the video&quot;</span>);
+<a name="l00047"></a>00047     addProperty&lt;int&gt;(<span class="stringliteral">&quot;Rows&quot;</span>, inputFlag, 0, <span class="stringliteral">&quot;Suggested number of rows of the video&quot;</span>);
+<a name="l00048"></a>00048     <span class="comment">// RealTime property is also input (and as such can be initialized using the command line), but invisible to the GUI</span>
+<a name="l00049"></a>00049     <span class="comment">// (because once the camera has been linked, it cannot be relinked changing its synchronism):</span>
+<a name="l00050"></a>00050     addProperty&lt;bool&gt;(<span class="stringliteral">&quot;RealTime&quot;</span>, inputFlag|guiInvisible, FALSE, <span class="stringliteral">&quot;If the camera should be opened in real time mode&quot;</span>);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     <span class="comment">// Output integer and boolean properties:</span>
+<a name="l00053"></a>00053     addProperty&lt;bool&gt;(<span class="stringliteral">&quot;Opened&quot;</span>, outputFlag, FALSE, <span class="stringliteral">&quot;If the camera is correctly opened and working&quot;</span>);
+<a name="l00054"></a>00054     addProperty&lt;int&gt;(<span class="stringliteral">&quot;FPS&quot;</span>, outputFlag, 0, <span class="stringliteral">&quot;FPS of the video&quot;</span>);
+<a name="l00055"></a>00055     addProperty&lt;int&gt;(<span class="stringliteral">&quot;Frames&quot;</span>, outputFlag, 0, <span class="stringliteral">&quot;Number of read frames&quot;</span>);
+<a name="l00056"></a>00056     addProperty&lt;int&gt;(<span class="stringliteral">&quot;ColsR&quot;</span>, outputFlag, 0, <span class="stringliteral">&quot;Actual number of columns of the video&quot;</span>);
+<a name="l00057"></a>00057     addProperty&lt;int&gt;(<span class="stringliteral">&quot;RowsR&quot;</span>, outputFlag, 0, <span class="stringliteral">&quot;Actual number of rows of the video&quot;</span>);
+<a name="l00058"></a>00058     addProperty&lt;int&gt;(<span class="stringliteral">&quot;Pos&quot;</span>, outputFlag, 0.0, <span class="stringliteral">&quot;Current position on the video&quot;</span>);
+<a name="l00059"></a>00059     addProperty&lt;int&gt;(<span class="stringliteral">&quot;Length&quot;</span>, outputFlag, 0.0, <span class="stringliteral">&quot;Length of the video (0 if not available)&quot;</span>);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061     <span class="comment">// Output image properties:</span>
+<a name="l00062"></a>00062     addProperty&lt; QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;RGB image&quot;</span>, outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a>(), <span class="stringliteral">&quot;Last grabbed RGB image&quot;</span>);
+<a name="l00063"></a>00063     addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Y channel image&quot;</span>,outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>(), <span class="stringliteral">&quot;Last grabbed Y channel image&quot;</span>);
+<a name="l00064"></a>00064     addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;U channel image&quot;</span>,outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>(), <span class="stringliteral">&quot;Last grabbed U channel image&quot;</span>);
+<a name="l00065"></a>00065     addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;V channel image&quot;</span>,outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>(), <span class="stringliteral">&quot;Last grabbed V channel image&quot;</span>);
+<a name="l00066"></a>00066     addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;R channel image&quot;</span>,outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>(), <span class="stringliteral">&quot;Last grabbed R channel image&quot;</span>);
+<a name="l00067"></a>00067     addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;G channel image&quot;</span>,outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>(), <span class="stringliteral">&quot;Last grabbed G channel image&quot;</span>);
+<a name="l00068"></a>00068     addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;B channel image&quot;</span>,outputFlag, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a>(), <span class="stringliteral">&quot;Last grabbed B channel image&quot;</span>);
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070     <span class="comment">// Initial images (only useful if first open fails, for a default set of images to be available...)</span>
+<a name="l00071"></a>00071     imageR = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE);
+<a name="l00072"></a>00072     imageG = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE);
+<a name="l00073"></a>00073     imageB = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE);
+<a name="l00074"></a>00074     imageY = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE);
+<a name="l00075"></a>00075     imageU = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(DEFAULT_IMAGE_SIZE/2,DEFAULT_IMAGE_SIZE/2,DEFAULT_IMAGE_SIZE/2);
+<a name="l00076"></a>00076     imageV = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(DEFAULT_IMAGE_SIZE/2,DEFAULT_IMAGE_SIZE/2,DEFAULT_IMAGE_SIZE/2);
+<a name="l00077"></a>00077     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(128,imageY);
+<a name="l00078"></a>00078     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(128,imageU);
+<a name="l00079"></a>00079     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(128,imageV);
+<a name="l00080"></a>00080     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(128,imageR);
+<a name="l00081"></a>00081     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(128,imageG);
+<a name="l00082"></a>00082     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(128,imageB);
+<a name="l00083"></a>00083     setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;Y channel image&quot;</span>, imageY);
+<a name="l00084"></a>00084     setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;U channel image&quot;</span>, imageU);
+<a name="l00085"></a>00085     setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;V channel image&quot;</span>, imageV);
+<a name="l00086"></a>00086     setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;R channel image&quot;</span>, imageR);
+<a name="l00087"></a>00087     setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;G channel image&quot;</span>, imageG);
+<a name="l00088"></a>00088     setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;B channel image&quot;</span>, imageB);
+<a name="l00089"></a>00089     imageRGB = <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a>(DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE);
+<a name="l00090"></a>00090     uchar value[3] = {128,128,128};
+<a name="l00091"></a>00091     <a class="code" href="group__qvippIDEAIF.html#gae2bed87200a1f753701bf5fc1e7a476b" title="Sets pixels in the image buffer to a constant value.">Set</a>(value,imageRGB);
+<a name="l00092"></a>00092     setPropertyValue&lt; QVImage&lt;uChar, 3&gt; &gt;(<span class="stringliteral">&quot;RGB image&quot;</span>, imageRGB);
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094     <span class="comment">// Flag needed later to flush out pending images in real time cameras when resetting the camera:</span>
+<a name="l00095"></a>00095     flush_pending_images = FALSE;
+<a name="l00096"></a>00096     }
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="classQVVideoReaderBlock.html#aa516e0006785df268ed21849cba1ef79">00098</a> <a class="code" href="classQVVideoReaderBlock.html#aa516e0006785df268ed21849cba1ef79" title="Destructor for QVVideoReaderBlock class.">QVVideoReaderBlock::~QVVideoReaderBlock</a>()
+<a name="l00099"></a>00099     {
+<a name="l00100"></a>00100     video_reader.<a class="code" href="classQVVideoReader.html#ab9f4cfa4e439e0bb5ffd377e514de091" title="Closes the video source.">close</a>();
+<a name="l00101"></a>00101     }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> iRoundUp(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b)
+<a name="l00104"></a>00104     {
+<a name="l00105"></a>00105     <span class="keywordflow">return</span> (a % b == 0) ? a : b*(a / b + 1) ;
+<a name="l00106"></a>00106     }
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="keywordtype">void</span> QVVideoReaderBlock::tryOpeningCam()
+<a name="l00109"></a>00109 {
+<a name="l00110"></a>00110     <span class="comment">// We open the camera with the specified input properties, and update output properties accordingly:</span>
+<a name="l00111"></a>00111     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cols, rows, fps;
+<a name="l00112"></a>00112     <span class="comment">//bool yuv_rgb;</span>
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114     <span class="comment">// Read current input properties:</span>
+<a name="l00115"></a>00115     realTime = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;RealTime&quot;</span>);
+<a name="l00116"></a>00116     noLoop = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;NoLoop&quot;</span>);
+<a name="l00117"></a>00117     deinterlaced = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;Deinterlaced&quot;</span>);
+<a name="l00118"></a>00118     urlName = getPropertyValue&lt;QString&gt;(<span class="stringliteral">&quot;URL&quot;</span>);
+<a name="l00119"></a>00119     cols =  getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Cols&quot;</span>);
+<a name="l00120"></a>00120     rows =  getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Rows&quot;</span>);
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122     <span class="comment">// Virtual call; urlName is input parameter; cols and rows are input/output; fps and yuv_rgb are output.</span>
+<a name="l00123"></a>00123     <span class="comment">//if(this-&gt;open(urlName,cols,rows,fps,yuv_rgb))</span>
+<a name="l00124"></a>00124     <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> opts;
+<a name="l00125"></a>00125     <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">QVVideoReader::TSourceMode</a> source_mode;
+<a name="l00126"></a>00126     <span class="keywordflow">if</span>(realTime) opts |= <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d">QVVideoReader::RealTime</a>;
+<a name="l00127"></a>00127     <span class="keywordflow">if</span>(noLoop) opts |= <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3" title="Continue from the beginning of the video source when it reaches the end.">QVVideoReader::NoLoop</a>;
+<a name="l00128"></a>00128     <span class="keywordflow">if</span>(deinterlaced) opts |= <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd" title="(Mplayer only) Make mplayer deinterlace the image (odd lines).">QVVideoReader::Deinterlaced</a>;
+<a name="l00129"></a>00129     <span class="keywordflow">if</span>(video_reader.<a class="code" href="classQVVideoReader.html#a6f4fe8891a6fcdfbfaf31302af10785c" title="Opens a video source given by its URL, trying to use requested options, mode, speed...">open</a>(urlName,cols,rows,fps,opts,source_mode))
+<a name="l00130"></a>00130         {
+<a name="l00131"></a>00131         setPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;Opened&quot;</span>,TRUE);
+<a name="l00132"></a>00132         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;ColsR&quot;</span>,cols);
+<a name="l00133"></a>00133         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;RowsR&quot;</span>,rows);
+<a name="l00134"></a>00134         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;FPS&quot;</span>,fps);
+<a name="l00135"></a>00135         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Frames&quot;</span>,0);
+<a name="l00136"></a>00136         setPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;Pos&quot;</span>,video_reader.<a class="code" href="classQVVideoReader.html#ac169b0d7746551424f5ef4fe471a9c7d" title="Gets the current position in the video source.">getPos</a>());
+<a name="l00137"></a>00137         setPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;Length&quot;</span>,video_reader.<a class="code" href="classQVVideoReader.html#afea030febc7f6e776968d10079002e37" title="Gets the length of the video source.">getLength</a>());
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         <span class="keyword">const</span> <span class="keywordtype">int</span> default_size=128;
+<a name="l00140"></a>00140         imageY = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(default_size, default_size, iRoundUp(default_size,8));
+<a name="l00141"></a>00141         imageU = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(default_size/2, default_size/2, iRoundUp(default_size/2,8));
+<a name="l00142"></a>00142         imageV = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(default_size/2, default_size/2, iRoundUp(default_size/2,8));
+<a name="l00143"></a>00143         imageR = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(default_size, default_size, iRoundUp(default_size,8));
+<a name="l00144"></a>00144         imageG = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(default_size, default_size, iRoundUp(default_size,8));
+<a name="l00145"></a>00145         imageB = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(default_size, default_size, iRoundUp(default_size,8));
+<a name="l00146"></a>00146         imageRGB = <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a>(default_size, default_size, iRoundUp(3*default_size,8));
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148         setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;Y channel image&quot;</span>, imageY);
+<a name="l00149"></a>00149         setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;U channel image&quot;</span>, imageU);
+<a name="l00150"></a>00150         setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;V channel image&quot;</span>, imageV);
+<a name="l00151"></a>00151         setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;R channel image&quot;</span>, imageR);
+<a name="l00152"></a>00152         setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;G channel image&quot;</span>, imageG);
+<a name="l00153"></a>00153         setPropertyValue&lt; QVImage&lt;uChar, 1&gt; &gt;(<span class="stringliteral">&quot;B channel image&quot;</span>, imageB);
+<a name="l00154"></a>00154         setPropertyValue&lt; QVImage&lt;uChar, 3&gt; &gt;(<span class="stringliteral">&quot;RGB image&quot;</span>, imageRGB);
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156         <span class="comment">// If the camera is in real time mode, a single shot timer will do the grabbing job (this timer will</span>
+<a name="l00157"></a>00157         <span class="comment">// always be relaunched after each grab()). Otherwise, the QVVideoReaderBlock::iterate() will simply call</span>
+<a name="l00158"></a>00158         <span class="comment">// explicitly the grabFrame slot.</span>
+<a name="l00159"></a>00159         <span class="keywordflow">if</span> (realTime)
+<a name="l00160"></a>00160             QTimer::singleShot(0, <span class="keyword">this</span>, SLOT(grabFrame()));  <span class="comment">// Schedule first grabFrame()</span>
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <span class="comment">// Once opened, the block is ready to run (useful when reopening stopped cameras):</span>
+<a name="l00163"></a>00163         <a class="code" href="classQVProcessingBlock.html#a8ba2deff4679f67891e0aafe2a1d1c14" title="Set block status to QVProcessingBlock::Running.">unPause</a>();
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165         <span class="comment">// Trick to block too fast consumer blocks, if in real time:</span>
+<a name="l00166"></a>00166         <span class="keywordflow">if</span> (realTime)
+<a name="l00167"></a>00167             connectOrDisconnectLinkedBlocks(TRUE);
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169         emit <a class="code" href="classQVVideoReaderBlock.html#af2ab0db3d129c38e0c15c75933e15f50" title="Emitted each time a new video source is opened.">opened</a>();
+<a name="l00170"></a>00170         }
+<a name="l00171"></a>00171     <span class="keywordflow">else</span>        <span class="comment">// If something fails when opening, we reset using reset():</span>
+<a name="l00172"></a>00172         reset();
+<a name="l00173"></a>00173 }
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175 <span class="keywordtype">void</span> QVVideoReaderBlock::connectOrDisconnectLinkedBlocks(<span class="keywordtype">bool</span> connect_disconnect)
+<a name="l00176"></a>00176     {
+<a name="l00177"></a>00177     QList&lt;QVPropertyContainer*&gt; list_linked_qvps = <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;RGB image&quot;</span>);
+<a name="l00178"></a>00178     list_linked_qvps &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;Y channel image&quot;</span>);
+<a name="l00179"></a>00179     list_linked_qvps &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;U channel image&quot;</span>);
+<a name="l00180"></a>00180     list_linked_qvps &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;V channel image&quot;</span>);
+<a name="l00181"></a>00181     list_linked_qvps &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;R channel image&quot;</span>);
+<a name="l00182"></a>00182     list_linked_qvps &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;G channel image&quot;</span>);
+<a name="l00183"></a>00183     list_linked_qvps &lt;&lt; <a class="code" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027" title="Gets the destiny QVPropertyContainers of a given property.">getDestinyContainers</a>(<span class="stringliteral">&quot;B channel image&quot;</span>);
+<a name="l00184"></a>00184     QSet&lt;QVPropertyContainer*&gt; set_linked_qvps = list_linked_qvps.toSet();
+<a name="l00185"></a>00185     <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> *block;
+<a name="l00186"></a>00186     <span class="keywordflow">foreach</span> (<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp, set_linked_qvps)
+<a name="l00187"></a>00187         <span class="keywordflow">if</span>((block = dynamic_cast&lt;QVProcessingBlock*&gt;(qvp)) != NULL) {
+<a name="l00188"></a>00188             <span class="keywordflow">if</span>(connect_disconnect)
+<a name="l00189"></a>00189                 connect(block,SIGNAL(<a class="code" href="classQVProcessingBlock.html#a1924b55e68860c62099885a8700ef7ab" title="Signal emited after each call to QVProcessingBlock::iterate() function.">endIteration</a>(uint,<span class="keywordtype">int</span>)),<span class="keyword">this</span>,SLOT(nothing()),Qt::BlockingQueuedConnection);
+<a name="l00190"></a>00190             <span class="keywordflow">else</span>
+<a name="l00191"></a>00191                 disconnect(block,SIGNAL(<a class="code" href="classQVProcessingBlock.html#a1924b55e68860c62099885a8700ef7ab" title="Signal emited after each call to QVProcessingBlock::iterate() function.">endIteration</a>(uint,<span class="keywordtype">int</span>)),<span class="keyword">this</span>,SLOT(nothing()));
+<a name="l00192"></a>00192         }
+<a name="l00193"></a>00193     }
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195 <span class="keywordtype">void</span> QVVideoReaderBlock::reset()
+<a name="l00196"></a>00196     {
+<a name="l00197"></a>00197     <span class="comment">// Disconnect consumer blocks, if in real time (trick for fast consumer blocks):</span>
+<a name="l00198"></a>00198     <span class="keywordflow">if</span>(realTime)
+<a name="l00199"></a>00199         connectOrDisconnectLinkedBlocks(FALSE);
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201     <span class="comment">// Flush any possible timer event pending:</span>
+<a name="l00202"></a>00202     flush_pending_images = TRUE;
+<a name="l00203"></a>00203     <span class="keywordflow">while</span>(qApp-&gt;hasPendingEvents ()) qApp-&gt;processEvents();
+<a name="l00204"></a>00204     flush_pending_images = FALSE;
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206     <span class="comment">// Close camera ...</span>
+<a name="l00207"></a>00207     video_reader.<a class="code" href="classQVVideoReader.html#ab9f4cfa4e439e0bb5ffd377e514de091" title="Closes the video source.">close</a>();
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209     <span class="comment">// ... reset output properties (except images and RowsR/ColsR, that are left untouched), ...</span>
+<a name="l00210"></a>00210     setPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;Opened&quot;</span>,FALSE);
+<a name="l00211"></a>00211     setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;FPS&quot;</span>,0);
+<a name="l00212"></a>00212     setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Frames&quot;</span>,0);
+<a name="l00213"></a>00213     setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Pos&quot;</span>,0);
+<a name="l00214"></a>00214     setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Length&quot;</span>,0);
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216     <span class="comment">// ...and stop block:</span>
+<a name="l00217"></a>00217     <a class="code" href="classQVProcessingBlock.html#ace1cb7c1c822c3f4b32782528a3b9a99" title="Finish block execution.">stop</a>();
+<a name="l00218"></a>00218 
+<a name="l00219"></a>00219     emit <a class="code" href="classQVVideoReaderBlock.html#a2e1b8419ff4967a59b71711ef840632d" title="Emitted each time the video source is closed.">closed</a>();
+<a name="l00220"></a>00220     }
+<a name="l00221"></a>00221 
+<a name="l00222"></a>00222 
+<a name="l00223"></a><a class="code" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59">00223</a> <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59" title="Links a QVImage&amp;lt;uChar,3&amp;gt; (RGB image) or QVImage&amp;lt;uChar,1&amp;gt; (gray image)...">QVVideoReaderBlock::linkProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinyContainer, QString destinyPropertyName)
+<a name="l00224"></a>00224     {
+<a name="l00225"></a>00225     <span class="comment">// Asynchronous links for real time cameras, synchronous for non real time:</span>
+<a name="l00226"></a>00226     <a class="code" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">LinkType</a> linkType = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;RealTime&quot;</span>) ? AsynchronousLink : SynchronousLink;
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228     <span class="comment">// Link the destination image property, depending on the number of channels.</span>
+<a name="l00229"></a>00229     <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &gt;(destinyPropertyName))
+<a name="l00230"></a>00230         <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;RGB image&quot;</span>, destinyContainer, destinyPropertyName, linkType);
+<a name="l00231"></a>00231     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName))
+<a name="l00232"></a>00232         <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;Y channel image&quot;</span>, destinyContainer, destinyPropertyName, linkType);
+<a name="l00233"></a>00233     <span class="keywordflow">else</span>
+<a name="l00234"></a>00234         {
+<a name="l00235"></a>00235         qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::link(): error, can&#39;t link property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName) &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;
+<a name="l00236"></a>00236         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00237"></a>00237         }
+<a name="l00238"></a>00238     }
+<a name="l00239"></a>00239 
+<a name="l00240"></a><a class="code" href="classQVVideoReaderBlock.html#ac979126d1eb3124ca37f2177782632b2">00240</a> <span class="keywordtype">bool</span> <a class="code" href="classQVVideoReaderBlock.html#a4330756e5e37295f500d223414eeca59" title="Links a QVImage&amp;lt;uChar,3&amp;gt; (RGB image) or QVImage&amp;lt;uChar,1&amp;gt; (gray image)...">QVVideoReaderBlock::linkProperty</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinyContainer, QString destinyPropertyName1, QString destinyPropertyName2, QString destinyPropertyName3, <span class="keywordtype">bool</span> YUV_RGB)
+<a name="l00241"></a>00241     {
+<a name="l00242"></a>00242     <span class="comment">// Asynchronous links for real time cameras, synchronous for non real time:</span>
+<a name="l00243"></a>00243     <a class="code" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">LinkType</a> linkType = getPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;RealTime&quot;</span>) ? AsynchronousLink : SynchronousLink;
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245     <span class="keywordtype">bool</span> ok = TRUE;
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247     <span class="comment">// Link the destination image properties (must be one channel each)</span>
+<a name="l00248"></a>00248     <span class="keywordflow">if</span>(YUV_RGB)
+<a name="l00249"></a>00249         {
+<a name="l00250"></a>00250         <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName1))
+<a name="l00251"></a>00251             <span class="keywordflow">if</span>(not <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;R channel image&quot;</span>, destinyContainer, destinyPropertyName1, linkType))
+<a name="l00252"></a>00252                 {
+<a name="l00253"></a>00253                 ok = FALSE;
+<a name="l00254"></a>00254                 qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::linkProperty(): error, can&#39;t link R property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName1) ;
+<a name="l00255"></a>00255                 }
+<a name="l00256"></a>00256         <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName2))
+<a name="l00257"></a>00257             <span class="keywordflow">if</span>(not <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;G channel image&quot;</span>, destinyContainer, destinyPropertyName2, linkType))
+<a name="l00258"></a>00258                 {
+<a name="l00259"></a>00259                 ok = FALSE;
+<a name="l00260"></a>00260                 qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::linkProperty(): error, can&#39;t link G property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName2) ;
+<a name="l00261"></a>00261                 }
+<a name="l00262"></a>00262         <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName3))
+<a name="l00263"></a>00263             <span class="keywordflow">if</span>(not <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;B channel image&quot;</span>, destinyContainer, destinyPropertyName3, linkType))
+<a name="l00264"></a>00264                 {
+<a name="l00265"></a>00265                 ok = FALSE;
+<a name="l00266"></a>00266                 qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::linkProperty(): error, can&#39;t link B property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName3) ;
+<a name="l00267"></a>00267                 }
+<a name="l00268"></a>00268         }
+<a name="l00269"></a>00269     <span class="keywordflow">else</span>
+<a name="l00270"></a>00270         {
+<a name="l00271"></a>00271         <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName1))
+<a name="l00272"></a>00272             <span class="keywordflow">if</span>(not <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;Y channel image&quot;</span>, destinyContainer, destinyPropertyName1, linkType))
+<a name="l00273"></a>00273                 {
+<a name="l00274"></a>00274                 ok = FALSE;
+<a name="l00275"></a>00275                 qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::linkProperty(): error, can&#39;t link Y property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName1) ;
+<a name="l00276"></a>00276                 }
+<a name="l00277"></a>00277         <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName2))
+<a name="l00278"></a>00278             <span class="keywordflow">if</span>(not <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;U channel image&quot;</span>, destinyContainer, destinyPropertyName2, linkType))
+<a name="l00279"></a>00279                 {
+<a name="l00280"></a>00280                 ok = FALSE;
+<a name="l00281"></a>00281                 qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::linkProperty(): error, can&#39;t link U property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName2) ;
+<a name="l00282"></a>00282                 }
+<a name="l00283"></a>00283         <span class="keywordflow">if</span> (destinyContainer-&gt;<a class="code" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4" title="Checks if a property is of a given type.">isType</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &gt;(destinyPropertyName3))
+<a name="l00284"></a>00284             <span class="keywordflow">if</span>(not <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">QVProcessingBlock::linkProperty</a>(<span class="stringliteral">&quot;V channel image&quot;</span>, destinyContainer, destinyPropertyName3, linkType))
+<a name="l00285"></a>00285                 {
+<a name="l00286"></a>00286                 ok = FALSE;
+<a name="l00287"></a>00287                 qWarning() &lt;&lt; <span class="stringliteral">&quot;QVVideoReaderBlock::linkProperty(): error, can&#39;t link V property &quot;</span> &lt;&lt; qPrintable(destinyPropertyName3) ;
+<a name="l00288"></a>00288                 }
+<a name="l00289"></a>00289         }
+<a name="l00290"></a>00290         <span class="keywordflow">return</span> ok;
+<a name="l00291"></a>00291     }
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293 <span class="keywordtype">void</span> QVVideoReaderBlock::grabFrame()
+<a name="l00294"></a>00294     {
+<a name="l00295"></a>00295     <span class="comment">// Grab image.</span>
+<a name="l00296"></a>00296     <span class="keywordflow">if</span>(video_reader.<a class="code" href="classQVVideoReader.html#a9dacd1ed256f1f48a193314d7e876140" title="Grabs next frame in video source, saving corresponding image(s) in class internal...">grab</a>())
+<a name="l00297"></a>00297         {
+<a name="l00298"></a>00298         <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;RGB image&quot;</span>))
+<a name="l00299"></a>00299             video_reader.<a class="code" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093" title="Gets current frame in the form of a 3 channel RGB image.">getRGBImage</a>(imageRGB);
+<a name="l00300"></a>00300         <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;Y channel image&quot;</span>) and not <a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;U channel image&quot;</span>) and not <a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;V channel image&quot;</span>))
+<a name="l00301"></a>00301             video_reader.<a class="code" href="classQVVideoReader.html#a7c9765c5ed51cdf2349e456dc7a6f3f2" title="Gets current frame in the form of a gray image.">getGrayImage</a>(imageY);
+<a name="l00302"></a>00302         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;Y channel image&quot;</span>) and (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;U channel image&quot;</span>) or <a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;V channel image&quot;</span>)))
+<a name="l00303"></a>00303             video_reader.<a class="code" href="classQVVideoReader.html#af79c7379cbbfc613b64d21a74eb7f8eb" title="Gets current frame in the form of a gray image channel (Y) and two chrominance image...">getYUVImage</a>(imageY,imageU,imageV);
+<a name="l00304"></a>00304         <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;R channel image&quot;</span>) or <a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;G channel image&quot;</span>) or <a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;B channel image&quot;</span>))
+<a name="l00305"></a>00305             video_reader.<a class="code" href="classQVVideoReader.html#a7922b56a1ea4e76444aeda9ea4a3d093" title="Gets current frame in the form of a 3 channel RGB image.">getRGBImage</a>(imageR,imageG,imageB);
+<a name="l00306"></a>00306         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Frames&quot;</span>,getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Frames&quot;</span>)+1);
+<a name="l00307"></a>00307         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Pos&quot;</span>,video_reader.<a class="code" href="classQVVideoReader.html#ac169b0d7746551424f5ef4fe471a9c7d" title="Gets the current position in the video source.">getPos</a>());
+<a name="l00308"></a>00308         <span class="comment">// Needed here because mplayer does not know the length of the video until it has played a few frames:</span>
+<a name="l00309"></a>00309         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Length&quot;</span>,video_reader.<a class="code" href="classQVVideoReader.html#afea030febc7f6e776968d10079002e37" title="Gets the length of the video source.">getLength</a>());
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311         <span class="comment">// Compute FPS:</span>
+<a name="l00312"></a>00312         <span class="keyword">static</span> QTime t;
+<a name="l00313"></a>00313             <span class="keywordflow">if</span>(getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Frames&quot;</span>)==1)
+<a name="l00314"></a>00314             t.start();
+<a name="l00315"></a>00315         <span class="keywordflow">else</span>
+<a name="l00316"></a>00316             {
+<a name="l00317"></a>00317             <span class="keywordtype">int</span> ms = t.elapsed();
+<a name="l00318"></a>00318             <span class="keywordflow">if</span>(ms&gt;0) setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;FPS&quot;</span>,1000/ms);
+<a name="l00319"></a>00319             t.restart();
+<a name="l00320"></a>00320             }
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;ColsR&quot;</span>,video_reader.<a class="code" href="classQVVideoReader.html#a05af873ddd0778c8d34a7fe5adc00a1d" title="Returns the number of cols for current frame in the video source.">getCols</a>());
+<a name="l00323"></a>00323         setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;RowsR&quot;</span>,video_reader.<a class="code" href="classQVVideoReader.html#a7e64e124eec398f4fb0dbf4263d1bb96" title="Returns the number of rows for current frame in the video source.">getRows</a>());
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325         <span class="keywordflow">if</span>(realTime) <a class="code" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a" title="Write linked output properties to other QVPropertyContainer&amp;#39;s.">writeOutputProperties</a>();
+<a name="l00326"></a>00326 
+<a name="l00327"></a>00327         emit <a class="code" href="classQVVideoReaderBlock.html#a2ccdf398a2b53b1fa81d328eccbce206" title="Emitted each time a new frame is grabbed.">grabbed</a>();
+<a name="l00328"></a>00328 
+<a name="l00329"></a>00329         <span class="comment">// Post following timer event to schedule next grabbing (except if we are flushing images out for closing).</span>
+<a name="l00330"></a>00330         <span class="keywordflow">if</span>(realTime and not flush_pending_images)
+<a name="l00331"></a>00331             QTimer::singleShot(0, <span class="keyword">this</span>, SLOT(grabFrame()));
+<a name="l00332"></a>00332         }
+<a name="l00333"></a>00333     <span class="keywordflow">else</span>
+<a name="l00334"></a>00334         reset();
+<a name="l00335"></a>00335     }
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337 <span class="keywordtype">void</span> QVVideoReaderBlock::iterate()
+<a name="l00338"></a>00338     {
+<a name="l00339"></a>00339     <span class="comment">// Try opening camera if first iteration (performed here, instead of the constructor, to assure</span>
+<a name="l00340"></a>00340     <span class="comment">// that open() is executed always in this thread.</span>
+<a name="l00341"></a>00341     <span class="keywordflow">if</span>(<a class="code" href="classQVProcessingBlock.html#a95c56bae078a84bf689b7ee8073bcf7c" title="Function to obtain the number of iteration the block has performed.">getIteration</a>()==0)
+<a name="l00342"></a>00342         tryOpeningCam();
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344     <span class="comment">// Needed for not try to grab from closed (stopped) cameras:</span>
+<a name="l00345"></a>00345     <span class="keywordflow">if</span>(<a class="code" href="classQVProcessingBlock.html#ae01629a378633a1a029e02fc2fd483b6" title="Function that can be used to check stopped status of block.">isStopped</a>()) <span class="keywordflow">return</span>;
+<a name="l00346"></a>00346 
+<a name="l00347"></a>00347     <span class="comment">// If the camera is in real time mode, the timer should have called the slot for us, so we do not have to do it</span>
+<a name="l00348"></a>00348     <span class="comment">// explicitly. Otherwise, we call grabFrame();</span>
+<a name="l00349"></a>00349     <span class="keywordflow">if</span> (not realTime)
+<a name="l00350"></a>00350         grabFrame();
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;RGB image&quot;</span>))
+<a name="l00353"></a>00353         setPropertyValue&lt; QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;RGB image&quot;</span>, imageRGB);
+<a name="l00354"></a>00354     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;R channel image&quot;</span>))
+<a name="l00355"></a>00355         <a class="code" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c" title="Sets value for property.">setPropertyValue</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;R channel image&quot;</span>, imageR);
+<a name="l00356"></a>00356     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;G channel image&quot;</span>))
+<a name="l00357"></a>00357         <a class="code" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c" title="Sets value for property.">setPropertyValue</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;G channel image&quot;</span>, imageG);
+<a name="l00358"></a>00358     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;B channel image&quot;</span>))
+<a name="l00359"></a>00359         <a class="code" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c" title="Sets value for property.">setPropertyValue</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;B channel image&quot;</span>, imageB);
+<a name="l00360"></a>00360     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;Y channel image&quot;</span>))
+<a name="l00361"></a>00361         <a class="code" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c" title="Sets value for property.">setPropertyValue</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;Y channel image&quot;</span>, imageY);
+<a name="l00362"></a>00362     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;U channel image&quot;</span>))
+<a name="l00363"></a>00363         <a class="code" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c" title="Sets value for property.">setPropertyValue</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;U channel image&quot;</span>, imageU);
+<a name="l00364"></a>00364     <span class="keywordflow">if</span> (<a class="code" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a" title="Tells if a property is of the output type and is linked.">isLinkedOutput</a>(<span class="stringliteral">&quot;V channel image&quot;</span>))
+<a name="l00365"></a>00365         <a class="code" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c" title="Sets value for property.">setPropertyValue</a>&lt; <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &gt;(<span class="stringliteral">&quot;V channel image&quot;</span>, imageV);
+<a name="l00366"></a>00366 
+<a name="l00367"></a>00367     }
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369 <span class="keywordtype">void</span> QVVideoReaderBlock::reopen()
+<a name="l00370"></a>00370     {
+<a name="l00371"></a>00371     <span class="comment">// Do not try to reopen again if in the middle of a reopening process (could happen if the user presses the</span>
+<a name="l00372"></a>00372     <span class="comment">// &quot;Reopen&quot; camera widget button several times very quickly). This condition avoids it:</span>
+<a name="l00373"></a>00373     <span class="keywordflow">if</span>(flush_pending_images) <span class="keywordflow">return</span>;
+<a name="l00374"></a>00374 
+<a name="l00375"></a>00375     <span class="comment">// When reopening, we must reset the camera block ...</span>
+<a name="l00376"></a>00376     reset();
+<a name="l00377"></a>00377     <span class="comment">// ... and open the camera again using the new input properties.</span>
+<a name="l00378"></a>00378     <a class="code" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86" title="Read linked input properties from other QVPropertyContainer&amp;#39;s.">readInputProperties</a>();
+<a name="l00379"></a>00379     tryOpeningCam();
+<a name="l00380"></a>00380     }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

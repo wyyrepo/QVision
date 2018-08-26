@@ -1,0 +1,870 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvprocessingblocks/qvippblocks.h</h1><a href="qvblockprogramming_2qvprocessingblocks_2qvippblocks_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;ipp.h&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QMap&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QSize&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QPoint&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;<a class="code" href="qvdefines_8h.html" title="File from the QVision library.">qvdefines.h</a>&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="preprocessor">#ifndef QVIPPBLOCKS_H</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#define QVIPPBLOCKS_H</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>
+<a name="l00046"></a>00046 <span class="keyword">const</span> QMap&lt;QString, QString&gt; <a class="code" href="group__qvippblocks.html#ga1883f25501e43b27bfa546e9bd7771f3" title="Provides a full list of the names of all IPP blocks.">getQVIPPBlocksNames</a>();
+<a name="l00047"></a>00047 
+<a name="l00061"></a>00061 <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *<a class="code" href="group__qvippblocks.html#ga6d6ed97ce3edab2cd8dfdf4e4edcb3ae" title="Creates an IPP block object, given its class name.">newQVIPPBlock</a>(QString type, QString name);
+<a name="l00062"></a>00062 
+<a name="l00075"></a><a class="code" href="classQVConvert__uCharsFloatC1Block.html">00075</a> <span class="keyword">class </span><a class="code" href="classQVConvert__uCharsFloatC1Block.html" title="Converts pixel values of an image from one bit depth to another.">QVConvert_uCharsFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00076"></a>00076         {
+<a name="l00077"></a>00077         <span class="keyword">public</span>:
+<a name="l00079"></a>00079                 <a class="code" href="classQVConvert__uCharsFloatC1Block.html#aec2dfd6d1fce559ed36d80b0dd1490ab" title="Block constructor.">QVConvert_uCharsFloatC1Block</a>(QString name = QString());
+<a name="l00081"></a>00081                 <span class="keywordtype">void</span> <a class="code" href="classQVConvert__uCharsFloatC1Block.html#ab6c55b5107411cdb71b92d5d727f2bcd" title="Block iterate function.">iterate</a>();
+<a name="l00082"></a>00082         };
+<a name="l00083"></a>00083 
+<a name="l00096"></a><a class="code" href="classQVConvert__uCharsFloatC3Block.html">00096</a> <span class="keyword">class </span><a class="code" href="classQVConvert__uCharsFloatC3Block.html" title="Converts pixel values of an image from one bit depth to another.">QVConvert_uCharsFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00097"></a>00097         {
+<a name="l00098"></a>00098         <span class="keyword">public</span>:
+<a name="l00100"></a>00100                 <a class="code" href="classQVConvert__uCharsFloatC3Block.html#ada29a364c5b5fb0d0168f0e6a362dbdc" title="Block constructor.">QVConvert_uCharsFloatC3Block</a>(QString name = QString());
+<a name="l00102"></a>00102                 <span class="keywordtype">void</span> <a class="code" href="classQVConvert__uCharsFloatC3Block.html#aa12af1ed3aea5124b073164d6e91aad6" title="Block iterate function.">iterate</a>();
+<a name="l00103"></a>00103         };
+<a name="l00104"></a>00104 
+<a name="l00118"></a><a class="code" href="classQVConvert__sFloatuCharC1Block.html">00118</a> <span class="keyword">class </span><a class="code" href="classQVConvert__sFloatuCharC1Block.html" title="Converts pixel values of an image from one bit depth to another.">QVConvert_sFloatuCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00119"></a>00119         {
+<a name="l00120"></a>00120         <span class="keyword">public</span>:
+<a name="l00122"></a>00122                 <a class="code" href="classQVConvert__sFloatuCharC1Block.html#a56d7a08f3561f6443ce6ad0228fc7d8e" title="Block constructor.">QVConvert_sFloatuCharC1Block</a>(QString name = QString());
+<a name="l00124"></a>00124                 <span class="keywordtype">void</span> <a class="code" href="classQVConvert__sFloatuCharC1Block.html#a34937d8588c3495036f1ce416e195306" title="Block iterate function.">iterate</a>();
+<a name="l00125"></a>00125         };
+<a name="l00126"></a>00126 
+<a name="l00140"></a><a class="code" href="classQVConvert__sFloatuCharC3Block.html">00140</a> <span class="keyword">class </span><a class="code" href="classQVConvert__sFloatuCharC3Block.html" title="Converts pixel values of an image from one bit depth to another.">QVConvert_sFloatuCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00141"></a>00141         {
+<a name="l00142"></a>00142         <span class="keyword">public</span>:
+<a name="l00144"></a>00144                 <a class="code" href="classQVConvert__sFloatuCharC3Block.html#a3ccaf9ea7b05bed61a23610baf91eb3f" title="Block constructor.">QVConvert_sFloatuCharC3Block</a>(QString name = QString());
+<a name="l00146"></a>00146                 <span class="keywordtype">void</span> <a class="code" href="classQVConvert__sFloatuCharC3Block.html#a6bc520f9557e5ff180401accbaef12c7" title="Block iterate function.">iterate</a>();
+<a name="l00147"></a>00147         };
+<a name="l00148"></a>00148 
+<a name="l00163"></a><a class="code" href="classQVAdd__uCharC1Block.html">00163</a> <span class="keyword">class </span><a class="code" href="classQVAdd__uCharC1Block.html" title="Add image to accumulator.">QVAdd_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00164"></a>00164         {
+<a name="l00165"></a>00165         <span class="keyword">public</span>:
+<a name="l00167"></a>00167                 <a class="code" href="classQVAdd__uCharC1Block.html#a4df175584e42c13e1fc1d55e7cc542f8" title="Block constructor.">QVAdd_uCharC1Block</a>(QString name = QString());
+<a name="l00169"></a>00169                 <span class="keywordtype">void</span> <a class="code" href="classQVAdd__uCharC1Block.html#aceb4225d26c5d387c408cc92443788a4" title="Block iterate function.">iterate</a>();
+<a name="l00170"></a>00170         };
+<a name="l00171"></a>00171 
+<a name="l00186"></a><a class="code" href="classQVAdd__uCharC3Block.html">00186</a> <span class="keyword">class </span><a class="code" href="classQVAdd__uCharC3Block.html" title="Add image to accumulator.">QVAdd_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00187"></a>00187         {
+<a name="l00188"></a>00188         <span class="keyword">public</span>:
+<a name="l00190"></a>00190                 <a class="code" href="classQVAdd__uCharC3Block.html#ad3793f7acb5bf6005321e3a60790bafa" title="Block constructor.">QVAdd_uCharC3Block</a>(QString name = QString());
+<a name="l00192"></a>00192                 <span class="keywordtype">void</span> <a class="code" href="classQVAdd__uCharC3Block.html#a59768a53c0246a1dc77d8afc7f5893d3" title="Block iterate function.">iterate</a>();
+<a name="l00193"></a>00193         };
+<a name="l00194"></a>00194 
+<a name="l00208"></a><a class="code" href="classQVAdd__sFloatC1Block.html">00208</a> <span class="keyword">class </span><a class="code" href="classQVAdd__sFloatC1Block.html" title="Add image to accumulator.">QVAdd_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00209"></a>00209         {
+<a name="l00210"></a>00210         <span class="keyword">public</span>:
+<a name="l00212"></a>00212                 <a class="code" href="classQVAdd__sFloatC1Block.html#acea85efcdfaceb5aa215f9b7cf56b788" title="Block constructor.">QVAdd_sFloatC1Block</a>(QString name = QString());
+<a name="l00214"></a>00214                 <span class="keywordtype">void</span> <a class="code" href="classQVAdd__sFloatC1Block.html#a2643279ec2fc5a6a0d152396b67ffae0" title="Block iterate function.">iterate</a>();
+<a name="l00215"></a>00215         };
+<a name="l00216"></a>00216 
+<a name="l00230"></a><a class="code" href="classQVAdd__sFloatC3Block.html">00230</a> <span class="keyword">class </span><a class="code" href="classQVAdd__sFloatC3Block.html" title="Add image to accumulator.">QVAdd_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00231"></a>00231         {
+<a name="l00232"></a>00232         <span class="keyword">public</span>:
+<a name="l00234"></a>00234                 <a class="code" href="classQVAdd__sFloatC3Block.html#ada6fd1fc97c0e37ed0b39e0b30a25ae6" title="Block constructor.">QVAdd_sFloatC3Block</a>(QString name = QString());
+<a name="l00236"></a>00236                 <span class="keywordtype">void</span> <a class="code" href="classQVAdd__sFloatC3Block.html#aee11674d366b3fbbe200d27317b8538a" title="Block iterate function.">iterate</a>();
+<a name="l00237"></a>00237         };
+<a name="l00238"></a>00238 
+<a name="l00253"></a><a class="code" href="classQVAddC__uCharC1Block.html">00253</a> <span class="keyword">class </span><a class="code" href="classQVAddC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAddC_8u_C1RSfs.">QVAddC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00254"></a>00254         {
+<a name="l00255"></a>00255         <span class="keyword">public</span>:
+<a name="l00257"></a>00257                 <a class="code" href="classQVAddC__uCharC1Block.html#aa97216f55423a65e717ecd6f618ae69a" title="Block constructor.">QVAddC_uCharC1Block</a>(QString name = QString());
+<a name="l00259"></a>00259                 <span class="keywordtype">void</span> <a class="code" href="classQVAddC__uCharC1Block.html#a500c0532186703585a8702428cfca694" title="Block iterate function.">iterate</a>();
+<a name="l00260"></a>00260         };
+<a name="l00261"></a>00261 
+<a name="l00275"></a><a class="code" href="classQVAddC__sFloatC1Block.html">00275</a> <span class="keyword">class </span><a class="code" href="classQVAddC__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAddC_32f_C1R.">QVAddC_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00276"></a>00276         {
+<a name="l00277"></a>00277         <span class="keyword">public</span>:
+<a name="l00279"></a>00279                 <a class="code" href="classQVAddC__sFloatC1Block.html#abcbb71fb756e5af0d6c1ca6041e85d5a" title="Block constructor.">QVAddC_sFloatC1Block</a>(QString name = QString());
+<a name="l00281"></a>00281                 <span class="keywordtype">void</span> <a class="code" href="classQVAddC__sFloatC1Block.html#a6e1d043d2de95716741402ef26ccad57" title="Block iterate function.">iterate</a>();
+<a name="l00282"></a>00282         };
+<a name="l00283"></a>00283 
+<a name="l00298"></a><a class="code" href="classQVMul__uCharC1Block.html">00298</a> <span class="keyword">class </span><a class="code" href="classQVMul__uCharC1Block.html" title="Adds, subtracts, or multiplies pixel values of two source images and places the results...">QVMul_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00299"></a>00299         {
+<a name="l00300"></a>00300         <span class="keyword">public</span>:
+<a name="l00302"></a>00302                 <a class="code" href="classQVMul__uCharC1Block.html#a7d58fc80293febdad91a9a9dc5b304c0" title="Block constructor.">QVMul_uCharC1Block</a>(QString name = QString());
+<a name="l00304"></a>00304                 <span class="keywordtype">void</span> <a class="code" href="classQVMul__uCharC1Block.html#add21f30448026390ea68909e1cddc61e" title="Block iterate function.">iterate</a>();
+<a name="l00305"></a>00305         };
+<a name="l00306"></a>00306 
+<a name="l00321"></a><a class="code" href="classQVMul__uCharC3Block.html">00321</a> <span class="keyword">class </span><a class="code" href="classQVMul__uCharC3Block.html" title="Adds, subtracts, or multiplies pixel values of two source images and places the results...">QVMul_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00322"></a>00322         {
+<a name="l00323"></a>00323         <span class="keyword">public</span>:
+<a name="l00325"></a>00325                 <a class="code" href="classQVMul__uCharC3Block.html#a981ab63752705eae62b70a9eb46fa346" title="Block constructor.">QVMul_uCharC3Block</a>(QString name = QString());
+<a name="l00327"></a>00327                 <span class="keywordtype">void</span> <a class="code" href="classQVMul__uCharC3Block.html#a5e972370967178ea6e623e87576428f1" title="Block iterate function.">iterate</a>();
+<a name="l00328"></a>00328         };
+<a name="l00329"></a>00329 
+<a name="l00343"></a><a class="code" href="classQVMul__sFloatC3Block.html">00343</a> <span class="keyword">class </span><a class="code" href="classQVMul__sFloatC3Block.html" title="Adds, subtracts, or multiplies pixel values of two source images and places the results...">QVMul_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00344"></a>00344         {
+<a name="l00345"></a>00345         <span class="keyword">public</span>:
+<a name="l00347"></a>00347                 <a class="code" href="classQVMul__sFloatC3Block.html#a1c72d185de514b22d3b42bca32b419e6" title="Block constructor.">QVMul_sFloatC3Block</a>(QString name = QString());
+<a name="l00349"></a>00349                 <span class="keywordtype">void</span> <a class="code" href="classQVMul__sFloatC3Block.html#a45e969ce2f8743a6958b534eaa3b4530" title="Block iterate function.">iterate</a>();
+<a name="l00350"></a>00350         };
+<a name="l00351"></a>00351 
+<a name="l00365"></a><a class="code" href="classQVMul__sFloatC1Block.html">00365</a> <span class="keyword">class </span><a class="code" href="classQVMul__sFloatC1Block.html" title="Adds, subtracts, or multiplies pixel values of two source images and places the results...">QVMul_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00366"></a>00366         {
+<a name="l00367"></a>00367         <span class="keyword">public</span>:
+<a name="l00369"></a>00369                 <a class="code" href="classQVMul__sFloatC1Block.html#a51a9a93953855bd3480bbfc8d05b80ce" title="Block constructor.">QVMul_sFloatC1Block</a>(QString name = QString());
+<a name="l00371"></a>00371                 <span class="keywordtype">void</span> <a class="code" href="classQVMul__sFloatC1Block.html#a63337ebd1fe3daf4c7895f4cb53f348e" title="Block iterate function.">iterate</a>();
+<a name="l00372"></a>00372         };
+<a name="l00373"></a>00373 
+<a name="l00388"></a><a class="code" href="classQVMulC__uCharC1Block.html">00388</a> <span class="keyword">class </span><a class="code" href="classQVMulC__uCharC1Block.html" title="Adds, subtracts, or multiplies pixel values of an image and a constant, and places...">QVMulC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00389"></a>00389         {
+<a name="l00390"></a>00390         <span class="keyword">public</span>:
+<a name="l00392"></a>00392                 <a class="code" href="classQVMulC__uCharC1Block.html#a5b2537632bef52524bbcc70b8be2175d" title="Block constructor.">QVMulC_uCharC1Block</a>(QString name = QString());
+<a name="l00394"></a>00394                 <span class="keywordtype">void</span> <a class="code" href="classQVMulC__uCharC1Block.html#a1b65b8451ad845fc1105e659aab4ec29" title="Block iterate function.">iterate</a>();
+<a name="l00395"></a>00395         };
+<a name="l00396"></a>00396 
+<a name="l00410"></a><a class="code" href="classQVMulC__sFloatC1Block.html">00410</a> <span class="keyword">class </span><a class="code" href="classQVMulC__sFloatC1Block.html" title="Adds, subtracts, or multiplies pixel values of an image and a constant, and places...">QVMulC_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00411"></a>00411         {
+<a name="l00412"></a>00412         <span class="keyword">public</span>:
+<a name="l00414"></a>00414                 <a class="code" href="classQVMulC__sFloatC1Block.html#ac3e8c14335e4b4cf833a8968838dd595" title="Block constructor.">QVMulC_sFloatC1Block</a>(QString name = QString());
+<a name="l00416"></a>00416                 <span class="keywordtype">void</span> <a class="code" href="classQVMulC__sFloatC1Block.html#a181411a4aeb44e34e95c4d6fe33e7eed" title="Block iterate function.">iterate</a>();
+<a name="l00417"></a>00417         };
+<a name="l00418"></a>00418 
+<a name="l00432"></a><a class="code" href="classQVMulScale__uCharC1Block.html">00432</a> <span class="keyword">class </span><a class="code" href="classQVMulScale__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiMulScale_8u_C1R.">QVMulScale_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00433"></a>00433         {
+<a name="l00434"></a>00434         <span class="keyword">public</span>:
+<a name="l00436"></a>00436                 <a class="code" href="classQVMulScale__uCharC1Block.html#a120a5928850274189fea22e7abb30fec" title="Block constructor.">QVMulScale_uCharC1Block</a>(QString name = QString());
+<a name="l00438"></a>00438                 <span class="keywordtype">void</span> <a class="code" href="classQVMulScale__uCharC1Block.html#a30d39bff97ed1fd59690a2aa8d7f8062" title="Block iterate function.">iterate</a>();
+<a name="l00439"></a>00439         };
+<a name="l00440"></a>00440 
+<a name="l00454"></a><a class="code" href="classQVMulScale__uCharC3Block.html">00454</a> <span class="keyword">class </span><a class="code" href="classQVMulScale__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiMulScale_8u_C3R.">QVMulScale_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00455"></a>00455         {
+<a name="l00456"></a>00456         <span class="keyword">public</span>:
+<a name="l00458"></a>00458                 <a class="code" href="classQVMulScale__uCharC3Block.html#a28e83986778c488ffeb812373af77de2" title="Block constructor.">QVMulScale_uCharC3Block</a>(QString name = QString());
+<a name="l00460"></a>00460                 <span class="keywordtype">void</span> <a class="code" href="classQVMulScale__uCharC3Block.html#aafddae0af313815a9f687c6b85f04691" title="Block iterate function.">iterate</a>();
+<a name="l00461"></a>00461         };
+<a name="l00462"></a>00462 
+<a name="l00477"></a><a class="code" href="classQVSub__uCharC1Block.html">00477</a> <span class="keyword">class </span><a class="code" href="classQVSub__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiSub_8u_C1RSfs.">QVSub_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00478"></a>00478         {
+<a name="l00479"></a>00479         <span class="keyword">public</span>:
+<a name="l00481"></a>00481                 <a class="code" href="classQVSub__uCharC1Block.html#a3218d31b07b24341b4ba45b46c996eee" title="Block constructor.">QVSub_uCharC1Block</a>(QString name = QString());
+<a name="l00483"></a>00483                 <span class="keywordtype">void</span> <a class="code" href="classQVSub__uCharC1Block.html#afa4cf374df880a2fd899886a52dd2021" title="Block iterate function.">iterate</a>();
+<a name="l00484"></a>00484         };
+<a name="l00485"></a>00485 
+<a name="l00500"></a><a class="code" href="classQVSub__uCharC3Block.html">00500</a> <span class="keyword">class </span><a class="code" href="classQVSub__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiSub_8u_C3RSfs.">QVSub_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00501"></a>00501         {
+<a name="l00502"></a>00502         <span class="keyword">public</span>:
+<a name="l00504"></a>00504                 <a class="code" href="classQVSub__uCharC3Block.html#a03e67c396dc52146f9957fbc4b6d0ba6" title="Block constructor.">QVSub_uCharC3Block</a>(QString name = QString());
+<a name="l00506"></a>00506                 <span class="keywordtype">void</span> <a class="code" href="classQVSub__uCharC3Block.html#a7904135b4775d7b24a792b10b273accd" title="Block iterate function.">iterate</a>();
+<a name="l00507"></a>00507         };
+<a name="l00508"></a>00508 
+<a name="l00522"></a><a class="code" href="classQVSub__sFloatC1Block.html">00522</a> <span class="keyword">class </span><a class="code" href="classQVSub__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiSub_32f_C1R.">QVSub_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00523"></a>00523         {
+<a name="l00524"></a>00524         <span class="keyword">public</span>:
+<a name="l00526"></a>00526                 <a class="code" href="classQVSub__sFloatC1Block.html#a731933e280dc9eeb8dd82888f1ee5917" title="Block constructor.">QVSub_sFloatC1Block</a>(QString name = QString());
+<a name="l00528"></a>00528                 <span class="keywordtype">void</span> <a class="code" href="classQVSub__sFloatC1Block.html#aa204a7326a5677a563c7fd39f3d78989" title="Block iterate function.">iterate</a>();
+<a name="l00529"></a>00529         };
+<a name="l00530"></a>00530 
+<a name="l00544"></a><a class="code" href="classQVSub__sFloatC3Block.html">00544</a> <span class="keyword">class </span><a class="code" href="classQVSub__sFloatC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiSub_32f_C3R.">QVSub_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00545"></a>00545         {
+<a name="l00546"></a>00546         <span class="keyword">public</span>:
+<a name="l00548"></a>00548                 <a class="code" href="classQVSub__sFloatC3Block.html#a31df3bae4a569cd3bdd674e72572d2cf" title="Block constructor.">QVSub_sFloatC3Block</a>(QString name = QString());
+<a name="l00550"></a>00550                 <span class="keywordtype">void</span> <a class="code" href="classQVSub__sFloatC3Block.html#ac9b04980da0faee962af540bcbafd556" title="Block iterate function.">iterate</a>();
+<a name="l00551"></a>00551         };
+<a name="l00552"></a>00552 
+<a name="l00567"></a><a class="code" href="classQVSubC__uCharC1Block.html">00567</a> <span class="keyword">class </span><a class="code" href="classQVSubC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiSubC_8u_C1RSfs.">QVSubC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00568"></a>00568         {
+<a name="l00569"></a>00569         <span class="keyword">public</span>:
+<a name="l00571"></a>00571                 <a class="code" href="classQVSubC__uCharC1Block.html#ab1a8a8e684cd9e8f8f706cf69be5e5d6" title="Block constructor.">QVSubC_uCharC1Block</a>(QString name = QString());
+<a name="l00573"></a>00573                 <span class="keywordtype">void</span> <a class="code" href="classQVSubC__uCharC1Block.html#a992da0bcd18d5eca8b10d32e85e3b7fd" title="Block iterate function.">iterate</a>();
+<a name="l00574"></a>00574         };
+<a name="l00575"></a>00575 
+<a name="l00589"></a><a class="code" href="classQVSubC__sFloatC1Block.html">00589</a> <span class="keyword">class </span><a class="code" href="classQVSubC__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiSubC_32f_C1R.">QVSubC_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00590"></a>00590         {
+<a name="l00591"></a>00591         <span class="keyword">public</span>:
+<a name="l00593"></a>00593                 <a class="code" href="classQVSubC__sFloatC1Block.html#a7d505440b4df2637c9f34446ba9b4608" title="Block constructor.">QVSubC_sFloatC1Block</a>(QString name = QString());
+<a name="l00595"></a>00595                 <span class="keywordtype">void</span> <a class="code" href="classQVSubC__sFloatC1Block.html#a3344b08dd81023179d53342c211ec414" title="Block iterate function.">iterate</a>();
+<a name="l00596"></a>00596         };
+<a name="l00597"></a>00597 
+<a name="l00612"></a><a class="code" href="classQVDiv__uCharC1Block.html">00612</a> <span class="keyword">class </span><a class="code" href="classQVDiv__uCharC1Block.html" title="Divides pixel values of an image by pixel values of another image and places the...">QVDiv_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00613"></a>00613         {
+<a name="l00614"></a>00614         <span class="keyword">public</span>:
+<a name="l00616"></a>00616                 <a class="code" href="classQVDiv__uCharC1Block.html#adfd3fbc291b67755612508ea02852142" title="Block constructor.">QVDiv_uCharC1Block</a>(QString name = QString());
+<a name="l00618"></a>00618                 <span class="keywordtype">void</span> <a class="code" href="classQVDiv__uCharC1Block.html#a6987d3ebe28d1eb9b9a6ddddb3e6fa8c" title="Block iterate function.">iterate</a>();
+<a name="l00619"></a>00619         };
+<a name="l00620"></a>00620 
+<a name="l00635"></a><a class="code" href="classQVDiv__uCharC3Block.html">00635</a> <span class="keyword">class </span><a class="code" href="classQVDiv__uCharC3Block.html" title="Divides pixel values of an image by pixel values of another image and places the...">QVDiv_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00636"></a>00636         {
+<a name="l00637"></a>00637         <span class="keyword">public</span>:
+<a name="l00639"></a>00639                 <a class="code" href="classQVDiv__uCharC3Block.html#a0d82a0ce04c4afe77a31fa8aace48048" title="Block constructor.">QVDiv_uCharC3Block</a>(QString name = QString());
+<a name="l00641"></a>00641                 <span class="keywordtype">void</span> <a class="code" href="classQVDiv__uCharC3Block.html#affcbd2edfacc2eda29114789ab1adf80" title="Block iterate function.">iterate</a>();
+<a name="l00642"></a>00642         };
+<a name="l00643"></a>00643 
+<a name="l00657"></a><a class="code" href="classQVDiv__sFloatC3Block.html">00657</a> <span class="keyword">class </span><a class="code" href="classQVDiv__sFloatC3Block.html" title="Divides pixel values of an image by pixel values of another image and places the...">QVDiv_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00658"></a>00658         {
+<a name="l00659"></a>00659         <span class="keyword">public</span>:
+<a name="l00661"></a>00661                 <a class="code" href="classQVDiv__sFloatC3Block.html#a305496e35df360d96d611934cb45b6ed" title="Block constructor.">QVDiv_sFloatC3Block</a>(QString name = QString());
+<a name="l00663"></a>00663                 <span class="keywordtype">void</span> <a class="code" href="classQVDiv__sFloatC3Block.html#a88f636597c98782ead84038c504b3eb9" title="Block iterate function.">iterate</a>();
+<a name="l00664"></a>00664         };
+<a name="l00665"></a>00665 
+<a name="l00679"></a><a class="code" href="classQVDiv__sFloatC1Block.html">00679</a> <span class="keyword">class </span><a class="code" href="classQVDiv__sFloatC1Block.html" title="Divides pixel values of an image by pixel values of another image and places the...">QVDiv_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00680"></a>00680         {
+<a name="l00681"></a>00681         <span class="keyword">public</span>:
+<a name="l00683"></a>00683                 <a class="code" href="classQVDiv__sFloatC1Block.html#a8018040af42c86e7f2cf31abbe3a1a65" title="Block constructor.">QVDiv_sFloatC1Block</a>(QString name = QString());
+<a name="l00685"></a>00685                 <span class="keywordtype">void</span> <a class="code" href="classQVDiv__sFloatC1Block.html#a6867f8cf10989a1bf3597b910104a624" title="Block iterate function.">iterate</a>();
+<a name="l00686"></a>00686         };
+<a name="l00687"></a>00687 
+<a name="l00702"></a><a class="code" href="classQVDivC__uCharC1Block.html">00702</a> <span class="keyword">class </span><a class="code" href="classQVDivC__uCharC1Block.html" title="Divides pixel values of a source image by a constant and places the scaled results...">QVDivC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00703"></a>00703         {
+<a name="l00704"></a>00704         <span class="keyword">public</span>:
+<a name="l00706"></a>00706                 <a class="code" href="classQVDivC__uCharC1Block.html#a3aa4b40f3b59f6e75e262ee0bc7dcae8" title="Block constructor.">QVDivC_uCharC1Block</a>(QString name = QString());
+<a name="l00708"></a>00708                 <span class="keywordtype">void</span> <a class="code" href="classQVDivC__uCharC1Block.html#aefbc725c55b44782ddf88d14c7eb1993" title="Block iterate function.">iterate</a>();
+<a name="l00709"></a>00709         };
+<a name="l00710"></a>00710 
+<a name="l00724"></a><a class="code" href="classQVDivC__sFloatC1Block.html">00724</a> <span class="keyword">class </span><a class="code" href="classQVDivC__sFloatC1Block.html" title="Divides pixel values of a source image by a constant and places the scaled results...">QVDivC_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00725"></a>00725         {
+<a name="l00726"></a>00726         <span class="keyword">public</span>:
+<a name="l00728"></a>00728                 <a class="code" href="classQVDivC__sFloatC1Block.html#a6789948fddbec1ba7849dbe458af4430" title="Block constructor.">QVDivC_sFloatC1Block</a>(QString name = QString());
+<a name="l00730"></a>00730                 <span class="keywordtype">void</span> <a class="code" href="classQVDivC__sFloatC1Block.html#af7bc06fd6dd7ed5234ecdddd9bb5ae46" title="Block iterate function.">iterate</a>();
+<a name="l00731"></a>00731         };
+<a name="l00732"></a>00732 
+<a name="l00745"></a><a class="code" href="classQVAbs__sShortC1Block.html">00745</a> <span class="keyword">class </span><a class="code" href="classQVAbs__sShortC1Block.html" title="Computes absolute value of each pixel of a source image and places results in the...">QVAbs_sShortC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00746"></a>00746         {
+<a name="l00747"></a>00747         <span class="keyword">public</span>:
+<a name="l00749"></a>00749                 <a class="code" href="classQVAbs__sShortC1Block.html#ab7ccd753e9663dabccb16ec6b3aefdd7" title="Block constructor.">QVAbs_sShortC1Block</a>(QString name = QString());
+<a name="l00751"></a>00751                 <span class="keywordtype">void</span> <a class="code" href="classQVAbs__sShortC1Block.html#a05ea836da4a2096534186d2d2c4381aa" title="Block iterate function.">iterate</a>();
+<a name="l00752"></a>00752         };
+<a name="l00753"></a>00753 
+<a name="l00766"></a><a class="code" href="classQVAbs__sFloatC1Block.html">00766</a> <span class="keyword">class </span><a class="code" href="classQVAbs__sFloatC1Block.html" title="Computes absolute value of each pixel of a source image and places results in the...">QVAbs_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00767"></a>00767         {
+<a name="l00768"></a>00768         <span class="keyword">public</span>:
+<a name="l00770"></a>00770                 <a class="code" href="classQVAbs__sFloatC1Block.html#aa7ff2ea8eaf7a127cfa2670ee1cf474f" title="Block constructor.">QVAbs_sFloatC1Block</a>(QString name = QString());
+<a name="l00772"></a>00772                 <span class="keywordtype">void</span> <a class="code" href="classQVAbs__sFloatC1Block.html#a1237ae1768bf0eff119cdf72a5903f2b" title="Block iterate function.">iterate</a>();
+<a name="l00773"></a>00773         };
+<a name="l00774"></a>00774 
+<a name="l00788"></a><a class="code" href="classQVAbsDiff__uCharC1Block.html">00788</a> <span class="keyword">class </span><a class="code" href="classQVAbsDiff__uCharC1Block.html" title="Calculate absolute difference between corresponding pixels of the two images or between...">QVAbsDiff_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00789"></a>00789         {
+<a name="l00790"></a>00790         <span class="keyword">public</span>:
+<a name="l00792"></a>00792                 <a class="code" href="classQVAbsDiff__uCharC1Block.html#ada6bb4bcf9e953da40502f873f9f155b" title="Block constructor.">QVAbsDiff_uCharC1Block</a>(QString name = QString());
+<a name="l00794"></a>00794                 <span class="keywordtype">void</span> <a class="code" href="classQVAbsDiff__uCharC1Block.html#a51b1aff6a97f4e55bce3c98e5192f738" title="Block iterate function.">iterate</a>();
+<a name="l00795"></a>00795         };
+<a name="l00796"></a>00796 
+<a name="l00810"></a><a class="code" href="classQVAbsDiff__sFloatC1Block.html">00810</a> <span class="keyword">class </span><a class="code" href="classQVAbsDiff__sFloatC1Block.html" title="Calculate absolute difference between corresponding pixels of the two images or between...">QVAbsDiff_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00811"></a>00811         {
+<a name="l00812"></a>00812         <span class="keyword">public</span>:
+<a name="l00814"></a>00814                 <a class="code" href="classQVAbsDiff__sFloatC1Block.html#ace43c1c2d36a51a99f6f52daf5567635" title="Block constructor.">QVAbsDiff_sFloatC1Block</a>(QString name = QString());
+<a name="l00816"></a>00816                 <span class="keywordtype">void</span> <a class="code" href="classQVAbsDiff__sFloatC1Block.html#a5904dc43925143acf8b4cc85342f10bb" title="Block iterate function.">iterate</a>();
+<a name="l00817"></a>00817         };
+<a name="l00818"></a>00818 
+<a name="l00831"></a><a class="code" href="classQVSqr__sFloatC1Block.html">00831</a> <span class="keyword">class </span><a class="code" href="classQVSqr__sFloatC1Block.html" title="Squares pixel values of an image and places results in the destination image; for...">QVSqr_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00832"></a>00832         {
+<a name="l00833"></a>00833         <span class="keyword">public</span>:
+<a name="l00835"></a>00835                 <a class="code" href="classQVSqr__sFloatC1Block.html#a65d0671528da5691ffc04a8e103db4e9" title="Block constructor.">QVSqr_sFloatC1Block</a>(QString name = QString());
+<a name="l00837"></a>00837                 <span class="keywordtype">void</span> <a class="code" href="classQVSqr__sFloatC1Block.html#aba4f5a38d1af7b38d7b85b4720221e39" title="Block iterate function.">iterate</a>();
+<a name="l00838"></a>00838         };
+<a name="l00839"></a>00839 
+<a name="l00852"></a><a class="code" href="classQVLn__sFloatC1Block.html">00852</a> <span class="keyword">class </span><a class="code" href="classQVLn__sFloatC1Block.html" title="Computes the natural logarithm of each pixel values of a source image and places...">QVLn_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00853"></a>00853         {
+<a name="l00854"></a>00854         <span class="keyword">public</span>:
+<a name="l00856"></a>00856                 <a class="code" href="classQVLn__sFloatC1Block.html#a8a95350a561890205b76765633d047fd" title="Block constructor.">QVLn_sFloatC1Block</a>(QString name = QString());
+<a name="l00858"></a>00858                 <span class="keywordtype">void</span> <a class="code" href="classQVLn__sFloatC1Block.html#a57c541a774c3be906a0cac0a9423f7da" title="Block iterate function.">iterate</a>();
+<a name="l00859"></a>00859         };
+<a name="l00860"></a>00860 
+<a name="l00873"></a><a class="code" href="classQVLn__sFloatC3Block.html">00873</a> <span class="keyword">class </span><a class="code" href="classQVLn__sFloatC3Block.html" title="Computes the natural logarithm of each pixel values of a source image and places...">QVLn_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00874"></a>00874         {
+<a name="l00875"></a>00875         <span class="keyword">public</span>:
+<a name="l00877"></a>00877                 <a class="code" href="classQVLn__sFloatC3Block.html#a91bcad33bbbc806db991be1e4e39b578" title="Block constructor.">QVLn_sFloatC3Block</a>(QString name = QString());
+<a name="l00879"></a>00879                 <span class="keywordtype">void</span> <a class="code" href="classQVLn__sFloatC3Block.html#af6c2f3440940b23a06528c2cdfe4f65b" title="Block iterate function.">iterate</a>();
+<a name="l00880"></a>00880         };
+<a name="l00881"></a>00881 
+<a name="l00895"></a><a class="code" href="classQVAnd__uCharC1Block.html">00895</a> <span class="keyword">class </span><a class="code" href="classQVAnd__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAnd_8u_C1R.">QVAnd_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00896"></a>00896         {
+<a name="l00897"></a>00897         <span class="keyword">public</span>:
+<a name="l00899"></a>00899                 <a class="code" href="classQVAnd__uCharC1Block.html#af0b3d97e0f780085a735c78108842b77" title="Block constructor.">QVAnd_uCharC1Block</a>(QString name = QString());
+<a name="l00901"></a>00901                 <span class="keywordtype">void</span> <a class="code" href="classQVAnd__uCharC1Block.html#a7fb9cbfd5457632728b6d5a377652cc3" title="Block iterate function.">iterate</a>();
+<a name="l00902"></a>00902         };
+<a name="l00903"></a>00903 
+<a name="l00917"></a><a class="code" href="classQVAnd__uCharC3Block.html">00917</a> <span class="keyword">class </span><a class="code" href="classQVAnd__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAnd_8u_C3R.">QVAnd_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00918"></a>00918         {
+<a name="l00919"></a>00919         <span class="keyword">public</span>:
+<a name="l00921"></a>00921                 <a class="code" href="classQVAnd__uCharC3Block.html#adfb8175173088334c74dd76beb6cc960" title="Block constructor.">QVAnd_uCharC3Block</a>(QString name = QString());
+<a name="l00923"></a>00923                 <span class="keywordtype">void</span> <a class="code" href="classQVAnd__uCharC3Block.html#a2c191f2acf50ac33959602ab709908d2" title="Block iterate function.">iterate</a>();
+<a name="l00924"></a>00924         };
+<a name="l00925"></a>00925 
+<a name="l00939"></a><a class="code" href="classQVAnd__uShortC1Block.html">00939</a> <span class="keyword">class </span><a class="code" href="classQVAnd__uShortC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAnd_16u_C1R.">QVAnd_uShortC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00940"></a>00940         {
+<a name="l00941"></a>00941         <span class="keyword">public</span>:
+<a name="l00943"></a>00943                 <a class="code" href="classQVAnd__uShortC1Block.html#a3d679713a300b1906b72c7847f8f0343" title="Block constructor.">QVAnd_uShortC1Block</a>(QString name = QString());
+<a name="l00945"></a>00945                 <span class="keywordtype">void</span> <a class="code" href="classQVAnd__uShortC1Block.html#afa4ab635682999ce9b8929cafb694d3f" title="Block iterate function.">iterate</a>();
+<a name="l00946"></a>00946         };
+<a name="l00947"></a>00947 
+<a name="l00961"></a><a class="code" href="classQVAnd__uShortC3Block.html">00961</a> <span class="keyword">class </span><a class="code" href="classQVAnd__uShortC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAnd_16u_C3R.">QVAnd_uShortC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00962"></a>00962         {
+<a name="l00963"></a>00963         <span class="keyword">public</span>:
+<a name="l00965"></a>00965                 <a class="code" href="classQVAnd__uShortC3Block.html#ab2f38b7645bc04cea58f252badfbd084" title="Block constructor.">QVAnd_uShortC3Block</a>(QString name = QString());
+<a name="l00967"></a>00967                 <span class="keywordtype">void</span> <a class="code" href="classQVAnd__uShortC3Block.html#a94dbb43c0f3227b1c3b6cc43e220691a" title="Block iterate function.">iterate</a>();
+<a name="l00968"></a>00968         };
+<a name="l00969"></a>00969 
+<a name="l00983"></a><a class="code" href="classQVAnd__sIntC1Block.html">00983</a> <span class="keyword">class </span><a class="code" href="classQVAnd__sIntC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAnd_32s_C1R.">QVAnd_sIntC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00984"></a>00984         {
+<a name="l00985"></a>00985         <span class="keyword">public</span>:
+<a name="l00987"></a>00987                 <a class="code" href="classQVAnd__sIntC1Block.html#a44261df2933e670b11109931bddcef47" title="Block constructor.">QVAnd_sIntC1Block</a>(QString name = QString());
+<a name="l00989"></a>00989                 <span class="keywordtype">void</span> <a class="code" href="classQVAnd__sIntC1Block.html#a3e9675cf627a18f18490f097ba4ca321" title="Block iterate function.">iterate</a>();
+<a name="l00990"></a>00990         };
+<a name="l00991"></a>00991 
+<a name="l01005"></a><a class="code" href="classQVAnd__sIntC3Block.html">01005</a> <span class="keyword">class </span><a class="code" href="classQVAnd__sIntC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAnd_32s_C3R.">QVAnd_sIntC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01006"></a>01006         {
+<a name="l01007"></a>01007         <span class="keyword">public</span>:
+<a name="l01009"></a>01009                 <a class="code" href="classQVAnd__sIntC3Block.html#a107f7242fa878461da162ad2ba40f3ef" title="Block constructor.">QVAnd_sIntC3Block</a>(QString name = QString());
+<a name="l01011"></a>01011                 <span class="keywordtype">void</span> <a class="code" href="classQVAnd__sIntC3Block.html#a71ca94f8c3aa4242b881c677d47830aa" title="Block iterate function.">iterate</a>();
+<a name="l01012"></a>01012         };
+<a name="l01013"></a>01013 
+<a name="l01027"></a><a class="code" href="classQVOr__uCharC1Block.html">01027</a> <span class="keyword">class </span><a class="code" href="classQVOr__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOr_8u_C1R.">QVOr_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01028"></a>01028         {
+<a name="l01029"></a>01029         <span class="keyword">public</span>:
+<a name="l01031"></a>01031                 <a class="code" href="classQVOr__uCharC1Block.html#acdb83e8b799b802b118270a75cab4351" title="Block constructor.">QVOr_uCharC1Block</a>(QString name = QString());
+<a name="l01033"></a>01033                 <span class="keywordtype">void</span> <a class="code" href="classQVOr__uCharC1Block.html#a20513e6e3fc3e92d3e27576f6504d52b" title="Block iterate function.">iterate</a>();
+<a name="l01034"></a>01034         };
+<a name="l01035"></a>01035 
+<a name="l01049"></a><a class="code" href="classQVOr__uCharC3Block.html">01049</a> <span class="keyword">class </span><a class="code" href="classQVOr__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOr_8u_C3R.">QVOr_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01050"></a>01050         {
+<a name="l01051"></a>01051         <span class="keyword">public</span>:
+<a name="l01053"></a>01053                 <a class="code" href="classQVOr__uCharC3Block.html#af0e680f095a6eccc1995f2f695b5a0e9" title="Block constructor.">QVOr_uCharC3Block</a>(QString name = QString());
+<a name="l01055"></a>01055                 <span class="keywordtype">void</span> <a class="code" href="classQVOr__uCharC3Block.html#a2b71ef6990600f7cd63b0c87a7daa28e" title="Block iterate function.">iterate</a>();
+<a name="l01056"></a>01056         };
+<a name="l01057"></a>01057 
+<a name="l01071"></a><a class="code" href="classQVOr__uShortC1Block.html">01071</a> <span class="keyword">class </span><a class="code" href="classQVOr__uShortC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOr_16u_C1R.">QVOr_uShortC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01072"></a>01072         {
+<a name="l01073"></a>01073         <span class="keyword">public</span>:
+<a name="l01075"></a>01075                 <a class="code" href="classQVOr__uShortC1Block.html#aae2b4b7e329389793e4c0801e9715236" title="Block constructor.">QVOr_uShortC1Block</a>(QString name = QString());
+<a name="l01077"></a>01077                 <span class="keywordtype">void</span> <a class="code" href="classQVOr__uShortC1Block.html#af890a57acf5bfae6a1192bd697bb998c" title="Block iterate function.">iterate</a>();
+<a name="l01078"></a>01078         };
+<a name="l01079"></a>01079 
+<a name="l01093"></a><a class="code" href="classQVOr__uShortC3Block.html">01093</a> <span class="keyword">class </span><a class="code" href="classQVOr__uShortC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOr_16u_C3R.">QVOr_uShortC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01094"></a>01094         {
+<a name="l01095"></a>01095         <span class="keyword">public</span>:
+<a name="l01097"></a>01097                 <a class="code" href="classQVOr__uShortC3Block.html#a3ce1b4b328e545381441dca8fa1d41f4" title="Block constructor.">QVOr_uShortC3Block</a>(QString name = QString());
+<a name="l01099"></a>01099                 <span class="keywordtype">void</span> <a class="code" href="classQVOr__uShortC3Block.html#af2a39954047bd2d586271bb1a87df41b" title="Block iterate function.">iterate</a>();
+<a name="l01100"></a>01100         };
+<a name="l01101"></a>01101 
+<a name="l01115"></a><a class="code" href="classQVOr__sIntC1Block.html">01115</a> <span class="keyword">class </span><a class="code" href="classQVOr__sIntC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOr_32s_C1R.">QVOr_sIntC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01116"></a>01116         {
+<a name="l01117"></a>01117         <span class="keyword">public</span>:
+<a name="l01119"></a>01119                 <a class="code" href="classQVOr__sIntC1Block.html#a349dfa143cbbbf5611af2f80293372f4" title="Block constructor.">QVOr_sIntC1Block</a>(QString name = QString());
+<a name="l01121"></a>01121                 <span class="keywordtype">void</span> <a class="code" href="classQVOr__sIntC1Block.html#ab4b2b501aa5dfd9e042da069d785183a" title="Block iterate function.">iterate</a>();
+<a name="l01122"></a>01122         };
+<a name="l01123"></a>01123 
+<a name="l01137"></a><a class="code" href="classQVOr__sIntC3Block.html">01137</a> <span class="keyword">class </span><a class="code" href="classQVOr__sIntC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOr_32s_C3R.">QVOr_sIntC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01138"></a>01138         {
+<a name="l01139"></a>01139         <span class="keyword">public</span>:
+<a name="l01141"></a>01141                 <a class="code" href="classQVOr__sIntC3Block.html#a9b719ce5dfd52c3e74357995edb48728" title="Block constructor.">QVOr_sIntC3Block</a>(QString name = QString());
+<a name="l01143"></a>01143                 <span class="keywordtype">void</span> <a class="code" href="classQVOr__sIntC3Block.html#a09cf8e3cbd8651f74561987587c5bc35" title="Block iterate function.">iterate</a>();
+<a name="l01144"></a>01144         };
+<a name="l01145"></a>01145 
+<a name="l01159"></a><a class="code" href="classQVXor__uCharC1Block.html">01159</a> <span class="keyword">class </span><a class="code" href="classQVXor__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXor_8u_C1R.">QVXor_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01160"></a>01160         {
+<a name="l01161"></a>01161         <span class="keyword">public</span>:
+<a name="l01163"></a>01163                 <a class="code" href="classQVXor__uCharC1Block.html#a7993239906f7aef9af89d8a2c8fcbb0d" title="Block constructor.">QVXor_uCharC1Block</a>(QString name = QString());
+<a name="l01165"></a>01165                 <span class="keywordtype">void</span> <a class="code" href="classQVXor__uCharC1Block.html#a93fa885cdf779ccdd60e4d29ed64daac" title="Block iterate function.">iterate</a>();
+<a name="l01166"></a>01166         };
+<a name="l01167"></a>01167 
+<a name="l01181"></a><a class="code" href="classQVXor__uCharC3Block.html">01181</a> <span class="keyword">class </span><a class="code" href="classQVXor__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXor_8u_C3R.">QVXor_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01182"></a>01182         {
+<a name="l01183"></a>01183         <span class="keyword">public</span>:
+<a name="l01185"></a>01185                 <a class="code" href="classQVXor__uCharC3Block.html#a9117062d0aab6539e103674421fc1ad6" title="Block constructor.">QVXor_uCharC3Block</a>(QString name = QString());
+<a name="l01187"></a>01187                 <span class="keywordtype">void</span> <a class="code" href="classQVXor__uCharC3Block.html#a606a74c55a91dacd973aadf056c08942" title="Block iterate function.">iterate</a>();
+<a name="l01188"></a>01188         };
+<a name="l01189"></a>01189 
+<a name="l01203"></a><a class="code" href="classQVXor__uShortC1Block.html">01203</a> <span class="keyword">class </span><a class="code" href="classQVXor__uShortC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXor_16u_C1R.">QVXor_uShortC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01204"></a>01204         {
+<a name="l01205"></a>01205         <span class="keyword">public</span>:
+<a name="l01207"></a>01207                 <a class="code" href="classQVXor__uShortC1Block.html#a7eb21818b1311d2842dea2340ca03ab6" title="Block constructor.">QVXor_uShortC1Block</a>(QString name = QString());
+<a name="l01209"></a>01209                 <span class="keywordtype">void</span> <a class="code" href="classQVXor__uShortC1Block.html#a0f25ec73405b0712abbbdc4e703a562d" title="Block iterate function.">iterate</a>();
+<a name="l01210"></a>01210         };
+<a name="l01211"></a>01211 
+<a name="l01225"></a><a class="code" href="classQVXor__uShortC3Block.html">01225</a> <span class="keyword">class </span><a class="code" href="classQVXor__uShortC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXor_16u_C3R.">QVXor_uShortC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01226"></a>01226         {
+<a name="l01227"></a>01227         <span class="keyword">public</span>:
+<a name="l01229"></a>01229                 <a class="code" href="classQVXor__uShortC3Block.html#a4e31fdb34b5168565a7df8ec03192f14" title="Block constructor.">QVXor_uShortC3Block</a>(QString name = QString());
+<a name="l01231"></a>01231                 <span class="keywordtype">void</span> <a class="code" href="classQVXor__uShortC3Block.html#ad39d239c2de3f653f957ab179678e1e1" title="Block iterate function.">iterate</a>();
+<a name="l01232"></a>01232         };
+<a name="l01233"></a>01233 
+<a name="l01247"></a><a class="code" href="classQVXor__sIntC1Block.html">01247</a> <span class="keyword">class </span><a class="code" href="classQVXor__sIntC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXor_32s_C1R.">QVXor_sIntC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01248"></a>01248         {
+<a name="l01249"></a>01249         <span class="keyword">public</span>:
+<a name="l01251"></a>01251                 <a class="code" href="classQVXor__sIntC1Block.html#af464ef0930d4bee0f141f783239a612c" title="Block constructor.">QVXor_sIntC1Block</a>(QString name = QString());
+<a name="l01253"></a>01253                 <span class="keywordtype">void</span> <a class="code" href="classQVXor__sIntC1Block.html#abde72b37f0f7ad059a1cc3c5547681a2" title="Block iterate function.">iterate</a>();
+<a name="l01254"></a>01254         };
+<a name="l01255"></a>01255 
+<a name="l01269"></a><a class="code" href="classQVXor__sIntC3Block.html">01269</a> <span class="keyword">class </span><a class="code" href="classQVXor__sIntC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXor_32s_C3R.">QVXor_sIntC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01270"></a>01270         {
+<a name="l01271"></a>01271         <span class="keyword">public</span>:
+<a name="l01273"></a>01273                 <a class="code" href="classQVXor__sIntC3Block.html#aba0b53aacd9a3ceaf4ca6049befd82f2" title="Block constructor.">QVXor_sIntC3Block</a>(QString name = QString());
+<a name="l01275"></a>01275                 <span class="keywordtype">void</span> <a class="code" href="classQVXor__sIntC3Block.html#af69cd8dbede4164176edc403077e0e7a" title="Block iterate function.">iterate</a>();
+<a name="l01276"></a>01276         };
+<a name="l01277"></a>01277 
+<a name="l01290"></a><a class="code" href="classQVNot__uCharC1Block.html">01290</a> <span class="keyword">class </span><a class="code" href="classQVNot__uCharC1Block.html" title="Performs corresponding bitwise logical operation between pixels of two image (AndC...">QVNot_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01291"></a>01291         {
+<a name="l01292"></a>01292         <span class="keyword">public</span>:
+<a name="l01294"></a>01294                 <a class="code" href="classQVNot__uCharC1Block.html#a51a8524676d7aa69a433f5b37fb4ca26" title="Block constructor.">QVNot_uCharC1Block</a>(QString name = QString());
+<a name="l01296"></a>01296                 <span class="keywordtype">void</span> <a class="code" href="classQVNot__uCharC1Block.html#a53687b1b32c355c43f581c1e269a9660" title="Block iterate function.">iterate</a>();
+<a name="l01297"></a>01297         };
+<a name="l01298"></a>01298 
+<a name="l01311"></a><a class="code" href="classQVNot__uCharC3Block.html">01311</a> <span class="keyword">class </span><a class="code" href="classQVNot__uCharC3Block.html" title="Performs corresponding bitwise logical operation between pixels of two image (AndC...">QVNot_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01312"></a>01312         {
+<a name="l01313"></a>01313         <span class="keyword">public</span>:
+<a name="l01315"></a>01315                 <a class="code" href="classQVNot__uCharC3Block.html#aa3f766bcc91dcb8b1887f8c3c2a1b9c4" title="Block constructor.">QVNot_uCharC3Block</a>(QString name = QString());
+<a name="l01317"></a>01317                 <span class="keywordtype">void</span> <a class="code" href="classQVNot__uCharC3Block.html#add180ca03a02ab581a76bf789d3afbf9" title="Block iterate function.">iterate</a>();
+<a name="l01318"></a>01318         };
+<a name="l01319"></a>01319 
+<a name="l01333"></a><a class="code" href="classQVAndC__uCharC1Block.html">01333</a> <span class="keyword">class </span><a class="code" href="classQVAndC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiAndC_8u_C1R.">QVAndC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01334"></a>01334         {
+<a name="l01335"></a>01335         <span class="keyword">public</span>:
+<a name="l01337"></a>01337                 <a class="code" href="classQVAndC__uCharC1Block.html#a42fcf3c7cfd0555e43ee568a28a0d121" title="Block constructor.">QVAndC_uCharC1Block</a>(QString name = QString());
+<a name="l01339"></a>01339                 <span class="keywordtype">void</span> <a class="code" href="classQVAndC__uCharC1Block.html#a958c77cb600ccf557adb2b4aae98e511" title="Block iterate function.">iterate</a>();
+<a name="l01340"></a>01340         };
+<a name="l01341"></a>01341 
+<a name="l01355"></a><a class="code" href="classQVOrC__uCharC1Block.html">01355</a> <span class="keyword">class </span><a class="code" href="classQVOrC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiOrC_8u_C1R.">QVOrC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01356"></a>01356         {
+<a name="l01357"></a>01357         <span class="keyword">public</span>:
+<a name="l01359"></a>01359                 <a class="code" href="classQVOrC__uCharC1Block.html#a5b2bdb927b604a27e629634c649e1f2f" title="Block constructor.">QVOrC_uCharC1Block</a>(QString name = QString());
+<a name="l01361"></a>01361                 <span class="keywordtype">void</span> <a class="code" href="classQVOrC__uCharC1Block.html#a92b025b09ac133d15c47c0fcaf29f07d" title="Block iterate function.">iterate</a>();
+<a name="l01362"></a>01362         };
+<a name="l01363"></a>01363 
+<a name="l01377"></a><a class="code" href="classQVXorC__uCharC1Block.html">01377</a> <span class="keyword">class </span><a class="code" href="classQVXorC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiXorC_8u_C1R.">QVXorC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01378"></a>01378         {
+<a name="l01379"></a>01379         <span class="keyword">public</span>:
+<a name="l01381"></a>01381                 <a class="code" href="classQVXorC__uCharC1Block.html#a4cf26312e8489badbe77edb9003237ce" title="Block constructor.">QVXorC_uCharC1Block</a>(QString name = QString());
+<a name="l01383"></a>01383                 <span class="keywordtype">void</span> <a class="code" href="classQVXorC__uCharC1Block.html#a3902c6d9899f099bf561b1001cbade01" title="Block iterate function.">iterate</a>();
+<a name="l01384"></a>01384         };
+<a name="l01385"></a>01385 
+<a name="l01399"></a><a class="code" href="classQVLShiftC__uCharC1Block.html">01399</a> <span class="keyword">class </span><a class="code" href="classQVLShiftC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiLShiftC_8u_C1R.">QVLShiftC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01400"></a>01400         {
+<a name="l01401"></a>01401         <span class="keyword">public</span>:
+<a name="l01403"></a>01403                 <a class="code" href="classQVLShiftC__uCharC1Block.html#a819f283672348c6e05ec6db128693a18" title="Block constructor.">QVLShiftC_uCharC1Block</a>(QString name = QString());
+<a name="l01405"></a>01405                 <span class="keywordtype">void</span> <a class="code" href="classQVLShiftC__uCharC1Block.html#acdfd1432079f32a122b990842ad3e2d5" title="Block iterate function.">iterate</a>();
+<a name="l01406"></a>01406         };
+<a name="l01407"></a>01407 
+<a name="l01421"></a><a class="code" href="classQVRShiftC__uCharC1Block.html">01421</a> <span class="keyword">class </span><a class="code" href="classQVRShiftC__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiRShiftC_8u_C1R.">QVRShiftC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01422"></a>01422         {
+<a name="l01423"></a>01423         <span class="keyword">public</span>:
+<a name="l01425"></a>01425                 <a class="code" href="classQVRShiftC__uCharC1Block.html#a03edee6467c22c6482e40804a74b4824" title="Block constructor.">QVRShiftC_uCharC1Block</a>(QString name = QString());
+<a name="l01427"></a>01427                 <span class="keywordtype">void</span> <a class="code" href="classQVRShiftC__uCharC1Block.html#a866a24f191bd7b31d7005ea6d690b89f" title="Block iterate function.">iterate</a>();
+<a name="l01428"></a>01428         };
+<a name="l01429"></a>01429 
+<a name="l01442"></a><a class="code" href="classQVRGBToGray__uCharC3C1Block.html">01442</a> <span class="keyword">class </span><a class="code" href="classQVRGBToGray__uCharC3C1Block.html" title="Converts an RGB image to gray scale (fixed coefficients).">QVRGBToGray_uCharC3C1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01443"></a>01443         {
+<a name="l01444"></a>01444         <span class="keyword">public</span>:
+<a name="l01446"></a>01446                 <a class="code" href="classQVRGBToGray__uCharC3C1Block.html#a7fcc082f439f61bf246de41d62224c9c" title="Block constructor.">QVRGBToGray_uCharC3C1Block</a>(QString name = QString());
+<a name="l01448"></a>01448                 <span class="keywordtype">void</span> <a class="code" href="classQVRGBToGray__uCharC3C1Block.html#ac6b6bf66e6bc9c8b250b439158c61de3" title="Block iterate function.">iterate</a>();
+<a name="l01449"></a>01449         };
+<a name="l01450"></a>01450 
+<a name="l01463"></a><a class="code" href="classQVRGBToGray__sFloatC3C1Block.html">01463</a> <span class="keyword">class </span><a class="code" href="classQVRGBToGray__sFloatC3C1Block.html" title="Converts an RGB image to gray scale (fixed coefficients).">QVRGBToGray_sFloatC3C1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01464"></a>01464         {
+<a name="l01465"></a>01465         <span class="keyword">public</span>:
+<a name="l01467"></a>01467                 <a class="code" href="classQVRGBToGray__sFloatC3C1Block.html#a3329609077f4f77f99afdd9bc8e18cd0" title="Block constructor.">QVRGBToGray_sFloatC3C1Block</a>(QString name = QString());
+<a name="l01469"></a>01469                 <span class="keywordtype">void</span> <a class="code" href="classQVRGBToGray__sFloatC3C1Block.html#a929d7bea801892e20965272402ca7b8e" title="Block iterate function.">iterate</a>();
+<a name="l01470"></a>01470         };
+<a name="l01471"></a>01471 
+<a name="l01486"></a><a class="code" href="classQVThreshold__uCharC1Block.html">01486</a> <span class="keyword">class </span><a class="code" href="classQVThreshold__uCharC1Block.html" title="Performs thresholding of an image using the specified level.">QVThreshold_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01487"></a>01487         {
+<a name="l01488"></a>01488         <span class="keyword">public</span>:
+<a name="l01490"></a>01490                 <a class="code" href="classQVThreshold__uCharC1Block.html#aaee623518624010e920b829d2a43a16d" title="Block constructor.">QVThreshold_uCharC1Block</a>(QString name = QString());
+<a name="l01492"></a>01492                 <span class="keywordtype">void</span> <a class="code" href="classQVThreshold__uCharC1Block.html#a6ca4deba3bb425c7612500795d79e3af" title="Block iterate function.">iterate</a>();
+<a name="l01493"></a>01493         };
+<a name="l01494"></a>01494 
+<a name="l01509"></a><a class="code" href="classQVThreshold__sFloatC1Block.html">01509</a> <span class="keyword">class </span><a class="code" href="classQVThreshold__sFloatC1Block.html" title="Performs thresholding of an image using the specified level.">QVThreshold_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01510"></a>01510         {
+<a name="l01511"></a>01511         <span class="keyword">public</span>:
+<a name="l01513"></a>01513                 <a class="code" href="classQVThreshold__sFloatC1Block.html#adce53f854d84407b6766ccd41c4bdbbf" title="Block constructor.">QVThreshold_sFloatC1Block</a>(QString name = QString());
+<a name="l01515"></a>01515                 <span class="keywordtype">void</span> <a class="code" href="classQVThreshold__sFloatC1Block.html#a142b927f61ba017a5b4159877d54449b" title="Block iterate function.">iterate</a>();
+<a name="l01516"></a>01516         };
+<a name="l01517"></a>01517 
+<a name="l01529"></a><a class="code" href="classQVComputeThreshold__Otsu__uCharC1Block.html">01529</a> <span class="keyword">class </span><a class="code" href="classQVComputeThreshold__Otsu__uCharC1Block.html" title="Calculate Otsu theshold value of images.">QVComputeThreshold_Otsu_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01530"></a>01530         {
+<a name="l01531"></a>01531         <span class="keyword">public</span>:
+<a name="l01533"></a>01533                 <a class="code" href="classQVComputeThreshold__Otsu__uCharC1Block.html#a26ec90f787ad59cb33840980300861dd" title="Block constructor.">QVComputeThreshold_Otsu_uCharC1Block</a>(QString name = QString());
+<a name="l01535"></a>01535                 <span class="keywordtype">void</span> <a class="code" href="classQVComputeThreshold__Otsu__uCharC1Block.html#a54b8fac4af1b266cb60eb09c834b21c8" title="Block iterate function.">iterate</a>();
+<a name="l01536"></a>01536         };
+<a name="l01537"></a>01537 
+<a name="l01552"></a><a class="code" href="classQVCompare__uCharC1Block.html">01552</a> <span class="keyword">class </span><a class="code" href="classQVCompare__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiCompare_8u_C1R.">QVCompare_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01553"></a>01553         {
+<a name="l01554"></a>01554         <span class="keyword">public</span>:
+<a name="l01556"></a>01556                 <a class="code" href="classQVCompare__uCharC1Block.html#af3761370062de6bdbb4dd749e92ad6e5" title="Block constructor.">QVCompare_uCharC1Block</a>(QString name = QString());
+<a name="l01558"></a>01558                 <span class="keywordtype">void</span> <a class="code" href="classQVCompare__uCharC1Block.html#a68f44f323f69f0a54bdbf763ee3ee53d" title="Block iterate function.">iterate</a>();
+<a name="l01559"></a>01559         };
+<a name="l01560"></a>01560 
+<a name="l01575"></a><a class="code" href="classQVCompare__sFloatC1Block.html">01575</a> <span class="keyword">class </span><a class="code" href="classQVCompare__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiCompare_32f_C1R.">QVCompare_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01576"></a>01576         {
+<a name="l01577"></a>01577         <span class="keyword">public</span>:
+<a name="l01579"></a>01579                 <a class="code" href="classQVCompare__sFloatC1Block.html#aba926f3c3311a2e67f38a9a7504794d4" title="Block constructor.">QVCompare_sFloatC1Block</a>(QString name = QString());
+<a name="l01581"></a>01581                 <span class="keywordtype">void</span> <a class="code" href="classQVCompare__sFloatC1Block.html#aba1cc7d93075f8888b6fe5febc906272" title="Block iterate function.">iterate</a>();
+<a name="l01582"></a>01582         };
+<a name="l01583"></a>01583 
+<a name="l01598"></a><a class="code" href="classQVCompareC__uCharC1Block.html">01598</a> <span class="keyword">class </span><a class="code" href="classQVCompareC__uCharC1Block.html" title="Compares pixel values of two images, or pixel values of an image to a constant value...">QVCompareC_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01599"></a>01599         {
+<a name="l01600"></a>01600         <span class="keyword">public</span>:
+<a name="l01602"></a>01602                 <a class="code" href="classQVCompareC__uCharC1Block.html#ac75179e0b812b01f8a135688a55c7caa" title="Block constructor.">QVCompareC_uCharC1Block</a>(QString name = QString());
+<a name="l01604"></a>01604                 <span class="keywordtype">void</span> <a class="code" href="classQVCompareC__uCharC1Block.html#a6fb837d869be7c1b11f32c6a4da2a165" title="Block iterate function.">iterate</a>();
+<a name="l01605"></a>01605         };
+<a name="l01606"></a>01606 
+<a name="l01621"></a><a class="code" href="classQVCompareC__sFloatC1Block.html">01621</a> <span class="keyword">class </span><a class="code" href="classQVCompareC__sFloatC1Block.html" title="Compares pixel values of two images, or pixel values of an image to a constant value...">QVCompareC_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01622"></a>01622         {
+<a name="l01623"></a>01623         <span class="keyword">public</span>:
+<a name="l01625"></a>01625                 <a class="code" href="classQVCompareC__sFloatC1Block.html#aef3fc50a4cc7da7a1805891270bfabc7" title="Block constructor.">QVCompareC_sFloatC1Block</a>(QString name = QString());
+<a name="l01627"></a>01627                 <span class="keywordtype">void</span> <a class="code" href="classQVCompareC__sFloatC1Block.html#a530e27b34dca8bff45faff1a63f57e14" title="Block iterate function.">iterate</a>();
+<a name="l01628"></a>01628         };
+<a name="l01629"></a>01629 
+<a name="l01644"></a><a class="code" href="classQVFilterBox__uCharC1Block.html">01644</a> <span class="keyword">class </span><a class="code" href="classQVFilterBox__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterBox_8u_C1R.">QVFilterBox_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01645"></a>01645         {
+<a name="l01646"></a>01646         <span class="keyword">public</span>:
+<a name="l01648"></a>01648                 <a class="code" href="classQVFilterBox__uCharC1Block.html#ad2968f16d9776a5dc00e49324a8deffb" title="Block constructor.">QVFilterBox_uCharC1Block</a>(QString name = QString());
+<a name="l01650"></a>01650                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterBox__uCharC1Block.html#aa9d68de1b06e7812a1b3237b0cc9730b" title="Block iterate function.">iterate</a>();
+<a name="l01651"></a>01651         };
+<a name="l01652"></a>01652 
+<a name="l01667"></a><a class="code" href="classQVFilterBox__uCharC3Block.html">01667</a> <span class="keyword">class </span><a class="code" href="classQVFilterBox__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterBox_8u_C3R.">QVFilterBox_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01668"></a>01668         {
+<a name="l01669"></a>01669         <span class="keyword">public</span>:
+<a name="l01671"></a>01671                 <a class="code" href="classQVFilterBox__uCharC3Block.html#a577efe21e540eb6602f9e2963e68e525" title="Block constructor.">QVFilterBox_uCharC3Block</a>(QString name = QString());
+<a name="l01673"></a>01673                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterBox__uCharC3Block.html#a843d1c1624e5e6359bc596bdb1348ab7" title="Block iterate function.">iterate</a>();
+<a name="l01674"></a>01674         };
+<a name="l01675"></a>01675 
+<a name="l01690"></a><a class="code" href="classQVFilterBox__sFloatC1Block.html">01690</a> <span class="keyword">class </span><a class="code" href="classQVFilterBox__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterBox_32f_C1R.">QVFilterBox_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01691"></a>01691         {
+<a name="l01692"></a>01692         <span class="keyword">public</span>:
+<a name="l01694"></a>01694                 <a class="code" href="classQVFilterBox__sFloatC1Block.html#a8c4adbf8342f504fbaf8a3192868f859" title="Block constructor.">QVFilterBox_sFloatC1Block</a>(QString name = QString());
+<a name="l01696"></a>01696                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterBox__sFloatC1Block.html#afb38b2f7c088c2bec50a58c7ec691f1a" title="Block iterate function.">iterate</a>();
+<a name="l01697"></a>01697         };
+<a name="l01698"></a>01698 
+<a name="l01713"></a><a class="code" href="classQVFilterMin__uCharC1Block.html">01713</a> <span class="keyword">class </span><a class="code" href="classQVFilterMin__uCharC1Block.html" title="Applies the &amp;quot;min&amp;quot; filter to an image.">QVFilterMin_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01714"></a>01714         {
+<a name="l01715"></a>01715         <span class="keyword">public</span>:
+<a name="l01717"></a>01717                 <a class="code" href="classQVFilterMin__uCharC1Block.html#a5b40efb0be7cc11d9288401a24f379a9" title="Block constructor.">QVFilterMin_uCharC1Block</a>(QString name = QString());
+<a name="l01719"></a>01719                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMin__uCharC1Block.html#a6c50683299316e8a918b4f12e6cda079" title="Block iterate function.">iterate</a>();
+<a name="l01720"></a>01720         };
+<a name="l01721"></a>01721 
+<a name="l01736"></a><a class="code" href="classQVFilterMin__uCharC3Block.html">01736</a> <span class="keyword">class </span><a class="code" href="classQVFilterMin__uCharC3Block.html" title="Applies the &amp;quot;min&amp;quot; filter to an image.">QVFilterMin_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01737"></a>01737         {
+<a name="l01738"></a>01738         <span class="keyword">public</span>:
+<a name="l01740"></a>01740                 <a class="code" href="classQVFilterMin__uCharC3Block.html#a86dcdb02f1fa8a37e91fbc68701e61e7" title="Block constructor.">QVFilterMin_uCharC3Block</a>(QString name = QString());
+<a name="l01742"></a>01742                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMin__uCharC3Block.html#ad20d471c11a24f54ef63f9658fd6d961" title="Block iterate function.">iterate</a>();
+<a name="l01743"></a>01743         };
+<a name="l01744"></a>01744 
+<a name="l01759"></a><a class="code" href="classQVFilterMin__sFloatC1Block.html">01759</a> <span class="keyword">class </span><a class="code" href="classQVFilterMin__sFloatC1Block.html" title="Applies the &amp;quot;min&amp;quot; filter to an image.">QVFilterMin_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01760"></a>01760         {
+<a name="l01761"></a>01761         <span class="keyword">public</span>:
+<a name="l01763"></a>01763                 <a class="code" href="classQVFilterMin__sFloatC1Block.html#afb4ee7d3c887b0a552118df67264703b" title="Block constructor.">QVFilterMin_sFloatC1Block</a>(QString name = QString());
+<a name="l01765"></a>01765                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMin__sFloatC1Block.html#a8587f794d266c93ba2d61109d652f193" title="Block iterate function.">iterate</a>();
+<a name="l01766"></a>01766         };
+<a name="l01767"></a>01767 
+<a name="l01782"></a><a class="code" href="classQVFilterMax__uCharC1Block.html">01782</a> <span class="keyword">class </span><a class="code" href="classQVFilterMax__uCharC1Block.html" title="Applies the &amp;quot;max&amp;quot; filter to an image.">QVFilterMax_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01783"></a>01783         {
+<a name="l01784"></a>01784         <span class="keyword">public</span>:
+<a name="l01786"></a>01786                 <a class="code" href="classQVFilterMax__uCharC1Block.html#aa8da0cec63cca331bd074236abc69315" title="Block constructor.">QVFilterMax_uCharC1Block</a>(QString name = QString());
+<a name="l01788"></a>01788                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMax__uCharC1Block.html#ab22c45ef63b09202ae86ed70e22f3759" title="Block iterate function.">iterate</a>();
+<a name="l01789"></a>01789         };
+<a name="l01790"></a>01790 
+<a name="l01805"></a><a class="code" href="classQVFilterMax__uCharC3Block.html">01805</a> <span class="keyword">class </span><a class="code" href="classQVFilterMax__uCharC3Block.html" title="Applies the &amp;quot;max&amp;quot; filter to an image.">QVFilterMax_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01806"></a>01806         {
+<a name="l01807"></a>01807         <span class="keyword">public</span>:
+<a name="l01809"></a>01809                 <a class="code" href="classQVFilterMax__uCharC3Block.html#a42f0cc0fdad7f4a387a1e463aa98ddcd" title="Block constructor.">QVFilterMax_uCharC3Block</a>(QString name = QString());
+<a name="l01811"></a>01811                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMax__uCharC3Block.html#a38cdd73f2a6253b0f2237e944eb22964" title="Block iterate function.">iterate</a>();
+<a name="l01812"></a>01812         };
+<a name="l01813"></a>01813 
+<a name="l01828"></a><a class="code" href="classQVFilterMax__sFloatC1Block.html">01828</a> <span class="keyword">class </span><a class="code" href="classQVFilterMax__sFloatC1Block.html" title="Applies the &amp;quot;max&amp;quot; filter to an image.">QVFilterMax_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01829"></a>01829         {
+<a name="l01830"></a>01830         <span class="keyword">public</span>:
+<a name="l01832"></a>01832                 <a class="code" href="classQVFilterMax__sFloatC1Block.html#adfb1739f84d29faf796209da099a8abe" title="Block constructor.">QVFilterMax_sFloatC1Block</a>(QString name = QString());
+<a name="l01834"></a>01834                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMax__sFloatC1Block.html#accbf158313aa7c27ecde0c236b388457" title="Block iterate function.">iterate</a>();
+<a name="l01835"></a>01835         };
+<a name="l01836"></a>01836 
+<a name="l01851"></a><a class="code" href="classQVFilterMedian__uCharC1Block.html">01851</a> <span class="keyword">class </span><a class="code" href="classQVFilterMedian__uCharC1Block.html" title="Filters an image using a box median filter.">QVFilterMedian_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01852"></a>01852         {
+<a name="l01853"></a>01853         <span class="keyword">public</span>:
+<a name="l01855"></a>01855                 <a class="code" href="classQVFilterMedian__uCharC1Block.html#abbb87bdaf67f75b50ce7e16d1137551d" title="Block constructor.">QVFilterMedian_uCharC1Block</a>(QString name = QString());
+<a name="l01857"></a>01857                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMedian__uCharC1Block.html#a8a8e38fb48e39e93c704fd0b18d44320" title="Block iterate function.">iterate</a>();
+<a name="l01858"></a>01858         };
+<a name="l01859"></a>01859 
+<a name="l01874"></a><a class="code" href="classQVFilterMedian__uCharC3Block.html">01874</a> <span class="keyword">class </span><a class="code" href="classQVFilterMedian__uCharC3Block.html" title="Filters an image using a box median filter.">QVFilterMedian_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01875"></a>01875         {
+<a name="l01876"></a>01876         <span class="keyword">public</span>:
+<a name="l01878"></a>01878                 <a class="code" href="classQVFilterMedian__uCharC3Block.html#a84653631b5cc5db3b14624be447b2732" title="Block constructor.">QVFilterMedian_uCharC3Block</a>(QString name = QString());
+<a name="l01880"></a>01880                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMedian__uCharC3Block.html#a71965cbce58a6b09ebc74efab598c736" title="Block iterate function.">iterate</a>();
+<a name="l01881"></a>01881         };
+<a name="l01882"></a>01882 
+<a name="l01896"></a><a class="code" href="classQVFilterMedianHoriz__uCharC1Block.html">01896</a> <span class="keyword">class </span><a class="code" href="classQVFilterMedianHoriz__uCharC1Block.html" title="Performs horizontal median filtering.">QVFilterMedianHoriz_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01897"></a>01897         {
+<a name="l01898"></a>01898         <span class="keyword">public</span>:
+<a name="l01900"></a>01900                 <a class="code" href="classQVFilterMedianHoriz__uCharC1Block.html#aeec2ddcf1ac85169fc3cd9cbc538581c" title="Block constructor.">QVFilterMedianHoriz_uCharC1Block</a>(QString name = QString());
+<a name="l01902"></a>01902                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterMedianHoriz__uCharC1Block.html#a64e97e90cfdd8757b6dcc1f9ce57b2fc" title="Block iterate function.">iterate</a>();
+<a name="l01903"></a>01903         };
+<a name="l01904"></a>01904 
+<a name="l01918"></a><a class="code" href="classQVFilterSobelHorizMask__sFloatC1Block.html">01918</a> <span class="keyword">class </span><a class="code" href="classQVFilterSobelHorizMask__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterSobelHorizMask_32f_C1R.">QVFilterSobelHorizMask_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01919"></a>01919         {
+<a name="l01920"></a>01920         <span class="keyword">public</span>:
+<a name="l01922"></a>01922                 <a class="code" href="classQVFilterSobelHorizMask__sFloatC1Block.html#a35c67c456a9f27aeed7ed8870389990e" title="Block constructor.">QVFilterSobelHorizMask_sFloatC1Block</a>(QString name = QString());
+<a name="l01924"></a>01924                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterSobelHorizMask__sFloatC1Block.html#a0e84e56f24e60d22c299e705f1dd0fb7" title="Block iterate function.">iterate</a>();
+<a name="l01925"></a>01925         };
+<a name="l01926"></a>01926 
+<a name="l01940"></a><a class="code" href="classQVFilterSobelVertMask__sFloatC1Block.html">01940</a> <span class="keyword">class </span><a class="code" href="classQVFilterSobelVertMask__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterSobelVertMask_32f_C1R.">QVFilterSobelVertMask_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01941"></a>01941         {
+<a name="l01942"></a>01942         <span class="keyword">public</span>:
+<a name="l01944"></a>01944                 <a class="code" href="classQVFilterSobelVertMask__sFloatC1Block.html#a12777a668324c98219eb18e179dcb401" title="Block constructor.">QVFilterSobelVertMask_sFloatC1Block</a>(QString name = QString());
+<a name="l01946"></a>01946                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterSobelVertMask__sFloatC1Block.html#a725b785d37db66d6cf5ad79ddc03e2b0" title="Block iterate function.">iterate</a>();
+<a name="l01947"></a>01947         };
+<a name="l01948"></a>01948 
+<a name="l01962"></a><a class="code" href="classQVFilterLaplace__uCharC1Block.html">01962</a> <span class="keyword">class </span><a class="code" href="classQVFilterLaplace__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterLaplace_8u_C1R.">QVFilterLaplace_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01963"></a>01963         {
+<a name="l01964"></a>01964         <span class="keyword">public</span>:
+<a name="l01966"></a>01966                 <a class="code" href="classQVFilterLaplace__uCharC1Block.html#a21d2b6d9fd20f09f810730fbc91995f2" title="Block constructor.">QVFilterLaplace_uCharC1Block</a>(QString name = QString());
+<a name="l01968"></a>01968                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterLaplace__uCharC1Block.html#a167d6ee3b93d27e9c2a21f2d0750dbf9" title="Block iterate function.">iterate</a>();
+<a name="l01969"></a>01969         };
+<a name="l01970"></a>01970 
+<a name="l01984"></a><a class="code" href="classQVFilterLaplace__sFloatC1Block.html">01984</a> <span class="keyword">class </span><a class="code" href="classQVFilterLaplace__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterLaplace_32f_C1R.">QVFilterLaplace_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l01985"></a>01985         {
+<a name="l01986"></a>01986         <span class="keyword">public</span>:
+<a name="l01988"></a>01988                 <a class="code" href="classQVFilterLaplace__sFloatC1Block.html#a570020b2a5be50ac678b60c21d74f509" title="Block constructor.">QVFilterLaplace_sFloatC1Block</a>(QString name = QString());
+<a name="l01990"></a>01990                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterLaplace__sFloatC1Block.html#ab601a0ea4dd4be85a80882dd8efe3c5b" title="Block iterate function.">iterate</a>();
+<a name="l01991"></a>01991         };
+<a name="l01992"></a>01992 
+<a name="l02006"></a><a class="code" href="classQVFilterGauss__uCharC1Block.html">02006</a> <span class="keyword">class </span><a class="code" href="classQVFilterGauss__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_8u_C1R.">QVFilterGauss_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02007"></a>02007         {
+<a name="l02008"></a>02008         <span class="keyword">public</span>:
+<a name="l02010"></a>02010                 <a class="code" href="classQVFilterGauss__uCharC1Block.html#a158e23bbc6c0d9055ed8158a0e42e6be" title="Block constructor.">QVFilterGauss_uCharC1Block</a>(QString name = QString());
+<a name="l02012"></a>02012                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterGauss__uCharC1Block.html#a09201a99e2a08b5ddd655740d14be5af" title="Block iterate function.">iterate</a>();
+<a name="l02013"></a>02013         };
+<a name="l02014"></a>02014 
+<a name="l02028"></a><a class="code" href="classQVFilterGauss__sFloatC1Block.html">02028</a> <span class="keyword">class </span><a class="code" href="classQVFilterGauss__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_32f_C1R.">QVFilterGauss_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02029"></a>02029         {
+<a name="l02030"></a>02030         <span class="keyword">public</span>:
+<a name="l02032"></a>02032                 <a class="code" href="classQVFilterGauss__sFloatC1Block.html#a84c686e78a6fcfa736c523313a317eb8" title="Block constructor.">QVFilterGauss_sFloatC1Block</a>(QString name = QString());
+<a name="l02034"></a>02034                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterGauss__sFloatC1Block.html#aafb95b09b8c8701e4e713af4e1806e52" title="Block iterate function.">iterate</a>();
+<a name="l02035"></a>02035         };
+<a name="l02036"></a>02036 
+<a name="l02050"></a><a class="code" href="classQVFilterGauss__uCharC3Block.html">02050</a> <span class="keyword">class </span><a class="code" href="classQVFilterGauss__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_8u_C3R.">QVFilterGauss_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02051"></a>02051         {
+<a name="l02052"></a>02052         <span class="keyword">public</span>:
+<a name="l02054"></a>02054                 <a class="code" href="classQVFilterGauss__uCharC3Block.html#aaea82a2040c4b2ece17592d5d4101d6d" title="Block constructor.">QVFilterGauss_uCharC3Block</a>(QString name = QString());
+<a name="l02056"></a>02056                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterGauss__uCharC3Block.html#a19ae95c1a23ffef7b713b0f58d503acf" title="Block iterate function.">iterate</a>();
+<a name="l02057"></a>02057         };
+<a name="l02058"></a>02058 
+<a name="l02072"></a><a class="code" href="classQVFilterGauss__sFloatC3Block.html">02072</a> <span class="keyword">class </span><a class="code" href="classQVFilterGauss__sFloatC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_32f_C3R.">QVFilterGauss_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02073"></a>02073         {
+<a name="l02074"></a>02074         <span class="keyword">public</span>:
+<a name="l02076"></a>02076                 <a class="code" href="classQVFilterGauss__sFloatC3Block.html#a57b8db44004556a4dad649ea7f697de6" title="Block constructor.">QVFilterGauss_sFloatC3Block</a>(QString name = QString());
+<a name="l02078"></a>02078                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterGauss__sFloatC3Block.html#afbb9b1076311fa31052e3fe979bb0304" title="Block iterate function.">iterate</a>();
+<a name="l02079"></a>02079         };
+<a name="l02080"></a>02080 
+<a name="l02094"></a><a class="code" href="classQVFilterHipass__uCharC1Block.html">02094</a> <span class="keyword">class </span><a class="code" href="classQVFilterHipass__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterHipass_8u_C1R.">QVFilterHipass_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02095"></a>02095         {
+<a name="l02096"></a>02096         <span class="keyword">public</span>:
+<a name="l02098"></a>02098                 <a class="code" href="classQVFilterHipass__uCharC1Block.html#afeb8896c8f27d8d650f99709cdd79ba4" title="Block constructor.">QVFilterHipass_uCharC1Block</a>(QString name = QString());
+<a name="l02100"></a>02100                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterHipass__uCharC1Block.html#acfc5eb72fb03159e9adc59a8f3108f68" title="Block iterate function.">iterate</a>();
+<a name="l02101"></a>02101         };
+<a name="l02102"></a>02102 
+<a name="l02116"></a><a class="code" href="classQVFilterHipass__uCharC3Block.html">02116</a> <span class="keyword">class </span><a class="code" href="classQVFilterHipass__uCharC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterHipass_8u_C3R.">QVFilterHipass_uCharC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02117"></a>02117         {
+<a name="l02118"></a>02118         <span class="keyword">public</span>:
+<a name="l02120"></a>02120                 <a class="code" href="classQVFilterHipass__uCharC3Block.html#ab96ab8cc5fed21daaa37020b314d74d7" title="Block constructor.">QVFilterHipass_uCharC3Block</a>(QString name = QString());
+<a name="l02122"></a>02122                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterHipass__uCharC3Block.html#a38718ce291779ae80c5163f945c59571" title="Block iterate function.">iterate</a>();
+<a name="l02123"></a>02123         };
+<a name="l02124"></a>02124 
+<a name="l02138"></a><a class="code" href="classQVFilterHipass__sFloatC1Block.html">02138</a> <span class="keyword">class </span><a class="code" href="classQVFilterHipass__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterHipass_32f_C1R.">QVFilterHipass_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02139"></a>02139         {
+<a name="l02140"></a>02140         <span class="keyword">public</span>:
+<a name="l02142"></a>02142                 <a class="code" href="classQVFilterHipass__sFloatC1Block.html#ad56ff7ee6a9bd8e4e348c52cfff98057" title="Block constructor.">QVFilterHipass_sFloatC1Block</a>(QString name = QString());
+<a name="l02144"></a>02144                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterHipass__sFloatC1Block.html#a2b4a7cf5327f3e8ba65cd8e43bf1636c" title="Block iterate function.">iterate</a>();
+<a name="l02145"></a>02145         };
+<a name="l02146"></a>02146 
+<a name="l02160"></a><a class="code" href="classQVFilterHipass__sFloatC3Block.html">02160</a> <span class="keyword">class </span><a class="code" href="classQVFilterHipass__sFloatC3Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterHipass_32f_C3R.">QVFilterHipass_sFloatC3Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02161"></a>02161         {
+<a name="l02162"></a>02162         <span class="keyword">public</span>:
+<a name="l02164"></a>02164                 <a class="code" href="classQVFilterHipass__sFloatC3Block.html#a54e16f1d267529d30e6ec9cc54910610" title="Block constructor.">QVFilterHipass_sFloatC3Block</a>(QString name = QString());
+<a name="l02166"></a>02166                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterHipass__sFloatC3Block.html#a06edee0150b77675731cd3354af2b08a" title="Block iterate function.">iterate</a>();
+<a name="l02167"></a>02167         };
+<a name="l02168"></a>02168 
+<a name="l02182"></a><a class="code" href="classQVFilterLowpass__uCharC1Block.html">02182</a> <span class="keyword">class </span><a class="code" href="classQVFilterLowpass__uCharC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterLowpass_8u_C1R.">QVFilterLowpass_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02183"></a>02183         {
+<a name="l02184"></a>02184         <span class="keyword">public</span>:
+<a name="l02186"></a>02186                 <a class="code" href="classQVFilterLowpass__uCharC1Block.html#a463f0340d071f8b9db61ee99ec64eca2" title="Block constructor.">QVFilterLowpass_uCharC1Block</a>(QString name = QString());
+<a name="l02188"></a>02188                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterLowpass__uCharC1Block.html#aaef606505e76274a11883c87f658238d" title="Block iterate function.">iterate</a>();
+<a name="l02189"></a>02189         };
+<a name="l02190"></a>02190 
+<a name="l02204"></a><a class="code" href="classQVFilterLowpass__sFloatC1Block.html">02204</a> <span class="keyword">class </span><a class="code" href="classQVFilterLowpass__sFloatC1Block.html" title="QVision wrapper function for IPP&amp;#39;s ippiFilterLowpass_32f_C1R.">QVFilterLowpass_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02205"></a>02205         {
+<a name="l02206"></a>02206         <span class="keyword">public</span>:
+<a name="l02208"></a>02208                 <a class="code" href="classQVFilterLowpass__sFloatC1Block.html#af9d2e0db0e6593b57b2c95e0bed89394" title="Block constructor.">QVFilterLowpass_sFloatC1Block</a>(QString name = QString());
+<a name="l02210"></a>02210                 <span class="keywordtype">void</span> <a class="code" href="classQVFilterLowpass__sFloatC1Block.html#a2478cdc731374bea35d7907771c608f4" title="Block iterate function.">iterate</a>();
+<a name="l02211"></a>02211         };
+<a name="l02212"></a>02212 
+<a name="l02224"></a><a class="code" href="classQVSum__uCharC1Block.html">02224</a> <span class="keyword">class </span><a class="code" href="classQVSum__uCharC1Block.html" title="Computes the sum of image pixel values.">QVSum_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02225"></a>02225         {
+<a name="l02226"></a>02226         <span class="keyword">public</span>:
+<a name="l02228"></a>02228                 <a class="code" href="classQVSum__uCharC1Block.html#a1d9b10c632f277dfeb50501f49e1e323" title="Block constructor.">QVSum_uCharC1Block</a>(QString name = QString());
+<a name="l02230"></a>02230                 <span class="keywordtype">void</span> <a class="code" href="classQVSum__uCharC1Block.html#a42e3ab178437fa4102b5f52e7659794a" title="Block iterate function.">iterate</a>();
+<a name="l02231"></a>02231         };
+<a name="l02232"></a>02232 
+<a name="l02244"></a><a class="code" href="classQVMean__uCharC1Block.html">02244</a> <span class="keyword">class </span><a class="code" href="classQVMean__uCharC1Block.html" title="Computes the mean of image pixel values.">QVMean_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02245"></a>02245         {
+<a name="l02246"></a>02246         <span class="keyword">public</span>:
+<a name="l02248"></a>02248                 <a class="code" href="classQVMean__uCharC1Block.html#aacdc111d59ed9e245aee123b31a74e88" title="Block constructor.">QVMean_uCharC1Block</a>(QString name = QString());
+<a name="l02250"></a>02250                 <span class="keywordtype">void</span> <a class="code" href="classQVMean__uCharC1Block.html#af64822b14102ec7f8278ee597fa902ff" title="Block iterate function.">iterate</a>();
+<a name="l02251"></a>02251         };
+<a name="l02252"></a>02252 
+<a name="l02264"></a><a class="code" href="classQVMin__uCharC1Block.html">02264</a> <span class="keyword">class </span><a class="code" href="classQVMin__uCharC1Block.html" title="Computes the minimum of image pixel values.">QVMin_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02265"></a>02265         {
+<a name="l02266"></a>02266         <span class="keyword">public</span>:
+<a name="l02268"></a>02268                 <a class="code" href="classQVMin__uCharC1Block.html#acf65e0dbbeb78c4d7e019fd8d7ff37dd" title="Block constructor.">QVMin_uCharC1Block</a>(QString name = QString());
+<a name="l02270"></a>02270                 <span class="keywordtype">void</span> <a class="code" href="classQVMin__uCharC1Block.html#a53258697aaf7c8b9f82b023eae0fb24a" title="Block iterate function.">iterate</a>();
+<a name="l02271"></a>02271         };
+<a name="l02272"></a>02272 
+<a name="l02284"></a><a class="code" href="classQVMin__sFloatC1Block.html">02284</a> <span class="keyword">class </span><a class="code" href="classQVMin__sFloatC1Block.html" title="Computes the minimum of image pixel values.">QVMin_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02285"></a>02285         {
+<a name="l02286"></a>02286         <span class="keyword">public</span>:
+<a name="l02288"></a>02288                 <a class="code" href="classQVMin__sFloatC1Block.html#a631799c3225399c975b8e14694bd1c6e" title="Block constructor.">QVMin_sFloatC1Block</a>(QString name = QString());
+<a name="l02290"></a>02290                 <span class="keywordtype">void</span> <a class="code" href="classQVMin__sFloatC1Block.html#a0e34bef2a7f115b4f8a52b6b96f590e1" title="Block iterate function.">iterate</a>();
+<a name="l02291"></a>02291         };
+<a name="l02292"></a>02292 
+<a name="l02304"></a><a class="code" href="classQVMax__uCharC1Block.html">02304</a> <span class="keyword">class </span><a class="code" href="classQVMax__uCharC1Block.html" title="Computes the maximum of image pixel values.">QVMax_uCharC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02305"></a>02305         {
+<a name="l02306"></a>02306         <span class="keyword">public</span>:
+<a name="l02308"></a>02308                 <a class="code" href="classQVMax__uCharC1Block.html#a43993c792d4cdb62b0c93ea72d83b88f" title="Block constructor.">QVMax_uCharC1Block</a>(QString name = QString());
+<a name="l02310"></a>02310                 <span class="keywordtype">void</span> <a class="code" href="classQVMax__uCharC1Block.html#a52ef49fb07f3cb6ca4cf05f13c9b5772" title="Block iterate function.">iterate</a>();
+<a name="l02311"></a>02311         };
+<a name="l02312"></a>02312 
+<a name="l02324"></a><a class="code" href="classQVMax__sFloatC1Block.html">02324</a> <span class="keyword">class </span><a class="code" href="classQVMax__sFloatC1Block.html" title="Computes the maximum of image pixel values.">QVMax_sFloatC1Block</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l02325"></a>02325         {
+<a name="l02326"></a>02326         <span class="keyword">public</span>:
+<a name="l02328"></a>02328                 <a class="code" href="classQVMax__sFloatC1Block.html#ab9cb451448c1810ec3d6bfe275a7e395" title="Block constructor.">QVMax_sFloatC1Block</a>(QString name = QString());
+<a name="l02330"></a>02330                 <span class="keywordtype">void</span> <a class="code" href="classQVMax__sFloatC1Block.html#a632b953a0b466383a1d8e0433d248378" title="Block iterate function.">iterate</a>();
+<a name="l02331"></a>02331         };
+<a name="l02332"></a>02332 
+<a name="l02333"></a>02333 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

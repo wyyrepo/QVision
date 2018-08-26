@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/AugmentedReality/AugmentedReality.cpp</h1><a href="AugmentedReality_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00052"></a>00052 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00053"></a>00053 <span class="preprocessor">#include &lt;QVDefaultGUI&gt;</span>
+<a name="l00054"></a>00054 <span class="preprocessor">#include &lt;QVVideoReaderBlock&gt;</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;QVImageCanvas&gt;</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include &lt;QVNumericPlot&gt;</span>
+<a name="l00057"></a>00057 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00058"></a>00058 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00059"></a>00059 <span class="preprocessor">#include &lt;QVPolyline&gt;</span>
+<a name="l00060"></a>00060 <span class="preprocessor">#include &lt;QVPolylineF&gt;</span>
+<a name="l00061"></a>00061 <span class="preprocessor">#include &lt;QVMatrix&gt;</span>
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00064"></a>00064 <span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<a name="l00065"></a>00065 <span class="preprocessor">#include &lt;qvprojective.h&gt;</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="preprocessor">#include &lt;GL/glut.h&gt;</span>
+<a name="l00068"></a>00068 <span class="preprocessor">#include &lt;QVCameraPose&gt;</span>
+<a name="l00069"></a>00069 <span class="preprocessor">#include &lt;QV3DModel&gt;</span>
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="preprocessor">#include &lt;<a class="code" href="qv3dobjects_8h.html">qv3dobjects.h</a>&gt;</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="comment">// Use Otsu threshold to detect contours around dark areas at the image.</span>
+<a name="l00074"></a>00074 QList&lt;QVPolyline&gt; detectContours(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imageIn)
+<a name="l00075"></a>00075         {
+<a name="l00076"></a>00076         uChar otsu_th;
+<a name="l00077"></a>00077         <a class="code" href="group__qvippTACO.html#gaf8eb6e174a20b48eebcbf80f3c04b37d" title="Calculate Otsu theshold value of images.">ComputeThreshold_Otsu</a>(imageIn,otsu_th);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <span class="keywordflow">return</span> <a class="code" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24" title="Obtains the borders of connected sets of pixels, containing gray-scale values equal...">getConnectedSetBorderContoursThreshold</a>(imageIn,otsu_th);
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="comment">// Detects in an image the contour of the largest dark region not touching the image boundaries.</span>
+<a name="l00083"></a>00083 <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> selectBestContour(<span class="keyword">const</span> QList&lt;QVPolyline&gt; &amp;contours, <span class="keyword">const</span> <span class="keywordtype">int</span> templateCount, <span class="keyword">const</span> <span class="keywordtype">int</span> cols, <span class="keyword">const</span> <span class="keywordtype">int</span> rows, <span class="keyword">const</span> <span class="keywordtype">int</span> minCount = 30, <span class="keyword">const</span> <span class="keywordtype">double</span> maxError = 5.0)
+<a name="l00084"></a>00084         {
+<a name="l00085"></a>00085         <span class="keywordtype">double</span> bestError = 1e15;
+<a name="l00086"></a>00086         <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> bestContour;
+<a name="l00087"></a>00087         <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> contour, contours)
+<a name="l00088"></a>00088                 {
+<a name="l00089"></a>00089                 <span class="comment">// Discard contours shorter than a given value.</span>
+<a name="l00090"></a>00090                 <span class="keywordflow">if</span> (contour.count() &lt; minCount)
+<a name="l00091"></a>00091                         <span class="keywordflow">continue</span>;
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093                 <span class="comment">// Discard contours touching the image boundaries.</span>
+<a name="l00094"></a>00094                 <span class="comment">//bool touchsBorder = false;</span>
+<a name="l00095"></a>00095                 <span class="keywordflow">foreach</span>(QPoint point, contour)
+<a name="l00096"></a>00096                         <span class="keywordflow">if</span>(point.x()==0 or point.x()==cols-1 or point.y()==0 or point.y()==rows-1)
+<a name="l00097"></a>00097                                 <span class="keywordflow">continue</span>;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099                 <span class="comment">// Discard contours with a number of corners different than the template.</span>
+<a name="l00100"></a>00100                 <span class="keywordtype">double</span> contourError;
+<a name="l00101"></a>00101                 <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> contourReduced;
+<a name="l00102"></a>00102                 <a class="code" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff" title="Eliminates points of a polyline of small shape contribution using the IPE algorithmThis...">IterativePointElimination</a>(contour, contourReduced, maxError, <span class="keyword">false</span>, <span class="keyword">true</span>, &amp;contourError);
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104                 <span class="keywordflow">if</span> (contourReduced.count() != templateCount)
+<a name="l00105"></a>00105                         <span class="keywordflow">continue</span>;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107                 <span class="comment">// Keep the contour with the lowest error.</span>
+<a name="l00108"></a>00108                 <span class="keywordflow">if</span> (contourError &gt;= bestError)
+<a name="l00109"></a>00109                         <span class="keywordflow">continue</span>;
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111                 bestContour = contour;
+<a name="l00112"></a>00112                 bestError = contourError;
+<a name="l00113"></a>00113                 }
+<a name="l00114"></a>00114         <span class="keywordflow">return</span> bestContour;
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 <span class="comment">// Matches the contour with the template. Returns the planar homography from the template to the image contour.</span>
+<a name="l00118"></a>00118 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> matchContourWithTemplate(<span class="keyword">const</span> <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> &amp;contour, <span class="keyword">const</span> <a class="code" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a> &amp;templateL, <span class="keyword">const</span> <span class="keywordtype">double</span> maxError = 0.1)
+<a name="l00119"></a>00119         {
+<a name="l00120"></a>00120         <span class="comment">// Reduces the number of elements in the contour with an IPE filter.</span>
+<a name="l00121"></a>00121         <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> contourReduced;
+<a name="l00122"></a>00122         <a class="code" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff" title="Eliminates points of a polyline of small shape contribution using the IPE algorithmThis...">IterativePointElimination</a>(contour,contourReduced,templateL.length(),<span class="keyword">true</span>,<span class="keyword">true</span>);
+<a name="l00123"></a>00123         
+<a name="l00124"></a>00124         <span class="comment">// Discard if the resulting contour does not have the same number of elements than the template.</span>
+<a name="l00125"></a>00125         <span class="comment">//bool fail = false;</span>
+<a name="l00126"></a>00126         <span class="keywordflow">if</span>(contourReduced.length() != templateL.length())
+<a name="l00127"></a>00127                 <span class="keywordflow">return</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>();
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129         <span class="comment">// Find the correct orientation for the contour, and estimate the planar homography.</span>
+<a name="l00130"></a>00130         <span class="keywordtype">double</span> bestError = 1e15;
+<a name="l00131"></a>00131         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H;
+<a name="l00132"></a>00132         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;templateL.length();j++)
+<a name="l00133"></a>00133                 {
+<a name="l00134"></a>00134                 QList&lt; QPair&lt;QPointF, QPointF&gt; &gt; matchings;
+<a name="l00135"></a>00135                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;templateL.length();i++)
+<a name="l00136"></a>00136                         matchings &lt;&lt; <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>(contourReduced[(i+j)%templateL.length()], templateL[i]);
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138                 <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> temptativeH = <a class="code" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668" title="Obtains a planar homography from a list of point correspondences.">computeProjectiveHomography</a>(matchings);
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140                 <span class="keywordtype">double</span> err = 0;
+<a name="l00141"></a>00141                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;templateL.length();i++)
+<a name="l00142"></a>00142                         err += norm2(<a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(temptativeH,contourReduced[(i+j)%templateL.length()]) - templateL[i]);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144                 err /= double(templateL.count());
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146                 <span class="keywordflow">if</span>(err &lt; bestError)
+<a name="l00147"></a>00147                         {
+<a name="l00148"></a>00148                         bestError = err;
+<a name="l00149"></a>00149                         H = temptativeH;
+<a name="l00150"></a>00150                         }
+<a name="l00151"></a>00151                 }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153         <span class="comment">// If the planar reprojection error is below the maximal threshold, accept the alighment.</span>
+<a name="l00154"></a>00154         <span class="keywordflow">if</span> (bestError &gt; maxError)
+<a name="l00155"></a>00155                 <span class="keywordflow">return</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>();
+<a name="l00156"></a>00156         <span class="keywordflow">else</span>
+<a name="l00157"></a>00157                 <span class="keywordflow">return</span> H;
+<a name="l00158"></a>00158         }
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160 <span class="comment">// Main application processing block.</span>
+<a name="l00161"></a>00161 <span class="keyword">class </span>ARProcessingBlock : <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+<a name="l00162"></a>00162         {
+<a name="l00163"></a>00163         <span class="keyword">private</span>:
+<a name="l00164"></a>00164                 <a class="code" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a> templateL;
+<a name="l00165"></a>00165                 QList&lt;double&gt; focals;
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167         <span class="keyword">public</span>:
+<a name="l00168"></a>00168                 <span class="comment">// Main constructor</span>
+<a name="l00169"></a>00169                 ARProcessingBlock(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+<a name="l00170"></a>00170                         {
+<a name="l00171"></a>00171                         <span class="comment">// Video input/output.</span>
+<a name="l00172"></a>00172                         addProperty&lt;QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;imageIn&quot;</span>,inputFlag|outputFlag);
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174                         <span class="comment">// Camera pose and calibration for the AR canvas.</span>
+<a name="l00175"></a>00175                         addProperty&lt;QVMatrix&gt;(<span class="stringliteral">&quot;Camera calibration matrix&quot;</span>, outputFlag);
+<a name="l00176"></a>00176                         addProperty&lt;QVCameraPose&gt;(<span class="stringliteral">&quot;Camera pose&quot;</span>, outputFlag);
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178                         <span class="comment">// Template initialization.</span>
+<a name="l00179"></a>00179                         templateL       &lt;&lt; QPointF(0.0,0.0)
+<a name="l00180"></a>00180                                         &lt;&lt; QPointF(1.0,0.0)
+<a name="l00181"></a>00181                                         &lt;&lt; QPointF(1.0,0.5)
+<a name="l00182"></a>00182                                         &lt;&lt; QPointF(0.5,0.5)
+<a name="l00183"></a>00183                                         &lt;&lt; QPointF(0.5,1.0)
+<a name="l00184"></a>00184                                         &lt;&lt; QPointF(0.0,1.0);
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; templateL.count(); i++)
+<a name="l00187"></a>00187                                 templateL[i] = templateL[i] - QPointF(0.5, 0.5);
+<a name="l00188"></a>00188                         };
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190                 <span class="comment">// Resets the camera pose.</span>
+<a name="l00191"></a>00191                 <span class="keywordtype">void</span> hidePose()
+<a name="l00192"></a>00192                         {
+<a name="l00193"></a>00193                         <span class="comment">// If the calibration matrix is set to QVMatrix(), the AR window</span>
+<a name="l00194"></a>00194                         <span class="comment">// will not show any augmented object.</span>
+<a name="l00195"></a>00195                         setPropertyValue&lt;QVMatrix&gt;(<span class="stringliteral">&quot;Camera calibration matrix&quot;</span>, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>());
+<a name="l00196"></a>00196                         setPropertyValue&lt;QVCameraPose&gt;(<span class="stringliteral">&quot;Camera pose&quot;</span>, <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a>());
+<a name="l00197"></a>00197                         }
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199                 <span class="comment">// Main image-processing loop.</span>
+<a name="l00200"></a>00200                 <span class="keywordtype">void</span> <a class="code" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">iterate</a>()
+<a name="l00201"></a>00201                         {
+<a name="l00202"></a>00202                         <span class="comment">// 1) Read image from input video source.</span>
+<a name="l00203"></a>00203                         <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> imageIn = getPropertyValue&lt;QVImage&lt;uChar,3&gt; &gt;(<span class="stringliteral">&quot;imageIn&quot;</span>);
+<a name="l00204"></a>00204                         <span class="keyword">const</span> <span class="keywordtype">int</span> rows = imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(), cols = imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>();                   
+<a name="l00205"></a>00205                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Read input data&quot;</span>);
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207                         <span class="comment">// 2) Detect contours at the image</span>
+<a name="l00208"></a>00208                         <span class="keyword">const</span> QList&lt;QVPolyline&gt; contours = detectContours(imageIn);
+<a name="l00209"></a>00209                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Detect contours&quot;</span>);
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211                         <span class="comment">// 3) Detect the contour of the template at the image.</span>
+<a name="l00212"></a>00212                         <span class="comment">// 3.1) Detect the best contour at the image.</span>
+<a name="l00213"></a>00213                         <span class="keyword">const</span> <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> bestContour = selectBestContour(contours, templateL.count(), cols, rows);
+<a name="l00214"></a>00214                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Detect best contour&quot;</span>);
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216                         <span class="comment">// 3.2) Find the planar homography between the best contour and the template,</span>
+<a name="l00217"></a>00217                         <span class="comment">// with the lowest reprojection error.</span>
+<a name="l00218"></a>00218                         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H = matchContourWithTemplate(bestContour, templateL, 0.05);
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220                         <span class="comment">// If not successful, reset pose and return.</span>
+<a name="l00221"></a>00221                         <span class="keywordflow">if</span> (H == <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>())
+<a name="l00222"></a>00222                                 {
+<a name="l00223"></a>00223                                 hidePose();
+<a name="l00224"></a>00224                                 <span class="keywordflow">return</span>;
+<a name="l00225"></a>00225                                 }
+<a name="l00226"></a>00226                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Find planar homography&quot;</span>);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228                         <span class="comment">// 4) Estimate camera focal.</span>
+<a name="l00229"></a>00229                         <span class="comment">// 4.1) A list of estimated focals is updated at each frame. The application uses the median value</span>
+<a name="l00230"></a>00230                         <span class="comment">// of those estimated focals as a robust estimation for the camera focal.</span>
+<a name="l00231"></a>00231                         <span class="keyword">const</span> <span class="keywordtype">double</span> actualEstimatedFocal = <a class="code" href="group__qvprojectivegeometry.html#gafebb00bc1698d22fdb6875a6a5d70c24" title="Compute camera focal from a planar homography.">computeCameraFocalFromPlanarHomography</a>(H, cols, rows, <span class="keyword">true</span>);
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233                         <span class="comment">// 4.2) Update list of estimated focals with the actual estimated focal.</span>
+<a name="l00234"></a>00234                         <span class="keywordflow">if</span> ( focals.count() &lt; 200 and not isnan(actualEstimatedFocal) )
+<a name="l00235"></a>00235                                 focals &lt;&lt; actualEstimatedFocal;
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237                         <span class="comment">// 4.3) If no estimated focals are available, reset camera pose and return.</span>
+<a name="l00238"></a>00238                         <span class="keywordflow">if</span> (focals.count() == 0)
+<a name="l00239"></a>00239                                 {
+<a name="l00240"></a>00240                                 hidePose();
+<a name="l00241"></a>00241                                 <span class="keywordflow">return</span>;
+<a name="l00242"></a>00242                                 }
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244                         <span class="comment">// 4.4) Robust estimation of the real focal from the median of previously estimated focals.</span>
+<a name="l00245"></a>00245                         <span class="keyword">const</span> <span class="keywordtype">double</span> focal = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(focals).median();
+<a name="l00246"></a>00246                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Estimate focal&quot;</span>);
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248                         <span class="comment">// 5) Calibrate intrinsic camera matrix and camera pose.</span>
+<a name="l00249"></a>00249                         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> K = <a class="code" href="classQVMatrix.html#a953207e797ad5c2f8477d3507dbcf86b" title="Creates an intrinsic camera calibration matrix.">QVMatrix::cameraCalibrationMatrix</a>(focal, 4.0 * rows / (3.0 * cols), cols/2.0, rows/2.0);
+<a name="l00250"></a>00250                         <span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> cameraPose = <a class="code" href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43" title="Estimates the camera pose form the intrinsic calibration and a planar homography...">getCameraPoseFromCalibratedHomography</a>(K,H);
+<a name="l00251"></a>00251                         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Estimate camera pose&quot;</span>);
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253                         <span class="comment">// 6) Publish camera pose and intrinsic matrix.</span>
+<a name="l00254"></a>00254                         setPropertyValue&lt;QVMatrix&gt;(<span class="stringliteral">&quot;Camera calibration matrix&quot;</span>, K);
+<a name="l00255"></a>00255                         setPropertyValue&lt;QVCameraPose&gt;(<span class="stringliteral">&quot;Camera pose&quot;</span>, cameraPose);
+<a name="l00256"></a>00256                         }
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258         };
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260 <span class="comment">// Augmented reality canvas.</span>
+<a name="l00261"></a>00261 <span class="keyword">class </span>ARCanvas : <span class="keyword">public</span> <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>
+<a name="l00262"></a>00262         {
+<a name="l00263"></a>00263         <span class="keyword">public</span>:
+<a name="l00264"></a>00264                 ARCanvas(QString name) : <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>(name)    { };
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266                 <span class="keywordtype">void</span> custom_viewer_3D()
+<a name="l00267"></a>00267                         {
+<a name="l00268"></a>00268                         glEnable(GL_LIGHTING);          <span class="comment">// Enable lighting.</span>
+<a name="l00269"></a>00269                         glEnable(GL_LIGHT0);            <span class="comment">// Enable light zero (note: uses default values).</span>
+<a name="l00270"></a>00270                         glEnable(GL_COLOR_MATERIAL);    <span class="comment">// Configure glColor().</span>
+<a name="l00271"></a>00271                         glEnable(GL_DEPTH_TEST);        <span class="comment">// Enable depth testing.</span>
+<a name="l00272"></a>00272                         glClear(GL_DEPTH_BUFFER_BIT);   <span class="comment">// Clear depth buffers.</span>
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274                         <span class="comment">// Draw a wire teapot at the origin of coordinates using GLUT primitives.</span>
+<a name="l00275"></a>00275                         glColor3ub(128,196,255);
+<a name="l00276"></a>00276 
+<a name="l00277"></a>00277                         glRotatef(90.0, 1.0, 0.0, 0.0);
+<a name="l00278"></a>00278                         glTranslatef(0.0,0.20,0.0);
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280                         glutSolidTeapot(0.3);
+<a name="l00281"></a>00281                         };
+<a name="l00282"></a>00282         };
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc,<span class="keywordtype">char</span> **argv)
+<a name="l00285"></a>00285         {
+<a name="l00286"></a>00286         <span class="comment">// GUI interface.</span>
+<a name="l00287"></a>00287         <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc,argv);
+<a name="l00288"></a>00288         <a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> gui;
+<a name="l00289"></a>00289 
+<a name="l00290"></a>00290         <span class="comment">// Video reader.</span>
+<a name="l00291"></a>00291         <a class="code" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> camera(<span class="stringliteral">&quot;Camera&quot;</span>);
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293         <span class="comment">// Processing block.</span>
+<a name="l00294"></a>00294         ARProcessingBlock processingBlock(<span class="stringliteral">&quot;My processing block&quot;</span>);
+<a name="l00295"></a>00295         camera.linkProperty(&amp;processingBlock,<span class="stringliteral">&quot;imageIn&quot;</span>);
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297         <span class="comment">// Augmented reality canvas.</span>
+<a name="l00298"></a>00298         ARCanvas imageCanvas(<span class="stringliteral">&quot;augmented objects&quot;</span>);
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300         QV3DCoordinateCenter axis(1.0);
+<a name="l00301"></a>00301         imageCanvas.add3DModel(axis);
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303         processingBlock.linkProperty(<span class="stringliteral">&quot;imageIn&quot;</span>,&amp;imageCanvas);
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305         <span class="comment">// Link camera calibration matrix and camera pose from the processing block to the AR window.</span>
+<a name="l00306"></a>00306         <span class="comment">// Note: if the calibration matrix is set to QVMatrix(), the AR window will not show any augmented object.</span>
+<a name="l00307"></a>00307         processingBlock.linkProperty(<span class="stringliteral">&quot;Camera calibration matrix&quot;</span>, &amp;imageCanvas);
+<a name="l00308"></a>00308         processingBlock.linkProperty(<span class="stringliteral">&quot;Camera pose&quot;</span>, &amp;imageCanvas);
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310         <span class="comment">// Needed for GLUT calls.</span>
+<a name="l00311"></a>00311         glutInit(&amp;argc,argv);
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313         <span class="comment">// Execute application.</span>
+<a name="l00314"></a>00314         <span class="keywordflow">return</span> app.exec();
+<a name="l00315"></a>00315         }
+<a name="l00316"></a>00316 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

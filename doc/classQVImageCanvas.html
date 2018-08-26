@@ -1,0 +1,1090 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVImageCanvas Class Reference<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1><!-- doxytag: class="QVImageCanvas" --><!-- doxytag: inherits="QVCanvas,QVPropertyContainer" -->
+<p>Display widget for <a class="el" href="classQVImage.html">QVImage</a> objects and other data types.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvimagecanvas_8h_source.html">QVImageCanvas</a>&gt;</code></p>
+
+<p>Inherits QVCanvas, and <a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a>.</p>
+
+<p>Inherited by ARCanvas, FlowImageCanvas, gridCanvasCanvas, and MyQVImageCanvas.</p>
+
+<p><a href="classQVImageCanvas-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#ac08d9d360747bbc0ccf2db3664813217">QVImageCanvas</a> (const QString name=QString(), QWidget *parent=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Image canvas constructor.  <a href="#ac08d9d360747bbc0ccf2db3664813217"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a">setColor</a> (const QString &amp;name, const QColor &amp;color)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the display color for a registered input property of the canvas.  <a href="#a94894d3fdcecc85df3982d6c71df602a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a1cf2eec22039d5793791a3109348bcfe">setPrintTags</a> (const QString &amp;name, const bool &amp;printTags)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a7f4e77bc5830094390b2857aacba4236">setRadius</a> (const QString &amp;name, const int &amp;radius)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the display radius for a registered input property of the canvas.  <a href="#a7f4e77bc5830094390b2857aacba4236"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#abd0e106aa4bf642f6caf41624c00c43c">setSaturationRange</a> (const float low, const float high)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the saturation range to display floating point images.  <a href="#abd0e106aa4bf642f6caf41624c00c43c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd">linkSelectedPolyline</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *destinationContainer, QString destinationPropName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Link selected polyline property with a block's input property.  <a href="#a7062b40a00e2f97a96f8ffb052ea30cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4">linkSelectedRectangle</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *destinationContainer, QString destinationPropName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Link selected rectangle property with a block's input property.  <a href="#a1b5f5780785dc82754d1dd20f29294b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a81b949416ce684c2bb05ae905ecb0b6b">linkSelectedPolyline</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;destinationContainer, QString destinationPropName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Link selected polyline property with a block's input property.  <a href="#a81b949416ce684c2bb05ae905ecb0b6b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a8b103778a03324230145d2ee62672c35">linkSelectedRectangle</a> (<a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;destinationContainer, QString destinationPropName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Link selected rectangle property with a block's input property.  <a href="#a8b103778a03324230145d2ee62672c35"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a">custom_viewer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Display user defined data types method.  <a href="#a0040df759739f50e9235547f1055844a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a5b3506a49bedc014967502dba9a0a59e">setLowHigh</a> (float low, float high)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVPainter.html">QVPainter</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22">getQVPainter</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a <a class="el" href="classQVPainter.html" title="Inherits from QPainter to allow versatile drawing on a QVImageCanvas object.">QVPainter</a> object to perform custom drawings in the canvas.  <a href="#adcc6632a6181cc4d9f9ef3b2e2fb6b22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9">getZoom</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns current zoom of QVImagecanvas.  <a href="#a4ebbb35e7857c0c256f4b16072b658a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QRect&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052">getViewport</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns current viewport of QVImagecanvas.  <a href="#a35cc774a6b0e9fdf3847f59f29a4d052"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QSize&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a012298b8e651df7d1bb5df06c590e016">getSize</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the original image size of the QVImagecanvas.  <a href="#a012298b8e651df7d1bb5df06c590e016"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a7c00107a447dbc7f0167ff27b15a0870">beginDrawWorldFromCamera</a> (const double fx, const double fy, const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;cameraPosition)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Prepares OpenGL to draw directly the world as seen from the camera.  <a href="#a7c00107a447dbc7f0167ff27b15a0870"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#a61651501207a7635a2dd8cbd4b720502">endDrawWorldFromCamera</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Restores state of <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> after augmented reality OpenGL drawing.  <a href="#a61651501207a7635a2dd8cbd4b720502"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImageCanvas.html#acb1465e8ce2eb8aa0a95967724489b6d">unlink</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Completely unlinks a property holder.  <a href="#acb1465e8ce2eb8aa0a95967724489b6d"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Display widget for <a class="el" href="classQVImage.html">QVImage</a> objects and other data types. </p>
+<p>Class <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> can be used to create a very flexible and useful widget to show <a class="el" href="classQVImage.html">QVImage</a> objects. It can also be used as an input widget, which reads selection rectangles and/or lists of points as clicked by the user (see below). Finally, it is also prepared to draw 3D scenes on top of the image, using OpenGL, which is convenient for augmented reality applications.</p>
+<p>This widget is in fact a property container, and as such it will read the image to be displayed from an output dynamic property contained in another property container (usually a <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> object), and will also use output properties for the user to be able to read the aforementioned selection rectangles and point lists.</p>
+<p>It is used as follows. First, the programmer must create the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> object in the <em>main()</em> function of a program; then, a link to a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> type property from a property holder must be created. For example:</p>
+<div class="fragment"><pre class="fragment">[...]
+
+CannyBlock cannyBlock(<span class="stringliteral">&quot;Canny Block&quot;</span>);
+
+[...]
+
+<a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> imageCanvas(<span class="stringliteral">&quot;Canny&quot;</span>);
+cannyBlock.linkProperty(<span class="stringliteral">&quot;Input Image&quot;</span>,imageCanvas);
+
+[...]
+</pre></div><p>When the application executes, it will automatically create a window like the following:</p>
+<div align="center">
+<img src="qvimagecanvas_penguin.png" alt="qvimagecanvas_penguin.png"/>
+</div>
+<dl class="note"><dt><b>Note:</b></dt><dd>The nice horizontal and vertical scale rules are QWT widgets. The QWT library must be installed, and the QVision must be compiled to use it, for the <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> widget to display them. See section OptionalLibraries for more info about this.</dd></dl>
+<p>You can see it has a zoom number indicator (<em>z = 1</em>), horizontal and vertical rules (in pixels), and some buttons. These can be used to control zooming and moving around a zoomed area of the image. A detailed explanation of each one follows:</p>
+<table class="doxtable">
+<tr>
+<th><b>Zoom in button</b> <div align="center">
+<img src="qvimagecanvas_zoomin.png" alt="qvimagecanvas_zoomin.png"/>
+</div>
+ </th><td><p class="starttd">This button zooms the image in. Canvas window doesn't change size, but the area of the image displayed becomes smaller by a factor of 4 (width and height gets divided by 2). The label of the left bottom corner displays the text </p>
+<div class="fragment"><pre class="fragment">z=&lt;zoom&gt;
+</pre></div><p> where <em>&lt;zoom&gt;</em> is a number indicating the zoom factor that divides width and height in the actual zoom level.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<th><b>Zoom out button</b> <div align="center">
+<img src="qvimagecanvas_zoomout.png" alt="qvimagecanvas_zoomout.png"/>
+</div>
+ </th><td><p class="starttd">This button divides zoom factor by 2, if it is equal or greater than 2. If the canvas window is bigger than the image at the final zoom, it is adjusted to the size of the latter.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<th><b>Zoom restore button</b> <div align="center">
+<img src="qvimagecanvas_zoomrestore.png" alt="qvimagecanvas_zoomrestore.png"/>
+</div>
+ </th><td><p class="starttd">This button sets zoom factor by 1, and resizes canvas window to its original size.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<th><b>Select zoom region button</b> <div align="center">
+<img src="qvimagecanvas_zoomregion.png" alt="qvimagecanvas_zoomregion.png"/>
+</div>
+ </th><td><p class="starttd">This button lets you select a rectangle in the image to zoom, adjusting zoom factor and canvas window size to it.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<th><b>Select polyline button</b> <div align="center">
+<img src="qvimagecanvas_polyline.png" alt="qvimagecanvas_polyline.png"/>
+</div>
+ </th><td><p class="starttd">This button lets you select points in the image. The created points list can then be accessed to in the program by reading the "poly select" imageCanvas output property (a <a class="el" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a>). You can expand this button by pushing it for a few seconds, and then you will be able to select a point list representation, a polyline representation, or a closed polyline representation. Right-clicking anywhere on the image with this button checked will reset the "poly select" ImageCanvas output property to an empty <a class="el" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a>. </p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<th><b>Select ROI button</b> <div align="center">
+<img src="qvimagecanvas_roi.png" alt="qvimagecanvas_roi.png"/>
+</div>
+ </th><td><p class="starttd">This button lets you select a rectangle in the image. That rectangle can be again accessed to using the "rect select" imageCanvas output property (a QRect). Right-clicking anywhere on the image with this button checked will reset the "rect select" ImageCanvas output property to an empty QRect.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<th><b>Drag mode</b> <div align="center">
+<img src="qvimagecanvas_drag.png" alt="qvimagecanvas_drag.png"/>
+</div>
+ </th><td>This button activates drag mode. With it you can move around the image displayed in the canvas window, if the zoom factor forces the canvas window to show only a sub-region of the image, by holding click and dragging on the shown image. </td></tr>
+</table>
+<p>In the following figure you can see a zoomed canvas window showing a sub-region of the original image:</p>
+<div align="center">
+<img src="qvimagecanvas_penguinpixels.png" alt="qvimagecanvas_penguinpixels.png"/>
+</div>
+<p>Another interesting feature of this widget is that at a zoom factor equal or larger than 32, the canvas renders the gray-scale pixel value over every pixel if the image is gray-scale, or the three different values for each of the RGB channels over every pixel, if the image is RGB, as shown below:</p>
+<div align="center">
+<img src="qvimagecanvas_penguinpixelnumbers.png" alt="qvimagecanvas_penguinpixelnumbers.png"/>
+</div>
+<p>The canvas also knows how to show numeric float values, when showing images of type QVImage&lt;sFloat,1&gt; or QVImage&lt;sFloat,3&gt; (for these cases, see also method <a class="el" href="classQVImageCanvas.html#abd0e106aa4bf642f6caf41624c00c43c" title="Sets the saturation range to display floating point images.">QVImageCanvas::setSaturationRange</a>).</p>
+<p>Other interesting features of <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>:</p>
+<ul>
+<li><b>User input</b>: you can read the user selected rectangle and/or selected list of points by adequately linking the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> predefined output properties "rect select" and "poly select" to your processing block(s) (see also <a class="el" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4" title="Link selected rectangle property with a block&#39;s input property.">QVImageCanvas::linkSelectedRectangle</a> and <a class="el" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd" title="Link selected polyline property with a block&#39;s input property.">QVImageCanvas::linkSelectedPolyline</a> methods). For example: <div class="fragment"><pre class="fragment">[...]
+
+<span class="keyword">class </span>MyWorker: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+        {
+        <span class="keyword">public</span>:
+                MyWorker(QString name = QString()): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+                        {
+                        addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>, inputFlag|outputFlag);
+                        addProperty&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Output image&quot;</span>, outputFlag);
+                        addProperty&lt;QRect&gt;(<span class="stringliteral">&quot;in rect selec&quot;</span>, inputFlag);
+                        addProperty&lt;QVPolyline&gt;(<span class="stringliteral">&quot;in points&quot;</span>, inputFlag);
+                        }
+                <span class="keywordtype">void</span> iterate()
+                        {
+                        <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> image = getPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Input image&quot;</span>);
+                        QRect rect = getPropertyValue&lt;QRect&gt;(<span class="stringliteral">&quot;in rect selec&quot;</span>);
+                        <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> poly = getPropertyValue&lt;QVPolyline&gt;(<span class="stringliteral">&quot;in points&quot;</span>);
+                        <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> dest = image;
+
+                        <span class="comment">// Darken the selected rectangle (ROI) area:</span>
+                        <span class="keywordflow">if</span> (rect != QRect()) image.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(rect);
+                        <a class="code" href="group__qvippIAALO.html#ga79125dd2c16c07ab21c9bf8ca78a7583" title="QVision wrapper function for IPP&amp;#39;s ippiAddC_8u_C1RSfs.">AddC</a>(image, 10, dest, 1, QPoint(rect.x(), rect.y()));
+                        dest.resetROI();
+
+                        <span class="comment">// Undo darkening on selected polyline&#39;s points:</span>
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; poly.size(); i++) {
+                                <span class="keywordtype">int</span> x = poly[i].x(), y = poly[i].y();
+                                <span class="keywordflow">if</span> ( (x &gt;= 0) &amp;&amp; (x &lt; image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>()) &amp;&amp; (y &gt;= 0) &amp;&amp; (y &lt; image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()) )
+                                        dest(x, y) = image(x, y);
+                        }
+
+                        setPropertyValue&lt; QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;Output image&quot;</span>, dest);
+                        }
+        };
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+        {
+        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv, <span class="stringliteral">&quot;Example program for QVision library.&quot;</span> );
+
+        MyWorker myWorker(<span class="stringliteral">&quot;Worker&quot;</span>);
+        QVMPlayerReaderBlock camera(<span class="stringliteral">&quot;Video&quot;</span>);
+        camera.linkProperty(&amp;myWorker, <span class="stringliteral">&quot;Input image&quot;</span>);
+
+        <a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> interface;
+
+        <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> imageCanvas(<span class="stringliteral">&quot;Features&quot;</span>);
+        myWorker.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>, imageCanvas);
+        imageCanvas.linkProperty(<span class="stringliteral">&quot;rect select&quot;</span>, myWorker, <span class="stringliteral">&quot;in rect selec&quot;</span>);
+        imageCanvas.linkProperty(<span class="stringliteral">&quot;poly select&quot;</span>, myWorker, <span class="stringliteral">&quot;in points&quot;</span>);
+        <span class="comment">// Alternatively, you could have also use the QVImageCanvas::linkSelectedPolyline and</span>
+        <span class="comment">// QVImageCanvas::linkSelectedRectanglemethods:</span>
+        <span class="comment">// imageCanvas.linkSelectedRectangle(myWorker, &quot;in rect selec&quot;);</span>
+        <span class="comment">// imageCanvas.linkSelectedPolyline(myWorker, &quot;in points&quot;);</span>
+
+        <span class="keywordflow">return</span> app.exec();
+        }
+</pre></div></li>
+</ul>
+<p>This would be an example output for this program:</p>
+<div align="center">
+<img src="qvimagecanvas_selections.png" alt="qvimagecanvas_selections.png"/>
+</div>
+<ul>
+<li><b>Drawing properties by default</b>: User registered input properties of types <a class="el" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a>, <a class="el" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a>, QList&lt;QPoint&gt;, QList&lt;QPointF&gt;, QList&lt;QVPolyline&gt; and QList&lt;QVPolylineF&gt; are adequately displayed by the canvas automatically, by the simple fact of linking them to it. For example: <div class="fragment"><pre class="fragment">[...]
+<span class="keyword">class </span>MyWorker: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> {
+        <span class="keyword">public</span>:
+                MyWorker(QString name = QString()): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name) {
+                        [...]
+                        addProperty&lt;QVPolyline&gt;(<span class="stringliteral">&quot;out polyline&quot;</span>, outputFlag);
+                }
+
+                <span class="keywordtype">void</span> iterate() {
+                        [...]
+                        <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> polyline;
+                        polyline.append(QPoint(10,10));
+                        polyline.append(QPoint(20,10));
+                        polyline.append(QPoint(20,20));
+                        polyline.append(QPoint(10,30));
+                        setPropertyValue&lt; QVPolyline &gt;(<span class="stringliteral">&quot;out polyline&quot;</span>, polyline);
+                }
+        };
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]) {
+        [...]
+        myWorker.linkProperty(<span class="stringliteral">&quot;out polyline&quot;</span>,imageCanvas);
+        [...]
+}
+</pre></div></li>
+</ul>
+<p>This would be the output for this program:</p>
+<div align="center">
+<img src="qvimagecanvas_default_drawings.png" alt="qvimagecanvas_default_drawings.png"/>
+</div>
+<p>The user can also customize the output of each property using the methods <a class="el" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a" title="Sets the display color for a registered input property of the canvas.">QVImageCanvas::setColor</a> and <a class="el" href="classQVImageCanvas.html#a7f4e77bc5830094390b2857aacba4236" title="Sets the display radius for a registered input property of the canvas.">QVImageCanvas::setRadius</a> (see below).</p>
+<ul>
+<li><b>Further customizing drawings</b>:</li>
+</ul>
+<p>The user is also free to draw anything he desires by inheriting from the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> class and reimplementing the <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">QVImageCanvas::custom_viewer</a> method. This is a simple example: </p>
+<div class="fragment"><pre class="fragment">[...]
+<span class="keyword">class </span>MyImageCanvas : <span class="keyword">public</span> <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> {
+        <span class="keyword">public</span>:
+        MyImageCanvas(QString name) : <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>(name) {} ;
+        <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer</a>(){
+                <span class="comment">// For simplicity, here we will only draw some primitives at fixed locations. Of course, in a real</span>
+                <span class="comment">// example it will be much more common to read the parameter of the primitives to draw from some</span>
+                <span class="comment">// input properties of the canvas (do not forget that QVImageCanvas are also QVPropertyContainers),</span>
+                <span class="comment">// which will themselves be linked to the output properties of other QVProcessingBlocks.</span>
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;setPen(Qt::yellow);
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;setBrush(QBrush(Qt::magenta, Qt::DiagCrossPattern));
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawEllipse(50, 50, 30, 40);
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawEllipse(100, 100, 70, 25);
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawEllipse(100, 100, 70, 25);
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;<a class="code" href="classQVPainter.html#af213d51b59f8ed1254adb8f2df8f4f98" title="Draws text in a given pixel position of the QVImageCanvas which does not scale with...">drawTextUnscaled</a>(QPointF(20.5,30.5), <span class="stringliteral">&quot;Message&quot;</span>);
+                <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawText(QPointF(40.5,10.5), <span class="stringliteral">&quot;Message scaled&quot;</span>);
+                [...]
+        }
+};
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]) {
+        [...]
+        MyImageCanvas imageCanvas(<span class="stringliteral">&quot;Features&quot;</span>);
+        [...]
+}
+</pre></div><p>This would be the output for this program:</p>
+<div align="center">
+<img src="qvimagecanvas_customized_drawings.png" alt="qvimagecanvas_customized_drawings.png"/>
+</div>
+<p>It is important to note that you can use any of the many painting methods implemented in the powerful Qt <a href="http://doc.qt.nokia.com/4.7/qpainter.html">QPainter</a> class in your <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer()</a> reimplementation. You only have to use the <em><a class="el" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter()</a>-&gt;"original QPainter method"</em> technique as in the example. All the drawings will be done using pixel coordinates, and the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> zooming and measure rulers will behave accordingly as expected, without any special attention required from the programmer. The (pointer to) object returned by the <a class="el" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter()</a> method is in fact a <a class="el" href="classQVPainter.html" title="Inherits from QPainter to allow versatile drawing on a QVImageCanvas object.">QVPainter</a> object which directly inherits from <a href="http://doc.qt.nokia.com/4.7/qpainter.html">QPainter</a> and that, in addition to all the <a href="http://doc.qt.nokia.com/4.7/qpainter.html">QPainter</a> available methods, offers a few additional drawing methods, such as <a class="el" href="classQVPainter.html#af213d51b59f8ed1254adb8f2df8f4f98" title="Draws text in a given pixel position of the QVImageCanvas which does not scale with...">QVPainter::drawTextUnscaled()</a> and <a class="el" href="classQVPainter.html#ac3a7669110b0fa478eb28b19ad1f5014" title="Draws a QVImage&lt;T,n&gt; of any type T and size n in the corresponding QVImageCanvas...">QVPainter::drawQVImage()</a>, which will also behave intuitively when zooming and moving around the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>.</p>
+<ul>
+<li><b>Augmented reality</b>:</li>
+</ul>
+<p>Finally, the programmer can also easily make augmented reality applications using the <a class="el" href="classQVImageCanvas.html#a7c00107a447dbc7f0167ff27b15a0870" title="Prepares OpenGL to draw directly the world as seen from the camera.">beginDrawWorldFromCamera()</a> and <a class="el" href="classQVImageCanvas.html#a61651501207a7635a2dd8cbd4b720502" title="Restores state of QVImageCanvas after augmented reality OpenGL drawing.">endDrawWorldFromCamera()</a> methods. Here is a simple example (see documentation on those methods for a more detailed explanation):</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">MyImageCanvas::custom_viewer</a>()
+{
+    <span class="comment">// If you linked a QVImage to this QVImageCanvas, then it is shown yet</span>
+    <span class="comment">// as background.</span>
+
+    <span class="comment">// Now, given that you can compute your camera position and calibration, you can paint 3D</span>
+    <span class="comment">// virtual objects in your canvas:</span>
+    <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a> cameraPosition;
+    <span class="keywordtype">double</span> focalx,focaly;
+    computeCameraPositionAndCalibration(...whatever...,&amp;cameraPosition,&amp;focalx,&amp;focaly);
+
+    <span class="comment">// Direct OpenGL calls in world coordinates go between beginDrawWorldFromCamera(...) and</span>
+    <span class="comment">// endDrawWorldFromCamera():</span>
+    beginDrawWorldFromCamera(focalx,focaly,cameraPosition);
+    <span class="comment">// Colored axis X (Red), Y (Green) and Z (Blue):</span>
+    glBegin(GL_LINES);
+      glColor3ub(255,0,0);
+      glVertex3f(0,0,0);
+      glVertex3f(0.25,0,0);
+      glColor3ub(0,255,0);
+      glVertex3f(0,0,0);
+      glVertex3f(0,0.25,0);
+      glColor3ub(0,0,255);
+      glVertex3f(0,0,0);
+      glVertex3f(0,0,0.25);
+    glEnd();
+    <span class="comment">// Yellow sphere of 0.25 radius, centered in the world point (0.25,0.25,0.25):</span>
+    glColor3ub(255,255,0);
+    glTranslatef(0.25,0.25,0.25);
+    glutWireSphere(0.25,17,9);
+
+    <span class="comment">// You must always end with a call to endDrawWorldFromCamera() method, to</span>
+    <span class="comment">// ensure adequate restore of things:</span>
+    endDrawWorldFromCamera();
+
+    <span class="comment">//... Other 2D painting stuff (again in image coordinates)...</span>
+}
+</pre></div><p>This would be an example of drawing an sphere on top of an image of a template, which has been used to compute camera position and calibration. In this example, the long sides of the template have a world length of exactly 1.0:</p>
+<div align="center">
+<img src="qvimagecanvas_augmented_reality.png" alt="qvimagecanvas_augmented_reality.png"/>
+</div>
+<p>A simpler method to display augmented objects in an image canvas is by overloading the method custom_viewer_3D. This method should paint the 3D objects, regarding a fixed coordinate reference system.</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">class </span>ARCanvas : <span class="keyword">public</span> <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>
+        {
+        <span class="keyword">public</span>:
+                ARCanvas(QString name) : <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>(name)    { };
+
+                <span class="keywordtype">void</span> custom_viewer_3D()
+                        {
+                        glEnable(GL_LIGHTING);          <span class="comment">// Enable lighting.</span>
+                        glEnable(GL_LIGHT0);            <span class="comment">// Enable light zero (note: uses default values).</span>
+                        glEnable(GL_COLOR_MATERIAL);    <span class="comment">// Configure glColor().</span>
+                        glEnable(GL_DEPTH_TEST);        <span class="comment">// Enable depth testing.</span>
+                        glClear(GL_DEPTH_BUFFER_BIT);   <span class="comment">// Clear depth buffers.</span>
+
+                        <span class="comment">// Draw a wire teapot at the origin of coordinates using GLUT primitives.</span>
+                        glColor3ub(128,196,255);
+
+                        glRotatef(90.0, 1.0, 0.0, 0.0);
+                        glTranslatef(0.0,0.20,0.0);
+
+                        glutSolidTeapot(0.3);
+                        };
+        };
+</pre></div><p>In the <em>main</em> function, the camera pose and calibration is specified through the properties <em>Camera calibration matrix</em> and <em>Camera pose</em>, regarding the same fixed coordinate reference system:</p>
+<div class="fragment"><pre class="fragment">        ARCanvas imageCanvas(<span class="stringliteral">&quot;AR canvas&quot;</span>);
+
+        [...]
+
+        processingBlock.linkProperty(<span class="stringliteral">&quot;imageIn&quot;</span>,&amp;imageCanvas);
+        processingBlock.linkProperty(<span class="stringliteral">&quot;Camera calibration matrix&quot;</span>, &amp;imageCanvas);
+        processingBlock.linkProperty(<span class="stringliteral">&quot;Camera pose&quot;</span>, &amp;imageCanvas);
+</pre></div><p>See example <a href="AugmentedReality_8cpp.html">AugmentedReality</a> for a complete example of an augmented reality application using this method. </p>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00348">348</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac08d9d360747bbc0ccf2db3664813217"></a><!-- doxytag: member="QVImageCanvas::QVImageCanvas" ref="ac08d9d360747bbc0ccf2db3664813217" args="(const QString name=QString(), QWidget *parent=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVImageCanvas::QVImageCanvas </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>QString()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&nbsp;</td>
+          <td class="paramname"> <em>parent</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Image canvas constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the image canvas </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>parent</em>&nbsp;</td><td>parent QObject of the canvas </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8cpp_source.html#l00028">28</a> of file <a class="el" href="qvimagecanvas_8cpp_source.html">qvimagecanvas.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a94894d3fdcecc85df3982d6c71df602a"></a><!-- doxytag: member="QVImageCanvas::setColor" ref="a94894d3fdcecc85df3982d6c71df602a" args="(const QString &amp;name, const QColor &amp;color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::setColor </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;&nbsp;</td>
+          <td class="paramname"> <em>color</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the display color for a registered input property of the canvas. </p>
+<p>Registered properties of types QList&lt;QPoint&gt;, QList&lt;QPointF&gt;, QList&lt;QVPolyline&gt; and QList&lt;QVPolylineF&gt; are displayed in the canvas with a default color assigned by the link method. The user can specify a non-default color value using method <a class="el" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a">setColor</a>.</p>
+<p>The following code registers an image property, and a QList&lt;QPointF&gt; property in an image canvas from a source block, and sets the display color of the points received from the block, through the <em>Detected points</em> property to be red.</p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> imageCanvas(<span class="stringliteral">&quot;Harris corners&quot;</span>);
+ harrisCornersDetector.linkProperty(<span class="stringliteral">&quot;Input image&quot;</span>, imageCanvas);
+ <span class="comment">// Property &quot;Detected points&quot; is of type QList&lt;QpointF&gt;</span>
+ harrisCornersDetector.linkProperty(<span class="stringliteral">&quot;Detected points&quot;</span>, imageCanvas);
+ imageCanvas.setColor(<span class="stringliteral">&quot;Detected points&quot;</span>, Qt::red);
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the source property to set the color. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>QColor</em>&nbsp;</td><td>Color to display the elements contained in the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00413">413</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1cf2eec22039d5793791a3109348bcfe"></a><!-- doxytag: member="QVImageCanvas::setPrintTags" ref="a1cf2eec22039d5793791a3109348bcfe" args="(const QString &amp;name, const bool &amp;printTags)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::setPrintTags </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&nbsp;</td>
+          <td class="paramname"> <em>printTags</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>document </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00417">417</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f4e77bc5830094390b2857aacba4236"></a><!-- doxytag: member="QVImageCanvas::setRadius" ref="a7f4e77bc5830094390b2857aacba4236" args="(const QString &amp;name, const int &amp;radius)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::setRadius </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>radius</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the display radius for a registered input property of the canvas. </p>
+<p>Some registered properties, for example points, are displayed in the canvas with a default radius size of 3. As the <a class="el" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a">setColor</a>, this method can be used to specify a display radius size different than the default.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Name of the source property to set the radius. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>radius</em>&nbsp;</td><td>Radius size of the property. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00427">427</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd0e106aa4bf642f6caf41624c00c43c"></a><!-- doxytag: member="QVImageCanvas::setSaturationRange" ref="abd0e106aa4bf642f6caf41624c00c43c" args="(const float low, const float high)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVImageCanvas::setSaturationRange </td>
+          <td>(</td>
+          <td class="paramtype">const float&nbsp;</td>
+          <td class="paramname"> <em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&nbsp;</td>
+          <td class="paramname"> <em>high</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the saturation range to display floating point images. </p>
+<p>The default saturation range to display a floating point image (QVImage&lt;sFloat, 1&gt; or QVImage&lt;sFloat, 3&gt;) is [0, 255]. This means that pixel intensity values outside that range will be set to 0 or 255, whether the intensity is below or above that range.</p>
+<p>This method can be used to specify a different saturation range.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>low</em>&nbsp;</td><td>Lower value for the saturation range. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>high</em>&nbsp;</td><td>Higher value for the saturation range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8cpp_source.html#l00504">504</a> of file <a class="el" href="qvimagecanvas_8cpp_source.html">qvimagecanvas.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVImageCanvas.html#a5b3506a49bedc014967502dba9a0a59e">setLowHigh()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7062b40a00e2f97a96f8ffb052ea30cd"></a><!-- doxytag: member="QVImageCanvas::linkSelectedPolyline" ref="a7062b40a00e2f97a96f8ffb052ea30cd" args="(QVPropertyContainer *destinationContainer, QString destinationPropName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::linkSelectedPolyline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>destinationContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>destinationPropName</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Link selected polyline property with a block's input property. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>expand this documentation </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00443">443</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVImageCanvas.html#a81b949416ce684c2bb05ae905ecb0b6b">linkSelectedPolyline()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b5f5780785dc82754d1dd20f29294b4"></a><!-- doxytag: member="QVImageCanvas::linkSelectedRectangle" ref="a1b5f5780785dc82754d1dd20f29294b4" args="(QVPropertyContainer *destinationContainer, QString destinationPropName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::linkSelectedRectangle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> *&nbsp;</td>
+          <td class="paramname"> <em>destinationContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>destinationPropName</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Link selected rectangle property with a block's input property. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>expand this documentation </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00450">450</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVImageCanvas.html#a8b103778a03324230145d2ee62672c35">linkSelectedRectangle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81b949416ce684c2bb05ae905ecb0b6b"></a><!-- doxytag: member="QVImageCanvas::linkSelectedPolyline" ref="a81b949416ce684c2bb05ae905ecb0b6b" args="(QVPropertyContainer &amp;destinationContainer, QString destinationPropName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::linkSelectedPolyline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>destinationContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>destinationPropName</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Link selected polyline property with a block's input property. </p>
+<p>This is an overloaded function provided for convenience. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd" title="Link selected polyline property with a block&#39;s input property.">linkSelectedPolyline(QVPropertyContainer *, QString)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00459">459</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b103778a03324230145d2ee62672c35"></a><!-- doxytag: member="QVImageCanvas::linkSelectedRectangle" ref="a8b103778a03324230145d2ee62672c35" args="(QVPropertyContainer &amp;destinationContainer, QString destinationPropName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVImageCanvas::linkSelectedRectangle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>destinationContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>destinationPropName</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Link selected rectangle property with a block's input property. </p>
+<p>This is an overloaded function provided for convenience. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4" title="Link selected rectangle property with a block&#39;s input property.">linkSelectedRectangle(QVPropertyContainer *, QString)</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00468">468</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0040df759739f50e9235547f1055844a"></a><!-- doxytag: member="QVImageCanvas::custom_viewer" ref="a0040df759739f50e9235547f1055844a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void QVImageCanvas::custom_viewer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Display user defined data types method. </p>
+<p>By reimplementing this method on <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> subclasses, the developer can modify the way the objects are displayed in the canvas, or specify the way new user data type objects must be displayed.</p>
+<p>These subclasses can create image canvas objects which display registered objects the new way.</p>
+<p>Method <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a">custom_viewer</a> is called whenever the canvas must be repainted, for example due to changes in the input properties or a canvas resizement. The reimplemented code for this method must read the user defined properties, and use <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> or QWidget functionality to correctly display them.</p>
+<p>An example <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a">custom_viewer</a> function reimplementation follows:</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">MyImageCanvas::custom_viewer</a>()
+        {
+        <span class="keywordflow">foreach</span>(QString propertyName, getPropertyListByType&lt; QList&lt; QVPolylineF &gt; &gt;())
+                {
+                QList&lt; QVPolylineF &gt; polylineList = getPropertyValue&lt; QList&lt; QVPolylineF &gt; &gt;(propertyName);
+                <span class="keywordflow">foreach</span>(<a class="code" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a> polyline, polylineList)
+                        {
+                        <span class="comment">// Set the color of the polyline</span>
+                        <span class="keyword">const</span> <span class="keywordtype">int</span> pointHash = qHash(polyline.first());
+                        draw(polyline, qvColors[pointHash % 10]);
+
+                        <span class="comment">// Draw red dots on the end of the polyline</span>
+                        getQVPainter()-&gt;setPen(Qt::red);
+                        getQVPainter()-&gt;setBrush(QBrush(Qt::red, Qt::SolidPattern));
+                        getQVPainter()-&gt;drawEllipse(polyline.first().x()-1, polyline.first().y()-1, 3, 3);
+                        getQVPainter()-&gt;drawEllipse(polyline.last().x()-1, polyline.last().y()-1, 3, 3);
+                        }
+                }
+        }
+</pre></div><p>Image canvas objects created from the class <em>MyImageCanvas</em>, which inherits from <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> will display polylines contained in input polyline lists with different colors, depending on the location of their first point, and red dots of radius 3 at the ends of each polyline. </p>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00511">511</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b3506a49bedc014967502dba9a0a59e"></a><!-- doxytag: member="QVImageCanvas::setLowHigh" ref="a5b3506a49bedc014967502dba9a0a59e" args="(float low, float high)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVImageCanvas::setLowHigh </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>high</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>use <a class="el" href="classQVImageCanvas.html#abd0e106aa4bf642f6caf41624c00c43c">QVImageCanvas::setSaturationRange(const float,const float)</a> instead. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00516">516</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcc6632a6181cc4d9f9ef3b2e2fb6b22"></a><!-- doxytag: member="QVImageCanvas::getQVPainter" ref="adcc6632a6181cc4d9f9ef3b2e2fb6b22" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVPainter.html">QVPainter</a>* QVImageCanvas::getQVPainter </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns a <a class="el" href="classQVPainter.html" title="Inherits from QPainter to allow versatile drawing on a QVImageCanvas object.">QVPainter</a> object to perform custom drawings in the canvas. </p>
+<p>Returns a <a class="el" href="classQVPainter.html" title="Inherits from QPainter to allow versatile drawing on a QVImageCanvas object.">QVPainter</a> object to perform custom drawings when reimplementing the <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">QVImageCanvas::custom_viewer()</a> method in QVImagecanvas subclasses. </p>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00526">526</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ebbb35e7857c0c256f4b16072b658a9"></a><!-- doxytag: member="QVImageCanvas::getZoom" ref="a4ebbb35e7857c0c256f4b16072b658a9" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVImageCanvas::getZoom </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns current zoom of QVImagecanvas. </p>
+<p>Returns current zoom of QVImagecanvas, as currently defined by user. Possible return values are 1, 2, 4, 8, 16, 32, 64 or 128. </p>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00533">533</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a35cc774a6b0e9fdf3847f59f29a4d052"></a><!-- doxytag: member="QVImageCanvas::getViewport" ref="a35cc774a6b0e9fdf3847f59f29a4d052" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect QVImageCanvas::getViewport </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns current viewport of QVImagecanvas. </p>
+<p>Returns a QRect containing the viewport which is currently visible in the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>. IMPORTANT: to avoid losing precission when zoomed in, the returned rectangle is in fact multiplied by the current zoom. Actual coordinates of top left corner, therefore, could be obtained with subpixel accuracy using the following expressions: </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">float</span> x_subp = (float)<a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052" title="Returns current viewport of QVImagecanvas.">getViewport</a>().topLeft().x()/(float)<a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9" title="Returns current zoom of QVImagecanvas.">getZoom</a>();
+ <span class="keywordtype">float</span> y_subp = (float)<a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052" title="Returns current viewport of QVImagecanvas.">getViewport</a>().topLeft().y()/(float)<a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9" title="Returns current zoom of QVImagecanvas.">getZoom</a>();
+</pre></div><p> The same applies for current height and width of the viewport: </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">float</span> w_subp = (float)<a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052" title="Returns current viewport of QVImagecanvas.">getViewport</a>().width()/(float)<a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9" title="Returns current zoom of QVImagecanvas.">getZoom</a>();
+ <span class="keywordtype">float</span> h_subp = (float)<a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052" title="Returns current viewport of QVImagecanvas.">getViewport</a>().height()/(float)<a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9" title="Returns current zoom of QVImagecanvas.">getZoom</a>();
+</pre></div> 
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00551">551</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a012298b8e651df7d1bb5df06c590e016"></a><!-- doxytag: member="QVImageCanvas::getSize" ref="a012298b8e651df7d1bb5df06c590e016" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize QVImageCanvas::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the original image size of the QVImagecanvas. </p>
+<p>Returns the original image size of the QVImagecanvas (i.e. without taking into account zoom and viewport selected by user; just the original size in pixels of the main image of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>). </p>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00558">558</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c00107a447dbc7f0167ff27b15a0870"></a><!-- doxytag: member="QVImageCanvas::beginDrawWorldFromCamera" ref="a7c00107a447dbc7f0167ff27b15a0870" args="(const double fx, const double fy, const QVCameraPose &amp;cameraPosition)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVImageCanvas::beginDrawWorldFromCamera </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>fx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>fy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPosition</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prepares OpenGL to draw directly the world as seen from the camera. </p>
+<p>This function saves all the painting state of the <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>, and pushes the adequate matrices in the OpenGL stack so that subsequent OpenGL drawing primitives can be directly drawn in world coordinates, and they will be shown in the canvas just as would be seen from the camera with the given intrinsic and extrinsic calibration. Useful for augmented reality applications, where the programmer wants to augment the input image with virtual objects, and he has managed to guess the current camera position and calibration. Its usage is very simple. For example, you could do the following in your <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer()</a> reimplementation: </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">MyImageCanvas::custom_viewer</a>()
+        {
+        <span class="comment">// If you linked a QVImage to this QVImageCanvas, then it is shown yet</span>
+     <span class="comment">// as background.</span>
+
+     <span class="comment">// Then you can use some more QPainter methods to draw directly in the</span>
+     <span class="comment">// image plane...</span>
+        getQVPainter()-&gt;setPen(Qt::red);
+        getQVPainter()-&gt;setBrush(QBrush(Qt::red, Qt::SolidPattern));
+        getQVPainter()-&gt;drawEllipse(...use image coordinates...);
+
+     <span class="comment">// ... and now, given that you can compute your camera position and</span>
+     <span class="comment">// calibration, you can paint 3D virtual objects in your canvas this way:</span>
+     <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a> cameraPosition;
+     <span class="keywordtype">double</span> focalx,focaly;
+
+     computeCameraPositionAndCalibration(...whatever...,
+                                         &amp;cameraPosition,&amp;focalx,&amp;focaly);
+
+     beginDrawWorldFromCamera(focalx,focaly,cameraPosition);
+     <span class="comment">// Colored axis X (Red), Y (Green) and Z (Blue) in canonical positions:</span>
+     glBegin(GL_LINES);
+       glColor3ub(255,0,0);
+       glVertex3f(0,0,0);
+       glVertex3f(1.0,0,0);
+       glColor3ub(0,255,0);
+       glVertex3f(0,0,0);
+       glVertex3f(0,1.0,0);
+       glColor3ub(0,0,255);
+       glVertex3f(0,0,0);
+       glVertex3f(0,0,1.0);
+     glEnd();
+
+     <span class="comment">// You must always end with a call to endDrawWorldFromCamera() method, to</span>
+     <span class="comment">// ensure adequate restore of things:</span>
+     endDrawWorldFromCamera();
+
+     <span class="comment">// And, if you want, now you can continue drawing in the image plane</span>
+        getQVPainter()-&gt;setPen(Qt::red);
+        getQVPainter()-&gt;drawEllipse(...use again image coordinates...);
+        }
+</pre></div> <dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fx</em>&nbsp;</td><td>Camera focal length in the X axis (in pixels). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fy</em>&nbsp;</td><td>Camera focal length in the X axis (in pixels). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cameraPosition</em>&nbsp;</td><td>A QVEuclidenMapping3 containing current camera position and rotation, in world coordinates.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVImageCanvas.html#a61651501207a7635a2dd8cbd4b720502" title="Restores state of QVImageCanvas after augmented reality OpenGL drawing.">endDrawWorldFromCamera()</a> <a class="el" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00621">621</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61651501207a7635a2dd8cbd4b720502"></a><!-- doxytag: member="QVImageCanvas::endDrawWorldFromCamera" ref="a61651501207a7635a2dd8cbd4b720502" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVImageCanvas::endDrawWorldFromCamera </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restores state of <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> after augmented reality OpenGL drawing. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>beginDrawWorldFromCamera(double,double,QVEuclideanMapping3) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8h_source.html#l00629">629</a> of file <a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb1465e8ce2eb8aa0a95967724489b6d"></a><!-- doxytag: member="QVImageCanvas::unlink" ref="acb1465e8ce2eb8aa0a95967724489b6d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVImageCanvas::unlink </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Completely unlinks a property holder. </p>
+<p>Deletes all the input and output links associated to the holder. Of course, all the corresponding necessary unlinks in other property holders are also performed. </p>
+
+<p>Reimplemented from <a class="el" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">QVPropertyContainer</a>.</p>
+
+<p>Definition at line <a class="el" href="qvimagecanvas_8cpp_source.html#l00377">377</a> of file <a class="el" href="qvimagecanvas_8cpp_source.html">qvimagecanvas.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/qvguiblocks/<a class="el" href="qvimagecanvas_8h_source.html">qvimagecanvas.h</a></li>
+<li>src/qvblockprogramming/qvguiblocks/<a class="el" href="qvimagecanvas_8cpp_source.html">qvimagecanvas.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

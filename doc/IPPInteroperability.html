@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="IPPInteroperability">Interoperability with the IPP library </a></h1><p>To enable the QVision to interoperate with the IPP, the following line must be present (and un-commented) in the <em>config.pri</em> file, prior to compilation and installation of the QVision library:</p>
+<div class="fragment"><pre class="fragment">CONFIG += qvipp
+</pre></div><p>Any program using the QVision framework IPP wrapper must include the following heade in its source code:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+</pre></div><p>From then on, both the QVision library and the developed applications will automatically include and link the adequate files from the IPP library.</p>
+<h2><a class="anchor" id="IPPFunctionsWithQVImage">
+Directly using QVision image objects with native IPP functions</a></h2>
+<p>The simplest way of using a QVision image on a IPP function, is by using the QVImage::operator() operator, and the <a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">QVImage::getStep()</a>, <a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">QVImage::getRows()</a> and <a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">QVImage::getCols()</a> methods from the class <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. For example, the IPP function <em>Set</em> has the following header signature:</p>
+<pre>IppStatus ippiSet_8u_C1R(Ipp8u value, Ipp8u* pDst, int dstStep, IppiSize roiSize);</pre><p>The following code will apply that function to a single channel, gray-scale image:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvip.h&gt;</span>
+
+<span class="comment">// [...]</span>
+
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;&gt;</a> image;
+
+ippiSet_8u_C1R( 128,                                            <span class="comment">// Value to set image pixels.</span>
+                &amp;image(0,0),                                    <span class="comment">// Pointer to the pixel (0,0).</span>
+                image.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),                                <span class="comment">// Step of the image.</span>
+                (IppiSize){ image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>() }  <span class="comment">// Size of the image to be processed</span>
+                                                                <span class="comment">// by the IPP function.</span>
+                );
+</pre></div><p>But the former method is perhaps too low-level to work with under the QVision framework. The following section exposes a more adequate method for using QVision images with IPP functions.</p>
+<h2><a class="anchor" id="IPPWrapperFunctions">
+The IPP wrapper functions</a></h2>
+<p>The QVision offers a set of wrapper functions to use the <em>Intel's Performance Primitives</em> library in an object oriented fashion. For each one of the most commonly used functions in the IPP library, the QVision provides an homonimous wrapper function that takes the same input images and data, and calls the original IPP function to process them.</p>
+<p>The difference between the original IPP function and the wrapper function, is that the latter takes <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> and/or <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> objects, instead of a pointer to the image or matrix content, and the image step, whenever an image is required as input parameter.</p>
+<p>You can see the full list and documentation of the IPP wrapper functions in the group <a class="el" href="group__qvipp.html">IPP wrapper functions</a>. The following subsections detail their usage.</p>
+<h2><a class="anchor" id="ExampleIPPWrapperFunction">
+IPP wrapper function naming conventions</a></h2>
+<p>We take for instance the functions used to add two image in the IPP library. There is a whole family of them, named with the prefix <em>ippiAdd_</em>, followed by a suffix indicating relevant information about the storage type of the pixels contained the image, the image number of channels, and so on.</p>
+<p>For example, the function <em>ippiAdd_8u_C1RSfs</em> is used to add two 8-bit unsigned data type images, composed by one single channel, storing the result in a destination image of the same type. That function has the following header:</p>
+<div class="fragment"><pre class="fragment">IppStatus ippiAdd_8u_C1RSfs(
+        <span class="keyword">const</span> Ipp&lt;Ipp8u&gt;* pSrc1, <span class="keywordtype">int</span> src1Step,
+        <span class="keyword">const</span> Ipp&lt;Ipp8u&gt;* pSrc2, <span class="keywordtype">int</span> src2Step,
+        Ipp&lt;Ipp8u&gt;* pDst, <span class="keywordtype">int</span> dstStep,
+        IppiSize roiSize,
+        <span class="keywordtype">int</span> scaleFactor);
+</pre></div><p>The QVision offers a wrapper function named <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a>, which uses the following header:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> <a class="code" href="group__qvippIAALO.html#ga44cde4bf9c772056004a9fc94fd4123b" title="Add image to accumulator.">Add</a>(       <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp; qvimage_pSrc1,
+                <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp; qvimage_pSrc2,
+                <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp; qvimage_pDst,
+                <span class="keyword">const</span> <span class="keywordtype">int</span> scaleFactor = 1,
+                <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+</pre></div><p>The input image object type parameter <em>qvimage_pSrc1</em> in the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function substitutes the input parameters <em>pSrc1</em> and <em>src1Step</em> from the IPP function <em>ippiAdd_8u_C1RSfs</em> (corresponding to the image data pointer and image step).</p>
+<p>The body of the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function calls the IPP function, mapping the pointer to the data buffer of the image <em>qvimage_pSrc1</em> and its step value respectively to the input parameters <em>pSrc1</em> and <em>src1Step</em> of the IPP function.</p>
+<p>The gain with this approach is double. First, the interface of the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function is clearer than the header of its IPP counterpart. The simpler name of the former (which omits the pixel depth and channel number suffix) grants an easier and more robust object-oriented usage. By overloading that name, we can select which of the <em>Add</em> functions should be called, depending on the type of the input images.</p>
+<p>Second, images require only one input parameter in the wrapper function, instead of the two required in the original IPP function.</p>
+<p>A typical call to the IPP original function may look like this:</p>
+<div class="fragment"><pre class="fragment">IppiSize size = { cols, rows };
+IppStatus status = ippiAdd_8u_C1RSfs(img1Ptr, img1Step, img2Ptr, img2Step, imgDestPtr, imgDestStep, size, 1);
+</pre></div><p>Calls to the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function can be like this:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="group__qvippIAALO.html#ga44cde4bf9c772056004a9fc94fd4123b" title="Add image to accumulator.">Add</a>(img1, img2, imgDest);       <span class="comment">// No roiSize required.</span>
+<a class="code" href="group__qvippIAALO.html#ga44cde4bf9c772056004a9fc94fd4123b" title="Add image to accumulator.">Add</a>(img1, img2, imgDest, 2);    <span class="comment">// Factor different than 1.</span>
+<a class="code" href="group__qvippIAALO.html#ga44cde4bf9c772056004a9fc94fd4123b" title="Add image to accumulator.">Add</a>(img1, img2, imgDest, 1, QPoint(10,10) );    <span class="comment">// Destination ROI offset different than the default.</span>
+                                                <span class="comment">// (its meaning and usage is discussed below).</span>
+</pre></div><h2><a class="anchor" id="IPPWrapperFunctionTypes">
+QVision naming for IPP pixel depth notation</a></h2>
+<p>The QVision offers an alternative notation for bit-depth types, to make them more human-readable. The following table illustrates the type equivalence between IPP image and <a class="el" href="classQVImage.html">QVImage</a> depth types:</p>
+<table class="doxtable">
+<tr>
+<th>QVision type </th><td>uChar </td><td>uShort </td><td>uInt </td><td>sChar </td><td>sShort </td><td>sInt </td><td>sFloat </td><td>sDouble  </td></tr>
+<tr>
+<th>IPP type </th><td>Ipp8u </td><td>Ipp16u </td><td>Ipp32u </td><td>Ipp8s </td><td>Ipp16s </td><td>Ipp32s </td><td>Ipp32f </td><td>Ipp64f  </td></tr>
+</table>
+<p>Both naming conventions are interchangeable, but in the source code of the toolkit we preferred the first one.</p>
+<h2><a class="anchor" id="ROI">
+Regions of Interest (ROI)</a></h2>
+<p>Most of the IPP functions can restrict their operations to a small area of the input images. Aritmetical operators, filtering functions, color conversion functions, etc... can be applied only to a rectangular area inside the input image, which can include the whole image if neccesary.</p>
+<p><a class="el" href="classQVImage.html">QVImage</a> objects have a property named ROI which contains a <a href="http://doc.trolltech.com/4.3/qrect.html">QRect</a> object modeling the rectangular area inside the image, which is used as the Region of Interest by the IPP functions that operate with it. This rectangle can be read and modified with several methods from the <a class="el" href="classQVGenericImage.html">QVGenericImage</a> class: <a class="el" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4">QVGenericImage::getROI</a>, <a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">QVGenericImage::setROI</a>, <a class="el" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff">QVGenericImage::erodeROI</a>, <a class="el" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7">QVGenericImage::dilateROI</a>, <a class="el" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">QVGenericImage::resetROI</a> and so on.</p>
+<h3><a class="anchor" id="ROIUsage">
+Usage of the ROI in image processing</a></h3>
+<p>This is a ROI usage example code: The following code illustrates the usage of the ROI with the <a class="el" href="group__qvippIDEAIF.html#ga8fb743f1c2878d3fff7f7d5038fdbabe">Copy</a> function:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;qvipp.h&gt;</span>      <span class="comment">// QVIPP functions are included in this header file.</span>
+[...]
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> sourceImage(<span class="stringliteral">&quot;tajMahal.png&quot;</span>);
+sourceImage.setROI(10,10,90,90);        <span class="comment">// This sets the ROI of the input image.</span>
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> destinationImage(200, 200);
+Copy(sourceImage, destinationImage);
+
+[...]
+</pre></div><p>The figure below shows the result of that code on an input image. The left image is the source image, containing the <em>tajMahal</em> image. The right image shows the result of the <em>Copy</em> operation. The black area can contain unspecified content, not necessarily black, if it was not previously initialized so.</p>
+<div align="center">
+<img src="tajmahalcopyroi.png" alt="tajmahalcopyroi.png"/>
+</div>
+<p>The ROI is commonly used to specify the portion of the image which contains valid information. Thus, after the <em>copy</em> operation of the previous example, the ROI of the <em>destinationImage</em> will be set to contain only the part of the image which really shows a part of the Taj Mahal -that is, that contains "valid" data-.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the destination image is not large enough to contain the ROI, it will be re-sized. The new content of the image, outside the original image size, will be unspecified.</dd></dl>
+<p>Each image processing function should update the ROI of the output image or images, so that they contain the correct area computed by the operations, and which can be used in posterior processing. The following code is useful to illustrate this:</p>
+<div class="fragment"><pre class="fragment">[...]
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> sourceImage(<span class="stringliteral">&quot;lena.png&quot;</span>);
+sourceImage.setROI(100, 110, 90, 40);   <span class="comment">// This sets the ROI of the input image.</span>
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> temporaryImage(256, 256);
+<a class="code" href="group__qvippFF.html#gae5c1010fcf026e45590b363519769da5" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_8u_C1R.">FilterGauss</a>(sourceImage, temporaryImage, 5);
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> destinationImage(256, 256);
+<a class="code" href="group__qvippFF.html#gae5c1010fcf026e45590b363519769da5" title="QVision wrapper function for IPP&amp;#39;s ippiFilterGauss_8u_C1R.">FilterGauss</a>(temporaryImage, destinationImage, 5);
+
+[...]
+</pre></div><p>It applies two <a href="http://en.wikipedia.org/wiki/Gaussian_blur">Gaussian filter</a> on the <em>lena</em> image. The first call to <a class="el" href="group__qvippFF.html#ga6f817950c08bf600b3e4468032653fe7">FilterGauss</a> will store in the ROI of the <em>temporaryImage</em> the area of the image which contains valid data from its operations, so the next call to <a class="el" href="group__qvippFF.html#ga6f817950c08bf600b3e4468032653fe7">FilterGauss</a> will only work with that part of the image -the one that now is supposed to be valid-.</p>
+<div align="center">
+<img src="lenagauss_5_5roi.png" alt="lenagauss_5_5roi.png"/>
+</div>
+<p>Of course, and if needed, the programmer can anyway set another ROI at any time by explicitly calling the method <a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">QVImage::setROI()</a>.</p>
+<h2><a class="anchor" id="DestinationROIPointer">
+Destination ROI pointer</a></h2>
+<p>In some cases the developer may want to indicate a location for the ROI in the destination image. The user can indicate in the parameter <em>destROIOffset</em> (present in most of the IPP wrapper functions) the point in the destination image where the function must locate the top left corner of the ROI.</p>
+<p>This parameter is included in the header of several functions from the package <a class="el" href="group__qvipp.html">IPP wrapper functions</a>, the <a class="el" href="group__qvippIDEAIF.html#ga8fb743f1c2878d3fff7f7d5038fdbabe">Copy</a> function amongst them. The following code illustrates the usage of the <em>destROIOffset</em> parameter:</p>
+<div class="fragment"><pre class="fragment">[...]
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> sourceImage(<span class="stringliteral">&quot;tajMahal.png&quot;</span>);
+sourceimage.setROI(10,10,90,90);        <span class="comment">// This sets the ROI of the input image.</span>
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> destinationImage(200, 200);
+Copy(sourceimage, destinationImage, QPoint(60,30));
+
+[...]
+</pre></div><p>The <em>QPoint(60,30)</em> parameter in the call to the <a class="el" href="group__qvippIDEAIF.html#ga8fb743f1c2878d3fff7f7d5038fdbabe">Copy</a> function indicates that it should copy the content of the ROI in the source image to the destination location, starting at the point <em>(60,30)</em>:</p>
+<div align="center">
+<img src="tajmahalcopyroianchor.png" alt="tajmahalcopyroianchor.png"/>
+</div>
+<dl class="note"><dt><b>Note:</b></dt><dd>When dealing with several input images, the <a class="el" href="group__qvipp.html">IPP wrapper functions</a> functions usually perform a ROI size checking to ensure that the ROI of all the input images is adequate. For example, the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function checks that both of the input images have the same ROI size. A correct example usage of the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function would be this: <div class="fragment"><pre class="fragment">[...]
+<span class="comment">// lena is an image of size 256x256. tajMahal is an image of size 200x200.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> tajMahal(<span class="stringliteral">&quot;tajMahal.png&quot;</span>), lena(<span class="stringliteral">&quot;lena.png&quot;</span>);
+
+lena.setROI(45,65,155,85);                      <span class="comment">// Set initial ROI for image sourceImage1.</span>
+tajMahal.setROI(30,20,155,85);                  <span class="comment">// Set initial ROI for image sourceImage2.</span>
+                                                <span class="comment">// ROI&#39;s have a dimension of 155x85 pixels</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> destinationImage(230,230);       <span class="comment">// &#39;destinationImage&#39; has size 230x230</span>
+
+<a class="code" href="group__qvippIAALO.html#ga44cde4bf9c772056004a9fc94fd4123b" title="Add image to accumulator.">Add</a>(lena, tajMahal, destinationImage, QPoint(10,20));
+[...]
+</pre></div> The following picture illustrates the result of that code: <div align="center">
+<img src="tajmahallenacopyroianchor.png" alt="tajmahallenacopyroianchor.png"/>
+</div>
+ If the developer provides the <a class="el" href="group__qvippIAALO.html#ga66bd6c77ca3c10da7db4c960faf9fc75">Add</a> function two images with an incorrect ROI size, and if the program executes in DEBUG mode, a Q_ASSERT will be raised and the program will stop, indicating the error. </dd></dl>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

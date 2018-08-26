@@ -1,0 +1,231 @@
+\form#0:$ C = \left( \begin{array}{c} A \\ B \\ \end{array} \right) $
+\form#1:$ C = \left( \begin{array}{cc} A & B \\ \end{array} \right) $
+\form#2:$ C = \left( \begin{array}{c|c} I & 0 \\ \hline 0 & A \\ \end{array} \right) $
+\form#3:$ cols \times rows $
+\form#4:$ cols/2 \times rows/2 $
+\form#5:$ rows/2 \times cols/2 $
+\form#6:$ 3 \times 3 $
+\form#7:$K = \frac{1}{8}\left(\begin{array}{ccc} 0 & -1 & 0 \\ -1 & 4 & -1 \\ 0 & -1 & 0 \end{array}\right)$
+\form#8:$K = \frac{1}{8}\left(\begin{array}{ccc} 0 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 0 \end{array}\right)$
+\form#9:$K = \frac{1}{16}\left(\begin{array}{ccc} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{array}\right)$
+\form#10:$ \frac{area_{th-delta} - area_{th-delta}}{area_{th-delta}} $
+\form#11:$ \left| \begin{array}{ccc} -1/8 & -1/8 & -1/8 \\ -1/8 & 16/8 & -1/8 \\ -1/8 & -1/8 & -1/8 \\ \end{array} \right| $
+\form#12:$ v_i $
+\form#13:$ v_i - minDelta \leq v_0 \leq v_i + maxDelta $
+\form#14:$ v_0 $
+\form#15:$ v_0 – d_{lw} \leq v \leq v_0 + d_{up} $
+\form#16:$ d_{lw} $
+\form#17:$ kernelSize x kernelSize $
+\form#18:$ sigma $
+\form#19:\[ G(i,j) = e^{\displaystyle-\frac{\displaystyle(K/2-i)^2 + (K/2-j)^2}{\displaystyle2\sigma^2}} \]
+\form#20:$ R[I|-C] $
+\form#21:$ R $
+\form#22:$ C $
+\form#23:$ S_{maxElement} \in \aleph, S_{maxElement} = \{0 .. maxElement\} $
+\form#24:$ S_{maxElement} $
+\form#25:$ G $
+\form#26:$ e = d(x, Fx') + d(x', xF) $
+\form#27:$ d(p,l) $
+\form#28:$ p $
+\form#29:$ l $
+\form#30:$ e $
+\form#31:$ e_i = d(x_i, Fx'_i) + d(x'_i, x_i F) $
+\form#32:$ e_i $
+\form#33:$ F$
+\form#34:$ [R|t] $
+\form#35:$ t $
+\form#36:$ R^n \to R^m $
+\form#37:$ qvCombination(n,k) = {n \choose k} = \frac{n!}{k!(n-k)!} $
+\form#38:$ [ -\Pi, \Pi ] $
+\form#39:$ a_0 + a_1 x + a_2 x^2 + a_3 x^3 = 0 $
+\form#40:$ a_3 $
+\form#41:$ a_0 $
+\form#42:$ a_1 $
+\form#43:$ a_2 $
+\form#44:$ p \equiv (p_x, p_y) $
+\form#45:$l \equiv l_1 x + l_2 y + l_3 = 0 $
+\form#46:$ qvPointLineDistance(l, p) = \frac{|l_1 p_x + l_2 p_y + l_3|}{\sqrt{{l_1}^2+{l_2}^2}} $
+\form#47:$(l_1, l_2, l_3)$
+\form#48:$ R$
+\form#49:$ w $
+\form#50:$w$
+\form#51:$R$
+\form#52:$ R = e^{\left[w\right]_\times}$
+\form#53:$ [\cdot]_\times$
+\form#54:$e^\cdot$
+\form#55:$ A $
+\form#56:$ B $
+\form#57:$ A.verticalAppend(B) = \left[ \begin{array}{c} A \\ B \end{array} \right] $
+\form#58:$ A.horizontalAppend(B) = \left[ A | B \right] $
+\form#59:$ A \& B = \left[ \begin{array}{c} A \\ B \end{array} \right] $
+\form#60:$ A | B = \left[ A | B \right] $
+\form#61:$ \mathbf{v} $
+\form#62:$ A \& v = \left[ \begin{array}{c} A \\ \mathbf{v} \end{array} \right] $
+\form#63:$ A | v = \left[ A | \mathbf{v} \right] $
+\form#64:$ \|A\|_2 := \sqrt{ \sum |a_{ij}|^2 } $
+\form#65:$ a_{ij} $
+\form#66:$ \mathrm{tr}(A) = a_{11} + a_{22} + \dots + a_{nn}=\sum_{i=1}^{n} a_{i i} $
+\form#67:$K = \left(\begin{array}{ccc} f & s & c_x \\ 0 & rf & c_y \\ 0 & 0 & 1 \end{array}\right)$
+\form#68:$ f $
+\form#69:$ r $
+\form#70:$ c_x $
+\form#71:$ c_y $
+\form#72:$ s $
+\form#73:$ m \times n $
+\form#74:$ M = U diag(s) V^T $
+\form#75:$ m \times m $
+\form#76:$ n \times n $
+\form#77:$diag(s)$
+\form#78:$s(i)$
+\form#79:$ m \times \min(m,n) $
+\form#80:$ \min(m,n) \times n $
+\form#81:$ \min(m,n) \times \min(m,n) $
+\form#82:$ U^T U = I $
+\form#83:$ V^T V = I $
+\form#84:$M X = B$
+\form#85:$X$
+\form#86:$M = U diag(s) V^T$
+\form#87:$ X = V diag(s)^{-1} U^T B $
+\form#88:$M x = b$
+\form#89:$x$
+\form#90:$ x = V diag(s)^{-1} U^T b $
+\form#91:$M$
+\form#92:$m \times n$
+\form#93:$m>n$
+\form#94:$m$
+\form#95:$m<n$
+\form#96:$ U$
+\form#97:$ V$
+\form#98:$ s$
+\form#99:$||U diag(s) V^T-M)||_{Frobenius} + ||V^T V - I||_{Frobenius} + ||U^T U - I||_{Frobenius}$
+\form#100:$||M||^2_{Frobenius} - ||s||^2$
+\form#101:$s$
+\form#102:$ M = L L^{T} $
+\form#103:$ M $
+\form#104:$L$
+\form#105:$L^T$
+\form#106:$ L$
+\form#107:$||L L^T-M)||_{Frobenius}$
+\form#108:$ M = L L^T $
+\form#109:$ M = P L U $
+\form#110:$ m \times min(m,n) $
+\form#111:$ min(m,n) \times n $
+\form#112:$ m = n$
+\form#113:$U$
+\form#114:$ P $
+\form#115:$ P$
+\form#116:$||P L U - M)||_{Frobenius}$
+\form#117:$ M = Q R $
+\form#118:$ m \times m$
+\form#119:$||Q R - M)||_{Frobenius} + ||Q^T Q - I)||_{Frobenius}$
+\form#120:$ M = Q L $
+\form#121:$||Q L - M)||_{Frobenius} + ||Q^T Q - I)||_{Frobenius}$
+\form#122:$ M = R Q $
+\form#123:$||R Q - M)||_{Frobenius} + ||Q Q^T - I)||_{Frobenius}$
+\form#124:$ M = L Q $
+\form#125:$||L Q - M)||_{Frobenius} + ||Q Q^T - I)||_{Frobenius}$
+\form#126:$ M X = Q R $
+\form#127:$ R X = Q^T B $
+\form#128:$ Q$
+\form#129:$ \mathbf{v}_i $
+\form#130:$ \lambda_i $
+\form#131:$ M \mathbf{v}_i = \lambda_i \mathbf{v}_i $
+\form#132:$ Q Q^T = Q^T Q = I $
+\form#133:$ Q $
+\form#134:$ \vec{\lambda} $
+\form#135:$ M = Q diag(\vec{\lambda}) Q^{T} $
+\form#136:$||Q diag(\lambda) Q^T-M)||_{Frobenius} + ||Q^T Q - I||_{Frobenius}$
+\form#137:$ M = Q diag(\lambda) Q^T $
+\form#138:$\lambda$
+\form#139:$ M^{+} = \sum_{i} (1/s_i) (v_i \otimes u_i) $
+\form#140:$u_i$
+\form#141:$v_i$
+\form#142:$ M = PLU $
+\form#143:$ M\mathbf{x} = \mathbf{0} $
+\form#144:$ ||M X - B||^2_{Frobenius} $
+\form#145:$ M X = B$
+\form#146:$||M x - B||^2 $
+\form#147:$ M x = b$
+\form#148:$ M\mathbf{x} = \mathbf{b} $
+\form#149:$ \|x_i - x_{i-1} \| $
+\form#150:$ \frac{ \partial f}{ \partial x_i} \left( \textbf{x} \right) = \lim_{h\to 0}{f(x_1, \ldots, x_i + h, \ldots, x_n)-f(x_1, \ldots, x_i, \ldots, x_n)\over h}$
+\form#151:$ H_{i, j}(f) = \frac{ f(x_1, \ldots, x_i + h, \ldots, x_j + h, \ldots, x_n) + f(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_n) f(x_1, \ldots, x_i + h, \ldots, x_j, \ldots, x_n) + f(x_1, \ldots, x_i, \ldots, x_j + h, \ldots, x_n) }{h^2}$
+\form#152:$ \|\partial x_i\| \leq maxAbsErr + maxRelErr \| x_i \| $
+\form#153:$ H $
+\form#154:$ H^* $
+\form#155:$ p' \propto H p $
+\form#156:$ \left\{ p_i \mapsto p_i' \right\} _{i=1..n} $
+\form#157:$ H^* = \arg\max \displaystyle\sum\limits_{i=0}^n \left[ p_i' \right] _\times H p_i $
+\form#158:$ q $
+\form#159:$ H = \left( \begin{array}{ccc} s \cos(\theta) & -s \sin (\theta) & t_x \\ s \sin(\theta) & s \cos (\theta) & t_y \\ 0 & 0 & 1 \end{array} \right) $
+\form#160:$ \theta $
+\form#161:$ (t_x, t_y) $
+\form#162:$ (x, y) $
+\form#163:$ H_{3 \times 3} $
+\form#164:$ (x', y') $
+\form#165:$ \left(\begin{array}{c} x' \\ y' \\ 1 \end{array}\right) \propto H \left(\begin{array}{c} x \\ y \\ 1 \end{array}\right) $
+\form#166:$ \left( I_3|0 \right) $
+\form#167:$ \left( R_1|t \right) $
+\form#168:$ \left( R_1|-t \right) $
+\form#169:$ \left( R_2|t \right) $
+\form#170:$ \left( R_2|-t \right) $
+\form#171:$ E \propto \left[ t \right] _\times R_i $
+\form#172:$ R_1 $
+\form#173:$ R_2 $
+\form#174:$ \{ X_i \}_{i=1..n} $
+\form#175:$ \{ x_i \}_{i=1..n} $
+\form#176:$ x_i \propto P X_i $
+\form#177:$ x \propto P X $
+\form#178:$ X $
+\form#179:$ \{x_i\}_{i=1..n}$
+\form#180:$ \{P_i\}_{i=1..n}$
+\form#181:$ x_i$
+\form#182:$ x_j$
+\form#183:$ P_i$
+\form#184:$ P_j$
+\form#185:$ x_i \mapsto x_j $
+\form#186:$ f_1 $
+\form#187:$ f_2 $
+\form#188:$ error(f_1, f_2) = 1 - s_2 / s_1 $
+\form#189:$ s_1 $
+\form#190:$ s_2 $
+\form#191:$ \left(\begin{array}{ccc} f_1 & 0 & cx_1 \\ 0 & f_1 & cy_1 \\ 0 & 0 & 1 \\ \end{array}\right) F \left(\begin{array}{ccc} f_2 & 0 & cx_2 \\ 0 & f_2 & cy_2 \\ 0 & 0 & 1 \\ \end{array}\right) $
+\form#192:$ (cx_1, cy_1) $
+\form#193:$ (cx_2, cy_2) $
+\form#194:$ F $
+\form#195:$ W=K^{-T}.K^{-1} $
+\form#196:$ H^T W H = \left( \begin{array}{ccc} a & 0 & r \\ 0 & a & s \\ t & u & v \end{array} \right) $
+\form#197:$ (H^T W H)(0,0) = (H^T W H)(1,1) $
+\form#198:$ (H^T.W.H)(0,1)=0 $
+\form#199:$ norm_2 $
+\form#200:$ 15 \times 12 $
+\form#201:$ 3 \times 5 $
+\form#202:$ 4 \times 3 $
+\form#203:$ C x = b $
+\form#204:$ C = \left( \begin{array}{ccccc} 9 & 1.5 & 6.0 & 0.75 & 3.0 \\ 1.5 & 0.5 & 0.0 & 0.0 & 0.0 \\ 6.0 & 0.0 & 12.0 & 0.0 & 0.0 \\ 0.75 & 0.0 & 0.0 & 0.625 & 0.0 \\ 3.0 & 0.0 & 0.0 & 0.0 & 16.0 \\ \end{array} \right) $
+\form#205:$ b = \left( \begin{array}{c} 1.0 \\ 2.0 \\ 3.0 \\ 4.0 \\ 5.0 \\ \end{array} \right) $
+\form#206:$ x = \left( \begin{array}{c} -326.333 \\ 983.0 \\ 163.417 \\ 398.0 \\ 61.5 \\ \end{array} \right) $
+\form#207:$ majorRows minorRows \times majorCols minorCols $
+\form#208:$ 0 $
+\form#209:$ (majorRows * minorRows) \times (majorCols * minorCols) $
+\form#210:$ A\mathbf{x}=\mathbf{b} $
+\form#211:$ \|A\mathbf{x}-\mathbf{b}\|^2+ \|\Gamma \mathbf{x}\|^2 $
+\form#212:$ \Gamma $
+\form#213:$ \mathbf{x} $
+\form#214:$ \bar{x} = \sum_{i=1}^n{x_i} $
+\form#215:$ \bar{x} = \frac{1}{n} \sum_{i=1}^n{x_i} $
+\form#216:$ s^2 = \frac{1}{n} \sum_{i=1}^n\left(x_i - \overline{x} \right)^ 2 $
+\form#217:$ 1 $
+\form#218:$ H(X) = - \sum_{i=1}^n p(x_i) \log_b p(x_i) $
+\form#219:$ x_i = 0 $
+\form#220:$ x_i $
+\form#221:$ 0 \cdot log_b(0) $
+\form#222:$ \lim_{p\to0+}p\log p = 0 $
+\form#223:$ M = v \otimes v_2$
+\form#224:$ v_2 $
+\form#225:$ \mathbf{a} \times \mathbf{b} = \mathbf{c} $
+\form#226:$ [\mathbf{a}]_\times \mathbf{b} = \mathbf{c} $
+\form#227:$ [\mathbf{a}]_\times $
+\form#228:$ \mathbf{a} $
+\form#229:$ [\mathbf{a}]_{\times} = \left( \begin{array}{ccc} 0 & -a_3 & a_2 \\ a_3 & 0 & -a_1 \\ -a_2 & a_1 & 0\end{array} \right)$
+\form#230:$ 9 \times 9 $

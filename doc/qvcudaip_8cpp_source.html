@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvcuda/qvcudaip.cpp</h1><a href="qvcudaip_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="qvcudaip_8h.html" title="File from the QVision library.">qvcudaip.h</a>&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="qvcudaipD_8h.html" title="File from the QVision library.">qvcudaipD.h</a>&quot;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="qvcudaip_8h.html#aaa6c34d6f29b16df26f33fac10d598dd">00031</a> <span class="keywordtype">bool</span> <a class="code" href="qvcudaip_8cpp.html#aaa6c34d6f29b16df26f33fac10d598dd" title="Subtracts two QVCUDAImage&amp;lt;float,1&amp;gt; in the CUDA device, and puts the result...">QVCUDASubtract</a>(<span class="keyword">const</span> <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;src2, <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;dest)
+<a name="l00032"></a>00032         {
+<a name="l00033"></a>00033         <span class="keywordflow">if</span> ( (src1.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>() != src2.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>()) or (src1.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>() != src2.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>()) or (src1.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>() != src2.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>()) ) {
+<a name="l00034"></a>00034                 std::cerr &lt;&lt; <span class="stringliteral">&quot;QVCUDAIP module: QVCUDASubtract function: src1 and src2 image sizes do not coincide.\n&quot;</span>;
+<a name="l00035"></a>00035                 <span class="keywordflow">return</span> FALSE;
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="keywordtype">int</span> w = src1.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>();
+<a name="l00039"></a>00039         <span class="keywordtype">int</span> h = src1.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>();
+<a name="l00040"></a>00040         <span class="keywordtype">int</span> step = src1.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>(); <span class="comment">// We know here that src2&#39;s step is the same (as forced by QVCUDAImage resize method).</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         dest.<a class="code" href="classQVCUDAImage.html#a0b2e7c0fa2ffd39717d81d3b09f3264c" title="Resizes a QVCUDAImage.">resize</a>(w,h);
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         Subtract_kernel(src1.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),src2.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),dest.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),w,h,step);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046         CUT_CHECK_ERROR(<span class="stringliteral">&quot;QVCUDAIP module: QVCUDASubtract function: execution failed\n&quot;</span>);
+<a name="l00047"></a>00047         CUDA_SAFE_CALL(cudaThreadSynchronize());
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="keywordflow">return</span> TRUE;
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="qvcudaip_8h.html#a0068ac6f27bcd30f7569bf4a300f5bfa">00053</a> <span class="keywordtype">bool</span> <a class="code" href="qvcudaip_8cpp.html#a0068ac6f27bcd30f7569bf4a300f5bfa" title="FIXME pending...">QVCUDAScaleDown</a>(<span class="keyword">const</span> <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;src, <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;dest, <span class="keywordtype">float</span> sigma)
+<a name="l00054"></a>00054 {
+<a name="l00055"></a>00055         <span class="keywordflow">if</span> ( (src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>() &lt; 2) or (src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>() &lt; 2) or (src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>()%2 != 0) or (src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>()%2 != 0)) {
+<a name="l00056"></a>00056                 std::cerr &lt;&lt; <span class="stringliteral">&quot;QVCUDAIP module: QVCUDAScaleDown function: src image is not even sized.\n&quot;</span>;
+<a name="l00057"></a>00057                 <span class="keywordflow">return</span> FALSE;
+<a name="l00058"></a>00058         }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         <span class="keywordtype">int</span> w = src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>();
+<a name="l00061"></a>00061         <span class="keywordtype">int</span> h = src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>();
+<a name="l00062"></a>00062         <span class="keywordtype">int</span> step_s = src.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>();
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         dest.<a class="code" href="classQVCUDAImage.html#a0b2e7c0fa2ffd39717d81d3b09f3264c" title="Resizes a QVCUDAImage.">resize</a>(w/2,h/2);
+<a name="l00065"></a>00065         <span class="keywordtype">int</span> step_d = dest.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>();
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="keywordtype">float</span> h_Kernel[5];
+<a name="l00069"></a>00069         <span class="keywordtype">float</span> kernelSum = 0.0f;
+<a name="l00070"></a>00070         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0;j&lt;5;j++) {
+<a name="l00071"></a>00071                 h_Kernel[j] = (float)expf(-(<span class="keywordtype">double</span>)(j-2)*(j-2)/2.0/sigma/sigma);
+<a name="l00072"></a>00072                 kernelSum += h_Kernel[j];
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0;j&lt;5;j++)
+<a name="l00075"></a>00075                 h_Kernel[j] /= kernelSum;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         ScaleDown_kernel(src.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),dest.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),h_Kernel,w,h,step_s,step_d);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         CUT_CHECK_ERROR(<span class="stringliteral">&quot;QVCUDAIP module: QVCUDAScaleDown() execution failed\n&quot;</span>);
+<a name="l00080"></a>00080         CUDA_SAFE_CALL(cudaThreadSynchronize());
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         <span class="keywordflow">return</span> TRUE;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 
+<a name="l00087"></a><a class="code" href="qvcudaip_8h.html#ac90306668622a81ff94896cb653eed1f">00087</a> <span class="keywordtype">bool</span> <a class="code" href="qvcudaip_8cpp.html#ac90306668622a81ff94896cb653eed1f" title="Applies a Gauss filter to ...">QVCUDAFilterGauss</a>(<span class="keyword">const</span> <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;src, <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;dest, <span class="keywordtype">int</span> kernelSize, <span class="keywordtype">float</span> sigma)
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089         <span class="keywordtype">int</span> w = src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>();
+<a name="l00090"></a>00090         <span class="keywordtype">int</span> h = src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>();
+<a name="l00091"></a>00091         <span class="keywordtype">int</span> step = src.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>();
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093         dest.<a class="code" href="classQVCUDAImage.html#a0b2e7c0fa2ffd39717d81d3b09f3264c" title="Resizes a QVCUDAImage.">resize</a>(w,h);
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095         <span class="keywordflow">if</span> ( (src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>() &lt; 1) or (src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>() &lt; 1) ) {
+<a name="l00096"></a>00096                 std::cerr &lt;&lt; <span class="stringliteral">&quot;QVCUDAIP module: QVCUDAFilterGauss function: src image is not OK.\n&quot;</span>;
+<a name="l00097"></a>00097                 <span class="keywordflow">return</span> FALSE;
+<a name="l00098"></a>00098         }
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100         <span class="keywordtype">int</span> RADIUS = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(round(2.5*sigma));
+<a name="l00101"></a>00101         std::cout &lt;&lt; <span class="stringliteral">&quot;USING RADIUS=&quot;</span> &lt;&lt; RADIUS &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="keywordflow">if</span>(2*RADIUS+1&gt;CUDA_MAX_MASK_SIZE) {
+<a name="l00104"></a>00104                 std::cerr &lt;&lt; <span class="stringliteral">&quot;QVCUDAIP module: QVCUDAFilterGauss function: 2*RADIUS+1 exceeds CUDA_MAX_MASK_SIZE.\n&quot;</span>;
+<a name="l00105"></a>00105                 <span class="keywordflow">return</span> FALSE;
+<a name="l00106"></a>00106         }
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108         <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> tempimg(w,h);
+<a name="l00109"></a>00109         
+<a name="l00110"></a>00110         <span class="comment">// We know here that dest and temp steps are the same (as forced by QVCUDAImage resize method).</span>
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112         <span class="keywordtype">float</span> h_Kernel[CUDA_MAX_MASK_SIZE];
+<a name="l00113"></a>00113         <span class="keywordtype">float</span> kernelSum = 0.0f;
+<a name="l00114"></a>00114         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=-RADIUS;j&lt;=RADIUS;j++) {
+<a name="l00115"></a>00115                 h_Kernel[j+RADIUS] = (float)expf(-(<span class="keywordtype">double</span>)j*j/2.0/sigma/sigma);
+<a name="l00116"></a>00116                 kernelSum += h_Kernel[j+RADIUS];
+<a name="l00117"></a>00117         }
+<a name="l00118"></a>00118         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=-RADIUS;j&lt;=RADIUS;j++)
+<a name="l00119"></a>00119                 h_Kernel[j+RADIUS] /= kernelSum;
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121         SeparableFilter_kernel(src.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),dest.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),tempimg.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),h_Kernel,RADIUS,w,h,step);
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123         CUT_CHECK_ERROR(<span class="stringliteral">&quot;QVCUDAIP module: QVCUDAFilterGauss() execution failed\n&quot;</span>);
+<a name="l00124"></a>00124         CUDA_SAFE_CALL(cudaThreadSynchronize());
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126         <span class="keywordflow">return</span> TRUE;
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128 }
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="qvcudaip_8h.html#ab59e13f0ba387c19ab90df841c2a5025">00130</a> <span class="keywordtype">bool</span> <a class="code" href="qvcudaip_8cpp.html#ab59e13f0ba387c19ab90df841c2a5025" title="To make CUDA tests...">QVCUDATest</a>(<span class="keyword">const</span> <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;src, <a class="code" href="classQVCUDAImage.html" title="Class to manage images stored in the GPU for the QVision framework.">QVCUDAImage&lt;float,1&gt;</a> &amp;dest, <span class="keywordtype">int</span> radius, <span class="keywordtype">int</span> iters)
+<a name="l00131"></a>00131 {
+<a name="l00132"></a>00132         <span class="keywordtype">int</span> w = src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>();
+<a name="l00133"></a>00133         <span class="keywordtype">int</span> h = src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>();
+<a name="l00134"></a>00134         <span class="keywordtype">int</span> step = src.<a class="code" href="classQVCUDAImage.html#a4bc1fb37fa6c8afa95bb344c0a4ee283" title="Returns the step of the image.">getStep</a>();
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136         dest.<a class="code" href="classQVCUDAImage.html#a0b2e7c0fa2ffd39717d81d3b09f3264c" title="Resizes a QVCUDAImage.">resize</a>(w,h);
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138         <span class="keywordflow">if</span> ( (src.<a class="code" href="classQVCUDAImage.html#a85022bc8b3e21adee52f8f6f73eb9afb" title="Returns the number of cols of the image.">getCols</a>() &lt; 1) or (src.<a class="code" href="classQVCUDAImage.html#a6ffd1bbe764e1a77d06b68cee251071a" title="Returns the number of rows of the image.">getRows</a>() &lt; 1) ) {
+<a name="l00139"></a>00139                 std::cerr &lt;&lt; <span class="stringliteral">&quot;QVCUDAIP module: QVCUDATest function: src image is not OK.\n&quot;</span>;
+<a name="l00140"></a>00140                 <span class="keywordflow">return</span> FALSE;
+<a name="l00141"></a>00141         }
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143         Test_kernel(src.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),dest.<a class="code" href="classQVCUDAImage.html#a34085acda5201bd164d4581ee882855d" title="Returns the pointer to the start of the device data for the image.">getData</a>(),radius,iters,w,h,step);
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145         CUT_CHECK_ERROR(<span class="stringliteral">&quot;QVCUDAIP module: QVCUDATest() execution failed\n&quot;</span>);
+<a name="l00146"></a>00146         CUDA_SAFE_CALL(cudaThreadSynchronize());
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148         <span class="keywordflow">return</span> TRUE;
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151 }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

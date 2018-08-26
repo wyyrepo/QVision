@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li class="current"><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="globals.html"><span>All</span></a></li>
+      <li><a href="globals_func.html"><span>Functions</span></a></li>
+      <li><a href="globals_type.html"><span>Typedefs</span></a></li>
+      <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
+      <li><a href="globals_defs.html"><span>Defines</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="globals.html#index_a"><span>a</span></a></li>
+      <li><a href="globals_0x62.html#index_b"><span>b</span></a></li>
+      <li><a href="globals_0x63.html#index_c"><span>c</span></a></li>
+      <li><a href="globals_0x64.html#index_d"><span>d</span></a></li>
+      <li><a href="globals_0x65.html#index_e"><span>e</span></a></li>
+      <li><a href="globals_0x66.html#index_f"><span>f</span></a></li>
+      <li><a href="globals_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="globals_0x68.html#index_h"><span>h</span></a></li>
+      <li><a href="globals_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="globals_0x6c.html#index_l"><span>l</span></a></li>
+      <li class="current"><a href="globals_0x6d.html#index_m"><span>m</span></a></li>
+      <li><a href="globals_0x6e.html#index_n"><span>n</span></a></li>
+      <li><a href="globals_0x6f.html#index_o"><span>o</span></a></li>
+      <li><a href="globals_0x70.html#index_p"><span>p</span></a></li>
+      <li><a href="globals_0x71.html#index_q"><span>q</span></a></li>
+      <li><a href="globals_0x72.html#index_r"><span>r</span></a></li>
+      <li><a href="globals_0x73.html#index_s"><span>s</span></a></li>
+      <li><a href="globals_0x74.html#index_t"><span>t</span></a></li>
+      <li><a href="globals_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="globals_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_0x78.html#index_x"><span>x</span></a></li>
+      <li><a href="globals_0x79.html#index_y"><span>y</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+Here is a list of all documented file members with links to the documentation:
+
+<h3><a class="anchor" id="index_m">- m -</a></h3><ul>
+<li>matchSiftGPUFeatures()
+: <a class="el" href="group__qvsiftgpu.html#gaafeabf762b94906e7ea2ffe8893866e6">qvsiftgpu.cpp</a>
+, <a class="el" href="group__qvsiftgpu.html#gaafeabf762b94906e7ea2ffe8893866e6">qvsiftgpu.h</a>
+</li>
+<li>Max()
+: <a class="el" href="group__qvippISF.html#gad19ee404ba9540ca6db400942bf1a171">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#ga5c6818c716512e7ee6612b688cf19bd1">qvippfunctions.h</a>
+, <a class="el" href="group__qvippISF.html#gaef0fc7ea88dec12c30dfe4993ba8d6f7">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#gaef0fc7ea88dec12c30dfe4993ba8d6f7">qvippfunctions.h</a>
+, <a class="el" href="group__qvippISF.html#ga5c6818c716512e7ee6612b688cf19bd1">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#ga4695d548df7bb25bac6dde326a364034">qvippfunctions.h</a>
+, <a class="el" href="group__qvippISF.html#ga4695d548df7bb25bac6dde326a364034">qvippfunctions.cpp</a>
+</li>
+<li>MaxEvery()
+: <a class="el" href="group__qvippISF.html#ga9ebec5dcf3cb1591327edec8bcd3bbc0">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#ga868dcc76643480b3e18c858392fe91e4">qvippfunctions.h</a>
+, <a class="el" href="group__qvippISF.html#ga868dcc76643480b3e18c858392fe91e4">qvippfunctions.cpp</a>
+</li>
+<li>maximalPoints()
+: <a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">qvip.cpp</a>
+, <a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">qvip.h</a>
+</li>
+<li>Mean()
+: <a class="el" href="group__qvippISF.html#ga790730b605dfb4462470ebc8241eb8d2">qvippfunctions.h</a>
+, <a class="el" href="group__qvippISF.html#gaea578fd5bc05a457eb8af0c80386b819">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#gaea578fd5bc05a457eb8af0c80386b819">qvippfunctions.h</a>
+</li>
+<li>Min()
+: <a class="el" href="group__qvippISF.html#ga47cad14d543d670d8d3b514780cec32f">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#ga47cad14d543d670d8d3b514780cec32f">qvippfunctions.h</a>
+</li>
+<li>MinEigenVal()
+: <a class="el" href="group__qvippCV.html#gab2eadd7360e07f47881c2727bf28b2df">qvipp.h</a>
+, <a class="el" href="group__qvippCV.html#ga6610bc68ec46cd944b93444fc5001b90">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippCV.html#ga6610bc68ec46cd944b93444fc5001b90">qvippfunctions.h</a>
+</li>
+<li>MinEigenValGetBufferSize()
+: <a class="el" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920">qvipp.cpp</a>
+, <a class="el" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920">qvipp.h</a>
+</li>
+<li>MinEvery()
+: <a class="el" href="group__qvippISF.html#gae1ebc7d5c018cc391967a09d11152501">qvippfunctions.h</a>
+, <a class="el" href="group__qvippISF.html#gad008e2584b86a28ee53c3a599b268b5d">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippISF.html#gad008e2584b86a28ee53c3a599b268b5d">qvippfunctions.h</a>
+</li>
+<li>Mul()
+: <a class="el" href="group__qvippIAALO.html#gab2af53c0d5aeef14af61e5c44847fa63">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#ga038d26dd41012491f08450f64dee49c6">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#gafa67031c1eb568cba37c37ac5dd7f912">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#gaf69fed782124cc0f79894de83b83e82a">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#gad65b40452cac7578990e97c9969e80aa">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#gaf3fe9c16b9926a3d36bdf38a8842dc80">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#ga4243b7ca4db538468adc7af79a6a6374">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#gab50c7cca210caf8410f1d081d1de7a6c">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#gaf69fed782124cc0f79894de83b83e82a">qvippfunctions.cpp</a>
+</li>
+<li>MulC()
+: <a class="el" href="group__qvippIAALO.html#ga888f2b8f0af205a102c7fbfd3716324a">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#ga7ad7caac511adccd269ddcd5a48c64e6">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#ga56a5181927f6ed03d22e27512f8f1b21">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#ga5e58f58a17cb14f051ddb174335d74ed">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#gae61913753c069a1984af2af6087e42c1">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#ga66001eca4569feed5d8d44b91fee1af4">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#ga66001eca4569feed5d8d44b91fee1af4">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#gadde04485ec1957548685d887ca5f4769">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#ga7ad7caac511adccd269ddcd5a48c64e6">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#ga888f2b8f0af205a102c7fbfd3716324a">qvippfunctions.cpp</a>
+</li>
+<li>MulScale()
+: <a class="el" href="group__qvippIAALO.html#ga6fd6ed80182abfe683866f1d73fc004d">qvippfunctions.h</a>
+, <a class="el" href="group__qvippIAALO.html#ga6fd6ed80182abfe683866f1d73fc004d">qvippfunctions.cpp</a>
+, <a class="el" href="group__qvippIAALO.html#ga4e89ffce82a99da36e19c544e0d4dda7">qvippfunctions.h</a>
+</li>
+<li>myFloodFill()
+: <a class="el" href="qvip_8cpp.html#ad59b48c43b863530b8ef45a61ef250e7">qvip.cpp</a>
+</li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

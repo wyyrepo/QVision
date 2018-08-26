@@ -1,0 +1,1581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvprojective.cpp</h1><a href="qvprojective_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;qvprojective.h&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;qvmatrixalgebra.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="qvdefines_8h.html" title="File from the QVision library.">qvdefines.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;float.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;qvnumericalanalysis.h&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00031"></a>00031 <span class="keywordtype">void</span> homogenizePoints(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;premult, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;postmult, QList&lt; QPointFMatching &gt; &amp;homogeneizedPairs)
+<a name="l00032"></a>00032     {
+<a name="l00033"></a>00033     <span class="comment">// 0. Fast normalization (similar to DLT, but based on min and max values</span>
+<a name="l00034"></a>00034     <span class="comment">// of X and Y, instead of mean value and normalized mean distance to</span>
+<a name="l00035"></a>00035     <span class="comment">// centroid equal to sqrt(2). Hartley-Zisserman 2nd ed. pag 109.</span>
+<a name="l00036"></a>00036     <span class="keywordtype">float</span> minXS=FLT_MAX, maxXS=-FLT_MAX, minYS=FLT_MAX, maxYS=-FLT_MAX,
+<a name="l00037"></a>00037           minXD=FLT_MAX, maxXD=-FLT_MAX, minYD=FLT_MAX, maxYD=-FLT_MAX;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     <span class="comment">//QPair&lt;QPointF, QPointF&gt; matching;</span>
+<a name="l00040"></a>00040     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00041"></a>00041         {
+<a name="l00042"></a>00042         minXS = MIN(matching.first.x(), minXS);
+<a name="l00043"></a>00043         maxXS = MAX(matching.first.x(), maxXS);
+<a name="l00044"></a>00044         minYS = MIN(matching.first.y(), minYS);
+<a name="l00045"></a>00045         maxYS = MAX(matching.first.y(), maxYS);
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         minXD = MIN(matching.second.x(), minXD);
+<a name="l00048"></a>00048         maxXD = MAX(matching.second.x(), maxXD);
+<a name="l00049"></a>00049         minYD = MIN(matching.second.y(), minYD);
+<a name="l00050"></a>00050         maxYD = MAX(matching.second.y(), maxYD);
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <span class="comment">// This is to avoid possible div by zero in degenerate conditions:</span>
+<a name="l00054"></a>00054     <span class="keywordflow">if</span>(fabs(minXS-maxXS) &lt; EPSILON)
+<a name="l00055"></a>00055         maxXS += 1.0;
+<a name="l00056"></a>00056     <span class="keywordflow">if</span>(fabs(minYS-maxYS) &lt; EPSILON)
+<a name="l00057"></a>00057         maxYS += 1.0;
+<a name="l00058"></a>00058     <span class="keywordflow">if</span>(fabs(minXD-maxXD) &lt; EPSILON)
+<a name="l00059"></a>00059         maxXD += 1.0;
+<a name="l00060"></a>00060     <span class="keywordflow">if</span>(fabs(minYD-maxYD) &lt; EPSILON)
+<a name="l00061"></a>00061         maxYD += 1.0;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     minXS = 0; maxXS = 320;
+<a name="l00064"></a>00064     minYS = 0; maxYS = 240;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066     <span class="comment">//QPair&lt;QPointF, QPointF&gt; matching;</span>
+<a name="l00067"></a>00067     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00068"></a>00068         {
+<a name="l00069"></a>00069         <span class="keyword">const</span> <span class="keywordtype">double</span>    x = (matching.first.x()-(maxXS+minXS)/2)/(maxXS-minXS),
+<a name="l00070"></a>00070                 y = (matching.first.y()-(maxYS+minYS)/2)/(maxYS-minYS),
+<a name="l00071"></a>00071                 x_p = (matching.second.x()-(maxXD+minXD)/2)/(maxXD-minXD),
+<a name="l00072"></a>00072                 y_p = (matching.second.y()-(maxYD+minYD)/2)/(maxYD-minYD);
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         homogeneizedPairs.append(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>(QPointF(x,y),QPointF(x_p,y_p)));
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     <span class="keyword">const</span> <span class="keywordtype">double</span>        dataPremult[9] = {
+<a name="l00078"></a>00078                     1/(maxXS-minXS),    0,                      -(maxXS+minXS)/(2*(maxXS-minXS)),
+<a name="l00079"></a>00079                     0,                  1/(maxYS-minYS),        -(maxYS+minYS)/(2*(maxYS-minYS)),
+<a name="l00080"></a>00080                     0,                  0,                      1
+<a name="l00081"></a>00081                     },
+<a name="l00082"></a>00082             dataPostmult[9] = {
+<a name="l00083"></a>00083                     maxXD-minXD,        0,              (maxXD+minXD)/2,
+<a name="l00084"></a>00084                     0,          maxYD-minYD,    (maxYD+minYD)/2,
+<a name="l00085"></a>00085                     0,          0,              1,
+<a name="l00086"></a>00086                     };
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088     premult = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(3,3, dataPremult);
+<a name="l00089"></a>00089     postmult = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(3,3, dataPostmult);
+<a name="l00090"></a>00090     }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getPlanarTransferDLTCoefficientMatrix(<span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings)
+<a name="l00094"></a>00094     {
+<a name="l00095"></a>00095         <span class="comment">// 1. Obtain coeficient matrix for the system:</span>
+<a name="l00096"></a>00096         <span class="comment">//      Ax = 0</span>
+<a name="l00097"></a>00097         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3*matchings.size(),9);
+<a name="l00098"></a>00098         <span class="keywordtype">double</span> *ptrA = A.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; matchings.size(); n++)
+<a name="l00101"></a>00101                 {
+<a name="l00102"></a>00102                 <span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching = matchings.at(n);
+<a name="l00103"></a>00103                 <span class="keyword">const</span> <span class="keywordtype">double</span>    x = matching.first.x(),
+<a name="l00104"></a>00104                                                 y = matching.first.y(),
+<a name="l00105"></a>00105                                                 xp = matching.second.x(),
+<a name="l00106"></a>00106                                                 yp = matching.second.y(),
+<a name="l00107"></a>00107                                                 x_xp = x*xp,
+<a name="l00108"></a>00108                                                 x_yp = x*yp,
+<a name="l00109"></a>00109                                                 y_xp = y*xp,
+<a name="l00110"></a>00110                                                 y_yp = y*yp;
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112                 ptrA[0] = 0;            ptrA[1] = 0;            ptrA[2] = 0;
+<a name="l00113"></a>00113                 ptrA[3] = -x;           ptrA[4] = -y;           ptrA[5] = -1;
+<a name="l00114"></a>00114                 ptrA[6] = x_yp;         ptrA[7] = y_yp;         ptrA[8] = yp;
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116                 ptrA[9] = x;            ptrA[10] = y;           ptrA[11] = 1;
+<a name="l00117"></a>00117                 ptrA[12] = 0;           ptrA[13] = 0;           ptrA[14] = 0;
+<a name="l00118"></a>00118                 ptrA[15] = -x_xp;       ptrA[16] = -y_xp;       ptrA[17] = -xp;
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120                 ptrA[18] = -x_yp;       ptrA[19] = -y_yp;       ptrA[20] = -yp;
+<a name="l00121"></a>00121                 ptrA[21] = x_xp;        ptrA[22] = y_xp;        ptrA[23] = xp;
+<a name="l00122"></a>00122                 ptrA[24] = 0;           ptrA[25] = 0;           ptrA[26] = 0;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124                 ptrA += 27;
+<a name="l00125"></a>00125                 }
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127         <span class="keywordflow">return</span> A;
+<a name="l00128"></a>00128     }
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 <span class="comment">// From section 4.1 of &#39;Multiple View Geometry in Computer Vision&#39;.</span>
+<a name="l00131"></a><a class="code" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668">00131</a> <span class="keywordtype">bool</span> <a class="code" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668" title="Obtains a planar homography from a list of point correspondences.">computeProjectiveHomography</a>(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H)
+<a name="l00132"></a>00132         {
+<a name="l00133"></a>00133         <span class="keywordflow">if</span> (matchings.size() &lt; 4)
+<a name="l00134"></a>00134                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136         <span class="comment">// 0. Fast normalization (similar to DLT, but based on min and max values</span>
+<a name="l00137"></a>00137         <span class="comment">// of X and Y, instead of mean value and normalized mean distance to</span>
+<a name="l00138"></a>00138         <span class="comment">// centroid equal to sqrt(2). Hartley-Zisserman 2nd ed. pag 109.</span>
+<a name="l00139"></a>00139         QList&lt; QPointFMatching &gt; homogeneizedPairs;
+<a name="l00140"></a>00140         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> premult, postmult;
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142         homogenizePoints(matchings, premult, postmult, homogeneizedPairs);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A = getPlanarTransferDLTCoefficientMatrix(homogeneizedPairs);
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         <span class="comment">// 2. Solve the homogeneous system.</span>
+<a name="l00147"></a>00147         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> AtA = A.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(A, <span class="keyword">true</span>, <span class="keyword">false</span>);
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> U, V;
+<a name="l00150"></a>00150         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> s;
+<a name="l00151"></a>00151         <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(AtA, U, s, V, DEFAULT_TQVSVD_METHOD);
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153         <span class="comment">// 3. Rearrange elements of vector &#39;x&#39; in a 3x3 matrix.</span>
+<a name="l00154"></a>00154         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> homography(3,3,  V.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(8));
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156         <span class="comment">// 4. De-normalize homography back:</span>
+<a name="l00157"></a>00157         homography = (postmult * homography) * premult;
+<a name="l00158"></a>00158         homography = homography / homography(2,2);
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160         H = homography;
+<a name="l00161"></a>00161         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00162"></a>00162         }
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164 <span class="comment">// From section 4.1 of &#39;Multiple View Geometry in Computer Vision&#39;.</span>
+<a name="l00165"></a>00165 <span class="keywordtype">bool</span> computeProjectiveHomography2(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H)
+<a name="l00166"></a>00166     {
+<a name="l00167"></a>00167     <span class="keywordflow">if</span> (matchings.size() &lt; 4)
+<a name="l00168"></a>00168                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170     <span class="comment">// 0. Fast normalization (similar to DLT, but based on min and max values</span>
+<a name="l00171"></a>00171     <span class="comment">// of X and Y, instead of mean value and normalized mean distance to</span>
+<a name="l00172"></a>00172     <span class="comment">// centroid equal to sqrt(2). Hartley-Zisserman 2nd ed. pag 109.</span>
+<a name="l00173"></a>00173     QList&lt; QPointFMatching &gt; homogeneizedPairs;
+<a name="l00174"></a>00174     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> premult, postmult;
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176     homogenizePoints(matchings, premult, postmult, homogeneizedPairs);
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178     <span class="comment">// 1. Obtain coeficient matrix for the system:</span>
+<a name="l00179"></a>00179     <span class="comment">//  Ax = 0</span>
+<a name="l00180"></a>00180     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3*homogeneizedPairs.size(),9);
+<a name="l00181"></a>00181     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; homogeneizedPairs.size(); n++)
+<a name="l00182"></a>00182         {
+<a name="l00183"></a>00183         <span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching = homogeneizedPairs.at(n);
+<a name="l00184"></a>00184         <span class="keyword">const</span> <span class="keywordtype">double</span>    x = matching.first.x(),
+<a name="l00185"></a>00185                 y = matching.first.y(),
+<a name="l00186"></a>00186                 x_p = matching.second.x(),
+<a name="l00187"></a>00187                 y_p = matching.second.y();
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         <span class="keyword">const</span> <span class="keywordtype">double</span> coefsMatrixData[3 * 9] = {
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191                 0,              0,              0,
+<a name="l00192"></a>00192                 -x,             -y,             -1,
+<a name="l00193"></a>00193                 x*y_p,          y*y_p,          y_p,
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195                 x,              y,              1,
+<a name="l00196"></a>00196                 0,              0,              0,
+<a name="l00197"></a>00197                 -x*x_p,         -y*x_p,         -x_p,
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199                 -x*y_p,         -y*y_p,         -y_p,
+<a name="l00200"></a>00200                 x*x_p,          y*x_p,          x_p,
+<a name="l00201"></a>00201                 0,              0,              0
+<a name="l00202"></a>00202                 };
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> coefsMatrix(3,9, coefsMatrixData);
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206         A.setRow(3*n+0, coefsMatrix.getRow(0));
+<a name="l00207"></a>00207         A.setRow(3*n+1, coefsMatrix.getRow(1));
+<a name="l00208"></a>00208         A.setRow(3*n+2, coefsMatrix.getRow(2));
+<a name="l00209"></a>00209         }
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211     <span class="comment">// 2. Solve the homogeneous system.</span>
+<a name="l00212"></a>00212     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x(9);
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214     <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, x);
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216     <span class="comment">// 3. Rearrange elements of vector &#39;x&#39; in a 3x3 matrix.</span>
+<a name="l00217"></a>00217     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> homography = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(x.mid(0,3)) &amp; <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(x.mid(3,3)) &amp; <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(x.mid(6,3));
+<a name="l00218"></a>00218 
+<a name="l00219"></a>00219     <span class="comment">// 4. De-normalize homography back:</span>
+<a name="l00220"></a>00220     homography = (postmult * homography) * premult;
+<a name="l00221"></a>00221     homography = homography / homography(2,2);
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223     H = homography;
+<a name="l00224"></a>00224         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00225"></a>00225     }
+<a name="l00226"></a>00226 
+<a name="l00227"></a><a class="code" href="group__qvprojectivegeometry.html#gae622eb1823659bb0d8dd9528f22e2f1c">00227</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="group__qvprojectivegeometry.html#gae622eb1823659bb0d8dd9528f22e2f1c" title="Obtains an affine homography from a list of point correspondences.">computeAffineHomography</a>(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l00228"></a>00228     {
+<a name="l00229"></a>00229     Q_ASSERT(matchings.size() &gt;= 3);
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231     <span class="comment">// 0. Fast normalization (similar to DLT, but based on min and max values</span>
+<a name="l00232"></a>00232     <span class="comment">// of X and Y, instead of mean value and normalized mean distance to</span>
+<a name="l00233"></a>00233     <span class="comment">// centroid equal to sqrt(2). Hartley-Zisserman 2nd ed. pag 109.</span>
+<a name="l00234"></a>00234     QList&lt; QPointFMatching &gt; homogeneizedPairs;
+<a name="l00235"></a>00235     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> premult, postmult;
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237     homogenizePoints(matchings, premult, postmult, homogeneizedPairs);
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239     <span class="comment">// 1. Obtain coeficient matrix for the system:</span>
+<a name="l00240"></a>00240     <span class="comment">//  Ax = b</span>
+<a name="l00241"></a>00241     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(2*homogeneizedPairs.size(),6);
+<a name="l00242"></a>00242     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b(2*homogeneizedPairs.size());
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; homogeneizedPairs.size(); n++)
+<a name="l00245"></a>00245         {
+<a name="l00246"></a>00246         <span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching = homogeneizedPairs.at(n);
+<a name="l00247"></a>00247         <span class="keyword">const</span> <span class="keywordtype">double</span>    x = matching.first.x(),
+<a name="l00248"></a>00248                 y = matching.first.y(),
+<a name="l00249"></a>00249                 x_p = matching.second.x(),
+<a name="l00250"></a>00250                 y_p = matching.second.y();
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252         <span class="keyword">const</span> <span class="keywordtype">double</span> coefsMatrixData[2 * 6] = {
+<a name="l00253"></a>00253                 x,      y,      1,      0,      0,      0,
+<a name="l00254"></a>00254                 0,      0,      0,      x,      y,      1
+<a name="l00255"></a>00255                 };
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> coefsMatrix(2,6, coefsMatrixData);
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259         A.setRow(2*n+0, coefsMatrix.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(0));
+<a name="l00260"></a>00260         A.setRow(2*n+1, coefsMatrix.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(1));
+<a name="l00261"></a>00261         b[2*n+0] = x_p;
+<a name="l00262"></a>00262         b[2*n+1] = y_p;
+<a name="l00263"></a>00263         }
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265     <span class="comment">// 2. Solve the linear system.</span>
+<a name="l00266"></a>00266     <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x = <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(A)*b;
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268     <span class="comment">// 3. Rearrange elements of vector &#39;x&#39; in a 3x3 matrix.</span>
+<a name="l00269"></a>00269     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(x.mid(0,3)) &amp; <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(x.mid(3,3)) &amp; (<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(2,0.0) &lt;&lt; 1);
+<a name="l00270"></a>00270 
+<a name="l00271"></a>00271     <span class="comment">// 4. De-normalize homography back:</span>
+<a name="l00272"></a>00272     <span class="keywordflow">return</span> (postmult * M) * premult;
+<a name="l00273"></a>00273     }
+<a name="l00274"></a>00274 
+<a name="l00275"></a><a class="code" href="group__qvprojectivegeometry.html#ga06a3ff264f0821da24ee07ce73c86bd6">00275</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="group__qvprojectivegeometry.html#ga06a3ff264f0821da24ee07ce73c86bd6" title="Obtains a similar homography from a set of inter-image point matchings.">computeSimilarHomography</a>(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l00276"></a>00276     {
+<a name="l00277"></a>00277     <span class="keywordflow">if</span> (matchings.size() &lt; 2)
+<a name="l00278"></a>00278         <span class="keywordflow">return</span> <a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(3);
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280     QPointF meanSource(0.0, 0.0), meanDestination(0.0, 0.0);
+<a name="l00281"></a>00281     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00282"></a>00282         {
+<a name="l00283"></a>00283         meanSource = meanSource + matching.first;
+<a name="l00284"></a>00284         meanDestination = meanDestination + matching.second;
+<a name="l00285"></a>00285         }
+<a name="l00286"></a>00286 
+<a name="l00287"></a>00287     meanSource = meanSource / double(matchings.size());
+<a name="l00288"></a>00288     meanDestination = meanDestination / double(matchings.size());
+<a name="l00289"></a>00289 
+<a name="l00290"></a>00290     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> angles, scales;
+<a name="l00291"></a>00291     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00292"></a>00292         {
+<a name="l00293"></a>00293         <span class="keyword">const</span> QPointF   source = matching.first - meanSource,
+<a name="l00294"></a>00294                 destination = matching.second - meanDestination;
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296         angles &lt;&lt; qvAngle(destination, source);
+<a name="l00297"></a>00297         scales &lt;&lt; norm2(destination) / norm2(source);
+<a name="l00298"></a>00298         }
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300     <span class="keywordflow">return</span>      <a class="code" href="classQVMatrix.html#a0d4484ab18803104864a5da5a12e3231" title="Create a 2D translation matrix.">QVMatrix::translationMatrix</a>(meanDestination.x(), meanDestination.y()) *
+<a name="l00301"></a>00301         <a class="code" href="classQVMatrix.html#a34cc7d7a575e6e8f766d5e8d6f71ec70" title="Create a rotation matrix for points in the 2D plane.">QVMatrix::rotationMatrix</a>(angles.median()) * <a class="code" href="classQVMatrix.html#ae85e5758081def4123365e2b949e8028" title="Create a 2D scale matrix.">QVMatrix::scaleMatrix</a>(scales.median()) *
+<a name="l00302"></a>00302         <a class="code" href="classQVMatrix.html#a0d4484ab18803104864a5da5a12e3231" title="Create a 2D translation matrix.">QVMatrix::translationMatrix</a>(-meanSource.x(), -meanSource.y());
+<a name="l00303"></a>00303     }
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305 <span class="comment">/* Funciona, pero da matrices distintas a cvFindFundamentalMat</span>
+<a name="l00306"></a>00306 <span class="comment">QVMatrix ComputeFundamentalMatrix(const QList&lt; QPair&lt;QPointF, QPointF&gt; &gt; &amp;matchings)</span>
+<a name="l00307"></a>00307 <span class="comment">    {</span>
+<a name="l00308"></a>00308 <span class="comment">    Q_ASSERT(matchings.size() &gt;= 8);</span>
+<a name="l00309"></a>00309 <span class="comment">    const int num_points = matchings.size();</span>
+<a name="l00310"></a>00310 <span class="comment"></span>
+<a name="l00311"></a>00311 <span class="comment">    // 1. Obtain coeficient matrix for the system:</span>
+<a name="l00312"></a>00312 <span class="comment">    //  Ax = 0</span>
+<a name="l00313"></a>00313 <span class="comment">    QVMatrix A(matchings.size(),9);</span>
+<a name="l00314"></a>00314 <span class="comment"></span>
+<a name="l00315"></a>00315 <span class="comment">    for (int n=0; n&lt;matchings.size(); n++)</span>
+<a name="l00316"></a>00316 <span class="comment">        {</span>
+<a name="l00317"></a>00317 <span class="comment">        const QPointFMatching matching = matchings[n];</span>
+<a name="l00318"></a>00318 <span class="comment">        const double    x = matching.first.x(), y = matching.first.y(),</span>
+<a name="l00319"></a>00319 <span class="comment">                x_p = matching.second.x(), y_p = matching.second.y();</span>
+<a name="l00320"></a>00320 <span class="comment"></span>
+<a name="l00321"></a>00321 <span class="comment">        A.setRow(n, QVVector(9, (double [9]){ x*x_p, y*x_p, x_p, x*y_p, y*y_p, y_p, x, y, 1 }));</span>
+<a name="l00322"></a>00322 <span class="comment">        }</span>
+<a name="l00323"></a>00323 <span class="comment"></span>
+<a name="l00324"></a>00324 <span class="comment">    // 2. Solve the homogeneous system.</span>
+<a name="l00325"></a>00325 <span class="comment">    QVVector x(9);</span>
+<a name="l00326"></a>00326 <span class="comment">    solveHomogeneous(A, x);</span>
+<a name="l00327"></a>00327 <span class="comment"></span>
+<a name="l00328"></a>00328 <span class="comment">    // 3. Rearrange elements of vector &#39;x&#39; in a 3x3 matrix.</span>
+<a name="l00329"></a>00329 <span class="comment">    QVMatrix homography(3,3);</span>
+<a name="l00330"></a>00330 <span class="comment">    homography(0,0) = x[0];     homography(0,1) = x[1]; homography(0,2) = x[2];</span>
+<a name="l00331"></a>00331 <span class="comment">    homography(1,0) = x[3];     homography(1,1) = x[4]; homography(1,2) = x[5];</span>
+<a name="l00332"></a>00332 <span class="comment">    homography(2,0) = x[6];     homography(2,1) = x[7]; homography(2,2) = x[8];</span>
+<a name="l00333"></a>00333 <span class="comment"></span>
+<a name="l00334"></a>00334 <span class="comment">    return homography;</span>
+<a name="l00335"></a>00335 <span class="comment">    }*/</span>
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337 <span class="comment">// Returns M = DLT matrix</span>
+<a name="l00338"></a>00338 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> get8PointsCoefficientMatrix(<span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings, <span class="keyword">const</span> <span class="keywordtype">bool</span> normalize)
+<a name="l00339"></a>00339         {
+<a name="l00340"></a>00340         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(matchings.size(),9);
+<a name="l00341"></a>00341         <span class="keywordtype">double</span> *aptr = A.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00342"></a>00342 
+<a name="l00343"></a>00343         <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching,matchings)
+<a name="l00344"></a>00344                 {
+<a name="l00345"></a>00345                 <span class="comment">//const QPointF sourcePoint = matchings[i].first, destPoint = matchings[i].second;</span>
+<a name="l00346"></a>00346                 <span class="comment">//const QPointF sourcePoint = matching.first, destPoint = matching.second;</span>
+<a name="l00347"></a>00347                 <span class="comment">//double        x = sourcePoint.x(), y = sourcePoint.y(),</span>
+<a name="l00348"></a>00348         <span class="comment">//      x_p = destPoint.x(), y_p = destPoint.y(),</span>
+<a name="l00349"></a>00349         <span class="comment">//      normalizer = 1.0/sqrt((x*x + y*y +1)*(x_p*x_p+y_p*y_p+1)),</span>
+<a name="l00350"></a>00350         <span class="comment">//      x_ = x * normalizer, y_ = y * normalizer;</span>
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352                 <span class="keyword">const</span> QPointF sourcePoint = matching.first, destPoint = matching.second;
+<a name="l00353"></a>00353         <span class="keyword">const</span> <span class="keywordtype">double</span>    x = sourcePoint.x(), y = sourcePoint.y(),
+<a name="l00354"></a>00354                 x_p = destPoint.x(), y_p = destPoint.y(),
+<a name="l00355"></a>00355                 normalizer = normalize?1.0/sqrt((x*x + y*y +1)*(x_p*x_p+y_p*y_p+1)):1.0,
+<a name="l00356"></a>00356                 x_ = x * normalizer, y_ = y * normalizer;
+<a name="l00357"></a>00357                 <span class="comment">// Faster:</span>
+<a name="l00358"></a>00358                 *aptr = x_*x_p;         aptr++;
+<a name="l00359"></a>00359                 *aptr = y_*x_p;         aptr++;
+<a name="l00360"></a>00360                 *aptr = normalizer*x_p; aptr++;
+<a name="l00361"></a>00361                 *aptr = x_*y_p;         aptr++;
+<a name="l00362"></a>00362                 *aptr = y_*y_p;         aptr++;
+<a name="l00363"></a>00363                 *aptr = normalizer*y_p; aptr++;
+<a name="l00364"></a>00364                 *aptr = x_;             aptr++;
+<a name="l00365"></a>00365                 *aptr = y_;             aptr++;
+<a name="l00366"></a>00366                 *aptr = normalizer;     aptr++;
+<a name="l00367"></a>00367                 }
+<a name="l00368"></a>00368         <span class="keywordflow">return</span> A;
+<a name="l00369"></a>00369         }
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getTransposeProductOf8PointsCoefficientMatrix(<span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings, <span class="keyword">const</span> <span class="keywordtype">bool</span> normalize)
+<a name="l00372"></a>00372         {
+<a name="l00373"></a>00373                 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(9,9, 0.0);
+<a name="l00374"></a>00374                 <span class="keywordtype">double</span> *ptrA = A.getWriteData();
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376         <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching,matchings)
+<a name="l00377"></a>00377                 {
+<a name="l00378"></a>00378                         <span class="keywordtype">double</span> v[9];
+<a name="l00379"></a>00379                 <span class="keyword">const</span> QPointF sourcePoint = matching.first, destPoint = matching.second;
+<a name="l00380"></a>00380                         <span class="keyword">const</span> <span class="keywordtype">double</span>    x = sourcePoint.x(), y = sourcePoint.y(),
+<a name="l00381"></a>00381                                                 x_p = destPoint.x(), y_p = destPoint.y(),
+<a name="l00382"></a>00382                                            normalizer = normalize?1.0/sqrt((x*x + y*y +1)*(x_p*x_p+y_p*y_p+1)):1.0,
+<a name="l00383"></a>00383                                                 x_ = x * normalizer, y_ = y * normalizer;
+<a name="l00384"></a>00384 
+<a name="l00385"></a>00385                 <span class="comment">// Faster:</span>
+<a name="l00386"></a>00386                         v[0] = x_*x_p;
+<a name="l00387"></a>00387                 v[1] = y_*x_p;
+<a name="l00388"></a>00388                 v[2] = normalizer * x_p;
+<a name="l00389"></a>00389                 v[3] = x_*y_p;
+<a name="l00390"></a>00390                 v[4] = y_*y_p;
+<a name="l00391"></a>00391                 v[5] = normalizer * y_p;
+<a name="l00392"></a>00392                 v[6] = x_;
+<a name="l00393"></a>00393                 v[7] = y_;
+<a name="l00394"></a>00394                 v[8] = normalizer;
+<a name="l00395"></a>00395 
+<a name="l00396"></a>00396                                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++)
+<a name="l00397"></a>00397                                     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt;= i; j++)
+<a name="l00398"></a>00398                                         ptrA[9*i+j] += v[i] * v[j];
+<a name="l00399"></a>00399                 }
+<a name="l00400"></a>00400 
+<a name="l00401"></a>00401                 <span class="comment">// Only store lower diagonal values</span>
+<a name="l00402"></a>00402                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++)
+<a name="l00403"></a>00403                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = i+1; j &lt; 9; j++)
+<a name="l00404"></a>00404                                 ptrA[9*i+j] = ptrA[9*j+i];
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406         <span class="keywordflow">return</span> A;
+<a name="l00407"></a>00407         }
+<a name="l00408"></a>00408 
+<a name="l00409"></a>00409 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getReduced8PointsCoefficientsMatrix(   <span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchingsList,
+<a name="l00410"></a>00410                         <span class="keyword">const</span> TGEA_decomposition_method decomposition_method,
+<a name="l00411"></a>00411                         <span class="keyword">const</span> <span class="keywordtype">bool</span> normalize,
+<a name="l00412"></a>00412                         <span class="keyword">const</span> <span class="keywordtype">bool</span> use_gsl,
+<a name="l00413"></a>00413                         <span class="keyword">const</span> <span class="keywordtype">double</span> choleskyLambda)
+<a name="l00414"></a>00414     {
+<a name="l00415"></a>00415     <span class="keywordflow">if</span> (matchingsList.count() &gt; 9)
+<a name="l00416"></a>00416         {
+<a name="l00417"></a>00417         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> MtM = getTransposeProductOf8PointsCoefficientMatrix(matchingsList, normalize);
+<a name="l00418"></a>00418 
+<a name="l00419"></a>00419         <span class="keywordflow">switch</span>(decomposition_method)
+<a name="l00420"></a>00420             {
+<a name="l00421"></a>00421             <span class="keywordflow">case</span> GEA_DO_NOT_DECOMPOSE:
+<a name="l00422"></a>00422                 <span class="keywordflow">return</span> MtM;
+<a name="l00423"></a>00423                 <span class="keywordflow">break</span>;
+<a name="l00424"></a>00424 
+<a name="l00425"></a>00425             <span class="keywordflow">case</span> GEA_CHOLESKY_DECOMPOSITION:
+<a name="l00426"></a>00426                 {
+<a name="l00427"></a>00427                 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> L;
+<a name="l00428"></a>00428 
+<a name="l00429"></a>00429                 <span class="comment">// Add lambda to MtM diagonal values to avoid</span>
+<a name="l00430"></a>00430                 <span class="comment">// non-positive definite matrix errors.</span>
+<a name="l00431"></a>00431                 <span class="keywordflow">if</span> (choleskyLambda != 0.0)
+<a name="l00432"></a>00432                     {
+<a name="l00433"></a>00433                     <span class="keyword">const</span> <span class="keywordtype">int</span> n = MtM.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>();
+<a name="l00434"></a>00434                     <span class="keywordtype">double</span> *data = MtM.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00435"></a>00435                     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0, idx = 0; i &lt; n; i++, idx += n+1)
+<a name="l00436"></a>00436                         data[idx] += choleskyLambda;
+<a name="l00437"></a>00437                     }
+<a name="l00438"></a>00438 
+<a name="l00439"></a>00439                 <a class="code" href="group__qvmatrixalgebra.html#gab845aa50ce874199ad7676904829b932" title="Obtains the Cholesky decomposition of a symmetric and positive definite matrix.">CholeskyDecomposition</a>(MtM, L, use_gsl?<a class="code" href="group__qvmatrixalgebra.html#ggac52aa1a4772c42c68e53baf5a22e15c8ad805bb0106a0bbf7eea0549f4a5525d1">GSL_CHOLESKY</a>:<a class="code" href="group__qvmatrixalgebra.html#ggac52aa1a4772c42c68e53baf5a22e15c8a80e13036cfa7096deb292e1b197459bf">LAPACK_CHOLESKY_DPOTRF</a>);
+<a name="l00440"></a>00440 
+<a name="l00441"></a>00441                 <span class="keywordflow">return</span> L;
+<a name="l00442"></a>00442                 }
+<a name="l00443"></a>00443                 <span class="keywordflow">break</span>;
+<a name="l00444"></a>00444 
+<a name="l00445"></a>00445             <span class="keywordflow">case</span> GEA_EIGEN_DECOMPOSITION:
+<a name="l00446"></a>00446                 {
+<a name="l00447"></a>00447                 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> Q;
+<a name="l00448"></a>00448                 <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> lambda;
+<a name="l00449"></a>00449 
+<a name="l00450"></a>00450                 <a class="code" href="group__qvmatrixalgebra.html#gae95e6a42f2cce467f30a55289a0f9824" title="Obtains the eigen-decomposition of a symmetric matrix.">eigenDecomposition</a>(MtM, lambda, Q, use_gsl?<a class="code" href="group__qvmatrixalgebra.html#ggae21e0895ad3ca32f8fdc58b4bf22bec8a26b778a18b5ed84f1c9dea5d8419981e">GSL_EIGENSYMM</a>:<a class="code" href="group__qvmatrixalgebra.html#ggae21e0895ad3ca32f8fdc58b4bf22bec8a7f4f96ab3bd135f5842b0d25bb5d86a1">LAPACK_DSYEV</a>);
+<a name="l00451"></a>00451 
+<a name="l00452"></a>00452                 <span class="comment">// Square of the elements for vector Lambda.</span>
+<a name="l00453"></a>00453                 <span class="keywordtype">double</span>  *dataLambda = lambda.data();
+<a name="l00454"></a>00454                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;lambda.size(); i++)
+<a name="l00455"></a>00455                     dataLambda[i] = sqrt(fabs(dataLambda[i]));
+<a name="l00456"></a>00456 
+<a name="l00457"></a>00457                 <span class="comment">// Este código obtiene la matriz &#39;Q*diag(lambda)&#39;, en la variable &#39;Q&#39;.</span>
+<a name="l00458"></a>00458                 <span class="keywordtype">double</span>  *dataQ = Q.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00459"></a>00459                 <span class="keyword">const</span> <span class="keywordtype">int</span> cols = Q.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>(), rows = Q.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>();
+<a name="l00460"></a>00460                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0, idx = 0; i &lt; rows; i++)
+<a name="l00461"></a>00461                     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; cols; j++, idx++)
+<a name="l00462"></a>00462                         dataQ[idx] *= dataLambda[j];
+<a name="l00463"></a>00463 
+<a name="l00464"></a>00464                 <span class="keywordflow">return</span> Q;
+<a name="l00465"></a>00465                 }
+<a name="l00466"></a>00466                 <span class="keywordflow">break</span>;
+<a name="l00467"></a>00467             }
+<a name="l00468"></a>00468         }
+<a name="l00469"></a>00469     <span class="keywordflow">return</span> get8PointsCoefficientMatrix(matchingsList, normalize).<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l00470"></a>00470     }
+<a name="l00471"></a>00471 
+<a name="l00472"></a>00472 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="group__qvprojectivegeometry.html#ga721c81d3a9e9c7c2e09f5867241c7021" title="Obtains the fundamental matrix between two images using the 8-point algorithm.">computeFundamentalMatrix</a>(<span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings, <span class="keyword">const</span> <span class="keywordtype">bool</span> normalize)
+<a name="l00473"></a>00473     {
+<a name="l00474"></a>00474     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: &#39;QVMatrix computeFundamentalMatrix(const QList&lt;QPointFMatching&gt; &amp;, const bool)&#39; deprecated. Use &#39;bool computeFundamentalMatrix(const QVector&lt;QPointFMatching&gt; &amp;, QVMatrix &amp;, const TQVSVD_Method)&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l00475"></a>00475     <span class="keywordflow">if</span> (matchings.count() &lt; 8)
+<a name="l00476"></a>00476         <span class="keywordflow">return</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>();
+<a name="l00477"></a>00477 
+<a name="l00478"></a>00478     <span class="comment">// Compute centers and average distances for each of the two point sets</span>
+<a name="l00479"></a>00479     QPointF m0c(0.0, 0.0), m1c(0.0, 0.0);
+<a name="l00480"></a>00480     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00481"></a>00481         {
+<a name="l00482"></a>00482         m0c += matching.first;
+<a name="l00483"></a>00483         m1c += matching.second;
+<a name="l00484"></a>00484         }
+<a name="l00485"></a>00485 
+<a name="l00486"></a>00486     <span class="keyword">const</span> <span class="keywordtype">int</span> count = matchings.count();
+<a name="l00487"></a>00487     m0c /= count;
+<a name="l00488"></a>00488     m1c /= count;
+<a name="l00489"></a>00489 
+<a name="l00490"></a>00490     <span class="keywordtype">double</span> scale0 = 0.0, scale1 = 0.0;
+<a name="l00491"></a>00491     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00492"></a>00492         {
+<a name="l00493"></a>00493         scale0 += norm2(matching.first - m0c);
+<a name="l00494"></a>00494         scale1 += norm2(matching.second - m1c);
+<a name="l00495"></a>00495         }
+<a name="l00496"></a>00496 
+<a name="l00497"></a>00497     <span class="comment">// Check if the projections scales is significantly greater than zero.</span>
+<a name="l00498"></a>00498     <span class="comment">//if( scale0 &lt; DBL_EPSILON or scale1 &lt; DBL_EPSILON )</span>
+<a name="l00499"></a>00499     <span class="comment">//  return QVMatrix();</span>
+<a name="l00500"></a>00500 
+<a name="l00501"></a>00501     scale0 = count * sqrt(2.) /scale0;
+<a name="l00502"></a>00502     scale1 = count * sqrt(2.) /scale1;
+<a name="l00503"></a>00503 
+<a name="l00504"></a>00504     <span class="comment">// Correct point correspondences centers and average distances.</span>
+<a name="l00505"></a>00505     QList&lt;QPointFMatching&gt; correctedMatchings;
+<a name="l00506"></a>00506     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l00507"></a>00507         correctedMatchings &lt;&lt; <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>( (matching.first - m0c)*scale0, (matching.second - m1c)*scale1);
+<a name="l00508"></a>00508 
+<a name="l00509"></a>00509     <span class="comment">// Solve MtM x = 0 to get a linear F.</span>
+<a name="l00510"></a>00510     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> U, V;
+<a name="l00511"></a>00511     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> s;
+<a name="l00512"></a>00512 
+<a name="l00513"></a>00513     <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(getTransposeProductOf8PointsCoefficientMatrix(correctedMatchings, normalize), U, s, V, DEFAULT_TQVSVD_METHOD);
+<a name="l00514"></a>00514 
+<a name="l00515"></a>00515     <span class="comment">// Check that first seven singular values differ from zero.</span>
+<a name="l00516"></a>00516     <span class="comment">//for(int i = 0; i &lt; 7; i++)</span>
+<a name="l00517"></a>00517     <span class="comment">//  if (s[i] &lt; DBL_EPSILON)</span>
+<a name="l00518"></a>00518     <span class="comment">//          return QVMatrix();</span>
+<a name="l00519"></a>00519 
+<a name="l00520"></a>00520     <span class="comment">// Decompose linear F with SVD.</span>
+<a name="l00521"></a>00521     <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(3,3, V.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(8)), U, s, V, DEFAULT_TQVSVD_METHOD);
+<a name="l00522"></a>00522 
+<a name="l00523"></a>00523     <span class="comment">// Re-compose F truncating the third singular value, and correcting the whitening of the point correspondences</span>
+<a name="l00524"></a>00524     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>      Q1 = <a class="code" href="classQVMatrix.html#a953207e797ad5c2f8477d3507dbcf86b" title="Creates an intrinsic camera calibration matrix.">QVMatrix::cameraCalibrationMatrix</a>(scale0, 1.0, -scale0*m0c.x(), -scale0*m0c.y()),
+<a name="l00525"></a>00525                             Q2 = <a class="code" href="classQVMatrix.html#a953207e797ad5c2f8477d3507dbcf86b" title="Creates an intrinsic camera calibration matrix.">QVMatrix::cameraCalibrationMatrix</a>(scale1, 1.0, -scale1*m1c.x(), -scale1*m1c.y());
+<a name="l00526"></a>00526 
+<a name="l00527"></a>00527     s[2] = 0.0;
+<a name="l00528"></a>00528 
+<a name="l00529"></a>00529     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result = Q2.transpose() * U * <a class="code" href="classQVMatrix.html#abcfe032545b49448a2a064a7952f7ece" title="Gets the diagonal of the matrix.">QVMatrix::diagonal</a>(s) * V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>() * Q1;
+<a name="l00530"></a>00530 
+<a name="l00531"></a>00531     <span class="comment">// Todo: Some functions will not work properly if values are not cast to float. ¿Porqué?</span>
+<a name="l00532"></a>00532     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 3; j++ )
+<a name="l00533"></a>00533         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = 0; k &lt; 3; k++ )
+<a name="l00534"></a>00534             result(j,k) = float(result(j,k));
+<a name="l00535"></a>00535 
+<a name="l00536"></a>00536     <span class="keywordflow">return</span> result;
+<a name="l00537"></a>00537     }
+<a name="l00538"></a>00538 
+<a name="l00539"></a>00539 <span class="preprocessor">#ifdef QVOPENCV</span>
+<a name="l00540"></a><a class="code" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b">00540</a> <span class="preprocessor"></span><a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b" title="Obtains the fundamental matrix between two images, using the 8 point algorithm.">cvFindFundamentalMat</a>(<span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings)
+<a name="l00541"></a>00541     {
+<a name="l00542"></a>00542     <span class="keyword">const</span> <span class="keywordtype">int</span> point_count = matchings.size();
+<a name="l00543"></a>00543 
+<a name="l00544"></a>00544     CvMat       *points1 = cvCreateMat(1,point_count,CV_32FC2),
+<a name="l00545"></a>00545         *points2 = cvCreateMat(1,point_count,CV_32FC2);
+<a name="l00546"></a>00546 
+<a name="l00547"></a>00547     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; point_count; i++)
+<a name="l00548"></a>00548         {
+<a name="l00549"></a>00549         points1-&gt;data.fl[i*2] = matchings[i].first.x();
+<a name="l00550"></a>00550         points1-&gt;data.fl[i*2+1] = matchings[i].first.y();
+<a name="l00551"></a>00551         points2-&gt;data.fl[i*2] = matchings[i].second.x();
+<a name="l00552"></a>00552         points2-&gt;data.fl[i*2+1] = matchings[i].second.y();
+<a name="l00553"></a>00553         }
+<a name="l00554"></a>00554 
+<a name="l00555"></a>00555     CvMat *fundamental_matrix = cvCreateMat(3,3,CV_32FC1);
+<a name="l00556"></a>00556 
+<a name="l00557"></a>00557     <span class="keyword">const</span> <span class="keywordtype">int</span> fm_count = <a class="code" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b" title="Obtains the fundamental matrix between two images, using the 8 point algorithm.">cvFindFundamentalMat</a>(points1, points2, fundamental_matrix, CV_FM_8POINT);
+<a name="l00558"></a>00558     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result = fundamental_matrix;
+<a name="l00559"></a>00559 
+<a name="l00560"></a>00560     <span class="comment">// delete points1 matrix, points2 matrix.</span>
+<a name="l00561"></a>00561     cvReleaseMat(&amp;points1);
+<a name="l00562"></a>00562     cvReleaseMat(&amp;points2);
+<a name="l00563"></a>00563 
+<a name="l00564"></a>00564     <span class="comment">// delete fundamental_matrix</span>
+<a name="l00565"></a>00565     cvReleaseMat(&amp;fundamental_matrix);
+<a name="l00566"></a>00566 
+<a name="l00567"></a>00567     <span class="keywordflow">return</span> (fm_count == 1)?result:<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>();
+<a name="l00568"></a>00568     }
+<a name="l00569"></a>00569 <span class="preprocessor">#endif</span>
+<a name="l00570"></a>00570 <span class="preprocessor"></span>
+<a name="l00571"></a>00571 <span class="comment">/*void getMeanDirection(const QVMatrix m, QVVector &amp;mean, QVVector &amp;direction)</span>
+<a name="l00572"></a>00572 <span class="comment">    {</span>
+<a name="l00573"></a>00573 <span class="comment">    mean = m.meanCol();</span>
+<a name="l00574"></a>00574 <span class="comment">    QVMatrix centeredM = m;</span>
+<a name="l00575"></a>00575 <span class="comment">    for (int i = 0; i &lt; centeredM.getCols(); i++)</span>
+<a name="l00576"></a>00576 <span class="comment">        centeredM.setCol(i, centeredM.getCol(i) - mean);</span>
+<a name="l00577"></a>00577 <span class="comment"></span>
+<a name="l00578"></a>00578 <span class="comment">    // 1. Compute main direction vector.</span>
+<a name="l00579"></a>00579 <span class="comment">    QVMatrix eigVecs;</span>
+<a name="l00580"></a>00580 <span class="comment">    QVVector eigVals;</span>
+<a name="l00581"></a>00581 <span class="comment">        EigenDecomposition(centeredM * centeredM.transpose(), eigVals, eigVecs);</span>
+<a name="l00582"></a>00582 <span class="comment"></span>
+<a name="l00583"></a>00583 <span class="comment">    direction = QVVector(eigVecs.getCols());</span>
+<a name="l00584"></a>00584 <span class="comment">    for (int i = 0; i &lt; eigVecs.getCols(); i++)</span>
+<a name="l00585"></a>00585 <span class="comment">        direction[i] = eigVecs(0,i);</span>
+<a name="l00586"></a>00586 <span class="comment">    direction = direction * eigVals[0];</span>
+<a name="l00587"></a>00587 <span class="comment">    }</span>
+<a name="l00588"></a>00588 <span class="comment"></span>
+<a name="l00589"></a>00589 <span class="comment">QVMatrix ComputeEuclideanHomography(const QList&lt; QPointFMatching &gt; &amp;matchings)</span>
+<a name="l00590"></a>00590 <span class="comment">    {</span>
+<a name="l00591"></a>00591 <span class="comment">    // 1. Get source and destination mean point and direction.</span>
+<a name="l00592"></a>00592 <span class="comment">    QList&lt;QPointF&gt; sourcePointList, destPointList;</span>
+<a name="l00593"></a>00593 <span class="comment">    //QPair&lt;QPointF, QPointF&gt; matching;</span>
+<a name="l00594"></a>00594 <span class="comment">    foreach(QPointFMatching matching, matchings)</span>
+<a name="l00595"></a>00595 <span class="comment">        {</span>
+<a name="l00596"></a>00596 <span class="comment">        sourcePointList.append(matching.first);</span>
+<a name="l00597"></a>00597 <span class="comment">        destPointList.append(matching.second);</span>
+<a name="l00598"></a>00598 <span class="comment">        }</span>
+<a name="l00599"></a>00599 <span class="comment"></span>
+<a name="l00600"></a>00600 <span class="comment">    const QVMatrix sources = sourcePointList, destinations = destPointList;</span>
+<a name="l00601"></a>00601 <span class="comment"></span>
+<a name="l00602"></a>00602 <span class="comment">    QVVector sourcesMean, destinationsMean, sourcesDirection, destinationsDirection;</span>
+<a name="l00603"></a>00603 <span class="comment">    getMeanDirection(sources.transpose(), sourcesMean, sourcesDirection);</span>
+<a name="l00604"></a>00604 <span class="comment">    getMeanDirection(destinations.transpose(), destinationsMean, destinationsDirection);</span>
+<a name="l00605"></a>00605 <span class="comment"></span>
+<a name="l00606"></a>00606 <span class="comment">    const QPointF C1 = sourcesMean, C2 = destinationsMean, D1 = sourcesDirection, D2 = destinationsDirection;</span>
+<a name="l00607"></a>00607 <span class="comment"></span>
+<a name="l00608"></a>00608 <span class="comment">    // 2. Get zoom and angle</span>
+<a name="l00609"></a>00609 <span class="comment">    double zoom = 0;</span>
+<a name="l00610"></a>00610 <span class="comment">    int switchD1Direction = 0, zoomCount = 0;</span>
+<a name="l00611"></a>00611 <span class="comment">    for(int i = 0; i &lt; sourcePointList.size(); i ++)</span>
+<a name="l00612"></a>00612 <span class="comment">        {</span>
+<a name="l00613"></a>00613 <span class="comment">        const QPointF sourceCenteredPoint = sourcePointList.at(i) - sourcesMean, destCenteredPoint = destPointList.at(i) - destinationsMean;</span>
+<a name="l00614"></a>00614 <span class="comment"></span>
+<a name="l00615"></a>00615 <span class="comment">        if (norm2(sourceCenteredPoint) &gt; 1e-10)</span>
+<a name="l00616"></a>00616 <span class="comment">            {</span>
+<a name="l00617"></a>00617 <span class="comment">            zoom += norm2(destCenteredPoint) / norm2(sourceCenteredPoint);</span>
+<a name="l00618"></a>00618 <span class="comment">            zoomCount ++;</span>
+<a name="l00619"></a>00619 <span class="comment">            }</span>
+<a name="l00620"></a>00620 <span class="comment"></span>
+<a name="l00621"></a>00621 <span class="comment">        if (    (norm2(destCenteredPoint - D2) - norm2(destCenteredPoint + D2)) * (norm2(sourceCenteredPoint + D1)</span>
+<a name="l00622"></a>00622 <span class="comment">                - norm2(sourceCenteredPoint - D1)) &gt; 0  ||</span>
+<a name="l00623"></a>00623 <span class="comment">            (norm2(destCenteredPoint - D2) - norm2(destCenteredPoint + D2)) * (norm2(sourceCenteredPoint + D1)</span>
+<a name="l00624"></a>00624 <span class="comment">                - norm2(sourceCenteredPoint - D1)) &gt; 0  )</span>
+<a name="l00625"></a>00625 <span class="comment">            switchD1Direction++;</span>
+<a name="l00626"></a>00626 <span class="comment">        else</span>
+<a name="l00627"></a>00627 <span class="comment">            switchD1Direction--;</span>
+<a name="l00628"></a>00628 <span class="comment">        }</span>
+<a name="l00629"></a>00629 <span class="comment"></span>
+<a name="l00630"></a>00630 <span class="comment">    zoom /= sourcePointList.size();</span>
+<a name="l00631"></a>00631 <span class="comment"></span>
+<a name="l00632"></a>00632 <span class="comment">    const double delta = qvClockWiseAngle((switchD1Direction &gt; 0)?-D1:D1, D2);</span>
+<a name="l00633"></a>00633 <span class="comment"></span>
+<a name="l00634"></a>00634 <span class="comment">    // 3. Get the euclidean homography matrix, derived from the following code for Mathematica:</span>
+<a name="l00635"></a>00635 <span class="comment">    //  Rotation[delta_] := { {Cos[delta], Sin[delta], 0}, {-Sin[delta], Cos[delta], 0}, {0, 0, 1} };</span>
+<a name="l00636"></a>00636 <span class="comment">    //  Translation[x_, y_] := { {1, 0, x}, {0, 1, y}, {0, 0, 1} };</span>
+<a name="l00637"></a>00637 <span class="comment">    //  Zoom[z_] := { {z, 0, 0}, {0, z, 0}, {0, 0, 1} };</span>
+<a name="l00638"></a>00638 <span class="comment">    //  result = Translation[C2_x, C2_y].Zoom[zoom].Rotation[delta].Translation[C1_x, C1_y] // MatrixForm</span>
+<a name="l00639"></a>00639 <span class="comment">    QVMatrix result = QVMatrix::identity(3);</span>
+<a name="l00640"></a>00640 <span class="comment">    result(0,0) = zoom*cos(delta);      result(0,1) = zoom*sin(delta);  result(0,2) = C2.x() - zoom*cos(delta)*C1.x() - zoom*C1.y()*sin(delta);</span>
+<a name="l00641"></a>00641 <span class="comment">    result(1,0) = -zoom*sin(delta);     result(1,1) = zoom*cos(delta);  result(1,2) = C2.y() - zoom*cos(delta)*C1.y() + zoom*C1.x()*sin(delta);</span>
+<a name="l00642"></a>00642 <span class="comment"></span>
+<a name="l00643"></a>00643 <span class="comment">    return result;</span>
+<a name="l00644"></a>00644 <span class="comment">    }*/</span>
+<a name="l00645"></a>00645 
+<a name="l00646"></a><a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c">00646</a> QPointF <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <span class="keyword">const</span> QPointF &amp;point)
+<a name="l00647"></a>00647     {
+<a name="l00648"></a>00648     <span class="keyword">const</span> <span class="keywordtype">double</span>        h11 = H(0,0), h12 = H(0,1), h13 = H(0,2),
+<a name="l00649"></a>00649             h21 = H(1,0), h22 = H(1,1), h23 = H(1,2),
+<a name="l00650"></a>00650             h31 = H(2,0), h32 = H(2,1), h33 = H(2,2),
+<a name="l00651"></a>00651             x = point.x(), y = point.y(),
+<a name="l00652"></a>00652             homogenizer = h31*x + h32*y + h33;
+<a name="l00653"></a>00653 
+<a name="l00654"></a>00654     <span class="keywordflow">return</span> QPointF(h11*x + h12*y + h13, h21*x + h22*y + h23)/homogenizer;
+<a name="l00655"></a>00655     }
+<a name="l00656"></a>00656 
+<a name="l00657"></a><a class="code" href="group__qvprojectivegeometry.html#ga57f5860ede7f1c5cc138a08a9770debd">00657</a> QList&lt;QPointF&gt; <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;homography, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;sourcePoints)
+<a name="l00658"></a>00658     {
+<a name="l00659"></a>00659     QList&lt;QPointF&gt; result;
+<a name="l00660"></a>00660     <span class="keywordflow">foreach</span>(QPointF point, sourcePoints)
+<a name="l00661"></a>00661         result.append(<a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(homography, point));
+<a name="l00662"></a>00662     <span class="keywordflow">return</span> result;
+<a name="l00663"></a>00663     }
+<a name="l00664"></a>00664 
+<a name="l00665"></a>00665 <span class="preprocessor">#ifdef QVIPP</span>
+<a name="l00666"></a><a class="code" href="group__qvprojectivegeometry.html#ga16d78d75712d628864cbfcd0e9622052">00666</a> <span class="preprocessor"></span><a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;homography, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> interpolation)
+<a name="l00667"></a>00667     {
+<a name="l00668"></a>00668     <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> result(image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<a name="l00669"></a>00669     <a class="code" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b" title="Performs perspective warping of the source image using the given transform coefficients...">WarpPerspective</a>(image, result, homography, interpolation);
+<a name="l00670"></a>00670     <span class="keywordflow">return</span> result;
+<a name="l00671"></a>00671     }
+<a name="l00672"></a>00672 
+<a name="l00673"></a><a class="code" href="group__qvprojectivegeometry.html#gab759381f29a49e65fb47b7e377705e8f">00673</a> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;homography, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> interpolation)
+<a name="l00674"></a>00674     {
+<a name="l00675"></a>00675     <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> result(image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<a name="l00676"></a>00676     <a class="code" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b" title="Performs perspective warping of the source image using the given transform coefficients...">WarpPerspective</a>(image, result, homography, interpolation);
+<a name="l00677"></a>00677     <span class="keywordflow">return</span> result;
+<a name="l00678"></a>00678     }
+<a name="l00679"></a>00679 <span class="preprocessor">#endif</span>
+<a name="l00680"></a>00680 <span class="preprocessor"></span>
+<a name="l00681"></a>00681 <span class="keywordtype">double</span> HomographyTestError(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;homography)
+<a name="l00682"></a>00682     {
+<a name="l00683"></a>00683     <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v1 = homography.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(0), v2 = homography.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(1);
+<a name="l00684"></a>00684     <span class="keywordflow">return</span>      ABS(v1.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() - v2.norm2()) / (v1.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() + v2.norm2())
+<a name="l00685"></a>00685         + ABS(v1 * v2) / (v1.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() * v2.norm2());
+<a name="l00686"></a>00686     }
+<a name="l00687"></a>00687 
+<a name="l00689"></a>00689 <span class="comment">// Focal calibration from homography</span>
+<a name="l00690"></a>00690 <span class="comment">//</span>
+<a name="l00691"></a>00691 
+<a name="l00692"></a>00692 <span class="comment">// To get direct focal distance formula:</span>
+<a name="l00693"></a>00693 <span class="comment">//</span>
+<a name="l00694"></a>00694 <span class="comment">//      K = {{f, 0, 0}, {0, f, 0}, {0, 0, 1}};</span>
+<a name="l00695"></a>00695 <span class="comment">//      Hvar = {{h1, h2, h3}, {h4, h5, h6}, {h7, h8, h9}};</span>
+<a name="l00696"></a>00696 <span class="comment">//      ErrorMat[H_, K_] := Transpose[H].Inverse[K].Inverse[K].H;</span>
+<a name="l00697"></a>00697 <span class="comment">//      Error[ErrorM_] := ((ErrorM[[1, 1]] - ErrorM[[2, 2]])^2 + ErrorM[[1, 2]]^2) / ErrorM[[1, 1]]^2;</span>
+<a name="l00698"></a>00698 <span class="comment">//      ErrorFunction[H_, K_] := Error[ErrorMat[H, K]];</span>
+<a name="l00699"></a>00699 <span class="comment">//      P = Dt[ErrorFunction[Hvar, K], f, Constants -&gt; {h1, h2, h3, h4, h5, h6, h7, h8, h9}] ;</span>
+<a name="l00700"></a>00700 <span class="comment">//      focalDistance  = Solve[P == 0, f][[2]][[1]] // FullSimplify</span>
+<a name="l00701"></a>00701 <span class="comment">//      CForm[focalDistance]</span>
+<a name="l00702"></a>00702 <span class="comment">//</span>
+<a name="l00703"></a>00703 <span class="comment">/*void GetDirectIntrinsicCameraMatrixFromHomography(const QVMatrix &amp;H, QVMatrix &amp;K)</span>
+<a name="l00704"></a>00704 <span class="comment">    {</span>
+<a name="l00705"></a>00705 <span class="comment">    const double h1 = H(0,0), h2 = H(0,1), h4 = H(1,0), h5 = H(1,1), h7 = H(2,0), h8 = H(2,1);</span>
+<a name="l00706"></a>00706 <span class="comment">    const double focalNumerator =       + (h2*(h2 + h4) - h1*h5 + pow(h5,2))*(pow(h2,2) - h2*h4 + h5*(h1 + h5))*pow(h7,2)</span>
+<a name="l00707"></a>00707 <span class="comment">                    - (pow(h1,2) + pow(h4,2))*(h1*h2 + h4*h5)*h7*h8</span>
+<a name="l00708"></a>00708 <span class="comment">                    + (pow(h1,2) + pow(h4,2))*(pow(h1,2) - pow(h2,2) + pow(h4,2) - pow(h5,2))*pow(h8,2);</span>
+<a name="l00709"></a>00709 <span class="comment">    const double focalDenominator = + (pow(h2,2) + pow(h5,2))*pow(h7,4)</span>
+<a name="l00710"></a>00710 <span class="comment">                    - (h1*h2 + h4*h5)*pow(h7,3)*h8</span>
+<a name="l00711"></a>00711 <span class="comment">                    - (pow(h2,2) + pow(h5,2))*pow(h7,2)*pow(h8,2)</span>
+<a name="l00712"></a>00712 <span class="comment">                    + (pow(h1,2) + pow(h4,2))*pow(h8,4);</span>
+<a name="l00713"></a>00713 <span class="comment">    const double finv = sqrt(ABS(focalNumerator / focalDenominator))/2;</span>
+<a name="l00714"></a>00714 <span class="comment"></span>
+<a name="l00715"></a>00715 <span class="comment">    K = QVMatrix::identity(3) * finv;</span>
+<a name="l00716"></a>00716 <span class="comment">    K(2,2) = 1;</span>
+<a name="l00717"></a>00717 <span class="comment">    }*/</span>
+<a name="l00718"></a>00718 
+<a name="l00719"></a>00719 <span class="comment">/*void CalibrateCameraFromPlanarHomography(const QVMatrix &amp;H, QVMatrix &amp;K, QVMatrix &amp;Rt)</span>
+<a name="l00720"></a>00720 <span class="comment">    {</span>
+<a name="l00721"></a>00721 <span class="comment">    // 3.2. Compute intrinsic camera matrix</span>
+<a name="l00722"></a>00722 <span class="comment">    // K is such that:</span>
+<a name="l00723"></a>00723 <span class="comment">    // H = K*Rt</span>
+<a name="l00724"></a>00724 <span class="comment">    GetDirectIntrinsicCameraMatrixFromHomography(H, K);</span>
+<a name="l00725"></a>00725 <span class="comment"></span>
+<a name="l00726"></a>00726 <span class="comment">    // ----------------------------------------------------</span>
+<a name="l00727"></a>00727 <span class="comment">    // 3.3. Compute extrinsic camera matrix</span>
+<a name="l00728"></a>00728 <span class="comment">    // 3.3.1. Eliminate K matrix from H</span>
+<a name="l00729"></a>00729 <span class="comment">    QVMatrix R12t = pseudoInverse(K)*H;</span>
+<a name="l00730"></a>00730 <span class="comment"></span>
+<a name="l00731"></a>00731 <span class="comment">    // 3.3.2. Tricky: homogenize M3x3 such as the lenght of rotation vectors is the unit.</span>
+<a name="l00732"></a>00732 <span class="comment">    // Divide M3x3 by the mean of the square values for first two elements</span>
+<a name="l00733"></a>00733 <span class="comment">    // of the diagonal of matrix M3x3^t * M3x3</span>
+<a name="l00734"></a>00734 <span class="comment">    Rt = QVMatrix(4,4);</span>
+<a name="l00735"></a>00735 <span class="comment">    R12t = R12t * 2 / (R12t.getCol(0).norm2() + R12t.getCol(1).norm2());</span>
+<a name="l00736"></a>00736 <span class="comment"></span>
+<a name="l00737"></a>00737 <span class="comment">    // 3.3.3. Compose matrix R and -R*C vector in final matrix M</span>
+<a name="l00738"></a>00738 <span class="comment">    Rt.setCol(0, R12t.getCol(0));</span>
+<a name="l00739"></a>00739 <span class="comment">    Rt.setCol(1, R12t.getCol(1));</span>
+<a name="l00740"></a>00740 <span class="comment">    Rt.setCol(2, R12t.getCol(0) ^ R12t.getCol(1));</span>
+<a name="l00741"></a>00741 <span class="comment">    Rt.setCol(3, R12t.getCol(2));</span>
+<a name="l00742"></a>00742 <span class="comment">    Rt(3,3) = 1;</span>
+<a name="l00743"></a>00743 <span class="comment">    }*/</span>
+<a name="l00744"></a>00744 
+<a name="l00745"></a>00745 <span class="comment">//</span>
+<a name="l00746"></a>00746 <span class="comment">// This function decomposes the matrix for an homography, obtaining matrix R and vector T from the decomposition:</span>
+<a name="l00747"></a>00747 <span class="comment">//      H = K*M3x3</span>
+<a name="l00748"></a>00748 <span class="comment">// where</span>
+<a name="l00749"></a>00749 <span class="comment">//      M3x3 = [ R1 | R2 | -R^t*C ]</span>
+<a name="l00750"></a>00750 <span class="comment">// obtaining the essencial matrix M of size 3x4:</span>
+<a name="l00751"></a>00751 <span class="comment">//              [       |        ]</span>
+<a name="l00752"></a>00752 <span class="comment">//      M4x4 =  [  Rot  | -R^t*C ]</span>
+<a name="l00753"></a>00753 <span class="comment">//              [ _____ | ______ ]</span>
+<a name="l00754"></a>00754 <span class="comment">//              [ 0 0 0 |    1   ]</span>
+<a name="l00755"></a>00755 <span class="comment">//</span>
+<a name="l00756"></a>00756 <span class="keywordtype">void</span> GetExtrinsicCameraMatrixFromHomography(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;K, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;Rt)
+<a name="l00757"></a>00757     {
+<a name="l00758"></a>00758     <span class="comment">// 1. Eliminate K matrix from H</span>
+<a name="l00759"></a>00759     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> R12_t = <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(K)*<a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(H);
+<a name="l00760"></a>00760 
+<a name="l00761"></a>00761     <span class="comment">// 2. Tricky: homogenize M3x3 such as the lenght of rotation vectors is the unit.</span>
+<a name="l00762"></a>00762     <span class="comment">//  2.2 Divide M3x3 by the mean of the square values for first two elements</span>
+<a name="l00763"></a>00763     <span class="comment">//  of the diagonal of matrix M3x3^t * M3x3</span>
+<a name="l00764"></a>00764     R12_t = R12_t * 2 / (R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(0).<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() + R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(1).<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>());
+<a name="l00765"></a>00765 
+<a name="l00766"></a>00766     <span class="comment">// 3. Compose matrix R and -R*C vector in final matrix M</span>
+<a name="l00767"></a>00767     Rt = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(4,4);
+<a name="l00768"></a>00768 
+<a name="l00769"></a>00769     Rt.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(0, R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(0));
+<a name="l00770"></a>00770     Rt.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(1, R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(1));
+<a name="l00771"></a>00771     Rt.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(2, R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(0) ^ R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(1));
+<a name="l00772"></a>00772     Rt.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(3, R12_t.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(2));
+<a name="l00773"></a>00773     Rt(3,3) = 1;
+<a name="l00774"></a>00774     }
+<a name="l00775"></a>00775 
+<a name="l00776"></a>00776 <span class="keywordtype">void</span> GetPinholeCameraIntrinsicsFromPlanarHomography(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;K, <span class="keyword">const</span> <span class="keywordtype">int</span> iterations,
+<a name="l00777"></a>00777                         <span class="keyword">const</span> <span class="keywordtype">double</span> maxGradientNorm, <span class="keyword">const</span> <span class="keywordtype">double</span> step, <span class="keyword">const</span> <span class="keywordtype">double</span> tol)
+<a name="l00778"></a>00778     {
+<a name="l00779"></a>00779     Q_UNUSED(H);
+<a name="l00780"></a>00780     Q_UNUSED(K);
+<a name="l00781"></a>00781     Q_UNUSED(iterations);
+<a name="l00782"></a>00782     Q_UNUSED(maxGradientNorm);
+<a name="l00783"></a>00783     Q_UNUSED(step);
+<a name="l00784"></a>00784     Q_UNUSED(tol);
+<a name="l00785"></a>00785     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: Function &#39;GetPinholeCameraIntrinsicsFromPlanarHomography&#39; is not supported anymore.&quot;</span> &lt;&lt; std::endl;
+<a name="l00786"></a>00786     exit(0);
+<a name="l00787"></a>00787     }
+<a name="l00788"></a>00788 
+<a name="l00789"></a>00789 <span class="comment">// From section 9.6.1 of &#39;Multiple View Geometry in Computer Vision&#39;.</span>
+<a name="l00790"></a>00790 QList&lt;QVMatrix&gt; getCanonicalCameraMatricesFromEssentialMatrix(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;E)
+<a name="l00791"></a>00791     {
+<a name="l00792"></a>00792     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: getCanonicalCameraMatricesFromEssentialMatrix deprecated. Use getCameraPosesFromEssentialMatrix instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l00793"></a>00793     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> S;
+<a name="l00794"></a>00794     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> U, V;
+<a name="l00795"></a>00795     <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(E, U, S, V);
+<a name="l00796"></a>00796 
+<a name="l00797"></a>00797     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> W(3, 3, 0.0);<span class="comment">//, Z(3, 3, 0.0);</span>
+<a name="l00798"></a>00798     W(1,0) = 1; W(0,1) = -1; W(2,2) = 1;
+<a name="l00799"></a>00799     <span class="comment">//Z(1,0) = -1; Z(0,1) = 1;</span>
+<a name="l00800"></a>00800 
+<a name="l00801"></a>00801     <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>      u3 = U.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(2);
+<a name="l00802"></a>00802     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>      UWVt = U * W * V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>(),
+<a name="l00803"></a>00803             UWtVt = U * W.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>() * V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l00804"></a>00804 
+<a name="l00805"></a>00805 
+<a name="l00806"></a>00806     <span class="keywordflow">return</span> QList&lt;QVMatrix&gt;() &lt;&lt; ( UWVt | u3 ) &lt;&lt; ( UWtVt | u3 ) &lt;&lt; ( UWVt | u3*(-1) ) &lt;&lt; ( UWtVt | u3*(-1) );
+<a name="l00807"></a>00807     }
+<a name="l00808"></a>00808 
+<a name="l00809"></a>00809 <span class="comment">// ----------------------------------------------------------------------</span>
+<a name="l00810"></a>00810 <span class="comment">// ----------------------------------------------------------------------</span>
+<a name="l00811"></a>00811 
+<a name="l00812"></a>00812 <span class="comment">/*QVMatrix getCameraMatrixFrom2D3DPointCorrespondences(const QList&lt;QPointF&gt; &amp;points2d, const QList&lt;QV3DPointF&gt; &amp;points3d)</span>
+<a name="l00813"></a>00813 <span class="comment">    {</span>
+<a name="l00814"></a>00814 <span class="comment">    const int n = points2d.size();</span>
+<a name="l00815"></a>00815 <span class="comment">    QVMatrix A(3 * n, 12);</span>
+<a name="l00816"></a>00816 <span class="comment">    for(int i = 0; i &lt; n; i++)</span>
+<a name="l00817"></a>00817 <span class="comment">        {</span>
+<a name="l00818"></a>00818 <span class="comment">        const double    xp = points2d[i].x(), yp = points2d[i].y(),</span>
+<a name="l00819"></a>00819 <span class="comment">                x =  points3d[i].x(), y =  points3d[i].y(), z =  points3d[i].z();</span>
+<a name="l00820"></a>00820 <span class="comment"></span>
+<a name="l00821"></a>00821 <span class="comment">        const double dataCoefs[3*12] =  {</span>
+<a name="l00822"></a>00822 <span class="comment">                        0,      0,      0,      0,      -x,     -y,     -z,     -1,     +x*yp,  +y*yp,  +yp*z,  +yp,</span>
+<a name="l00823"></a>00823 <span class="comment">                        +x,     +y,     +z,     +1,     0,      0,      0,      0,      -x*xp,  -xp*y,  -xp*z,  -xp,</span>
+<a name="l00824"></a>00824 <span class="comment">                        -x*yp,  -y*yp,  -yp*z,  -yp,    +x*xp,  +xp*y,  +xp*z,  +xp,    0,      0,      0,      0</span>
+<a name="l00825"></a>00825 <span class="comment">                        };</span>
+<a name="l00826"></a>00826 <span class="comment"></span>
+<a name="l00827"></a>00827 <span class="comment">        const QVMatrix coefs(3, 12, dataCoefs);</span>
+<a name="l00828"></a>00828 <span class="comment"></span>
+<a name="l00829"></a>00829 <span class="comment">        A.setRow(3*i+0, coefs.getRow(0));</span>
+<a name="l00830"></a>00830 <span class="comment">        A.setRow(3*i+1, coefs.getRow(1));</span>
+<a name="l00831"></a>00831 <span class="comment">        A.setRow(3*i+2, coefs.getRow(2));</span>
+<a name="l00832"></a>00832 <span class="comment">        }</span>
+<a name="l00833"></a>00833 <span class="comment"></span>
+<a name="l00834"></a>00834 <span class="comment">    QVVector vectorP;</span>
+<a name="l00835"></a>00835 <span class="comment">    SolveHomogeneous(A, vectorP);</span>
+<a name="l00836"></a>00836 <span class="comment"></span>
+<a name="l00837"></a>00837 <span class="comment">    const QVMatrix P = QVMatrix(vectorP.mid(0,4)) &amp; QVMatrix(vectorP.mid(4,4)) &amp; QVMatrix(vectorP.mid(8,4));</span>
+<a name="l00838"></a>00838 <span class="comment"></span>
+<a name="l00839"></a>00839 <span class="comment">    // The obtained matrix is up to scale. It should be normalized to make it a correct euclidean transformation matrix.</span>
+<a name="l00840"></a>00840 <span class="comment">    const QVMatrix PNormalizer = P.transpose() * P;</span>
+<a name="l00841"></a>00841 <span class="comment">    return P / sqrt((PNormalizer(0,0) + PNormalizer(1,1) + PNormalizer(2,2)) / 3.0);</span>
+<a name="l00842"></a>00842 <span class="comment">    }*/</span>
+<a name="l00843"></a>00843 
+<a name="l00844"></a>00844 <span class="comment">/*QVMatrix refineExtrinsicCameraMatrixWithQRDecomposition(const QVMatrix &amp;P)</span>
+<a name="l00845"></a>00845 <span class="comment">    {</span>
+<a name="l00846"></a>00846 <span class="comment">    const QVMatrix M = P.getSubmatrix(0,2,0,2), Mt = M.transpose();</span>
+<a name="l00847"></a>00847 <span class="comment"></span>
+<a name="l00848"></a>00848 <span class="comment">    QVMatrix Q, R;</span>
+<a name="l00849"></a>00849 <span class="comment">    QRDecomposition(Mt, Q, R);</span>
+<a name="l00850"></a>00850 <span class="comment"></span>
+<a name="l00851"></a>00851 <span class="comment">    QVMatrix I_1 = QVMatrix::identity(3);</span>
+<a name="l00852"></a>00852 <span class="comment"></span>
+<a name="l00853"></a>00853 <span class="comment">    I_1(0,0) = SIGN(R(0,0));</span>
+<a name="l00854"></a>00854 <span class="comment">    I_1(1,1) = SIGN(R(1,1));</span>
+<a name="l00855"></a>00855 <span class="comment">    I_1(2,2) = SIGN(R(2,2));</span>
+<a name="l00856"></a>00856 <span class="comment"></span>
+<a name="l00857"></a>00857 <span class="comment">    return pseudoInverse(R.transpose()*I_1) * P;</span>
+<a name="l00858"></a>00858 <span class="comment">    }*/</span>
+<a name="l00859"></a>00859 
+<a name="l00860"></a>00860 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> refineExtrinsicCameraMatrixWithPolarDecomposition(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P)
+<a name="l00861"></a>00861     {
+<a name="l00862"></a>00862     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = P.<a class="code" href="classQVMatrix.html#a77b34335086bb9e12d7d72398c608e75" title="Gets a submatrix from a matrix.">getSubmatrix</a>(0,2,0,2), Mt = M.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l00863"></a>00863 
+<a name="l00864"></a>00864     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> W,V;
+<a name="l00865"></a>00865     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> S;
+<a name="l00866"></a>00866     <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(Mt, W, S, V);
+<a name="l00867"></a>00867 
+<a name="l00868"></a>00868     <span class="comment">// Polar decomposition of a matrix: given square matrix A, and its SVD decomposition:</span>
+<a name="l00869"></a>00869     <span class="comment">//  A = WSV*</span>
+<a name="l00870"></a>00870     <span class="comment">// The polar decomposition is the following:</span>
+<a name="l00871"></a>00871     <span class="comment">//  A = UP</span>
+<a name="l00872"></a>00872     <span class="comment">// With:</span>
+<a name="l00873"></a>00873     <span class="comment">//  U = WV*</span>
+<a name="l00874"></a>00874     <span class="comment">//  P = VSV*</span>
+<a name="l00875"></a>00875     <span class="comment">// U is a rotation matrix and P is a positive-semidefinite Hermitian matrix.</span>
+<a name="l00876"></a>00876     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> matS(3,3,0.0);
+<a name="l00877"></a>00877     matS(0,0) = S[0];
+<a name="l00878"></a>00878     matS(1,1) = S[1];
+<a name="l00879"></a>00879     matS(2,2) = S[2];
+<a name="l00880"></a>00880 
+<a name="l00881"></a>00881     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>      <span class="comment">//U = W*V.transpose(),</span>
+<a name="l00882"></a>00882             Pp = V * matS * V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l00883"></a>00883 
+<a name="l00884"></a>00884     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> I_Pp = <a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(3);
+<a name="l00885"></a>00885 
+<a name="l00886"></a>00886     I_Pp(0,0) = SIGN(Pp(0,0));
+<a name="l00887"></a>00887     I_Pp(1,1) = SIGN(Pp(1,1));
+<a name="l00888"></a>00888     I_Pp(2,2) = SIGN(Pp(2,2));
+<a name="l00889"></a>00889 
+<a name="l00890"></a>00890     <span class="keywordflow">return</span> <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(Pp.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>()*I_Pp) * P;
+<a name="l00891"></a>00891     }
+<a name="l00892"></a>00892 
+<a name="l00893"></a>00893 
+<a name="l00894"></a>00894 <span class="comment">// -------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+<a name="l00895"></a>00895 
+<a name="l00896"></a><a class="code" href="group__qvprojectivegeometry.html#gae1435ef34731a4088d1c45deab3d3ba5">00896</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="group__qvprojectivegeometry.html#gae1435ef34731a4088d1c45deab3d3ba5" title="Obtains the camera matrix from a set of correspondences between 3D points and their...">linearCameraResection</a>(<span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points2d, <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3d)
+<a name="l00897"></a>00897     {
+<a name="l00898"></a>00898     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3 * points2d.size(), 12);
+<a name="l00899"></a>00899     <span class="keywordtype">double</span> *dataA = A.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00900"></a>00900 
+<a name="l00901"></a>00901     QListIterator&lt;QPointF&gt; iterator2D(points2d);
+<a name="l00902"></a>00902     QListIterator&lt;QV3DPointF&gt; iterator3D(points3d);
+<a name="l00903"></a>00903 
+<a name="l00904"></a>00904     <span class="keywordtype">int</span> i = 0;
+<a name="l00905"></a>00905     <span class="keywordflow">while</span> (iterator2D.hasNext())
+<a name="l00906"></a>00906         {
+<a name="l00907"></a>00907         <span class="keyword">const</span> QPointF p2d = iterator2D.next();
+<a name="l00908"></a>00908         <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p3d = iterator3D.next();
+<a name="l00909"></a>00909 
+<a name="l00910"></a>00910         <span class="keyword">const</span> <span class="keywordtype">double</span>    xp = p2d.x(), yp = p2d.y(),
+<a name="l00911"></a>00911                                 x = p3d.<a class="code" href="classQV3DPointF.html#aab1c8e4380b126607771339778a83a1e" title="Gets the value for the first coordinate of the 3D point.">x</a>(), y =  p3d.<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>(), z =  p3d.<a class="code" href="classQV3DPointF.html#aba286a7e040358ecbffce7c4566cdd8d" title="Gets the value for the third coordinate of the 3D point.">z</a>();
+<a name="l00912"></a>00912 
+<a name="l00913"></a>00913         <span class="keywordtype">double</span> *data = dataA + (3*12*i);
+<a name="l00914"></a>00914         data[0] = 0.0;          data[1] = 0.0;          data[2] = 0.0;          data[3] = 0.0;
+<a name="l00915"></a>00915         data[4] = -x;           data[5] = -y;           data[6] = -z;           data[7] = -1;
+<a name="l00916"></a>00916         data[8] = +x*yp;        data[9] = +y*yp;        data[10] = +z*yp;       data[11] = +yp;
+<a name="l00917"></a>00917 
+<a name="l00918"></a>00918         data[12] = +x;          data[13] = +y;          data[14] = +z;          data[15] = +1;
+<a name="l00919"></a>00919         data[16] = 0.0;         data[17] = 0.0;         data[18] = 0.0;         data[19] = 0.0;
+<a name="l00920"></a>00920         data[20] = -x*xp;       data[21] = -y*xp;       data[22] = -z*xp;       data[23] = -xp;
+<a name="l00921"></a>00921 
+<a name="l00922"></a>00922         data[24] = -x*yp;       data[25] = -y*yp;       data[26] = -z*yp;       data[27] = -yp;
+<a name="l00923"></a>00923         data[28] = +x*xp;       data[29] = +y*xp;       data[30] = +z*xp;       data[31] = +xp;
+<a name="l00924"></a>00924         data[32] = 0.0;         data[33] = 0.0;         data[34] = 0.0;         data[35] = 0.0;
+<a name="l00925"></a>00925 
+<a name="l00926"></a>00926         i++;
+<a name="l00927"></a>00927         }
+<a name="l00928"></a>00928 
+<a name="l00929"></a>00929     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> vectorP;
+<a name="l00930"></a>00930     <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, vectorP);
+<a name="l00931"></a>00931     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> P(3, 4, vectorP);
+<a name="l00932"></a>00932 
+<a name="l00933"></a>00933     <span class="comment">// -----------------------</span>
+<a name="l00934"></a>00934     <span class="comment">// Use cheirality to identify correct camera matrix sign.</span>
+<a name="l00935"></a>00935     <span class="keyword">const</span> <span class="keywordtype">double</span> *dataP = P.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>();
+<a name="l00936"></a>00936     <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p3d = points3d.first();
+<a name="l00937"></a>00937     <span class="keywordflow">return</span> P * SIGN(dataP[8] * p3d.<a class="code" href="classQV3DPointF.html#aab1c8e4380b126607771339778a83a1e" title="Gets the value for the first coordinate of the 3D point.">x</a>() + dataP[9] * p3d.<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>() + dataP[10]*p3d.<a class="code" href="classQV3DPointF.html#aba286a7e040358ecbffce7c4566cdd8d" title="Gets the value for the third coordinate of the 3D point.">z</a>() + dataP[11]);
+<a name="l00938"></a>00938     }
+<a name="l00939"></a>00939 
+<a name="l00940"></a><a class="code" href="qvprojective_8cpp.html#aefe2c68264497da296129eb3c0cc8ed4">00940</a> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="qvprojective_8cpp.html#aefe2c68264497da296129eb3c0cc8ed4">linearCameraCenterResection</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;R, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points2D, <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3D)
+<a name="l00941"></a>00941     {
+<a name="l00942"></a>00942     <span class="keyword">const</span> <span class="keywordtype">int</span> n = points2D.size();
+<a name="l00943"></a>00943     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3*n,3);
+<a name="l00944"></a>00944     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b(3*n);
+<a name="l00945"></a>00945 
+<a name="l00946"></a>00946     <span class="keyword">const</span> <span class="keywordtype">double</span> *dataR = R.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>();
+<a name="l00947"></a>00947 
+<a name="l00948"></a>00948     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; n; i++)
+<a name="l00949"></a>00949         {
+<a name="l00950"></a>00950         <span class="keyword">const</span> QPointF p2d = points2D[i];
+<a name="l00951"></a>00951         <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p3d = points3D[i];
+<a name="l00952"></a>00952         <span class="keyword">const</span> <span class="keywordtype">double</span> p_x = p2d.x(), p_y = p2d.y(), x = p3d.<a class="code" href="classQV3DPointF.html#aab1c8e4380b126607771339778a83a1e" title="Gets the value for the first coordinate of the 3D point.">x</a>(), y = p3d.<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>(), z = p3d.<a class="code" href="classQV3DPointF.html#aba286a7e040358ecbffce7c4566cdd8d" title="Gets the value for the third coordinate of the 3D point.">z</a>();
+<a name="l00953"></a>00953 
+<a name="l00954"></a>00954         <span class="keywordtype">double</span> *dataA = &amp;(A(3*i, 0));
+<a name="l00955"></a>00955 
+<a name="l00956"></a>00956         dataA[0] = 0.0;         dataA[1] = -1.0;        dataA[2] = p_y;
+<a name="l00957"></a>00957         dataA[3] = 1.0;         dataA[4] = 0.0;         dataA[5] = -p_x;
+<a name="l00958"></a>00958         dataA[6] = -p_y;        dataA[7] = p_x;         dataA[8] = 0.0;
+<a name="l00959"></a>00959 
+<a name="l00960"></a>00960         b[3*i+0] = p_x - ((-dataR[3] + p_y * dataR[6]) * x + (-dataR[4] + p_y * dataR[7]) * y + (-dataR[5] + p_y * dataR[8]) * z);
+<a name="l00961"></a>00961         b[3*i+1] = p_y - ((dataR[0] - p_x * dataR[6]) * x + (dataR[1] - p_x * dataR[7]) * y + (dataR[2] - p_x * dataR[8]) * z);
+<a name="l00962"></a>00962         b[3*i+2] = 1 - ((-p_y * dataR[0] + p_x * dataR[3]) * x + (-p_y * dataR[1] + p_x * dataR[4]) * y + (-p_y * dataR[2] + p_x * dataR[5]) * z);
+<a name="l00963"></a>00963         }
+<a name="l00964"></a>00964 
+<a name="l00966"></a>00966     <span class="keywordflow">return</span> <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(A)*b;
+<a name="l00967"></a>00967     }
+<a name="l00968"></a>00968 
+<a name="l00969"></a><a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef">00969</a> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(<span class="keyword">const</span> QList&lt;QVMatrix&gt; &amp;cameraMatrices, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;projectionsOfAPoint, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l00970"></a>00970     {
+<a name="l00971"></a>00971     <span class="keywordflow">if</span> (projectionsOfAPoint.count() &lt; 2)
+<a name="l00972"></a>00972         <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(0.0, 0.0, 0.0);
+<a name="l00973"></a>00973 
+<a name="l00974"></a>00974     <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p;
+<a name="l00975"></a>00975 
+<a name="l00976"></a>00976     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(2 * projectionsOfAPoint.size(),4);
+<a name="l00977"></a>00977 
+<a name="l00978"></a>00978     QListIterator&lt;QPointF&gt; iteratorProjections(projectionsOfAPoint);
+<a name="l00979"></a>00979     QListIterator&lt;QVMatrix&gt; iteratorMatrices(cameraMatrices);
+<a name="l00980"></a>00980 
+<a name="l00981"></a>00981     <span class="keywordtype">int</span> i = 0;
+<a name="l00982"></a>00982     <span class="keywordflow">while</span> (iteratorProjections.hasNext())
+<a name="l00983"></a>00983         {
+<a name="l00984"></a>00984         <span class="keyword">const</span> QPointF p2d = iteratorProjections.next();
+<a name="l00985"></a>00985         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> P = iteratorMatrices.next();
+<a name="l00986"></a>00986 
+<a name="l00987"></a>00987         <span class="keywordtype">double</span>  *a = &amp;(A(2*i,0)), p_x = p2d.x(), p_y = p2d.y();
+<a name="l00988"></a>00988         <span class="keyword">const</span> <span class="keywordtype">double</span> *p = P.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>();
+<a name="l00989"></a>00989         a[0] = p[8] * p_x - p[0];
+<a name="l00990"></a>00990         a[1] = p[9] * p_x - p[1];
+<a name="l00991"></a>00991         a[2] = p[10] * p_x - p[2];
+<a name="l00992"></a>00992         a[3] = p[11] * p_x - p[3];
+<a name="l00993"></a>00993         a[4] = p[8] * p_y - p[4];
+<a name="l00994"></a>00994         a[5] = p[9] * p_y - p[5];
+<a name="l00995"></a>00995         a[6] = p[10] * p_y - p[6];
+<a name="l00996"></a>00996         a[7] = p[11] * p_y - p[7];
+<a name="l00997"></a>00997         i++;
+<a name="l00998"></a>00998         }
+<a name="l00999"></a>00999 
+<a name="l01000"></a>01000     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x;
+<a name="l01001"></a>01001 <span class="preprocessor">    #ifdef GSL_AVAILABLE</span>
+<a name="l01002"></a>01002 <span class="preprocessor"></span>        solveHomogeneousEig(A, x);
+<a name="l01003"></a>01003         Q_UNUSED(method);
+<a name="l01004"></a>01004 <span class="preprocessor">    #else</span>
+<a name="l01005"></a>01005 <span class="preprocessor"></span>        <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, x, method);
+<a name="l01006"></a>01006 <span class="preprocessor">    #endif</span>
+<a name="l01007"></a>01007 <span class="preprocessor"></span>
+<a name="l01008"></a>01008     <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(x[0] / x[3], x[1] / x[3], x[2] / x[3]);
+<a name="l01009"></a>01009     }
+<a name="l01010"></a>01010 
+<a name="l01011"></a><a class="code" href="group__qvprojectivegeometry.html#ga8d7cc4afd681a8c0251b975f5d303436">01011</a> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(<span class="keyword">const</span> QVector&lt;QVMatrix&gt; &amp;cameraMatrices, <span class="keyword">const</span> QHash&lt;int, QPointF&gt; &amp;projectionsOfAPoint, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01012"></a>01012     {
+<a name="l01013"></a>01013     <span class="keywordflow">if</span> (projectionsOfAPoint.count() &lt; 2)
+<a name="l01014"></a>01014         <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(0.0, 0.0, 0.0);
+<a name="l01015"></a>01015 
+<a name="l01016"></a>01016     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(2 * projectionsOfAPoint.size(),4);
+<a name="l01017"></a>01017 
+<a name="l01018"></a>01018     QHashIterator&lt;int, QPointF&gt; it(projectionsOfAPoint);
+<a name="l01019"></a>01019     <span class="keywordtype">int</span> i=0;
+<a name="l01020"></a>01020     <span class="keywordflow">while</span> (it.hasNext())
+<a name="l01021"></a>01021         {
+<a name="l01022"></a>01022         it.next();
+<a name="l01023"></a>01023         <span class="keyword">const</span> QPointF p2d = it.value();
+<a name="l01024"></a>01024         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> P = cameraMatrices[it.key()];
+<a name="l01025"></a>01025 
+<a name="l01026"></a>01026         <span class="keywordtype">double</span>  *a = &amp;(A(2*i,0));
+<a name="l01027"></a>01027         <span class="keyword">const</span> <span class="keywordtype">double</span> *p = P.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>(), p_x = p2d.x(), p_y = p2d.y();
+<a name="l01028"></a>01028         a[0] = p[8] * p_x - p[0];
+<a name="l01029"></a>01029         a[1] = p[9] * p_x - p[1];
+<a name="l01030"></a>01030         a[2] = p[10] * p_x - p[2];
+<a name="l01031"></a>01031         a[3] = p[11] * p_x - p[3];
+<a name="l01032"></a>01032         a[4] = p[8] * p_y - p[4];
+<a name="l01033"></a>01033         a[5] = p[9] * p_y - p[5];
+<a name="l01034"></a>01034         a[6] = p[10] * p_y - p[6];
+<a name="l01035"></a>01035         a[7] = p[11] * p_y - p[7];
+<a name="l01036"></a>01036         i++;
+<a name="l01037"></a>01037         }
+<a name="l01038"></a>01038 
+<a name="l01039"></a>01039     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x;
+<a name="l01040"></a>01040 <span class="preprocessor">    #ifdef GSL_AVAILABLE</span>
+<a name="l01041"></a>01041 <span class="preprocessor"></span>        solveHomogeneousEig(A, x);
+<a name="l01042"></a>01042         Q_UNUSED(method);
+<a name="l01043"></a>01043 <span class="preprocessor">    #else</span>
+<a name="l01044"></a>01044 <span class="preprocessor"></span>        <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, x, method);
+<a name="l01045"></a>01045 <span class="preprocessor">    #endif</span>
+<a name="l01046"></a>01046 <span class="preprocessor"></span>
+<a name="l01047"></a>01047     <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(x[0] / x[3], x[1] / x[3], x[2] / x[3]);
+<a name="l01048"></a>01048     }
+<a name="l01049"></a>01049 
+<a name="l01050"></a><a class="code" href="group__qvprojectivegeometry.html#ga3d79b8259c6cf0dfbd6fbbc4d1f8f968">01050</a> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(<span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P1, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P2, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01051"></a>01051     {
+<a name="l01052"></a>01052     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(4,4);
+<a name="l01053"></a>01053     <span class="keywordtype">double</span>      *a = A.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l01054"></a>01054     <span class="keyword">const</span> <span class="keywordtype">double</span>        *p1 = P1.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>(),
+<a name="l01055"></a>01055             *p2 = P2.<a class="code" href="classQVMatrix.html#a50de15cc657c8a1d9fcc749161192a64" title="Gets a read-only reference to the data buffer of the matrix.">getReadData</a>(),
+<a name="l01056"></a>01056             p_x1 = matching.first.x(),  p_y1 = matching.first.y(),
+<a name="l01057"></a>01057             p_x2 = matching.second.x(), p_y2 = matching.second.y();
+<a name="l01058"></a>01058 
+<a name="l01059"></a>01059     a[0] = p1[8] * p_x1 - p1[0];
+<a name="l01060"></a>01060     a[1] = p1[9] * p_x1 - p1[1];
+<a name="l01061"></a>01061     a[2] = p1[10] * p_x1 - p1[2];
+<a name="l01062"></a>01062     a[3] = p1[11] * p_x1 - p1[3];
+<a name="l01063"></a>01063     a[4] = p1[8] * p_y1 - p1[4];
+<a name="l01064"></a>01064     a[5] = p1[9] * p_y1 - p1[5];
+<a name="l01065"></a>01065     a[6] = p1[10] * p_y1 - p1[6];
+<a name="l01066"></a>01066     a[7] = p1[11] * p_y1 - p1[7];
+<a name="l01067"></a>01067 
+<a name="l01068"></a>01068     a[8] = p2[8] * p_x2 - p2[0];
+<a name="l01069"></a>01069     a[9] = p2[9] * p_x2 - p2[1];
+<a name="l01070"></a>01070     a[10] = p2[10] * p_x2 - p2[2];
+<a name="l01071"></a>01071     a[11] = p2[11] * p_x2 - p2[3];
+<a name="l01072"></a>01072     a[12] = p2[8] * p_y2 - p2[4];
+<a name="l01073"></a>01073     a[13] = p2[9] * p_y2 - p2[5];
+<a name="l01074"></a>01074     a[14] = p2[10] * p_y2 - p2[6];
+<a name="l01075"></a>01075     a[15] = p2[11] * p_y2 - p2[7];
+<a name="l01076"></a>01076 
+<a name="l01077"></a>01077     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x;
+<a name="l01078"></a>01078 <span class="preprocessor">    #ifdef GSL_AVAILABLE</span>
+<a name="l01079"></a>01079 <span class="preprocessor"></span>        solveHomogeneousEig(A, x);
+<a name="l01080"></a>01080         Q_UNUSED(method);
+<a name="l01081"></a>01081 <span class="preprocessor">    #else</span>
+<a name="l01082"></a>01082 <span class="preprocessor"></span>        <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, x, method);
+<a name="l01083"></a>01083 <span class="preprocessor">    #endif</span>
+<a name="l01084"></a>01084 <span class="preprocessor"></span>
+<a name="l01085"></a>01085     <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(x[0] / x[3], x[1] / x[3], x[2] / x[3]);
+<a name="l01086"></a>01086     }
+<a name="l01087"></a>01087 
+<a name="l01088"></a><a class="code" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">01088</a> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(<span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, <span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;pose1, <span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;pose2, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01089"></a>01089     {
+<a name="l01090"></a>01090         <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(matching, pose1.<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>(), pose2.<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>()      );
+<a name="l01091"></a>01091     }
+<a name="l01092"></a>01092 
+<a name="l01093"></a>01093 QVector&lt;QVMatrix&gt; cameraPosesToProjectionMatrices(<span class="keyword">const</span> QList&lt;QVCameraPose&gt; &amp;cameraPoses)
+<a name="l01094"></a>01094         {
+<a name="l01095"></a>01095     QList&lt;QVMatrix&gt; cameraMatrices;
+<a name="l01096"></a>01096     <span class="keywordflow">foreach</span>(<a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> cameraPose, cameraPoses)
+<a name="l01097"></a>01097         cameraMatrices &lt;&lt; cameraPose.<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>();
+<a name="l01098"></a>01098 
+<a name="l01099"></a>01099         <span class="keywordflow">return</span> cameraMatrices.toVector();
+<a name="l01100"></a>01100         }
+<a name="l01101"></a>01101 
+<a name="l01102"></a>01102 QVector&lt;QVMatrix&gt; cameraPosesToProjectionMatrices(<span class="keyword">const</span> QList&lt;QVEuclideanMapping3&gt; &amp;cameras)
+<a name="l01103"></a>01103         {
+<a name="l01104"></a>01104     QList&lt;QVMatrix&gt; cameraMatrices;
+<a name="l01105"></a>01105     <span class="keywordflow">foreach</span>(<a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a> E3, cameras)
+<a name="l01106"></a>01106         cameraMatrices &lt;&lt; E3.<a class="code" href="classQVEuclideanMapping3.html#a38a8068d953454ddaf0ef3ff975b9804" title="Cast to a Rotation-translation matrix.">toRotationTranslationMatrix</a>();
+<a name="l01107"></a>01107 
+<a name="l01108"></a>01108         <span class="keywordflow">return</span> cameraMatrices.toVector();
+<a name="l01109"></a>01109         }
+<a name="l01110"></a>01110 
+<a name="l01111"></a><a class="code" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570">01111</a> QList&lt;QV3DPointF&gt; <a class="code" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570" title="Recovers the location of several 3D points from their projections on different views...">linear3DPointsTriangulation</a>(<span class="keyword">const</span> QList&lt;QVEuclideanMapping3&gt; &amp;cameras, <span class="keyword">const</span> QList&lt;QHash&lt;int, QPointF&gt; &gt; &amp;pointTrackings, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01112"></a>01112     {
+<a name="l01113"></a>01113    <span class="comment">/* QList&lt;QVMatrix&gt; cameraMatrices;</span>
+<a name="l01114"></a>01114 <span class="comment">    foreach(QVEuclideanMapping3 E3, cameras)</span>
+<a name="l01115"></a>01115 <span class="comment">        cameraMatrices &lt;&lt; E3.toRotationTranslationMatrix();*/</span>
+<a name="l01116"></a>01116 
+<a name="l01117"></a>01117     <span class="keyword">const</span> QVector&lt;QVMatrix&gt; cameraMatricesVector = cameraPosesToProjectionMatrices(cameras);
+<a name="l01118"></a>01118 
+<a name="l01119"></a>01119     QList&lt;QV3DPointF&gt; result;
+<a name="l01120"></a>01120     QHash&lt;int, QPointF&gt; projectionsOfAPoint;
+<a name="l01121"></a>01121     <span class="keywordflow">foreach</span>(projectionsOfAPoint, pointTrackings)
+<a name="l01122"></a>01122         result &lt;&lt; <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(cameraMatricesVector, projectionsOfAPoint, method);
+<a name="l01123"></a>01123 
+<a name="l01124"></a>01124     <span class="keywordflow">return</span> result;
+<a name="l01125"></a>01125     }
+<a name="l01126"></a>01126 
+<a name="l01127"></a><a class="code" href="group__qvprojectivegeometry.html#ga2213ce30fd6ab62c46e482fd9fec6397">01127</a> QList&lt;QV3DPointF&gt; <a class="code" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570" title="Recovers the location of several 3D points from their projections on different views...">linear3DPointsTriangulation</a>(<span class="keyword">const</span> QList&lt;QVEuclideanMapping3&gt; &amp;cameras, <span class="keyword">const</span> QVector&lt;QHash&lt;int, QPointF&gt; &gt; &amp;pointTrackings, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01128"></a>01128     {
+<a name="l01129"></a>01129    <span class="comment">/* QList&lt;QVMatrix&gt; cameraMatrices;</span>
+<a name="l01130"></a>01130 <span class="comment">    foreach(QVEuclideanMapping3 E3, cameras)</span>
+<a name="l01131"></a>01131 <span class="comment">        cameraMatrices &lt;&lt; E3.toRotationTranslationMatrix();*/</span>
+<a name="l01132"></a>01132 
+<a name="l01133"></a>01133     <span class="keyword">const</span> QVector&lt;QVMatrix&gt; cameraMatricesVector = cameraPosesToProjectionMatrices(cameras);
+<a name="l01134"></a>01134 
+<a name="l01135"></a>01135     QList&lt;QV3DPointF&gt; result;
+<a name="l01136"></a>01136     QHash&lt;int, QPointF&gt; projectionsOfAPoint;
+<a name="l01137"></a>01137     <span class="keywordflow">foreach</span>(projectionsOfAPoint, pointTrackings)
+<a name="l01138"></a>01138         result &lt;&lt; <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(cameraMatricesVector, projectionsOfAPoint, method);
+<a name="l01139"></a>01139 
+<a name="l01140"></a>01140     <span class="keywordflow">return</span> result;
+<a name="l01141"></a>01141     }
+<a name="l01142"></a>01142 
+<a name="l01143"></a><a class="code" href="group__qvprojectivegeometry.html#ga7ad9c59ab6cdc91ac4c908e1d2f95174">01143</a> QList&lt;QV3DPointF&gt; <a class="code" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570" title="Recovers the location of several 3D points from their projections on different views...">linear3DPointsTriangulation</a>(<span class="keyword">const</span> QList&lt;QVCameraPose&gt; &amp;cameraPoses, <span class="keyword">const</span> QList&lt;QHash&lt;int, QPointF&gt; &gt; &amp;pointTrackings, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01144"></a>01144     {
+<a name="l01145"></a>01145    <span class="comment">/* QList&lt;QVMatrix&gt; cameraMatrices;</span>
+<a name="l01146"></a>01146 <span class="comment">    foreach(QVCameraPose cameraPose, cameraPoses)</span>
+<a name="l01147"></a>01147 <span class="comment">        cameraMatrices &lt;&lt; cameraPose.toProjectionMatrix();*/</span>
+<a name="l01148"></a>01148 
+<a name="l01149"></a>01149     <span class="keyword">const</span> QVector&lt;QVMatrix&gt; cameraMatricesVector = cameraPosesToProjectionMatrices(cameraPoses);
+<a name="l01150"></a>01150 
+<a name="l01151"></a>01151     QList&lt;QV3DPointF&gt; result;
+<a name="l01152"></a>01152     QHash&lt;int, QPointF&gt; projectionsOfAPoint;
+<a name="l01153"></a>01153     <span class="keywordflow">foreach</span>(projectionsOfAPoint, pointTrackings)
+<a name="l01154"></a>01154         result &lt;&lt; <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(cameraMatricesVector, projectionsOfAPoint, method);
+<a name="l01155"></a>01155 
+<a name="l01156"></a>01156     <span class="keywordflow">return</span> result;
+<a name="l01157"></a>01157     }
+<a name="l01158"></a>01158 
+<a name="l01159"></a><a class="code" href="group__qvprojectivegeometry.html#ga867d933e04eb6e85cd89b9604592b0c9">01159</a> QList&lt;QV3DPointF&gt; <a class="code" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570" title="Recovers the location of several 3D points from their projections on different views...">linear3DPointsTriangulation</a>(<span class="keyword">const</span> QList&lt;QVCameraPose&gt; &amp;cameraPoses, <span class="keyword">const</span> QVector&lt;QHash&lt;int, QPointF&gt; &gt; &amp;pointTrackings, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01160"></a>01160     {
+<a name="l01161"></a>01161    <span class="comment">/* QList&lt;QVMatrix&gt; cameraMatrices;</span>
+<a name="l01162"></a>01162 <span class="comment">    foreach(QVCameraPose cameraPose, cameraPoses)</span>
+<a name="l01163"></a>01163 <span class="comment">        cameraMatrices &lt;&lt; cameraPose.toProjectionMatrix();*/</span>
+<a name="l01164"></a>01164 
+<a name="l01165"></a>01165     <span class="keyword">const</span> QVector&lt;QVMatrix&gt; cameraMatricesVector = cameraPosesToProjectionMatrices(cameraPoses);
+<a name="l01166"></a>01166 
+<a name="l01167"></a>01167     QList&lt;QV3DPointF&gt; result;
+<a name="l01168"></a>01168     QHash&lt;int, QPointF&gt; projectionsOfAPoint;
+<a name="l01169"></a>01169     <span class="keywordflow">foreach</span>(projectionsOfAPoint, pointTrackings)
+<a name="l01170"></a>01170         result &lt;&lt; <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(cameraMatricesVector, projectionsOfAPoint, method);
+<a name="l01171"></a>01171 
+<a name="l01172"></a>01172     <span class="keywordflow">return</span> result;
+<a name="l01173"></a>01173     }
+<a name="l01174"></a>01174 
+<a name="l01175"></a>01175 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l01176"></a>01176 <span class="preprocessor"></span><span class="keywordtype">bool</span> getCorrectCameraPoseTestingCheirality(<span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;R1, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;R2, <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> t, <span class="keywordtype">bool</span> &amp;R1IsCorrect, <span class="keywordtype">bool</span> &amp;tIsPossitive)
+<a name="l01177"></a>01177         {
+<a name="l01178"></a>01178         <span class="comment">// Set the initial camera pose to identity, and initialize the four possible destination camera poses.</span>
+<a name="l01179"></a>01179         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>  sourceRt = (<a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(3)|<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(3,0.0)),
+<a name="l01180"></a>01180                         destRt1 = R1|t,
+<a name="l01181"></a>01181                         destRt2 = R1|t*(-1.0),
+<a name="l01182"></a>01182                         destRt3 = R2|t,
+<a name="l01183"></a>01183                         destRt4 = R2|t*(-1.0);
+<a name="l01184"></a>01184 
+<a name="l01185"></a>01185         <span class="comment">// Test cheirality for the different possible destination camera poses using the first point correspondence.</span>
+<a name="l01186"></a>01186         <span class="keyword">const</span> <span class="keywordtype">bool</span>      <span class="comment">// for camera poses (I|0) and (R1|t)</span>
+<a name="l01187"></a>01187                         cheiralityTest1 = <a class="code" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b" title="Tests if two camera poses satisfy the cheirality condition for the reconstruction...">testCheiralityForCameraPoses</a>(sourceRt, matching.first, destRt1, matching.second ),
+<a name="l01188"></a>01188                         <span class="comment">// for camera poses (I|0) and (R1|-t)</span>
+<a name="l01189"></a>01189                         cheiralityTest2 = <a class="code" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b" title="Tests if two camera poses satisfy the cheirality condition for the reconstruction...">testCheiralityForCameraPoses</a>(sourceRt, matching.first, destRt2, matching.second ),
+<a name="l01190"></a>01190                         <span class="comment">// for camera poses (I|0) and (R2|t)</span>
+<a name="l01191"></a>01191                         cheiralityTest3 = <a class="code" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b" title="Tests if two camera poses satisfy the cheirality condition for the reconstruction...">testCheiralityForCameraPoses</a>(sourceRt, matching.first, destRt3, matching.second ),
+<a name="l01192"></a>01192                         <span class="comment">// for camera poses (I|0) and (R2|-t)</span>
+<a name="l01193"></a>01193                         cheiralityTest4 = <a class="code" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b" title="Tests if two camera poses satisfy the cheirality condition for the reconstruction...">testCheiralityForCameraPoses</a>(sourceRt, matching.first, destRt4, matching.second );
+<a name="l01194"></a>01194 
+<a name="l01195"></a>01195         <span class="comment">// Set the destination camera pose depending on which of them satisfies the cheirality test.</span>
+<a name="l01196"></a>01196         <span class="keywordflow">if</span> (cheiralityTest1 and not (cheiralityTest2 or cheiralityTest3 or cheiralityTest4) )
+<a name="l01197"></a>01197                 <span class="comment">// Cheirality is satisfied only for camera poses (I|0) and (R1|t)</span>
+<a name="l01198"></a>01198                 { R1IsCorrect = <span class="keyword">true</span>; tIsPossitive = <span class="keyword">true</span>; }
+<a name="l01199"></a>01199                 <span class="comment">//destRt = destRt1;</span>
+<a name="l01200"></a>01200         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( cheiralityTest2 and not (cheiralityTest1 or cheiralityTest3 or cheiralityTest4) )
+<a name="l01201"></a>01201                 <span class="comment">// Cheirality is satisfied only for camera poses (I|0) and (R1|-t)</span>
+<a name="l01202"></a>01202                 { R1IsCorrect = <span class="keyword">true</span>; tIsPossitive = <span class="keyword">false</span>; }
+<a name="l01203"></a>01203                 <span class="comment">//destRt = destRt2;</span>
+<a name="l01204"></a>01204         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cheiralityTest3 and not (cheiralityTest1 or cheiralityTest2 or cheiralityTest4) )
+<a name="l01205"></a>01205                 <span class="comment">// Cheirality is satisfied only for camera poses (I|0) and (R2|t)</span>
+<a name="l01206"></a>01206                 { R1IsCorrect = <span class="keyword">false</span>; tIsPossitive = <span class="keyword">true</span>; }
+<a name="l01207"></a>01207                 <span class="comment">//destRt = destRt3;</span>
+<a name="l01208"></a>01208         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( cheiralityTest4 and not (cheiralityTest1 or cheiralityTest2 or cheiralityTest3) )
+<a name="l01209"></a>01209                 <span class="comment">// Cheirality is satisfied only for camera poses (I|0) and (R2|-t)</span>
+<a name="l01210"></a>01210                 { R1IsCorrect = <span class="keyword">false</span>; tIsPossitive = <span class="keyword">false</span>; }
+<a name="l01211"></a>01211                 <span class="comment">//destRt = destRt4;</span>
+<a name="l01212"></a>01212         <span class="keywordflow">else</span>    <span class="comment">// Two or more camera poses satisfy the cheirality test simultaneously. Ambiguous configuration.</span>
+<a name="l01213"></a>01213                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l01214"></a>01214 
+<a name="l01215"></a>01215         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l01216"></a>01216         }
+<a name="l01217"></a>01217 <span class="preprocessor">#endif // DOXYGEN_IGNORE_THIS</span>
+<a name="l01218"></a>01218 <span class="preprocessor"></span>
+<a name="l01219"></a><a class="code" href="group__qvprojectivegeometry.html#ga017edd807b040c198a02733e4b81e1df">01219</a> <span class="keywordtype">void</span> <a class="code" href="group__qvprojectivegeometry.html#ga017edd807b040c198a02733e4b81e1df" title="Decomposes an essential matrix and obtains the corresponding pair of camera poses...">getCameraPosesFromEssentialMatrix</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;originalE, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;R1, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;R2, <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> &amp;t)
+<a name="l01220"></a>01220     {
+<a name="l01221"></a>01221     <span class="comment">// Caution: Force the determinant value of the essential to be possitive.</span>
+<a name="l01222"></a>01222     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> E = originalE * ( (<a class="code" href="group__qvmatrixalgebra.html#ga18cb128a894fa599a42b85e403049416" title="Obtains the determinant of a square matrix.">determinant</a>(originalE) &lt; 0.0)? -1.0: 1.0);
+<a name="l01223"></a>01223 
+<a name="l01224"></a>01224     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> S;
+<a name="l01225"></a>01225     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> U, V;
+<a name="l01226"></a>01226     <a class="code" href="group__qvmatrixalgebra.html#gabe654b66e21aa3d27131c5f65fcc9dfb" title="Obtains the Singular Value Decomposition (SVD) of a rectangular  matrix M.">singularValueDecomposition</a>(E, U, S, V);
+<a name="l01227"></a>01227 
+<a name="l01228"></a>01228     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> W(3, 3, 0.0);
+<a name="l01229"></a>01229     W(1,0) = 1; W(0,1) = -1; W(2,2) = 1;
+<a name="l01230"></a>01230 
+<a name="l01231"></a>01231     R1 = U * W * V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l01232"></a>01232     R2 = U * W.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>() * V.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l01233"></a>01233 
+<a name="l01234"></a>01234     <span class="comment">// Note: the real expression for [t] should be:</span>
+<a name="l01235"></a>01235     <span class="comment">//  [t]_x = U*QVMatrix::diagonal(S)*W*U.transpose()</span>
+<a name="l01236"></a>01236     <span class="comment">// But it is not a real skew-symmetric matrix.</span>
+<a name="l01237"></a>01237     <span class="comment">// The following expression assumes that [t]_x is actually skew-symmetric.</span>
+<a name="l01238"></a>01238     t = U.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(2);
+<a name="l01239"></a>01239     }
+<a name="l01240"></a>01240 
+<a name="l01241"></a><a class="code" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b">01241</a> <span class="keywordtype">bool</span> <a class="code" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b" title="Tests if two camera poses satisfy the cheirality condition for the reconstruction...">testCheiralityForCameraPoses</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;sourceRt, <span class="keyword">const</span> QPointF &amp;sourceProjection, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;destRt, <span class="keyword">const</span> QPointF &amp;destProjection)
+<a name="l01242"></a>01242     {
+<a name="l01243"></a>01243     <span class="comment">// Comprueba la lateralidad con uno de los puntos. Nos quedamos con una de las cámaras.</span>
+<a name="l01244"></a>01244     <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> homogeneousP3D = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>() &lt;&lt; <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>( <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>(sourceProjection, destProjection), sourceRt, destRt) &lt;&lt; 1;
+<a name="l01245"></a>01245     <span class="keywordflow">return</span> ((sourceRt*homogeneousP3D)[2] &gt; 0) and ((destRt*homogeneousP3D)[2] &gt; 0);
+<a name="l01246"></a>01246     }
+<a name="l01247"></a>01247 
+<a name="l01248"></a>01248 QList&lt;QPointFMatching&gt; applyHomographies(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H1, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H2, <span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings)
+<a name="l01249"></a>01249     {
+<a name="l01250"></a>01250     QList&lt;QPointFMatching&gt; correctedMatchings;
+<a name="l01251"></a>01251     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l01252"></a>01252         correctedMatchings &lt;&lt; <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>(  <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(H1, matching.first), <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(H2, matching.second));
+<a name="l01253"></a>01253     <span class="keywordflow">return</span> correctedMatchings;
+<a name="l01254"></a>01254     }
+<a name="l01255"></a>01255 
+<a name="l01256"></a>01256 QList&lt;QPointFMatching&gt; correctIntrinsics(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;K1, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;K2, <span class="keyword">const</span> QList&lt;QPointFMatching&gt; &amp;matchings)
+<a name="l01257"></a>01257     {
+<a name="l01258"></a>01258     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>      invK1 = <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(K1),
+<a name="l01259"></a>01259             invK2 = <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(K2);
+<a name="l01260"></a>01260 
+<a name="l01261"></a>01261     QList&lt;QPointFMatching&gt; correctedMatchings;
+<a name="l01262"></a>01262     <span class="keywordflow">foreach</span>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> matching, matchings)
+<a name="l01263"></a>01263         correctedMatchings &lt;&lt; <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>(  <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(invK1, matching.first),
+<a name="l01264"></a>01264                             <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(invK2, matching.second)
+<a name="l01265"></a>01265                             );
+<a name="l01266"></a>01266     <span class="keywordflow">return</span> correctedMatchings;
+<a name="l01267"></a>01267     }
+<a name="l01268"></a>01268 
+<a name="l01269"></a>01269 QList&lt; QHash&lt; int, QPointF&gt; &gt; correctIntrinsics(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;K, <span class="keyword">const</span> QList&lt; QHash&lt; int, QPointF&gt; &gt; &amp;pointsProjections)
+<a name="l01270"></a>01270     {
+<a name="l01271"></a>01271     QList&lt; QHash&lt; int, QPointF&gt; &gt; calibratedProjections;
+<a name="l01272"></a>01272 
+<a name="l01273"></a>01273     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> invK = <a class="code" href="group__qvmatrixalgebra.html#gadf6472ec782375d465ff1e87b3ae2557" title="Obtains the Moore–Penrose pseudoinverse of a matrix.">pseudoInverse</a>(K);
+<a name="l01274"></a>01274     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; pointsProjections.size(); i++)
+<a name="l01275"></a>01275         {
+<a name="l01276"></a>01276         calibratedProjections &lt;&lt; QHash&lt;int, QPointF&gt;();
+<a name="l01277"></a>01277         <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> j, pointsProjections[i].keys())
+<a name="l01278"></a>01278             calibratedProjections[i][j] = <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(invK, pointsProjections[i][j]);
+<a name="l01279"></a>01279         }
+<a name="l01280"></a>01280     <span class="keywordflow">return</span> calibratedProjections;
+<a name="l01281"></a>01281     }
+<a name="l01282"></a>01282 
+<a name="l01283"></a><a class="code" href="group__qvprojectivegeometry.html#gafebb00bc1698d22fdb6875a6a5d70c24">01283</a> <span class="keywordtype">double</span> <a class="code" href="group__qvprojectivegeometry.html#gafebb00bc1698d22fdb6875a6a5d70c24" title="Compute camera focal from a planar homography.">computeCameraFocalFromPlanarHomography</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">bool</span> byzero)
+<a name="l01284"></a>01284     {
+<a name="l01285"></a>01285     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> transl = <a class="code" href="classQVMatrix.html#a953207e797ad5c2f8477d3507dbcf86b" title="Creates an intrinsic camera calibration matrix.">QVMatrix::cameraCalibrationMatrix</a>(1.0, 1.0, w/2.0, h/2.0);
+<a name="l01286"></a>01286     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> Ht = (H*transl).inverse();
+<a name="l01287"></a>01287     <span class="keyword">const</span> <span class="keywordtype">double</span> ww = byzero?   (-Ht(2,0)*Ht(2,1)) / ( Ht(0,0)*Ht(0,1) + Ht(1,0)*Ht(1,1) ) :
+<a name="l01288"></a>01288                     (-Ht(2,0)*Ht(2,0) + Ht(2,1)*Ht(2,1)) / (Ht(0,0)*Ht(0,0) - Ht(0,1)*Ht(0,1) + Ht(1,0)*Ht(1,0) - Ht(1,1)*Ht(1,1));
+<a name="l01289"></a>01289     <span class="keywordflow">return</span> sqrt(1/ww);
+<a name="l01290"></a>01290     }
+<a name="l01291"></a>01291 
+<a name="l01292"></a><a class="code" href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43">01292</a> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> <a class="code" href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43" title="Estimates the camera pose form the intrinsic calibration and a planar homography...">getCameraPoseFromCalibratedHomography</a>(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp; K, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp; H)
+<a name="l01293"></a>01293     {
+<a name="l01294"></a>01294     <span class="keywordflow">if</span>(K.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>()!=3 or K.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>()!=3 or H.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>()!=3 or H.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>()!=3)
+<a name="l01295"></a>01295         {
+<a name="l01296"></a>01296         std::cerr &lt;&lt; <span class="stringliteral">&quot;[getCameraPoseFromCalibratedHomography] Warning: homography and calibration matrices are not of size 3x3.&quot;</span>;
+<a name="l01297"></a>01297         <span class="keywordflow">return</span> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a>();
+<a name="l01298"></a>01298         }
+<a name="l01299"></a>01299 
+<a name="l01300"></a>01300     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> Hc = K.<a class="code" href="classQVMatrix.html#ab00a021c82b223c25b6d51c203e30d16" title="Computes the inverse of the matrix.">inverse</a>()*H.<a class="code" href="classQVMatrix.html#ab00a021c82b223c25b6d51c203e30d16" title="Computes the inverse of the matrix.">inverse</a>();
+<a name="l01301"></a>01301     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> r0,r1,r2,aux;
+<a name="l01302"></a>01302 
+<a name="l01303"></a>01303     r0 = Hc.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(0);
+<a name="l01304"></a>01304     r0 = r0/r0.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>();
+<a name="l01305"></a>01305     aux = Hc.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(1);
+<a name="l01306"></a>01306     aux = aux/aux.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>();
+<a name="l01307"></a>01307     r2 = r0^aux;
+<a name="l01308"></a>01308     r2 = r2/r2.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>();
+<a name="l01309"></a>01309     r1 = -r0^r2;
+<a name="l01310"></a>01310 
+<a name="l01311"></a>01311     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> R(3,3);
+<a name="l01312"></a>01312     R.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(0,r0);
+<a name="l01313"></a>01313     R.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(1,r1);
+<a name="l01314"></a>01314     R.<a class="code" href="classQVMatrix.html#a8ebc03603ced1c727afd6f3bd755e57a" title="Sets a column of the matrix.">setCol</a>(2,r2);
+<a name="l01315"></a>01315 
+<a name="l01316"></a>01316     <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> C = <span class="comment">/*-(R.transpose()*/</span> Hc.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(2) / (Hc.<a class="code" href="classQVMatrix.html#a476e9d1714f98c1ae1b7c1d396fcdbaa" title="Gets a column of the matrix.">getCol</a>(0).<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>());
+<a name="l01317"></a>01317 
+<a name="l01318"></a>01318     <span class="keywordflow">return</span> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a>(<a class="code" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a>(R),<a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(C));
+<a name="l01319"></a>01319     }
+<a name="l01320"></a>01320 
+<a name="l01321"></a>01321 
+<a name="l01322"></a>01322 <span class="comment">// -------------------------------------------------------------------------------------------------------</span>
+<a name="l01323"></a>01323 
+<a name="l01324"></a>01324 <span class="comment">// -------------------------------------------------------------------------------------------------------</span>
+<a name="l01325"></a>01325 
+<a name="l01326"></a>01326 <span class="comment">// -------------------------------------------------------------------------------------------------------</span>
+<a name="l01327"></a>01327 <span class="comment">// DEPRECATED</span>
+<a name="l01328"></a>01328 
+<a name="l01329"></a><a class="code" href="group__qvprojectivegeometry.html#ga5d0a08b6088fe1fa90baa765cff776a2">01329</a> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668" title="Obtains a planar homography from a list of point correspondences.">computeProjectiveHomography</a>(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l01330"></a>01330         {
+<a name="l01331"></a>01331     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: this version of &#39;computeProjectiveHomography&#39; is deprecated.&quot;</span> &lt;&lt; std::endl;
+<a name="l01332"></a>01332         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H;
+<a name="l01333"></a>01333         <a class="code" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668" title="Obtains a planar homography from a list of point correspondences.">computeProjectiveHomography</a>(matchings, H);
+<a name="l01334"></a>01334         <span class="keywordflow">return</span> H;
+<a name="l01335"></a>01335         }
+<a name="l01336"></a>01336 
+<a name="l01337"></a><a class="code" href="group__qvprojectivegeometry.html#gabaa689662af5c3e513041ef1a7c97117">01337</a> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(<span class="keyword">const</span> QPointF &amp;point1, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P1, <span class="keyword">const</span> QPointF &amp;point2, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P2, <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575" title="Available methods for Singular Value Decomposition (SVD).">TQVSVD_Method</a> method)
+<a name="l01338"></a>01338     {
+<a name="l01339"></a>01339     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: this version of &#39;linear3DPointTriangulation&#39; for two views is deprecated.&quot;</span> &lt;&lt; std::endl;
+<a name="l01340"></a>01340     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef" title="Recovers the location of a 3D point from its projection on several views, and their...">linear3DPointTriangulation</a>(<a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a>(point1, point2), P1, P2, method);
+<a name="l01341"></a>01341     }
+<a name="l01342"></a>01342 
+<a name="l01343"></a>01343 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> getCameraMatrixFrom2D3DPointCorrespondences(<span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points2d, <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3d)
+<a name="l01344"></a>01344     {
+<a name="l01345"></a>01345     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: getCameraMatrixFrom2D3DPointCorrespondences deprecated. Use linearCameraResection instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01346"></a>01346 
+<a name="l01347"></a>01347     <span class="keyword">const</span> <span class="keywordtype">int</span> n = points2d.size();
+<a name="l01348"></a>01348     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(3 * n, 12);
+<a name="l01349"></a>01349     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; n; i++)
+<a name="l01350"></a>01350         {
+<a name="l01351"></a>01351         <span class="keyword">const</span> <span class="keywordtype">double</span>    xp = points2d[i].x(), yp = points2d[i].y(),
+<a name="l01352"></a>01352                 x =  points3d[i].x(), y =  points3d[i].y(), z =  points3d[i].z();
+<a name="l01353"></a>01353 
+<a name="l01354"></a>01354         <span class="keyword">const</span> <span class="keywordtype">double</span> dataCoefs[3*12] =  {
+<a name="l01355"></a>01355                         0,      0,      0,      0,      -x,     -y,     -z,     -1,     +x*yp,  +y*yp,  +yp*z,  +yp,
+<a name="l01356"></a>01356                         +x,     +y,     +z,     +1,     0,      0,      0,      0,      -x*xp,  -xp*y,  -xp*z,  -xp,
+<a name="l01357"></a>01357                         -x*yp,  -y*yp,  -yp*z,  -yp,    +x*xp,  +xp*y,  +xp*z,  +xp,    0,      0,      0,      0
+<a name="l01358"></a>01358                         };
+<a name="l01359"></a>01359 
+<a name="l01360"></a>01360         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> coefs(3, 12, dataCoefs);
+<a name="l01361"></a>01361 
+<a name="l01362"></a>01362         A.setRow(3*i+0, coefs.getRow(0));
+<a name="l01363"></a>01363         A.setRow(3*i+1, coefs.getRow(1));
+<a name="l01364"></a>01364         A.setRow(3*i+2, coefs.getRow(2));
+<a name="l01365"></a>01365         }
+<a name="l01366"></a>01366 
+<a name="l01367"></a>01367     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> vectorP;
+<a name="l01368"></a>01368     <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, vectorP);
+<a name="l01369"></a>01369 
+<a name="l01370"></a>01370     <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>      P = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(vectorP.mid(0,4)) &amp; <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(vectorP.mid(4,4)) &amp; <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(vectorP.mid(8,4));
+<a name="l01371"></a>01371             <span class="comment">// The obtained matrix is up to scale. It should be normalized to make it a correct euclidean transformation matrix.</span>
+<a name="l01372"></a>01372 
+<a name="l01373"></a>01373     <span class="comment">// Use cheirality to identify correct camera matrix sign.</span>
+<a name="l01374"></a>01374     <span class="keywordflow">return</span> P * SIGN((P*(<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(points3d.first()) &lt;&lt; 1))[2]);
+<a name="l01375"></a>01375     }
+<a name="l01376"></a>01376 
+<a name="l01377"></a>01377 <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> triangulate3DPointFrom2Views(<span class="keyword">const</span> QPointF &amp;point1, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P1, <span class="keyword">const</span> QPointF &amp;point2, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;P2)
+<a name="l01378"></a>01378     {
+<a name="l01379"></a>01379     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: triangulate3DPointFrom2Views deprecated. Use linear3DPointTriangulation instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01380"></a>01380     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(4,4);
+<a name="l01381"></a>01381 
+<a name="l01382"></a>01382     A.setRow(0, P1.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(2) * point1.x() - P1.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(0));
+<a name="l01383"></a>01383     A.setRow(1, P1.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(2) * point1.y() - P1.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(1));
+<a name="l01384"></a>01384     A.setRow(2, P2.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(2) * point2.x() - P2.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(0));
+<a name="l01385"></a>01385     A.setRow(3, P2.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(2) * point2.y() - P2.<a class="code" href="classQVMatrix.html#ae27f08cd9a56a5c85ba2757cc4078d80" title="Gets a row of the matrix.">getRow</a>(1));
+<a name="l01386"></a>01386 
+<a name="l01387"></a>01387     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x;
+<a name="l01388"></a>01388 
+<a name="l01389"></a>01389     <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, x);
+<a name="l01390"></a>01390 
+<a name="l01391"></a>01391     <span class="comment">// Cheiral condition. All points must lie in front of the camera.</span>
+<a name="l01392"></a>01392     <span class="comment">// See Zisserman, section 21.7.</span>
+<a name="l01393"></a>01393     <span class="comment">//if (x[2] / x[3] &gt;= 0)</span>
+<a name="l01394"></a>01394     <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(x[0] / x[3], x[1] / x[3], x[2] / x[3]);
+<a name="l01395"></a>01395     <span class="comment">//else</span>
+<a name="l01396"></a>01396     <span class="comment">//  return QV3DPointF( - x[0] / x[3], - x[1] / x[3], - x[2] / x[3]);</span>
+<a name="l01397"></a>01397     }
+<a name="l01398"></a>01398 
+<a name="l01399"></a>01399 <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> triangulate3DPointFromNViews(<span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points, <span class="keyword">const</span> QList&lt;QVMatrix&gt; &amp;Plist)
+<a name="l01400"></a>01400     {
+<a name="l01401"></a>01401     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: triangulate3DPointFromNViews deprecated. Use linear3DPointTriangulation instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01402"></a>01402     <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> A(2 * points.size(),4);
+<a name="l01403"></a>01403     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; points.size(); i++)
+<a name="l01404"></a>01404         {
+<a name="l01405"></a>01405         <span class="keywordtype">double</span>  *a = &amp;(A(2*i,0)),
+<a name="l01406"></a>01406                                 p_x = points[i].x(), p_y = points[i].<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>();
+<a name="l01407"></a>01407 
+<a name="l01408"></a>01408                 <span class="keyword">const</span> <span class="keywordtype">double</span> *p = Plist[i].getReadData();
+<a name="l01409"></a>01409 
+<a name="l01410"></a>01410 
+<a name="l01411"></a>01411         a[0] = p[8] * p_x - p[0];
+<a name="l01412"></a>01412         a[1] = p[9] * p_x - p[1];
+<a name="l01413"></a>01413         a[2] = p[10] * p_x - p[2];
+<a name="l01414"></a>01414         a[3] = p[11] * p_x - p[3];
+<a name="l01415"></a>01415         a[4] = p[8] * p_y - p[4];
+<a name="l01416"></a>01416         a[5] = p[9] * p_y - p[5];
+<a name="l01417"></a>01417         a[6] = p[10] * p_y - p[6];
+<a name="l01418"></a>01418         a[7] = p[11] * p_y - p[7];
+<a name="l01419"></a>01419         }
+<a name="l01420"></a>01420 
+<a name="l01421"></a>01421         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x;
+<a name="l01422"></a>01422 
+<a name="l01423"></a>01423         <a class="code" href="group__qvmatrixalgebra.html#gabcefb2cb61ed46e61130f4892308fee4" title="Solves an homogeneous linear system of equations.">solveHomogeneous</a>(A, x);
+<a name="l01424"></a>01424         <span class="keywordflow">return</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>(x[0] / x[3], x[1] / x[3], x[2] / x[3]);
+<a name="l01425"></a>01425     }
+<a name="l01426"></a>01426 
+<a name="l01427"></a>01427 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> ComputeProjectiveHomography(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l01428"></a>01428     {
+<a name="l01429"></a>01429     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ComputeProjectiveHomography deprecated. Use &#39;computeProjectiveHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01430"></a>01430     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668" title="Obtains a planar homography from a list of point correspondences.">computeProjectiveHomography</a>(matchings);
+<a name="l01431"></a>01431     }
+<a name="l01432"></a>01432 
+<a name="l01433"></a>01433 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> ComputeAffineHomography(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l01434"></a>01434     {
+<a name="l01435"></a>01435     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ComputeAffineHomography deprecated. Use &#39;computeAffineHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01436"></a>01436     <span class="keywordflow">return</span> ComputeAffineHomography(matchings);
+<a name="l01437"></a>01437     }
+<a name="l01438"></a>01438 
+<a name="l01439"></a>01439 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> ComputeSimilarHomography(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l01440"></a>01440     {
+<a name="l01441"></a>01441     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ComputeSimilarHomography deprecated. Use &#39;computeSimilarHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01442"></a>01442     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga06a3ff264f0821da24ee07ce73c86bd6" title="Obtains a similar homography from a set of inter-image point matchings.">computeSimilarHomography</a>(matchings);
+<a name="l01443"></a>01443     }
+<a name="l01444"></a>01444 
+<a name="l01445"></a>01445 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> ComputeEuclideanHomography(<span class="keyword">const</span> QList&lt; QPointFMatching &gt; &amp;matchings)
+<a name="l01446"></a>01446     {
+<a name="l01447"></a>01447     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ComputeEuclideanHomography deprecated. Use computeSimilarHomography instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01448"></a>01448     <span class="keywordflow">return</span> ComputeSimilarHomography(matchings);
+<a name="l01449"></a>01449     }
+<a name="l01450"></a>01450 
+<a name="l01451"></a>01451 QPointF ApplyHomography(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <span class="keyword">const</span> QPointF &amp;point)
+<a name="l01452"></a>01452     {
+<a name="l01453"></a>01453     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ApplyHomography deprecated. Use &#39;applyHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01454"></a>01454     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(H, point);
+<a name="l01455"></a>01455     }
+<a name="l01456"></a>01456 
+<a name="l01457"></a>01457 QList&lt;QPointF&gt; ApplyHomography(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;sourcePoints)
+<a name="l01458"></a>01458     {
+<a name="l01459"></a>01459     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ApplyHomography deprecated. Use &#39;applyHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01460"></a>01460     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(H, sourcePoints);
+<a name="l01461"></a>01461     }
+<a name="l01462"></a>01462 
+<a name="l01463"></a>01463 <span class="preprocessor">#ifdef QVIPP</span>
+<a name="l01464"></a>01464 <span class="preprocessor"></span><a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> ApplyHomography(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> interpolation)
+<a name="l01465"></a>01465     {
+<a name="l01466"></a>01466     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ApplyHomography deprecated. Use &#39;applyHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01467"></a>01467     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(H, image, interpolation);
+<a name="l01468"></a>01468     }
+<a name="l01469"></a>01469 
+<a name="l01470"></a>01470 <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> ApplyHomography(<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;H, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> interpolation)
+<a name="l01471"></a>01471     {
+<a name="l01472"></a>01472     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: ApplyHomography deprecated. Use &#39;applyHomography&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l01473"></a>01473     <span class="keywordflow">return</span> <a class="code" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c" title="Maps a point using an homography.">applyHomography</a>(H, image, interpolation);
+<a name="l01474"></a>01474     }
+<a name="l01475"></a>01475 <span class="preprocessor">#endif</span>
+<a name="l01476"></a>01476 <span class="preprocessor"></span>
+<a name="l01477"></a>01477 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,19 @@
+N_TESTS_PER_MEASURE=5
+
+echo Performing $N_TESTS_PER_MEASURE tests per measure.
+
+for METHOD in GSL_HOUSEHOLDER_THIN_QR GSL_HOUSEHOLDER_FULL_QR LAPACK_THIN_DGEQR2 LAPACK_FULL_DGEQR2
+do
+  echo -ne $METHOD
+  for SIZE1 in 5 50 100 500 1000
+  do
+    for SIZE2 in 5 50 100 500 1000
+    do
+      echo -ne "\n${SIZE1}x${SIZE2}: " 
+      ./QR-test --Rows=${SIZE1} --Cols=${SIZE2} --RHS_size=0 --method=$METHOD --n_tests=$N_TESTS_PER_MEASURE | grep -i "time" | tr "\n" " "
+    done
+  done
+  echo
+done
+
+

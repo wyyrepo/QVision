@@ -1,0 +1,26 @@
+BLOCKSIZE=5
+
+for METHOD in QVMKL_DSS QVMKL_ISS
+do
+  echo -ne $METHOD
+  for NZPROB in 0.1 0.5 1.0
+  do
+    for BLOCKS in 5 50 100
+    do
+      echo -ne "\n${BLOCKS}x${BLOCKS} blocks, each ${BLOCKSIZE}x${BLOCKSIZE}, symmetric and positive definite, nzprob=${NZPROB}: " 
+      ./Sparse-test --Blocks=${BLOCKS} --Rows=${BLOCKSIZE} --n_tests=1 --method=$METHOD --iters_or_resid=true --iters=$(($BLOCKS*$BLOCKSIZE)) --verbose=true --symmetric=true --positive=true --prob=${NZPROB} --show_residuals=true | grep "Sparse" | grep "residual" | tr "\n" " "   
+      
+      if [ $METHOD != QVMKL_ISS ]
+      then
+        echo -ne "\n${BLOCKS}x${BLOCKS} blocks, each ${BLOCKSIZE}x${BLOCKSIZE}, symmetric and undefinite, nzprob=${NZPROB}: " 
+        ./Sparse-test --Blocks=${BLOCKS} --Rows=${BLOCKSIZE} --n_tests=1 --method=$METHOD --verbose=true --symmetric=true --positive=false --prob=${NZPROB} --show_residuals=true | grep "Sparse" | grep "residual" | tr "\n" " "   
+      
+        echo -ne "\n${BLOCKS}x${BLOCKS} blocks, each ${BLOCKSIZE}x${BLOCKSIZE}, non symmetric, nzprob=${NZPROB}: " 
+        ./Sparse-test --Blocks=${BLOCKS} --Rows=${BLOCKSIZE} --n_tests=1 --method=$METHOD --verbose=true --symmetric=false --positive=false --prob=${NZPROB} --show_residuals=true | grep "Sparse" | grep "residual" | tr "\n" " "       
+      fi
+    done
+  done  
+  echo
+done
+
+

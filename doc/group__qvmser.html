@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Linear time MSER implementation<br/>
+<small>
+[<a class="el" href="group__qvip.html">Image processing</a>]</small>
+</h1>
+<p>Classes and functions that implement linear time MSER algorithm.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMSER.html">QVMSER</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maximally stable extremal region datatype.  <a href="classQVMSER.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmser.html#gab466e9a127e115618bb46f4515d4d8b4">getLTMSERContours</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;input_image, const int minArea=20, const int maxArea=100000, const int delta=15, const float delta_threshold=0.03, const unsigned int downscaling=1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the MSER (linear time MSER) contours from a <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a>.  <a href="#gab466e9a127e115618bb46f4515d4d8b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921">getLTMSER</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;input_image, const int minArea=20, const int maxArea=100000, const int delta=15, const float delta_threshold=0.03, const unsigned int downscaling=1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the extracted MSER regions (<a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures) using linear time MSER on a <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a>  <a href="#ga7270e20566a7ad57a59acb4844ca4921"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmser.html#ga63a38297183386411e250f0a2d52122b">getLTMSERContours</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;input_image, QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt; mser_list)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the MSER (linear time MSER) contours corresponding to a list of given <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures.  <a href="#ga63a38297183386411e250f0a2d52122b"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Classes and functions that implement linear time MSER algorithm. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gab466e9a127e115618bb46f4515d4d8b4"></a><!-- doxytag: member="qvltmser.h::getLTMSERContours" ref="gab466e9a127e115618bb46f4515d4d8b4" args="(QVImage&lt; uChar &gt; &amp;input_image, const int minArea=20, const int maxArea=100000, const int delta=15, const float delta_threshold=0.03, const unsigned int downscaling=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVPolyline.html">QVPolyline</a>&gt; getLTMSERContours </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>input_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minArea</em> = <code>20</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxArea</em> = <code>100000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>delta</em> = <code>15</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&nbsp;</td>
+          <td class="paramname"> <em>delta_threshold</em> = <code>0.03</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>downscaling</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the MSER (linear time MSER) contours from a <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a>. </p>
+<p>The obtained MSER are in fact only the MSER+ (regions darker than background). If you want to detect MSER- regions, you should manually negate the input image (using Not function, for example), and calling again this function. Besides the typical parameters (minArea, maxArea, delta and delta_threshold; see paper), the last parameter to this function allows to downscale the input image used to obtain the (intermediate) MSER seeds, though the final seed position values are returned rescaled back to the original size. This can be used to accelerate seed extraction (of course at the cost of discarding smaller regions) without loosing precision when obtaining the rest of contours (as the seeds are used on the original image, instead of the rescaled one, thus preserving original precission in the borders of each contour -in fact, this is not completely true, because the final threshold is also affected by downscaling; anyway, for many applications the approximation should behave acceptably-).</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input_image</em>&nbsp;</td><td>Image to obtain MSERs from. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minArea</em>&nbsp;</td><td>Minimum area for each MSER. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxArea</em>&nbsp;</td><td>Maximal area for each MSER. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta</em>&nbsp;</td><td>Delta value for MSER algorithm (see paper). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta_threhold</em>&nbsp;</td><td>Delta threshold value for MSER algorithm. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>downscaling</em>&nbsp;</td><td>Initial scaling performed of input image; by default, no downscaling is performed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>output_contours List of output contours corresponding to detected MSERs.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921" title="Obtains the extracted MSER regions (QVMSER structures) using linear time MSER on...">getLTMSER</a> <a class="el" href="group__qvmser.html#ga63a38297183386411e250f0a2d52122b" title="Obtains the MSER (linear time MSER) contours corresponding to a list of given QVMSER...">getLTMSERContours(QVImage&lt;uChar&gt;&amp;,QList&lt;QVMSER&gt;)</a>; </dd></dl>
+
+<p>Definition at line <a class="el" href="qvltmser_8cpp_source.html#l00242">242</a> of file <a class="el" href="qvltmser_8cpp_source.html">qvltmser.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7270e20566a7ad57a59acb4844ca4921"></a><!-- doxytag: member="qvltmser.h::getLTMSER" ref="ga7270e20566a7ad57a59acb4844ca4921" args="(QVImage&lt; uChar &gt; &amp;input_image, const int minArea=20, const int maxArea=100000, const int delta=15, const float delta_threshold=0.03, const unsigned int downscaling=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVMSER.html">QVMSER</a>&gt; getLTMSER </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>input_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minArea</em> = <code>20</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxArea</em> = <code>100000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>delta</em> = <code>15</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&nbsp;</td>
+          <td class="paramname"> <em>delta_threshold</em> = <code>0.03</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>downscaling</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the extracted MSER regions (<a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures) using linear time MSER on a <a class="el" href="classQVImage.html">QVImage&lt;uChar&gt;</a> </p>
+<p>This function differs from the one above in that it does not compute the corresponding contours.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input_image</em>&nbsp;</td><td>Image to obtain MSERs from. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minArea</em>&nbsp;</td><td>Minimum area for MSER. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxArea</em>&nbsp;</td><td>Maximal area for MSER. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta</em>&nbsp;</td><td>Delta value for MSER algorithm (see paper). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta_threhold</em>&nbsp;</td><td>Delta threshold value for MSER algorithm. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>downscaling</em>&nbsp;</td><td>Initial scaling performed of input image; by default, no downscaling is performed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of output obtained <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvmser.html#gab466e9a127e115618bb46f4515d4d8b4" title="Obtains the MSER (linear time MSER) contours from a QVImage&lt;uChar&gt;.">getLTMSERContours(QVImage&lt;uChar&gt; &amp;,const int,const int,const int,const float,const unsigned int)</a> <a class="el" href="group__qvmser.html#ga63a38297183386411e250f0a2d52122b" title="Obtains the MSER (linear time MSER) contours corresponding to a list of given QVMSER...">getLTMSERContours(QVImage&lt;uChar&gt; &amp;,QList&lt;QVMSER&gt;)</a> <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvltmser_8cpp_source.html#l00062">62</a> of file <a class="el" href="qvltmser_8cpp_source.html">qvltmser.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmser.html#gab466e9a127e115618bb46f4515d4d8b4">getLTMSERContours()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga63a38297183386411e250f0a2d52122b"></a><!-- doxytag: member="qvltmser.h::getLTMSERContours" ref="ga63a38297183386411e250f0a2d52122b" args="(QVImage&lt; uChar &gt; &amp;input_image, QList&lt; QVMSER &gt; mser_list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVPolyline.html">QVPolyline</a>&gt; getLTMSERContours </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>input_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>mser_list</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the MSER (linear time MSER) contours corresponding to a list of given <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures. </p>
+<p>This function can be called with the output of the above function to get the list of contours corresponding to a list of given <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input_image</em>&nbsp;</td><td>Image to obtain MSERs from. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minArea</em>&nbsp;</td><td>Minimum area for MSER. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxArea</em>&nbsp;</td><td>Maximal area for MSER. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta</em>&nbsp;</td><td>Delta value for MSER algorithm (see paper). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta_threhold</em>&nbsp;</td><td>Delta threshold value for MSER algorithm.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of output contours obtained from the input <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> structures.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvmser.html#gab466e9a127e115618bb46f4515d4d8b4" title="Obtains the MSER (linear time MSER) contours from a QVImage&lt;uChar&gt;.">getLTMSERContours(QVImage&lt;uChar&gt; &amp;,const int,const int,const int,const float,const unsigned int)</a> <a class="el" href="group__qvmser.html#ga7270e20566a7ad57a59acb4844ca4921" title="Obtains the extracted MSER regions (QVMSER structures) using linear time MSER on...">getLTMSER</a> <a class="el" href="classQVMSER.html" title="Maximally stable extremal region datatype.">QVMSER</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvltmser_8cpp_source.html#l00228">228</a> of file <a class="el" href="qvltmser_8cpp_source.html">qvltmser.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmser.html#gab466e9a127e115618bb46f4515d4d8b4">getLTMSERContours()</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

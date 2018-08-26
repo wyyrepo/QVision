@@ -1,0 +1,858 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVGenericImage Class Reference<br/>
+<small>
+[<a class="el" href="group__qvip.html">Image processing</a>]</small>
+</h1><!-- doxytag: class="QVGenericImage" -->
+<p>Base class for <a class="el" href="classQVImage.html">QVImage</a> objects.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvgenericimage_8h_source.html">QVGenericImage</a>&gt;</code></p>
+
+<p>Inherited by <a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+<p><a href="classQVGenericImage-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#ab7f12de40f9f2eb3604ca4965c32408e">QVGenericImage</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#ab7f12de40f9f2eb3604ca4965c32408e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a09e3239f3dc0c2e33140f79e63102549">QVGenericImage</a> (<a class="el" href="classQVGenericImage.html">QVGenericImage</a> const &amp;img)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#a09e3239f3dc0c2e33140f79e63102549"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#aec5bf087d3d27cc34ed83520056caef6">~QVGenericImage</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual destructor for <a class="el" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a>.  <a href="#aec5bf087d3d27cc34ed83520056caef6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a">getCols</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting the number of columns of the image.  <a href="#a398764a3e00a553dd8ac75f78f6bf18a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3">getRows</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting the number of rows of the image.  <a href="#a8731e208b2f33a3ab1795fc4389f1ef3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a73b40cb2faa1943637116da270da800d">getStep</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting the row step of the image.  <a href="#a73b40cb2faa1943637116da270da800d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QSize&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999">getSize</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting the size of the image.  <a href="#aaeffe5a731175e97707793ee12e06999"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a3dde18969f0fe8ed9079d21540e3fc13">getChannels</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting the number of channels of the image.  <a href="#a3dde18969f0fe8ed9079d21540e3fc13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a7429b1cdaa57edfcd7edfad8204c9024">getTypeSize</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting bit depth of the image, in bytes.  <a href="#a7429b1cdaa57edfcd7edfad8204c9024"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uInt&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a93cd55976a2289ba45d154c210597ea3">getDataSize</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Virtual method for getting data size for the image.  <a href="#a93cd55976a2289ba45d154c210597ea3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QRect &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4">getROI</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Method for obtaining actual region of interest for image.  <a href="#a55132f8ba36904516dcf384039c670e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">resetROI</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resets the region of interest of the image.  <a href="#ad9134aec495e05f191535c23e8344c77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff">erodeROI</a> (uInt cols, uInt rows)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reduces the region of interest of the image, in a given amount of pixels.  <a href="#a1f12013abc679cd9603fdcc6ca9824ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7">dilateROI</a> (uInt cols, uInt rows)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Increments the region of interest of the image, in a given amount of pixels.  <a href="#a950c665d25b6270e15e238efb5209ee7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">setROI</a> (int x, int y, uInt w, uInt h)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the region of interest of the image.  <a href="#a2e01c2584cee10559bf1aac1ca7e287b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#ab23d43163b77335b855e7c5b4278b92f">setROI</a> (const QRect &amp;rect)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the region of interest (ROI) for the image, from a rectangle.  <a href="#ab23d43163b77335b855e7c5b4278b92f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const QPoint &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6">getAnchor</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains actual anchor point for the image.  <a href="#a9fede2a177fed58d69d9d13e93cd38b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a41e7573cc04595e3e854ed37c599b1e9">resetAnchor</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set anchor point of the image to pixel (0,0).  <a href="#a41e7573cc04595e3e854ed37c599b1e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac">setAnchor</a> (int col, int row)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set anchor point of the image.  <a href="#aa3f37d1f7d2271b52c69c8034be8ddac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#aec61e6f1c101fdc0d7350addf3aa3f2a">setAnchor</a> (const QPoint &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set anchor point of the image.  <a href="#aec61e6f1c101fdc0d7350addf3aa3f2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a11b4c13e54a1e89d735c12f9cbec277f">getTypeQString</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtain a char string identifying the type of the image. real image contained in the <a class="el" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a>.  <a href="#a11b4c13e54a1e89d735c12f9cbec277f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59">isCompatibleWith</a> (const char *qvImageClassName) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check whether an image is compatible in type with another image, provided its type id string.  <a href="#a21b9bc211bcb5b0694ecdad16f1e5d59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html#afded424f68a2cefbb0ac6ffdebdfc160">isCompatibleWith</a> (const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> *image) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check whether an image is compatible with this image.  <a href="#afded424f68a2cefbb0ac6ffdebdfc160"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Base class for <a class="el" href="classQVImage.html">QVImage</a> objects. </p>
+<p>For instance, this class is useful to create code like this:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">int</span> imageAreaSize(<a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> *image)
+        {
+        <span class="keywordflow">return</span> image-&gt;<a class="code" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a" title="Virtual method for getting the number of columns of the image.">getCols</a>() * image-&gt;<a class="code" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3" title="Virtual method for getting the number of rows of the image.">getRows</a>();
+        }
+</pre></div><p>Where it doesn't matter the bit depth or number of channels of the image, but the number of cols and rows of it, as well as generic containers, that can hold a variety of image types, for example:</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">class </span>GenericImageContainer
+        {
+        <span class="keyword">public</span>:
+                <span class="keywordtype">int</span> count;
+                <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> *images;
+                [...]
+                <span class="keywordtype">void</span> addImage(<a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> *image)    { images[count++] = &amp;image; }
+                <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> getImage(<span class="keywordtype">int</span> index)      { <span class="keywordflow">return</span> images[index]; }
+        }
+</pre></div><p>Thus, this class offers access methods for all kind of information about the image, like dimensions (see <a class="el" href="classQVGenericImage.html#a398764a3e00a553dd8ac75f78f6bf18a">getCols()</a> and <a class="el" href="classQVGenericImage.html#a8731e208b2f33a3ab1795fc4389f1ef3">getRows()</a> methods), bit depth and number of planes (see <a class="el" href="classQVGenericImage.html#a7429b1cdaa57edfcd7edfad8204c9024">getTypeSize()</a> and <a class="el" href="classQVGenericImage.html#a3dde18969f0fe8ed9079d21540e3fc13">getChannels()</a> methods), ROI and anchor of the image (see <a class="el" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4">getROI()</a> and <a class="el" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6">getAnchor()</a> methods mainly), but pixel accessor methods, that are defined in the subclass <a class="el" href="classQVImage.html">QVImage</a>, and depends on the bit depth and number of planes of the image.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo:</a></b></dt><dd>eliminar el sufijo 'get' de todas las funciones. getCols -&gt; cols, getRows -&gt; rows </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00067">67</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab7f12de40f9f2eb3604ca4965c32408e"></a><!-- doxytag: member="QVGenericImage::QVGenericImage" ref="ab7f12de40f9f2eb3604ca4965c32408e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVGenericImage::QVGenericImage </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<p>Initializes image ROI and anchor to zero offset and width, both. </p>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00073">73</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09e3239f3dc0c2e33140f79e63102549"></a><!-- doxytag: member="QVGenericImage::QVGenericImage" ref="a09e3239f3dc0c2e33140f79e63102549" args="(QVGenericImage const &amp;img)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVGenericImage::QVGenericImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVGenericImage.html">QVGenericImage</a> const &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Initializes image ROI and anchor to ROI and anchor from image 'img'. </p>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00078">78</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec5bf087d3d27cc34ed83520056caef6"></a><!-- doxytag: member="QVGenericImage::~QVGenericImage" ref="aec5bf087d3d27cc34ed83520056caef6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QVGenericImage::~QVGenericImage </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual destructor for <a class="el" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a>. </p>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00081">81</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a398764a3e00a553dd8ac75f78f6bf18a"></a><!-- doxytag: member="QVGenericImage::getCols" ref="a398764a3e00a553dd8ac75f78f6bf18a" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uInt QVGenericImage::getCols </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting the number of columns of the image. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of columns for image, </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999">getSize()</a>, <a class="el" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">resetROI()</a>, <a class="el" href="classQVGenericImage.html#aec61e6f1c101fdc0d7350addf3aa3f2a">setAnchor()</a>, and <a class="el" href="classQVGenericImage.html#ab23d43163b77335b855e7c5b4278b92f">setROI()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8731e208b2f33a3ab1795fc4389f1ef3"></a><!-- doxytag: member="QVGenericImage::getRows" ref="a8731e208b2f33a3ab1795fc4389f1ef3" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uInt QVGenericImage::getRows </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting the number of rows of the image. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of rows for image, </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999">getSize()</a>, <a class="el" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">resetROI()</a>, <a class="el" href="classQVGenericImage.html#aec61e6f1c101fdc0d7350addf3aa3f2a">setAnchor()</a>, and <a class="el" href="classQVGenericImage.html#ab23d43163b77335b855e7c5b4278b92f">setROI()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a73b40cb2faa1943637116da270da800d"></a><!-- doxytag: member="QVGenericImage::getStep" ref="a73b40cb2faa1943637116da270da800d" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uInt QVGenericImage::getStep </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting the row step of the image. </p>
+<p>This functions returns the distance in bytes between starts of consecutive lines in the image.</p>
+<p>This may be not equal to a multiple of the number of columns, so this value is necessary to normal access to the image.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>distance in bytes between two consecutive lines in the image. </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaeffe5a731175e97707793ee12e06999"></a><!-- doxytag: member="QVGenericImage::getSize" ref="aaeffe5a731175e97707793ee12e06999" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize QVGenericImage::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting the size of the image. </p>
+<p>This functions returns the distance in bytes between starts of consecutive lines in the image.</p>
+<p>This may be not equal to a multiple of the number of columns, so this value is necessary to access the pixels in the image, using methods for raw image access.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a QSize object, containing the image size. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00111">111</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3dde18969f0fe8ed9079d21540e3fc13"></a><!-- doxytag: member="QVGenericImage::getChannels" ref="a3dde18969f0fe8ed9079d21540e3fc13" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uInt QVGenericImage::getChannels </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting the number of channels of the image. </p>
+<p>Returned value should be equal to template parameter 'Channels', for any <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. This is the number of channels that can be accessed in the image.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of channels of the image. </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#a5d430b0f71799b2b2ca8f8ae8f05ca3c">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a5d430b0f71799b2b2ca8f8ae8f05ca3c">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#a5d430b0f71799b2b2ca8f8ae8f05ca3c">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html#a5d430b0f71799b2b2ca8f8ae8f05ca3c">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7429b1cdaa57edfcd7edfad8204c9024"></a><!-- doxytag: member="QVGenericImage::getTypeSize" ref="a7429b1cdaa57edfcd7edfad8204c9024" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uInt QVGenericImage::getTypeSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting bit depth of the image, in bytes. </p>
+<p>Returned value should be equal to size of template parameter 'Type', for any <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. This is the size of any element of the data array that stores the image in memory.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of channels of the image. </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#a70e75bb386d5b424f266a62d000e52bf">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a70e75bb386d5b424f266a62d000e52bf">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#a70e75bb386d5b424f266a62d000e52bf">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html#a70e75bb386d5b424f266a62d000e52bf">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93cd55976a2289ba45d154c210597ea3"></a><!-- doxytag: member="QVGenericImage::getDataSize" ref="a93cd55976a2289ba45d154c210597ea3" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uInt QVGenericImage::getDataSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Virtual method for getting data size for the image. </p>
+<p>This functions, for any image, returns the following value: </p>
+<div class="fragment"><pre class="fragment">dataSize = rows * step * planes </pre></div><dl class="return"><dt><b>Returns:</b></dt><dd>size in bytes of data buffer for the image. </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#a397ee658c9574be3013a68c584b3f9d0">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a397ee658c9574be3013a68c584b3f9d0">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#a397ee658c9574be3013a68c584b3f9d0">QVImage&lt; uChar, 1 &gt;</a>, and <a class="el" href="classQVImage.html#a397ee658c9574be3013a68c584b3f9d0">QVImage&lt; uChar, 3 &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a55132f8ba36904516dcf384039c670e4"></a><!-- doxytag: member="QVGenericImage::getROI" ref="a55132f8ba36904516dcf384039c670e4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QRect&amp; QVGenericImage::getROI </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Method for obtaining actual region of interest for image. </p>
+<p>The region of interest of an image is used in many image processing and filtering operations. Check the section TheIPPWrapperFunctions for further documentation about the ROI of an image.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a QRect that contains the region of interest of the image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00143">143</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7">dilateROI()</a>, <a class="el" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff">erodeROI()</a>, <a class="el" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6">fastMaximalPoints()</a>, <a class="el" href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907">Filter()</a>, <a class="el" href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f">FilterColumn()</a>, <a class="el" href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519">FilterDoG()</a>, <a class="el" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9">FilterHessianCornerResponseImage()</a>, <a class="el" href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e">FilterRow()</a>, <a class="el" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24">getConnectedSetBorderContoursThreshold()</a>, <a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">maximalPoints()</a>, <a class="el" href="classQVImage.html#a32786513dbed5b1277fdd08aca880d78">QVImage&lt; uChar, 3 &gt;::operator QImage()</a>, <a class="el" href="group__qvip.html#gad9b6ff6909da8e12d4c231500673d128">QVImage&lt; Type, Channels &gt;::operator==()</a>, <a class="el" href="classQVImage.html#a5448f8d71a6ce0bbf459a5b3d7c6e60c">QVImage&lt; uChar, 3 &gt;::QVImage()</a>, <a class="el" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">RGBToYUV420()</a>, and <a class="el" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">YUV420ToRGB()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9134aec495e05f191535c23e8344c77"></a><!-- doxytag: member="QVGenericImage::resetROI" ref="ad9134aec495e05f191535c23e8344c77" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::resetROI </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resets the region of interest of the image. </p>
+<p>Sets the region of interest to the whole image. The ROI will be the rectangle from pixel (0,0), to pixel (image cols-1, image rows-1).</p>
+<p>Check the section TheIPPWrapperFunctions for further documentation about the ROI of an image. </p>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00153">153</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f12013abc679cd9603fdcc6ca9824ff"></a><!-- doxytag: member="QVGenericImage::erodeROI" ref="a1f12013abc679cd9603fdcc6ca9824ff" args="(uInt cols, uInt rows)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::erodeROI </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>rows</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reduces the region of interest of the image, in a given amount of pixels. </p>
+<p>Reduces a given amount of columns and rows to the ROI of the image, equally on each side of the ROI.</p>
+<p>Check the section TheIPPWrapperFunctions for further documentation about the ROI of an image.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cols</em>&nbsp;</td><td>columns to reduce the ROI. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rows</em>&nbsp;</td><td>rows to reduce the ROI. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00163">163</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a950c665d25b6270e15e238efb5209ee7"></a><!-- doxytag: member="QVGenericImage::dilateROI" ref="a950c665d25b6270e15e238efb5209ee7" args="(uInt cols, uInt rows)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::dilateROI </td>
+          <td>(</td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>rows</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Increments the region of interest of the image, in a given amount of pixels. </p>
+<p>Increments a given amount of columns and rows to the ROI of the image, equally on each side of the ROI.</p>
+<p>Check the section TheIPPWrapperFunctions for further documentation about the ROI of an image.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cols</em>&nbsp;</td><td>columns to increment the ROI. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rows</em>&nbsp;</td><td>rows to increment the ROI. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00174">174</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e01c2584cee10559bf1aac1ca7e287b"></a><!-- doxytag: member="QVGenericImage::setROI" ref="a2e01c2584cee10559bf1aac1ca7e287b" args="(int x, int y, uInt w, uInt h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::setROI </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>h</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the region of interest of the image. </p>
+<p>The region of interest for an image is a rectangle, significant to many operations. Pixels outside this rectangle may be ignored by many filtering and image processing functions.</p>
+<p>Check the section TheIPPWrapperFunctions for further documentation about the ROI of an image.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>column of the pixel at the top left corner of the region of interest. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>row of the pixel at the top left corner of the region of interest. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>width of the region of interest. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>height of the region of interest. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00188">188</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7">dilateROI()</a>, <a class="el" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff">erodeROI()</a>, <a class="el" href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907">Filter()</a>, <a class="el" href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f">FilterColumn()</a>, <a class="el" href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519">FilterDoG()</a>, <a class="el" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9">FilterHessianCornerResponseImage()</a>, <a class="el" href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e">FilterRow()</a>, <a class="el" href="classQVImage.html#a5448f8d71a6ce0bbf459a5b3d7c6e60c">QVImage&lt; uChar, 3 &gt;::QVImage()</a>, <a class="el" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">resetROI()</a>, <a class="el" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">RGBToYUV420()</a>, <a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">setROI()</a>, and <a class="el" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">YUV420ToRGB()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab23d43163b77335b855e7c5b4278b92f"></a><!-- doxytag: member="QVGenericImage::setROI" ref="ab23d43163b77335b855e7c5b4278b92f" args="(const QRect &amp;rect)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::setROI </td>
+          <td>(</td>
+          <td class="paramtype">const QRect &amp;&nbsp;</td>
+          <td class="paramname"> <em>rect</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the region of interest (ROI) for the image, from a rectangle. </p>
+<p>This is an overloaded version of the method <a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">setROI(int,int,uInt,uInt)</a>, provided for convenience.</p>
+<p>Check the section TheIPPWrapperFunctions for further documentation about the ROI of an image.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rect</em>&nbsp;</td><td>rectangle that represents region of interest. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00205">205</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9fede2a177fed58d69d9d13e93cd38b6"></a><!-- doxytag: member="QVGenericImage::getAnchor" ref="a9fede2a177fed58d69d9d13e93cd38b6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QPoint&amp; QVGenericImage::getAnchor </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains actual anchor point for the image. </p>
+<p>The anchor of an image is used for some visualization operations.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The anchor point of the image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00230">230</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a41e7573cc04595e3e854ed37c599b1e9"></a><!-- doxytag: member="QVGenericImage::resetAnchor" ref="a41e7573cc04595e3e854ed37c599b1e9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::resetAnchor </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set anchor point of the image to pixel (0,0). </p>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00235">235</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3f37d1f7d2271b52c69c8034be8ddac"></a><!-- doxytag: member="QVGenericImage::setAnchor" ref="aa3f37d1f7d2271b52c69c8034be8ddac" args="(int col, int row)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::setAnchor </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set anchor point of the image. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>col</em>&nbsp;</td><td>column of the pixel where the anchor is located. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>row of the pixel where the anchor is located. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00241">241</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVImage.html#a5448f8d71a6ce0bbf459a5b3d7c6e60c">QVImage&lt; uChar, 3 &gt;::QVImage()</a>, <a class="el" href="classQVGenericImage.html#a41e7573cc04595e3e854ed37c599b1e9">resetAnchor()</a>, and <a class="el" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac">setAnchor()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec61e6f1c101fdc0d7350addf3aa3f2a"></a><!-- doxytag: member="QVGenericImage::setAnchor" ref="aec61e6f1c101fdc0d7350addf3aa3f2a" args="(const QPoint &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVGenericImage::setAnchor </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set anchor point of the image. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>QPoint where the anchor is located. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00246">246</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11b4c13e54a1e89d735c12f9cbec277f"></a><!-- doxytag: member="QVGenericImage::getTypeQString" ref="a11b4c13e54a1e89d735c12f9cbec277f" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* QVGenericImage::getTypeQString </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtain a char string identifying the type of the image. real image contained in the <a class="el" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a>. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to a constant char string identifying image type. </dd></dl>
+
+<p>Implemented in <a class="el" href="classQVImage.html#aa8e2a101e62cdaa7d0fa7c020f625171">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#aa8e2a101e62cdaa7d0fa7c020f625171">QVImage&lt; uChar &gt;</a>, <a class="el" href="classQVImage.html#aa8e2a101e62cdaa7d0fa7c020f625171">QVImage&lt; uChar, 1 &gt;</a>, <a class="el" href="classQVImage.html#aa8e2a101e62cdaa7d0fa7c020f625171">QVImage&lt; uChar, 3 &gt;</a>, <a class="el" href="classQVImage.html#aa5abf377f3c4f95d128270d351b8269c">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a250fd54325bf7b45311081f10d6a7d21">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a26060f0d5c591843b2b47c8c33a55b77">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a82511ed913536f548b1f5e10e7f8f4a1">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#ab9e7c91408e79a5fc6a2a48f0b4bbcdd">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#aa9826942b7de555975fb354ef38bd76f">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a1da886203b77c0baac9a9a8e5e31fbbb">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a23e0b7fcceda1b493c384991aecff5ab">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#af223ffd23a8459c984a6cd9dad9864e7">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#a5449f66a7fd6c95310376ed220ba38fb">QVImage&lt; Type, Channels &gt;</a>, <a class="el" href="classQVImage.html#acd4dc980bb4626fb93142fffb06bd422">QVImage&lt; Type, Channels &gt;</a>, and <a class="el" href="classQVImage.html#a851df498210edde9a152910076c12244">QVImage&lt; Type, Channels &gt;</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59">isCompatibleWith()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a21b9bc211bcb5b0694ecdad16f1e5d59"></a><!-- doxytag: member="QVGenericImage::isCompatibleWith" ref="a21b9bc211bcb5b0694ecdad16f1e5d59" args="(const char *qvImageClassName) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVGenericImage::isCompatibleWith </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>qvImageClassName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check whether an image is compatible in type with another image, provided its type id string. </p>
+<p>This functions checks if this image has the same bit depth and channel number, as another image, given its type identification string. This string can be obtained using the method <a class="el" href="classQVGenericImage.html#a11b4c13e54a1e89d735c12f9cbec277f">getTypeQString</a>.</p>
+<p>This function is used to determine the subclass of a <a class="el" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> at execution time. An example code for this use is below:</p>
+<div class="fragment"><pre class="fragment"> [...]
+ <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> image;
+
+ [...]
+
+ <span class="keywordflow">if</span>(image-&gt;<a class="code" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59" title="Check whether an image is compatible in type with another image, provided its type...">isCompatibleWith</a>(<span class="stringliteral">&quot;QVImage&lt;uChar,1&gt;&quot;</span>))
+        <span class="comment">// do stuff with the uChar bit depth, one channel image ...</span>
+ <span class="keywordflow">else</span> <span class="keywordflow">if</span>(image-&gt;<a class="code" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59" title="Check whether an image is compatible in type with another image, provided its type...">isCompatibleWith</a>(<span class="stringliteral">&quot;QVImage&lt;uChar,3&gt;&quot;</span>))
+        <span class="comment">// do stuff with the uChar bit depth, three channel image ...</span>
+ [...]
+ <span class="keywordflow">else</span>
+        <span class="comment">// alternate code for that type of image ...</span>
+
+ [...] 
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimageClassName</em>&nbsp;</td><td>type id string identifying the type of another image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if this image is compatible in type with that represented by the string. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00287">287</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVGenericImage.html#afded424f68a2cefbb0ac6ffdebdfc160">isCompatibleWith()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afded424f68a2cefbb0ac6ffdebdfc160"></a><!-- doxytag: member="QVGenericImage::isCompatibleWith" ref="afded424f68a2cefbb0ac6ffdebdfc160" args="(const QVGenericImage *image) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVGenericImage::isCompatibleWith </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVGenericImage.html">QVGenericImage</a> *&nbsp;</td>
+          <td class="paramname"> <em>image</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check whether an image is compatible with this image. </p>
+<p>This functions checks if this image is compatible with a given image. That is, it has same bit depth and same number of channels.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image to check type compatibility with the actual image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if this image is compatible in type with the one provided by parameter. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvgenericimage_8h_source.html#l00300">300</a> of file <a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvip/<a class="el" href="qvgenericimage_8h_source.html">qvgenericimage.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

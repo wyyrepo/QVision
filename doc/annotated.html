@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Class List</h1>Here are the classes, structs, unions and interfaces with brief descriptions:<table>
+  <tr><td class="indexkey"><a class="el" href="classQV2DMap.html">QV2DMap</a></td><td class="indexvalue">Fast 2D nearest neigbour access data container </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQV3DPointF.html">QV3DPointF</a></td><td class="indexvalue">3D point representation </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQV3DPolylineF.html">QV3DPolylineF</a></td><td class="indexvalue">3D polyline representation </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAbs__sFloatC1Block.html">QVAbs_sFloatC1Block</a></td><td class="indexvalue">Computes absolute value of each pixel of a source image and places results in the destination image; for in-place flavors - in the same source image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAbs__sShortC1Block.html">QVAbs_sShortC1Block</a></td><td class="indexvalue">Computes absolute value of each pixel of a source image and places results in the destination image; for in-place flavors - in the same source image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAbsDiff__sFloatC1Block.html">QVAbsDiff_sFloatC1Block</a></td><td class="indexvalue">Calculate absolute difference between corresponding pixels of the two images or between image pixels and scalar </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAbsDiff__uCharC1Block.html">QVAbsDiff_uCharC1Block</a></td><td class="indexvalue">Calculate absolute difference between corresponding pixels of the two images or between image pixels and scalar </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAdd__sFloatC1Block.html">QVAdd_sFloatC1Block</a></td><td class="indexvalue">Add image to accumulator </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAdd__sFloatC3Block.html">QVAdd_sFloatC3Block</a></td><td class="indexvalue">Add image to accumulator </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAdd__uCharC1Block.html">QVAdd_uCharC1Block</a></td><td class="indexvalue">Add image to accumulator </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAdd__uCharC3Block.html">QVAdd_uCharC3Block</a></td><td class="indexvalue">Add image to accumulator </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAddC__sFloatC1Block.html">QVAddC_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAddC_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAddC__uCharC1Block.html">QVAddC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAddC_8u_C1RSfs </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAnd__sIntC1Block.html">QVAnd_sIntC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAnd_32s_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAnd__sIntC3Block.html">QVAnd_sIntC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAnd_32s_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAnd__uCharC1Block.html">QVAnd_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAnd_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAnd__uCharC3Block.html">QVAnd_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAnd_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAnd__uShortC1Block.html">QVAnd_uShortC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAnd_16u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAnd__uShortC3Block.html">QVAnd_uShortC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAnd_16u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVAndC__uCharC1Block.html">QVAndC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiAndC_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVApplication.html">QVApplication</a></td><td class="indexvalue">Main class for QVision applications </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVBaseReader.html">QVBaseReader</a></td><td class="indexvalue">Pure virtual base class to create input video reader components for the QVision architecture </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVBRIEFDetector.html">QVBRIEFDetector</a></td><td class="indexvalue">Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCameraPose.html">QVCameraPose</a></td><td class="indexvalue">Class for the camera pose of a view, in a 3D reconstruction </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCombinationIterator.html">QVCombinationIterator</a></td><td class="indexvalue">Iterator over all possible <a href="http://en.wikipedia.org/wiki/Combination">combinations</a> over a set </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCompare__sFloatC1Block.html">QVCompare_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiCompare_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCompare__uCharC1Block.html">QVCompare_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiCompare_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCompareC__sFloatC1Block.html">QVCompareC_sFloatC1Block</a></td><td class="indexvalue">Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCompareC__uCharC1Block.html">QVCompareC_uCharC1Block</a></td><td class="indexvalue">Compares pixel values of two images, or pixel values of an image to a constant value using the following compare conditions </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVComplex.html">QVComplex</a></td><td class="indexvalue">Implementation of complex numbers </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVComponentTree.html">QVComponentTree</a></td><td class="indexvalue">Image component tree data structure </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVComputeThreshold__Otsu__uCharC1Block.html">QVComputeThreshold_Otsu_uCharC1Block</a></td><td class="indexvalue">Calculate Otsu theshold value of images </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVConvert__sFloatuCharC1Block.html">QVConvert_sFloatuCharC1Block</a></td><td class="indexvalue">Converts pixel values of an image from one bit depth to another </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVConvert__sFloatuCharC3Block.html">QVConvert_sFloatuCharC3Block</a></td><td class="indexvalue">Converts pixel values of an image from one bit depth to another </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVConvert__uCharsFloatC1Block.html">QVConvert_uCharsFloatC1Block</a></td><td class="indexvalue">Converts pixel values of an image from one bit depth to another </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVConvert__uCharsFloatC3Block.html">QVConvert_uCharsFloatC3Block</a></td><td class="indexvalue">Converts pixel values of an image from one bit depth to another </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCPUPlot.html">QVCPUPlot</a></td><td class="indexvalue">Class for plot graphs of block's cpustat properties </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVCUDAImage.html">QVCUDAImage&lt; Type, Channels &gt;</a></td><td class="indexvalue">Class to manage images stored in the GPU for the QVision framework </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a></td><td class="indexvalue">Main user interface widget for QVision applications </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDesignerGUI.html">QVDesignerGUI</a></td><td class="indexvalue">Advanced graphic block oriented programming interface widget for QVision applications </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDirectedGraph.html">QVDirectedGraph&lt; Element &gt;</a></td><td class="indexvalue">Directed graph class </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDisjointSet.html">QVDisjointSet</a></td><td class="indexvalue">Implementation of a disjoint set data type, based on the <a href="http://en.wikipedia.org/wiki/Disjoint-set_data_structure">union-find algorithm</a> </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDiv__sFloatC1Block.html">QVDiv_sFloatC1Block</a></td><td class="indexvalue">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDiv__sFloatC3Block.html">QVDiv_sFloatC3Block</a></td><td class="indexvalue">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDiv__uCharC1Block.html">QVDiv_uCharC1Block</a></td><td class="indexvalue">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDiv__uCharC3Block.html">QVDiv_uCharC3Block</a></td><td class="indexvalue">Divides pixel values of an image by pixel values of another image and places the scaled results in the dividend source image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDivC__sFloatC1Block.html">QVDivC_sFloatC1Block</a></td><td class="indexvalue">Divides pixel values of a source image by a constant and places the scaled results in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVDivC__uCharC1Block.html">QVDivC_uCharC1Block</a></td><td class="indexvalue">Divides pixel values of a source image by a constant and places the scaled results in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a></td><td class="indexvalue">Class modeling rotation-translation transformations for 3D points </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterBox__sFloatC1Block.html">QVFilterBox_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterBox_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterBox__uCharC1Block.html">QVFilterBox_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterBox_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterBox__uCharC3Block.html">QVFilterBox_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterBox_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterGauss__sFloatC1Block.html">QVFilterGauss_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterGauss_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterGauss__sFloatC3Block.html">QVFilterGauss_sFloatC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterGauss_32f_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterGauss__uCharC1Block.html">QVFilterGauss_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterGauss_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterGauss__uCharC3Block.html">QVFilterGauss_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterGauss_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterHipass__sFloatC1Block.html">QVFilterHipass_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterHipass_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterHipass__sFloatC3Block.html">QVFilterHipass_sFloatC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterHipass_32f_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterHipass__uCharC1Block.html">QVFilterHipass_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterHipass_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterHipass__uCharC3Block.html">QVFilterHipass_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterHipass_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterLaplace__sFloatC1Block.html">QVFilterLaplace_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterLaplace_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterLaplace__uCharC1Block.html">QVFilterLaplace_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterLaplace_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterLowpass__sFloatC1Block.html">QVFilterLowpass_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterLowpass_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterLowpass__uCharC1Block.html">QVFilterLowpass_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterLowpass_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMax__sFloatC1Block.html">QVFilterMax_sFloatC1Block</a></td><td class="indexvalue">Applies the "max" filter to an image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMax__uCharC1Block.html">QVFilterMax_uCharC1Block</a></td><td class="indexvalue">Applies the "max" filter to an image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMax__uCharC3Block.html">QVFilterMax_uCharC3Block</a></td><td class="indexvalue">Applies the "max" filter to an image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMedian__uCharC1Block.html">QVFilterMedian_uCharC1Block</a></td><td class="indexvalue">Filters an image using a box median filter </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMedian__uCharC3Block.html">QVFilterMedian_uCharC3Block</a></td><td class="indexvalue">Filters an image using a box median filter </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMedianHoriz__uCharC1Block.html">QVFilterMedianHoriz_uCharC1Block</a></td><td class="indexvalue">Performs horizontal median filtering </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMin__sFloatC1Block.html">QVFilterMin_sFloatC1Block</a></td><td class="indexvalue">Applies the "min" filter to an image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMin__uCharC1Block.html">QVFilterMin_uCharC1Block</a></td><td class="indexvalue">Applies the "min" filter to an image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterMin__uCharC3Block.html">QVFilterMin_uCharC3Block</a></td><td class="indexvalue">Applies the "min" filter to an image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterSobelHorizMask__sFloatC1Block.html">QVFilterSobelHorizMask_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterSobelHorizMask_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFilterSobelVertMask__sFloatC1Block.html">QVFilterSobelVertMask_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiFilterSobelVertMask_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFunction.html">QVFunction&lt; Input, Output &gt;</a></td><td class="indexvalue">Base class for function objects </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVFunctionPlot.html">QVFunctionPlot</a></td><td class="indexvalue">Widget for plotting QList&lt;double&gt; property values from a block, as an histogram, over the time </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td class="indexvalue">Base class for <a class="el" href="classQVImage.html">QVImage</a> objects </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVGUI.html">QVGUI</a></td><td class="indexvalue">Main user interface widget for QVision applications </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVHarrisPointDetector.html">QVHarrisPointDetector</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVHistogramPlot.html">QVHistogramPlot</a></td><td class="indexvalue">Widget for plotting QList&lt;double&gt; property values from a block, as an histogram, over the time </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td class="indexvalue">Image representation class for the QVision </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVImageCanvas.html">QVImageCanvas</a></td><td class="indexvalue">Display widget for <a class="el" href="classQVImage.html">QVImage</a> objects and other data types </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVIndexedStringList.html">QVIndexedStringList</a></td><td class="indexvalue">String List with a current string index </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVJacobian.html">QVJacobian</a></td><td class="indexvalue">Class to create jacobian functions </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVKeypoint.html">QVKeypoint</a></td><td class="indexvalue">Class for image key point data-type </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVKLTFeatureTracking.html">QVKLTFeatureTracking</a></td><td class="indexvalue">Class to store the successive positions of an individual feature tracked in a video sequence </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVKLTTracker.html">QVKLTTracker</a></td><td class="indexvalue">Wrapper class to perform image feature tracking with the GPU-KLT library </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a></td><td class="indexvalue">Image feature location used by the GPU-KLT tracker </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVLn__sFloatC1Block.html">QVLn_sFloatC1Block</a></td><td class="indexvalue">Computes the natural logarithm of each pixel values of a source image and places the results in the destination image; for in-place flavors - in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVLn__sFloatC3Block.html">QVLn_sFloatC3Block</a></td><td class="indexvalue">Computes the natural logarithm of each pixel values of a source image and places the results in the destination image; for in-place flavors - in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVLShiftC__uCharC1Block.html">QVLShiftC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiLShiftC_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMatrix.html">QVMatrix</a></td><td class="indexvalue">Implementation of numerical matrices </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMax__sFloatC1Block.html">QVMax_sFloatC1Block</a></td><td class="indexvalue">Computes the maximum of image pixel values </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMax__uCharC1Block.html">QVMax_uCharC1Block</a></td><td class="indexvalue">Computes the maximum of image pixel values </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMean__uCharC1Block.html">QVMean_uCharC1Block</a></td><td class="indexvalue">Computes the mean of image pixel values </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMin__sFloatC1Block.html">QVMin_sFloatC1Block</a></td><td class="indexvalue">Computes the minimum of image pixel values </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMin__uCharC1Block.html">QVMin_uCharC1Block</a></td><td class="indexvalue">Computes the minimum of image pixel values </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMSER.html">QVMSER</a></td><td class="indexvalue">Maximally stable extremal region datatype </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMSERDetector.html">QVMSERDetector</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMul__sFloatC1Block.html">QVMul_sFloatC1Block</a></td><td class="indexvalue">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMul__sFloatC3Block.html">QVMul_sFloatC3Block</a></td><td class="indexvalue">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMul__uCharC1Block.html">QVMul_uCharC1Block</a></td><td class="indexvalue">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMul__uCharC3Block.html">QVMul_uCharC3Block</a></td><td class="indexvalue">Adds, subtracts, or multiplies pixel values of two source images and places the results in a destination image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMulC__sFloatC1Block.html">QVMulC_sFloatC1Block</a></td><td class="indexvalue">Adds, subtracts, or multiplies pixel values of an image and a constant, and places the results in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMulC__uCharC1Block.html">QVMulC_uCharC1Block</a></td><td class="indexvalue">Adds, subtracts, or multiplies pixel values of an image and a constant, and places the results in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMulScale__uCharC1Block.html">QVMulScale_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiMulScale_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVMulScale__uCharC3Block.html">QVMulScale_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiMulScale_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVNot__uCharC1Block.html">QVNot_uCharC1Block</a></td><td class="indexvalue">Performs corresponding bitwise logical operation between pixels of two image (AndC OrC XorC - between pixel of the source image and a constant) </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVNot__uCharC3Block.html">QVNot_uCharC3Block</a></td><td class="indexvalue">Performs corresponding bitwise logical operation between pixels of two image (AndC OrC XorC - between pixel of the source image and a constant) </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVNumericPlot.html">QVNumericPlot</a></td><td class="indexvalue">Class for plot graphs of block's int or double properties </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOr__sIntC1Block.html">QVOr_sIntC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOr_32s_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOr__sIntC3Block.html">QVOr_sIntC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOr_32s_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOr__uCharC1Block.html">QVOr_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOr_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOr__uCharC3Block.html">QVOr_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOr_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOr__uShortC1Block.html">QVOr_uShortC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOr_16u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOr__uShortC3Block.html">QVOr_uShortC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOr_16u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVOrC__uCharC1Block.html">QVOrC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiOrC_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPainter.html">QVPainter</a></td><td class="indexvalue">Inherits from QPainter to allow versatile drawing on a <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> object </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPermutation.html">QVPermutation</a></td><td class="indexvalue">Implementation of permutations </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPlot.html">QVPlot</a></td><td class="indexvalue">Class for plot block's graphs </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPolyline.html">QVPolyline</a></td><td class="indexvalue">Polyline representation </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPolylineF.html">QVPolylineF</a></td><td class="indexvalue">Floating point polyline representation </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td class="indexvalue">Base class for Block threads </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td class="indexvalue">Base class for dynamic property container objects </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVPROSAC.html">QVPROSAC&lt; Element, Model &gt;</a></td><td class="indexvalue">Implementation of PROSAC, an extension to RANSAC (see <a class="el" href="classQVRANSAC.html">QVRANSAC</a>) </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVQuaternion.html">QVQuaternion</a></td><td class="indexvalue">Implementation of <a href="http://en.wikipedia.org/wiki/Quaternion">quaternions</a> </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVRANSAC.html">QVRANSAC&lt; Element, Model &gt;</a></td><td class="indexvalue">Implementation of <a href="http://en.wikipedia.org/wiki/RANSAC">RANSAC</a>, a robust statistical model fitting algorithm </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVRGBToGray__sFloatC3C1Block.html">QVRGBToGray_sFloatC3C1Block</a></td><td class="indexvalue">Converts an RGB image to gray scale (fixed coefficients) </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVRGBToGray__uCharC3C1Block.html">QVRGBToGray_uCharC3C1Block</a></td><td class="indexvalue">Converts an RGB image to gray scale (fixed coefficients) </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVRShiftC__uCharC1Block.html">QVRShiftC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiRShiftC_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSiftFeature.html">QVSiftFeature</a></td><td class="indexvalue">Class for SIFT feature </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSparseBlockMatrix.html">QVSparseBlockMatrix</a></td><td class="indexvalue">Implementation of sparse block matrices </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSqr__sFloatC1Block.html">QVSqr_sFloatC1Block</a></td><td class="indexvalue">Squares pixel values of an image and places results in the destination image; for in-place flavors - in the same image </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSub__sFloatC1Block.html">QVSub_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiSub_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSub__sFloatC3Block.html">QVSub_sFloatC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiSub_32f_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSub__uCharC1Block.html">QVSub_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiSub_8u_C1RSfs </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSub__uCharC3Block.html">QVSub_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiSub_8u_C3RSfs </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSubC__sFloatC1Block.html">QVSubC_sFloatC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiSubC_32f_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSubC__uCharC1Block.html">QVSubC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiSubC_8u_C1RSfs </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVSum__uCharC1Block.html">QVSum_uCharC1Block</a></td><td class="indexvalue">Computes the sum of image pixel values </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVTensor.html">QVTensor</a></td><td class="indexvalue">Implementation of <a href="http://en.wikipedia.org/wiki/Classical_treatment_of_tensors">tensors</a>, a generalization for matrices and vectors </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVTensorIndex.html">QVTensorIndex</a></td><td class="indexvalue">Indexes for tensors </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVThreshold__sFloatC1Block.html">QVThreshold_sFloatC1Block</a></td><td class="indexvalue">Performs thresholding of an image using the specified level </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVThreshold__uCharC1Block.html">QVThreshold_uCharC1Block</a></td><td class="indexvalue">Performs thresholding of an image using the specified level </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVTrackingManager.html">QVTrackingManager</a></td><td class="indexvalue">Class to manage trackings of features in video sequences </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVUKF.html">QVUKF</a></td><td class="indexvalue">Implementation of UKF filter </td></tr>
+  <tr><td class="indexkey"><a class="el" href="structQVUKFstate.html">QVUKFstate</a></td><td class="indexvalue">A structure that contains the mean and covariance matrix to represent a normal state </td></tr>
+  <tr><td class="indexkey"><a class="el" href="structQVUKFweights.html">QVUKFweights</a></td><td class="indexvalue">An auxiliar structure that stores some necessary weights </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVVector.html">QVVector</a></td><td class="indexvalue">Implementation of numerical vectors </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVVectorMap.html">QVVectorMap</a></td><td class="indexvalue">Fast nearest neigbour vector container </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVVideoReader.html">QVVideoReader</a></td><td class="indexvalue">Extremely versatile class to read from multiple video devices and video/image file formats </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVVideoReaderBlock.html">QVVideoReaderBlock</a></td><td class="indexvalue">This is a generic video input processing block for the QVision architecture </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXor__sIntC1Block.html">QVXor_sIntC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXor_32s_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXor__sIntC3Block.html">QVXor_sIntC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXor_32s_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXor__uCharC1Block.html">QVXor_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXor_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXor__uCharC3Block.html">QVXor_uCharC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXor_8u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXor__uShortC1Block.html">QVXor_uShortC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXor_16u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXor__uShortC3Block.html">QVXor_uShortC3Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXor_16u_C3R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVXorC__uCharC1Block.html">QVXorC_uCharC1Block</a></td><td class="indexvalue">QVision wrapper function for IPP's ippiXorC_8u_C1R </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classQVYUV4MPEG2WriterBlock.html">QVYUV4MPEG2WriterBlock</a></td><td class="indexvalue">Video source class for reading many video file formats, webcams and digital cameras </td></tr>
+</table>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

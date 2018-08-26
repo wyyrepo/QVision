@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="index.html">QVision: Computer Vision Library for Qt</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="QVisionOverview">QVision overview </a></h1><p>The QVision can be seen in two ways. First, as a computer vision and scientific computing library; second, as an application development and design tool.</p>
+<p>Regarding the first perspective, the QVision is built upon the Qt library, which offers extensive functionality for file management, networking, graphical widgets, high level containers (such as lists, hash tables, etc...) and programming tools (such as qmake, the Qt Assistant, or the Qt Creator) that help the developer to create new applications.</p>
+<p>The QVision extends the Qt library with a set of data structures commonly used in the fields of computer vision and scientific computing. Some of them are:</p>
+<ul>
+<li>Images (class <a class="el" href="classQVImage.html">QVImage</a>).</li>
+<li>Matrices (class <a class="el" href="classQVMatrix.html">QVMatrix</a>).</li>
+<li>Vectors (class <a class="el" href="classQVVector.html">QVVector</a>).</li>
+<li>Quaternions (class <a class="el" href="classQVQuaternion.html">QVQuaternion</a>).</li>
+<li>Tensors (class <a class="el" href="classQVTensor.html">QVTensor</a>).</li>
+<li>3D points (class <a class="el" href="classQV3DPointF.html">QV3DPointF</a>).</li>
+<li>Functions (class <a class="el" href="classQVFunction.html">QVFunction</a>).</li>
+<li>Polylines (classes <a class="el" href="classQVPolyline.html">QVPolyline</a> and <a class="el" href="classQVPolylineF.html">QVPolylineF</a>).</li>
+</ul>
+<p>and so on. The QVision provides comprehensive functionality to operate with these types. It offers matrix decomposition functions (see the <a class="el" href="group__qvmatrixalgebra.html">Matrix Algebra</a> module), image feature detection functions (see module <a class="el" href="group__qvip.html">Image processing</a>), projective geometry and 3D reconstruction functions (see <a class="el" href="group__qvprojectivegeometry.html">Projective Geometry</a> module), amongst others. This functionality will be continuously growing with contributions from several sources.</p>
+<p>To provide fully comprehensive image processing, scientific calculus, and video input/output functionality, the QVision can easily inter-operate with several third-party libraries and applications. A set of wrapper functions are provided to use the classes of the QVision with functionality from those libraries, Also conversion operators are generally included to easily convert QVision data types from and to data types from those libraries.</p>
+<p>The QVision also offers several tools to the developer for application prototyping. It includes tools for reusable block oriented application development, which the developer can use to rapidly and easily create complex applications featuring data processing pipeline structures.</p>
+<h2><a class="anchor" id="Interoperability">
+Interoperability with other libraries</a></h2>
+<p>The QVision can be used in conjunction with several third-party libraries, and contains functionality to interact with them. The QVision must be configured to use each one of them, prior to its compilation. These third-party libraries are:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Integrated_Performance_Primitives">Intel(R) Integrated Performance Primitives (IPP)</a> contains a set of highly optimized functions, mostly for image processing. If the QVision is configured to use this library, the module <a class="el" href="group__qvipp.html">IPP wrapper functions</a> will provide a large set of wrapper functions that take image and matrix objects as inputs. So, the developer can use most of the IPP functions directly with the high-level data types of the QVision for images, matrices and Qt containers.</li>
+</ul>
+<ul>
+<li><a href="http://qwt.sourceforge.net/">QWT - Qt Widgets for Technical Applications</a> is a library that contains a large set of graphical widgets: plots, scales, sliders, dials, compasses, thermometers, wheels and knobs, to control or display values, arrays, or ranges of type double. Most of the QVision GUI widgets are based on widgets from the QWT. The module <a class="el" href="group__qvqwt.html">GUI blocks based on the QWT library</a> groups these QWT-based widgets. The QVision can work without this library, but most of the graphical interface widgets will not be available.</li>
+</ul>
+<ul>
+<li><a href="http://sourceforge.net/projects/opencvlibrary/">OpenCV</a> is a widely known and used library for computer vision. If the QVision is configured to use this library, the image data type (<a class="el" href="classQVImage.html">QVImage</a>) will offer conversion operators from and to the OpenCV images (of type IplImage). If so, including and inter-operating with OpenCV code from QVision code will be straightforward.</li>
+</ul>
+<ul>
+<li><a href="http://www.cgal.org/">CGAL</a>. An efficient C++ computational geometry library.</li>
+</ul>
+<ul>
+<li><a href="http://www.gnu.org/software/gsl/">GSL - GNU Scientific Library</a> is a C numerical library with over 1000 extensively tested functions. It provides a wide range of mathematical routines such as random number generators, matrix and vector processing, function minimization, least-squares fitting, etc... This library is required for most of the QVision math functionality (related with matrices, vectors, and so on).</li>
+</ul>
+<ul>
+<li><a href="http://software.intel.com/en-us/articles/intel-mkl/">Intel MKL</a> is a library of highly optimized, extensively threaded math routines for science, engineering, and financial applications that require maximum performance. As with the GSL, the QVision matrix and vector operators and matrix algebra functionality will speed up using functions from this library.</li>
+</ul>
+<ul>
+<li><a href="http://octave.sourceforge.net/doxygen/html/index.html">Octave C++ API</a> is an object oriented library, that offers most of the basic matrix and vector processing available in the <a href="http://www.gnu.org/software/octave/">Octave</a> application.</li>
+</ul>
+<ul>
+<li><a href="http://www.nvidia.com/object/cuda_home.html">CUDA</a> (Compute Unified Device Architecture) is a standard for programming the NVIDIA GPU. The functionality in the QVision related to CUDA is still under development, and not fully available yet in this release.</li>
+</ul>
+<p>Also, the QVision includes several classes and functions to use the widely known <a href="http://www.mplayerhq.hu">MPlayer</a> as a back-end application. This means that any QVision application can read from a wide set of video and image source types, like web-cams, remote streams, and many video and image formats and types using the MPlayer. The QVision functionality provided to inter-operate with the MPlayer will launch the necessary instances of the MPlayer application, and will communicate with them to obtain the images or input video frames in the format required by the QVision application.</p>
+<p>Check the documentation of the module <a class="el" href="group__qvmplayer.html">MPlayer based image and video input/output</a> for a list of these functions and classes.</p>
+<h2><a class="anchor" id="QVisionAsAnApplicationDesignAndPrototypingTool">
+QVision application development tools</a></h2>
+<p>Signal processing tasks are common in computer vision and scientific computing. Characteristic processing structures appear in these algorithms, where the data flows through a pipeline of several stages from the input of the application to the output (graphical, user interface, to disk, etc...).</p>
+<p>An example is the well known <a href="http://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a>. The following graph depicts the processing stages it performs, from the input images, to the resulting borders detected at them:</p>
+<div align="center">
+<img src="cannyExample.png" alt="cannyExample.png"/>
+</div>
+<p>Square elements in the graph represent data processing blocks. Round elements represent data or parameter input/output in the data path. The arrows are directed data links, which connect stages that produce certain data with the stages that process it.</p>
+<p>The QVision provides a design tool to help in the creation of these structures, and to exploit their computational and algorithmic advantages. Data processing blocks are modeled as objects that share data through links between them.</p>
+<p>Some of the advantages of using this block design for application creation are the following:</p>
+<ul>
+<li>The QVision offers several ready-to-use blocks for image/video input, image processing. The developer can use these blocks along with new ones to rapidly and easily create complex applications.</li>
+</ul>
+<ul>
+<li>The QVision exploits the inherent parallelism of these data-paths with multi-core architectures. The programmer can assign the processing of each block on the data-path to a different thread. Also, he or she can optionally establish synchronization policies between linked blocks.</li>
+</ul>
+<ul>
+<li>It is generally easier to develop complex robust and correct applications by re-using well tested components (in this case, blocks) from other applications, or the QVision itself, and programming the remaining functionality in logically independent data processing blocks.</li>
+</ul>
+<ul>
+<li>Creating advanced applications can be as simple as: creating some block processing objects, and establishing the data links between them. For example, the following is the full source-code of an application that (1) applies the Harris corner detector to the image frames of a video sequence, (2) can read the frames from any kind of video source, using the MPlayer as a back-end application, and (3) displays the output image and the detected features in an image window full of useful functionality, such as zooming, region selection, and so on: <div class="fragment"><pre class="fragment"><span class="preprocessor">        #include &lt;QVApplication&gt;</span>
+<span class="preprocessor">        #include &lt;QVMPlayerReaderBlock&gt;</span>
+<span class="preprocessor">        #include &lt;QVDefaultGUI&gt;</span>
+<span class="preprocessor">        #include &lt;QVImageCanvas&gt;</span>
+<span class="preprocessor">        #include &lt;QVHarrisPointDetector&gt;</span>
+        
+        <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+                {
+                <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv,
+                        <span class="stringliteral">&quot;Example program for QVision library. Obtains several features from input video frames.&quot;</span>
+                        );
+        
+                QVMPlayerReaderBlock videoReader(<span class="stringliteral">&quot;Video reader&quot;</span>);
+                <a class="code" href="classQVHarrisPointDetector.html">QVHarrisPointDetector</a> harrisBlock(<span class="stringliteral">&quot;Harris Block&quot;</span>);
+
+                <a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> interface;
+
+                <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> cornersCanvas(<span class="stringliteral">&quot;Harris corners displayer&quot;</span>);
+                videoReader.linkProperty(&amp;harrisBlock,<span class="stringliteral">&quot;Input image&quot;</span>);
+                harrisBlock.linkProperty(<span class="stringliteral">&quot;Feature locations&quot;</span>, cornersCanvas);
+        
+                <span class="keywordflow">return</span> app.exec();
+                }
+</pre></div></li>
+</ul>
+<p>Besides these advantages, the library contains graphical widgets to inspect and modify the behavior and structure of these processing data-paths at execution time. The following is a snapshot of a typical QVision application, built using some of the block inspector widgets provided by the library:</p>
+<div align="center">
+<img src="qvision-screenshot.png" alt="qvision-screenshot.png"/>
+</div>
+<p>With these widgets the user of the application can stop, resume and execute step by step the processing of each input image frame. The user can also modify the parameters and behavior of the algorithms implemented in the application at execution time, which is specially interesting when tuning threshold variables, or designing new algorithms. Also, some of these widgets can inspect the performance and outputs of the intermediate and final blocks in the data-path, such as the resulting images, features detected, and so on.</p>
+<p>The QVision can be used to create augmented reality applications:</p>
+<div align="center">
+<img src="teapot.png" alt="teapot.png"/>
+</div>
+ <p>You can check the class <a class="el" href="classQVImageCanvas.html">QVImageCanvas</a> for further info about this.</p>
+<p>The QVision also provides a special tool, named <em>the Designer</em>. With this tool, the developer can inspect and modify the structure of the data-path at execution time, making easy to perform rapid application development. The Designer displays a slate window, where the user can view the data-path structure, and, add or delete nodes and data links between them while the application is still running. An example of this slate window is the following:</p>
+<div align="center">
+<img src="qvdesignergui.png" alt="qvdesignergui.png"/>
+</div>
+<p>For further info about the Designer, check the section <a class="el" href="TheDesignerGUI.html">The Designer GUI</a>. Section <a class="el" href="FirstExampleBlockStructuredApplication.html">Creating the first block-oriented application</a> of the manual starts with the basics of block programming. Further sections extend the details and functionality of this approach to QVision application development. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvdirectedgraph.h</h1><a href="qvdirectedgraph_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVDIRECTEDGRAPH_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVDIRECTEDGRAPH_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QPoint&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QHash&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QMap&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QVVector&gt;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00034"></a>00034 
+<a name="l00038"></a><a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46">00038</a> <span class="keyword">typedef</span> QPoint <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a>;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> &amp;link1, <span class="keyword">const</span> <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> &amp;link2);
+<a name="l00041"></a>00041 
+<a name="l00049"></a><a class="code" href="classQVDirectedGraph.html">00049</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element&gt; <span class="keyword">class </span><a class="code" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph</a>: <span class="keyword">public</span> QMap&lt;QVGraphLink, Element&gt;
+<a name="l00050"></a>00050         {
+<a name="l00051"></a>00051         <span class="keyword">private</span>:
+<a name="l00052"></a>00052                 <span class="keywordtype">int</span> maxNodeIndex;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         <span class="keyword">public</span>:
+<a name="l00055"></a>00055 
+<a name="l00057"></a><a class="code" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa">00057</a>                 <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa" title="Returns the number of links connecting each node.">getNodesConnectivity</a>()<span class="keyword"> const</span>
+<a name="l00058"></a>00058 <span class="keyword">                        </span>{
+<a name="l00059"></a>00059                         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(<a class="code" href="classQVDirectedGraph.html#ae60445f8036170a8147514cc927ce136" title="Return the maximal index for the nodes in the graph.">maxNodesIndex</a>()+1, 0.0);
+<a name="l00060"></a>00060                         <span class="keywordflow">foreach</span>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> link, this-&gt;keys())
+<a name="l00061"></a>00061                                 {
+<a name="l00062"></a>00062                                 result[link.x()]++;
+<a name="l00063"></a>00063                                 result[link.y()]++;
+<a name="l00064"></a>00064                                 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066                         <span class="keywordflow">return</span> result;
+<a name="l00067"></a>00067                         }
+<a name="l00068"></a>00068 
+<a name="l00070"></a><a class="code" href="classQVDirectedGraph.html#a901fd2a8b6e62aba1e2c58142c1c1add">00070</a>                 <span class="keywordtype">int</span> <a class="code" href="classQVDirectedGraph.html#a901fd2a8b6e62aba1e2c58142c1c1add" title="Returns the minimal number of links connecting each node.">getMinConnectivity</a>()<span class="keyword">                const   </span>{ <span class="keywordflow">return</span> int(<a class="code" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa" title="Returns the number of links connecting each node.">getNodesConnectivity</a>().min()); }
+<a name="l00071"></a>00071 
+<a name="l00073"></a><a class="code" href="classQVDirectedGraph.html#ad953eb3c097c2566905efdcdffe5ac20">00073</a>                 <span class="keywordtype">int</span> <a class="code" href="classQVDirectedGraph.html#ad953eb3c097c2566905efdcdffe5ac20" title="Returns the maximal number of links connecting each node.">getMaxConnectivity</a>()<span class="keyword">                const   </span>{ <span class="keywordflow">return</span> int(<a class="code" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa" title="Returns the number of links connecting each node.">getNodesConnectivity</a>().max()); }
+<a name="l00074"></a>00074 
+<a name="l00076"></a><a class="code" href="classQVDirectedGraph.html#abf57f705c153bc423ef877c7c0ec1428">00076</a>                 <span class="keywordtype">double</span> <a class="code" href="classQVDirectedGraph.html#abf57f705c153bc423ef877c7c0ec1428" title="Returns the mean number of links connecting each node.">getMeanConnectivity</a>()<span class="keyword">    const   </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#a140bd13629201d83db07a51b07cc5cfa" title="Returns the number of links connecting each node.">getNodesConnectivity</a>().<a class="code" href="classQVVector.html#a34778251c3900cac4b2e19269fd9be2f" title="Mean value.">mean</a>(); }               
+<a name="l00077"></a>00077                         
+<a name="l00078"></a>00078 <span class="comment">/*</span>
+<a name="l00081"></a>00081 <span class="comment">                enum ArrowHeadType {</span>
+<a name="l00082"></a>00082 <span class="comment">                        normal,</span>
+<a name="l00083"></a>00083 <span class="comment">                        inv,</span>
+<a name="l00084"></a>00084 <span class="comment">                        dot,</span>
+<a name="l00085"></a>00085 <span class="comment">                        invdot,</span>
+<a name="l00086"></a>00086 <span class="comment">                        odot,</span>
+<a name="l00087"></a>00087 <span class="comment">                        invodot,</span>
+<a name="l00088"></a>00088 <span class="comment">                        none,</span>
+<a name="l00089"></a>00089 <span class="comment">                        tee,</span>
+<a name="l00090"></a>00090 <span class="comment">                        empty,</span>
+<a name="l00091"></a>00091 <span class="comment">                        invempty,</span>
+<a name="l00092"></a>00092 <span class="comment">                        diamond,</span>
+<a name="l00093"></a>00093 <span class="comment">                        odiamond,       </span>
+<a name="l00094"></a>00094 <span class="comment">                        ediamond,</span>
+<a name="l00095"></a>00095 <span class="comment">                        crow,</span>
+<a name="l00096"></a>00096 <span class="comment">                        box,</span>
+<a name="l00097"></a>00097 <span class="comment">                        obox,   </span>
+<a name="l00098"></a>00098 <span class="comment">                        open,</span>
+<a name="l00099"></a>00099 <span class="comment">                        halfopen,</span>
+<a name="l00100"></a>00100 <span class="comment">                        vee</span>
+<a name="l00101"></a>00101 <span class="comment">                        };</span>
+<a name="l00102"></a>00102 <span class="comment"></span>
+<a name="l00104"></a>00104 <span class="comment">        typedef QFlags&lt;ArrowHeadType&gt; ArrowHeadTypes;</span>
+<a name="l00105"></a>00105 <span class="comment">*/</span>
+<a name="l00106"></a>00106 
+<a name="l00108"></a><a class="code" href="classQVDirectedGraph.html#a4fba1639845e007caed01a403dfea1ba">00108</a>                 <a class="code" href="classQVDirectedGraph.html#a4fba1639845e007caed01a403dfea1ba" title="Constructor.">QVDirectedGraph</a>():QMap&lt;<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a>, Element&gt;(), maxNodeIndex(0)
+<a name="l00109"></a>00109                         {
+<a name="l00110"></a>00110                         }
+<a name="l00111"></a>00111 
+<a name="l00113"></a><a class="code" href="classQVDirectedGraph.html#a4195d1920e7e5f31709cfe729560210a">00113</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVDirectedGraph.html#a4195d1920e7e5f31709cfe729560210a" title="Add a link between two nodes of the graph.">insert</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> source, <span class="keyword">const</span> <span class="keywordtype">int</span> destination, <span class="keyword">const</span> Element element)
+<a name="l00114"></a>00114                         {
+<a name="l00115"></a>00115                         Q_ASSERT(source &gt;= 0);
+<a name="l00116"></a>00116                         Q_ASSERT(destination &gt;= 0);
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118                         maxNodeIndex = MAX(maxNodeIndex, MAX(source, destination));
+<a name="l00119"></a>00119                         <a class="code" href="classQVDirectedGraph.html#a4195d1920e7e5f31709cfe729560210a" title="Add a link between two nodes of the graph.">QMap&lt;QVGraphLink, Element&gt;::insert</a>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a>(source, destination), element);
+<a name="l00120"></a>00120                         }
+<a name="l00121"></a>00121 
+<a name="l00123"></a><a class="code" href="classQVDirectedGraph.html#a559559050686ff63f9f785010320dd3e">00123</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVDirectedGraph.html#a4195d1920e7e5f31709cfe729560210a" title="Add a link between two nodes of the graph.">insert</a>(<span class="keyword">const</span> <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> &amp;link, <span class="keyword">const</span> Element element)
+<a name="l00124"></a>00124                         {
+<a name="l00125"></a>00125                         Q_ASSERT(link.x() &gt;= 0);
+<a name="l00126"></a>00126                         Q_ASSERT(link.y() &gt;= 0);
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128                         maxNodeIndex = MAX(maxNodeIndex, MAX(link.x(), link.y()));
+<a name="l00129"></a>00129                         <a class="code" href="classQVDirectedGraph.html#a4195d1920e7e5f31709cfe729560210a" title="Add a link between two nodes of the graph.">QMap&lt;QVGraphLink, Element&gt;::insert</a>(link, element);
+<a name="l00130"></a>00130                         }
+<a name="l00131"></a>00131 
+<a name="l00133"></a><a class="code" href="classQVDirectedGraph.html#a30dff79e368e1a6e1044e7175df17a67">00133</a>                 Element <a class="code" href="classQVDirectedGraph.html#a30dff79e368e1a6e1044e7175df17a67" title="Retrieve element for a link between two nodes.">operator []</a>(<span class="keyword">const</span> <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> &amp;link)<span class="keyword"> const</span>
+<a name="l00134"></a>00134 <span class="keyword">                        </span>{
+<a name="l00135"></a>00135                         Q_ASSERT(link.x() &gt;= 0);
+<a name="l00136"></a>00136                         Q_ASSERT(link.y() &gt;= 0);
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138                         Q_ASSERT(link.x() &lt;= maxNodeIndex);
+<a name="l00139"></a>00139                         Q_ASSERT(link.y() &lt;= maxNodeIndex);
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#a30dff79e368e1a6e1044e7175df17a67" title="Retrieve element for a link between two nodes.">QMap&lt;QVGraphLink, Element&gt;::operator[]</a>(link);
+<a name="l00142"></a>00142                         }
+<a name="l00143"></a>00143 
+<a name="l00145"></a><a class="code" href="classQVDirectedGraph.html#aec026a8a1df2307b43d12376350a1af5">00145</a>                 Element &amp; <a class="code" href="classQVDirectedGraph.html#a30dff79e368e1a6e1044e7175df17a67" title="Retrieve element for a link between two nodes.">operator []</a>(<span class="keyword">const</span> <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> &amp;link)
+<a name="l00146"></a>00146                         {
+<a name="l00147"></a>00147                         Q_ASSERT(link.x() &gt;= 0);
+<a name="l00148"></a>00148                         Q_ASSERT(link.y() &gt;= 0);
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150                         maxNodeIndex = MAX(maxNodeIndex, MAX(link.x(), link.y()));
+<a name="l00151"></a>00151                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#a30dff79e368e1a6e1044e7175df17a67" title="Retrieve element for a link between two nodes.">QMap&lt;QVGraphLink, Element&gt;::operator[]</a>(link);
+<a name="l00152"></a>00152                         }
+<a name="l00153"></a>00153 
+<a name="l00155"></a><a class="code" href="classQVDirectedGraph.html#ab7764dfab0839dcf34778b466dbe2f3e">00155</a>                 <span class="keyword">inline</span> <span class="keyword">const</span> Element <a class="code" href="classQVDirectedGraph.html#ab7764dfab0839dcf34778b466dbe2f3e" title="Retrieve element for a link between two nodes.">value</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> source, <span class="keyword">const</span> <span class="keywordtype">int</span> destination)<span class="keyword"> const</span>
+<a name="l00156"></a>00156 <span class="keyword">                        </span>{
+<a name="l00157"></a>00157                         Q_ASSERT(source &gt;= 0);
+<a name="l00158"></a>00158                         Q_ASSERT(destination &gt;= 0);
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160                         Q_ASSERT(source &lt;= maxNodeIndex);
+<a name="l00161"></a>00161                         Q_ASSERT(destination &lt;= maxNodeIndex);
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#ab7764dfab0839dcf34778b466dbe2f3e" title="Retrieve element for a link between two nodes.">QMap&lt;QVGraphLink, Element&gt;::value</a>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a>(source, destination));
+<a name="l00164"></a>00164                         }
+<a name="l00165"></a>00165 
+<a name="l00167"></a><a class="code" href="classQVDirectedGraph.html#a7e5f31b1a5f78109bc2eeff0982c2b19">00167</a>                 <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classQVDirectedGraph.html#a7e5f31b1a5f78109bc2eeff0982c2b19" title="Retrieve element for a link between two nodes.">contains</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> source, <span class="keyword">const</span> <span class="keywordtype">int</span> destination)<span class="keyword"> const</span>
+<a name="l00168"></a>00168 <span class="keyword">                        </span>{
+<a name="l00169"></a>00169                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#a7e5f31b1a5f78109bc2eeff0982c2b19" title="Retrieve element for a link between two nodes.">QMap&lt;QVGraphLink, Element&gt;::contains</a>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a>(source, destination));
+<a name="l00170"></a>00170                         }
+<a name="l00171"></a>00171 
+<a name="l00173"></a><a class="code" href="classQVDirectedGraph.html#a27e4962312f3fb080387154eca3ae717">00173</a>                 <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classQVDirectedGraph.html#a7e5f31b1a5f78109bc2eeff0982c2b19" title="Retrieve element for a link between two nodes.">contains</a>(<span class="keyword">const</span> <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> &amp;link)<span class="keyword"> const</span>
+<a name="l00174"></a>00174 <span class="keyword">                        </span>{
+<a name="l00175"></a>00175                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#a7e5f31b1a5f78109bc2eeff0982c2b19" title="Retrieve element for a link between two nodes.">QMap&lt;QVGraphLink, Element&gt;::contains</a>(link);
+<a name="l00176"></a>00176                         }
+<a name="l00177"></a>00177 
+<a name="l00179"></a><a class="code" href="classQVDirectedGraph.html#a1f2447948be415119b3956715b8fe8b0">00179</a>                 QList&lt;QVGraphLink&gt; <a class="code" href="classQVDirectedGraph.html#a1f2447948be415119b3956715b8fe8b0" title="Retrieve links defined between the nodes of the graph.">getLinks</a>()<span class="keyword">   const</span>
+<a name="l00180"></a>00180 <span class="keyword">                        </span>{
+<a name="l00181"></a>00181                         <span class="keywordflow">return</span> this-&gt;keys();
+<a name="l00182"></a>00182                         }
+<a name="l00183"></a>00183 
+<a name="l00187"></a><a class="code" href="classQVDirectedGraph.html#a9769dcd1f1a21804926fb16475f14f1e">00187</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVDirectedGraph.html#a9769dcd1f1a21804926fb16475f14f1e" title="Delete nodes connected by less nodes than a given value, with other nodes in the...">deleteInsufficientlyConnectedNodes</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> minConnections)
+<a name="l00188"></a>00188                         {
+<a name="l00189"></a>00189                         QMap&lt;int, int&gt; counts = <a class="code" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474" title="Returns the number of connections for each node in the graph.">numLinksPerNode</a>();      
+<a name="l00190"></a>00190                         <span class="keywordflow">while</span>(<span class="keyword">true</span>)
+<a name="l00191"></a>00191                                 {
+<a name="l00192"></a>00192                                 <span class="keywordflow">foreach</span>( <a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> p, this-&gt;keys() )
+<a name="l00193"></a>00193                                         <span class="keywordflow">if</span> ( (counts[p.x()] &lt; minConnections) or (counts[p.y()] &lt; minConnections) )
+<a name="l00194"></a>00194                                                 this-&gt;<span class="keyword">remove</span>(p);
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196                                 QMap&lt;int, int&gt; newCounts = <a class="code" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474" title="Returns the number of connections for each node in the graph.">numLinksPerNode</a>();
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198                                 <span class="keywordflow">if</span> (counts == newCounts)
+<a name="l00199"></a>00199                                         <span class="keywordflow">break</span>;
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201                                 counts = newCounts;
+<a name="l00202"></a>00202                                 }
+<a name="l00203"></a>00203                         }
+<a name="l00204"></a>00204 
+<a name="l00206"></a><a class="code" href="classQVDirectedGraph.html#a24b9710dac03caa19b63643f78035ae6">00206</a>                 <span class="keywordtype">int</span> <a class="code" href="classQVDirectedGraph.html#a24b9710dac03caa19b63643f78035ae6" title="Return the number of connected nodes in the graph.">numNodes</a>()<span class="keyword">                          const</span>
+<a name="l00207"></a>00207 <span class="keyword">                        </span>{
+<a name="l00208"></a>00208                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474" title="Returns the number of connections for each node in the graph.">numLinksPerNode</a>().count();
+<a name="l00209"></a>00209                         }
+<a name="l00210"></a>00210 
+<a name="l00213"></a><a class="code" href="classQVDirectedGraph.html#ae60445f8036170a8147514cc927ce136">00213</a>                 <span class="keywordtype">int</span> <a class="code" href="classQVDirectedGraph.html#ae60445f8036170a8147514cc927ce136" title="Return the maximal index for the nodes in the graph.">maxNodesIndex</a>()<span class="keyword">                             const</span>
+<a name="l00214"></a>00214 <span class="keyword">                        </span>{
+<a name="l00215"></a>00215                     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: &#39;QVDirectedGraph::maxNodesIndex&#39; deprecated. Use &#39;QVDirectedGraph::getMaxNodeIndex&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l00216"></a>00216                         <span class="keywordtype">int</span> result = 0;
+<a name="l00217"></a>00217                         <span class="keywordflow">foreach</span>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> link, this-&gt;keys())
+<a name="l00218"></a>00218                                 result = MAX(result, MAX(link.x(), link.y()));
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220                         <span class="keywordflow">return</span> result;
+<a name="l00221"></a>00221                         }
+<a name="l00222"></a>00222 
+<a name="l00224"></a><a class="code" href="classQVDirectedGraph.html#a6538a2387c2fb71b3af367515fd3e142">00224</a>                 <span class="keywordtype">int</span> <a class="code" href="classQVDirectedGraph.html#a6538a2387c2fb71b3af367515fd3e142" title="Returns the maximal index for a node in the graph.">getMaxNodeIndex</a>()<span class="keyword"> const</span>
+<a name="l00225"></a>00225 <span class="keyword">                        </span>{
+<a name="l00226"></a>00226 <span class="preprocessor">                        #ifdef DEBUG</span>
+<a name="l00227"></a>00227 <span class="preprocessor"></span>                        <span class="keywordtype">int</span> temp = 0;
+<a name="l00228"></a>00228                         <span class="keywordflow">foreach</span>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> key, this-&gt;keys())
+<a name="l00229"></a>00229                                 temp = MAX(temp, MAX(key.x(), key.y()));
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231                         Q_ASSERT(maxNodeIndex == temp);
+<a name="l00232"></a>00232                         Q_ASSERT(maxNodeIndex == <a class="code" href="classQVDirectedGraph.html#ae60445f8036170a8147514cc927ce136" title="Return the maximal index for the nodes in the graph.">maxNodesIndex</a>());
+<a name="l00233"></a>00233 <span class="preprocessor">                        #endif // DEBUG</span>
+<a name="l00234"></a>00234 <span class="preprocessor"></span>                                
+<a name="l00235"></a>00235                         <span class="keywordflow">return</span> maxNodeIndex;
+<a name="l00236"></a>00236                         }
+<a name="l00237"></a>00237 
+<a name="l00239"></a><a class="code" href="classQVDirectedGraph.html#af45d0094a0c23f3398581ebd2dc8d76f">00239</a>                 QMap&lt;int, int&gt; <a class="code" href="classQVDirectedGraph.html#af45d0094a0c23f3398581ebd2dc8d76f">numLinksForNode</a>()<span class="keyword">        const</span>
+<a name="l00240"></a>00240 <span class="keyword">                        </span>{
+<a name="l00241"></a>00241                     std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING: &#39;QVDirectedGraph::numLinksForNode&#39; deprecated. Use &#39;QVDirectedGraph::numLinksPerNode&#39; instead.&quot;</span> &lt;&lt; std::endl;
+<a name="l00242"></a>00242                         <span class="keywordflow">return</span> <a class="code" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474" title="Returns the number of connections for each node in the graph.">numLinksPerNode</a>();
+<a name="l00243"></a>00243                         }
+<a name="l00244"></a>00244         
+<a name="l00247"></a><a class="code" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474">00247</a>                 QMap&lt;int, int&gt; <a class="code" href="classQVDirectedGraph.html#acb21fae6bb31ef526c89e581060d5474" title="Returns the number of connections for each node in the graph.">numLinksPerNode</a>()<span class="keyword">        const</span>
+<a name="l00248"></a>00248 <span class="keyword">                        </span>{
+<a name="l00249"></a>00249                         QMap&lt;int, int&gt; result;
+<a name="l00250"></a>00250         
+<a name="l00251"></a>00251                         <span class="keywordflow">foreach</span>(<a class="code" href="qvdirectedgraph_8h.html#a75d6b5c47d6dbccd956af9be24692e46" title="Link between two nodes in a graph.">QVGraphLink</a> link, this-&gt;keys())
+<a name="l00252"></a>00252                                         {
+<a name="l00253"></a>00253                                         result[link.x()] ++;
+<a name="l00254"></a>00254                                         result[link.y()] ++;
+<a name="l00255"></a>00255                                         }
+<a name="l00256"></a>00256                         <span class="keywordflow">return</span> result;
+<a name="l00257"></a>00257                         }
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259         };
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00262"></a>00262 
+<a name="l00270"></a>00270 <span class="keywordtype">bool</span> <a class="code" href="group__qvmath.html#gac1d9acd6dfaf0cb36bea2a05a6a6a780" title="Writes a directed graph in a .dot file.">writeGraphToDotFile</a>(<span class="keyword">const</span> QString &amp;fileName, <span class="keyword">const</span> <a class="code" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph&lt;QString&gt;</a> &amp;graph, <span class="keyword">const</span> QStringList &amp;nodeLabels = QStringList());
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272 <span class="preprocessor">#endif</span>
+<a name="l00273"></a>00273 <span class="preprocessor"></span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

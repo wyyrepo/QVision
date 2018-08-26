@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/GPU-KLT+FLOW/demoDense/demoDense.cpp</h1><a href="demoDense_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;GL/glew.h&gt;</span>
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;<a class="code" href="qvip_2qvimageio_8h.html" title="File from the QVision library.">qvimageio.h</a>&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QVDefaultGUI&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QVVideoReaderBlock&gt;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;QVImageCanvas&gt;</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="preprocessor">#include &lt;<a class="code" href="qvgpukltflow_8h.html" title="File from the QVision library.">qvgpukltflow.h</a>&gt;</span>
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#ifdef Q_WS_X11</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">  #include &lt;X11/Xlib.h&gt;</span> <span class="comment">// For XInitThreads function (called in main())</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>
+<a name="l00057"></a>00057 <span class="comment">// Object to estimate flow:</span>
+<a name="l00058"></a>00058 TVL1_FlowEstimator *flowEstimator = 0;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="comment">// Canvas to draw flow image:</span>
+<a name="l00061"></a>00061 <span class="keyword">class </span>FlowImageCanvas: <span class="keyword">public</span> <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> {
+<a name="l00062"></a>00062   <span class="keyword">public</span>:
+<a name="l00063"></a>00063     FlowImageCanvas(<span class="keyword">const</span> QString name=QString(),QWidget *parent=0) : <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>(name,parent) {
+<a name="l00064"></a>00064         addProperty&lt;int&gt;(<span class="stringliteral">&quot;flow grid size&quot;</span>,inputFlag);
+<a name="l00065"></a>00065     };
+<a name="l00066"></a>00066     <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer</a>() {
+<a name="l00067"></a>00067         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,1&gt;</a> flowX = getPropertyValue&lt;QVImage&lt;sFloat,1&gt; &gt;(<span class="stringliteral">&quot;flowX&quot;</span>);
+<a name="l00068"></a>00068         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,1&gt;</a> flowY = getPropertyValue&lt;QVImage&lt;sFloat,1&gt; &gt;(<span class="stringliteral">&quot;flowY&quot;</span>);
+<a name="l00069"></a>00069         <span class="keywordtype">int</span> flow_grid_size = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;flow grid size&quot;</span>);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;setPen(Qt::white);
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ix=0; ix&lt;flowX.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(); ix+=flow_grid_size) {
+<a name="l00074"></a>00074             <span class="keywordflow">for</span>(<span class="keywordtype">int</span> iy=0; iy&lt;flowX.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(); iy+=flow_grid_size) {
+<a name="l00075"></a>00075                 <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawLine(QPointF(ix,iy),
+<a name="l00076"></a>00076                                          QPointF(ix+flow_grid_size*flowX(ix,iy)/2,
+<a name="l00077"></a>00077                                                  iy+flow_grid_size*flowY(ix,iy)/2));
+<a name="l00078"></a>00078                 <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawEllipse(QPoint(ix,iy), 1, 1);
+<a name="l00079"></a>00079             }
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082 };
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 <span class="comment">// Canvas to draw wheel:</span>
+<a name="l00085"></a>00085 <span class="keyword">class </span>gridCanvasCanvas: <span class="keyword">public</span> <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> {
+<a name="l00086"></a>00086   <span class="keyword">public</span>:
+<a name="l00087"></a>00087     gridCanvasCanvas(<span class="keyword">const</span> QString name=QString(),QWidget *parent=0) : <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>(name,parent) {
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     };
+<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer</a>() {
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="keywordtype">int</span> move, span = 180;
+<a name="l00093"></a>00093         <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> imageIn = getPropertyValue&lt;QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;image In&quot;</span>);
+<a name="l00094"></a>00094         move = getPropertyValue&lt;double&gt; (<span class="stringliteral">&quot;move&quot;</span>);
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;setPen(Qt::blue);
+<a name="l00097"></a>00097         QPen p = <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;pen();
+<a name="l00098"></a>00098         p.setWidth(20);
+<a name="l00099"></a>00099         <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;setPen(p);
+<a name="l00100"></a>00100         QRectF rectangle(imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>()/2-imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/4 , imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/4, imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/2, imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/2);
+<a name="l00101"></a>00101         QRectF rectangle2(imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>()/2-imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/4 , imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/4, imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/2, imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()/2);
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="comment">//Parte abajo volante</span>
+<a name="l00104"></a>00104         <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawPie(rectangle, move *16, -span*16 );
+<a name="l00105"></a>00105         <span class="comment">//Parte arriba volante</span>
+<a name="l00106"></a>00106         <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>()-&gt;drawPie(rectangle2, (move*16) , span*16);
+<a name="l00107"></a>00107     }
+<a name="l00108"></a>00108 };
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="keyword">class </span>MyProcessingBlock : <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> {
+<a name="l00113"></a>00113   <span class="keyword">private</span>:
+<a name="l00114"></a>00114     <a class="code" href="classQVImage.html">QVImage &lt;uChar,1&gt;</a> oldImage;
+<a name="l00115"></a>00115   <span class="keyword">public</span>:
+<a name="l00116"></a>00116     MyProcessingBlock(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name) {
+<a name="l00117"></a>00117         addProperty&lt;QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;image In&quot;</span>,inputFlag|outputFlag);
+<a name="l00118"></a>00118         addProperty&lt;double&gt; (<span class="stringliteral">&quot;move&quot;</span>, outputFlag);
+<a name="l00119"></a>00119         addProperty&lt;double&gt; (<span class="stringliteral">&quot;lambda&quot;</span>,inputFlag, 10.0, <span class="stringliteral">&quot;Lambda&quot;</span>, 0.0, 20.0);
+<a name="l00120"></a>00120         addProperty&lt;double&gt; (<span class="stringliteral">&quot;theta&quot;</span>,inputFlag, 0.02, <span class="stringliteral">&quot;Theta&quot;</span>, 0.0, 1.0);
+<a name="l00121"></a>00121         addProperty&lt;double&gt; (<span class="stringliteral">&quot;tau&quot;</span>,inputFlag, 0.25, <span class="stringliteral">&quot;Tau&quot;</span>, 0.0, 1.0);
+<a name="l00122"></a>00122         addProperty&lt;int&gt; (<span class="stringliteral">&quot;nIterations&quot;</span>,inputFlag, 10, <span class="stringliteral">&quot;nIterations&quot;</span>, 1, 50);
+<a name="l00123"></a>00123         addProperty&lt;int&gt; (<span class="stringliteral">&quot;nOuterIterations&quot;</span>,inputFlag, 4, <span class="stringliteral">&quot;nOuterIterations&quot;</span>, 1, 30);
+<a name="l00124"></a>00124         addProperty&lt;int&gt; (<span class="stringliteral">&quot;nLevels&quot;</span>,inputFlag, 4, <span class="stringliteral">&quot;Pyramid levels&quot;</span>, 1, 8);
+<a name="l00125"></a>00125         addProperty&lt;double&gt; (<span class="stringliteral">&quot;Sensitivity&quot;</span>, inputFlag, 0.01, <span class="stringliteral">&quot;Sensitivity&quot;</span>, 0.0, 0.1);
+<a name="l00126"></a>00126         addProperty&lt;int&gt;(<span class="stringliteral">&quot;flow grid size&quot;</span>,inputFlag|outputFlag,10 ,<span class="stringliteral">&quot;Flow grid size&quot;</span>,5,10);
+<a name="l00127"></a>00127         addProperty&lt;QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;flowX&quot;</span>,outputFlag);
+<a name="l00128"></a>00128         addProperty&lt;QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;flowY&quot;</span>,outputFlag);
+<a name="l00129"></a>00129     }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131     <span class="keywordtype">void</span> <a class="code" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463" title="Function to be defined in subclasses with processing code.">iterate</a>() {
+<a name="l00132"></a>00132         <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> imageIn = getPropertyValue&lt;QVImage&lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;image In&quot;</span>);
+<a name="l00133"></a>00133         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> x = <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a>(imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<a name="l00134"></a>00134         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,1 &gt;</a> y = <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a>(imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<a name="l00135"></a>00135         <span class="keyword">static</span> QVPyramid *p1,*p2;
+<a name="l00136"></a>00136         <span class="keyword">static</span> <span class="keywordtype">double</span> z = 0;
+<a name="l00137"></a>00137         <span class="keywordtype">bool</span> reset = <span class="keyword">false</span>;
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         <span class="comment">// Initialize only in first iteration (must be done here in the processing block thread):</span>
+<a name="l00140"></a>00140          <span class="keywordflow">if</span>(<a class="code" href="classQVProcessingBlock.html#a95c56bae078a84bf689b7ee8073bcf7c" title="Function to obtain the number of iteration the block has performed.">getIteration</a>() == 0) {
+<a name="l00141"></a>00141              <a class="code" href="group__qvgpukltflow.html#gad3fbbcf341a621b414ef2af81a6b0f26" title="Init GLEW and CG system.">InitGLEWCg</a>();
+<a name="l00142"></a>00142              reset = <span class="keyword">true</span>;
+<a name="l00143"></a>00143          }
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145          <span class="comment">// Read input properties:</span>
+<a name="l00146"></a>00146          <span class="keyword">static</span> <span class="keywordtype">int</span> width = 0, height = 0, nLevels = 0, nIterations = 0, nOuterIterations = 0;
+<a name="l00147"></a>00147          <span class="keyword">static</span> <span class="keywordtype">double</span> lambda = 0.0, tau = 0.0, theta = 0.0;
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149          <span class="keywordflow">if</span>(width != imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>()) {
+<a name="l00150"></a>00150              width = imageIn.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>();
+<a name="l00151"></a>00151              reset = <span class="keyword">true</span>;
+<a name="l00152"></a>00152          }
+<a name="l00153"></a>00153          <span class="keywordflow">if</span>(height != imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>()) {
+<a name="l00154"></a>00154              height = imageIn.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00155"></a>00155              reset = <span class="keyword">true</span>;
+<a name="l00156"></a>00156          }
+<a name="l00157"></a>00157          <span class="keywordflow">if</span>(nLevels != getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;nLevels&quot;</span>)) {
+<a name="l00158"></a>00158              nLevels = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;nLevels&quot;</span>);
+<a name="l00159"></a>00159              reset = <span class="keyword">true</span>;
+<a name="l00160"></a>00160          }
+<a name="l00161"></a>00161          <span class="keywordflow">if</span>(nIterations != getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;nIterations&quot;</span>)) {
+<a name="l00162"></a>00162              nIterations = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;nIterations&quot;</span>);
+<a name="l00163"></a>00163              reset = <span class="keyword">true</span>;
+<a name="l00164"></a>00164          }
+<a name="l00165"></a>00165          <span class="keywordflow">if</span>(nOuterIterations != getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;nOuterIterations&quot;</span>)) {
+<a name="l00166"></a>00166              nOuterIterations = getPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;nOuterIterations&quot;</span>);
+<a name="l00167"></a>00167              reset = <span class="keyword">true</span>;
+<a name="l00168"></a>00168          }
+<a name="l00169"></a>00169          <span class="keywordflow">if</span>(lambda != getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;lambda&quot;</span>)) {
+<a name="l00170"></a>00170              lambda = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;lambda&quot;</span>);
+<a name="l00171"></a>00171              reset = <span class="keyword">true</span>;
+<a name="l00172"></a>00172          }
+<a name="l00173"></a>00173          <span class="keywordflow">if</span>(tau != getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;tau&quot;</span>)) {
+<a name="l00174"></a>00174              tau = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;tau&quot;</span>);
+<a name="l00175"></a>00175              reset = <span class="keyword">true</span>;
+<a name="l00176"></a>00176          }
+<a name="l00177"></a>00177          <span class="keywordflow">if</span>(theta != getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;theta&quot;</span>)) {
+<a name="l00178"></a>00178              theta = getPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;theta&quot;</span>);
+<a name="l00179"></a>00179              reset = <span class="keyword">true</span>;
+<a name="l00180"></a>00180          }
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182         <span class="keywordflow">if</span>(reset) {
+<a name="l00183"></a>00183             <span class="keywordflow">if</span>(flowEstimator != 0)
+<a name="l00184"></a>00184                 flowEstimator-&gt;deallocate();
+<a name="l00185"></a>00185             <a class="code" href="group__qvgpukltflow.html#ga38afdbedccfb1b2fafd6785902644512" title="Initialize the dense flow estimator.">qvInitFlowGPU</a>(flowEstimator, width, height, nLevels, nIterations, nOuterIterations, lambda, tau, theta);
+<a name="l00186"></a>00186             <span class="keywordflow">if</span>(p1 != 0)
+<a name="l00187"></a>00187                 <span class="keyword">delete</span> p1;
+<a name="l00188"></a>00188             <span class="keywordflow">if</span>(p2 != 0)
+<a name="l00189"></a>00189                 <span class="keyword">delete</span> p2;
+<a name="l00190"></a>00190             p1 = <span class="keyword">new</span> QVPyramid(width, height, nLevels);
+<a name="l00191"></a>00191             p2 = <span class="keyword">new</span> QVPyramid(width, height, nLevels);
+<a name="l00192"></a>00192         }
+<a name="l00193"></a>00193         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Reset flow estimator&quot;</span>);
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195         <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> left=oldImage, right=imageIn;
+<a name="l00196"></a>00196         <span class="keywordflow">if</span>(not reset) {
+<a name="l00197"></a>00197             p1-&gt;buildPyramid(left);
+<a name="l00198"></a>00198             p2-&gt;buildPyramid(right);
+<a name="l00199"></a>00199         }
+<a name="l00200"></a>00200         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Pyramids&quot;</span>);
+<a name="l00201"></a>00201         <span class="keywordflow">if</span>(not reset) {
+<a name="l00202"></a>00202             <a class="code" href="group__qvgpukltflow.html#ga37213de8a554819178f0de47e43c1dd1" title="Compute dense optical flow between two images.">qvOpticalFlowGPU</a>(flowEstimator, p1, p2, x, y);
+<a name="l00203"></a>00203         }
+<a name="l00204"></a>00204         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Flow&quot;</span>);
+<a name="l00205"></a>00205         <span class="keywordflow">if</span>(not reset) {
+<a name="l00206"></a>00206             oldImage = imageIn;
+<a name="l00207"></a>00207             <span class="keywordtype">double</span> vx, vy, px, py;
+<a name="l00208"></a>00208             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ix = 0; ix &lt; x.getCols(); ix++) {
+<a name="l00209"></a>00209                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iy = 0; iy &lt; x.getRows(); iy++){
+<a name="l00210"></a>00210                     vx = x(ix,iy);
+<a name="l00211"></a>00211                     vy = y(ix,iy);
+<a name="l00212"></a>00212                     px = ix - width/2;
+<a name="l00213"></a>00213                     py = iy - height/2;
+<a name="l00214"></a>00214                     <span class="keywordflow">if</span> (ix != width/2 &amp;&amp; iy != height/2)
+<a name="l00215"></a>00215                         z += (px * vy - py * vx) / (px*px + py*py);
+<a name="l00216"></a>00216                 }
+<a name="l00217"></a>00217             }
+<a name="l00218"></a>00218         }
+<a name="l00219"></a>00219         <a class="code" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127" title="Stablish a performance breakpoint in the execution of the block.">timeFlag</a>(<span class="stringliteral">&quot;Wheel&quot;</span>);
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221         <span class="keywordtype">double</span> sensitivity = getPropertyValue&lt;double&gt; (<span class="stringliteral">&quot;Sensitivity&quot;</span>);
+<a name="l00222"></a>00222         setPropertyValue&lt;QVImage &lt;uChar,1&gt; &gt;(<span class="stringliteral">&quot;image In&quot;</span>, imageIn);
+<a name="l00223"></a>00223         setPropertyValue&lt;QVImage &lt;sFloat,1&gt; &gt;(<span class="stringliteral">&quot;flowX&quot;</span>, x);
+<a name="l00224"></a>00224         setPropertyValue&lt;QVImage &lt;sFloat,1&gt; &gt;(<span class="stringliteral">&quot;flowY&quot;</span>, y);
+<a name="l00225"></a>00225         setPropertyValue&lt;double&gt;(<span class="stringliteral">&quot;move&quot;</span>,-z*sensitivity);
+<a name="l00226"></a>00226     }
+<a name="l00227"></a>00227 };
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229 <span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)
+<a name="l00230"></a>00230 {
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232 <a class="code" href="group__qvgpukltflow.html#ga7227b88d694ac15aeea6faf5dfcb4bcf" title="Inits the environment variables for the GPU-KLT library functions.">initShadersEnvironment</a>();
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234 <span class="preprocessor">#ifdef Q_WS_X11</span>
+<a name="l00235"></a>00235 <span class="preprocessor"></span>    <span class="comment">// Needed to make X11 calls thread-safe.</span>
+<a name="l00236"></a>00236     <span class="comment">// (Explanation in http://doc.qt.nokia.com/qq/qq06-glimpsing.html#writingmultithreadedglapplications)</span>
+<a name="l00237"></a>00237     XInitThreads();
+<a name="l00238"></a>00238 <span class="preprocessor">#endif</span>
+<a name="l00239"></a>00239 <span class="preprocessor"></span>
+<a name="l00240"></a>00240     <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc,argv);
+<a name="l00241"></a>00241     <a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> gui;
+<a name="l00242"></a>00242     <a class="code" href="classQVVideoReaderBlock.html" title="This is a generic video input processing block for the QVision architecture.">QVVideoReaderBlock</a> camera(<span class="stringliteral">&quot;Camera&quot;</span>);
+<a name="l00243"></a>00243     MyProcessingBlock processingBlock(<span class="stringliteral">&quot;My processing block&quot;</span>);
+<a name="l00244"></a>00244     <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> videoCanvas (<span class="stringliteral">&quot;Input video&quot;</span>);
+<a name="l00245"></a>00245     FlowImageCanvas flowCanvas (<span class="stringliteral">&quot;Flow image&quot;</span>);
+<a name="l00246"></a>00246     gridCanvasCanvas gridCanvas (<span class="stringliteral">&quot;Output grid&quot;</span>);
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248     camera.linkProperty(&amp;processingBlock,<span class="stringliteral">&quot;image In&quot;</span>);
+<a name="l00249"></a>00249     processingBlock.linkProperty(<span class="stringliteral">&quot;image In&quot;</span>,&amp;videoCanvas);
+<a name="l00250"></a>00250     processingBlock.linkProperty(<span class="stringliteral">&quot;flowX&quot;</span>, &amp;flowCanvas);
+<a name="l00251"></a>00251     processingBlock.linkProperty(<span class="stringliteral">&quot;flowY&quot;</span>, &amp;flowCanvas);
+<a name="l00252"></a>00252     processingBlock.linkProperty(<span class="stringliteral">&quot;flow grid size&quot;</span>, &amp;flowCanvas,<span class="stringliteral">&quot;flow grid size&quot;</span>);
+<a name="l00253"></a>00253     processingBlock.linkProperty(<span class="stringliteral">&quot;image In&quot;</span>,&amp;gridCanvas);
+<a name="l00254"></a>00254     processingBlock.linkProperty(<span class="stringliteral">&quot;move&quot;</span>, &amp;gridCanvas);
+<a name="l00255"></a>00255 
+<a name="l00256"></a>00256     <span class="keywordflow">return</span> app.exec();
+<a name="l00257"></a>00257 }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

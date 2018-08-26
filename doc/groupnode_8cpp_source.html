@@ -1,0 +1,520 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvguiblocks/qvdesigner/slate/groupnode.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;QtGui&gt;</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;groupnode.h&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QGraphicsSceneDragDropEvent&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;grouplink.h&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 uint GroupNode::maxId = 0;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 GroupNode::GroupNode(QString _name, SlateWindow *wind, QGraphicsItem * parent, QGraphicsScene * scene): Node(_name, wind, parent, scene), abstractPaint(false)
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034     myTextColor = Qt::darkGreen;
+<a name="l00035"></a>00035     myOutlineColor = Qt::darkBlue;
+<a name="l00036"></a>00036     myBackgroundColor = Qt::white;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     QFontMetricsF metrics = qApp-&gt;font();
+<a name="l00039"></a>00039         lineSpacing = metrics.lineSpacing();
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041     setFlags(ItemIsMovable | ItemIsSelectable);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043         type = <span class="stringliteral">&quot;Group&quot;</span>;
+<a name="l00044"></a>00044         <span class="keywordflow">if</span> (_name.isEmpty())    name = type;
+<a name="l00045"></a>00045         <span class="keywordflow">else</span>                    name = _name;
+<a name="l00046"></a>00046         <span class="keywordtype">id</span> = getNewId(); <span class="comment">// el identificador de subgrupo es independiente del de los Nodos</span>
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 GroupNode::~GroupNode()
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051         <span class="comment">// quito los link internos, adaptando los links a los que servían</span>
+<a name="l00052"></a>00052     <span class="keywordflow">foreach</span> (Link *interLink, internalLinks.keys()) {
+<a name="l00053"></a>00053                 Link *exterLink = internalLinks.value(interLink);
+<a name="l00054"></a>00054                 <span class="keywordflow">if</span> (exterLink) {
+<a name="l00055"></a>00055                         <span class="keywordflow">if</span> (exterLink-&gt;toNode() == <span class="keyword">this</span>)
+<a name="l00056"></a>00056                                 exterLink-&gt;changeToPoint(interLink-&gt;toNode(), interLink-&gt;toProp());
+<a name="l00057"></a>00057                         <span class="keywordflow">else</span>
+<a name="l00058"></a>00058                                 exterLink-&gt;changeFromPoint(interLink-&gt;fromNode(), interLink-&gt;fromProp());
+<a name="l00059"></a>00059                 }
+<a name="l00060"></a>00060         <span class="keyword">delete</span> interLink;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">// saco a los hijos del grupo antes de borrar</span>
+<a name="l00064"></a>00064         prepareGeometryChange();
+<a name="l00065"></a>00065     <span class="keywordflow">foreach</span> (QGraphicsItem *child, children()) {
+<a name="l00066"></a>00066         child-&gt;setParentItem(this-&gt;parentItem());
+<a name="l00067"></a>00067                 <span class="keywordflow">if</span> (!this-&gt;parentItem()) { <span class="comment">// para que  no corrija nada si era subgrupo (estos se ajustan automáticos)</span>
+<a name="l00068"></a>00068                         child-&gt;scale(1.0 / SUBSCALE, 1.0 / SUBSCALE);
+<a name="l00069"></a>00069                         child-&gt;setPos(child-&gt;pos() / SUBSCALE);
+<a name="l00070"></a>00070                 }
+<a name="l00071"></a>00071                 <span class="keywordflow">if</span> (dynamic_cast&lt;Node *&gt;(child)) <span class="comment">// para que si está en modo abstracto y se borra los hijos no salgan ocultos</span>
+<a name="l00072"></a>00072                         ((Node *)child)-&gt;setHide(<span class="keyword">false</span>);
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074         update();
+<a name="l00075"></a>00075 }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="keywordtype">void</span> GroupNode::addNode(Node *node)
+<a name="l00078"></a>00078 {
+<a name="l00079"></a>00079         node-&gt;setParentItem(<span class="keyword">this</span>); <span class="comment">//se actualiza cambio el padre</span>
+<a name="l00080"></a>00080         node-&gt;scale(SUBSCALE, SUBSCALE); <span class="comment">//se escala</span>
+<a name="l00081"></a>00081         node-&gt;setPos(node-&gt;pos() * SUBSCALE); <span class="comment">//se escala su posición para que no se separen cuando se unen</span>
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         <span class="comment">// actualizamos las propiedades de entrada que tiene el grupo, en función de las que quedan lincadas hacia afuera</span>
+<a name="l00084"></a>00084         <span class="keywordflow">foreach</span>(Link *link, node-&gt;getInLinks()) {
+<a name="l00085"></a>00085                 changeLinkToGroup(link, <span class="keyword">true</span>);
+<a name="l00086"></a>00086         }
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088         <span class="comment">// actualizamos las propiedades de salida que tiene el grupo, en función de las que quedan lincadas hacia afuera</span>
+<a name="l00089"></a>00089         <span class="keywordflow">foreach</span>(Link *link, node-&gt;getOutLinks()) {
+<a name="l00090"></a>00090                 changeLinkToGroup(link, <span class="keyword">false</span>);
+<a name="l00091"></a>00091         }
+<a name="l00092"></a>00092 }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="keywordtype">void</span> GroupNode::changeLinkToGroup(Link *link, <span class="keywordtype">bool</span> toNode)
+<a name="l00095"></a>00095 {
+<a name="l00096"></a>00096         Node *addedNode = (toNode) ? link-&gt;toNode() : link-&gt;fromNode();
+<a name="l00097"></a>00097         Node *linkedNode = (toNode) ? link-&gt;fromNode() : link-&gt;toNode();
+<a name="l00098"></a>00098         QString addedNodeProp = (toNode) ? link-&gt;toProp() : link-&gt;fromProp();
+<a name="l00099"></a>00099         QString linkedNodeProp = (toNode) ? link-&gt;fromProp() : link-&gt;toProp();
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101         <span class="keywordtype">bool</span> isGroup = (<span class="keyword">dynamic_cast&lt;</span>GroupNode*<span class="keyword">&gt;</span>(addedNode)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00102"></a>00102         <span class="keywordflow">if</span> ( (isGroup) &amp;&amp; (((GroupNode*)addedNode)-&gt;internalLinks.contains(link)) ) <span class="keywordflow">return</span>; <span class="comment">// no tengo en cuenta los link internos de los subgrupos</span>
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 <span class="comment">//      std::cout &lt;&lt; &quot;LLamada para el link: &quot; &lt;&lt; QString(&quot;%1, addedNode:&quot;).arg((uint)link).toStdString() &lt;&lt; QString(&quot;%1, addedNodeProp: &quot;).arg(addedNode-&gt;getId()).toStdString() &lt;&lt; addedNodeProp.toStdString() &lt;&lt; &quot;, linkedNode &quot; &lt;&lt; QString(&quot;%1, linkedNodeProp &quot;).arg(linkedNode-&gt;getId()).toStdString() &lt;&lt; linkedNodeProp.toStdString() &lt;&lt; std::endl;</span>
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106         <span class="keywordflow">if</span> (linkedNode != <span class="keyword">this</span>) { <span class="comment">// si el otro nodo del link esta fuera del grupo, quiebro el link (pasando por el grupo)</span>
+<a name="l00107"></a>00107                 <span class="keywordtype">int</span> nodePos = addedNode-&gt;itemProp.getProperties().indexOf(addedNodeProp);
+<a name="l00108"></a>00108                 QString thisNameProp = ( (isGroup) ? QString(<span class="stringliteral">&quot;&quot;</span>) : QString(<span class="stringliteral">&quot;%1: &quot;</span>).arg(addedNode-&gt;getId()) ) + addedNodeProp;
+<a name="l00109"></a>00109 <span class="comment">//              std::cout &lt;&lt; &quot;añado para &quot; &lt;&lt; QString(&quot;%1:: &quot;).arg(addedNode-&gt;getId()).toStdString() &lt;&lt; &quot; esta &quot; &lt;&lt; thisNameProp.toStdString() &lt;&lt; std::endl;</span>
+<a name="l00110"></a>00110                 insertProperty(thisNameProp, addedNode-&gt;itemProp.propertyType(nodePos), toNode, !toNode);
+<a name="l00111"></a>00111                 <span class="keywordflow">if</span> (toNode) {
+<a name="l00112"></a>00112                         internalLinks.insert(<span class="keyword">new</span> GroupLink(<span class="keyword">this</span>, thisNameProp, addedNode, addedNodeProp, <span class="keyword">true</span>, 0, scene()), link);
+<a name="l00113"></a>00113                         link-&gt;changeToPoint(<span class="keyword">this</span>, thisNameProp);
+<a name="l00114"></a>00114                 }
+<a name="l00115"></a>00115                 <span class="keywordflow">else</span> {
+<a name="l00116"></a>00116                         internalLinks.insert(<span class="keyword">new</span> GroupLink(addedNode, addedNodeProp, <span class="keyword">this</span>, thisNameProp, <span class="keyword">false</span>, 0, scene()), link);
+<a name="l00117"></a>00117                         link-&gt;changeFromPoint(<span class="keyword">this</span>, thisNameProp);
+<a name="l00118"></a>00118                 }
+<a name="l00119"></a>00119         }
+<a name="l00120"></a>00120         <span class="keywordflow">else</span> { <span class="comment">// sino borro la propiedad del grupo</span>
+<a name="l00121"></a>00121 <span class="comment">//              std::cout &lt;&lt; &quot;borro para &quot; &lt;&lt; QString(&quot;%1:: &quot;).arg(addedNode-&gt;getId()).toStdString() &lt;&lt; &quot; esta &quot; &lt;&lt; linkedNodeProp.toStdString() &lt;&lt; std::endl;</span>
+<a name="l00122"></a>00122                 Link *interLink = internalLinks.key(link);
+<a name="l00123"></a>00123                 <span class="keywordflow">if</span> (interLink) {
+<a name="l00124"></a>00124                         <span class="keywordflow">if</span> (toNode) {
+<a name="l00125"></a>00125                                 link-&gt;changeFromPoint(interLink-&gt;fromNode(), interLink-&gt;fromProp());
+<a name="l00126"></a>00126                                 internalLinks.remove(interLink);
+<a name="l00127"></a>00127                                 removeProperty(interLink-&gt;toProp());
+<a name="l00128"></a>00128                                 <span class="keyword">delete</span> interLink;
+<a name="l00129"></a>00129                         }
+<a name="l00130"></a>00130                         <span class="keywordflow">else</span> {
+<a name="l00131"></a>00131                                 link-&gt;changeToPoint(interLink-&gt;toNode(), interLink-&gt;toProp());
+<a name="l00132"></a>00132                                 internalLinks.remove(interLink);
+<a name="l00133"></a>00133                                 removeProperty(interLink-&gt;fromProp());
+<a name="l00134"></a>00134                                 <span class="keyword">delete</span> interLink;
+<a name="l00135"></a>00135                         }
+<a name="l00136"></a>00136                 }
+<a name="l00137"></a>00137 <span class="comment">//              else std::cout &lt;&lt; &quot;ERROR-1&quot; &lt;&lt; std::endl;</span>
+<a name="l00138"></a>00138         }
+<a name="l00139"></a>00139 }
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="keywordtype">void</span> GroupNode::removeLink(Link *link)
+<a name="l00142"></a>00142 {
+<a name="l00143"></a>00143         Node::removeLink(link);
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145         <span class="keywordflow">if</span> (internalLinks.contains(link)) { <span class="comment">// si era un link interno</span>
+<a name="l00146"></a>00146                 internalLinks.remove(link);
+<a name="l00147"></a>00147         }
+<a name="l00148"></a>00148         <span class="keywordflow">if</span> (internalLinks.values().contains(link)) { <span class="comment">// si era un link asociado a un link interno</span>
+<a name="l00149"></a>00149                 internalLinks[internalLinks.key(link)] = NULL;
+<a name="l00150"></a>00150         }
+<a name="l00151"></a>00151 }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153 <span class="keywordtype">void</span> GroupNode::paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget)
+<a name="l00154"></a>00154 {
+<a name="l00155"></a>00155 <span class="comment">//      abstractPaint = (option-&gt;levelOfDetail &lt; 0.75) ? true : abstractMode;</span>
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157         <span class="keywordflow">if</span> (abstractPaint)
+<a name="l00158"></a>00158                 paintProps(painter, option, widget);
+<a name="l00159"></a>00159         <span class="keywordflow">else</span>
+<a name="l00160"></a>00160                 paintGroup(painter, option, widget);
+<a name="l00161"></a>00161 }
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163 <span class="keywordtype">void</span> GroupNode::paintProps(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget * <span class="comment">/* widget */</span>)
+<a name="l00164"></a>00164 {
+<a name="l00165"></a>00165     QPen pen(myOutlineColor);
+<a name="l00166"></a>00166     <span class="keywordflow">if</span> (option-&gt;state &amp; QStyle::State_Selected) {
+<a name="l00167"></a>00167         pen.setStyle(Qt::DotLine);
+<a name="l00168"></a>00168         pen.setWidth(2);
+<a name="l00169"></a>00169     }
+<a name="l00170"></a>00170     painter-&gt;setPen(pen);
+<a name="l00171"></a>00171     painter-&gt;setBrush(myBackgroundColor);
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173     QRectF rect = outlineRect();
+<a name="l00174"></a>00174     painter-&gt;drawRoundRect(rect.adjusted(0.0, lineSpacing-2, 0.0, 0.0), roundness(rect.width()),
+<a name="l00175"></a>00175                            roundness(rect.height()));
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177     painter-&gt;setPen(myTextColor);
+<a name="l00178"></a>00178     painter-&gt;drawText(rect, Qt::AlignTop, name);
+<a name="l00179"></a>00179     painter-&gt;drawText(rect.adjusted(0.0, lineSpacing, 0.0, 0.0), Qt::AlignTop | Qt::AlignHCenter, myText);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181         <span class="comment">// muestra el boton redonde de abajo-derecha</span>
+<a name="l00182"></a>00182         QRectF arrowRect((<span class="keywordtype">int</span>)rect.right() - 15, (int)rect.bottom() - 10, 13, 8);
+<a name="l00183"></a>00183         drawCurvArrow(arrowRect, painter);
+<a name="l00184"></a>00184 
+<a name="l00185"></a>00185         <span class="comment">// y pinta los puntos de unión a ambos lados del texto</span>
+<a name="l00186"></a>00186     painter-&gt;setPen(Qt::white);
+<a name="l00187"></a>00187         painter-&gt;setBrush(Qt::black);
+<a name="l00188"></a>00188         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numProp; i++) {
+<a name="l00189"></a>00189                 <span class="keywordflow">if</span> (itemProp.isInput(i)) <span class="comment">// si tiene enlace de entrada lo pinto</span>
+<a name="l00190"></a>00190                 painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.left() + lineSpacing*0.1), (int)(rect.top() + lineSpacing*(i + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00191"></a>00191                 <span class="keywordflow">if</span> (itemProp.isOutput(i)) <span class="comment">// // si tiene enlace de salida lo pinto</span>
+<a name="l00192"></a>00192                         painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.right() - lineSpacing*0.9), (int)(rect.top() + lineSpacing*(i + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00193"></a>00193         }
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195         <span class="comment">// si uno de los puntos está marcado, lo pinta dependiendo de su validez</span>
+<a name="l00196"></a>00196         <span class="keywordflow">if</span> (markedPoint &gt;= 0) {
+<a name="l00197"></a>00197                 <span class="keywordflow">if</span> (markedValidity) painter-&gt;setBrush(Qt::green);
+<a name="l00198"></a>00198                 <span class="keywordflow">else</span>                            painter-&gt;setBrush(Qt::red);
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200                 <span class="keywordflow">if</span> (markedPoint &lt; numProp)
+<a name="l00201"></a>00201                         painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.left() + lineSpacing*0.1), (int)(rect.top() + lineSpacing*(markedPoint + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00202"></a>00202                 <span class="keywordflow">else</span>
+<a name="l00203"></a>00203                         painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.right() - lineSpacing*0.9), (int)(rect.top() + lineSpacing*(markedPoint - numProp + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00204"></a>00204         }
+<a name="l00205"></a>00205 }
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207 <span class="keywordtype">void</span> GroupNode::paintGroup(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget * <span class="comment">/* widget */</span>)
+<a name="l00208"></a>00208 {
+<a name="l00209"></a>00209     QPen pen(myOutlineColor);
+<a name="l00210"></a>00210     <span class="keywordflow">if</span> (option-&gt;state &amp; QStyle::State_Selected) {
+<a name="l00211"></a>00211         pen.setStyle(Qt::DotLine);
+<a name="l00212"></a>00212         pen.setWidth(2);
+<a name="l00213"></a>00213     }
+<a name="l00214"></a>00214     painter-&gt;setPen(pen);
+<a name="l00215"></a>00215     painter-&gt;setBrush(myBackgroundColor);
+<a name="l00216"></a>00216 
+<a name="l00217"></a>00217     QRectF rect = outlineRect();
+<a name="l00218"></a>00218     painter-&gt;drawRoundRect(rect.adjusted(0.0, lineSpacing-2, 0.0, .0), roundness(rect.width()),
+<a name="l00219"></a>00219                            roundness(rect.height()));
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     painter-&gt;setPen(myTextColor);
+<a name="l00222"></a>00222     painter-&gt;drawText(rect, Qt::AlignTop, name);
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224         <span class="comment">// muestra el boton redonde de abajo-derecha</span>
+<a name="l00225"></a>00225         QRectF arrowRect((<span class="keywordtype">int</span>)rect.right() - 15, (int)rect.bottom() - 10, 13, 8);
+<a name="l00226"></a>00226         drawCurvArrow(arrowRect, painter);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228         <span class="comment">// y pinta los puntos de unión a ambos lados del texto</span>
+<a name="l00229"></a>00229     painter-&gt;setPen(Qt::white);
+<a name="l00230"></a>00230         painter-&gt;setBrush(Qt::black);
+<a name="l00231"></a>00231         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numProp; i++) {
+<a name="l00232"></a>00232                 <span class="keywordflow">if</span> (itemProp.isInput(i)) <span class="comment">// si tiene enlace de entrada lo pinto</span>
+<a name="l00233"></a>00233                 painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.left() + lineSpacing*0.1), (int)(rect.top() + lineSpacing*(i + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00234"></a>00234                 <span class="keywordflow">if</span> (itemProp.isOutput(i)) <span class="comment">// // si tiene enlace de salida lo pinto</span>
+<a name="l00235"></a>00235                         painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.right() - lineSpacing*0.9), (int)(rect.top() + lineSpacing*(i + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00236"></a>00236         }
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238         <span class="comment">// si uno de los puntos está marcado, lo pinta dependiendo de su validez</span>
+<a name="l00239"></a>00239         <span class="keywordflow">if</span> (markedPoint &gt;= 0) {
+<a name="l00240"></a>00240                 <span class="keywordflow">if</span> (markedValidity) painter-&gt;setBrush(Qt::green);
+<a name="l00241"></a>00241                 <span class="keywordflow">else</span>                            painter-&gt;setBrush(Qt::red);
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243                 <span class="keywordflow">if</span> (markedPoint &lt; numProp)
+<a name="l00244"></a>00244                         painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.left() + lineSpacing*0.1), (int)(rect.top() + lineSpacing*(markedPoint + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00245"></a>00245                 <span class="keywordflow">else</span>
+<a name="l00246"></a>00246                         painter-&gt;drawEllipse((<span class="keywordtype">int</span>)(rect.right() - lineSpacing*0.9), (int)(rect.top() + lineSpacing*(markedPoint - numProp + 1.1)), (<span class="keywordtype">int</span>)(lineSpacing*0.8), (int)(lineSpacing*0.8));
+<a name="l00247"></a>00247         }
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249         <span class="comment">// muestra los puntos de enlace a izquierda y derecha</span>
+<a name="l00250"></a>00250 <span class="comment">/*    painter-&gt;setPen(Qt::white);</span>
+<a name="l00251"></a>00251 <span class="comment">        painter-&gt;setBrush(Qt::black);</span>
+<a name="l00252"></a>00252 <span class="comment">        painter-&gt;drawEllipse((int)rect.right() - 20 - (int)(lineSpacing*0.5), (int)rect.bottom() - 10, (int)(lineSpacing*0.5), (int)(lineSpacing*0.5));</span>
+<a name="l00253"></a>00253 <span class="comment">        painter-&gt;drawEllipse((int)rect.left() + 20, (int)rect.bottom() - 10, (int)(lineSpacing*0.5), (int)(lineSpacing*0.5)); */</span>
+<a name="l00254"></a>00254 }
+<a name="l00255"></a>00255 
+<a name="l00256"></a>00256 <span class="keywordtype">void</span> GroupNode::drawCurvArrow(<span class="keyword">const</span> QRectF rect, QPainter *painter)
+<a name="l00257"></a>00257 {
+<a name="l00258"></a>00258         QRectF smallCurveRect = QRectF(rect.x(), rect.y() - rect.height() * 2/5, rect.width() * 2/3, rect.height() * 4/5);
+<a name="l00259"></a>00259         QRectF bigCurveRect = QRectF(rect.x() - rect.width() * 1/3, rect.y() - rect.height() * 4/5, rect.width() * 4/3, rect.height() * 8/5);
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261         painter-&gt;drawArc(smallCurveRect, 270 * 16, 90 * 16);
+<a name="l00262"></a>00262         painter-&gt;drawArc(bigCurveRect, 270 * 16, 90 * 16);
+<a name="l00263"></a>00263 
+<a name="l00264"></a>00264         painter-&gt;drawLine(QPointF(rect.x() + rect.width() * 2/3, rect.y()), QPointF(rect.x() + rect.width() * 19/24, rect.y() + rect.height() * 1/5));
+<a name="l00265"></a>00265         painter-&gt;drawLine(QPointF(rect.x() + rect.width() * 19/24, rect.y() + rect.height() * 1/5), QPointF(rect.x() + rect.width(), rect.y()));
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         painter-&gt;drawLine(QPointF(rect.x() + rect.width() * 1/3, rect.y() + rect.height() * 2/5), QPointF(rect.x() + rect.width() * 1/3, rect.y() + rect.height() * 1/5));
+<a name="l00268"></a>00268         painter-&gt;drawLine(QPointF(rect.x() + rect.width() * 1/3, rect.y() + rect.height() * 1/5), QPointF(rect.x(), rect.y() + rect.height() * 3/5));
+<a name="l00269"></a>00269         painter-&gt;drawLine(QPointF(rect.x(), rect.y() + rect.height() * 3/5), QPointF(rect.x() + rect.width() * 1/3, rect.y() + rect.height()));
+<a name="l00270"></a>00270         painter-&gt;drawLine(QPointF(rect.x() + rect.width() * 1/3, rect.y() + rect.height()), QPointF(rect.x() + rect.width() * 1/3, rect.y() + rect.height() * 4/5));
+<a name="l00271"></a>00271 }
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273 <span class="keywordtype">void</span> GroupNode::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
+<a name="l00274"></a>00274 {
+<a name="l00275"></a>00275     QRectF rect = outlineRect();
+<a name="l00276"></a>00276         QPointF click = mapFromScene(event-&gt;scenePos());
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278         prepareHierarchy();
+<a name="l00279"></a>00279         <span class="keywordflow">if</span> ((click.x() &gt; rect.right() - 15) &amp;&amp; (click.y() &gt; rect.bottom() - 10)) {
+<a name="l00280"></a>00280                 <span class="comment">// cambia de la vista de nodos unidos a los puntos laterales a la vista de los nombres de las propiedades de entrada y salida.</span>
+<a name="l00281"></a>00281                 prepareGeometryChange();
+<a name="l00282"></a>00282                 abstractPaint = abstractPaint ? <span class="keyword">false</span> : <span class="keyword">true</span>;
+<a name="l00283"></a>00283                 <span class="keywordflow">foreach</span>(QGraphicsItem *item, children()) {
+<a name="l00284"></a>00284                         <span class="keywordflow">if</span> (dynamic_cast&lt;Node *&gt;(item))
+<a name="l00285"></a>00285                                 ((Node *)item)-&gt;setHide(abstractPaint);
+<a name="l00286"></a>00286                 }
+<a name="l00287"></a>00287                 update();
+<a name="l00288"></a>00288         }
+<a name="l00289"></a>00289         <span class="keywordflow">else</span> {
+<a name="l00290"></a>00290                 QString text = QInputDialog::getText(event-&gt;widget(), tr(<span class="stringliteral">&quot;Edit Text&quot;</span>), tr(<span class="stringliteral">&quot;Enter new text:&quot;</span>), QLineEdit::Normal, name);
+<a name="l00291"></a>00291                 prepareGeometryChange();
+<a name="l00292"></a>00292                 name = text;
+<a name="l00293"></a>00293                 update();
+<a name="l00294"></a>00294         }
+<a name="l00295"></a>00295         updateLinksPos();
+<a name="l00296"></a>00296         updateHierarchy();
+<a name="l00297"></a>00297 }
+<a name="l00298"></a>00298 
+<a name="l00299"></a>00299 <span class="keywordtype">void</span> GroupNode::abstractView(<span class="keywordtype">bool</span> mode)
+<a name="l00300"></a>00300 {
+<a name="l00301"></a>00301         <span class="keywordflow">if</span> (abstractPaint == mode) <span class="keywordflow">return</span>;
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303         <span class="comment">// cambia de la vista de nodos unidos a los puntos laterales a la vista de los nombres de las propiedades de entrada y salida.</span>
+<a name="l00304"></a>00304         prepareHierarchy();
+<a name="l00305"></a>00305         prepareGeometryChange();
+<a name="l00306"></a>00306         abstractPaint = mode;
+<a name="l00307"></a>00307         <span class="keywordflow">foreach</span>(QGraphicsItem *item, children()) {
+<a name="l00308"></a>00308                 <span class="keywordflow">if</span> (dynamic_cast&lt;Node *&gt;(item))
+<a name="l00309"></a>00309                         ((Node *)item)-&gt;setHide(abstractPaint);
+<a name="l00310"></a>00310         }
+<a name="l00311"></a>00311         update();
+<a name="l00312"></a>00312         updateLinksPos();
+<a name="l00313"></a>00313         updateHierarchy();
+<a name="l00314"></a>00314 }
+<a name="l00315"></a>00315 
+<a name="l00316"></a>00316 <span class="keywordtype">void</span> GroupNode::updateLinksPos()
+<a name="l00317"></a>00317 {
+<a name="l00318"></a>00318     <span class="keywordflow">foreach</span> (Link *link, getLinks())
+<a name="l00319"></a>00319         link-&gt;trackNodes();
+<a name="l00320"></a>00320 
+<a name="l00321"></a>00321         <span class="keywordflow">foreach</span> (QGraphicsItem *child, children()) {
+<a name="l00322"></a>00322                 Node *nodeChild = <span class="keyword">dynamic_cast&lt;</span>Node *<span class="keyword">&gt;</span>(child);
+<a name="l00323"></a>00323                 <span class="keywordflow">if</span> (nodeChild)
+<a name="l00324"></a>00324                         nodeChild-&gt;updateLinksPos();
+<a name="l00325"></a>00325         }
+<a name="l00326"></a>00326 }
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328 QRectF GroupNode::outlineRect()<span class="keyword"> const</span>
+<a name="l00329"></a>00329 <span class="keyword"></span>{
+<a name="l00330"></a>00330         <span class="keywordflow">if</span> (abstractPaint) {
+<a name="l00331"></a>00331                 QFontMetricsF metrics = qApp-&gt;font();
+<a name="l00332"></a>00332                 <span class="keywordtype">double</span> width = metrics.boundingRect(name).width();
+<a name="l00333"></a>00333         
+<a name="l00334"></a>00334                 <span class="keyword">const</span> QList&lt;QString&gt; props = itemProp.getProperties();
+<a name="l00335"></a>00335                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; props.size(); i++)
+<a name="l00336"></a>00336                         <span class="keywordflow">if</span> (width &lt; metrics.boundingRect(props[i]).width()) width = metrics.boundingRect(props[i]).width();
+<a name="l00337"></a>00337 
+<a name="l00338"></a>00338                 width += lineSpacing*4; <span class="comment">// vale el ancho de la linea más grande más 4 espacios para los puntos de los lados</span>
+<a name="l00339"></a>00339                 <span class="keywordtype">double</span> height = (numProp+2)*lineSpacing; <span class="comment">// vale el alto de todas las lineas</span>
+<a name="l00340"></a>00340                 <span class="keywordtype">double</span> xPos = childrenBoundingRect().left()-lineSpacing;
+<a name="l00341"></a>00341                 <span class="keywordtype">double</span> yPos = childrenBoundingRect().top()-lineSpacing;
+<a name="l00342"></a>00342 
+<a name="l00343"></a>00343                 <span class="keywordflow">return</span> QRectF(xPos, yPos, width, height);
+<a name="l00344"></a>00344         }
+<a name="l00345"></a>00345         <span class="keywordflow">else</span> {
+<a name="l00346"></a>00346                 QRectF rect = childrenBoundingRect();
+<a name="l00347"></a>00347                 <span class="keywordflow">if</span> (rect.height() &lt; numProp*lineSpacing) rect.setHeight(numProp*lineSpacing);
+<a name="l00348"></a>00348                 <span class="keywordflow">return</span> rect.adjusted(0.0-lineSpacing*2, 0.0-lineSpacing, lineSpacing*2, lineSpacing);
+<a name="l00349"></a>00349         }
+<a name="l00350"></a>00350 }
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352 
+<a name="l00353"></a>00353 <span class="keywordtype">void</span> GroupNode::setHide(<span class="keywordtype">bool</span> hide)
+<a name="l00354"></a>00354 {
+<a name="l00355"></a>00355         <span class="keywordflow">foreach</span>(Link *link, getLinks())
+<a name="l00356"></a>00356                 <span class="keywordflow">if</span> (internalLinks.contains(link))
+<a name="l00357"></a>00357                         link-&gt;setVisible(!hide &amp;&amp; !abstractPaint);
+<a name="l00358"></a>00358                 <span class="keywordflow">else</span>
+<a name="l00359"></a>00359                         link-&gt;setVisible(!hide);
+<a name="l00360"></a>00360 
+<a name="l00361"></a>00361         <span class="keywordflow">foreach</span>(QGraphicsItem *item, children()) {
+<a name="l00362"></a>00362                 <span class="keywordflow">if</span> (dynamic_cast&lt;Node *&gt;(item))
+<a name="l00363"></a>00363                         ((Node *)item)-&gt;setHide(hide || abstractPaint);
+<a name="l00364"></a>00364         }
+<a name="l00365"></a>00365 
+<a name="l00366"></a>00366         setVisible(!hide);
+<a name="l00367"></a>00367 }
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369 GroupInfo GroupNode::getInfo()
+<a name="l00370"></a>00370 {
+<a name="l00371"></a>00371         GroupInfo info(<span class="keywordtype">id</span>, name);
+<a name="l00372"></a>00372 <span class="comment">//      std::cout &lt;&lt; &quot;creo el grupo: &quot; &lt;&lt; QString(&quot;%1&quot;).arg(id).toStdString() &lt;&lt; &quot;, &quot; &lt;&lt; name.toStdString() &lt;&lt; std::endl;</span>
+<a name="l00373"></a>00373 
+<a name="l00374"></a>00374         <span class="keywordflow">foreach</span>(QGraphicsItem *item, children()) {
+<a name="l00375"></a>00375                 <span class="keywordflow">if</span> (dynamic_cast&lt;Node *&gt;(item)) {
+<a name="l00376"></a>00376                         <span class="keywordflow">if</span> (dynamic_cast&lt;GroupNode *&gt;(item)) {
+<a name="l00377"></a>00377                                 info.addSubgroup( ((GroupNode *)item)-&gt;getId() );
+<a name="l00378"></a>00378 <span class="comment">//                              std::cout &lt;&lt; &quot;     le añado el subgrupo: &quot; &lt;&lt; QString(&quot;%1&quot;).arg(((Node *)item)-&gt;getId()).toStdString() &lt;&lt; std::endl;</span>
+<a name="l00379"></a>00379                         }
+<a name="l00380"></a>00380                         <span class="keywordflow">else</span> {
+<a name="l00381"></a>00381                                 info.addNode( ((Node *)item)-&gt;getId() );
+<a name="l00382"></a>00382 <span class="comment">//                              std::cout &lt;&lt; &quot;     le añado el nodo: &quot; &lt;&lt; QString(&quot;%1&quot;).arg(((Node *)item)-&gt;getId()).toStdString() &lt;&lt; std::endl;</span>
+<a name="l00383"></a>00383                         }
+<a name="l00384"></a>00384                 }
+<a name="l00385"></a>00385         }
+<a name="l00386"></a>00386 
+<a name="l00387"></a>00387         <span class="keywordflow">foreach</span>(Link *link, internalLinks.keys()) {
+<a name="l00388"></a>00388                 <span class="keywordflow">if</span> (link-&gt;fromNode() == <span class="keyword">this</span>) {
+<a name="l00389"></a>00389                         <span class="keywordflow">if</span> (dynamic_cast&lt;GroupNode *&gt;(link-&gt;toNode()))
+<a name="l00390"></a>00390                                 info.addSubgroupLink(LinkInfo(link-&gt;toNode()-&gt;getId(), link-&gt;toProp(), <span class="keyword">true</span>));
+<a name="l00391"></a>00391                         <span class="keywordflow">else</span>
+<a name="l00392"></a>00392                                 info.addNodeLink(LinkInfo(link-&gt;toNode()-&gt;getId(), link-&gt;toProp(), <span class="keyword">true</span>));
+<a name="l00393"></a>00393 <span class="comment">//                      std::cout &lt;&lt; &quot;     le añado el link: &quot; &lt;&lt; QString(&quot;%1&quot;).arg(link-&gt;toNode()-&gt;getId()).toStdString() &lt;&lt; &quot;[&quot; &lt;&lt; link-&gt;toProp().toStdString() &lt;&lt; &quot;] (input)&quot; &lt;&lt; std::endl;</span>
+<a name="l00394"></a>00394                 }
+<a name="l00395"></a>00395                 <span class="keywordflow">else</span> {
+<a name="l00396"></a>00396                         <span class="keywordflow">if</span> (dynamic_cast&lt;GroupNode *&gt;(link-&gt;fromNode()))
+<a name="l00397"></a>00397                                 info.addSubgroupLink(LinkInfo(link-&gt;fromNode()-&gt;getId(), link-&gt;fromProp(), <span class="keyword">false</span>));
+<a name="l00398"></a>00398                         <span class="keywordflow">else</span>
+<a name="l00399"></a>00399                                 info.addNodeLink(LinkInfo(link-&gt;fromNode()-&gt;getId(), link-&gt;fromProp(), <span class="keyword">false</span>));
+<a name="l00400"></a>00400 <span class="comment">//                      std::cout &lt;&lt; &quot;     le añado el link: &quot; &lt;&lt; QString(&quot;%1&quot;).arg(link-&gt;fromNode()-&gt;getId()).toStdString() &lt;&lt; &quot;[&quot; &lt;&lt; link-&gt;fromProp().toStdString() &lt;&lt; &quot;] (output)&quot; &lt;&lt; std::endl;</span>
+<a name="l00401"></a>00401                 }
+<a name="l00402"></a>00402         }
+<a name="l00403"></a>00403 
+<a name="l00404"></a>00404         info.setPos(pos());
+<a name="l00405"></a>00405         info.setAbstract(abstractPaint);
+<a name="l00406"></a>00406 <span class="comment">//      std::cout &lt;&lt; &quot;     con la posición: [&quot; &lt;&lt; QString(&quot;%1&quot;).arg(pos().x()).toStdString() &lt;&lt; &quot;, &quot; &lt;&lt; QString(&quot;%1&quot;).arg(pos().y()).toStdString() &lt;&lt; &quot;]&quot; &lt;&lt; std::endl;</span>
+<a name="l00407"></a>00407 
+<a name="l00408"></a>00408         <span class="keywordflow">return</span> info;
+<a name="l00409"></a>00409 }
+<a name="l00410"></a>00410 
+<a name="l00411"></a>00411 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

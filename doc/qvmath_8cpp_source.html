@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvmath.cpp</h1><a href="qvmath_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;qvmath.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="qvrationalnumber_8h.html" title="File from the QVision library.">qvmath/qvrationalnumber.h</a>&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keywordtype">double</span> norm2(<span class="keyword">const</span> QPointF &amp;p)
+<a name="l00030"></a>00030     {
+<a name="l00031"></a>00031     <span class="keywordflow">return</span> sqrt(p.x() * p.x() + p.y() * p.y());
+<a name="l00032"></a>00032     }
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="qvmath_2qvmath_8h.html#ae0d784f6af76701f920a314685c9e33b">00034</a> <span class="keywordtype">int</span> <a class="code" href="qvmath_8cpp.html#ae0d784f6af76701f920a314685c9e33b">qvFactorial</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> n)
+<a name="l00035"></a>00035     {
+<a name="l00036"></a>00036     <span class="keywordtype">int</span> result = 1;
+<a name="l00037"></a>00037     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 2; i &lt;= n; i++)
+<a name="l00038"></a>00038         result *= i;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keywordflow">return</span> result;
+<a name="l00041"></a>00041     };
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keywordtype">double</span> qvFactorialDivisionDouble(<span class="keyword">const</span> <span class="keywordtype">int</span> numerator, <span class="keyword">const</span> <span class="keywordtype">int</span> denominator)
+<a name="l00044"></a>00044     {
+<a name="l00045"></a>00045     <span class="keywordtype">double</span> result = 1;
+<a name="l00046"></a>00046     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = denominator+1; i &lt;= numerator; i++)
+<a name="l00047"></a>00047         result *= i;
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     <span class="keywordflow">return</span> result;
+<a name="l00050"></a>00050     }
+<a name="l00051"></a>00051 
+<a name="l00052"></a><a class="code" href="group__qvmath.html#ga1882a4c380d6ee8ea52eee749e1f508e">00052</a> <span class="keywordtype">double</span> <a class="code" href="group__qvmath.html#ga1882a4c380d6ee8ea52eee749e1f508e" title="Obtains the number of combinations of a fixed size over the elements of a set.">qvCombination</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> setRange, <span class="keyword">const</span> <span class="keywordtype">int</span> subsetRange)
+<a name="l00053"></a>00053     {
+<a name="l00054"></a>00054     Q_ASSERT(setRange &gt; subsetRange);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     QVRationalNumber subSetFactorial, divisionFactorial;
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 2; i &lt;= subsetRange; i++)
+<a name="l00059"></a>00059         subSetFactorial.mult(i);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = setRange - subsetRange + 1; i &lt;= setRange; i++)
+<a name="l00062"></a>00062         divisionFactorial.mult(i);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064     <span class="keywordflow">return</span> divisionFactorial/subSetFactorial;
+<a name="l00065"></a>00065     }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keywordtype">double</span> qvAngle(<span class="keyword">const</span> QPointF &amp;point)
+<a name="l00068"></a>00068     {
+<a name="l00069"></a>00069     <span class="keyword">const</span> <span class="keywordtype">double</span> x = point.x(), y = point.y();
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="keywordflow">if</span> (x&gt;0)
+<a name="l00072"></a>00072         <span class="keywordflow">if</span> (y&gt;=0)
+<a name="l00073"></a>00073             <span class="keywordflow">return</span> atan(y/x);
+<a name="l00074"></a>00074         <span class="keywordflow">else</span>
+<a name="l00075"></a>00075             <span class="keywordflow">return</span> atan(y/x) + 2*PI;
+<a name="l00076"></a>00076     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (x == 0.0)
+<a name="l00077"></a>00077         <span class="keywordflow">if</span> (y&gt;0)
+<a name="l00078"></a>00078             <span class="keywordflow">return</span> PI/2;
+<a name="l00079"></a>00079         <span class="keywordflow">else</span>
+<a name="l00080"></a>00080             <span class="keywordflow">return</span> 3*PI/2;
+<a name="l00081"></a>00081     <span class="keywordflow">else</span> <span class="comment">// x &lt; 0</span>
+<a name="l00082"></a>00082         <span class="keywordflow">return</span> atan(y/x)+PI;
+<a name="l00083"></a>00083     }
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="group__qvmath.html#ga2b6468e67530eef17b69a8b994484864">00085</a> <span class="keywordtype">double</span> qvAngle(<span class="keyword">const</span> QPointF &amp;point1, <span class="keyword">const</span> QPointF &amp;point2)
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087     <span class="keywordtype">double</span> dtheta = atan2(point2.y(), point2.x()) - atan2(point1.y(), point1.x());
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     <span class="keywordflow">while</span> (dtheta &gt;= 2*PI)
+<a name="l00090"></a>00090         dtheta -= 2*PI;
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keywordflow">while</span> (dtheta &lt; -2*PI)
+<a name="l00093"></a>00093         dtheta += 2*PI;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095         Q_ASSERT(dtheta &gt;= -2*PI);
+<a name="l00096"></a>00096         Q_ASSERT(dtheta &lt;= 2*PI);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     <span class="keywordflow">return</span> dtheta;
+<a name="l00099"></a>00099     }
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="keywordtype">int</span> qvRandom(<span class="keyword">const</span> <span class="keywordtype">int</span> minValue, <span class="keyword">const</span> <span class="keywordtype">int</span> maxValue)
+<a name="l00102"></a>00102     { <span class="keywordflow">return</span> rand()%(maxValue-minValue+1) + minValue; }
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 <span class="comment">// This function returns the positive degrees for a given angle</span>
+<a name="l00105"></a>00105 <span class="keywordtype">double</span> qvClockWiseAngle(<span class="keyword">const</span> QPointF &amp;point1, <span class="keyword">const</span> QPointF &amp;point2)
+<a name="l00106"></a>00106     {
+<a name="l00107"></a>00107         <span class="keywordflow">return</span> qvAngle(point1, point2);
+<a name="l00108"></a>00108     }
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 <span class="comment">// Min value granted for RAND_MAX</span>
+<a name="l00111"></a>00111 <span class="preprocessor">#define RANDOM_PRECISSION       32767</span>
+<a name="l00112"></a>00112 <span class="preprocessor"></span><span class="keywordtype">double</span> random(<span class="keyword">const</span> <span class="keywordtype">double</span> min, <span class="keyword">const</span> <span class="keywordtype">double</span> max)
+<a name="l00113"></a>00113     {
+<a name="l00114"></a>00114     <span class="keywordflow">return</span> ABS(max-min) * double(rand()%RANDOM_PRECISSION)/double(RANDOM_PRECISSION-1) + MIN(min, max);
+<a name="l00115"></a>00115     }
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 <span class="keywordtype">double</span> relativeEuclideanDistance(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;v1, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;v2)
+<a name="l00118"></a>00118         {
+<a name="l00119"></a>00119         <span class="keywordflow">if</span> ( (v1 == 0) or (v2 == 0) )
+<a name="l00120"></a>00120                 <span class="keywordflow">return</span> 0.5;
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         <span class="keywordflow">return</span> 0.5 * ABS(v1-v2) / (ABS(v1) + ABS(v2));
+<a name="l00123"></a>00123         }
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 <span class="keywordtype">double</span> relativeEuclideanDistance(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;v1, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;v2)
+<a name="l00126"></a>00126         {
+<a name="l00127"></a>00127         <span class="keywordflow">if</span> ( (v1.<a class="code" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646" title="Accumulated value.">sum</a>() == 0) or (v2.<a class="code" href="classQVVector.html#aa15b6373a5ca28b1dd82b5b07b71e646" title="Accumulated value.">sum</a>() == 0) )
+<a name="l00128"></a>00128                 <span class="keywordflow">return</span> 0.5;
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130         <span class="keywordflow">return</span> 0.5 * (v1-v2).norm2() / (v1.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>() + v2.<a class="code" href="classQVVector.html#a49c6f41f1fa80efcc943f1c26fdcbf05" title="Norm 2 of the vector.">norm2</a>());
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="comment">// ----------------------</span>
+<a name="l00134"></a><a class="code" href="group__qvmath.html#ga053b5741cdb470b08837b70aa5c274c4">00134</a> QVector&lt;QVComplex&gt; <a class="code" href="group__qvmath.html#ga053b5741cdb470b08837b70aa5c274c4" title="Obtains the three complex (or real) solutions for a third grade polynomial.">qvSolveCubicPolynomial</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> coeff0, <span class="keyword">const</span> <span class="keywordtype">double</span> coeff1, <span class="keyword">const</span> <span class="keywordtype">double</span> coeff2, <span class="keyword">const</span> <span class="keywordtype">double</span> coeff3)
+<a name="l00135"></a>00135         {
+<a name="l00136"></a>00136         <span class="comment">/*</span>
+<a name="l00137"></a>00137 <span class="comment">        # Maple code</span>
+<a name="l00138"></a>00138 <span class="comment">        with(VectorCalculus):</span>
+<a name="l00139"></a>00139 <span class="comment">        with(LinearAlgebra):</span>
+<a name="l00140"></a>00140 <span class="comment">        with(linalg):</span>
+<a name="l00141"></a>00141 <span class="comment"></span>
+<a name="l00142"></a>00142 <span class="comment">        y := coeff3 x^3 + coeff2 x^2 + coeff1 x + coeff0:</span>
+<a name="l00143"></a>00143 <span class="comment">        s := solve(y = 0, x):</span>
+<a name="l00144"></a>00144 <span class="comment"></span>
+<a name="l00145"></a>00145 <span class="comment">        CodeGeneration[C](Matrix([</span>
+<a name="l00146"></a>00146 <span class="comment">        [evalc(Re(s[1])), evalc(Im(s[1]))],</span>
+<a name="l00147"></a>00147 <span class="comment">        [evalc(Re(s[2])), evalc(Im(s[2]))],</span>
+<a name="l00148"></a>00148 <span class="comment">        [evalc(Re(s[3])), evalc(Im(s[3]))]</span>
+<a name="l00149"></a>00149 <span class="comment">        ]), optimize = true);</span>
+<a name="l00150"></a>00150 <span class="comment">        */</span>
+<a name="l00151"></a>00151         <span class="keyword">const</span> <span class="keywordtype">double</span> 
+<a name="l00152"></a>00152                 t1 = 0.1e1 / coeff3,
+<a name="l00153"></a>00153                 t2 =  ( coeff1 * coeff2),
+<a name="l00154"></a>00154                 t5 =  ( coeff3 *  coeff3),
+<a name="l00155"></a>00155                 t8 =  (coeff2 * coeff2),
+<a name="l00156"></a>00156                 t9 =  ( t8 * coeff2),
+<a name="l00157"></a>00157                 t11 = sqrt(0.3e1),
+<a name="l00158"></a>00158                 t12 =  ( coeff1 *  coeff1),
+<a name="l00159"></a>00159                 t20 =  ( coeff0 *  coeff0),
+<a name="l00160"></a>00160                 t25 = 4 * t12 * coeff1 * coeff3 - t12 * t8 - 18 * t2 * coeff3 * coeff0 + 27 * t20 * t5 + 4 * coeff0 * t9,
+<a name="l00161"></a>00161                 t26 = abs(t25),
+<a name="l00162"></a>00162                 t27 = sqrt( t26),
+<a name="l00163"></a>00163                 t28 = t11 * t27,
+<a name="l00164"></a>00164                 t29 = ( t25&gt;0 ? 1 : ( t25&lt;0 ? -1 : 0)),
+<a name="l00165"></a>00165                 t34 =  (36 * t2 * coeff3) -  (108 * coeff0 * t5) -  (8 * t9) + 0.6e1 * t28 *  (1 + t29) *  coeff3,
+<a name="l00166"></a>00166                 t35 = t34 * t34,
+<a name="l00167"></a>00167                 t36 = 1 - t29,
+<a name="l00168"></a>00168                 t37 = t36 * t36,
+<a name="l00169"></a>00169                 t42 = pow(t35 +  (108 * t26 * t37 * t5), 0.1e1 / 0.6e1),
+<a name="l00170"></a>00170                 t43 = t1 * t42,
+<a name="l00171"></a>00171                 t47 = atan2(0.6e1 * t28 *  t36 *  coeff3, t34),
+<a name="l00172"></a>00172                 t48 = t47 / 0.3e1,
+<a name="l00173"></a>00173                 t49 = cos(t48),
+<a name="l00174"></a>00174                 t50 = t43 * t49,
+<a name="l00175"></a>00175                 t51 = t50 / 0.6e1,
+<a name="l00176"></a>00176                 t52 = coeff1 * coeff3,
+<a name="l00177"></a>00177                 t55 = -12 * t52 + 4 * t8,
+<a name="l00178"></a>00178                 t56 =  t55 * t1,
+<a name="l00179"></a>00179                 t57 = 0.1e1 / t42,
+<a name="l00180"></a>00180                 t58 = t57 * t49,
+<a name="l00181"></a>00181                 t62 = coeff2 * t1 / 0.3e1,
+<a name="l00182"></a>00182                 t64 = sin(t48),
+<a name="l00183"></a>00183                 t65 = t43 * t64,
+<a name="l00184"></a>00184                 t66 = t57 * t64,
+<a name="l00185"></a>00185                 t69 = t50 / 0.12e2,
+<a name="l00186"></a>00186                 t70 = - t55 * t1,
+<a name="l00187"></a>00187                 t72 = t70 * t58 / 0.12e2,
+<a name="l00188"></a>00188                 t77 = ( (2 * t52) - 0.2e1 / 0.3e1 *  t8) * t1,
+<a name="l00189"></a>00189                 t81 = t11 * (t65 / 0.6e1 - t77 * t66) / 0.2e1,
+<a name="l00190"></a>00190                 t83 = t65 / 0.12e2,
+<a name="l00191"></a>00191                 t85 = t70 * t66 / 0.12e2,
+<a name="l00192"></a>00192                 t89 = t11 * (t51 + t77 * t58) / 0.2e1;
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194         <span class="keywordtype">double</span> cg[3][2];
+<a name="l00195"></a>00195         cg[0][0] = t51 + t56 * t58 / 0.6e1 - t62;
+<a name="l00196"></a>00196         cg[0][1] = t65 / 0.6e1 - t56 * t66 / 0.6e1;
+<a name="l00197"></a>00197         cg[1][0] = -t69 + t72 - t62 - t81;
+<a name="l00198"></a>00198         cg[1][1] = -t83 - t85 + t89;
+<a name="l00199"></a>00199         cg[2][0] = -t69 + t72 - t62 + t81;
+<a name="l00200"></a>00200         cg[2][1] = -t83 - t85 - t89;
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202         QVector&lt;QVComplex&gt; result(3);
+<a name="l00203"></a>00203         result[0].real() = cg[0][0];    result[0].imaginary() = cg[0][1];
+<a name="l00204"></a>00204         result[1].real() = cg[1][0];    result[1].imaginary() = cg[1][1];
+<a name="l00205"></a>00205         result[2].real() = cg[2][0];    result[2].imaginary() = cg[2][1];
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207         <span class="keywordflow">return</span> result;
+<a name="l00208"></a>00208         }
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="comment">// ----------------------</span>
+<a name="l00212"></a>00212 <span class="comment">/*QList&lt;QVComplex&gt; qvSolveCubicPolynomial(const double a0, const double a1, const double a2, const double a3)</span>
+<a name="l00213"></a>00213 <span class="comment">    {</span>
+<a name="l00214"></a>00214 <span class="comment">    double cg[6];</span>
+<a name="l00215"></a>00215 <span class="comment">    qvSolveCubicPolynomialAux(a0, a1, a2, a3, cg);</span>
+<a name="l00216"></a>00216 <span class="comment"></span>
+<a name="l00217"></a>00217 <span class="comment">    QList&lt;QVComplex&gt; result;</span>
+<a name="l00218"></a>00218 <span class="comment">    result &lt;&lt; QVComplex(cg[0], cg[1]);</span>
+<a name="l00219"></a>00219 <span class="comment">    result &lt;&lt; QVComplex(cg[2], cg[3]);</span>
+<a name="l00220"></a>00220 <span class="comment">    result &lt;&lt; QVComplex(cg[4], cg[5]);</span>
+<a name="l00221"></a>00221 <span class="comment"></span>
+<a name="l00222"></a>00222 <span class="comment">    return result;</span>
+<a name="l00223"></a>00223 <span class="comment">    }</span>
+<a name="l00224"></a>00224 <span class="comment"></span>
+<a name="l00225"></a>00225 <span class="comment"># Solve third grade polinomy:</span>
+<a name="l00226"></a>00226 <span class="comment">s := solve(a3 x ^3 + a2 x^2 + a1 x + a0, x);</span>
+<a name="l00227"></a>00227 <span class="comment">S := Vector([   evalc(Re(s[1])), evalc(Im(s[1])),</span>
+<a name="l00228"></a>00228 <span class="comment">        evalc(Re(s[2])), evalc(Im(s[2])),</span>
+<a name="l00229"></a>00229 <span class="comment">        evalc(Re(s[3])), evalc(Im(s[3]))</span>
+<a name="l00230"></a>00230 <span class="comment">        ]);</span>
+<a name="l00231"></a>00231 <span class="comment">CodeGeneration[C](S, optimize = true);</span>
+<a name="l00232"></a>00232 <span class="comment"></span>
+<a name="l00233"></a>00233 <span class="comment">void qvSolveCubicPolynomialAux(const double a0, const double a1, const double a2, const double a3, double cg[6])</span>
+<a name="l00234"></a>00234 <span class="comment">    {</span>
+<a name="l00235"></a>00235 <span class="comment">    const double t1 = 0.1e1 / a3;</span>
+<a name="l00236"></a>00236 <span class="comment">    const double t2 = (a1 * a2);</span>
+<a name="l00237"></a>00237 <span class="comment">    const double t5 = (a3 * a3);</span>
+<a name="l00238"></a>00238 <span class="comment">    const double t8 = (a2 * a2);</span>
+<a name="l00239"></a>00239 <span class="comment">    const double t9 = (t8 * a2);</span>
+<a name="l00240"></a>00240 <span class="comment">    const double t11 = sqrt(0.3e1);</span>
+<a name="l00241"></a>00241 <span class="comment">    const double t12 = (a1 * a1);</span>
+<a name="l00242"></a>00242 <span class="comment">    const double t20 = (a0 * a0);</span>
+<a name="l00243"></a>00243 <span class="comment">    const double t25 = 4 * t12 * a1 * a3 - t12 * t8 - 18 * t2 * a3 * a0 + 27 * t20 * t5 + 4 * a0 * t9;</span>
+<a name="l00244"></a>00244 <span class="comment">    const double t26 = abs(t25);</span>
+<a name="l00245"></a>00245 <span class="comment">    const double t27 = sqrt(t26);</span>
+<a name="l00246"></a>00246 <span class="comment">    const double t28 = t11 * t27;</span>
+<a name="l00247"></a>00247 <span class="comment">    const double t29 = (t25&gt;0 ? 1 : (t25&lt;0 ? -1 : 0));</span>
+<a name="l00248"></a>00248 <span class="comment">    const double t34 = (36 * t2 * a3) - (108 * a0 * t5) - (8 * t9) + 0.6e1 * t28 * (1 + t29) * a3;</span>
+<a name="l00249"></a>00249 <span class="comment">    const double t35 = t34 * t34;</span>
+<a name="l00250"></a>00250 <span class="comment">    const double t36 = 1 - t29;</span>
+<a name="l00251"></a>00251 <span class="comment">    const double t37 = t36 * t36;</span>
+<a name="l00252"></a>00252 <span class="comment">    const double t42 = pow(t35 + (108 * t26 * t37 * t5), 0.1e1 / 0.6e1);</span>
+<a name="l00253"></a>00253 <span class="comment">    const double t43 = t1 * t42;</span>
+<a name="l00254"></a>00254 <span class="comment">    const double t47 = atan2(0.6e1 * t28 * t36 * a3, t34);</span>
+<a name="l00255"></a>00255 <span class="comment">    const double t48 = t47 / 0.3e1;</span>
+<a name="l00256"></a>00256 <span class="comment">    const double t49 = cos(t48);</span>
+<a name="l00257"></a>00257 <span class="comment">    const double t50 = t43 * t49;</span>
+<a name="l00258"></a>00258 <span class="comment">    const double t51 = t50 / 0.6e1;</span>
+<a name="l00259"></a>00259 <span class="comment">    const double t52 = a1 * a3;</span>
+<a name="l00260"></a>00260 <span class="comment">    const double t56 = (12 * t52 - 4 * t8) * t1;</span>
+<a name="l00261"></a>00261 <span class="comment">    const double t57 = 0.1e1 / t42;</span>
+<a name="l00262"></a>00262 <span class="comment">    const double t58 = t57 * t49;</span>
+<a name="l00263"></a>00263 <span class="comment">    const double t59 = t56 * t58;</span>
+<a name="l00264"></a>00264 <span class="comment">    const double t62 = a2 * t1 / 0.3e1;</span>
+<a name="l00265"></a>00265 <span class="comment">    const double t64 = sin(t48);</span>
+<a name="l00266"></a>00266 <span class="comment">    const double t65 = t43 * t64;</span>
+<a name="l00267"></a>00267 <span class="comment">    const double t66 = t57 * t64;</span>
+<a name="l00268"></a>00268 <span class="comment">    const double t67 = t56 * t66;</span>
+<a name="l00269"></a>00269 <span class="comment">    const double t69 = t50 / 0.12e2;</span>
+<a name="l00270"></a>00270 <span class="comment">    const double t70 = t59 / 0.12e2;</span>
+<a name="l00271"></a>00271 <span class="comment">    const double t75 = ((2 * t52) - 0.2e1 / 0.3e1 * t8) * t1;</span>
+<a name="l00272"></a>00272 <span class="comment">    const double t79 = t11 * (t65 / 0.6e1 - t75 * t66) / 0.2e1;</span>
+<a name="l00273"></a>00273 <span class="comment">    const double t81 = t65 / 0.12e2;</span>
+<a name="l00274"></a>00274 <span class="comment">    const double t82 = t67 / 0.12e2;</span>
+<a name="l00275"></a>00275 <span class="comment">    const double t86 = t11 * (t51 + t75 * t58) / 0.2e1;</span>
+<a name="l00276"></a>00276 <span class="comment"></span>
+<a name="l00277"></a>00277 <span class="comment">    cg[0] = t51 - t59 / 0.6e1 - t62;</span>
+<a name="l00278"></a>00278 <span class="comment">    cg[1] = t65 / 0.6e1 + t67 / 0.6e1;</span>
+<a name="l00279"></a>00279 <span class="comment">    cg[2] = -t69 + t70 - t62 - t79;</span>
+<a name="l00280"></a>00280 <span class="comment">    cg[3] = -t81 - t82 + t86;</span>
+<a name="l00281"></a>00281 <span class="comment">    cg[4] = -t69 + t70 - t62 + t79;</span>
+<a name="l00282"></a>00282 <span class="comment">    cg[5] = -t81 - t82 - t86;</span>
+<a name="l00283"></a>00283 <span class="comment">    }</span>
+<a name="l00284"></a>00284 <span class="comment">*/</span>
+<a name="l00285"></a>00285 
+<a name="l00286"></a><a class="code" href="group__qvmath.html#gaeb39222b657a43c07ce908b9813a8e6b">00286</a> <span class="keywordtype">double</span> <a class="code" href="group__qvmath.html#gaeb39222b657a43c07ce908b9813a8e6b" title="Obtains the geometric distance between a point and a line in the 2D plane.">qvPointLineDistance</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;l, <span class="keyword">const</span> QPointF &amp;p)
+<a name="l00287"></a>00287         {
+<a name="l00288"></a>00288         <span class="keywordflow">return</span> ABS(l[0] * p.x() + l[1] * p.y() + l[2]) / sqrt(POW2(l[0]) + POW2(l[1]));
+<a name="l00289"></a>00289         }
+<a name="l00290"></a>00290 
+<a name="l00291"></a><a class="code" href="group__qvmath.html#ga459fc88ab2ecb0145f7a4d88f52b1589">00291</a> <span class="keywordtype">double</span> <a class="code" href="group__qvmath.html#ga459fc88ab2ecb0145f7a4d88f52b1589" title="Returns the natural number closest to a given real value.">qvSymmetricFloor</a>( <span class="keyword">const</span> <span class="keywordtype">double</span> value )
+<a name="l00292"></a>00292   {
+<a name="l00293"></a>00293   <span class="keywordflow">if</span> (value &lt; 0.0)
+<a name="l00294"></a>00294     <span class="keywordflow">return</span> ceil( value );
+<a name="l00295"></a>00295   <span class="keywordflow">else</span>
+<a name="l00296"></a>00296     <span class="keywordflow">return</span> floor( value );
+<a name="l00297"></a>00297   }
+<a name="l00298"></a>00298 
+<a name="l00299"></a>00299 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

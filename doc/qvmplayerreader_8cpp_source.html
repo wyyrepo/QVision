@@ -1,0 +1,656 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvio/qvmplayerreader.cpp</h1><a href="qvmplayerreader_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001  <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;sys/types.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;sys/stat.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;unistd.h&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;fcntl.h&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QTimer&gt;</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="preprocessor">#ifdef QVIPP</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#endif // QVIPP</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;qvip.h&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;<a class="code" href="qvip_2qvimageio_8h.html" title="File from the QVision library.">qvimageio.h</a>&gt;</span>
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QVMPlayerReader&gt;</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="comment">/******************* Auxiliary QVCheckOKMPlayer class *******************/</span>
+<a name="l00049"></a>00049 QVCheckOKMPlayer::QVCheckOKMPlayer(QFile &amp; fifo_file,<span class="keywordtype">int</span> max_time_ms_to_wait_for_open) : QThread(), _fifo_file(fifo_file), _max_time_ms_to_wait_for_open(max_time_ms_to_wait_for_open)
+<a name="l00050"></a>00050        {
+<a name="l00051"></a>00051        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVCheckOKMPlayer::QVCheckOKMPlayer() &lt;- starting thread&quot;</span>;
+<a name="l00052"></a>00052        moveToThread(<span class="keyword">this</span>);
+<a name="l00053"></a>00053        start();
+<a name="l00054"></a>00054        }
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> QVCheckOKMPlayer::run()
+<a name="l00057"></a>00057        {
+<a name="l00058"></a>00058        QTimer::singleShot(_max_time_ms_to_wait_for_open, <span class="keyword">this</span>, SLOT(writeErrorInFifo()));
+<a name="l00059"></a>00059        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVCheckOKMPlayer::run() &lt;- entering event loop&quot;</span>;
+<a name="l00060"></a>00060        exec();
+<a name="l00061"></a>00061        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVCheckOKMPlayer::run() &lt;- back from event loop&quot;</span>;
+<a name="l00062"></a>00062        }
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="keywordtype">void</span> QVCheckOKMPlayer::writeErrorInFifo()
+<a name="l00065"></a>00065        {
+<a name="l00066"></a>00066        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVCheckOKMPlayerCamera::writeErrorInFifo()&quot;</span>;
+<a name="l00067"></a>00067        _fifo_file.write(<span class="stringliteral">&quot;MPLAYER ERROR\n&quot;</span>);
+<a name="l00068"></a>00068        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVCheckOKMPlayerCamera::writeErrorInFifo() -&gt; return&quot;</span>;
+<a name="l00069"></a>00069        };
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="comment">/***************************** QVMPlayerReader class **************************/</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="keywordtype">void</span> QVMPlayerReader::initMPlayerArgs(QString urlString, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> suggested_cols, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> suggested_rows)
+<a name="l00074"></a>00074        {
+<a name="l00075"></a>00075        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::initMPlayerArgs(&quot;</span> &lt;&lt; urlString &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; suggested_cols &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; suggested_rows &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077        mplayer_args = QStringList();
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079        <span class="comment">// Loop option and fixed-vo must go first:</span>
+<a name="l00080"></a>00080        <span class="keywordflow">if</span>(not (open_options &amp; <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3" title="Continue from the beginning of the video source when it reaches the end.">QVVideoReader::NoLoop</a>)) mplayer_args &lt;&lt; <span class="stringliteral">&quot;-loop&quot;</span> &lt;&lt; <span class="stringliteral">&quot;0&quot;</span>;
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082        mplayer_args &lt;&lt; <span class="stringliteral">&quot;-fixed-vo&quot;</span>;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084        QUrl url(urlString);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086        path = QString();
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088        <span class="keywordflow">if</span> (url.host() != <span class="stringliteral">&quot;&quot;</span>)
+<a name="l00089"></a>00089                path = url.host() + <span class="stringliteral">&quot;/&quot;</span>;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091        path += url.path();
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093        <span class="comment">// Here we infer the type of the video source from the url.</span>
+<a name="l00094"></a>00094        <span class="comment">// If it is not specified in the schema of it, certain match rules are</span>
+<a name="l00095"></a>00095        <span class="comment">// applied to guess it out.</span>
+<a name="l00096"></a>00096        <span class="keywordflow">if</span> (url.scheme() != <span class="stringliteral">&quot;&quot;</span>)                          <span class="comment">// schema specified by the user</span>
+<a name="l00097"></a>00097                schema = url.scheme();
+<a name="l00098"></a>00098        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (urlString.startsWith(<span class="stringliteral">&quot;/dev/video&quot;</span>))     <span class="comment">// a v4l device</span>
+<a name="l00099"></a>00099                schema = <span class="stringliteral">&quot;v4l&quot;</span>;
+<a name="l00100"></a>00100        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (urlString.startsWith(<span class="stringliteral">&quot;/dev/dv&quot;</span>))        <span class="comment">// a dv device</span>
+<a name="l00101"></a>00101                schema = <span class="stringliteral">&quot;dv&quot;</span>;
+<a name="l00102"></a>00102        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (urlString.contains(<span class="stringliteral">&quot;*&quot;</span>))                <span class="comment">// a multifile</span>
+<a name="l00103"></a>00103                schema = <span class="stringliteral">&quot;mf&quot;</span>;
+<a name="l00104"></a>00104        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (urlString.startsWith(<span class="stringliteral">&quot;www.&quot;</span>))           <span class="comment">// a http file</span>
+<a name="l00105"></a>00105                schema = <span class="stringliteral">&quot;http&quot;</span>;
+<a name="l00106"></a>00106        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (urlString.startsWith(<span class="stringliteral">&quot;ftp.&quot;</span>))           <span class="comment">// a ftp file</span>
+<a name="l00107"></a>00107                schema = <span class="stringliteral">&quot;ftp&quot;</span>;
+<a name="l00108"></a>00108        <span class="keywordflow">else</span>
+<a name="l00109"></a>00109                schema = QString();
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111        live_camera = TRUE;      <span class="comment">// Default configuration; later we set it to FALSE if it applies.</span>
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113        <span class="comment">// Different mplayer args for different kind of image sources:</span>
+<a name="l00114"></a>00114        <span class="keywordflow">if</span> ((schema == <span class="stringliteral">&quot;v4l&quot;</span>) or (schema == <span class="stringliteral">&quot;v4l2&quot;</span>) or (schema == <span class="stringliteral">&quot;analog&quot;</span>))
+<a name="l00115"></a>00115                {
+<a name="l00116"></a>00116                <span class="comment">// Video for Linux cameras:</span>
+<a name="l00117"></a>00117                QString urlQueryValues = QString(<span class="stringliteral">&quot;driver=%1:device=%2&quot;</span>).arg(schema).arg(path);
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119                QList&lt;QPair&lt;QString, QString&gt; &gt; queryItems = url.queryItems();
+<a name="l00120"></a>00120                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; queryItems.size(); ++i)
+<a name="l00121"></a>00121                        urlQueryValues += <span class="stringliteral">&quot;:&quot;</span> + queryItems.at(i).first + <span class="stringliteral">&quot;=&quot;</span> + queryItems.at(i).second;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123                mplayer_args &lt;&lt; <span class="stringliteral">&quot;tv://&quot;</span> &lt;&lt; <span class="stringliteral">&quot;-tv&quot;</span> &lt;&lt; urlQueryValues;
+<a name="l00124"></a>00124                }
+<a name="l00125"></a>00125        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (schema == <span class="stringliteral">&quot;dv&quot;</span>)
+<a name="l00126"></a>00126                <span class="comment">// DV cameras (connected through firewire):</span>
+<a name="l00127"></a>00127                mplayer_args &lt;&lt; path &lt;&lt; <span class="stringliteral">&quot;-demuxer&quot;</span> &lt;&lt; <span class="stringliteral">&quot;rawdv&quot;</span> &lt;&lt; <span class="stringliteral">&quot;-cache&quot;</span> &lt;&lt; <span class="stringliteral">&quot;400&quot;</span>;
+<a name="l00128"></a>00128        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (schema == <span class="stringliteral">&quot;iidc&quot;</span>)
+<a name="l00129"></a>00129                <span class="comment">// IIDC cameras (connected through firewire):</span>
+<a name="l00130"></a>00130                <span class="comment">// For example, iidc:///dev/video1394/0?from=/dev/video0:to=/dev/video1</span>
+<a name="l00131"></a>00131                qFatal(<span class="stringliteral">&quot;Currently this driver does not work (apparently with\n&quot;</span>
+<a name="l00132"></a>00132                        <span class="stringliteral">&quot;vloopback writing and then reading from a fifo with mplayer\ndoes not work).\n&quot;</span>);
+<a name="l00133"></a>00133        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (schema == <span class="stringliteral">&quot;tv&quot;</span>)
+<a name="l00134"></a>00134                <span class="comment">// Analog TV input:</span>
+<a name="l00135"></a>00135                qFatal(<span class="stringliteral">&quot;tv URL: Still not implemented\n&quot;</span>);
+<a name="l00136"></a>00136        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (schema == <span class="stringliteral">&quot;dvb&quot;</span>) {
+<a name="l00137"></a>00137                <span class="comment">// Digital TV input:</span>
+<a name="l00138"></a>00138                live_camera = TRUE;
+<a name="l00139"></a>00139                mplayer_args &lt;&lt; urlString; <span class="comment">// dvb://CHANNEL goes to mplayer &quot;as is&quot;.</span>
+<a name="l00140"></a>00140        } <span class="keywordflow">else</span>   <span class="comment">// Format can be rtsp:// http://, ftp://, dvd://, vcd://, mf:// or file://</span>
+<a name="l00141"></a>00141                {
+<a name="l00142"></a>00142                <span class="comment">//  We pass the url it directly to mplayer:</span>
+<a name="l00143"></a>00143                <span class="keywordflow">if</span>(schema == <span class="stringliteral">&quot;rtsp&quot;</span>)
+<a name="l00144"></a>00144                        live_camera = TRUE;
+<a name="l00145"></a>00145                <span class="keywordflow">else</span>
+<a name="l00146"></a>00146                        live_camera = FALSE;
+<a name="l00147"></a>00147                <span class="keywordflow">if</span> (schema != <span class="stringliteral">&quot;&quot;</span>)
+<a name="l00148"></a>00148                        mplayer_args &lt;&lt; urlString; <span class="comment">//QString(schema + &quot;://&quot; + path);</span>
+<a name="l00149"></a>00149                <span class="keywordflow">else</span>
+<a name="l00150"></a>00150                        mplayer_args &lt;&lt; path;
+<a name="l00151"></a>00151                }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153        <span class="comment">// IMPORTANT!! All -vf filters MUST be together, separated by commas, and in</span>
+<a name="l00154"></a>00154        <span class="comment">// the right order. By now, we only use deinterlacing and scale, and in that order:</span>
+<a name="l00155"></a>00155        QString aux;
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157        <span class="comment">// Deinterlace option:</span>
+<a name="l00158"></a>00158        <span class="keywordflow">if</span>(open_options &amp; <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bad86fd4f8748cc6613fb55d663052ccbd" title="(Mplayer only) Make mplayer deinterlace the image (odd lines).">QVVideoReader::Deinterlaced</a>) aux = <span class="stringliteral">&quot;pp=md&quot;</span>;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160        <span class="comment">// Scaling:</span>
+<a name="l00161"></a>00161        <span class="keywordflow">if</span>(suggested_cols != 0 and suggested_rows != 0)
+<a name="l00162"></a>00162                {
+<a name="l00163"></a>00163                <span class="keywordflow">if</span>(aux != QString())
+<a name="l00164"></a>00164                        aux += QString(<span class="stringliteral">&quot;,scale=%1:%2&quot;</span>).arg(suggested_cols).arg(suggested_rows);
+<a name="l00165"></a>00165                <span class="keywordflow">else</span>
+<a name="l00166"></a>00166                        aux = QString(<span class="stringliteral">&quot;scale=%1:%2&quot;</span>).arg(suggested_cols).arg(suggested_rows);
+<a name="l00167"></a>00167                }
+<a name="l00168"></a>00168        <span class="keywordflow">if</span> (aux != QString()) mplayer_args &lt;&lt; <span class="stringliteral">&quot;-vf&quot;</span> &lt;&lt; aux;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170        <span class="comment">// Real time option:</span>
+<a name="l00171"></a>00171        <span class="keywordflow">if</span>(not (open_options &amp; <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d">QVVideoReader::RealTime</a>))
+<a name="l00172"></a>00172                {
+<a name="l00173"></a>00173                <span class="keywordflow">if</span>(not live_camera)
+<a name="l00174"></a>00174                        mplayer_args &lt;&lt; <span class="stringliteral">&quot;-benchmark&quot;</span>;
+<a name="l00175"></a>00175                }
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177        <span class="comment">// Additional arguments (slave, quiet, nosound &amp; yuv4mpeg output):</span>
+<a name="l00178"></a>00178        mplayer_args &lt;&lt; <span class="stringliteral">&quot;-slave&quot;</span> &lt;&lt; <span class="stringliteral">&quot;-quiet&quot;</span> &lt;&lt; <span class="stringliteral">&quot;-nosound&quot;</span> &lt;&lt; <span class="stringliteral">&quot;-vo&quot;</span> &lt;&lt; QString(<span class="stringliteral">&quot;yuv4mpeg:file=%1&quot;</span>).arg(namedPipe-&gt;getInputFilePath());
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::initMPlayerArgs(): MPlayer args = &quot;</span> &lt;&lt; mplayer_args;
+<a name="l00181"></a>00181        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::initMPlayerArgs() &lt;- return&quot;</span>;
+<a name="l00182"></a>00182        }
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184 <span class="keywordtype">int</span> QVMPlayerReader::interpretMPlayerOutput()
+<a name="l00185"></a>00185        {
+<a name="l00186"></a>00186        <span class="keywordtype">int</span> length = -1;
+<a name="l00187"></a>00187        <span class="keywordtype">char</span> buf[1024];
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189        length = mplayer-&gt;readLine(buf, <span class="keyword">sizeof</span>(buf));
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191        <span class="keywordflow">if</span> (length == -1)
+<a name="l00192"></a>00192                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::interpretMPlayerOutput(): length == -1&quot;</span>;
+<a name="l00193"></a>00193        <span class="keywordflow">else</span>     {
+<a name="l00194"></a>00194                QString str(buf);
+<a name="l00195"></a>00195                QStringList variables = str.simplified().split(<span class="stringliteral">&quot;=&quot;</span>);
+<a name="l00196"></a>00196                QStringList palabras = str.simplified().split(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198                <span class="keywordflow">if</span>(variables[0] == <span class="stringliteral">&quot;ANS_LENGTH&quot;</span>)
+<a name="l00199"></a>00199                        {
+<a name="l00200"></a>00200                        time_length = variables[1].toDouble();
+<a name="l00201"></a>00201                        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::interpretMPlayerOutput(): updating time_length =&quot;</span> &lt;&lt; time_length;
+<a name="l00202"></a>00202                        }
+<a name="l00203"></a>00203                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(variables[0] == <span class="stringliteral">&quot;ANS_TIME_POSITION&quot;</span>)
+<a name="l00204"></a>00204                        {
+<a name="l00205"></a>00205                        time_pos = variables[1].toDouble();
+<a name="l00206"></a>00206                        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::interpretMPlayerOutput(): updating time_pos =&quot;</span> &lt;&lt; time_pos;
+<a name="l00207"></a>00207                        }
+<a name="l00208"></a>00208                <span class="keywordflow">else</span>
+<a name="l00209"></a>00209                        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::interpretMPlayerOutput(): uninterpreted mplayer output:&quot;</span> &lt;&lt; str;
+<a name="l00210"></a>00210                }
+<a name="l00211"></a>00211        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::interpretMPlayerOutput() &lt;- return &quot;</span> &lt;&lt; length;
+<a name="l00212"></a>00212        <span class="keywordflow">return</span> length;
+<a name="l00213"></a>00213        }
+<a name="l00214"></a>00214 
+<a name="l00215"></a>00215 <span class="keywordtype">bool</span> QVMPlayerReader::performGrab()
+<a name="l00216"></a>00216        {
+<a name="l00217"></a>00217        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab()&quot;</span>;
+<a name="l00218"></a>00218 
+<a name="l00219"></a>00219        <span class="keywordflow">if</span> (not camera_opened)
+<a name="l00220"></a>00220                {
+<a name="l00221"></a>00221                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab() returns FALSE (camera is closed)&quot;</span>;
+<a name="l00222"></a>00222                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00223"></a>00223                }
+<a name="l00224"></a>00224 
+<a name="l00225"></a>00225        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab(): sending command get_time_pos to mplayer&quot;</span>;
+<a name="l00226"></a>00226        mplayer-&gt;write(<span class="stringliteral">&quot;pausing_keep get_time_pos\n&quot;</span>); <span class="comment">// pausing_keep in fact not needed...</span>
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228        <span class="comment">// New frame read:</span>
+<a name="l00229"></a>00229        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab: reading YUV frame: readYUV4MPEG2Frame()&quot;</span>;
+<a name="l00230"></a>00230        <span class="keywordflow">if</span> (!<a class="code" href="group__qvip.html#ga28c6421742db54f40f50da2387aea93e" title="Read YUV image frames from a yuv4mpeg2 video file.">readYUV4MPEG2Frame</a>(fifoInput, imgY, imgU, imgV))
+<a name="l00231"></a>00231                {
+<a name="l00232"></a>00232                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab: No more frames left, closing camera&quot;</span>;
+<a name="l00233"></a>00233                end_of_video = TRUE;
+<a name="l00234"></a>00234                <a class="code" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51" title="Pure virtual close method.">close</a>();
+<a name="l00235"></a>00235                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab: No more frames left, camera closed, returning false&quot;</span>;
+<a name="l00236"></a>00236                <span class="keywordflow">return</span> FALSE;
+<a name="l00237"></a>00237                }
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239        frames_grabbed++;
+<a name="l00240"></a>00240        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab: new frame read (&quot;</span> &lt;&lt; frames_grabbed &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242        <span class="comment">// Interpret mplayer output while it is writing something:</span>
+<a name="l00243"></a>00243        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab: now interpreting mplayer output&quot;</span>;
+<a name="l00244"></a>00244        <span class="keywordflow">while</span>(interpretMPlayerOutput() &gt; 0);
+<a name="l00245"></a>00245 
+<a name="l00246"></a>00246        <span class="comment">/*qDebug() &lt;&lt; &quot;QVMPlayerReader::performGrab: emitting newGrab() signal&quot;;</span>
+<a name="l00247"></a>00247 <span class="comment">       emit newGrab();*/</span>
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::performGrab() &lt;- returning TRUE&quot;</span>;
+<a name="l00250"></a>00250        <span class="keywordflow">return</span> TRUE;
+<a name="l00251"></a>00251        }
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> iRoundUp(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) {
+<a name="l00254"></a>00254  <span class="keywordflow">return</span> (a % b == 0) ? a : b*(a / b + 1) ;
+<a name="l00255"></a>00255 }
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257 <span class="keywordtype">bool</span> QVMPlayerReader::open(  <span class="keyword">const</span> QString &amp; urlstring,
+<a name="l00258"></a>00258                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_cols,
+<a name="l00259"></a>00259                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_rows,
+<a name="l00260"></a>00260                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_fps,
+<a name="l00261"></a>00261                     <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> &amp; suggested_opts,
+<a name="l00262"></a>00262                     <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">QVVideoReader::TSourceMode</a> &amp; source_mode)
+<a name="l00263"></a>00263 <span class="comment">//bool QVMPlayerReader::open(const QString &amp; urlstring, OpenOptions suggested_opts, unsigned int waitDelay, unsigned int suggested_cols, unsigned int suggested_rows)</span>
+<a name="l00264"></a>00264        {
+<a name="l00265"></a>00265         open_options = suggested_opts;
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="comment">// By default, ignore input video fps, and force user value (unless realTime option flag is ON, in which</span>
+<a name="l00268"></a>00268         <span class="comment">// case we will set it to zero, as the mplayer process itself will force original fps):</span>
+<a name="l00269"></a>00269         <span class="keywordflow">if</span>(open_options &amp; QVVideoReader::RealTime) {
+<a name="l00270"></a>00270             suggested_fps = 0;
+<a name="l00271"></a>00271         }
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273         <span class="comment">// FIXME: review this on waitDelay; (formerly an input parameter).</span>
+<a name="l00274"></a>00274         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> waitDelay = 0;
+<a name="l00275"></a>00275 
+<a name="l00276"></a>00276         source_mode = <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421afdd3c4ba8977741d57f806a72aa11b96" title="Source outputs YUV images by default.">QVVideoReader::YUVMode</a>;
+<a name="l00277"></a>00277        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(&quot;</span> &lt;&lt; qPrintable(urlstring) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(suggested_opts) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>
+<a name="l00278"></a>00278                &lt;&lt; suggested_cols &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; suggested_rows &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; suggested_opts &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280        <span class="keywordflow">if</span>(<a class="code" href="classQVApplication.html#aac25e39c09253a1e5913b92d7dee8df7" title="Gets a pointer to the only QVApplication instance.">QVApplication::instance</a>() == NULL) {
+<a name="l00281"></a>00281            std::cerr &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader class needs a QVApplication object to have been previously created in order to be used (simply declare one in your main function.)\n&quot;</span>;
+<a name="l00282"></a>00282            <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00283"></a>00283        }
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285        <span class="keywordflow">if</span> (camera_opened)
+<a name="l00286"></a>00286                {
+<a name="l00287"></a>00287                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open() &lt;- closing previously opened camera&quot;</span>;
+<a name="l00288"></a>00288                <a class="code" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51" title="Pure virtual close method.">close</a>();
+<a name="l00289"></a>00289                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open() &lt;- previously opened camera closed&quot;</span>;
+<a name="l00290"></a>00290                }
+<a name="l00291"></a>00291 
+<a name="l00292"></a>00292        <span class="comment">// Pipe initialization</span>
+<a name="l00293"></a>00293        namedPipe = <span class="keyword">new</span> QNamedPipe(QString(<span class="stringliteral">&quot;mplayer&quot;</span>));
+<a name="l00294"></a>00294        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): Named pipe created&quot;</span> &lt;&lt; namedPipe-&gt;getOutputFilePath();
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296        <span class="comment">// Launching MPlayer:</span>
+<a name="l00297"></a>00297        mplayer = <span class="keyword">new</span> QProcess;
+<a name="l00298"></a>00298        mplayer-&gt;setParent(<span class="keyword">this</span>);                                <span class="comment">// set the mplayerreader&#39;s parent = this, and move it to his thread.</span>
+<a name="l00299"></a>00299        mplayer-&gt;moveToThread(this-&gt;thread());   <span class="comment">// For QVMPlayerReader can send it signals, like waitForFinished in close</span>
+<a name="l00300"></a>00300        initMPlayerArgs(urlstring, suggested_cols, suggested_rows);
+<a name="l00301"></a>00301        mplayer-&gt;start(MPLAYER_BINARY_PATH, mplayer_args);
+<a name="l00302"></a>00302        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): after mplayer-&gt;start()&quot;</span>;
+<a name="l00303"></a>00303        <span class="keywordflow">if</span>(not mplayer-&gt;waitForStarted(1000))
+<a name="l00304"></a>00304                qFatal(<span class="stringliteral">&quot;Mplayer failed to start in a second: Are you sure it is installed and in the correct PATH?&quot;</span>);
+<a name="l00305"></a>00305        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): after mplayer-&gt;waitForstarted()&quot;</span>;
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307        <span class="comment">// Important to open fifo now in ReadWrite mode, to avoid infinite waiting if mplayer did</span>
+<a name="l00308"></a>00308        <span class="comment">// not start OK, and because perhaps the former guarding thread will write in the FIFO:</span>
+<a name="l00309"></a>00309        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): opening fifo &quot;</span> &lt;&lt; qPrintable(namedPipe-&gt;getOutputFilePath());
+<a name="l00310"></a>00310        fifoInput.setFileName(namedPipe-&gt;getOutputFilePath());
+<a name="l00311"></a>00311        <span class="keywordflow">if</span>(fifoInput.open(QIODevice::ReadWrite|QIODevice::Unbuffered) == -1)
+<a name="l00312"></a>00312                qFatal(<span class="stringliteral">&quot;Error opening fifo %s\n&quot;</span>, qPrintable(namedPipe-&gt;getOutputFilePath()));
+<a name="l00313"></a>00313        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): fifo opened&quot;</span>;
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315        <span class="comment">// We create a guarding thread that will unblock the subsequent readYUV4MPEG2Header in the</span>
+<a name="l00316"></a>00316        <span class="comment">// case that mplayer does not start OK (due, for example, to a wrong URL, an incorrect</span>
+<a name="l00317"></a>00317        <span class="comment">// file format, or whatever). If mplayer starts OK before two seconds (for local videos),</span>
+<a name="l00318"></a>00318        <span class="comment">// four seconds for cameras, or twelve seconds (for DVD, VCD and remote videos), this thread</span>
+<a name="l00319"></a>00319        <span class="comment">// silently stops and is deleted.</span>
+<a name="l00320"></a>00320        uInt waitMilisecs;
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322        <span class="keywordflow">if</span> (waitDelay &gt; 0)
+<a name="l00323"></a>00323                waitMilisecs = waitDelay;
+<a name="l00324"></a>00324        <span class="keywordflow">else</span> <span class="keywordflow">if</span>( schema == <span class="stringliteral">&quot;http&quot;</span> or
+<a name="l00325"></a>00325                        schema == <span class="stringliteral">&quot;ftp&quot;</span> or
+<a name="l00326"></a>00326                        schema == <span class="stringliteral">&quot;rtsp&quot;</span> or
+<a name="l00327"></a>00327                        schema == <span class="stringliteral">&quot;dvd&quot;</span> or
+<a name="l00328"></a>00328                        schema == <span class="stringliteral">&quot;vcd&quot;</span> or
+<a name="l00329"></a>00329                        schema == <span class="stringliteral">&quot;dvb&quot;</span>)
+<a name="l00330"></a>00330                waitMilisecs = 15000;
+<a name="l00331"></a>00331        <span class="keywordflow">else</span> <span class="keywordflow">if</span>( schema == <span class="stringliteral">&quot;v4l&quot;</span> or
+<a name="l00332"></a>00332                        schema == <span class="stringliteral">&quot;v4l2&quot;</span>)
+<a name="l00333"></a>00333                waitMilisecs = 4000;
+<a name="l00334"></a>00334        <span class="keywordflow">else</span>
+<a name="l00335"></a>00335                waitMilisecs = 2000;
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337        <span class="comment">//std::cout &lt;&lt; &quot;QVMPlayerOpen: waitDelay = &quot; &lt;&lt; waitMilisecs &lt;&lt; std::endl;</span>
+<a name="l00338"></a>00338 
+<a name="l00339"></a>00339        QVCheckOKMPlayer check_thread(fifoInput, waitMilisecs);
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341        qDebug()&lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): going to read YUV header&quot;</span>;
+<a name="l00342"></a>00342        <span class="comment">// Now we read the YUV header:</span>
+<a name="l00343"></a>00343        <span class="keywordflow">if</span> (!<a class="code" href="group__qvip.html#ga9dc03d51efde6cf108af4d6cac41cb82" title="Read yuv4mpeg2 header from a video file.">readYUV4MPEG2Header</a>(fifoInput, cols, rows, fps))
+<a name="l00344"></a>00344                {
+<a name="l00345"></a>00345                qWarning() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): Warning: Mplayer could not open the requested video source (&quot;</span>
+<a name="l00346"></a>00346                           &lt;&lt; qPrintable(urlstring) &lt;&lt; <span class="stringliteral">&quot;) of type &quot;</span> &lt;&lt; qPrintable(schema);
+<a name="l00347"></a>00347                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): Terminating and killing mplayer&quot;</span>;
+<a name="l00348"></a>00348                mplayer-&gt;terminate();
+<a name="l00349"></a>00349                <span class="keywordflow">if</span> (not mplayer-&gt;waitForFinished(500)) mplayer-&gt;kill();
+<a name="l00350"></a>00350                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): Deleting pipe and mplayer&quot;</span>;
+<a name="l00351"></a>00351                <span class="keyword">delete</span> namedPipe;
+<a name="l00352"></a>00352                <span class="keyword">delete</span> mplayer;
+<a name="l00353"></a>00353                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): closing fifo&quot;</span>;
+<a name="l00354"></a>00354                fifoInput.close();
+<a name="l00355"></a>00355                <span class="comment">// Finish guarding thread.</span>
+<a name="l00357"></a>00357 <span class="comment"></span>               <span class="comment">/*while(not check_thread.isFinished())</span>
+<a name="l00358"></a>00358 <span class="comment">               {</span>
+<a name="l00359"></a>00359 <span class="comment">                       qDebug() &lt;&lt; &quot;QVMPlayerReader::open(): quitting guarding thread (incorrect mplayer launch)&quot;;</span>
+<a name="l00360"></a>00360 <span class="comment">                       check_thread.quit();</span>
+<a name="l00361"></a>00361 <span class="comment">                       qDebug() &lt;&lt; &quot;QVMPlayerReader::open(): CheckOKMPlayerCamera thread quitted after correct launch of mplayer&quot;;</span>
+<a name="l00362"></a>00362 <span class="comment">                       check_thread.wait(100);</span>
+<a name="l00363"></a>00363 <span class="comment">               }*/</span>
+<a name="l00364"></a>00364                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): quitting guarding thread&quot;</span>;
+<a name="l00365"></a>00365                <span class="keywordflow">do</span> check_thread.quit();
+<a name="l00366"></a>00366                <span class="keywordflow">while</span> (not check_thread.wait(100));
+<a name="l00367"></a>00367                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): CheckOKMPlayerCamera thread quitted&quot;</span>;
+<a name="l00368"></a>00368                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): Returning FALSE&quot;</span>;
+<a name="l00369"></a>00369                cols = 0;
+<a name="l00370"></a>00370                rows = 0;
+<a name="l00371"></a>00371                fps = 0;
+<a name="l00372"></a>00372                frames_grabbed = 0;
+<a name="l00373"></a>00373                camera_opened = FALSE;
+<a name="l00374"></a>00374                <span class="keywordflow">return</span> FALSE;
+<a name="l00375"></a>00375                }
+<a name="l00376"></a>00376        qDebug()&lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): back from read YUV header: cols = &quot;</span> &lt;&lt; cols &lt;&lt; <span class="stringliteral">&quot; rows = &quot;</span> &lt;&lt; rows &lt;&lt; <span class="stringliteral">&quot;, fps = &quot;</span> &lt;&lt; fps;
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378        <span class="comment">// Finish guarding thread.</span>
+<a name="l00380"></a>00380 <span class="comment"></span>       <span class="comment">/*while(not check_thread.wait(0))</span>
+<a name="l00381"></a>00381 <span class="comment">       {</span>
+<a name="l00382"></a>00382 <span class="comment">               qDebug() &lt;&lt; &quot;QVMPlayerReader::open(): quitting guarding thread  (correct mplayer launch)&quot;;</span>
+<a name="l00383"></a>00383 <span class="comment">               check_thread.quit();</span>
+<a name="l00384"></a>00384 <span class="comment">               qDebug() &lt;&lt; &quot;QVMPlayerReader::open(): CheckOKMPlayerCamera thread quitted after correct launch of mplayer&quot;;cvf</span>
+<a name="l00385"></a>00385 <span class="comment">               check_thread.wait(100);</span>
+<a name="l00386"></a>00386 <span class="comment">       }*/</span>
+<a name="l00387"></a>00387        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): quitting guarding thread&quot;</span>;
+<a name="l00388"></a>00388        <span class="keywordflow">do</span> check_thread.quit();
+<a name="l00389"></a>00389        <span class="keywordflow">while</span> (not check_thread.wait(100));
+<a name="l00390"></a>00390        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): CheckOKMPlayerCamera thread finished after correct launch of mplayer&quot;</span>;
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392        <span class="comment">// Now we close the fifo and open it again in ReadOnly mode (to avoid readYUV4MPEGFrame to block if we reach</span>
+<a name="l00393"></a>00393        <span class="comment">// the end of the mplayer video). There is also another &quot;dirty trick&quot; here: we must open an aux fifo (which we</span>
+<a name="l00394"></a>00394        <span class="comment">// close just a little bit later) in order not to leave at any moment the FIFO without readers (which could</span>
+<a name="l00395"></a>00395        <span class="comment">// provoke a race condition, because the mplayer process could decide to write in the FIFO just when there</span>
+<a name="l00396"></a>00396        <span class="comment">// are not any FIFO open for reading on it):</span>
+<a name="l00397"></a>00397        QFile fifoAux;
+<a name="l00398"></a>00398        fifoAux.setFileName(namedPipe-&gt;getOutputFilePath());
+<a name="l00399"></a>00399        fifoAux.open(QIODevice::ReadOnly);
+<a name="l00400"></a>00400        fifoInput.close();
+<a name="l00401"></a>00401        <span class="comment">// Here we open the &quot;good&quot; FIFO again, but now in ReadOnly mode:</span>
+<a name="l00402"></a>00402        <span class="keywordflow">if</span>(fifoInput.open(QIODevice::ReadOnly|QIODevice::Unbuffered) == -1)
+<a name="l00403"></a>00403                qFatal(<span class="stringliteral">&quot;Error opening fifo %s\n&quot;</span>, qPrintable(namedPipe-&gt;getOutputFilePath()));
+<a name="l00404"></a>00404        fifoAux.close();
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open(): Header correctly read: cols = &quot;</span>
+<a name="l00407"></a>00407                 &lt;&lt; cols &lt;&lt; <span class="stringliteral">&quot;, rows = &quot;</span> &lt;&lt; rows &lt;&lt; <span class="stringliteral">&quot;, fps = &quot;</span> &lt;&lt; fps;
+<a name="l00408"></a>00408 
+<a name="l00409"></a>00409        <span class="comment">// If we get here, the header was correctly read, proceed to init MPlayer IO processing.</span>
+<a name="l00410"></a>00410        frames_grabbed = 0;
+<a name="l00411"></a>00411        camera_opened = TRUE;
+<a name="l00412"></a>00412 
+<a name="l00413"></a>00413        <span class="comment">// Create adequately sized images (observe 8 byte step alignment by rows):</span>
+<a name="l00414"></a>00414        imgY = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(cols, rows, iRoundUp(cols,8));
+<a name="l00415"></a>00415        imgU = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(cols/2, rows/2, iRoundUp(cols/2,8));
+<a name="l00416"></a>00416        imgV = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(cols/2, rows/2, iRoundUp(cols/2,8));
+<a name="l00417"></a>00417 
+<a name="l00418"></a>00418        <span class="comment">// THIS DOES NOT WORK (mplayer does not write anything until later... so we have to read from it in performGrab()):</span>
+<a name="l00419"></a>00419        <span class="comment">// while(mplayerIO-&gt;time_length == 0)</span>
+<a name="l00420"></a>00420        <span class="comment">//       mplayerIO-&gt;interpretMPlayerOutput();</span>
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open() &lt;- sending get_time_length command to mplayer&quot;</span>;
+<a name="l00423"></a>00423        mplayer-&gt;write(<span class="stringliteral">&quot;get_time_length\n&quot;</span>);
+<a name="l00424"></a>00424        mplayer-&gt;waitForReadyRead();
+<a name="l00425"></a>00425 
+<a name="l00426"></a>00426        <span class="comment">/*qDebug() &lt;&lt; &quot;QVMPlayerReader::open() &lt;- emitting camOpened signal&quot;;</span>
+<a name="l00427"></a>00427 <span class="comment">       emit camOpened();*/</span>
+<a name="l00428"></a>00428 
+<a name="l00429"></a>00429        suggested_cols = cols;
+<a name="l00430"></a>00430        suggested_rows = rows;
+<a name="l00431"></a>00431 
+<a name="l00432"></a>00432        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::open() &lt;- return&quot;</span>;
+<a name="l00433"></a>00433        <span class="keywordflow">return</span> TRUE;
+<a name="l00434"></a>00434        }
+<a name="l00435"></a>00435 
+<a name="l00436"></a>00436 <span class="keywordtype">bool</span> QVMPlayerReader::close()
+<a name="l00437"></a>00437        {
+<a name="l00438"></a>00438        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close()&quot;</span>;
+<a name="l00439"></a>00439 
+<a name="l00440"></a>00440        <span class="keywordflow">if</span> (not camera_opened)
+<a name="l00441"></a>00441                {
+<a name="l00442"></a>00442                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): camera already closed. Returning&quot;</span>;
+<a name="l00443"></a>00443                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00444"></a>00444                }
+<a name="l00445"></a>00445 
+<a name="l00446"></a>00446        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): closing fifo&quot;</span>;
+<a name="l00447"></a>00447        fifoInput.close();
+<a name="l00448"></a>00448 
+<a name="l00449"></a>00449        <span class="keywordflow">if</span>(not end_of_video)
+<a name="l00450"></a>00450                {
+<a name="l00451"></a>00451                qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): going to send quit command to mplayer&quot;</span>;
+<a name="l00452"></a>00452                mplayer-&gt;write(<span class="stringliteral">&quot;quit\n&quot;</span>);
+<a name="l00453"></a>00453                }
+<a name="l00454"></a>00454        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): going to terminate mplayer&quot;</span>;
+<a name="l00455"></a>00455        mplayer-&gt;terminate();
+<a name="l00456"></a>00456        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): going to kill mplayer&quot;</span>;
+<a name="l00457"></a>00457        mplayer-&gt;kill();
+<a name="l00458"></a>00458        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): going to wait for mplayer to finish&quot;</span>;
+<a name="l00459"></a>00459        mplayer-&gt;waitForFinished();
+<a name="l00460"></a>00460        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close(): mplayer finished&quot;</span>;
+<a name="l00461"></a>00461 
+<a name="l00462"></a>00462        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::closecam(): deleting namedpipe&quot;</span>;
+<a name="l00463"></a>00463        <span class="keyword">delete</span> namedPipe;
+<a name="l00464"></a>00464 
+<a name="l00465"></a>00465        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::closecam(): deleting QProcess mplayer&quot;</span>;
+<a name="l00466"></a>00466        <span class="keyword">delete</span> mplayer;
+<a name="l00467"></a>00467 
+<a name="l00468"></a>00468        <span class="comment">// We reset all the members of the class:</span>
+<a name="l00469"></a>00469        open_options = <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604baead4ae3954a9b6c0bd876f8413c32bd0" title="Default options: don&amp;#39;t include any of the other options.">QVVideoReader::Default</a>;
+<a name="l00470"></a>00470        path = QString();
+<a name="l00471"></a>00471        schema = QString();
+<a name="l00472"></a>00472        camera_opened = FALSE;
+<a name="l00473"></a>00473        frames_grabbed = 0;
+<a name="l00474"></a>00474        live_camera = FALSE;
+<a name="l00475"></a>00475        imgY = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>();
+<a name="l00476"></a>00476        imgU = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>();
+<a name="l00477"></a>00477        imgV = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>();
+<a name="l00478"></a>00478        cols = 0;
+<a name="l00479"></a>00479        rows = 0;
+<a name="l00480"></a>00480        fps = 0;
+<a name="l00481"></a>00481        time_length = 0;
+<a name="l00482"></a>00482        time_pos = 0;
+<a name="l00483"></a>00483        end_of_video = FALSE;
+<a name="l00484"></a>00484 
+<a name="l00485"></a>00485        <span class="comment">/*qDebug() &lt;&lt; &quot;QVMPlayerReader::close() &lt;- emitting camClosed signal&quot;;</span>
+<a name="l00486"></a>00486 <span class="comment">       emit camClosed();*/</span>
+<a name="l00487"></a>00487 
+<a name="l00488"></a>00488        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::close() &lt;- return&quot;</span>;
+<a name="l00489"></a>00489        <span class="keywordflow">return</span> TRUE;
+<a name="l00490"></a>00490        }
+<a name="l00491"></a>00491 
+<a name="l00492"></a>00492 <span class="comment">/*bool QVMPlayerReader::grab(QVImage&lt;uChar,1&gt; &amp; imageGray)</span>
+<a name="l00493"></a>00493 <span class="comment">       {</span>
+<a name="l00494"></a>00494 <span class="comment">       qDebug() &lt;&lt; &quot;QVMPlayerReader::grab(imageGray)&quot;;</span>
+<a name="l00495"></a>00495 <span class="comment">       if (performGrab())</span>
+<a name="l00496"></a>00496 <span class="comment">               {</span>
+<a name="l00497"></a>00497 <span class="comment">               imageGray = imgY;</span>
+<a name="l00498"></a>00498 <span class="comment">               return TRUE;</span>
+<a name="l00499"></a>00499 <span class="comment">               }</span>
+<a name="l00500"></a>00500 <span class="comment">       else</span>
+<a name="l00501"></a>00501 <span class="comment">               return FALSE;</span>
+<a name="l00502"></a>00502 <span class="comment">       }</span>
+<a name="l00503"></a>00503 <span class="comment"></span>
+<a name="l00504"></a>00504 <span class="comment">#ifdef QVIPP</span>
+<a name="l00505"></a>00505 <span class="comment">bool QVMPlayerReader::grab(QVImage&lt;uChar,3&gt; &amp; imageRGB)</span>
+<a name="l00506"></a>00506 <span class="comment">       {</span>
+<a name="l00507"></a>00507 <span class="comment">       qDebug() &lt;&lt; &quot;QVMPlayerReader::grab(imageRGB)&quot;;</span>
+<a name="l00508"></a>00508 <span class="comment">       if (performGrab())</span>
+<a name="l00509"></a>00509 <span class="comment">               {</span>
+<a name="l00510"></a>00510 <span class="comment">               imageRGB = QVImage&lt;uChar,3&gt;(imgY.getCols(),imgY.getRows());</span>
+<a name="l00511"></a>00511 <span class="comment">               YUV420ToRGB(imgY, imgU, imgV, imageRGB);</span>
+<a name="l00512"></a>00512 <span class="comment">               return TRUE;</span>
+<a name="l00513"></a>00513 <span class="comment">               }</span>
+<a name="l00514"></a>00514 <span class="comment">       else</span>
+<a name="l00515"></a>00515 <span class="comment">               return FALSE;</span>
+<a name="l00516"></a>00516 <span class="comment">       }</span>
+<a name="l00517"></a>00517 <span class="comment">#endif</span>
+<a name="l00518"></a>00518 <span class="comment">*/</span>
+<a name="l00519"></a>00519 
+<a name="l00520"></a>00520 
+<a name="l00521"></a>00521 <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d" title="Pure virtual grab method.">QVMPlayerReader::grab</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageY, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageU, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imageV)
+<a name="l00522"></a>00522        {
+<a name="l00523"></a>00523        qDebug() &lt;&lt; <span class="stringliteral">&quot;QVMPlayerReader::grab(imageY, imageU, imageV)&quot;</span>;
+<a name="l00524"></a>00524        <span class="keywordflow">if</span> (performGrab())
+<a name="l00525"></a>00525                {
+<a name="l00526"></a>00526                imageY = imgY;
+<a name="l00527"></a>00527                imageU = imgU;
+<a name="l00528"></a>00528                imageV = imgV;
+<a name="l00529"></a>00529                <span class="keywordflow">return</span> TRUE;
+<a name="l00530"></a>00530                }
+<a name="l00531"></a>00531        <span class="keywordflow">else</span>
+<a name="l00532"></a>00532                <span class="keywordflow">return</span> FALSE;
+<a name="l00533"></a>00533        }
+<a name="l00534"></a>00534 
+<a name="l00535"></a>00535 <span class="comment">/*bool QVMPlayerReader::seek(TSeekType seek,double d)</span>
+<a name="l00536"></a>00536 <span class="comment">       {</span>
+<a name="l00537"></a>00537 <span class="comment">       qDebug() &lt;&lt; &quot;QVMPlayerReader::seekCam(&quot; &lt;&lt; static_cast&lt;int&gt;(seek) &lt;&lt; &quot;,&quot; &lt;&lt; d &lt;&lt; &quot;)&quot;;</span>
+<a name="l00538"></a>00538 <span class="comment">       if(not camera_opened) return false;</span>
+<a name="l00539"></a>00539 <span class="comment">       QString command = QString(&quot;pausing_keep seek &quot;) + QString::number(d) + &quot; &quot; + QString::number(seek) + &quot;\n&quot;;</span>
+<a name="l00540"></a>00540 <span class="comment">       mplayer-&gt;write(qPrintable(command)); // pausing keep in fact not needed...</span>
+<a name="l00541"></a>00541 <span class="comment">       qDebug() &lt;&lt; &quot;QVMPlayerReader::seekCam() &lt;~ return&quot;;</span>
+<a name="l00542"></a>00542 <span class="comment">       return true;</span>
+<a name="l00543"></a>00543 <span class="comment">       }*/</span>
+<a name="l00544"></a>00544 
+<a name="l00545"></a>00545 <span class="keywordtype">bool</span> QVMPlayerReader::seek(<span class="keywordtype">int</span> d)
+<a name="l00546"></a>00546        {
+<a name="l00547"></a>00547        <span class="keywordflow">if</span>(not camera_opened) <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00548"></a>00548        QString command = QString(<span class="stringliteral">&quot;pausing_keep seek &quot;</span>) + QString::number(d/fps) + <span class="stringliteral">&quot; 2&quot;</span> + <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00549"></a>00549        std::cout &lt;&lt; <span class="stringliteral">&quot;command to mplayer = &quot;</span> &lt;&lt; qPrintable(command) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00550"></a>00550        mplayer-&gt;write(qPrintable(command)); <span class="comment">// pausing keep in fact not needed...</span>
+<a name="l00551"></a>00551        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00552"></a>00552        }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

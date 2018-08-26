@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVApplication Class Reference<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1><!-- doxytag: class="QVApplication" -->
+<p>Main class for QVision applications.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvapplication_8h_source.html">QVApplication</a>&gt;</code></p>
+
+<p><a href="classQVApplication-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#ae9afd38de95ccabd4e8680d96e98d42f">startItems</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Start the application items.  <a href="#ae9afd38de95ccabd4e8680d96e98d42f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6">quitItems</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Terminates the application items.  <a href="#adba1db46f127c1f17102f819ba0324a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50">quit</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Terminates an application.  <a href="#a1800e439ec3bcb48ffb9f03e195c3b50"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a5e44b11b3ac56a53fcef81bcf6b96d13">QVApplication</a> (int &amp;argc, char **argv, QString info=QString(), bool GUIenabled=TRUE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> object.  <a href="#a5e44b11b3ac56a53fcef81bcf6b96d13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a26cebe56daf97da9bc5f881d3d5abe2d">processArguments</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Process command line arguments without executing.  <a href="#a26cebe56daf97da9bc5f881d3d5abe2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4">exec</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Starts execution of the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>.  <a href="#a629aa9b6d8aa09fdb5ed379167c84af4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#aed7dd19235aed68747f5b35de5196788">setTerminateOnLastBlock</a> (bool terminate)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes an application finish or not when its last block finishes.  <a href="#aed7dd19235aed68747f5b35de5196788"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33">setArgumentAsUsed</a> (QString argument)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Marks a given command line argument as used.  <a href="#a0fdb86c3a330b8c737dd75dc575def33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#abac81490de1809d8f3d741b5a7d779a4">getUnusedArguments</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the list of unprocessed arguments.  <a href="#abac81490de1809d8f3d741b5a7d779a4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a115c9cee9e24213cbe91b52e899b2bec">isRunning</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> is already in the <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">exec()</a> loop.  <a href="#a115c9cee9e24213cbe91b52e899b2bec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#aea98d71162891be7af76a8875502db30">forHelp</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tells if a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> is called for print help.  <a href="#aea98d71162891be7af76a8875502db30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a29268a90a2e72f550f1143e239e2e3e7">getHelp</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets help for a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>.  <a href="#a29268a90a2e72f550f1143e239e2e3e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#ae7495c8995c30b40c3f55dc6d77bdcff">getNumberOfArguments</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the number of total arguments.  <a href="#ae7495c8995c30b40c3f55dc6d77bdcff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a115946f057c917dc38b43c7d2b340449">getArgument</a> (const int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the value of an application argument.  <a href="#a115946f057c917dc38b43c7d2b340449"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#a6379eef13e82e53ef89b390beacc91a9">getArguments</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the argument values.  <a href="#a6379eef13e82e53ef89b390beacc91a9"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQVApplication.html">QVApplication</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVApplication.html#aac25e39c09253a1e5913b92d7dee8df7">instance</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a pointer to the only <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> instance.  <a href="#aac25e39c09253a1e5913b92d7dee8df7"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Main class for QVision applications. </p>
+<p>This is a class that should be used to create a unique application object in every QVision application, generally in the <em>main()</em> function.</p>
+<p>This object should be created before any <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>, QVCamera, <a class="el" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>, or <a class="el" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> object. It is similar to a <a href="http://doc.trolltech.com/4.2/qapplication.html">QApplication</a> object in Qt applications not based on QVision. The <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> object object initializes the camera block objects in the application, and sets the block parameters from the command line, amongst other things. </p>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00055">55</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5e44b11b3ac56a53fcef81bcf6b96d13"></a><!-- doxytag: member="QVApplication::QVApplication" ref="a5e44b11b3ac56a53fcef81bcf6b96d13" args="(int &amp;argc, char **argv, QString info=QString(), bool GUIenabled=TRUE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVApplication::QVApplication </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&nbsp;</td>
+          <td class="paramname"> <em>argv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>info</em> = <code>QString()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>GUIenabled</em> = <code>TRUE</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> object. </p>
+<p>This constructor should receive command line arguments array from the <em>main()</em> function parameters, in the parameters argc and argv.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>argc</em>&nbsp;</td><td>Number of command line arguments. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>argv</em>&nbsp;</td><td>Array of arrays of chars containing command line arguments. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>Optional QString containing an informational message for the application (shown when asked for help). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>GUIEnabled</em>&nbsp;</td><td>If FALSE, the application will run in a terminal without graphics. Note that in this case you will not be able to use any kind of graphical user interface (including the <a class="el" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00040">40</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a26cebe56daf97da9bc5f881d3d5abe2d"></a><!-- doxytag: member="QVApplication::processArguments" ref="a26cebe56daf97da9bc5f881d3d5abe2d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVApplication::processArguments </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Process command line arguments without executing. </p>
+<p>Just as in <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">QVApplication::exec</a>, this method checks if the user asked for help with the command line option "--help", and in that case it shows help on the application and on all the input parameters of every <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> created until now, and returns. Otherwise, just as exec, it also checks for any possible error on any <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>, and if finds any, shows an adequate error message, and returns. Again as exec, any unused command line argument will also lead to an error and the corresponding error message. But, unlike the exec method, after parsing every argument from the command line, this method simply returns without entering any event loop. Therefore, use this method in any <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> in which you want to use the command line facility without having to enter a QApplication event loop. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0, if help was asked, -1 if some error was found in the command line, +1 if everything was parsed OK. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00065">65</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4">exec()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a629aa9b6d8aa09fdb5ed379167c84af4"></a><!-- doxytag: member="QVApplication::exec" ref="a629aa9b6d8aa09fdb5ed379167c84af4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVApplication::exec </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Starts execution of the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>. </p>
+<p>Before starting the application, this method checks if the user asked for help with the command line option "--help", and in that case it shows help on the application and on all the input parameters of every <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> created until now, and exits. Otherwise, it checks for any possible error on any <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>, and if finds any, shows an adequate error message and exits. Any unused command line argument will also lead to an error and the corresponding error message. This function also opens any possibly created QVCameras, letting them ready for being read by adequately linked QVProcessingBlocks's. Finally, if everything was initialized OK, the GUI main loop starts executing, showing every graphical element, and finally all the created QVProcessingBlocks also start their executions. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The int code returned by the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00099">99</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed7dd19235aed68747f5b35de5196788"></a><!-- doxytag: member="QVApplication::setTerminateOnLastBlock" ref="aed7dd19235aed68747f5b35de5196788" args="(bool terminate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVApplication::setTerminateOnLastBlock </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>terminate</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Makes an application finish or not when its last block finishes. </p>
+<p>Call this function to decide if you want your application to finish when its last block does. Default behavior is TRUE (the application finishes with its last block, unless qApp-&gt;setTerminateOnLastBlock(FALSE) has been explicitly called by the programmer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>terminate</em>&nbsp;</td><td>flag to indicate desired behavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00115">115</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fdb86c3a330b8c737dd75dc575def33"></a><!-- doxytag: member="QVApplication::setArgumentAsUsed" ref="a0fdb86c3a330b8c737dd75dc575def33" args="(QString argument)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVApplication::setArgumentAsUsed </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>argument</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Marks a given command line argument as used. </p>
+<p>This function is useful if the programmer wish to process manually a command line argument (which is not intended to initialize any property of a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>). In that case, he should call this function when the argument has been adequately processed, in order to avoid the <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">QVApplication::exec()</a> early termination with an "unused argument" message. Use in conjunction with <a class="el" href="classQVApplication.html#abac81490de1809d8f3d741b5a7d779a4" title="Gets the list of unprocessed arguments.">QVApplication::getUnusedArguments()</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>argument</em>&nbsp;</td><td>QString with the argument to mark as used. Must be exactly as contained in the corresponding argv[i] (including hyphens and/or equal characters, if present). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00292">292</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVApplication.html#a115946f057c917dc38b43c7d2b340449">getArgument()</a>, and <a class="el" href="classQVApplication.html#a6379eef13e82e53ef89b390beacc91a9">getArguments()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abac81490de1809d8f3d741b5a7d779a4"></a><!-- doxytag: member="QVApplication::getUnusedArguments" ref="abac81490de1809d8f3d741b5a7d779a4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList QVApplication::getUnusedArguments </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the list of unprocessed arguments. </p>
+<p>This function is useful if the programmer wish to process manually a command line argument (which is not intended to initialize any property of a <a class="el" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>). In that case, he should call this function to obtain the list of unprocessed arguments, in order to process them adequately. Use in conjunction with <a class="el" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33" title="Marks a given command line argument as used.">QVApplication::setArgumentAsUsed()</a>. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of unused arguments as a QStringList. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00289">289</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a115c9cee9e24213cbe91b52e899b2bec"></a><!-- doxytag: member="QVApplication::isRunning" ref="a115c9cee9e24213cbe91b52e899b2bec" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVApplication::isRunning </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> is already in the <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">exec()</a> loop. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> is already in the <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">exec()</a> loop. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00144">144</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea98d71162891be7af76a8875502db30"></a><!-- doxytag: member="QVApplication::forHelp" ref="aea98d71162891be7af76a8875502db30" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVApplication::forHelp </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells if a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> is called for print help. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> is called for print help. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00148">148</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29268a90a2e72f550f1143e239e2e3e7"></a><!-- doxytag: member="QVApplication::getHelp" ref="a29268a90a2e72f550f1143e239e2e3e7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QVApplication::getHelp </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets help for a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A (very long, containing carriage returns) QString containing help for the application. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00340">340</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac25e39c09253a1e5913b92d7dee8df7"></a><!-- doxytag: member="QVApplication::instance" ref="aac25e39c09253a1e5913b92d7dee8df7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classQVApplication.html">QVApplication</a>* QVApplication::instance </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a pointer to the only <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> instance. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the only <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> instance (equivalent to qvApp). </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00156">156</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7495c8995c30b40c3f55dc6d77bdcff"></a><!-- doxytag: member="QVApplication::getNumberOfArguments" ref="ae7495c8995c30b40c3f55dc6d77bdcff" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVApplication::getNumberOfArguments </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of total arguments. </p>
+<p>This function is useful if the programmer wish to process manually a command line parameter. This method will indicate the programmer how many console line parameters were provided by the user. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of command line parameters. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00175">175</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a115946f057c917dc38b43c7d2b340449"></a><!-- doxytag: member="QVApplication::getArgument" ref="a115946f057c917dc38b43c7d2b340449" args="(const int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QVApplication::getArgument </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the value of an application argument. </p>
+<p>This function is useful if the programmer wish to process manually a command line parameter. This method will return the command line parameter located at the index.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>Index for the command line parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Command line parameter located at the index. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00185">185</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6379eef13e82e53ef89b390beacc91a9"></a><!-- doxytag: member="QVApplication::getArguments" ref="a6379eef13e82e53ef89b390beacc91a9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList QVApplication::getArguments </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the argument values. </p>
+<p>This function returns the command line arguments in a QString list. It also marks all arguments as used.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Command line parameters. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvapplication_8h_source.html#l00200">200</a> of file <a class="el" href="qvapplication_8h_source.html">qvapplication.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9afd38de95ccabd4e8680d96e98d42f"></a><!-- doxytag: member="QVApplication::startItems" ref="ae9afd38de95ccabd4e8680d96e98d42f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVApplication::startItems </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Start the application items. </p>
+<p>This slot, when called, provokes the start of all the QVApplication's items. </p>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00128">128</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4">exec()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adba1db46f127c1f17102f819ba0324a6"></a><!-- doxytag: member="QVApplication::quitItems" ref="adba1db46f127c1f17102f819ba0324a6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVApplication::quitItems </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Terminates the application items. </p>
+<p>This slot, when called, provokes the termination of the QVApplication's items. Previously, it cleanly finishes all the QVProcessingBlocks and closes all the open QVCameras. </p>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00208">208</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50">quit()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1800e439ec3bcb48ffb9f03e195c3b50"></a><!-- doxytag: member="QVApplication::quit" ref="a1800e439ec3bcb48ffb9f03e195c3b50" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVApplication::quit </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Terminates an application. </p>
+<p>This slot, when called, provokes the termination of the <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>. Previously, it quitItems. </p>
+
+<p>Definition at line <a class="el" href="qvapplication_8cpp_source.html#l00201">201</a> of file <a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/<a class="el" href="qvapplication_8h_source.html">qvapplication.h</a></li>
+<li>src/qvblockprogramming/<a class="el" href="qvapplication_8cpp_source.html">qvapplication.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

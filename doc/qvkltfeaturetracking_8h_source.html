@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvgpukltflow/qvkltfeaturetracking.h</h1><a href="qvkltfeaturetracking_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVKLTFEATURETRACKING_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVKLTFEATURETRACKING_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QVKLTTracker&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">using namespace </span>std;
+<a name="l00032"></a>00032 
+<a name="l00039"></a><a class="code" href="classQVKLTFeatureTracking.html">00039</a> <span class="keyword">class </span><a class="code" href="classQVKLTFeatureTracking.html" title="Class to store the successive positions of an individual feature tracked in a video...">QVKLTFeatureTracking</a> {
+<a name="l00040"></a>00040   <span class="keyword">private</span>:
+<a name="l00041"></a>00041     QList&lt;QVKLTTrackerFeature&gt; track;
+<a name="l00042"></a>00042     <span class="keywordtype">int</span> firstFrame, lastFrame;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044   <span class="keyword">public</span>:
+<a name="l00049"></a><a class="code" href="classQVKLTFeatureTracking.html#ae822060d0c32bd4b9fa2ced7ebac8e14">00049</a>     <a class="code" href="classQVKLTFeatureTracking.html#ae822060d0c32bd4b9fa2ced7ebac8e14" title="Constructor from an freshly detected feature.">QVKLTFeatureTracking</a>(<a class="code" href="classQVKLTTrackerFeature.html" title="Image feature location used by the GPU-KLT tracker.">QVKLTTrackerFeature</a> feature, <span class="keywordtype">int</span> firstFrame) {
+<a name="l00050"></a>00050         track = QList&lt;QVKLTTrackerFeature&gt;();
+<a name="l00051"></a>00051         track.append(feature);
+<a name="l00052"></a>00052         this-&gt;firstFrame = firstFrame;
+<a name="l00053"></a>00053         this-&gt;lastFrame = firstFrame;
+<a name="l00054"></a>00054     };
+<a name="l00055"></a>00055 
+<a name="l00057"></a><a class="code" href="classQVKLTFeatureTracking.html#a516e4609bac4e38e86159fec7e61d9d8">00057</a>     <a class="code" href="classQVKLTFeatureTracking.html#a516e4609bac4e38e86159fec7e61d9d8" title="Default constructor.">QVKLTFeatureTracking</a>() {
+<a name="l00058"></a>00058         track = QList&lt;QVKLTTrackerFeature&gt;();
+<a name="l00059"></a>00059         this-&gt;firstFrame = -1;
+<a name="l00060"></a>00060         this-&gt;lastFrame = -1;
+<a name="l00061"></a>00061     }
+<a name="l00062"></a>00062 
+<a name="l00064"></a><a class="code" href="classQVKLTFeatureTracking.html#a59d80aa9252958546679b0d59a0df57a">00064</a>     <a class="code" href="classQVKLTFeatureTracking.html#a516e4609bac4e38e86159fec7e61d9d8" title="Default constructor.">QVKLTFeatureTracking</a>(<span class="keyword">const</span> <a class="code" href="classQVKLTFeatureTracking.html" title="Class to store the successive positions of an individual feature tracked in a video...">QVKLTFeatureTracking</a> &amp;ft)
+<a name="l00065"></a>00065         :track(ft.track), firstFrame(ft.firstFrame), lastFrame(ft.lastFrame) { }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067     ~<a class="code" href="classQVKLTFeatureTracking.html" title="Class to store the successive positions of an individual feature tracked in a video...">QVKLTFeatureTracking</a>() { }
+<a name="l00068"></a>00068 
+<a name="l00074"></a><a class="code" href="classQVKLTFeatureTracking.html#af301c7af9bd1f9b4e0d67998c28bcd18">00074</a>     <span class="keywordtype">void</span> <a class="code" href="classQVKLTFeatureTracking.html#af301c7af9bd1f9b4e0d67998c28bcd18" title="Update the tracking hash with the updated feature hash.">addFeature</a>(<span class="keyword">const</span> <a class="code" href="classQVKLTTrackerFeature.html" title="Image feature location used by the GPU-KLT tracker.">QVKLTTrackerFeature</a> &amp;feature) {
+<a name="l00075"></a>00075         track.append(feature);
+<a name="l00076"></a>00076         lastFrame++;
+<a name="l00077"></a>00077     };
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079     <span class="comment">/*void endTracking(int lastFrame) {</span>
+<a name="l00080"></a>00080 <span class="comment">        if (this-&gt;lastFrame == -1) {</span>
+<a name="l00081"></a>00081 <span class="comment">            cerr &lt;&lt; &quot;Error: El tracking ya se terminó en el frame &quot; &lt;&lt; this-&gt;lastFrame &lt;&lt; endl;</span>
+<a name="l00082"></a>00082 <span class="comment">        }</span>
+<a name="l00083"></a>00083 <span class="comment">        this-&gt;lastFrame = lastFrame;</span>
+<a name="l00084"></a>00084 <span class="comment">    }*/</span>
+<a name="l00085"></a>00085 
+<a name="l00089"></a><a class="code" href="classQVKLTFeatureTracking.html#a7507c7562e2e73a0166b47e8e9f11787">00089</a>     QList&lt;QVKLTTrackerFeature&gt; <a class="code" href="classQVKLTFeatureTracking.html#a7507c7562e2e73a0166b47e8e9f11787" title="Gets the list of feature positions in the tracking.">getFeatureList</a>()<span class="keyword"> const </span>{
+<a name="l00090"></a>00090         <span class="keywordflow">return</span> track;
+<a name="l00091"></a>00091     }
+<a name="l00092"></a>00092 
+<a name="l00096"></a><a class="code" href="classQVKLTFeatureTracking.html#a7477cf0438d610652a2fbc4788ce35b3">00096</a>     <span class="keywordtype">int</span> <a class="code" href="classQVKLTFeatureTracking.html#a7477cf0438d610652a2fbc4788ce35b3" title="Gets the index of the last frame in which the feature was detected.">getLastFrame</a>()<span class="keyword"> const </span>{
+<a name="l00097"></a>00097         <span class="keywordflow">return</span> lastFrame;
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099 
+<a name="l00103"></a><a class="code" href="classQVKLTFeatureTracking.html#acfe71e802d735513975c455e5e01f0d4">00103</a>     <span class="keywordtype">int</span> <a class="code" href="classQVKLTFeatureTracking.html#acfe71e802d735513975c455e5e01f0d4" title="Gets the index of the first frame in which the feature was detected.">getFirstFrame</a>()<span class="keyword"> const </span>{
+<a name="l00104"></a>00104         <span class="keywordflow">return</span> firstFrame;
+<a name="l00105"></a>00105     }
+<a name="l00106"></a>00106 
+<a name="l00110"></a><a class="code" href="classQVKLTFeatureTracking.html#aefff1609456664f59d901b640fbd7591">00110</a>     <span class="keywordtype">int</span> <a class="code" href="classQVKLTFeatureTracking.html#aefff1609456664f59d901b640fbd7591" title="Gets the size of the tracking (number of frames in which the feature was tracked)...">size</a>()<span class="keyword"> const </span>{
+<a name="l00111"></a>00111         <span class="keywordflow">return</span> track.size();
+<a name="l00112"></a>00112     };
+<a name="l00113"></a>00113 };
+<a name="l00114"></a>00114 
+<a name="l00121"></a><a class="code" href="classQVTrackingManager.html">00121</a> <span class="keyword">class </span><a class="code" href="classQVTrackingManager.html" title="Class to manage trackings of features in video sequences.">QVTrackingManager</a> {
+<a name="l00122"></a>00122   <span class="keyword">public</span>:
+<a name="l00125"></a><a class="code" href="classQVTrackingManager.html#a46d277759f98350538c1dc826ae08f3a">00125</a>     <a class="code" href="classQVTrackingManager.html#a46d277759f98350538c1dc826ae08f3a" title="Default constructor.">QVTrackingManager</a>(<span class="keywordtype">bool</span> removeLostTrackings=<span class="keyword">true</span>) {
+<a name="l00126"></a>00126         this-&gt;trackings = QHash&lt;int, QVKLTFeatureTracking&gt; ();
+<a name="l00127"></a>00127         this-&gt;removeLostTrackings = removeLostTrackings;
+<a name="l00128"></a>00128         this-&gt;actualFrame = 0;
+<a name="l00129"></a>00129     }
+<a name="l00130"></a>00130 
+<a name="l00132"></a><a class="code" href="classQVTrackingManager.html#acec53213e5307ad028937819a9db5782">00132</a>     <a class="code" href="classQVTrackingManager.html#acec53213e5307ad028937819a9db5782" title="Default destructor.">~QVTrackingManager</a>() { };
+<a name="l00133"></a>00133 
+<a name="l00139"></a>00139     <span class="keywordtype">void</span> <a class="code" href="classQVTrackingManager.html#a2cc4a4e200c32f2db347a1c217499f0e" title="Update the tracking hash with the updated feature hash.">updateTrackings</a>(QHash&lt;int, QVKLTTrackerFeature&gt;* tracks);
+<a name="l00140"></a>00140 
+<a name="l00145"></a>00145     QList&lt;int&gt; <a class="code" href="classQVTrackingManager.html#aba824019bf7e2b1c35dc427cc2fa67b6" title="Get all features tracked in a given frame.">getTrackingsAtFrame</a>(<span class="keywordtype">int</span> frame);
+<a name="l00146"></a>00146 
+<a name="l00150"></a>00150     QList&lt;int&gt; <a class="code" href="classQVTrackingManager.html#ab74651fa44e436a6bf92022163484e60" title="Get all features tracked in the last frame.">getTrackingsAtLastFrame</a> ();
+<a name="l00151"></a>00151 
+<a name="l00155"></a><a class="code" href="classQVTrackingManager.html#a886dbb89684607ec13f1897078d05780">00155</a>     QHash&lt;int, QVKLTFeatureTracking&gt; <a class="code" href="classQVTrackingManager.html#a886dbb89684607ec13f1897078d05780" title="Get all trackings.">getTrackings</a> ()<span class="keyword"> const </span>{
+<a name="l00156"></a>00156         <span class="keywordflow">return</span> trackings;
+<a name="l00157"></a>00157     }
+<a name="l00158"></a>00158 
+<a name="l00163"></a><a class="code" href="classQVTrackingManager.html#a4e44c9d0551aa0e610ad3d1008643a67">00163</a>     <a class="code" href="classQVKLTFeatureTracking.html" title="Class to store the successive positions of an individual feature tracked in a video...">QVKLTFeatureTracking</a>&amp; <a class="code" href="classQVTrackingManager.html#a4e44c9d0551aa0e610ad3d1008643a67" title="Get the tracking corresponding to a given individual feature.">getFeatureTracking</a> (<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {
+<a name="l00164"></a>00164         <span class="keywordflow">return</span> trackings[id];
+<a name="l00165"></a>00165     }
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167 <span class="keyword">private</span>:
+<a name="l00168"></a>00168     QHash&lt;int, QVKLTFeatureTracking&gt; trackings;
+<a name="l00169"></a>00169     <span class="keywordtype">bool</span> removeLostTrackings;
+<a name="l00170"></a>00170     <span class="keywordtype">int</span> actualFrame;
+<a name="l00171"></a>00171 };
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173 <span class="preprocessor">#endif // QVKLTFEATURETRACKING_H</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

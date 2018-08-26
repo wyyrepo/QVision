@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvguiblocks/qvimagecanvas.h</h1><a href="qvimagecanvas_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVIMAGECANVAS_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVIMAGECANVAS_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="qvcanvas_8h.html" title="File from the QVision library.">qvcanvas.h</a>&quot;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QPointF&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QVProcessingBlock&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QVPolyline&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QVPolylineF&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;QVCameraPose&gt;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;QV3DPolylineF&gt;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;qvblockprogramming/qvguiblocks/qv3dmodel.h&gt;</span>
+<a name="l00037"></a>00037 
+<a name="l00348"></a><a class="code" href="classQVImageCanvas.html">00348</a> <span class="keyword">class </span><a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>: <span class="keyword">public</span> QVCanvas, <span class="keyword">public</span> <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>
+<a name="l00349"></a>00349         {
+<a name="l00350"></a>00350                 Q_OBJECT
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352         <span class="keyword">protected</span>:
+<a name="l00353"></a>00353                 QList&lt; QV3DModel *&gt; models;
+<a name="l00354"></a>00354 
+<a name="l00355"></a>00355         <span class="keyword">public</span>:
+<a name="l00356"></a>00356 
+<a name="l00357"></a>00357                 <span class="keywordtype">void</span> add3DModel(QV3DModel &amp;model)
+<a name="l00358"></a>00358                         {
+<a name="l00359"></a>00359                         models.append(&amp;model);
+<a name="l00360"></a>00360                         <span class="comment">//QObject::connect(model.getInformer(), SIGNAL(modelUpdated()), this, SLOT(updateGL()), Qt::QueuedConnection);</span>
+<a name="l00361"></a>00361                         }
+<a name="l00362"></a>00362 
+<a name="l00363"></a>00363                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> <a class="code" href="classQV3DPolylineF.html" title="3D polyline representation">QV3DPolylineF</a> &amp;qv3DPolyline, <span class="keyword">const</span> QColor color = Qt::red, <span class="keyword">const</span> <span class="keywordtype">double</span> size = 1)
+<a name="l00364"></a>00364                         {
+<a name="l00365"></a>00365                         glPointSize(size);
+<a name="l00366"></a>00366                         glBegin(GL_LINES);
+<a name="l00367"></a>00367                         glColor3ub(color.red(), color.green(), color.blue());
+<a name="l00368"></a>00368                         <span class="comment">//qglColor(color);</span>
+<a name="l00369"></a>00369                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; qv3DPolyline.size(); i++)
+<a name="l00370"></a>00370                                 {
+<a name="l00371"></a>00371                                 glVertex3f(qv3DPolyline[i].x(), qv3DPolyline[i].y(), qv3DPolyline[i].z());
+<a name="l00372"></a>00372                                 glVertex3f(qv3DPolyline[i-1].x(), qv3DPolyline[i-1].y(), qv3DPolyline[i-1].z());
+<a name="l00373"></a>00373                                 }
+<a name="l00374"></a>00374                         glEnd();
+<a name="l00375"></a>00375                         }
+<a name="l00376"></a>00376 
+<a name="l00377"></a>00377                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;qv3DPointList, <span class="keyword">const</span> QColor color = Qt::red, <span class="keyword">const</span> <span class="keywordtype">double</span> size = 1)
+<a name="l00378"></a>00378                         {
+<a name="l00379"></a>00379                         glBegin(GL_POINTS);
+<a name="l00380"></a>00380                         glColor3ub(color.red(), color.green(), color.blue());
+<a name="l00381"></a>00381                         <span class="comment">//qglColor(color);</span>
+<a name="l00382"></a>00382                         glPointSize(size);
+<a name="l00383"></a>00383                         <span class="keywordflow">foreach</span>(<a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> point, qv3DPointList)
+<a name="l00384"></a>00384                             glVertex3f(point.<a class="code" href="classQV3DPointF.html#aab1c8e4380b126607771339778a83a1e" title="Gets the value for the first coordinate of the 3D point.">x</a>(), point.<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>(), point.<a class="code" href="classQV3DPointF.html#aba286a7e040358ecbffce7c4566cdd8d" title="Gets the value for the third coordinate of the 3D point.">z</a>());
+<a name="l00385"></a>00385                         glEnd();
+<a name="l00386"></a>00386                         }
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388 
+<a name="l00393"></a>00393                 <a class="code" href="classQVImageCanvas.html#ac08d9d360747bbc0ccf2db3664813217" title="Image canvas constructor.">QVImageCanvas</a>(<span class="keyword">const</span> QString name = QString(), QWidget *parent=0);
+<a name="l00394"></a>00394 
+<a name="l00413"></a><a class="code" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a">00413</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a94894d3fdcecc85df3982d6c71df602a" title="Sets the display color for a registered input property of the canvas.">setColor</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> QColor &amp;color)
+<a name="l00414"></a>00414                         { <span class="keywordflow">return</span> setPropertyValue&lt;QColor&gt;(<span class="stringliteral">&quot;Color for &quot;</span> + name, color); }
+<a name="l00415"></a>00415 
+<a name="l00417"></a><a class="code" href="classQVImageCanvas.html#a1cf2eec22039d5793791a3109348bcfe">00417</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a1cf2eec22039d5793791a3109348bcfe">setPrintTags</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;printTags)
+<a name="l00418"></a>00418                         { <span class="keywordflow">return</span> setPropertyValue&lt;bool&gt;(<span class="stringliteral">&quot;Print tags for &quot;</span> + name, printTags); }
+<a name="l00419"></a>00419 
+<a name="l00427"></a><a class="code" href="classQVImageCanvas.html#a7f4e77bc5830094390b2857aacba4236">00427</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a7f4e77bc5830094390b2857aacba4236" title="Sets the display radius for a registered input property of the canvas.">setRadius</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;radius)
+<a name="l00428"></a>00428                         { <span class="keywordflow">return</span> setPropertyValue&lt;int&gt;(<span class="stringliteral">&quot;Radius for &quot;</span> + name, radius); }
+<a name="l00429"></a>00429 
+<a name="l00439"></a>00439                 <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#abd0e106aa4bf642f6caf41624c00c43c" title="Sets the saturation range to display floating point images.">setSaturationRange</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> low, <span class="keyword">const</span> <span class="keywordtype">float</span> high);
+<a name="l00440"></a>00440 
+<a name="l00443"></a><a class="code" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd">00443</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd" title="Link selected polyline property with a block&amp;#39;s input property.">linkSelectedPolyline</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinationContainer, QString destinationPropName)
+<a name="l00444"></a>00444                         {
+<a name="l00445"></a>00445                         <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(<span class="stringliteral">&quot;poly select&quot;</span>, destinationContainer, destinationPropName);
+<a name="l00446"></a>00446                         }
+<a name="l00447"></a>00447 
+<a name="l00450"></a><a class="code" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4">00450</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4" title="Link selected rectangle property with a block&amp;#39;s input property.">linkSelectedRectangle</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destinationContainer, QString destinationPropName)
+<a name="l00451"></a>00451                         {
+<a name="l00452"></a>00452                         <span class="keywordflow">return</span> <a class="code" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd" title="Links properties among QVPropertyContainer&amp;#39;s.">linkProperty</a>(<span class="stringliteral">&quot;rect select&quot;</span>, destinationContainer, destinationPropName);
+<a name="l00453"></a>00453                         }
+<a name="l00454"></a>00454 
+<a name="l00459"></a><a class="code" href="classQVImageCanvas.html#a81b949416ce684c2bb05ae905ecb0b6b">00459</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd" title="Link selected polyline property with a block&amp;#39;s input property.">linkSelectedPolyline</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;destinationContainer, QString destinationPropName)
+<a name="l00460"></a>00460                         {
+<a name="l00461"></a>00461                         <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#a7062b40a00e2f97a96f8ffb052ea30cd" title="Link selected polyline property with a block&amp;#39;s input property.">linkSelectedPolyline</a>(&amp;destinationContainer, destinationPropName);
+<a name="l00462"></a>00462                         }
+<a name="l00463"></a>00463 
+<a name="l00468"></a><a class="code" href="classQVImageCanvas.html#a8b103778a03324230145d2ee62672c35">00468</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4" title="Link selected rectangle property with a block&amp;#39;s input property.">linkSelectedRectangle</a>(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> &amp;destinationContainer, QString destinationPropName)
+<a name="l00469"></a>00469                         {
+<a name="l00470"></a>00470                         <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#a1b5f5780785dc82754d1dd20f29294b4" title="Link selected rectangle property with a block&amp;#39;s input property.">linkSelectedRectangle</a>(&amp;destinationContainer, destinationPropName);
+<a name="l00471"></a>00471                         }
+<a name="l00472"></a>00472 
+<a name="l00511"></a><a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a">00511</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a0040df759739f50e9235547f1055844a" title="Display user defined data types method.">custom_viewer</a>() { };
+<a name="l00512"></a>00512 
+<a name="l00513"></a>00513                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> custom_viewer_3D() { };
+<a name="l00514"></a>00514 
+<a name="l00516"></a><a class="code" href="classQVImageCanvas.html#a5b3506a49bedc014967502dba9a0a59e">00516</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a5b3506a49bedc014967502dba9a0a59e">setLowHigh</a>(<span class="keywordtype">float</span> low,<span class="keywordtype">float</span> high)
+<a name="l00517"></a>00517                         {
+<a name="l00518"></a>00518                         std::cout &lt;&lt; <span class="stringliteral">&quot;DEPRECATED, use setSaturationRange instead&quot;</span> &lt;&lt; std::endl;
+<a name="l00519"></a>00519                         <a class="code" href="classQVImageCanvas.html#abd0e106aa4bf642f6caf41624c00c43c" title="Sets the saturation range to display floating point images.">setSaturationRange</a>(low, high);
+<a name="l00520"></a>00520                         }
+<a name="l00521"></a>00521 
+<a name="l00526"></a><a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22">00526</a>                 <a class="code" href="classQVPainter.html" title="Inherits from QPainter to allow versatile drawing on a QVImageCanvas object.">QVPainter</a> *<a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">getQVPainter</a>() { <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#adcc6632a6181cc4d9f9ef3b2e2fb6b22" title="Returns a QVPainter object to perform custom drawings in the canvas.">QVCanvas::getQVPainter</a>(); };
+<a name="l00527"></a>00527 
+<a name="l00528"></a>00528 
+<a name="l00533"></a><a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9">00533</a>                 <span class="keywordtype">int</span> <a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9" title="Returns current zoom of QVImagecanvas.">getZoom</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#a4ebbb35e7857c0c256f4b16072b658a9" title="Returns current zoom of QVImagecanvas.">QVCanvas::getZoom</a>(); };
+<a name="l00534"></a>00534 
+<a name="l00551"></a><a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052">00551</a>                 QRect <a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052" title="Returns current viewport of QVImagecanvas.">getViewport</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#a35cc774a6b0e9fdf3847f59f29a4d052" title="Returns current viewport of QVImagecanvas.">QVCanvas::getViewport</a>(); };
+<a name="l00552"></a>00552 
+<a name="l00558"></a><a class="code" href="classQVImageCanvas.html#a012298b8e651df7d1bb5df06c590e016">00558</a>                 QSize <a class="code" href="classQVImageCanvas.html#a012298b8e651df7d1bb5df06c590e016" title="Returns the original image size of the QVImagecanvas.">getSize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#a012298b8e651df7d1bb5df06c590e016" title="Returns the original image size of the QVImagecanvas.">QVCanvas::getSize</a>(); };
+<a name="l00559"></a>00559 
+<a name="l00560"></a>00560 
+<a name="l00621"></a><a class="code" href="classQVImageCanvas.html#a7c00107a447dbc7f0167ff27b15a0870">00621</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a7c00107a447dbc7f0167ff27b15a0870" title="Prepares OpenGL to draw directly the world as seen from the camera.">beginDrawWorldFromCamera</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> fx, <span class="keyword">const</span> <span class="keywordtype">double</span> fy, <span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;cameraPosition)
+<a name="l00622"></a>00622                         {
+<a name="l00623"></a>00623                         <span class="keywordflow">return</span> <a class="code" href="classQVImageCanvas.html#a7c00107a447dbc7f0167ff27b15a0870" title="Prepares OpenGL to draw directly the world as seen from the camera.">QVCanvas::beginDrawWorldFromCamera</a>(fx,fy,cameraPosition);
+<a name="l00624"></a>00624                         };
+<a name="l00625"></a>00625 
+<a name="l00629"></a><a class="code" href="classQVImageCanvas.html#a61651501207a7635a2dd8cbd4b720502">00629</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#a61651501207a7635a2dd8cbd4b720502" title="Restores state of QVImageCanvas after augmented reality OpenGL drawing.">endDrawWorldFromCamera</a>() { <a class="code" href="classQVImageCanvas.html#a61651501207a7635a2dd8cbd4b720502" title="Restores state of QVImageCanvas after augmented reality OpenGL drawing.">QVCanvas::endDrawWorldFromCamera</a>(); };
+<a name="l00630"></a>00630 
+<a name="l00631"></a>00631                 <span class="comment">//QRect getSelectionRectangle() const { return QVCanvas::getSelectionRectangle(); };</span>
+<a name="l00632"></a>00632                 <span class="comment">//const QVImage&lt;uChar,3&gt; contentImage() const { return QVCanvas::contentImage() }</span>
+<a name="l00633"></a>00633 
+<a name="l00634"></a>00634                 <span class="keywordtype">void</span> <a class="code" href="classQVImageCanvas.html#acb1465e8ce2eb8aa0a95967724489b6d" title="Completely unlinks a property holder.">unlink</a>();
+<a name="l00635"></a>00635 
+<a name="l00636"></a>00636 <span class="preprocessor">                #ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00637"></a>00637 <span class="preprocessor"></span>                <span class="keywordtype">void</span> viewer();
+<a name="l00638"></a>00638 <span class="preprocessor">                #endif</span>
+<a name="l00639"></a>00639 <span class="preprocessor"></span>
+<a name="l00640"></a>00640         <span class="keyword">public</span> slots:
+<a name="l00641"></a>00641                 <span class="keywordtype">void</span> rectSelectedSlot(QRect rect);
+<a name="l00642"></a>00642                 <span class="keywordtype">void</span> polySelectedSlot(QPoint point, <span class="keywordtype">bool</span> reset, TPolyMode mode);
+<a name="l00643"></a>00643 
+<a name="l00644"></a>00644         <span class="keyword">protected</span>:
+<a name="l00645"></a>00645                 <span class="keywordtype">bool</span> linkUnspecifiedInputProperty(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *sourceContainer, QString sourcePropName, <a class="code" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">LinkType</a> linkType = AsynchronousLink);
+<a name="l00646"></a>00646                 <span class="keywordtype">bool</span> linkUnspecifiedOutputProperty(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *destContainer, QString destPropName, <a class="code" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76" title="Semantics for a link between QVPropertyContainers.">LinkType</a> linkType = AsynchronousLink);
+<a name="l00647"></a>00647                 <span class="keywordtype">bool</span> treatUnlinkInputProperty(QString destPropName, <a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *sourceCont, QString sourcePropName);
+<a name="l00648"></a>00648 
+<a name="l00649"></a>00649                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> QList&lt;QPoint&gt; &amp;pointList, QColor color = Qt::red, <span class="keywordtype">bool</span> printTags = <span class="keyword">false</span>, <span class="keywordtype">int</span> radius = 2);
+<a name="l00650"></a>00650                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> QList&lt;QPointF&gt; &amp;pointList, QColor color = Qt::red, <span class="keywordtype">bool</span> printTags = <span class="keyword">false</span>, <span class="keywordtype">double</span> radius = 2);
+<a name="l00651"></a>00651                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> &amp;polyline, QColor color = Qt::red, <span class="keywordtype">bool</span> printTags = <span class="keyword">false</span>);
+<a name="l00652"></a>00652                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> <a class="code" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a> &amp;polylinef, QColor color = Qt::red, <span class="keywordtype">bool</span> printTags = <span class="keyword">false</span>);
+<a name="l00653"></a>00653                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> QRect &amp;rectangle, QColor color = Qt::red, <span class="keywordtype">bool</span> printTags = <span class="keyword">false</span>);
+<a name="l00654"></a>00654                 <span class="keywordtype">void</span> draw(<span class="keyword">const</span> <a class="code" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, <span class="keyword">const</span> <span class="keywordtype">int</span> radius = 2);
+<a name="l00655"></a>00655 
+<a name="l00656"></a>00656                 <span class="keywordtype">void</span> closeEvent(QCloseEvent *event) { Q_UNUSED(event); emit closed(); }
+<a name="l00657"></a>00657 
+<a name="l00658"></a>00658                 <span class="keyword">const</span> QColor    getNextColor()
+<a name="l00659"></a>00659                         {
+<a name="l00660"></a>00660                         QColor color = qvColors[colorCursor++];
+<a name="l00661"></a>00661                         colorCursor %= 10;
+<a name="l00662"></a>00662 
+<a name="l00663"></a>00663                         <span class="keywordflow">return</span> color;
+<a name="l00664"></a>00664                         }
+<a name="l00665"></a>00665 
+<a name="l00666"></a>00666                 <span class="keywordtype">float</span> _low,_high;
+<a name="l00667"></a>00667                 <span class="keywordtype">int</span> colorCursor, contentLinkedBlocks;
+<a name="l00668"></a>00668 
+<a name="l00669"></a>00669         signals:
+<a name="l00670"></a>00670                 <span class="keywordtype">void</span> closed();
+<a name="l00671"></a>00671 
+<a name="l00672"></a>00672         };
+<a name="l00673"></a>00673 
+<a name="l00674"></a>00674 Q_DECLARE_METATYPE(TPolyMode);
+<a name="l00675"></a>00675 
+<a name="l00676"></a>00676 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

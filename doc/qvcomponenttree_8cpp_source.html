@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvip/qvcomponenttree.cpp</h1><a href="qvcomponenttree_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="qvdefines_8h.html" title="File from the QVision library.">qvdefines.h</a>&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QVDisjointSet&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QVComponentTree&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">00030</a> <a class="code" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57" title="Constructs a component tree set, from a gray-scale image.">QVComponentTree::QVComponentTree</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;image, <span class="keywordtype">bool</span> inverseTree, <span class="keywordtype">bool</span> <span class="comment">/*useAlternative*/</span>): numNodes(0), freePoints(0), inverseTree(inverseTree)
+<a name="l00031"></a>00031         {
+<a name="l00032"></a>00032         <span class="keyword">const</span> uInt cols = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), rows = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         this-&gt;numNodes = 0;
+<a name="l00035"></a>00035         this-&gt;leafNodes = 0;
+<a name="l00036"></a>00036         this-&gt;freePoints = 0;
+<a name="l00037"></a>00037         this-&gt;totalPoints = 0;
+<a name="l00038"></a>00038         this-&gt;maxNodes = cols * rows;
+<a name="l00039"></a>00039         this-&gt;nodes.resize(maxNodes/10);        <span class="comment">// 10 factor is an heuristic value, estimated from several tries.</span>
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="keywordflow">if</span> (inverseTree)
+<a name="l00042"></a>00042                 {
+<a name="l00043"></a>00043                 <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> notImage(cols, rows);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045                 <a class="code" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb" title="Initializes image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_READ</a>(uChar,image);
+<a name="l00046"></a>00046                 <a class="code" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1" title="Initializes image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_WRITE</a>(uChar,notImage);
+<a name="l00047"></a>00047                 <span class="keywordflow">for</span> (uInt col = 0; col &lt; cols; col++)
+<a name="l00048"></a>00048                         <span class="keywordflow">for</span> (uInt row = 0; row &lt; rows; row++)
+<a name="l00049"></a>00049                                 <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(notImage, col, row,0) = 255 - <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(image, col, row,0);
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051                 getComponentTree(notImage);
+<a name="l00052"></a>00052                 }
+<a name="l00053"></a>00053         <span class="keywordflow">else</span>
+<a name="l00054"></a>00054                 getComponentTree(image);
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="keywordtype">void</span> QVComponentTree::getComponentTree(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image)
+<a name="l00058"></a>00058         {
+<a name="l00059"></a>00059         qDebug() &lt;&lt; <span class="stringliteral">&quot;getComponentTree()&quot;</span>;
+<a name="l00060"></a>00060         <span class="keyword">const</span> uInt cols = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), rows = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <a class="code" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb" title="Initializes image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_READ</a>(uChar,image);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="keyword">const</span> QVector&lt; QVector&lt; QPoint &gt; &gt; points = <a class="code" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138" title="Sorts pixels in an image, given their gray-scale value.This function uses the Counting...">CountingSort</a>(image);
+<a name="l00065"></a>00065         <a class="code" href="classQVDisjointSet.html" title="Implementation of a disjoint set data type, based on the union-find algorithm.">QVDisjointSet</a> disjointSet(cols, rows);
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         uInt *nodeID = <span class="keyword">new</span> uInt[maxNodes];
+<a name="l00068"></a>00068         <span class="keywordflow">for</span>(uInt i=0; i&lt;maxNodes; i++)
+<a name="l00069"></a>00069                 nodeID[i] = NULL_NODE;
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="comment">// This loop creates the structure of the component tree, using the disjoint set, transversiong the pixels of the image</span>
+<a name="l00072"></a>00072         <span class="comment">// ordered by their gray-scale value, sorted thanks to &#39;CountingSort&#39; function.</span>
+<a name="l00073"></a>00073         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> threshold = 0; threshold &lt; points.size(); threshold++)
+<a name="l00074"></a>00074                 {
+<a name="l00075"></a>00075                 <span class="comment">// We join in the disjoint set pixels with gray-scale equal to threshold, with adjacent regions, or pixels, with</span>
+<a name="l00076"></a>00076                 <span class="comment">// a gray-scale value equal or lesser than threshold. This is done here only for the disjoint set.</span>
+<a name="l00077"></a>00077                 <span class="comment">//</span>
+<a name="l00078"></a>00078                 <span class="comment">// Also, here are also joined component tree nodes which have in common one of the processed points.</span>
+<a name="l00079"></a>00079                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt; points[threshold].size(); n++)
+<a name="l00080"></a>00080                         {
+<a name="l00081"></a>00081                         <span class="keyword">const</span> uInt      col = points[threshold][n].x(),  
+<a name="l00082"></a>00082                                         row = points[threshold][n].y();                 <span class="comment">// coordinates of the current pixel</span>
+<a name="l00083"></a>00083                         <span class="keyword">const</span> uChar     actualPixel = <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(image, col, row,0); <span class="comment">// Value of the current pixel</span>
+<a name="l00084"></a>00084                         uInt            actualSet = disjointSet.find(col, row);         <span class="comment">// canonical element of the subset</span>
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086                         <span class="comment">// Transverse neighbourhood of a pixel looking for close pixels to join with</span>
+<a name="l00087"></a>00087                         <span class="comment">// (those with gray-scale level lower or equal to that of the actual pixel)</span>
+<a name="l00088"></a>00088                         <span class="keywordflow">for</span> (uInt i = (uInt) MAX(0,(<span class="keywordtype">int</span>)col-1); i&lt; MIN(cols, col+2); i++)  <span class="comment">// we look at the 8 rounding neighbours</span>
+<a name="l00089"></a>00089                                 <span class="keywordflow">for</span> (uInt j = (uInt) MAX(0,(<span class="keywordtype">int</span>)row-1); j&lt; MIN(rows, row+2); j++)
+<a name="l00090"></a>00090                                         <span class="keywordflow">if</span> ((col != i) || (row != j))
+<a name="l00091"></a>00091                                         {
+<a name="l00092"></a>00092                                         <span class="keyword">const</span> uChar vecinoPixel = <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(image, i, j, 0);  <span class="comment">// neighbour&#39;s gray-level </span>
+<a name="l00093"></a>00093                                         <span class="keywordflow">if</span> (vecinoPixel &lt;= actualPixel)
+<a name="l00094"></a>00094                                                 {
+<a name="l00095"></a>00095                                                 <span class="keyword">const</span> uInt vecinoSet = disjointSet.find(i,j);  <span class="comment">// neighbour&#39;s canonical element</span>
+<a name="l00096"></a>00096                                                 <span class="keywordflow">if</span> (vecinoSet != actualSet)
+<a name="l00097"></a>00097                                                         {
+<a name="l00098"></a>00098                                                         <span class="comment">// We should join this pixel to the set of the neighbour</span>
+<a name="l00099"></a>00099                                                         <span class="comment">// Each canonical element of a subset has a nodeID element which contains information about the region.</span>
+<a name="l00100"></a>00100                                                         <span class="keyword">const</span> uInt actualNodeID = nodeID[actualSet], vecinoNodeID = nodeID[vecinoSet];
+<a name="l00101"></a>00101         
+<a name="l00102"></a>00102                                                         actualSet = disjointSet.unify(col, row, i, j); <span class="comment">// both subsets are unified.</span>
+<a name="l00103"></a>00103         
+<a name="l00104"></a>00104                                                         Q_ASSERT(disjointSet.find(disjointSet.index(col, row)) == disjointSet.find(disjointSet.index(i, j)));
+<a name="l00105"></a>00105         
+<a name="l00106"></a>00106                                                         <span class="comment">// If actual point is not in a node already, we associate it with the point that is</span>
+<a name="l00107"></a>00107                                                         <span class="comment">// associated to a node.</span>
+<a name="l00108"></a>00108                                                         <span class="keywordflow">if</span> (vecinoNodeID == NULL_NODE)
+<a name="l00109"></a>00109                                                                 nodeID[actualSet] = actualNodeID;
+<a name="l00110"></a>00110                                                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (actualNodeID == NULL_NODE)
+<a name="l00111"></a>00111                                                                 nodeID[actualSet] = vecinoNodeID;
+<a name="l00112"></a>00112                                                         <span class="keywordflow">else</span>    <span class="comment">// Otherwise, both actual and neighbour are associated to a node already.</span>
+<a name="l00113"></a>00113                                                                 <span class="comment">// We create a new node, and join both nodes of actual and neighbour pixels to</span>
+<a name="l00114"></a>00114                                                                 <span class="comment">// that one.</span>
+<a name="l00115"></a>00115                                                                 {
+<a name="l00116"></a>00116                                                                 <span class="comment">// We check that no one of the nodes of actual and neighbour pixels</span>
+<a name="l00117"></a>00117                                                                 <span class="comment">// is new. In that case it will be parent node.</span>
+<a name="l00118"></a>00118                                                                 <span class="keywordflow">if</span> (!closedNode(actualNodeID) &amp;&amp; closedNode(vecinoNodeID))
+<a name="l00119"></a>00119                                                                         <span class="comment">// We just add the node...</span>
+<a name="l00120"></a>00120                                                                         {
+<a name="l00121"></a>00121                                                                         addChild(actualNodeID, vecinoNodeID);
+<a name="l00122"></a>00122                                                                         nodeID[actualSet] = actualNodeID;
+<a name="l00123"></a>00123                                                                         }
+<a name="l00124"></a>00124                                                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (closedNode(actualNodeID) &amp;&amp; !closedNode(vecinoNodeID))
+<a name="l00125"></a>00125                                                                         <span class="comment">// We just add the other node...</span>
+<a name="l00126"></a>00126                                                                         {
+<a name="l00127"></a>00127                                                                         addChild(vecinoNodeID, actualNodeID);
+<a name="l00128"></a>00128                                                                         nodeID[actualSet] = vecinoNodeID;
+<a name="l00129"></a>00129                                                                         }
+<a name="l00130"></a>00130                                                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (closedNode(actualNodeID) &amp;&amp; closedNode(vecinoNodeID))
+<a name="l00131"></a>00131                                                                         <span class="comment">// We have two old nodes, and create a parent to unify them.</span>
+<a name="l00132"></a>00132                                                                         {
+<a name="l00133"></a>00133                                                                         <span class="keyword">const</span> uInt newNodeID = newNode(col, row, threshold);
+<a name="l00134"></a>00134                                                                         addChild(newNodeID, actualNodeID);
+<a name="l00135"></a>00135                                                                         addChild(newNodeID, vecinoNodeID);
+<a name="l00136"></a>00136         
+<a name="l00137"></a>00137                                                                         <span class="comment">//nodeID[actualIndex] = newNodeID;</span>
+<a name="l00138"></a>00138                                                                         nodeID[actualSet] = newNodeID;
+<a name="l00139"></a>00139                                                                         }
+<a name="l00140"></a>00140                                                                 <span class="keywordflow">else</span> <span class="comment">// if ( !NODE(actualNodeID).closed and !NODE(vecinoNodeID).closed )</span>
+<a name="l00141"></a>00141                                                                         <span class="comment">// We have two parent nodes, we leave things as they are.</span>
+<a name="l00142"></a>00142                                                                         <span class="comment">// No, we should unify both, passing childs of one of them to the</span>
+<a name="l00143"></a>00143                                                                         <span class="comment">// other.</span>
+<a name="l00144"></a>00144                                                                         {
+<a name="l00145"></a>00145                                                                         Q_ASSERT(closedNode(actualNodeID) == <span class="keyword">false</span>);
+<a name="l00146"></a>00146                                                                         Q_ASSERT(closedNode(vecinoNodeID) == <span class="keyword">false</span>);
+<a name="l00147"></a>00147                                                                         Q_ASSERT(<a class="code" href="classQVComponentTree.html#a1f7a6e31ceac2e50e0b262e0ec4056d1" title="Returns the number of child nodes for a node.">numChilds</a>(actualNodeID) &gt; 0);
+<a name="l00148"></a>00148                                                                         Q_ASSERT(<a class="code" href="classQVComponentTree.html#a1f7a6e31ceac2e50e0b262e0ec4056d1" title="Returns the number of child nodes for a node.">numChilds</a>(vecinoNodeID) &gt; 0);
+<a name="l00149"></a>00149         
+<a name="l00150"></a>00150                                                                         mergeNodes(actualNodeID, vecinoNodeID);
+<a name="l00151"></a>00151                                                                         nodeID[actualSet] = actualNodeID;
+<a name="l00152"></a>00152                                                                         }
+<a name="l00153"></a>00153                                                                 }
+<a name="l00154"></a>00154         
+<a name="l00155"></a>00155                                                         <span class="comment">// Actualize areas for the resulting parent node.</span>
+<a name="l00156"></a>00156                                                         <span class="keywordflow">if</span> (nodeID[actualSet] != NULL_NODE)
+<a name="l00157"></a>00157                                                                 {
+<a name="l00159"></a>00159                                                                 <span class="comment">//Q_ASSERT(area(actualNodeID)[lastThreshold(actualNodeID)]</span>
+<a name="l00160"></a>00160                                                                 <span class="comment">//      &lt;= disjointSet.getSetCardinality(actualIndex));</span>
+<a name="l00161"></a>00161                                                                 <a class="code" href="classQVComponentTree.html#ae1f6def9a17a983f3d2047eb564cc3ad" title="Returns gray-scale value of the points at the base of a node.">lastThreshold</a>(nodeID[actualSet]) = threshold;
+<a name="l00162"></a>00162                                                                 <a class="code" href="classQVComponentTree.html#a270428438cc9b604e9261cf3c741c217" title="Returns the accumulative histogram of the gray-level values of the pixels, for a...">area</a>(nodeID[actualSet])[threshold] = disjointSet.getSetCardinality(actualSet);
+<a name="l00163"></a>00163                                                                 }
+<a name="l00164"></a>00164         
+<a name="l00165"></a>00165                                                         Q_ASSERT(nodeID[disjointSet.find(disjointSet.index(col, row))] ==
+<a name="l00166"></a>00166                                                                 nodeID[disjointSet.find(disjointSet.index(i, j))]);
+<a name="l00167"></a>00167                                                         }
+<a name="l00168"></a>00168                                                 }
+<a name="l00169"></a>00169                                         }
+<a name="l00170"></a>00170                         }
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172                 <span class="comment">// In this loop we actualize areas for the gray-level of the threshold of the two old nodes, and create new nodes, </span>
+<a name="l00173"></a>00173                 <span class="comment">// case we find a set of one or several pixels of gray-scale value equal to threshold value, which are not joined</span>
+<a name="l00174"></a>00174                 <span class="comment">// to any connected set represented already in a node of the component tree.</span>
+<a name="l00175"></a>00175                 <span class="comment">//</span>
+<a name="l00176"></a>00176                 <span class="comment">// In this point, we have processed all pixels with gray-scale value equal or lesser to threshold. All of them are</span>
+<a name="l00177"></a>00177                 <span class="comment">// grouped to a group of pixels with same gray-scale level, in which case we have the vertex of a node, or well</span>
+<a name="l00178"></a>00178                 <span class="comment">// or well joined to a previously created node.</span>
+<a name="l00179"></a>00179                 <span class="comment">//</span>
+<a name="l00180"></a>00180                 <span class="comment">// Then we creater for the former case new nodes, and in any case we actualize areas for nodes with new points</span>
+<a name="l00181"></a>00181                 <span class="comment">// in them.</span>
+<a name="l00182"></a>00182                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt; points[threshold].size(); n++)
+<a name="l00183"></a>00183                         {
+<a name="l00184"></a>00184                         <span class="keyword">const</span> uInt      col = points[threshold][n].x(),
+<a name="l00185"></a>00185                                         row = points[threshold][n].y(),
+<a name="l00186"></a>00186                                         actualIndex = disjointSet.index(col, row),
+<a name="l00187"></a>00187                                         actualSet = disjointSet.find(actualIndex);
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189                         Q_ASSERT_X(threshold &lt; 256, <span class="stringliteral">&quot;getComponentTree&quot;</span>, <span class="stringliteral">&quot;out of bounds 4&quot;</span>);
+<a name="l00190"></a>00190                         Q_ASSERT_X(actualIndex &lt; cols * rows, <span class="stringliteral">&quot;getComponentTree&quot;</span>, <span class="stringliteral">&quot;out of bounds 5&quot;</span>);
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192                         <span class="comment">// We have a pixel with gray-scale level equal to threshold, and disjoint set identifier equal to</span>
+<a name="l00193"></a>00193                         <span class="comment">// himself.</span>
+<a name="l00194"></a>00194                         <span class="comment">// This means either it is an isolated pixel, surrounded by pixels of gray-scale level higher than his, or</span>
+<a name="l00195"></a>00195                         <span class="comment">// that he is in a connected set of pixels, all of them with exactly gray-scale level value of threshold</span>
+<a name="l00196"></a>00196                         <span class="comment">// (and we hill be the only one of that set, with disjoint set identifier equal to himself).</span>
+<a name="l00197"></a>00197                         <span class="comment">// Either case we create a new node, with seed point equal to this node.</span>
+<a name="l00198"></a>00198                         <span class="keywordflow">if</span> (actualIndex == actualSet)
+<a name="l00199"></a>00199                                 {
+<a name="l00200"></a>00200                                 <span class="keywordflow">if</span> (nodeID[actualIndex] == NULL_NODE)
+<a name="l00201"></a>00201                                         <span class="comment">// We have a header point for the new component tree node.</span>
+<a name="l00202"></a>00202                                         <span class="comment">// We initialize the values for his node.</span>
+<a name="l00203"></a>00203                                         {
+<a name="l00204"></a>00204                                         nodeID[actualSet] = newNode(col, row, threshold);
+<a name="l00205"></a>00205                                         <a class="code" href="classQVComponentTree.html#a270428438cc9b604e9261cf3c741c217" title="Returns the accumulative histogram of the gray-level values of the pixels, for a...">area</a>(nodeID[actualSet])[threshold] = disjointSet.getSetCardinality(actualSet);
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207                                         this-&gt;leafNodes++;
+<a name="l00208"></a>00208                                         }
+<a name="l00209"></a>00209                                 <span class="keywordflow">else</span>    <span class="comment">// Actual pixel is associated to a node, but this one was created for other pixel.</span>
+<a name="l00210"></a>00210                                         <span class="comment">// We count as a free pixel the one that created the node that contains actual pixel.</span>
+<a name="l00211"></a>00211                                         this-&gt;freePoints++;
+<a name="l00212"></a>00212                                 }
+<a name="l00213"></a>00213                         <span class="keywordflow">else</span>    <span class="comment">// Actual pixel is not its group head</span>
+<a name="l00214"></a>00214                                 this-&gt;freePoints++;
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216                         <span class="keyword">const</span> uInt actualNodeID = nodeID[actualSet];
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218                         <span class="keywordflow">if</span> (actualNodeID != NULL_NODE)
+<a name="l00219"></a>00219                                 {
+<a name="l00220"></a>00220                                 <span class="comment">// Actualize histogram for the node of the actual pixel.</span>
+<a name="l00221"></a>00221                                 <span class="comment">//lastThreshold(actualNodeID) = threshold;</span>
+<a name="l00222"></a>00222                                 <span class="comment">//area(actualNodeID)[threshold] = disjointSet.getSetCardinality(actualIndex);</span>
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224                                 <span class="comment">// Close node for the actual pixel, if open.</span>
+<a name="l00225"></a>00225                                 closedNode(actualNodeID) = <span class="keyword">true</span>;
+<a name="l00226"></a>00226                                 }
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228                         <span class="comment">// Actualize total number of points processed.</span>
+<a name="l00229"></a>00229                         this-&gt;totalPoints++;
+<a name="l00230"></a>00230                         }
+<a name="l00231"></a>00231                 }
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233         <a class="code" href="classQVComponentTree.html#a608bd4b04af5ad582c863c7dc225ad0d" title="Returns index for the root node in the image.">rootNode</a>() = nodeID[disjointSet.find(0)];
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235         <span class="comment">// Component tree finished, performing some tests....</span>
+<a name="l00236"></a>00236 <span class="preprocessor">        #ifndef QT_NO_DEBUG</span>
+<a name="l00237"></a>00237 <span class="preprocessor"></span>        <span class="comment">//testComponentTree(image, disjointSet);</span>
+<a name="l00238"></a>00238 <span class="preprocessor">        #endif</span>
+<a name="l00239"></a>00239 <span class="preprocessor"></span>
+<a name="l00240"></a>00240         <span class="keyword">delete</span> nodeID;
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242         qDebug() &lt;&lt; <span class="stringliteral">&quot;getComponentTree() &lt;~ return&quot;</span>;
+<a name="l00243"></a>00243         }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

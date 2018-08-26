@@ -1,0 +1,601 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvreprojectionerror.cpp</h1><a href="qvreprojectionerror_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="qvreprojectionerror_8h.html" title="File from the QVision library.">qvmath/qvreprojectionerror.h</a>&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="comment">/* evaluateReprojectionResidualsAndJacobian function:</span>
+<a name="l00028"></a>00028 <span class="comment">   --------------------------------------------------</span>
+<a name="l00029"></a>00029 <span class="comment">  This is an auxiliar function for &#39;optimizeReprojectionErrorForCameraPose&#39;,</span>
+<a name="l00030"></a>00030 <span class="comment">  which estimates the Jacobian of the reprojection error function.</span>
+<a name="l00031"></a>00031 <span class="comment"></span>
+<a name="l00032"></a>00032 <span class="comment">  Maple code:</span>
+<a name="l00033"></a>00033 <span class="comment"></span>
+<a name="l00034"></a>00034 <span class="comment">    ----------------------------------------</span>
+<a name="l00035"></a>00035 <span class="comment">Norm2 := v -&gt; sqrt(v[1]^2 + v[2]^2):</span>
+<a name="l00036"></a>00036 <span class="comment">FromHomogeneous2D := p3D -&gt; Vector([p3D[1]/p3D[3], p3D[2]/p3D[3]]):</span>
+<a name="l00037"></a>00037 <span class="comment">QuaternionToRotationMatrix := q -&gt;</span>
+<a name="l00038"></a>00038 <span class="comment">    Matrix([[1,0,0],[0,1,0],[0,0,1]]) +</span>
+<a name="l00039"></a>00039 <span class="comment">    (2.0 / (q[1]^2+q[2]^2+q[3]^2+q[4]^2)) *</span>
+<a name="l00040"></a>00040 <span class="comment">    Matrix(     [       [-q[2]*q[2]-q[3]*q[3], q[1]*q[2]-q[3]*q[4], q[3]*q[1]+q[2]*q[4]],</span>
+<a name="l00041"></a>00041 <span class="comment">            [q[1]*q[2]+q[3]*q[4], -q[3]*q[3]-q[1]*q[1], q[2]*q[3]-q[1]*q[4]],</span>
+<a name="l00042"></a>00042 <span class="comment">            [q[3]*q[1]-q[2]*q[4], q[2]*q[3]+q[1]*q[4], -q[2]*q[2]-q[1]*q[1]]</span>
+<a name="l00043"></a>00043 <span class="comment">        ]):</span>
+<a name="l00044"></a>00044 <span class="comment"></span>
+<a name="l00045"></a>00045 <span class="comment">R := QuaternionToRotationMatrix(Vector([q1,q2,q3,q4])):</span>
+<a name="l00046"></a>00046 <span class="comment">t := Vector([tx,ty,tz]):</span>
+<a name="l00047"></a>00047 <span class="comment">p := Vector([px, py]):</span>
+<a name="l00048"></a>00048 <span class="comment">P := Vector([x,y,z]):</span>
+<a name="l00049"></a>00049 <span class="comment">res := Norm2(FromHomogeneous2D(R.P+t)-p):</span>
+<a name="l00050"></a>00050 <span class="comment"></span>
+<a name="l00051"></a>00051 <span class="comment">M := Vector([ diff(res, q1), diff(res, q2), diff(res, q3), diff(res, q4), diff(res, tx), diff(res, ty), diff(res, tz), res ]):</span>
+<a name="l00052"></a>00052 <span class="comment">CodeGeneration[C](M, optimize = true);</span>
+<a name="l00053"></a>00053 <span class="comment">    ----------------------------------------</span>
+<a name="l00054"></a>00054 <span class="comment">*/</span>
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> evaluateReprojectionResidualsAndJacobian(  <span class="keyword">const</span> <span class="keywordtype">double</span> q1, <span class="keyword">const</span> <span class="keywordtype">double</span> q2, <span class="keyword">const</span> <span class="keywordtype">double</span> q3, <span class="keyword">const</span> <span class="keywordtype">double</span> q4,
+<a name="l00057"></a>00057                         <span class="keyword">const</span> <span class="keywordtype">double</span> tx, <span class="keyword">const</span> <span class="keywordtype">double</span> ty, <span class="keyword">const</span> <span class="keywordtype">double</span> tz,
+<a name="l00058"></a>00058                         <span class="keyword">const</span> <span class="keywordtype">double</span> px, <span class="keyword">const</span> <span class="keywordtype">double</span> py,
+<a name="l00059"></a>00059                         <span class="keyword">const</span> <span class="keywordtype">double</span> x, <span class="keyword">const</span> <span class="keywordtype">double</span> y, <span class="keyword">const</span> <span class="keywordtype">double</span> z,
+<a name="l00060"></a>00060                         <span class="keywordtype">double</span> *residual, <span class="keywordtype">double</span> *jacobian)
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062     <span class="keyword">const</span> <span class="keywordtype">double</span> t1 = q1 * q1;
+<a name="l00063"></a>00063     <span class="keyword">const</span> <span class="keywordtype">double</span> t2 = q2 * q2;
+<a name="l00064"></a>00064     <span class="keyword">const</span> <span class="keywordtype">double</span> t3 = q3 * q3;
+<a name="l00065"></a>00065     <span class="keyword">const</span> <span class="keywordtype">double</span> t4 = q4 * q4;
+<a name="l00066"></a>00066     <span class="keyword">const</span> <span class="keywordtype">double</span> t5 = t1 + t2 + t3 + t4;
+<a name="l00067"></a>00067     <span class="keyword">const</span> <span class="keywordtype">double</span> t6 = 0.1e1 / t5;
+<a name="l00068"></a>00068     <span class="keyword">const</span> <span class="keywordtype">double</span> t7 = -t2 - t3;
+<a name="l00069"></a>00069     <span class="keyword">const</span> <span class="keywordtype">double</span> t12 = q1 * q2;
+<a name="l00070"></a>00070     <span class="keyword">const</span> <span class="keywordtype">double</span> t13 = q3 * q4;
+<a name="l00071"></a>00071     <span class="keyword">const</span> <span class="keywordtype">double</span> t14 = t12 - t13;
+<a name="l00072"></a>00072     <span class="keyword">const</span> <span class="keywordtype">double</span> t18 = q3 * q1;
+<a name="l00073"></a>00073     <span class="keyword">const</span> <span class="keywordtype">double</span> t19 = q2 * q4;
+<a name="l00074"></a>00074     <span class="keyword">const</span> <span class="keywordtype">double</span> t20 = t18 + t19;
+<a name="l00075"></a>00075     <span class="keyword">const</span> <span class="keywordtype">double</span> t24 = (0.1e1 + 0.20e1 * t6 * t7) * x + 0.20e1 * t6 * t14 * y + 0.20e1 * t6 * t20 * z + tx;
+<a name="l00076"></a>00076     <span class="keyword">const</span> <span class="keywordtype">double</span> t25 = t18 - t19;
+<a name="l00077"></a>00077     <span class="keyword">const</span> <span class="keywordtype">double</span> t29 = q2 * q3;
+<a name="l00078"></a>00078     <span class="keyword">const</span> <span class="keywordtype">double</span> t30 = q1 * q4;
+<a name="l00079"></a>00079     <span class="keyword">const</span> <span class="keywordtype">double</span> t31 = t29 + t30;
+<a name="l00080"></a>00080     <span class="keyword">const</span> <span class="keywordtype">double</span> t35 = -t2 - t1;
+<a name="l00081"></a>00081     <span class="keyword">const</span> <span class="keywordtype">double</span> t40 = 0.20e1 * t6 * t25 * x + 0.20e1 * t6 * t31 * y + (0.1e1 + 0.20e1 * t6 * t35) * z + tz;
+<a name="l00082"></a>00082     <span class="keyword">const</span> <span class="keywordtype">double</span> t41 = 0.1e1 / t40;
+<a name="l00083"></a>00083     <span class="keyword">const</span> <span class="keywordtype">double</span> t43 = t24 * t41 - px;
+<a name="l00084"></a>00084     <span class="keyword">const</span> <span class="keywordtype">double</span> t44 = t43 * t43;
+<a name="l00085"></a>00085     <span class="keyword">const</span> <span class="keywordtype">double</span> t45 = t12 + t13;
+<a name="l00086"></a>00086     <span class="keyword">const</span> <span class="keywordtype">double</span> t49 = -t3 - t1;
+<a name="l00087"></a>00087     <span class="keyword">const</span> <span class="keywordtype">double</span> t54 = t29 - t30;
+<a name="l00088"></a>00088     <span class="keyword">const</span> <span class="keywordtype">double</span> t58 = 0.20e1 * t6 * t45 * x + (0.1e1 + 0.20e1 * t6 * t49) * y + 0.20e1 * t6 * t54 * z + ty;
+<a name="l00089"></a>00089     <span class="keyword">const</span> <span class="keywordtype">double</span> t60 = t58 * t41 - py;
+<a name="l00090"></a>00090     <span class="keyword">const</span> <span class="keywordtype">double</span> t61 = t60 * t60;
+<a name="l00091"></a>00091     <span class="keyword">const</span> <span class="keywordtype">double</span> t63 = sqrt(t44 + t61);
+<a name="l00092"></a>00092     <span class="keyword">const</span> <span class="keywordtype">double</span> t64 = 0.1e1 / t63;
+<a name="l00093"></a>00093     <span class="keyword">const</span> <span class="keywordtype">double</span> t65 = t5 * t5;
+<a name="l00094"></a>00094     <span class="keyword">const</span> <span class="keywordtype">double</span> t66 = 0.1e1 / t65;
+<a name="l00095"></a>00095     <span class="keyword">const</span> <span class="keywordtype">double</span> t67 = t66 * t7;
+<a name="l00096"></a>00096     <span class="keyword">const</span> <span class="keywordtype">double</span> t68 = q1 * x;
+<a name="l00097"></a>00097     <span class="keyword">const</span> <span class="keywordtype">double</span> t71 = t66 * t14;
+<a name="l00098"></a>00098     <span class="keyword">const</span> <span class="keywordtype">double</span> t72 = y * q1;
+<a name="l00099"></a>00099     <span class="keyword">const</span> <span class="keywordtype">double</span> t75 = t6 * q2;
+<a name="l00100"></a>00100     <span class="keyword">const</span> <span class="keywordtype">double</span> t77 = 0.20e1 * t75 * y;
+<a name="l00101"></a>00101     <span class="keyword">const</span> <span class="keywordtype">double</span> t78 = t66 * t20;
+<a name="l00102"></a>00102     <span class="keyword">const</span> <span class="keywordtype">double</span> t79 = z * q1;
+<a name="l00103"></a>00103     <span class="keyword">const</span> <span class="keywordtype">double</span> t82 = t6 * q3;
+<a name="l00104"></a>00104     <span class="keyword">const</span> <span class="keywordtype">double</span> t84 = 0.20e1 * t82 * z;
+<a name="l00105"></a>00105     <span class="keyword">const</span> <span class="keywordtype">double</span> t87 = t40 * t40;
+<a name="l00106"></a>00106     <span class="keyword">const</span> <span class="keywordtype">double</span> t88 = 0.1e1 / t87;
+<a name="l00107"></a>00107     <span class="keyword">const</span> <span class="keywordtype">double</span> t89 = t24 * t88;
+<a name="l00108"></a>00108     <span class="keyword">const</span> <span class="keywordtype">double</span> t90 = t66 * t25;
+<a name="l00109"></a>00109     <span class="keyword">const</span> <span class="keywordtype">double</span> t94 = 0.20e1 * t82 * x;
+<a name="l00110"></a>00110     <span class="keyword">const</span> <span class="keywordtype">double</span> t95 = t66 * t31;
+<a name="l00111"></a>00111     <span class="keyword">const</span> <span class="keywordtype">double</span> t98 = t6 * q4;
+<a name="l00112"></a>00112     <span class="keyword">const</span> <span class="keywordtype">double</span> t100 = 0.20e1 * t98 * y;
+<a name="l00113"></a>00113     <span class="keyword">const</span> <span class="keywordtype">double</span> t101 = t66 * t35;
+<a name="l00114"></a>00114     <span class="keyword">const</span> <span class="keywordtype">double</span> t104 = t6 * q1;
+<a name="l00115"></a>00115     <span class="keyword">const</span> <span class="keywordtype">double</span> t105 = 0.40e1 * t104;
+<a name="l00116"></a>00116     <span class="keyword">const</span> <span class="keywordtype">double</span> t108 = -0.40e1 * t90 * t68 + t94 - 0.40e1 * t95 * t72 + t100 + (-0.40e1 * t101 * q1 - t105) * z;
+<a name="l00117"></a>00117     <span class="keyword">const</span> <span class="keywordtype">double</span> t112 = t66 * t45;
+<a name="l00118"></a>00118     <span class="keyword">const</span> <span class="keywordtype">double</span> t116 = 0.20e1 * t75 * x;
+<a name="l00119"></a>00119     <span class="keyword">const</span> <span class="keywordtype">double</span> t117 = t66 * t49;
+<a name="l00120"></a>00120     <span class="keyword">const</span> <span class="keywordtype">double</span> t122 = t66 * t54;
+<a name="l00121"></a>00121     <span class="keyword">const</span> <span class="keywordtype">double</span> t126 = 0.20e1 * t98 * z;
+<a name="l00122"></a>00122     <span class="keyword">const</span> <span class="keywordtype">double</span> t129 = t58 * t88;
+<a name="l00123"></a>00123     <span class="keyword">const</span> <span class="keywordtype">double</span> t138 = 0.40e1 * t75;
+<a name="l00124"></a>00124     <span class="keyword">const</span> <span class="keywordtype">double</span> t141 = y * q2;
+<a name="l00125"></a>00125     <span class="keyword">const</span> <span class="keywordtype">double</span> t145 = 0.20e1 * t104 * y;
+<a name="l00126"></a>00126     <span class="keyword">const</span> <span class="keywordtype">double</span> t146 = z * q2;
+<a name="l00127"></a>00127     <span class="keyword">const</span> <span class="keywordtype">double</span> t151 = x * q2;
+<a name="l00128"></a>00128     <span class="keyword">const</span> <span class="keywordtype">double</span> t155 = 0.20e1 * t98 * x;
+<a name="l00129"></a>00129     <span class="keyword">const</span> <span class="keywordtype">double</span> t159 = 0.20e1 * t82 * y;
+<a name="l00130"></a>00130     <span class="keyword">const</span> <span class="keywordtype">double</span> t164 = -0.40e1 * t90 * t151 - t155 - 0.40e1 * t95 * t141 + t159 + (-0.40e1 * t101 * q2 - t138) * z;
+<a name="l00131"></a>00131     <span class="keyword">const</span> <span class="keywordtype">double</span> t171 = 0.20e1 * t104 * x;
+<a name="l00132"></a>00132     <span class="keyword">const</span> <span class="keywordtype">double</span> t186 = 0.40e1 * t82;
+<a name="l00133"></a>00133     <span class="keyword">const</span> <span class="keywordtype">double</span> t189 = y * q3;
+<a name="l00134"></a>00134     <span class="keyword">const</span> <span class="keywordtype">double</span> t192 = z * q3;
+<a name="l00135"></a>00135     <span class="keyword">const</span> <span class="keywordtype">double</span> t196 = 0.20e1 * t104 * z;
+<a name="l00136"></a>00136     <span class="keyword">const</span> <span class="keywordtype">double</span> t199 = x * q3;
+<a name="l00137"></a>00137     <span class="keyword">const</span> <span class="keywordtype">double</span> t206 = -0.40e1 * t90 * t199 + t171 - 0.40e1 * t95 * t189 + t77 - 0.40e1 * t101 * t192;
+<a name="l00138"></a>00138     <span class="keyword">const</span> <span class="keywordtype">double</span> t219 = 0.20e1 * t75 * z;
+<a name="l00139"></a>00139     <span class="keyword">const</span> <span class="keywordtype">double</span> t228 = q4 * x;
+<a name="l00140"></a>00140     <span class="keyword">const</span> <span class="keywordtype">double</span> t231 = y * q4;
+<a name="l00141"></a>00141     <span class="keyword">const</span> <span class="keywordtype">double</span> t234 = z * q4;
+<a name="l00142"></a>00142     <span class="keyword">const</span> <span class="keywordtype">double</span> t245 = -0.40e1 * t90 * t228 - t116 - 0.40e1 * t95 * t231 + t145 - 0.40e1 * t101 * t234;
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144     jacobian[0] = t64 * (t43 * ((-0.40e1 * t67 * t68 - 0.40e1 * t71 * t72 + t77 - 0.40e1 * t78 * t79 + t84) * t41 - t89 * t108) + t60 * ((-0.40e1 * t112 * t68 + t116 + (-0.40e1 * t117 * q1 - t105) * y - 0.40e1 * t122 * t79 - t126) * t41 - t129 * t108));
+<a name="l00145"></a>00145     jacobian[1] = t64 * (t43 * (((-0.40e1 * t67 * q2 - t138) * x - 0.40e1 * t71 * t141 + t145 - 0.40e1 * t78 * t146 + t126) * t41 - t89 * t164) + t60 * ((-0.40e1 * t112 * t151 + t171 - 0.40e1 * t117 * t141 - 0.40e1 * t122 * t146 + t84) * t41 - t129 * t164));
+<a name="l00146"></a>00146     jacobian[2] = t64 * (t43 * (((-0.40e1 * t67 * q3 - t186) * x - 0.40e1 * t71 * t189 - t100 - 0.40e1 * t78 * t192 + t196) * t41 - t89 * t206) + t60 * ((-0.40e1 * t112 * t199 + t155 + (-0.40e1 * t117 * q3 - t186) * y - 0.40e1 * t122 * t192 + t219) * t41 - t129 * t206));
+<a name="l00147"></a>00147     jacobian[3] = t64 * (t43 * ((-0.40e1 * t67 * t228 - 0.40e1 * t71 * t231 - t159 - 0.40e1 * t78 * t234 + t219) * t41 - t89 * t245) + t60 * ((-0.40e1 * t112 * t228 + t94 - 0.40e1 * t117 * t231 - 0.40e1 * t122 * t234 - t196) * t41 - t129 * t245));
+<a name="l00148"></a>00148     jacobian[4] = t64 * t43 * t41;
+<a name="l00149"></a>00149     jacobian[5] = t64 * t60 * t41;
+<a name="l00150"></a>00150     jacobian[6] = t64 * (-t43 * t24 * t88 - t60 * t58 * t88);
+<a name="l00151"></a>00151     residual[0] = t63;
+<a name="l00152"></a>00152     }
+<a name="l00153"></a>00153 
+<a name="l00154"></a><a class="code" href="group__qvprojectivegeometry.html#ga3f3a84e1786f64ea1e8ba2975759f406">00154</a> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a> <a class="code" href="group__qvprojectivegeometry.html#ga3f3a84e1786f64ea1e8ba2975759f406" title="Improves the estimated location of a camera pose by refining its reprojection error...">optimizeReprojectionErrorForCameraPose</a>(<span class="keyword">const</span> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a> &amp;camera0, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points2D, <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3D, <span class="keyword">const</span> <span class="keywordtype">int</span> iterations)
+<a name="l00155"></a>00155     {
+<a name="l00156"></a>00156     <span class="keyword">const</span> <span class="keywordtype">int</span> n = points2D.size();
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x = camera0;
+<a name="l00159"></a>00159     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; iterations; i++)
+<a name="l00160"></a>00160         {
+<a name="l00161"></a>00161         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> f_x(n);
+<a name="l00162"></a>00162         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> J(n, 7);
+<a name="l00163"></a>00163         <span class="keywordtype">double</span>  *data_f_x = f_x.data(),
+<a name="l00164"></a>00164             *data_J = J.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166         QListIterator&lt;QPointF&gt; iteratorPoints2D(points2D);
+<a name="l00167"></a>00167         QListIterator&lt;QV3DPointF&gt; iteratorPoints3D(points3D);
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169         <span class="keywordtype">int</span> j = 0;
+<a name="l00170"></a>00170         <span class="keywordflow">while</span> (iteratorPoints2D.hasNext())
+<a name="l00171"></a>00171             {
+<a name="l00172"></a>00172             <span class="keyword">const</span> QPointF p2D = iteratorPoints2D.next();
+<a name="l00173"></a>00173             <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p3D = iteratorPoints3D.next();
+<a name="l00174"></a>00174             evaluateReprojectionResidualsAndJacobian(x[0], x[1], x[2], x[3], x[4], x[5], x[6], p2D.x(), p2D.y(), p3D.<a class="code" href="classQV3DPointF.html#aab1c8e4380b126607771339778a83a1e" title="Gets the value for the first coordinate of the 3D point.">x</a>(), p3D.<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>(), p3D.<a class="code" href="classQV3DPointF.html#aba286a7e040358ecbffce7c4566cdd8d" title="Gets the value for the third coordinate of the 3D point.">z</a>(), data_f_x + j, data_J + (7*j));
+<a name="l00175"></a>00175             j++;
+<a name="l00176"></a>00176             }
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H = J.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(J, <span class="keyword">true</span>, <span class="keyword">false</span>);
+<a name="l00179"></a>00179         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; H.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>(); i++)
+<a name="l00180"></a>00180             H(i,i) += 0.01;
+<a name="l00181"></a>00181         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b = J.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(f_x, <span class="keyword">true</span>);
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> xInc;
+<a name="l00184"></a>00184         <a class="code" href="group__qvmatrixalgebra.html#ga7afb7ef53aed190e810886e4941bc3de" title="Solves the linear system  for the unknown matrix , using the Cholesky decomposition...">solveByCholeskyDecomposition</a>(H, xInc, b);
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186         x = x - xInc;
+<a name="l00187"></a>00187         }
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189     <span class="keywordflow">return</span> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a>(x);
+<a name="l00190"></a>00190     }
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192 <span class="comment">/* reprojectionResidualsAndJacobianFor3DPoint function:</span>
+<a name="l00193"></a>00193 <span class="comment">   --------------------------------------------------</span>
+<a name="l00194"></a>00194 <span class="comment">  This is an auxiliar function for &#39;optimizeReprojectionError3DPoint&#39;,</span>
+<a name="l00195"></a>00195 <span class="comment">  which estimates the Jacobian of the reprojection error function.</span>
+<a name="l00196"></a>00196 <span class="comment"></span>
+<a name="l00197"></a>00197 <span class="comment">  Maple code:</span>
+<a name="l00198"></a>00198 <span class="comment"></span>
+<a name="l00199"></a>00199 <span class="comment">    ----------------------------------------</span>
+<a name="l00200"></a>00200 <span class="comment"></span>
+<a name="l00201"></a>00201 <span class="comment">Norm2 := v -&gt; sqrt(v[1]^2 + v[2]^2):</span>
+<a name="l00202"></a>00202 <span class="comment">FromHomogeneous2D := p3D -&gt; Vector([p3D[1]/p3D[3], p3D[2]/p3D[3]]):</span>
+<a name="l00203"></a>00203 <span class="comment">QuaternionToRotationMatrix := q -&gt;</span>
+<a name="l00204"></a>00204 <span class="comment">    Matrix([[1,0,0],[0,1,0],[0,0,1]]) +</span>
+<a name="l00205"></a>00205 <span class="comment">    (2.0 / (q[1]^2+q[2]^2+q[3]^2+q[4]^2)) *</span>
+<a name="l00206"></a>00206 <span class="comment">    Matrix(     [       [-q[2]*q[2]-q[3]*q[3], q[1]*q[2]-q[3]*q[4], q[3]*q[1]+q[2]*q[4]],</span>
+<a name="l00207"></a>00207 <span class="comment">            [q[1]*q[2]+q[3]*q[4], -q[3]*q[3]-q[1]*q[1], q[2]*q[3]-q[1]*q[4]],</span>
+<a name="l00208"></a>00208 <span class="comment">            [q[3]*q[1]-q[2]*q[4], q[2]*q[3]+q[1]*q[4], -q[2]*q[2]-q[1]*q[1]]</span>
+<a name="l00209"></a>00209 <span class="comment">        ]):</span>
+<a name="l00210"></a>00210 <span class="comment"></span>
+<a name="l00211"></a>00211 <span class="comment">R := QuaternionToRotationMatrix(Vector([q1,q2,q3,q4])):</span>
+<a name="l00212"></a>00212 <span class="comment">t := Vector([tx,ty,tz]):</span>
+<a name="l00213"></a>00213 <span class="comment">p := Vector([px, py]):</span>
+<a name="l00214"></a>00214 <span class="comment">P := Vector([x,y,z]):</span>
+<a name="l00215"></a>00215 <span class="comment">res := Norm2(FromHomogeneous2D(R.P+t)-p);</span>
+<a name="l00216"></a>00216 <span class="comment"></span>
+<a name="l00217"></a>00217 <span class="comment">M := Vector([ diff(res, x), diff(res, y), diff(res, z), res ]):</span>
+<a name="l00218"></a>00218 <span class="comment">CodeGeneration[C](M, optimize = true);</span>
+<a name="l00219"></a>00219 <span class="comment">    ----------------------------------------</span>
+<a name="l00220"></a>00220 <span class="comment">*/</span>
+<a name="l00221"></a>00221 <span class="keywordtype">void</span> reprojectionResidualsAndJacobianFor3DPoint(        <span class="keyword">const</span> <span class="keywordtype">double</span> q1, <span class="keyword">const</span> <span class="keywordtype">double</span> q2, <span class="keyword">const</span> <span class="keywordtype">double</span> q3, <span class="keyword">const</span> <span class="keywordtype">double</span> q4,
+<a name="l00222"></a>00222                             <span class="keyword">const</span> <span class="keywordtype">double</span> tx, <span class="keyword">const</span> <span class="keywordtype">double</span> ty, <span class="keyword">const</span> <span class="keywordtype">double</span> tz,
+<a name="l00223"></a>00223                             <span class="keyword">const</span> <span class="keywordtype">double</span> px, <span class="keyword">const</span> <span class="keywordtype">double</span> py,
+<a name="l00224"></a>00224                             <span class="keyword">const</span> <span class="keywordtype">double</span> x, <span class="keyword">const</span> <span class="keywordtype">double</span> y, <span class="keyword">const</span> <span class="keywordtype">double</span> z,
+<a name="l00225"></a>00225                             <span class="keywordtype">double</span> *residual, <span class="keywordtype">double</span> *jacobian)
+<a name="l00226"></a>00226     {
+<a name="l00227"></a>00227     <span class="keyword">const</span> <span class="keywordtype">double</span> t1 = q1 * q1;
+<a name="l00228"></a>00228     <span class="keyword">const</span> <span class="keywordtype">double</span> t2 = q2 * q2;
+<a name="l00229"></a>00229     <span class="keyword">const</span> <span class="keywordtype">double</span> t3 = q3 * q3;
+<a name="l00230"></a>00230     <span class="keyword">const</span> <span class="keywordtype">double</span> t4 = q4 * q4;
+<a name="l00231"></a>00231     <span class="keyword">const</span> <span class="keywordtype">double</span> t6 = 0.1e1 / (t1 + t2 + t3 + t4);
+<a name="l00232"></a>00232     <span class="keyword">const</span> <span class="keywordtype">double</span> t10 = 0.1e1 + 0.20e1 * t6 * (-t2 - t3);
+<a name="l00233"></a>00233     <span class="keyword">const</span> <span class="keywordtype">double</span> t12 = q1 * q2;
+<a name="l00234"></a>00234     <span class="keyword">const</span> <span class="keywordtype">double</span> t13 = q3 * q4;
+<a name="l00235"></a>00235     <span class="keyword">const</span> <span class="keywordtype">double</span> t15 = t6 * (t12 - t13);
+<a name="l00236"></a>00236     <span class="keyword">const</span> <span class="keywordtype">double</span> t18 = q3 * q1;
+<a name="l00237"></a>00237     <span class="keyword">const</span> <span class="keywordtype">double</span> t19 = q2 * q4;
+<a name="l00238"></a>00238     <span class="keyword">const</span> <span class="keywordtype">double</span> t21 = t6 * (t18 + t19);
+<a name="l00239"></a>00239     <span class="keyword">const</span> <span class="keywordtype">double</span> t24 = t10 * x + 0.20e1 * t15 * y + 0.20e1 * t21 * z + tx;
+<a name="l00240"></a>00240     <span class="keyword">const</span> <span class="keywordtype">double</span> t26 = t6 * (t18 - t19);
+<a name="l00241"></a>00241     <span class="keyword">const</span> <span class="keywordtype">double</span> t29 = q2 * q3;
+<a name="l00242"></a>00242     <span class="keyword">const</span> <span class="keywordtype">double</span> t30 = q1 * q4;
+<a name="l00243"></a>00243     <span class="keyword">const</span> <span class="keywordtype">double</span> t32 = t6 * (t29 + t30);
+<a name="l00244"></a>00244     <span class="keyword">const</span> <span class="keywordtype">double</span> t38 = 0.1e1 + 0.20e1 * t6 * (-t2 - t1);
+<a name="l00245"></a>00245     <span class="keyword">const</span> <span class="keywordtype">double</span> t40 = 0.20e1 * t26 * x + 0.20e1 * t32 * y + t38 * z + tz;
+<a name="l00246"></a>00246     <span class="keyword">const</span> <span class="keywordtype">double</span> t41 = 0.1e1 / t40;
+<a name="l00247"></a>00247     <span class="keyword">const</span> <span class="keywordtype">double</span> t43 = t24 * t41 - px;
+<a name="l00248"></a>00248     <span class="keyword">const</span> <span class="keywordtype">double</span> t44 = t43 * t43;
+<a name="l00249"></a>00249     <span class="keyword">const</span> <span class="keywordtype">double</span> t46 = t6 * (t12 + t13);
+<a name="l00250"></a>00250     <span class="keyword">const</span> <span class="keywordtype">double</span> t52 = 0.1e1 + 0.20e1 * t6 * (-t3 - t1);
+<a name="l00251"></a>00251     <span class="keyword">const</span> <span class="keywordtype">double</span> t55 = t6 * (t29 - t30);
+<a name="l00252"></a>00252     <span class="keyword">const</span> <span class="keywordtype">double</span> t58 = 0.20e1 * t46 * x + t52 * y + 0.20e1 * t55 * z + ty;
+<a name="l00253"></a>00253     <span class="keyword">const</span> <span class="keywordtype">double</span> t60 = t58 * t41 - py;
+<a name="l00254"></a>00254     <span class="keyword">const</span> <span class="keywordtype">double</span> t61 = t60 * t60;
+<a name="l00255"></a>00255     <span class="keyword">const</span> <span class="keywordtype">double</span> t63 = sqrt(t44 + t61);
+<a name="l00256"></a>00256     <span class="keyword">const</span> <span class="keywordtype">double</span> t64 = 0.1e1 / t63;
+<a name="l00257"></a>00257     <span class="keyword">const</span> <span class="keywordtype">double</span> t66 = t40 * t40;
+<a name="l00258"></a>00258     <span class="keyword">const</span> <span class="keywordtype">double</span> t67 = 0.1e1 / t66;
+<a name="l00259"></a>00259     <span class="keyword">const</span> <span class="keywordtype">double</span> t68 = t24 * t67;
+<a name="l00260"></a>00260     <span class="keyword">const</span> <span class="keywordtype">double</span> t75 = t58 * t67;
+<a name="l00261"></a>00261     jacobian[0] = t64 * (t43 * (t10 * t41 - 0.20e1 * t68 * t26) + t60 * (0.20e1 * t46 * t41 - 0.20e1 * t75 * t26));
+<a name="l00262"></a>00262     jacobian[1] = t64 * (t43 * (0.20e1 * t15 * t41 - 0.20e1 * t68 * t32) + t60 * (t52 * t41 - 0.20e1 * t75 * t32));
+<a name="l00263"></a>00263     jacobian[2] = t64 * (t43 * (0.20e1 * t21 * t41 - t68 * t38) + t60 * (0.20e1 * t55 * t41 - t75 * t38));
+<a name="l00264"></a>00264     residual[0] = t63;
+<a name="l00265"></a>00265     }
+<a name="l00266"></a>00266 
+<a name="l00267"></a><a class="code" href="group__qvprojectivegeometry.html#gabe1f2349f630e5584249273044cce486">00267</a> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="group__qvprojectivegeometry.html#gabe1f2349f630e5584249273044cce486" title="Improves the estimated location of a 3D point by refining its reprojection error...">optimizeReprojectionErrorFor3DPoint</a>(<span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> &amp;point3D, <span class="keyword">const</span> QList&lt;QVEuclideanMapping3&gt; &amp;cameraPoses, <span class="keyword">const</span> QHash&lt;int, QPointF&gt; &amp;projectionsOfAPoint, <span class="keyword">const</span> <span class="keywordtype">int</span> iterations, <span class="keyword">const</span> <span class="keywordtype">double</span> lambda)
+<a name="l00268"></a>00268     {
+<a name="l00269"></a>00269     <span class="keyword">const</span> <span class="keywordtype">int</span> n = projectionsOfAPoint.count();
+<a name="l00270"></a>00270 
+<a name="l00271"></a>00271     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x = point3D;
+<a name="l00272"></a>00272     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; iterations; i++)
+<a name="l00273"></a>00273         {
+<a name="l00274"></a>00274         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> f_x(n);
+<a name="l00275"></a>00275         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> J(n, 3);
+<a name="l00276"></a>00276         <span class="keywordtype">double</span>  *data_f_x = f_x.data(),
+<a name="l00277"></a>00277             *data_J = J.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279         QHashIterator&lt;int, QPointF&gt; it(projectionsOfAPoint);
+<a name="l00280"></a>00280         <span class="keywordtype">int</span> j=0;
+<a name="l00281"></a>00281         <span class="keywordflow">while</span> (it.hasNext())
+<a name="l00282"></a>00282             {
+<a name="l00283"></a>00283             it.next();
+<a name="l00284"></a>00284             <span class="keyword">const</span> QPointF p2D = it.value();
+<a name="l00285"></a>00285             <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v = cameraPoses[it.key()];
+<a name="l00286"></a>00286 
+<a name="l00287"></a>00287             reprojectionResidualsAndJacobianFor3DPoint(v[0], v[1], v[2], v[3], v[4], v[5], v[6], p2D.x(), p2D.y(), x[0], x[1], x[2], data_f_x + j, data_J + (3*j));
+<a name="l00288"></a>00288             j++;
+<a name="l00289"></a>00289             }
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H = J.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(J, <span class="keyword">true</span>, <span class="keyword">false</span>);
+<a name="l00292"></a>00292         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; H.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>(); i++)
+<a name="l00293"></a>00293             H(i,i) += lambda;
+<a name="l00294"></a>00294         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b = J.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(f_x, <span class="keyword">true</span>);
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> xInc;
+<a name="l00297"></a>00297         <a class="code" href="group__qvmatrixalgebra.html#ga7afb7ef53aed190e810886e4941bc3de" title="Solves the linear system  for the unknown matrix , using the Cholesky decomposition...">solveByCholeskyDecomposition</a>(H, xInc, b);
+<a name="l00298"></a>00298 
+<a name="l00299"></a>00299         x = x - xInc;
+<a name="l00300"></a>00300         }
+<a name="l00301"></a>00301 
+<a name="l00302"></a>00302     <span class="keywordflow">return</span> x;
+<a name="l00303"></a>00303     }
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305 <span class="comment">/* evaluateReprojectionResidualsAndJacobianCauchyDistribution function:</span>
+<a name="l00306"></a>00306 <span class="comment">   --------------------------------------------------</span>
+<a name="l00307"></a>00307 <span class="comment">  This is an auxiliar function for &#39;optimizeReprojectionErrorForCameraPose&#39;,</span>
+<a name="l00308"></a>00308 <span class="comment">  which estimates the Jacobian of the reprojection error function.</span>
+<a name="l00309"></a>00309 <span class="comment"></span>
+<a name="l00310"></a>00310 <span class="comment">  Maple code:</span>
+<a name="l00311"></a>00311 <span class="comment"></span>
+<a name="l00312"></a>00312 <span class="comment">    ----------------------------------------</span>
+<a name="l00313"></a>00313 <span class="comment">Norm2 := v -&gt; sqrt(v[1]^2 + v[2]^2):</span>
+<a name="l00314"></a>00314 <span class="comment">FromHomogeneous2D := p3D -&gt; Vector([p3D[1]/p3D[3], p3D[2]/p3D[3]]):</span>
+<a name="l00315"></a>00315 <span class="comment">QuaternionToRotationMatrix := q -&gt;</span>
+<a name="l00316"></a>00316 <span class="comment">    Matrix([[1,0,0],[0,1,0],[0,0,1]]) +</span>
+<a name="l00317"></a>00317 <span class="comment">    (2.0 / (q[1]^2+q[2]^2+q[3]^2+q[4]^2)) *</span>
+<a name="l00318"></a>00318 <span class="comment">    Matrix(     [       [-q[2]*q[2]-q[3]*q[3], q[1]*q[2]-q[3]*q[4], q[3]*q[1]+q[2]*q[4]],</span>
+<a name="l00319"></a>00319 <span class="comment">            [q[1]*q[2]+q[3]*q[4], -q[3]*q[3]-q[1]*q[1], q[2]*q[3]-q[1]*q[4]],</span>
+<a name="l00320"></a>00320 <span class="comment">            [q[3]*q[1]-q[2]*q[4], q[2]*q[3]+q[1]*q[4], -q[2]*q[2]-q[1]*q[1]]</span>
+<a name="l00321"></a>00321 <span class="comment">        ]):</span>
+<a name="l00322"></a>00322 <span class="comment"></span>
+<a name="l00323"></a>00323 <span class="comment">R := QuaternionToRotationMatrix(Vector([q1,q2,q3,q4])):</span>
+<a name="l00324"></a>00324 <span class="comment">t := Vector([tx,ty,tz]):</span>
+<a name="l00325"></a>00325 <span class="comment">p := Vector([px, py]):</span>
+<a name="l00326"></a>00326 <span class="comment">P := Vector([x,y,z]):</span>
+<a name="l00327"></a>00327 <span class="comment">res := log(1+Norm2(FromHomogeneous2D(R.(P-t))-p)^2 / sigma^2):</span>
+<a name="l00328"></a>00328 <span class="comment"></span>
+<a name="l00329"></a>00329 <span class="comment">M := Vector([ diff(res, q1), diff(res, q2), diff(res, q3), diff(res, q4), diff(res, tx), diff(res, ty), diff(res, tz), res ]):</span>
+<a name="l00330"></a>00330 <span class="comment">CodeGeneration[C](M, optimize = true);</span>
+<a name="l00331"></a>00331 <span class="comment">    ----------------------------------------</span>
+<a name="l00332"></a>00332 <span class="comment">*/</span>
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334 <span class="keywordtype">void</span> evaluateReprojectionResidualsAndJacobianCauchyDistribution(
+<a name="l00335"></a>00335                 <span class="keyword">const</span> <span class="keywordtype">double</span> q1, <span class="keyword">const</span> <span class="keywordtype">double</span> q2, <span class="keyword">const</span> <span class="keywordtype">double</span> q3, <span class="keyword">const</span> <span class="keywordtype">double</span> q4,
+<a name="l00336"></a>00336                 <span class="keyword">const</span> <span class="keywordtype">double</span> tx, <span class="keyword">const</span> <span class="keywordtype">double</span> ty, <span class="keyword">const</span> <span class="keywordtype">double</span> tz,
+<a name="l00337"></a>00337                 <span class="keyword">const</span> QPointF p2D, <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p3D,
+<a name="l00338"></a>00338                 <span class="keyword">const</span> <span class="keywordtype">double</span> sigma,
+<a name="l00339"></a>00339                 <span class="keywordtype">double</span> *residual, <span class="keywordtype">double</span> *jacobian)
+<a name="l00340"></a>00340     {
+<a name="l00341"></a>00341         <span class="comment">//const double sigma = 3.0;</span>
+<a name="l00342"></a>00342         <span class="keyword">const</span> <span class="keywordtype">double</span>    px = p2D.x(),
+<a name="l00343"></a>00343                                         py = p2D.y(),
+<a name="l00344"></a>00344                                         x = p3D.<a class="code" href="classQV3DPointF.html#aab1c8e4380b126607771339778a83a1e" title="Gets the value for the first coordinate of the 3D point.">x</a>(),
+<a name="l00345"></a>00345                                         y = p3D.<a class="code" href="classQV3DPointF.html#ab3999406794a8d4afa0718af691b8920" title="Gets the value for the second coordinate of the 3D point.">y</a>(),
+<a name="l00346"></a>00346                                         z = p3D.<a class="code" href="classQV3DPointF.html#aba286a7e040358ecbffce7c4566cdd8d" title="Gets the value for the third coordinate of the 3D point.">z</a>();
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348         <span class="keyword">const</span> <span class="keywordtype">double</span> t1 = q1 * q1;
+<a name="l00349"></a>00349         <span class="keyword">const</span> <span class="keywordtype">double</span> t2 = q2 * q2;
+<a name="l00350"></a>00350         <span class="keyword">const</span> <span class="keywordtype">double</span> t3 = q3 * q3;
+<a name="l00351"></a>00351         <span class="keyword">const</span> <span class="keywordtype">double</span> t4 = q4 * q4;
+<a name="l00352"></a>00352         <span class="keyword">const</span> <span class="keywordtype">double</span> t5 = t1 + t2 + t3 + t4;
+<a name="l00353"></a>00353         <span class="keyword">const</span> <span class="keywordtype">double</span> t6 = 0.1e1 / t5;
+<a name="l00354"></a>00354         <span class="keyword">const</span> <span class="keywordtype">double</span> t7 = -t2 - t3;
+<a name="l00355"></a>00355         <span class="keyword">const</span> <span class="keywordtype">double</span> t10 = 0.1e1 + 0.20e1 * t6 * t7;
+<a name="l00356"></a>00356         <span class="keyword">const</span> <span class="keywordtype">double</span> t11 = x - tx;
+<a name="l00357"></a>00357         <span class="keyword">const</span> <span class="keywordtype">double</span> t13 = q1 * q2;
+<a name="l00358"></a>00358         <span class="keyword">const</span> <span class="keywordtype">double</span> t14 = q3 * q4;
+<a name="l00359"></a>00359         <span class="keyword">const</span> <span class="keywordtype">double</span> t15 = t13 - t14;
+<a name="l00360"></a>00360         <span class="keyword">const</span> <span class="keywordtype">double</span> t16 = t6 * t15;
+<a name="l00361"></a>00361         <span class="keyword">const</span> <span class="keywordtype">double</span> t17 = y - ty;
+<a name="l00362"></a>00362         <span class="keyword">const</span> <span class="keywordtype">double</span> t20 = q3 * q1;
+<a name="l00363"></a>00363         <span class="keyword">const</span> <span class="keywordtype">double</span> t21 = q2 * q4;
+<a name="l00364"></a>00364         <span class="keyword">const</span> <span class="keywordtype">double</span> t22 = t20 + t21;
+<a name="l00365"></a>00365         <span class="keyword">const</span> <span class="keywordtype">double</span> t23 = t6 * t22;
+<a name="l00366"></a>00366         <span class="keyword">const</span> <span class="keywordtype">double</span> t24 = z - tz;
+<a name="l00367"></a>00367         <span class="keyword">const</span> <span class="keywordtype">double</span> t27 = t10 * t11 + 0.20e1 * t16 * t17 + 0.20e1 * t23 * t24;
+<a name="l00368"></a>00368         <span class="keyword">const</span> <span class="keywordtype">double</span> t28 = t20 - t21;
+<a name="l00369"></a>00369         <span class="keyword">const</span> <span class="keywordtype">double</span> t29 = t6 * t28;
+<a name="l00370"></a>00370         <span class="keyword">const</span> <span class="keywordtype">double</span> t32 = q2 * q3;
+<a name="l00371"></a>00371         <span class="keyword">const</span> <span class="keywordtype">double</span> t33 = q1 * q4;
+<a name="l00372"></a>00372         <span class="keyword">const</span> <span class="keywordtype">double</span> t34 = t32 + t33;
+<a name="l00373"></a>00373         <span class="keyword">const</span> <span class="keywordtype">double</span> t35 = t6 * t34;
+<a name="l00374"></a>00374         <span class="keyword">const</span> <span class="keywordtype">double</span> t38 = -t2 - t1;
+<a name="l00375"></a>00375         <span class="keyword">const</span> <span class="keywordtype">double</span> t41 = 0.1e1 + 0.20e1 * t6 * t38;
+<a name="l00376"></a>00376         <span class="keyword">const</span> <span class="keywordtype">double</span> t43 = 0.20e1 * t29 * t11 + 0.20e1 * t35 * t17 + t41 * t24;
+<a name="l00377"></a>00377         <span class="keyword">const</span> <span class="keywordtype">double</span> t44 = 0.1e1 / t43;
+<a name="l00378"></a>00378         <span class="keyword">const</span> <span class="keywordtype">double</span> t46 = t27 * t44 - px;
+<a name="l00379"></a>00379         <span class="keyword">const</span> <span class="keywordtype">double</span> t47 = t5 * t5;
+<a name="l00380"></a>00380         <span class="keyword">const</span> <span class="keywordtype">double</span> t48 = 0.1e1 / t47;
+<a name="l00381"></a>00381         <span class="keyword">const</span> <span class="keywordtype">double</span> t49 = t48 * t7;
+<a name="l00382"></a>00382         <span class="keyword">const</span> <span class="keywordtype">double</span> t50 = q1 * t11;
+<a name="l00383"></a>00383         <span class="keyword">const</span> <span class="keywordtype">double</span> t53 = t48 * t15;
+<a name="l00384"></a>00384         <span class="keyword">const</span> <span class="keywordtype">double</span> t54 = t17 * q1;
+<a name="l00385"></a>00385         <span class="keyword">const</span> <span class="keywordtype">double</span> t57 = t6 * q2;
+<a name="l00386"></a>00386         <span class="keyword">const</span> <span class="keywordtype">double</span> t59 = 0.20e1 * t57 * t17;
+<a name="l00387"></a>00387         <span class="keyword">const</span> <span class="keywordtype">double</span> t60 = t48 * t22;
+<a name="l00388"></a>00388         <span class="keyword">const</span> <span class="keywordtype">double</span> t61 = t24 * q1;
+<a name="l00389"></a>00389         <span class="keyword">const</span> <span class="keywordtype">double</span> t64 = t6 * q3;
+<a name="l00390"></a>00390         <span class="keyword">const</span> <span class="keywordtype">double</span> t66 = 0.20e1 * t64 * t24;
+<a name="l00391"></a>00391         <span class="keyword">const</span> <span class="keywordtype">double</span> t69 = t43 * t43;
+<a name="l00392"></a>00392         <span class="keyword">const</span> <span class="keywordtype">double</span> t70 = 0.1e1 / t69;
+<a name="l00393"></a>00393         <span class="keyword">const</span> <span class="keywordtype">double</span> t71 = t27 * t70;
+<a name="l00394"></a>00394         <span class="keyword">const</span> <span class="keywordtype">double</span> t72 = t48 * t28;
+<a name="l00395"></a>00395         <span class="keyword">const</span> <span class="keywordtype">double</span> t76 = 0.20e1 * t64 * t11;
+<a name="l00396"></a>00396         <span class="keyword">const</span> <span class="keywordtype">double</span> t77 = t48 * t34;
+<a name="l00397"></a>00397         <span class="keyword">const</span> <span class="keywordtype">double</span> t80 = t6 * q4;
+<a name="l00398"></a>00398         <span class="keyword">const</span> <span class="keywordtype">double</span> t82 = 0.20e1 * t80 * t17;
+<a name="l00399"></a>00399         <span class="keyword">const</span> <span class="keywordtype">double</span> t83 = t48 * t38;
+<a name="l00400"></a>00400         <span class="keyword">const</span> <span class="keywordtype">double</span> t86 = t6 * q1;
+<a name="l00401"></a>00401         <span class="keyword">const</span> <span class="keywordtype">double</span> t87 = 0.40e1 * t86;
+<a name="l00402"></a>00402         <span class="keyword">const</span> <span class="keywordtype">double</span> t90 = -0.40e1 * t72 * t50 + t76 - 0.40e1 * t77 * t54 + t82 + (-0.40e1 * t83 * q1 - t87) * t24;
+<a name="l00403"></a>00403         <span class="keyword">const</span> <span class="keywordtype">double</span> t94 = t13 + t14;
+<a name="l00404"></a>00404         <span class="keyword">const</span> <span class="keywordtype">double</span> t95 = t6 * t94;
+<a name="l00405"></a>00405         <span class="keyword">const</span> <span class="keywordtype">double</span> t98 = -t3 - t1;
+<a name="l00406"></a>00406         <span class="keyword">const</span> <span class="keywordtype">double</span> t101 = 0.1e1 + 0.20e1 * t6 * t98;
+<a name="l00407"></a>00407         <span class="keyword">const</span> <span class="keywordtype">double</span> t103 = t32 - t33;
+<a name="l00408"></a>00408         <span class="keyword">const</span> <span class="keywordtype">double</span> t104 = t6 * t103;
+<a name="l00409"></a>00409         <span class="keyword">const</span> <span class="keywordtype">double</span> t107 = 0.20e1 * t95 * t11 + t101 * t17 + 0.20e1 * t104 * t24;
+<a name="l00410"></a>00410         <span class="keyword">const</span> <span class="keywordtype">double</span> t109 = t107 * t44 - py;
+<a name="l00411"></a>00411         <span class="keyword">const</span> <span class="keywordtype">double</span> t110 = t48 * t94;
+<a name="l00412"></a>00412         <span class="keyword">const</span> <span class="keywordtype">double</span> t114 = 0.20e1 * t57 * t11;
+<a name="l00413"></a>00413         <span class="keyword">const</span> <span class="keywordtype">double</span> t115 = t48 * t98;
+<a name="l00414"></a>00414         <span class="keyword">const</span> <span class="keywordtype">double</span> t120 = t48 * t103;
+<a name="l00415"></a>00415         <span class="keyword">const</span> <span class="keywordtype">double</span> t124 = 0.20e1 * t80 * t24;
+<a name="l00416"></a>00416         <span class="keyword">const</span> <span class="keywordtype">double</span> t127 = t107 * t70;
+<a name="l00417"></a>00417         <span class="keyword">const</span> <span class="keywordtype">double</span> t132 = sigma * sigma;
+<a name="l00418"></a>00418         <span class="keyword">const</span> <span class="keywordtype">double</span> t133 = 0.1e1 / t132;
+<a name="l00419"></a>00419         <span class="keyword">const</span> <span class="keywordtype">double</span> t135 = t46 * t46;
+<a name="l00420"></a>00420         <span class="keyword">const</span> <span class="keywordtype">double</span> t136 = t109 * t109;
+<a name="l00421"></a>00421         <span class="keyword">const</span> <span class="keywordtype">double</span> t139 = 0.1e1 + (t135 + t136) * t133;
+<a name="l00422"></a>00422         <span class="keyword">const</span> <span class="keywordtype">double</span> t140 = 0.1e1 / t139;
+<a name="l00423"></a>00423         <span class="keyword">const</span> <span class="keywordtype">double</span> t144 = 0.40e1 * t57;
+<a name="l00424"></a>00424         <span class="keyword">const</span> <span class="keywordtype">double</span> t147 = t17 * q2;
+<a name="l00425"></a>00425         <span class="keyword">const</span> <span class="keywordtype">double</span> t151 = 0.20e1 * t86 * t17;
+<a name="l00426"></a>00426         <span class="keyword">const</span> <span class="keywordtype">double</span> t152 = t24 * q2;
+<a name="l00427"></a>00427         <span class="keyword">const</span> <span class="keywordtype">double</span> t157 = t11 * q2;
+<a name="l00428"></a>00428         <span class="keyword">const</span> <span class="keywordtype">double</span> t161 = 0.20e1 * t80 * t11;
+<a name="l00429"></a>00429         <span class="keyword">const</span> <span class="keywordtype">double</span> t165 = 0.20e1 * t64 * t17;
+<a name="l00430"></a>00430         <span class="keyword">const</span> <span class="keywordtype">double</span> t170 = -0.40e1 * t72 * t157 - t161 - 0.40e1 * t77 * t147 + t165 + (-0.40e1 * t83 * q2 - t144) * t24;
+<a name="l00431"></a>00431         <span class="keyword">const</span> <span class="keywordtype">double</span> t177 = 0.20e1 * t86 * t11;
+<a name="l00432"></a>00432         <span class="keyword">const</span> <span class="keywordtype">double</span> t192 = 0.40e1 * t64;
+<a name="l00433"></a>00433         <span class="keyword">const</span> <span class="keywordtype">double</span> t195 = t17 * q3;
+<a name="l00434"></a>00434         <span class="keyword">const</span> <span class="keywordtype">double</span> t198 = t24 * q3;
+<a name="l00435"></a>00435         <span class="keyword">const</span> <span class="keywordtype">double</span> t202 = 0.20e1 * t86 * t24;
+<a name="l00436"></a>00436         <span class="keyword">const</span> <span class="keywordtype">double</span> t205 = t11 * q3;
+<a name="l00437"></a>00437         <span class="keyword">const</span> <span class="keywordtype">double</span> t212 = -0.40e1 * t72 * t205 + t177 - 0.40e1 * t77 * t195 + t59 - 0.40e1 * t83 * t198;
+<a name="l00438"></a>00438         <span class="keyword">const</span> <span class="keywordtype">double</span> t225 = 0.20e1 * t57 * t24;
+<a name="l00439"></a>00439         <span class="keyword">const</span> <span class="keywordtype">double</span> t234 = q4 * t11;
+<a name="l00440"></a>00440         <span class="keyword">const</span> <span class="keywordtype">double</span> t237 = t17 * q4;
+<a name="l00441"></a>00441         <span class="keyword">const</span> <span class="keywordtype">double</span> t240 = t24 * q4;
+<a name="l00442"></a>00442         <span class="keyword">const</span> <span class="keywordtype">double</span> t251 = -0.40e1 * t72 * t234 - t114 - 0.40e1 * t77 * t237 + t151 - 0.40e1 * t83 * t240;
+<a name="l00443"></a>00443         <span class="keyword">const</span> <span class="keywordtype">double</span> t310 = log(t139);
+<a name="l00444"></a>00444 
+<a name="l00445"></a>00445         jacobian[0] = 0.2e1 * (t46 * ((-0.40e1 * t49 * t50 - 0.40e1 * t53 * t54 + t59 - 0.40e1 * t60 * t61 + t66) * t44 - t71 * t90) + t109 * ((-0.40e1 * t110 * t50 + t114 + (-0.40e1 * t115 * q1 - t87) * t17 - 0.40e1 * t120 * t61 - t124) * t44 - t127 * t90)) * t133 * t140;
+<a name="l00446"></a>00446         jacobian[1] = 0.2e1 * (t46 * (((-0.40e1 * t49 * q2 - t144) * t11 - 0.40e1 * t53 * t147 + t151 - 0.40e1 * t60 * t152 + t124) * t44 - t71 * t170) + t109 * ((-0.40e1 * t110 * t157 + t177 - 0.40e1 * t115 * t147 - 0.40e1 * t120 * t152 + t66) * t44 - t127 * t170)) * t133 * t140;
+<a name="l00447"></a>00447         jacobian[2] = 0.2e1 * (t46 * (((-0.40e1 * t49 * q3 - t192) * t11 - 0.40e1 * t53 * t195 - t82 - 0.40e1 * t60 * t198 + t202) * t44 - t71 * t212) + t109 * ((-0.40e1 * t110 * t205 + t161 + (-0.40e1 * t115 * q3 - t192) * t17 - 0.40e1 * t120 * t198 + t225) * t44 - t127 * t212)) * t133 * t140;
+<a name="l00448"></a>00448         jacobian[3] = 0.2e1 * (t46 * ((-0.40e1 * t49 * t234 - 0.40e1 * t53 * t237 - t165 - 0.40e1 * t60 * t240 + t225) * t44 - t71 * t251) + t109 * ((-0.40e1 * t110 * t234 + t76 - 0.40e1 * t115 * t237 - 0.40e1 * t120 * t240 - t202) * t44 - t127 * t251)) * t133 * t140;
+<a name="l00449"></a>00449         jacobian[4] = 0.2e1 * (t46 * (-t10 * t44 + 0.20e1 * t71 * t29) + t109 * (-0.20e1 * t95 * t44 + 0.20e1 * t127 * t29)) * t133 * t140;
+<a name="l00450"></a>00450         jacobian[5] = 0.2e1 * (t46 * (-0.20e1 * t16 * t44 + 0.20e1 * t71 * t35) + t109 * (-t101 * t44 + 0.20e1 * t127 * t35)) * t133 * t140;
+<a name="l00451"></a>00451         jacobian[6] = 0.2e1 * (t46 * (-0.20e1 * t23 * t44 + t71 * t41) + t109 * (-0.20e1 * t104 * t44 + t127 * t41)) * t133 * t140;
+<a name="l00452"></a>00452         residual[0] = t310;
+<a name="l00453"></a>00453     }
+<a name="l00454"></a>00454 
+<a name="l00455"></a><a class="code" href="group__qvprojectivegeometry.html#ga6a50717778dcec283e6294ba95e41078">00455</a> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> <a class="code" href="group__qvprojectivegeometry.html#ga6a50717778dcec283e6294ba95e41078" title="Improves the estimated location of a camera pose by refining its reprojection error...">optimizeReprojectionErrorForCameraPoseCauchy</a>(<span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;cameraPose, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points2D, <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3D, <span class="keyword">const</span> <span class="keywordtype">int</span> iterations, <span class="keyword">const</span> <span class="keywordtype">double</span> lambda, <span class="keyword">const</span> <span class="keywordtype">double</span> sigma)
+<a name="l00456"></a>00456     {
+<a name="l00457"></a>00457     <span class="keyword">const</span> <span class="keywordtype">int</span> n = points2D.size();
+<a name="l00458"></a>00458 
+<a name="l00459"></a>00459     <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> x = cameraPose;
+<a name="l00460"></a>00460     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; iterations; i++)
+<a name="l00461"></a>00461         {
+<a name="l00462"></a>00462         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> f_x(n);
+<a name="l00463"></a>00463         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> J(n, 7);
+<a name="l00464"></a>00464         <span class="keywordtype">double</span>  *data_f_x = f_x.data(),
+<a name="l00465"></a>00465             *data_J = J.<a class="code" href="classQVMatrix.html#a0c5b1e685d14d230c55cfcfb058e372a" title="Gets a reference of the data buffer of the matrix for read and write accesses.">getWriteData</a>();
+<a name="l00466"></a>00466 
+<a name="l00467"></a>00467         QListIterator&lt;QPointF&gt; iteratorPoints2D(points2D);
+<a name="l00468"></a>00468         QListIterator&lt;QV3DPointF&gt; iteratorPoints3D(points3D);
+<a name="l00469"></a>00469 
+<a name="l00470"></a>00470         <span class="keywordtype">int</span> j = 0;
+<a name="l00471"></a>00471         <span class="keywordflow">while</span> (iteratorPoints2D.hasNext())
+<a name="l00472"></a>00472             {
+<a name="l00473"></a>00473             <span class="keyword">const</span> QPointF p2D = iteratorPoints2D.next();
+<a name="l00474"></a>00474             <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> p3D = iteratorPoints3D.next();
+<a name="l00475"></a>00475             evaluateReprojectionResidualsAndJacobianCauchyDistribution(x[0], x[1], x[2], x[3], x[4], x[5], x[6], p2D, p3D, sigma, data_f_x + j, data_J + (7*j));
+<a name="l00476"></a>00476             j++;
+<a name="l00477"></a>00477             }
+<a name="l00478"></a>00478 
+<a name="l00479"></a>00479                 Q_ASSERT(not f_x.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00480"></a>00480                 Q_ASSERT(not J.<a class="code" href="classQVMatrix.html#a43455dfaf2e8fa71242ea1fdc8beb102" title="Checks whether the matrix contains a NaN value or not.">containsNaN</a>());
+<a name="l00481"></a>00481 
+<a name="l00482"></a>00482         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H = J.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(J, <span class="keyword">true</span>, <span class="keyword">false</span>);
+<a name="l00483"></a>00483         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; H.getCols(); i++)
+<a name="l00484"></a>00484             H(i,i) += lambda;
+<a name="l00485"></a>00485         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> b = J.<a class="code" href="classQVMatrix.html#a5470e61c2827d5485596c3901690154c" title="Matrix-matrix product.">dotProduct</a>(f_x, <span class="keyword">true</span>);
+<a name="l00486"></a>00486 
+<a name="l00487"></a>00487         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> xInc;
+<a name="l00488"></a>00488         <a class="code" href="group__qvmatrixalgebra.html#ga7afb7ef53aed190e810886e4941bc3de" title="Solves the linear system  for the unknown matrix , using the Cholesky decomposition...">solveByCholeskyDecomposition</a>(H, xInc, b);
+<a name="l00489"></a>00489 
+<a name="l00490"></a>00490         x = x - xInc;
+<a name="l00491"></a>00491         }
+<a name="l00492"></a>00492 
+<a name="l00493"></a>00493     <span class="keywordflow">return</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a>(x);
+<a name="l00494"></a>00494     }
+<a name="l00495"></a>00495 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

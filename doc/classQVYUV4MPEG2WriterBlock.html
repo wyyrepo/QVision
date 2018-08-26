@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVYUV4MPEG2WriterBlock Class Reference<br/>
+<small>
+[<a class="el" href="group__qvblockprogramming.html">Block programming</a>]</small>
+</h1><!-- doxytag: class="QVYUV4MPEG2WriterBlock" --><!-- doxytag: inherits="QVProcessingBlock" -->
+<p>Video source class for reading many video file formats, webcams and digital cameras.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvyuv4mpeg2writerblock_8h_source.html">QVYUV4MPEG2WriterBlock</a>&gt;</code></p>
+
+<p>Inherits <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a>.</p>
+
+<p><a href="classQVYUV4MPEG2WriterBlock-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVYUV4MPEG2WriterBlock.html#a17239cfc004026881d091eee541ff509">processTrigger</a> (QString name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Process trigger activations in the block.  <a href="#a17239cfc004026881d091eee541ff509"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVYUV4MPEG2WriterBlock.html#a8415b935790095a9463e6d4fde1342a7">iterate</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function to be defined in subclasses with processing code.  <a href="#a8415b935790095a9463e6d4fde1342a7"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Video source class for reading many video file formats, webcams and digital cameras. </p>
+<p>This block can be linked to a block object producing an output image, to store the flow of images in a video file in the uncompressed YUV4MPEG2 format.</p>
+<p>To use it, create a <a class="el" href="classQVYUV4MPEG2WriterBlock.html" title="Video source class for reading many video file formats, webcams and digital cameras...">QVYUV4MPEG2WriterBlock</a> object in the <em>main function</em>, and link a RGB image from a block, to store each output image from the block in a video file.</p>
+<div class="fragment"><pre class="fragment"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+        {
+        [...]
+        <span class="comment">// The following block should have a property named &#39;Output image&#39; containing an RGB image.</span>
+        MyBlock myBlock(<span class="stringliteral">&quot;My block&quot;</span>);
+        [...]
+        <a class="code" href="classQVYUV4MPEG2WriterBlock.html" title="Video source class for reading many video file formats, webcams and digital cameras...">QVYUV4MPEG2WriterBlock</a> recorder(<span class="stringliteral">&quot;Video recorder&quot;</span>);
+        player.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>, recorder);
+        [...]
+        }
+</pre></div><p>You can tune the number of frames per second and the name of the file to store the video through the user command line, setting values for the properties <em>FPS</em> and <em>Record file name</em> in the video record object.</p>
+<p>Once the object reads the first image frame changing those values will have no effect. </p>
+
+<p>Definition at line <a class="el" href="qvyuv4mpeg2writerblock_8h_source.html#l00059">59</a> of file <a class="el" href="qvyuv4mpeg2writerblock_8h_source.html">qvyuv4mpeg2writerblock.h</a>.</p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a8415b935790095a9463e6d4fde1342a7"></a><!-- doxytag: member="QVYUV4MPEG2WriterBlock::iterate" ref="a8415b935790095a9463e6d4fde1342a7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVYUV4MPEG2WriterBlock::iterate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to be defined in subclasses with processing code. </p>
+<p>This function should contain the code to process data, that will be executed continuously until block is finished. </p>
+
+<p>Reimplemented from <a class="el" href="classQVProcessingBlock.html#a0283c799776e0c938538de0b0ae6b463">QVProcessingBlock</a>.</p>
+
+<p>Definition at line <a class="el" href="qvyuv4mpeg2writerblock_8cpp_source.html#l00105">105</a> of file <a class="el" href="qvyuv4mpeg2writerblock_8cpp_source.html">qvyuv4mpeg2writerblock.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17239cfc004026881d091eee541ff509"></a><!-- doxytag: member="QVYUV4MPEG2WriterBlock::processTrigger" ref="a17239cfc004026881d091eee541ff509" args="(QString name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVYUV4MPEG2WriterBlock::processTrigger </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Process trigger activations in the block. </p>
+<p>Triggers are just named actions that can be called upon a <a class="el" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> to change it's state, initialize itself, or whatever action the programmer considers convenient, in a completely asynchronous manner.</p>
+<p>When added to a block, they will depict a button in the corresponding property widget in the interface, that will do a call to <a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095">QVProcessingBlock::processTrigger()</a> function when pressed. Use <a class="el" href="classQVProcessingBlock.html#a26a8c3ab6758620d7cb328f4dd60b860">addTrigger</a> to add triggers to a block, and redefine this function to capture their activations. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVProcessingBlock.html#a26a8c3ab6758620d7cb328f4dd60b860" title="Adds a trigger to the block.">QVProcessingBlock::addTrigger()</a> </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>the name of the trigger that was activated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095">QVProcessingBlock</a>.</p>
+
+<p>Definition at line <a class="el" href="qvyuv4mpeg2writerblock_8cpp_source.html#l00061">61</a> of file <a class="el" href="qvyuv4mpeg2writerblock_8cpp_source.html">qvyuv4mpeg2writerblock.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvblockprogramming/qvioblocks/<a class="el" href="qvyuv4mpeg2writerblock_8h_source.html">qvyuv4mpeg2writerblock.h</a></li>
+<li>src/qvblockprogramming/qvioblocks/<a class="el" href="qvyuv4mpeg2writerblock_8cpp_source.html">qvyuv4mpeg2writerblock.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

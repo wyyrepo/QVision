@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvcholmodsolver.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="comment">// This code is partially based on the class &#39;CSparse&#39;, contained in the SBA package for the ROS framework:</span>
+<a name="l00022"></a>00022 <span class="comment">//      http://www.ros.org/wiki/sba</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QVCholmodSolver&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 QVCholmodSolver::QVCholmodSolver(<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;sparseA)
+<a name="l00028"></a>00028         {
+<a name="l00029"></a>00029         chA = NULL;
+<a name="l00030"></a>00030         nnz = 0;
+<a name="l00031"></a>00031         asize = sparseA.<a class="code" href="classQVSparseBlockMatrix.html#a202dae52dc2ec0501ceddc53ffc31aac" title="Get majorRows from a sparse block matrix.">getMajorRows</a>();
+<a name="l00032"></a>00032         bsize = sparseA.<a class="code" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6" title="Get minorRows from a sparse block matrix.">getMinorRows</a>();
+<a name="l00033"></a>00033         csize = asize*bsize;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035         diagonal = QVector&lt;QVMatrix&gt;( asize, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(bsize, bsize, 0.0) );
+<a name="l00036"></a>00036         offdiagonal = QVector&lt; QMap&lt;int, QVMatrix&gt; &gt;(asize);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> ib, sparseA.keys())
+<a name="l00039"></a>00039                 {
+<a name="l00040"></a>00040                 <span class="keyword">const</span> QMap&lt;int, QVMatrix&gt; &amp;majorRow = sparseA[ib];
+<a name="l00041"></a>00041                 <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> jb, majorRow.keys())
+<a name="l00042"></a>00042                         {
+<a name="l00043"></a>00043                         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;qvblockMatrix = majorRow[jb];
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045                         <span class="keywordflow">if</span> (ib == jb)
+<a name="l00046"></a>00046                                 diagonal[ib] = diagonal[ib] + qvblockMatrix;
+<a name="l00047"></a>00047                         <span class="keywordflow">else</span>    {
+<a name="l00048"></a>00048                                 offdiagonal[jb][ib] = qvblockMatrix;
+<a name="l00049"></a>00049                                 offdiagonal[ib][jb] = qvblockMatrix.<a class="code" href="classQVMatrix.html#a2f87710c9d8ae4b07b03605daea3782e" title="Change the order of the indexes in the matrix.">transpose</a>();
+<a name="l00050"></a>00050                                 }
+<a name="l00051"></a>00051                         }
+<a name="l00052"></a>00052                 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         cholmod_start(&amp;Common); <span class="comment">// this is finished in doChol()</span>
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 QVCholmodSolver::~QVCholmodSolver()
+<a name="l00058"></a>00058         {
+<a name="l00059"></a>00059         cholmod_free_sparse(&amp;chA, &amp;Common);
+<a name="l00060"></a>00060         cholmod_finish (&amp;Common);   <span class="comment">// finish it ???</span>
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="comment">// Set up CSparse structure; &lt;init&gt; true if first time</span>
+<a name="l00064"></a>00064 <span class="comment">// &lt;diaginc&gt; is the diagonal multiplier for LM</span>
+<a name="l00065"></a>00065 <span class="comment">// this version sets upper triangular matrix,</span>
+<a name="l00066"></a>00066 <span class="keywordtype">void</span> QVCholmodSolver::init()
+<a name="l00067"></a>00067         {
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <span class="comment">// reserve space and set things up</span>
+<a name="l00070"></a>00070         nnz = asize * bsize * (bsize+1) / 2;
+<a name="l00071"></a>00071         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt; asize; i++)
+<a name="l00072"></a>00072                 nnz += bsize * bsize * offdiagonal[i].count();
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         chA = cholmod_allocate_sparse(csize, csize, nnz, <span class="keyword">true</span>, <span class="keyword">true</span>, 1, CHOLMOD_REAL, &amp;Common);
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         <span class="comment">// now figure out the column pointers</span>
+<a name="l00077"></a>00077         <span class="keywordtype">int</span>     colp = 0,               <span class="comment">// index of where the column starts in Ai</span>
+<a name="l00078"></a>00078                 *Ap = (<span class="keywordtype">int</span> *)chA-&gt;p,    <span class="comment">// column pointer</span>
+<a name="l00079"></a>00079                 *Ai = (<span class="keywordtype">int</span> *)chA-&gt;i;    <span class="comment">// row indices</span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ib=0; ib &lt; asize; ib++)
+<a name="l00082"></a>00082                 {
+<a name="l00083"></a>00083                 <span class="keyword">const</span> QMap&lt;int, QVMatrix&gt; &amp;column = offdiagonal[ib];
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085                 <span class="keyword">const</span> <span class="keywordtype">int</span> numCols = column.count();
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087                 <span class="comment">// do this for &#39;bsize&#39; columns</span>
+<a name="l00088"></a>00088                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k&lt;bsize; k++)
+<a name="l00089"></a>00089                         {
+<a name="l00090"></a>00090                         *Ap++ = colp;
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092                         <span class="comment">// iterate over the map</span>
+<a name="l00093"></a>00093                         <span class="keywordflow">if</span> (numCols &gt; 0)
+<a name="l00094"></a>00094                                 <span class="comment">// iterate over block column entries</span>
+<a name="l00095"></a>00095                                 <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> jb, column.keys())
+<a name="l00096"></a>00096                                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0, row = bsize*jb; j&lt;bsize; j++)
+<a name="l00097"></a>00097                                                 Ai[colp++] = row++;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099                         <span class="comment">// add in diagonal entries</span>
+<a name="l00100"></a>00100                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk=0, row = bsize*ib; kk&lt;k+1; kk++)
+<a name="l00101"></a>00101                                 Ai[colp++] = row++;
+<a name="l00102"></a>00102                         }
+<a name="l00103"></a>00103                 }
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         *Ap = nnz;            <span class="comment">// last entry</span>
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         <span class="comment">// now put the entries in place</span>
+<a name="l00108"></a>00108         colp = 0;                               <span class="comment">// index of where the column starts in Ai</span>
+<a name="l00109"></a>00109         <span class="keywordtype">double</span> *Ax = (<span class="keywordtype">double</span> *)chA-&gt;x;          <span class="comment">// values</span>
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111         for (<span class="keywordtype">int</span> ib=0; ib &lt; asize; ib++)
+<a name="l00112"></a>00112                 {
+<a name="l00113"></a>00113                 <span class="keyword">const</span> QMap&lt;int, QVMatrix&gt; &amp;column = offdiagonal[ib];
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115                 <span class="keyword">const</span> <span class="keywordtype">int</span> numCols = column.count();
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117                 <span class="comment">// do this for &#39;bsize&#39; columns</span>
+<a name="l00118"></a>00118                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k&lt;bsize; k++)
+<a name="l00119"></a>00119                         {
+<a name="l00120"></a>00120                         <span class="comment">// iterate over the map</span>
+<a name="l00121"></a>00121                         <span class="keywordflow">if</span> (numCols &gt; 0)
+<a name="l00122"></a>00122                                 <span class="comment">// iterate over block column entries</span>
+<a name="l00123"></a>00123                                 <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> jb, column.keys())
+<a name="l00124"></a>00124                                         {
+<a name="l00125"></a>00125                                         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;m = column[jb];
+<a name="l00126"></a>00126                                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;bsize; j++)
+<a name="l00127"></a>00127                                                 Ax[colp++] = m(j,k);
+<a name="l00128"></a>00128                                         }
+<a name="l00129"></a>00129                         <span class="comment">// add in diagonal entries</span>
+<a name="l00130"></a>00130                         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;m = diagonal[ib];
+<a name="l00131"></a>00131                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk=0; kk&lt;k+1; kk++)
+<a name="l00132"></a>00132                                 Ax[colp++] = m(kk,k);
+<a name="l00133"></a>00133                         }
+<a name="l00134"></a>00134                 }      
+<a name="l00135"></a>00135         }
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137 <span class="comment">// solve in place, returns RHS B</span>
+<a name="l00138"></a>00138 <span class="keywordtype">bool</span> QVCholmodSolver::solve(<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;qvX, <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;qvB)
+<a name="l00139"></a>00139         {
+<a name="l00140"></a>00140         <span class="comment">//cholmod_print_sparse (chA, (char *)&quot;A&quot;, &amp;Common) ; // print simple stats</span>
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142         <span class="comment">// Init objective vector</span>
+<a name="l00143"></a>00143         cholmod_dense b;
+<a name="l00144"></a>00144         b.nrow = csize;
+<a name="l00145"></a>00145         b.ncol = 1;
+<a name="l00146"></a>00146         b.d = csize;                <span class="comment">// leading dimension (???)</span>
+<a name="l00147"></a>00147         b.xtype = CHOLMOD_REAL;
+<a name="l00148"></a>00148         b.dtype = CHOLMOD_DOUBLE;
+<a name="l00149"></a>00149         b.x = qvB.data();
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151         <span class="comment">// Analize</span>
+<a name="l00152"></a>00152         cholmod_factor *L = cholmod_analyze (chA, &amp;Common) ; <span class="comment">// analyze </span>
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154         <span class="comment">// Factorize matrix</span>
+<a name="l00155"></a>00155         cholmod_factorize (chA, L, &amp;Common) ; <span class="comment">// factorize </span>
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157         <span class="comment">// Solve system</span>
+<a name="l00158"></a>00158         cholmod_dense *x = cholmod_solve (CHOLMOD_A, L, &amp;b, &amp;Common) ; <span class="comment">// solve Ax=b</span>
+<a name="l00159"></a>00159         qvX = <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>(csize, (<span class="keywordtype">double</span> *)x-&gt;x);
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161         <span class="comment">// Do a cheap iterative refinement.</span>
+<a name="l00162"></a>00162         <span class="comment">// Ax=b was factorized and solved, R = B-A*X</span>
+<a name="l00163"></a>00163         cholmod_dense *R = cholmod_copy_dense (&amp;b, &amp;Common);
+<a name="l00164"></a>00164         <span class="keywordtype">double</span> one [2] = { 1.0, 0.0 }, minusone [2] = { -1.0, 0.0 };
+<a name="l00165"></a>00165         cholmod_sdmult(chA, 0, minusone, one, x, R, &amp;Common);
+<a name="l00166"></a>00166         cholmod_dense *R2 = cholmod_solve(CHOLMOD_A, L, R, &amp;Common);
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0 ; i&lt;csize ; i++)
+<a name="l00169"></a>00169                 qvX[i] += ((<span class="keywordtype">double</span> *)R2-&gt;x)[i];
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171         <span class="comment">// free matrices </span>
+<a name="l00172"></a>00172         cholmod_free_dense (&amp;R2, &amp;Common);
+<a name="l00173"></a>00173         cholmod_free_dense (&amp;R, &amp;Common);
+<a name="l00174"></a>00174         cholmod_free_factor (&amp;L, &amp;Common);
+<a name="l00175"></a>00175         cholmod_free_dense (&amp;x, &amp;Common);
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00178"></a>00178         }
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

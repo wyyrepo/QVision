@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvapplication.h</h1><a href="qvapplication_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVAPPLICATION_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVAPPLICATION_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QSet&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QApplication&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QMutex&gt;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;<a class="code" href="qvdefines_8h.html" title="File from the QVision library.">qvdefines.h</a>&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keyword">class </span><a class="code" href="classQVGUI.html" title="Main user interface widget for QVision applications.">QVGUI</a>;
+<a name="l00037"></a>00037 <span class="keyword">class </span><a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a>;
+<a name="l00038"></a>00038 <span class="keyword">class </span><a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>;
+<a name="l00039"></a>00039 <span class="keyword">class </span><a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a>;
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="preprocessor">#define qvApp ((QVApplication*) qApp)</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00055"></a><a class="code" href="classQVApplication.html">00055</a> <span class="keyword">class </span><a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> : <span class="keyword">public</span> QApplication
+<a name="l00056"></a>00056 {
+<a name="l00057"></a>00057         Q_OBJECT
+<a name="l00058"></a>00058 <span class="keyword">public</span>:
+<a name="l00072"></a>00072         <a class="code" href="classQVApplication.html#a5e44b11b3ac56a53fcef81bcf6b96d13" title="Creates a QVApplication object.">QVApplication</a> (<span class="keywordtype">int</span> &amp;argc, <span class="keywordtype">char</span> **argv,
+<a name="l00073"></a>00073                                    QString info = QString(), <span class="keywordtype">bool</span> GUIenabled = TRUE);
+<a name="l00074"></a>00074 
+<a name="l00089"></a>00089         <span class="keywordtype">int</span> <a class="code" href="classQVApplication.html#a26cebe56daf97da9bc5f881d3d5abe2d" title="Process command line arguments without executing.">processArguments</a>();
+<a name="l00090"></a>00090 
+<a name="l00106"></a>00106         <span class="keywordtype">int</span> <a class="code" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">exec</a>();
+<a name="l00107"></a>00107 
+<a name="l00115"></a><a class="code" href="classQVApplication.html#aed7dd19235aed68747f5b35de5196788">00115</a>         <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#aed7dd19235aed68747f5b35de5196788" title="Makes an application finish or not when its last block finishes.">setTerminateOnLastBlock</a>(<span class="keywordtype">bool</span> terminate) { terminateOnLastBlock=terminate; };
+<a name="l00116"></a>00116 
+<a name="l00129"></a>00129         <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33" title="Marks a given command line argument as used.">setArgumentAsUsed</a>(QString argument);
+<a name="l00130"></a>00130 
+<a name="l00140"></a>00140         QStringList <a class="code" href="classQVApplication.html#abac81490de1809d8f3d741b5a7d779a4" title="Gets the list of unprocessed arguments.">getUnusedArguments</a>();
+<a name="l00141"></a>00141 
+<a name="l00144"></a><a class="code" href="classQVApplication.html#a115c9cee9e24213cbe91b52e899b2bec">00144</a>         <span class="keywordtype">bool</span> <a class="code" href="classQVApplication.html#a115c9cee9e24213cbe91b52e899b2bec" title="Tells if a QVApplication is already in the exec() loop.">isRunning</a>() { <span class="keywordflow">return</span> isRunningFlag; };
+<a name="l00145"></a>00145 
+<a name="l00148"></a><a class="code" href="classQVApplication.html#aea98d71162891be7af76a8875502db30">00148</a>         <span class="keywordtype">bool</span> <a class="code" href="classQVApplication.html#aea98d71162891be7af76a8875502db30" title="Tells if a QVApplication is called for print help.">forHelp</a>() { <span class="keywordflow">return</span> forHelpFlag; };
+<a name="l00149"></a>00149 
+<a name="l00152"></a>00152         QString <a class="code" href="classQVApplication.html#a29268a90a2e72f550f1143e239e2e3e7" title="Gets help for a QVApplication.">getHelp</a>();
+<a name="l00153"></a>00153 
+<a name="l00156"></a><a class="code" href="classQVApplication.html#aac25e39c09253a1e5913b92d7dee8df7">00156</a>         <span class="keyword">static</span> <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>* <a class="code" href="classQVApplication.html#aac25e39c09253a1e5913b92d7dee8df7" title="Gets a pointer to the only QVApplication instance.">instance</a>() { <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>*<span class="keyword">&gt;</span>(qApp); }
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         <span class="comment">/*</span>
+<a name="l00166"></a>00166 <span class="comment">        void addArgument(const QString &amp;argument) { unusedArguments &lt;&lt; argument; };</span>
+<a name="l00167"></a>00167 <span class="comment">        */</span>
+<a name="l00168"></a>00168 
+<a name="l00175"></a><a class="code" href="classQVApplication.html#ae7495c8995c30b40c3f55dc6d77bdcff">00175</a>         <span class="keywordtype">int</span> <a class="code" href="classQVApplication.html#ae7495c8995c30b40c3f55dc6d77bdcff" title="Gets the number of total arguments.">getNumberOfArguments</a>()<span class="keyword"> const                </span>{ <span class="keywordflow">return</span> arguments().size(); }
+<a name="l00176"></a>00176 
+<a name="l00185"></a><a class="code" href="classQVApplication.html#a115946f057c917dc38b43c7d2b340449">00185</a>         QString <a class="code" href="classQVApplication.html#a115946f057c917dc38b43c7d2b340449" title="Gets the value of an application argument.">getArgument</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> index)
+<a name="l00186"></a>00186                 {
+<a name="l00187"></a>00187                 <span class="keyword">const</span> QString argument = arguments()[index];
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189                 <a class="code" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33" title="Marks a given command line argument as used.">setArgumentAsUsed</a>(argument);
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191                 <span class="keywordflow">return</span> argument;
+<a name="l00192"></a>00192                 }
+<a name="l00193"></a>00193 
+<a name="l00200"></a><a class="code" href="classQVApplication.html#a6379eef13e82e53ef89b390beacc91a9">00200</a>         QStringList <a class="code" href="classQVApplication.html#a6379eef13e82e53ef89b390beacc91a9" title="Gets the argument values.">getArguments</a>()
+<a name="l00201"></a>00201                 {
+<a name="l00202"></a>00202                 <span class="keywordflow">foreach</span>(QString argument, arguments())
+<a name="l00203"></a>00203                         <a class="code" href="classQVApplication.html#a0fdb86c3a330b8c737dd75dc575def33" title="Marks a given command line argument as used.">setArgumentAsUsed</a>(argument);
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205                 <span class="keywordflow">return</span> arguments();
+<a name="l00206"></a>00206                 }
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00209"></a>00209 <span class="preprocessor"></span>        <span class="keywordtype">void</span> registerQVPropertyContainer(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp);
+<a name="l00210"></a>00210         <span class="keywordtype">void</span> deregisterQVPropertyContainer(<a class="code" href="classQVPropertyContainer.html" title="Base class for dynamic property container objects.">QVPropertyContainer</a> *qvp);
+<a name="l00211"></a>00211         <span class="keywordtype">void</span> registerGUI(<a class="code" href="classQVGUI.html" title="Main user interface widget for QVision applications.">QVGUI</a> *visionInterface);
+<a name="l00212"></a>00212         <span class="keywordtype">void</span> deregisterGUI();
+<a name="l00213"></a>00213         QSet&lt;QVPropertyContainer *&gt; getQVPropertyContainers() { <span class="keywordflow">return</span> qvps; };
+<a name="l00214"></a>00214         QMutex mutex; <span class="comment">// A global mutex</span>
+<a name="l00215"></a>00215 <span class="preprocessor">#endif</span>
+<a name="l00216"></a>00216 <span class="preprocessor"></span>
+<a name="l00217"></a>00217 <span class="keyword">public</span> slots:
+<a name="l00221"></a>00221         <span class="keywordtype">bool</span> <a class="code" href="classQVApplication.html#ae9afd38de95ccabd4e8680d96e98d42f" title="Start the application items.">startItems</a>();
+<a name="l00222"></a>00222 
+<a name="l00228"></a>00228         <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#adba1db46f127c1f17102f819ba0324a6" title="Terminates the application items.">quitItems</a>();
+<a name="l00229"></a>00229 
+<a name="l00230"></a>00230         <span class="keywordtype">void</span> quitBlock(<a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a> *block);
+<a name="l00231"></a>00231 
+<a name="l00236"></a>00236         <span class="keywordtype">void</span> <a class="code" href="classQVApplication.html#a1800e439ec3bcb48ffb9f03e195c3b50" title="Terminates an application.">quit</a>();
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238 <span class="keyword">private</span> slots:
+<a name="l00239"></a>00239         <span class="keywordtype">void</span> blockFinished();
+<a name="l00240"></a>00240 
+<a name="l00241"></a>00241 <span class="keyword">private</span>:
+<a name="l00242"></a>00242         QString info;
+<a name="l00243"></a>00243         QStringList unusedArguments;
+<a name="l00244"></a>00244         QSet&lt;QVPropertyContainer *&gt; qvps;
+<a name="l00245"></a>00245         <a class="code" href="classQVGUI.html" title="Main user interface widget for QVision applications.">QVGUI</a> *visionInterface;
+<a name="l00246"></a>00246         <span class="keywordtype">bool</span> isRunningFlag;
+<a name="l00247"></a>00247         <span class="keywordtype">int</span> blockCount;
+<a name="l00248"></a>00248         <span class="keywordtype">bool</span> terminateOnLastBlock, forHelpFlag;
+<a name="l00249"></a>00249 
+<a name="l00250"></a>00250         <span class="keywordtype">void</span> printHelp();
+<a name="l00251"></a>00251 };
+<a name="l00252"></a>00252 <span class="preprocessor">#endif // QVAPPLICATION_H</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

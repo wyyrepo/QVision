@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>src/qvmath/qvmatrix.h File Reference</h1>
+<p>File from the QVision library.  
+<a href="#_details">More...</a></p>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;QVQuaternion&gt;</code><br/>
+<code>#include &lt;QV3DPointF&gt;</code><br/>
+<code>#include &lt;qvmath.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="qvblasdatabuffer_8h_source.html">qvmath/qvblasdatabuffer.h</a>&gt;</code><br/>
+<code>#include &lt;opencv/cv.h&gt;</code><br/>
+<code>#include &lt;QString&gt;</code><br/>
+<code>#include &lt;QMetaType&gt;</code><br/>
+
+<p><a href="qvmatrix_8h_source.html">Go to the source code of this file.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVMatrix.html">QVMatrix</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of numerical matrices.  <a href="classQVMatrix.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="qvmatrix_8h.html#a487146b8bf0d9fa878ac70f07db27ba9">operator*</a> (const double value, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Matrix-scalar product.  <a href="#a487146b8bf0d9fa878ac70f07db27ba9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="qvmatrix_8h.html#a7bd034eee5dffb1811c3012483e57f81">operator+</a> (const double value, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Matrix-scalar addition.  <a href="#a7bd034eee5dffb1811c3012483e57f81"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="qvmatrix_8h.html#a5f3ee33a44f26d22ea440be723fe2858">operator-</a> (const double value, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Matrix-scalar substraction operator.  <a href="#a5f3ee33a44f26d22ea440be723fe2858"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaabdd51683148ac1153014120c7558b89">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::istream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga20cb79175099f4623dc53a96d9f1ce6c">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gaa3314730bd45d74b2a4f3cb8bd3fa0fa">qHash</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga9ead752411a6772cfd7d75051cdc677e">writeQVMatrixToFile</a> (const QString fileName, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix, const int precission=7)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Writes the content of a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object in an ASCII file.  <a href="group__qvmath.html#ga9ead752411a6772cfd7d75051cdc677e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gae1e1afa78741e92ed46d20b70830a4fc">readQVMatrixFromFile</a> (const QString fileName, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads the content of a <a class="el" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> object from an ASCII file.  <a href="group__qvmath.html#gae1e1afa78741e92ed46d20b70830a4fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#ga85e11a75a24eec1686a939aa690e1942">lnSO3</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the element from the Lie algebra so(3) corresponding to a rotation matrix.  <a href="group__qvmath.html#ga85e11a75a24eec1686a939aa690e1942"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmath.html#gad9a79664f7af4487d5af8fe2296fc7a4">expSO3</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;w)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the rotation matrix corresponding to the element from the Lie algebra so(3).  <a href="group__qvmath.html#gad9a79664f7af4487d5af8fe2296fc7a4"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>File from the QVision library. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>PARP Research Group. University of Murcia, Spain. </dd></dl>
+
+<p>Definition in file <a class="el" href="qvmatrix_8h_source.html">qvmatrix.h</a>.</p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a487146b8bf0d9fa878ac70f07db27ba9"></a><!-- doxytag: member="qvmatrix.h::operator*" ref="a487146b8bf0d9fa878ac70f07db27ba9" args="(const double value, const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Matrix-scalar product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>factor for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>scalarProduct </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01073">1073</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bd034eee5dffb1811c3012483e57f81"></a><!-- doxytag: member="qvmatrix.h::operator+" ref="a7bd034eee5dffb1811c3012483e57f81" args="(const double value, const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Matrix-scalar addition. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>addendum for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>scalarAddition </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01078">1078</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f3ee33a44f26d22ea440be723fe2858"></a><!-- doxytag: member="qvmatrix.h::operator&#45;" ref="a5f3ee33a44f26d22ea440be723fe2858" args="(const double value, const QVMatrix &amp;matrix)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matrix</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Matrix-scalar substraction operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to substract. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>scalarSubstraction </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmatrix_8cpp_source.html#l01083">1083</a> of file <a class="el" href="qvmatrix_8cpp_source.html">qvmatrix.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

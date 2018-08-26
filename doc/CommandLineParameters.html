@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="CommandLineParameters">Command line parameters </a></h1><p>The <a class="el" href="classQVApplication.html">QVApplication</a> object can detect the dynamic properties contained in processing blocks or camera objects created in a QVision application. It also parses the input console command line used to launch the application. So the user of the application can set the starting values of dynamic properties of certain types from the command line.</p>
+<p>Dynamic properties initializable from the command line are input properties of type integer (<em>int</em>), double (<em>double</em>), boolean (<em>bool</em>), or character strings (<em>QString</em>).</p>
+<p>Using the <em>--help</em> command line parameter, every QVision application displays an <em>usage</em> reference text, listing for each block created by the application, the dynamic properties assignable through the command line. Extra information is listed, such as their valid value range, their default value, and a short description for them.</p>
+<p>For example, a QVision application named <em>test</em> could be executed with the following command line:</p>
+<div class="fragment"><pre class="fragment"> ./test --help 
+</pre></div><p>It will display the following message:</p>
+<div class="fragment"><pre class="fragment">Usage: ./test [OPTIONS]
+QVision application which... (some sort description here, as given to the <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> constructor by the programmer).
+
+Input parameters <span class="keywordflow">for</span> Video:
+  --max block iterations=[<span class="keywordtype">int</span>] (def. -1) ............Maximal number of iterations to execute block.
+  --stats enabled=[<span class="keyword">true</span>,<span class="keyword">false</span>] (def. <span class="keyword">true</span>) ....................Block CPU stats are enabled/disabled.
+  --stats printing frequency=[<span class="keywordtype">int</span>] (def. 0) .......Frequency to print CPU statistics (in iterations).
+  --NoLoop=[<span class="keyword">true</span>,<span class="keyword">false</span>](def. <span class="keyword">false</span>) ..................If the camera should be opened in no loop mode.
+  --URL=[text] (def. <span class="stringliteral">&#39;&#39;</span>) ............................................URL of the video source to read.
+  --Cols=[int] (def. 0) ....................................Suggested number of columns of the video.
+  --Rows=[<span class="keywordtype">int</span>] (def. 0) .......................................Suggested number of rows of the video.
+  --RealTime=[<span class="keyword">true</span>,<span class="keyword">false</span>](def. <span class="keyword">false</span>) ..............If the camera should be opened in real time mode.
+  --Deinterlaced=[<span class="keyword">true</span>,<span class="keyword">false</span>](def. <span class="keyword">false</span>) .......If the camera should be opened in deinterlaced mode.
+
+Input parameters <span class="keywordflow">for</span> <a class="code" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a" title="Creates binary image of source&amp;#39;s image edges, using derivatives of the first...">Canny</a> Operator Block:
+  --max block iterations=[int] (def. -1) ............Maximal number of iterations to execute block.
+  --stats enabled=[<span class="keyword">true</span>,<span class="keyword">false</span>] (def. <span class="keyword">true</span>) ....................Block CPU stats are enabled/disabled.
+  --stats printing frequency=[int] (def. 0) .......Frequency to print CPU statistics (in iterations).
+  --cannyHigh=[50...1000] (def. 150) ..............................High threshold <span class="keywordflow">for</span> <a class="code" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a" title="Creates binary image of source&amp;#39;s image edges, using derivatives of the first...">Canny</a> <span class="keyword">operator</span>.
+  --cannyLow=[10...500] (def. 50) ..................................Low threshold <span class="keywordflow">for</span> <a class="code" href="group__qvippCV.html#ga56269a74576283f8743352552aadc12a" title="Creates binary image of source&amp;#39;s image edges, using derivatives of the first...">Canny</a> <span class="keyword">operator</span>.
+  --applyIPE=[<span class="keyword">true</span>,<span class="keyword">false</span>](def. <span class="keyword">false</span>) .........................If we want to apply the IPE algorithm.
+  --paramIPE=[1...25] (def. 5) ........................IPE parameter (max. allowed distance to line).
+  --intersectLines=[<span class="keyword">true</span>,<span class="keyword">false</span>] (def. <span class="keyword">true</span>) If we want IPE to postprocess polyline (intersecting lines).
+  --minLengthContour=[1...150] (def. 25) ...............Minimal length of a contour to be considered.
+
+  [...]
+
+[...Some other input parameters corresponding to other processing blocks...]
+</pre></div><p>We can see, for example, that the <em>Canny Operator Block</em> includes an input property named <em>cannyHigh</em>, of double type. This property has a valid range of values between 50 and 1000, and its default value is 150. Along with a short text definition for the property (<em>High threshold for Canny operator</em>), all these characteristics are specified in the call to the method <a class="el" href="classQVPropertyContainer.html#ae2cd8d4bea91574bed4c1863a13d6171">QVPropertyContainer::addProperty</a> which adds the property in the constructor of the processing block object:</p>
+<div class="fragment"><pre class="fragment"><span class="keyword">class </span><a class="code" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a>: <span class="keyword">public</span> <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>
+        {
+        <span class="keyword">public</span>:
+                <a class="code" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a>(QString name): <a class="code" href="classQVProcessingBlock.html" title="Base class for Block threads.">QVProcessingBlock</a>(name)
+                        {
+                        addProperty&lt;double&gt;(<span class="stringliteral">&quot;cannyHigh&quot;</span>, inputFlag, 150, <span class="stringliteral">&quot;High threshold for Canny operator&quot;</span>, 50, 1000);
+                        [...]
+                        }
+        [...]
+        }
+</pre></div><p>The following command line starts the application, specifying some initial values for the property <em>URL</em> in the camera object (with a given video source URL, see section QVMPlayerURLFormat for details), and the property <em>cannyHigh</em> in the <em>Canny Operator Block</em> object:</p>
+<div class="fragment"><pre class="fragment"> ./test --URL=http:<span class="comment">//perception.inf.um.es/videos/misc/penguin.dv --cannyHigh=300 </span>
+</pre></div><p>The command line parameters specifying values for the processing block properties must be separated by spaces in the command line. They must start with a double dash, followed by the name of the property (which must itself be quoted if it contains spaces; for example, <em>--"some property"=1000</em>). Next must follow an = (equal sign), and the value we want to initially store in the property.</p>
+<p>Optionally, the name of the processing block can be specified in the parameter, between the double dash and the property name, to resolve name conflicts, when two processing blocks have a property referenced with the same name. For example, the previous command would be equivalent to the following:</p>
+<div class="fragment"><pre class="fragment">./qvapplication --Video:URL=http:<span class="comment">//perception.inf.um.es/public_data/videos/misc/penguin.dv --&quot;Canny Operator Block&quot;:&quot;cannyHigh&quot;=100 </span>
+</pre></div><p>In case of unresolved name conflict, every property with the given name of every processing block in the application will be initialized with the given value. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

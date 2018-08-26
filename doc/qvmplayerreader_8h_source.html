@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvio/qvmplayerreader.h</h1><a href="qvmplayerreader_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVMPLAYERREADER_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVMPLAYERREADER_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QVBaseReader&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;QFile&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;QProcess&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QThread&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;QUrl&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QNamedPipe&gt;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="comment">// Auxiliary QVCheckOKMPlayer Class:</span>
+<a name="l00041"></a>00041 <span class="comment">// This is an internal convenience thread used only to unblock the open function</span>
+<a name="l00042"></a>00042 <span class="comment">// when it is waiting for mplayer to write in the fifo, in the case when</span>
+<a name="l00043"></a>00043 <span class="comment">// mplayer aborted when starting (due to bad URL, or wrong file format, for</span>
+<a name="l00044"></a>00044 <span class="comment">// example).</span>
+<a name="l00045"></a>00045 <span class="keyword">class </span>QVCheckOKMPlayer: <span class="keyword">public</span> QThread
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <span class="keyword">friend</span> <span class="keyword">class </span>QVMPlayerReader; <span class="comment">// Only QVMPlayerReader will have access to this class.</span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     Q_OBJECT
+<a name="l00050"></a>00050 <span class="keyword">private</span>:
+<a name="l00051"></a>00051     QVCheckOKMPlayer(QFile &amp; fifo_file,<span class="keywordtype">int</span> max_time_ms_to_wait_for_open);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     QFile &amp; _fifo_file;
+<a name="l00054"></a>00054     <span class="keywordtype">int</span> _max_time_ms_to_wait_for_open;
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> run();
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keyword">private</span> slots:
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> writeErrorInFifo();
+<a name="l00060"></a>00060 };
+<a name="l00061"></a>00061 <span class="preprocessor">#endif</span>
+<a name="l00062"></a>00062 <span class="preprocessor"></span>
+<a name="l00063"></a>00063 <span class="keyword">class </span>QVMPlayerReader : <span class="keyword">public</span> <a class="code" href="classQVBaseReader.html" title="Pure virtual base class to create input video reader components for the QVision architecture...">QVBaseReader</a>, <span class="keyword">public</span> QObject
+<a name="l00064"></a>00064 {
+<a name="l00065"></a>00065 <span class="keyword">public</span>:
+<a name="l00066"></a>00066     QVMPlayerReader():
+<a name="l00067"></a>00067         open_options(<a class="code" href="classQVVideoReader.html" title="Extremely versatile class to read from multiple video devices and video/image file...">QVVideoReader</a>::Default),
+<a name="l00068"></a>00068         path(QString()),
+<a name="l00069"></a>00069         schema(QString()),
+<a name="l00070"></a>00070         camera_opened(FALSE),
+<a name="l00071"></a>00071         frames_grabbed(0),
+<a name="l00072"></a>00072         live_camera(FALSE),
+<a name="l00073"></a>00073         imgY(<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>&lt;uChar&gt;()),
+<a name="l00074"></a>00074         imgU(<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>&lt;uChar&gt;()),
+<a name="l00075"></a>00075         imgV(<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>&lt;uChar&gt;()),
+<a name="l00076"></a>00076         cols(0),
+<a name="l00077"></a>00077         rows(0),
+<a name="l00078"></a>00078         fps(0),
+<a name="l00079"></a>00079         time_length(0),
+<a name="l00080"></a>00080         time_pos(0),
+<a name="l00081"></a>00081         end_of_video(FALSE)
+<a name="l00082"></a>00082     { };
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084     ~QVMPlayerReader() { <span class="keywordflow">if</span> (camera_opened) <a class="code" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51" title="Pure virtual close method.">close</a>(); };
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a2103cc4c523995a94b1f38543b7f0d34" title="Pure virtual open method.">open</a>(  <span class="keyword">const</span> QString &amp; url_string,
+<a name="l00087"></a>00087                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_cols,
+<a name="l00088"></a>00088                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_rows,
+<a name="l00089"></a>00089                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_fps,
+<a name="l00090"></a>00090                         <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> &amp; suggested_opts,
+<a name="l00091"></a>00091                         <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">QVVideoReader::TSourceMode</a> &amp; source_mode);
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="keywordtype">int</span> <a class="code" href="classQVBaseReader.html#ac0b9b649c43720e01d1fff5ac2516997" title="Pure virtual method to get the length of the video.">getLength</a>()  { <span class="keywordflow">return</span> fps*time_length; };
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095     <span class="keywordtype">int</span> <a class="code" href="classQVBaseReader.html#ab480a1785c777028fc4e73e86139fac8" title="Pure virtual method to get the current position in the video.">getPos</a>()  { <span class="keywordflow">return</span> fps*time_pos; };
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097     <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a16590831457eda6dd527834408b6cb1d" title="Pure virtual grab method.">grab</a>(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imgY, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imgU, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;imgV);
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099     <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#adc30e77972461b2ee1ec46ebfdacbd51" title="Pure virtual close method.">close</a>();
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101     <span class="keywordtype">bool</span> <a class="code" href="classQVBaseReader.html#a7f47dba42a7dbdd9c04b364b8bf890b0" title="Pure virtual method to set the current position in the video.">seek</a>(<span class="keywordtype">int</span> pos);
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="keyword">private</span>:
+<a name="l00104"></a>00104     <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> open_options;
+<a name="l00105"></a>00105     QStringList mplayer_args;
+<a name="l00106"></a>00106     QProcess *mplayer;
+<a name="l00107"></a>00107     QString path, schema;
+<a name="l00108"></a>00108     QNamedPipe *namedPipe;
+<a name="l00109"></a>00109     QFile fifoInput;
+<a name="l00110"></a>00110     <span class="keywordtype">bool</span> camera_opened;
+<a name="l00111"></a>00111     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frames_grabbed;
+<a name="l00112"></a>00112     <span class="keywordtype">bool</span> live_camera;
+<a name="l00113"></a>00113     <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> imgY, imgU, imgV;
+<a name="l00114"></a>00114     <span class="keywordtype">int</span> cols, rows, fps;
+<a name="l00115"></a>00115     <span class="keywordtype">double</span> time_length, time_pos;
+<a name="l00116"></a>00116     <span class="keywordtype">bool</span> end_of_video;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118     <span class="keywordtype">void</span> initMPlayerArgs(QString urlString, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> suggested_cols, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> suggested_rows);
+<a name="l00119"></a>00119     <span class="keywordtype">int</span> interpretMPlayerOutput();
+<a name="l00120"></a>00120     <span class="keywordtype">bool</span> performGrab();
+<a name="l00121"></a>00121 };
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="preprocessor">#endif // QVMPLAYERREADER_H</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

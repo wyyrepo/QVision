@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvip/qvbriefdetector.h</h1><a href="qvbriefdetector_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#ifndef QVBRIEFDETECTOR_H</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#define QVBRIEFDETECTOR_H</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QVKeypoint&gt;</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00036"></a>00036 
+<a name="l00086"></a><a class="code" href="classQVBRIEFDetector.html">00086</a> <span class="keyword">class </span><a class="code" href="classQVBRIEFDetector.html" title="Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors...">QVBRIEFDetector</a>
+<a name="l00087"></a>00087         {
+<a name="l00088"></a>00088         <span class="keyword">private</span>:
+<a name="l00089"></a>00089                 <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> descriptorInts, numTests;
+<a name="l00090"></a>00090                 <span class="keyword">const</span> <span class="keywordtype">int</span> windowRadius;
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="keyword">public</span>:
+<a name="l00093"></a>00093                 QVector&lt;char&gt; coordinates;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095         <span class="keyword">public</span>:
+<a name="l00096"></a>00096                 <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getWindowRadius()<span class="keyword">           const   </span>{ <span class="keywordflow">return</span> windowRadius; }
+<a name="l00097"></a>00097                 <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getNumTests()<span class="keyword">                       const   </span>{ <span class="keywordflow">return</span> numTests; }
+<a name="l00098"></a>00098                 <span class="comment">//inline unsigned int getDescriptorBytes()      const   { return descriptorInts; }</span>
+<a name="l00099"></a>00099                 <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getDescriptorInts()<span class="keyword">         const   </span>{ <span class="keywordflow">return</span> descriptorInts; }
+<a name="l00100"></a>00100 
+<a name="l00111"></a><a class="code" href="classQVBRIEFDetector.html#a340eb352eb4a43e2b47674dc7b7995f3">00111</a>                 <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classQVBRIEFDetector.html#a340eb352eb4a43e2b47674dc7b7995f3" title="Evaluates the Hamming distance between two binary descriptors.">distance</a>(<span class="keyword">const</span> QVector&lt;unsigned int&gt; &amp;descriptorsA, <span class="keyword">const</span> QVector&lt;unsigned int&gt; &amp;descriptorsB, <span class="keyword">const</span> <span class="keywordtype">int</span> indexA = 0, <span class="keyword">const</span> <span class="keywordtype">int</span> indexB = 0)<span class="keyword"> const</span>
+<a name="l00112"></a>00112 <span class="keyword">                        </span>{
+<a name="l00113"></a>00113                         Q_ASSERT(descriptorsA.count() &gt; descriptorInts * indexA);
+<a name="l00114"></a>00114                         Q_ASSERT(descriptorsB.count() &gt; descriptorInts * indexB);
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116                         <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>      *dA = &amp;(descriptorsA[descriptorInts*indexA]),
+<a name="l00117"></a>00117                                                                 *dB = &amp;(descriptorsB[descriptorInts*indexB]);
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> count = 0;
+<a name="l00120"></a>00120                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; descriptorInts; i++)
+<a name="l00121"></a>00121                                 count += <a class="code" href="group__qvmath.html#gaabea9bcc4938d7719cc2940ed2894c02" title="Nifty parallel bit counting routine.">qvNiftyParallelBitCount</a>(dA[i] xor dB[i]);
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123                         <span class="keywordflow">return</span> count;
+<a name="l00124"></a>00124                         }
+<a name="l00125"></a>00125 
+<a name="l00129"></a><a class="code" href="classQVBRIEFDetector.html#a919f31539fe65e0a476a5fe6a0ed2fb9">00129</a>                 <a class="code" href="classQVBRIEFDetector.html#a919f31539fe65e0a476a5fe6a0ed2fb9" title="Main constructor.">QVBRIEFDetector</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> descriptorInts = 4, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> windowRadius = 16):
+<a name="l00130"></a>00130                         descriptorInts(descriptorInts), numTests(descriptorInts*32), windowRadius(windowRadius), coordinates(numTests * 4)
+<a name="l00131"></a>00131                         {
+<a name="l00132"></a>00132                         <span class="keywordflow">if</span> (windowRadius &gt; 127)
+<a name="l00133"></a>00133                                 std::cout &lt;&lt; <span class="stringliteral">&quot;[QVBRIEFDetector0::QVBRIEFDetector0()] Error: Test distance must be less than 127.&quot;</span> &lt;&lt; std::endl;
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135                         <span class="comment">//for(unsigned int i = 0; i &lt; coordinates[0].count(); i++)</span>
+<a name="l00136"></a>00136                         <span class="comment">//      coordinates[0][i] = rand()%(2*windowRadius) - windowRadius;</span>
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138                         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; numTests*4; i+=2)
+<a name="l00139"></a>00139                                 {
+<a name="l00140"></a>00140                                 <span class="keyword">const</span> <span class="keywordtype">double</span>    random1 = double(random()%1000) / 1000.0,
+<a name="l00141"></a>00141                                                                 random2 = double(random()%500) / 1000.0 + 0.5;
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143                                 Q_ASSERT(random1 &gt;= 0);
+<a name="l00144"></a>00144                                 Q_ASSERT(random2 &gt;= 0);
+<a name="l00145"></a>00145                                 Q_ASSERT(random1 &lt;= 1.0);
+<a name="l00146"></a>00146                                 Q_ASSERT(random2 &lt;= 1.0);
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148                                 <span class="keyword">const</span> <span class="keywordtype">double</span>    angle = 2.0 * PI * random1,
+<a name="l00149"></a>00149                                                                 dist = random2;
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151                                 <span class="keyword">const</span> <span class="keywordtype">int</span>       x = <a class="code" href="group__qvmath.html#ga459fc88ab2ecb0145f7a4d88f52b1589" title="Returns the natural number closest to a given real value.">qvSymmetricFloor</a>(dist * cos(angle) * <span class="keywordtype">int</span>(windowRadius)),
+<a name="l00152"></a>00152                                                         y = <a class="code" href="group__qvmath.html#ga459fc88ab2ecb0145f7a4d88f52b1589" title="Returns the natural number closest to a given real value.">qvSymmetricFloor</a>(dist * sin(angle) * <span class="keywordtype">int</span>(windowRadius));
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154                                 Q_ASSERT(x &gt;= -<span class="keywordtype">int</span>(windowRadius));
+<a name="l00155"></a>00155                                 Q_ASSERT(y &gt;= -<span class="keywordtype">int</span>(windowRadius));
+<a name="l00156"></a>00156                                 Q_ASSERT(x &lt;= +<span class="keywordtype">int</span>(windowRadius));
+<a name="l00157"></a>00157                                 Q_ASSERT(y &lt;= +<span class="keywordtype">int</span>(windowRadius));
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159                                 coordinates[i+0] = x;
+<a name="l00160"></a>00160                                 coordinates[i+1] = y;
+<a name="l00161"></a>00161                                 }
+<a name="l00162"></a>00162                         }
+<a name="l00163"></a>00163 
+<a name="l00166"></a><a class="code" href="classQVBRIEFDetector.html#a0882e01e86c84b45d5c9f6e138af2cca">00166</a>                 QVector&lt;unsigned int&gt; <a class="code" href="classQVBRIEFDetector.html#a0882e01e86c84b45d5c9f6e138af2cca" title="Gets the descriptor for a set of features in an image.">getDescriptors</a>(   <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image,
+<a name="l00167"></a>00167                                                                                                 <span class="keyword">const</span> QVector&lt;QPointF&gt; &amp;keypoints,
+<a name="l00168"></a>00168                                                                                                 <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> octave = 1)<span class="keyword"> const</span>
+<a name="l00169"></a>00169 <span class="keyword">                        </span>{
+<a name="l00170"></a>00170                         QVector&lt;unsigned int&gt; result(keypoints.count()*descriptorInts);
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172                         <span class="keyword">const</span> uChar     *imgData = image.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>();
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174                         <span class="keyword">const</span> <span class="keywordtype">int</span>       imgStep = image.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00175"></a>00175                                                 imgCols = image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(),
+<a name="l00176"></a>00176                                                 imgRows = image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>();
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178 <span class="preprocessor">                        #ifdef DEBUG</span>
+<a name="l00179"></a>00179 <span class="preprocessor"></span>                        <span class="keyword">const</span> uChar *imageDataLimit = imgData + imgStep * imgCols + imgRows;
+<a name="l00180"></a>00180 <span class="preprocessor">                        #endif // DEBUG</span>
+<a name="l00181"></a>00181 <span class="preprocessor"></span>
+<a name="l00182"></a>00182                         <span class="comment">// Get the binary descriptors for the keypoints.</span>
+<a name="l00183"></a>00183                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> index = 0; index &lt; keypoints.count(); index++)
+<a name="l00184"></a>00184                                 {
+<a name="l00185"></a>00185                                 <span class="keyword">const</span> QPointF &amp;kp = keypoints[index];
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187                                 <span class="comment">//const int     xCoor = kp.x(), //double(kp.x) / double(kp.scale),</span>
+<a name="l00188"></a>00188                                 <span class="comment">//                      yCoor = kp.y(); //double(kp.y) / double(kp.scale);</span>
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190                                 <span class="keyword">const</span> <span class="keywordtype">int</span>       xCoor = kp.x() / double(octave),
+<a name="l00191"></a>00191                                                         yCoor = kp.y() / double(octave);
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193                                 <span class="comment">// Expected range for the angle.</span>
+<a name="l00194"></a>00194                                 <span class="comment">//Q_ASSERT(kp.angle &gt;= -PI);</span>
+<a name="l00195"></a>00195                                 <span class="comment">//Q_ASSERT(kp.angle &lt;= +PI);</span>
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197                                 <span class="keyword">const</span> QVector&lt;char&gt; coors = coordinates;
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199                                 <span class="comment">// Mind the image data boundaries.</span>
+<a name="l00200"></a>00200                                 Q_ASSERT(xCoor - windowRadius &gt;= 0);
+<a name="l00201"></a>00201                                 Q_ASSERT(yCoor - windowRadius &gt;= 0);
+<a name="l00202"></a>00202                                 Q_ASSERT(xCoor + windowRadius &lt; imgCols);
+<a name="l00203"></a>00203                                 Q_ASSERT(yCoor + windowRadius &lt; imgRows);
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205                                 <span class="comment">// Get the binary descriptor for the keypoint.</span>
+<a name="l00206"></a>00206                                 <span class="keyword">const</span> uChar *pixelPtr = imgData + imgStep * yCoor + xCoor;
+<a name="l00207"></a>00207                                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b = 0; b &lt; descriptorInts; b++)
+<a name="l00208"></a>00208                                         {
+<a name="l00209"></a>00209                                         Q_ASSERT(result.count() &gt; descriptorInts*index+b);
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211                                         <span class="keywordtype">int</span> ac = 0;
+<a name="l00212"></a>00212                                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> binaryDescriptor = 0;
+<a name="l00213"></a>00213                                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 32*4*b; i &lt; 32*4*(b+1); i+=4)
+<a name="l00214"></a>00214                                                 {
+<a name="l00215"></a>00215                                                 Q_ASSERT(i+3 &lt; coors.count());
+<a name="l00216"></a>00216 
+<a name="l00217"></a>00217                                                 <span class="comment">// Careful with the image data boundaries.</span>
+<a name="l00218"></a>00218                                                 Q_ASSERT(xCoor + coors[i+0] &gt;= 0);
+<a name="l00219"></a>00219                                                 Q_ASSERT(yCoor + coors[i+1] &gt;= 0);
+<a name="l00220"></a>00220                                                 Q_ASSERT(xCoor + coors[i+0] &lt; imgCols);
+<a name="l00221"></a>00221                                                 Q_ASSERT(yCoor + coors[i+1] &lt; imgRows);
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223                                                 Q_ASSERT(xCoor + coors[i+2] &gt;= 0);
+<a name="l00224"></a>00224                                                 Q_ASSERT(yCoor + coors[i+3] &gt;= 0);
+<a name="l00225"></a>00225                                                 Q_ASSERT(xCoor + coors[i+2] &lt; imgCols);
+<a name="l00226"></a>00226                                                 Q_ASSERT(yCoor + coors[i+3] &lt; imgRows);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228                                                 Q_ASSERT(*(pixelPtr + imgStep * coors[i+1] + coors[i+0]) == pixelPtr[ imgStep * coors[i+1] + coors[i+0] ]);
+<a name="l00229"></a>00229                                                 Q_ASSERT(*(pixelPtr + imgStep * coors[i+3] + coors[i+2]) == pixelPtr[ imgStep * coors[i+3] + coors[i+2] ]);
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231                                                 <span class="comment">// Shift binary descriptor, to make room for the result of the next binary test.</span>
+<a name="l00232"></a>00232                                                 binaryDescriptor &lt;&lt;=1;
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234                                                 <span class="comment">// Evaluate binary test.</span>
+<a name="l00235"></a>00235                                                 binaryDescriptor |=     pixelPtr[ imgStep * coors[i+1] + coors[i+0] ]   <span class="comment">// First pixel in the binary test.</span>
+<a name="l00236"></a>00236                                                                                         &gt;
+<a name="l00237"></a>00237                                                                                         pixelPtr[ imgStep * coors[i+3] + coors[i+2] ];  <span class="comment">// Second pixel in the binary test.</span>
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239                                                 }
+<a name="l00240"></a>00240                                         result[descriptorInts*index+b] = binaryDescriptor;
+<a name="l00241"></a>00241                                         }
+<a name="l00242"></a>00242                                 }
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244                         <span class="keywordflow">return</span> result;
+<a name="l00245"></a>00245                         }
+<a name="l00246"></a>00246         };
+<a name="l00247"></a>00247 
+<a name="l00278"></a>00278 <span class="keywordtype">bool</span> <a class="code" href="group__qvip.html#ga60fd9c63b86729a04e99b829bedf69cb" title="Write a list of image features and BRIEF descriptors to a text file in Lowe&amp;#39;s...">saveBRIEFDescriptorsInLoweSIFTFileFormat</a>(<span class="keyword">const</span> QString fileName, <span class="keyword">const</span> QVector&lt;QPointF&gt; features, <span class="keyword">const</span> QVector&lt;unsigned int&gt; descriptors);
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280 <span class="preprocessor">#endif // QVBRIEFDETECTOR_H</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

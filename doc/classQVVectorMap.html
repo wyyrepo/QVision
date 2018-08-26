@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVVectorMap Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVVectorMap" -->
+<p>Fast nearest neigbour vector container.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvvectormap_8h_source.html">QVVectorMap</a>&gt;</code></p>
+
+<p><a href="classQVVectorMap-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVectorMap.html#adc141673b4b81c585fb01300411cfb39">add</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a vector to the container.  <a href="#adc141673b4b81c585fb01300411cfb39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVectorMap.html#acf02b25b01f231f2c0d7d9952cbe586f">QVVectorMap</a> (const QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;vectors=QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt;())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#acf02b25b01f231f2c0d7d9952cbe586f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVectorMap.html#aa3d9e5d64920be9235ca1a2b0a3392ba">getClosestVector</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the closest vector to a given one from the container.  <a href="#aa3d9e5d64920be9235ca1a2b0a3392ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVectorMap.html#adc6d8cfac6c68976a3b332c8c0fbc56e">getClosestVectors</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;vector, const int n) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the closest vectors to a given one from the container.  <a href="#adc6d8cfac6c68976a3b332c8c0fbc56e"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVVectorMap.html#a102aacc999f283e4ece97bca8db8df33">getClosestVectors</a> (const <a class="el" href="classQVVector.html">QVVector</a> actualVector, const QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;vectors, const int n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">function for debug purposes  <a href="#a102aacc999f283e4ece97bca8db8df33"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Fast nearest neigbour vector container. </p>
+<p>Vector maps are created from a list of <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> objects, or initialized <em>manually</em>, inserting the points with the <a class="el" href="classQVVectorMap.html#adc141673b4b81c585fb01300411cfb39">add</a> method:</p>
+<div class="fragment"><pre class="fragment">QList&lt;QVVector&gt; vectors;
+<a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> v1, v2, ...;
+[...]
+points.append(v1);
+points.append(v2);
+
+[...]
+
+<a class="code" href="classQVVectorMap.html" title="Fast nearest neigbour vector container.">QVVectorMap</a> vectorMap1(vectors), vectorMap2;
+vectorMap2.<a class="code" href="classQVVectorMap.html#adc141673b4b81c585fb01300411cfb39" title="Adds a vector to the container.">add</a>(v4);
+vectorMap2.<a class="code" href="classQVVectorMap.html#adc141673b4b81c585fb01300411cfb39" title="Adds a vector to the container.">add</a>(v5);
+
+[...]
+</pre></div><p>The method <a class="el" href="classQVVectorMap.html#adc6d8cfac6c68976a3b332c8c0fbc56e">getClosestVectors</a> can be used to obtain the points registered in the container, which are closer to a given vector. </p>
+
+<p>Definition at line <a class="el" href="qvvectormap_8h_source.html#l00056">56</a> of file <a class="el" href="qvvectormap_8h_source.html">qvvectormap.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="acf02b25b01f231f2c0d7d9952cbe586f"></a><!-- doxytag: member="QVVectorMap::QVVectorMap" ref="acf02b25b01f231f2c0d7d9952cbe586f" args="(const QList&lt; QVVector &gt; &amp;vectors=QList&lt; QVVector &gt;())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVVectorMap::QVVectorMap </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>vectors</em> = <code>QList&lt;<a class="el" href="classQVVector.html">QVVector</a>&gt;()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vectors</em>&nbsp;</td><td>Vectors to insert in the container. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvectormap_8cpp_source.html#l00030">30</a> of file <a class="el" href="qvvectormap_8cpp_source.html">qvvectormap.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="adc141673b4b81c585fb01300411cfb39"></a><!-- doxytag: member="QVVectorMap::add" ref="adc141673b4b81c585fb01300411cfb39" args="(const QVVector &amp;vector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVVectorMap::add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds a vector to the container. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Vector to add to the container. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvvectormap_8cpp_source.html#l00025">25</a> of file <a class="el" href="qvvectormap_8cpp_source.html">qvvectormap.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVectorMap.html#acf02b25b01f231f2c0d7d9952cbe586f">QVVectorMap()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3d9e5d64920be9235ca1a2b0a3392ba"></a><!-- doxytag: member="QVVectorMap::getClosestVector" ref="aa3d9e5d64920be9235ca1a2b0a3392ba" args="(const QVVector &amp;vector) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> QVVectorMap::getClosestVector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the closest vector to a given one from the container. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If the container is empty, return the default value for <a class="el" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a>. Else returns the vector which is closer to the given one. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvectormap_8cpp_source.html#l00044">44</a> of file <a class="el" href="qvvectormap_8cpp_source.html">qvvectormap.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc6d8cfac6c68976a3b332c8c0fbc56e"></a><!-- doxytag: member="QVVectorMap::getClosestVectors" ref="adc6d8cfac6c68976a3b332c8c0fbc56e" args="(const QVVector &amp;vector, const int n) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt; QVVectorMap::getClosestVectors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the closest vectors to a given one from the container. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If the container holds <em>n</em> vectors or less, the return value is a list containing those vectors. Else, returns the <em>n</em> vectors contained which are closer to the given one. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvvectormap_8cpp_source.html#l00052">52</a> of file <a class="el" href="qvvectormap_8cpp_source.html">qvvectormap.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVVectorMap.html#aa3d9e5d64920be9235ca1a2b0a3392ba">getClosestVector()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a102aacc999f283e4ece97bca8db8df33"></a><!-- doxytag: member="QVVectorMap::getClosestVectors" ref="a102aacc999f283e4ece97bca8db8df33" args="(const QVVector actualVector, const QList&lt; QVVector &gt; &amp;vectors, const int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt; QVVectorMap::getClosestVectors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td>
+          <td class="paramname"> <em>actualVector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>vectors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>function for debug purposes </p>
+
+<p>Definition at line <a class="el" href="qvvectormap_8cpp_source.html#l00036">36</a> of file <a class="el" href="qvvectormap_8cpp_source.html">qvvectormap.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvvectormap_8h_source.html">qvvectormap.h</a></li>
+<li>src/qvmath/<a class="el" href="qvvectormap_8cpp_source.html">qvvectormap.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

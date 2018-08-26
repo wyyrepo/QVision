@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvipp/qvipp.cpp</h1><a href="qvipp_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QVMatrix&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="macros_8h.html" title="File from the QVision library.">qvipp/macros.h</a>&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="comment">// Sharpen</span>
+<a name="l00031"></a>00031 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#ga66c41b76bbad4f212ae571b33df8d92e" title="Filters an image using a sharpening filter.This function applies a sharpening filter...">FilterSharpen</a>, uChar, 1, _8u_C1R);
+<a name="l00032"></a>00032 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#ga66c41b76bbad4f212ae571b33df8d92e" title="Filters an image using a sharpening filter.This function applies a sharpening filter...">FilterSharpen</a>, sFloat, 1, _32f_C1R);
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="comment">// FilterSobel</span>
+<a name="l00035"></a>00035 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>, uChar, 1, _8u_C1R);
+<a name="l00036"></a>00036 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>, sShort, 1, _16s_C1R);
+<a name="l00037"></a>00037 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>, sFloat, 1, _32f_C1R);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>, uChar, 3, _8u_C3R);
+<a name="l00040"></a>00040 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>, sShort, 3, _16s_C3R);
+<a name="l00041"></a>00041 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gab052e43ed642b39ffba44b8c954546ef" title="Applies a vertical Sobel derivative filter (3x3) to an image.">FilterSobelVert</a>, sFloat, 3, _32f_C3R);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>, uChar, 1, _8u_C1R);
+<a name="l00044"></a>00044 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>, sShort, 1, _16s_C1R);
+<a name="l00045"></a>00045 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>, sFloat, 1, _32f_C1R);
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>, uChar, 3, _8u_C3R);
+<a name="l00048"></a>00048 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>, sShort, 3, _16s_C3R);
+<a name="l00049"></a>00049 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gade1696d484535d7d2c0729b1522aa6be" title="Applies a horizontal Sobel derivative filter (3x3) to an image.">FilterSobelHoriz</a>, sFloat, 3, _32f_C3R);
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="comment">// Erode</span>
+<a name="l00052"></a>00052 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>, uChar, 1, _8u_C1R);
+<a name="l00053"></a>00053 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>, uShort, 1, _16u_C1R);
+<a name="l00054"></a>00054 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>, sFloat, 1, _32f_C1R);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>, uChar, 3, _8u_C3R);
+<a name="l00057"></a>00057 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>, uShort, 3, _16u_C3R);
+<a name="l00058"></a>00058 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gaa3942d10b42c52cd33b3174350049717" title="Applies a morphological Erode3x3 filter.">Erode3x3</a>, sFloat, 3, _32f_C3R);
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="comment">// Dilate</span>
+<a name="l00061"></a>00061 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>, uChar, 1, _8u_C1R);
+<a name="l00062"></a>00062 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>, uShort, 1, _16u_C1R);
+<a name="l00063"></a>00063 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>, sFloat, 1, _32f_C1R);
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>, uChar, 3, _8u_C3R);
+<a name="l00066"></a>00066 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>, uShort, 3, _16u_C3R);
+<a name="l00067"></a>00067 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_ROIOFFSET_BORDER3x3(<a class="code" href="group__qvippFF.html#gabda31f5e9e46174c3d10b92fa1886776" title="Applies a morphological Dilate3x3 filter.">Dilate3x3</a>, sFloat, 3, _32f_C3R);
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_DESTIMAGE_Ti_Cj_ROIOFFSET(Copy, uChar, 3, _8u_P3C3R);
+<a name="l00070"></a>00070 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_DESTIMAGE_Ti_Cj_ROIOFFSET(Copy, uShort, 3, _16u_P3C3R);
+<a name="l00071"></a>00071 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_DESTIMAGE_Ti_Cj_ROIOFFSET(Copy, sShort, 3, _16s_P3C3R);
+<a name="l00072"></a>00072 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_DESTIMAGE_Ti_Cj_ROIOFFSET(Copy, sInt, 3, _32s_P3C3R);
+<a name="l00073"></a>00073 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_SRCIMAGE_Ti_C1_DESTIMAGE_Ti_Cj_ROIOFFSET(Copy, sFloat, 3, _32f_P3C3R);
+<a name="l00074"></a>00074 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_ROIOFFSET(Copy, uChar, 3, _8u_C3P3R);
+<a name="l00075"></a>00075 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_ROIOFFSET(Copy, uShort, 3, _16u_C3P3R);
+<a name="l00076"></a>00076 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_ROIOFFSET(Copy, sShort, 3, _16s_C3P3R);
+<a name="l00077"></a>00077 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_ROIOFFSET(Copy, sInt, 3, _32s_C3P3R);
+<a name="l00078"></a>00078 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_DESTIMAGE_Ti_C1_ROIOFFSET(Copy, sFloat, 3, _32f_C3P3R);
+<a name="l00079"></a>00079 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Ck_CHANNELNUM_ROIOFFSET(Copy, uChar, 3, 1, _8u_C3C1R);
+<a name="l00080"></a>00080 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Ck_CHANNELNUM_ROIOFFSET(Copy, uShort, 3, 1, _16u_C3C1R);
+<a name="l00081"></a>00081 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Ck_CHANNELNUM_ROIOFFSET(Copy, sShort, 3, 1, _16s_C3C1R);
+<a name="l00082"></a>00082 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Ck_CHANNELNUM_ROIOFFSET(Copy, sInt, 3, 1, _32s_C3C1R);
+<a name="l00083"></a>00083 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Ck_CHANNELNUM_ROIOFFSET(Copy, sFloat, 3, 1, _32f_C3C1R);
+<a name="l00084"></a>00084 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_SRCIMAGE_Ti_Cj_DESTIMAGE_C1_Tuchar_IPPCMPOP_ROIOFFSET(<a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>, uChar, 3, _8u_C3R);
+<a name="l00085"></a>00085 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_SRCIMAGE_Ti_Cj_DESTIMAGE_C1_Tuchar_IPPCMPOP_ROIOFFSET(<a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>, uShort, 3, _16u_C3R);
+<a name="l00086"></a>00086 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_SRCIMAGE_Ti_Cj_DESTIMAGE_C1_Tuchar_IPPCMPOP_ROIOFFSET(<a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>, sShort, 3, _16s_C3R);
+<a name="l00087"></a>00087 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_SRCIMAGE_Ti_Cj_DESTIMAGE_C1_Tuchar_IPPCMPOP_ROIOFFSET(<a class="code" href="group__qvippIDEAIF.html#ga789d10ddee1fa559a9cf44e8628801eb" title="Compares pixel values of two images using a specified compare operation.">Compare</a>, sFloat, 3, _32f_C3R);
+<a name="l00088"></a>00088 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_BUFFERIMAGE_Ti_Cj_IPPMASKSIZE__ROIOFFSET(<a class="code" href="group__qvippFF.html#gadad5d91b09ebcf965394246ddcdec8ba" title="Applies vertical Sobel filter with border.This function is similar to FilterSobelVertMask...">FilterSobelNegVertBorder</a>, uChar, sShort, 1, _8u16s_C1R);
+<a name="l00089"></a>00089 DEFINE_IPP_FUNCTION_SRCIMAGE_Ti_Cj_DESTIMAGE_Ti_Cj_BUFFERIMAGE_Ti_Cj_IPPMASKSIZE__ROIOFFSET(<a class="code" href="group__qvippFF.html#ga9d12bdc7d480013fdd884174c9cfbe55" title="Applies horizontal Sobel filter with border.This function is similar to FilterSobelHorizMask...">FilterSobelHorizBorder</a>, uChar, sShort, 1, _8u16s_C1R);
+<a name="l00090"></a>00090 DEFINE_IPP_FUNCTION_SRCGENERICIMAGE_DESTBUFFERIMAGE_Ti_Cj_IPPMASKSIZE__ROIOFFSET(<a class="code" href="group__qvippFF.html#ga180dd7c1bdc22bb98bcf119e788f6d89" title="Allocates size in a buffer image for temporary data for function FilterSobelNegVert...">FilterSobelNegVertGetBufferSize</a>, uChar, sShort, 1, _8u16s_C1R);
+<a name="l00091"></a>00091 DEFINE_IPP_FUNCTION_SRCGENERICIMAGE_DESTBUFFERIMAGE_Ti_Cj_IPPMASKSIZE__ROIOFFSET(<a class="code" href="group__qvippFF.html#gadfa1eaf6615962a65a4788b8954c9d09" title="Allocates size in a buffer image for temporary data for function FilterSobelHoriz...">FilterSobelHorizGetBufferSize</a>, uChar, sShort, 1, _8u16s_C1R);
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 <span class="preprocessor">#define DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_DOUBLE_DOUBLE_INTERPOLATION(NAME, TYPE, PLANES, SUBFIX)     \</span>
+<a name="l00096"></a>00096 <span class="preprocessor">void NAME(const QVImage&lt;TYPE, PLANES&gt; &amp;src, QVImage&lt;TYPE, PLANES&gt; &amp;dest, int interpolation)             \</span>
+<a name="l00097"></a>00097 <span class="preprocessor">        {                                                                                               \</span>
+<a name="l00098"></a>00098 <span class="preprocessor">        double  factorX = (double) dest.getROI().width() / (double) src.getROI().width(),               \</span>
+<a name="l00099"></a>00099 <span class="preprocessor">                factorY = (double) dest.getROI().height() / (double) src.getROI().height();             \</span>
+<a name="l00100"></a>00100 <span class="preprocessor">                                                                                                        \</span>
+<a name="l00101"></a>00101 <span class="preprocessor">        IPP_DEBUG(NAME,         ippi ## NAME ## SUBFIX,                                                 \</span>
+<a name="l00102"></a>00102 <span class="preprocessor">                                src.getReadData(), IMAGE_SIZE(src), src.getStep(), IMAGE_ROIRECT(src),  \</span>
+<a name="l00103"></a>00103 <span class="preprocessor">                                PDATA_WRITE(dest), dest.getStep(), IMAGE_ROISIZE(dest),                 \</span>
+<a name="l00104"></a>00104 <span class="preprocessor">                                factorX, factorY, interpolation);                                       \</span>
+<a name="l00105"></a>00105 <span class="preprocessor">        }</span>
+<a name="l00106"></a>00106 <span class="preprocessor"></span>
+<a name="l00107"></a>00107 DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_DOUBLE_DOUBLE_INTERPOLATION(<a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>, uChar, 1, _8u_C1R);
+<a name="l00108"></a>00108 DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_DOUBLE_DOUBLE_INTERPOLATION(<a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>, uChar, 3, _8u_C3R);
+<a name="l00109"></a>00109 DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_DOUBLE_DOUBLE_INTERPOLATION(<a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>, uShort, 1, _16u_C1R);
+<a name="l00110"></a>00110 DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_DOUBLE_DOUBLE_INTERPOLATION(<a class="code" href="group__qvippIGT.html#gafeadedf07a0e3f27bf0c39e361339e23" title="Changes an image size.This function copies the content of the ROI in the source image...">Resize</a>, sFloat, 1, _32f_C1R);
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="preprocessor">#define DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_BUFFER_KERNELSIZE_SFLOAT_BORDERTYPE_BORDERVALUE(NAME, TYPE, C, SUBFIX)      \</span>
+<a name="l00113"></a>00113 <span class="preprocessor">void NAME(const QVImage&lt;TYPE, C&gt; &amp;src, QVImage&lt;TYPE, C&gt; &amp;dest, QVImage&lt;uChar&gt; &amp;buffer, sInt kernelSize,                 \</span>
+<a name="l00114"></a>00114 <span class="preprocessor">        sFloat sfloat, IppiBorderType borderType, sFloat borderValue, const QPoint &amp;destROIOffset)                      \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">        {                                                                                                               \</span>
+<a name="l00116"></a>00116 <span class="preprocessor">        dest.setROI(destROIOffset.x(), destROIOffset.y(),                                       \</span>
+<a name="l00117"></a>00117 <span class="preprocessor">                src.getROI().width(), src.getROI().height());           \</span>
+<a name="l00118"></a>00118 <span class="preprocessor">                                                                                                \</span>
+<a name="l00119"></a>00119 <span class="preprocessor">        IPP_DEBUG(NAME,         ippi ## NAME ## SUBFIX,                                         \</span>
+<a name="l00120"></a>00120 <span class="preprocessor">                                PDATA_READ(src), src.getStep(),                                 \</span>
+<a name="l00121"></a>00121 <span class="preprocessor">                                PDATA_WRITE(dest), dest.getStep(),                              \</span>
+<a name="l00122"></a>00122 <span class="preprocessor">                                IMAGE_ROISIZE(dest),                                            \</span>
+<a name="l00123"></a>00123 <span class="preprocessor">                                kernelSize, sfloat, borderType, borderValue,                    \</span>
+<a name="l00124"></a>00124 <span class="preprocessor">                                buffer.getWriteData());                                         \</span>
+<a name="l00125"></a>00125 <span class="preprocessor">        }</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span>
+<a name="l00127"></a>00127 DEFINE_IPP_FUNCTION_QVIMAGE_QVIMAGE_BUFFER_KERNELSIZE_SFLOAT_BORDERTYPE_BORDERVALUE(<a class="code" href="group__qvippFF.html#ga6c4251a727e0b56f7938b736d6176f6c" title="Applies Gauss filter with border.This function applies the Gaussian filter to the...">FilterGaussBorder</a>, sFloat, 1, _32f_C1R);
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 <span class="preprocessor">#define DEFINE_IPP_FUNCTION_QVIMAGE_BUFFER_THRESHOLD_PIPPIPOINT_UINT_PUINT_IPPINORM_BORDER(NAME, TYPE, C, SUBFIX)                                       \</span>
+<a name="l00130"></a>00130 <span class="preprocessor">void NAME(const QVImage&lt;TYPE, C&gt; &amp;img, QVImage&lt;uChar&gt; &amp;buffer, QList&lt;QPoint&gt; &amp;points, TYPE threshold, IppiNorm norm, uInt border, uInt maxPeakCount)    \</span>
+<a name="l00131"></a>00131 <span class="preprocessor">        {                                                                                                                                               \</span>
+<a name="l00132"></a>00132 <span class="preprocessor">        int pPeakCount;                                                                 \</span>
+<a name="l00133"></a>00133 <span class="preprocessor">        IppiPoint *pPeak = new IppiPoint[maxPeakCount]();                               \</span>
+<a name="l00134"></a>00134 <span class="preprocessor">                                                                                        \</span>
+<a name="l00135"></a>00135 <span class="preprocessor">        IPP_DEBUG(NAME,         ippi ## NAME ## SUBFIX,                                 \</span>
+<a name="l00136"></a>00136 <span class="preprocessor">                                PDATA_READ(img), img.getStep(), IMAGE_ROISIZE(img),     \</span>
+<a name="l00137"></a>00137 <span class="preprocessor">                                threshold, pPeak, maxPeakCount, &amp;pPeakCount,            \</span>
+<a name="l00138"></a>00138 <span class="preprocessor">                                norm, border, buffer.getWriteData());                   \</span>
+<a name="l00139"></a>00139 <span class="preprocessor">                                                                                        \</span>
+<a name="l00140"></a>00140 <span class="preprocessor">        for (int n = 0; n &lt; pPeakCount; n++)                                            \</span>
+<a name="l00141"></a>00141 <span class="preprocessor">                points.append(QPoint(pPeak[n].x, pPeak[n].y));                          \</span>
+<a name="l00142"></a>00142 <span class="preprocessor">                                                                                        \</span>
+<a name="l00143"></a>00143 <span class="preprocessor">        delete pPeak;                                                                   \</span>
+<a name="l00144"></a>00144 <span class="preprocessor">        }</span>
+<a name="l00145"></a>00145 <span class="preprocessor"></span>
+<a name="l00146"></a>00146 DEFINE_IPP_FUNCTION_QVIMAGE_BUFFER_THRESHOLD_PIPPIPOINT_UINT_PUINT_IPPINORM_BORDER(<a class="code" href="group__qvippCV.html#ga6998ed9960561b8625418fb9eb36193a" title="Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold...">FindPeaks3x3</a>, sInt, 1, _32s_C1R);
+<a name="l00147"></a>00147 DEFINE_IPP_FUNCTION_QVIMAGE_BUFFER_THRESHOLD_PIPPIPOINT_UINT_PUINT_IPPINORM_BORDER(<a class="code" href="group__qvippCV.html#ga6998ed9960561b8625418fb9eb36193a" title="Finds coordinates of peaks (maximums or minimums) with absolute value exceeding threshold...">FindPeaks3x3</a>, sFloat, 1, _32f_C1R);
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 <span class="preprocessor">#define DEFINE_IPP_FUNCTION_QVIMAGE_BUFFER_ROIWIDTH(NAME, TYPE, C, SUBFIX)      \</span>
+<a name="l00150"></a>00150 <span class="preprocessor">void NAME(const QVImage&lt;TYPE,C&gt; &amp;image, QVImage&lt;uChar&gt; &amp;buffer)                 \</span>
+<a name="l00151"></a>00151 <span class="preprocessor">        {                                                                       \</span>
+<a name="l00152"></a>00152 <span class="preprocessor">        int pBufferSize;                                                        \</span>
+<a name="l00153"></a>00153 <span class="preprocessor">                                                                                \</span>
+<a name="l00154"></a>00154 <span class="preprocessor">        IPP_DEBUG(Peaks3x3GetBufferSize,        ippi ## NAME ## SUBFIX,                 \</span>
+<a name="l00155"></a>00155 <span class="preprocessor">                                                image.getROI().width(), &amp;pBufferSize);  \</span>
+<a name="l00156"></a>00156 <span class="preprocessor">        buffer = QVImage&lt;uChar&gt;(2*pBufferSize,1);                                       \</span>
+<a name="l00157"></a>00157 <span class="preprocessor">        }</span>
+<a name="l00158"></a>00158 <span class="preprocessor"></span>
+<a name="l00159"></a>00159 DEFINE_IPP_FUNCTION_QVIMAGE_BUFFER_ROIWIDTH(<a class="code" href="group__qvippCV.html#ga4b54dbfc2853fe49efdefc6142c7918b" title="Computes the size of the working buffer for the peak search.This function computes...">FindPeaks3x3GetBufferSize</a>, sInt, 1, _32s_C1R);
+<a name="l00160"></a>00160 DEFINE_IPP_FUNCTION_QVIMAGE_BUFFER_ROIWIDTH(<a class="code" href="group__qvippCV.html#ga4b54dbfc2853fe49efdefc6142c7918b" title="Computes the size of the working buffer for the peak search.This function computes...">FindPeaks3x3GetBufferSize</a>, sFloat, 1, _32f_C1R);
+<a name="l00161"></a>00161 
+<a name="l00163"></a><a class="code" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">00163</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippICC.html#ga1a13cf2a5106e65fc94f046e98f547ca">YUV420ToRGB</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src1, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src2, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src3,
+<a name="l00164"></a>00164         <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;dest, <span class="keyword">const</span> QPoint &amp;destROIOffset)
+<a name="l00165"></a>00165         {
+<a name="l00166"></a>00166         <span class="keyword">const</span> uChar * pSrc[3] = { PDATA_READ(src1), PDATA_READ(src2), PDATA_READ(src3) };
+<a name="l00167"></a>00167         <span class="keywordtype">int</span> srcStep[3] = { src1.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), src2.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), src3.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>() };
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169         dest.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x(), destROIOffset.y(), src1.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width(), src1.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height());
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171         IPP_DEBUG(<span class="stringliteral">&quot;YUV420ToRGB&quot;</span>,        ippiYUV420ToRGB_8u_P3C3R,
+<a name="l00172"></a>00172                                         pSrc, srcStep,
+<a name="l00173"></a>00173                                         PDATA_WRITE(dest), dest.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00174"></a>00174                                         IMAGE_ROISIZE(dest));
+<a name="l00175"></a>00175         }
+<a name="l00176"></a>00176 
+<a name="l00178"></a><a class="code" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">00178</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippICC.html#ga6bed5439d377438a4d1a687a2d326a69">RGBToYUV420</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dst1, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dst2, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;dst3, <span class="keyword">const</span> QPoint &amp;destROIOffset)
+<a name="l00179"></a>00179         {
+<a name="l00180"></a>00180         uChar * pDst[3] = { PDATA_WRITE(dst1), PDATA_WRITE(dst2), PDATA_WRITE(dst3) };
+<a name="l00181"></a>00181         <span class="keywordtype">int</span> dstStep[3] = { dst1.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), dst2.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), dst3.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>() };
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183         dst1.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x(), destROIOffset.y(), src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width(), src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height());
+<a name="l00184"></a>00184         dst2.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x()/2, destROIOffset.y()/2, src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width()/2, src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height()/2);
+<a name="l00185"></a>00185         dst3.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x()/2, destROIOffset.y()/2, src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width()/2, src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height()/2);
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187         IPP_DEBUG(<span class="stringliteral">&quot;RGBToTUV420&quot;</span>,        ippiRGBToYUV420_8u_C3P3R,
+<a name="l00188"></a>00188                                         PDATA_READ(src), src.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00189"></a>00189                                         pDst, dstStep,
+<a name="l00190"></a>00190                                         IMAGE_ROISIZE(dst1));
+<a name="l00191"></a>00191         }
+<a name="l00192"></a>00192 
+<a name="l00193"></a><a class="code" href="group__qvippFF.html#ga9509aca9c5c02975804d29f7799d9902">00193</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippFF.html#ga9509aca9c5c02975804d29f7799d9902" title="Computes the size of the external buffer for the Gaussian filter with border.This...">FilterGaussGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, uInt kernelSize)
+<a name="l00194"></a>00194         {
+<a name="l00195"></a>00195         <span class="keywordtype">int</span> pBufferSize;
+<a name="l00196"></a>00196         IPP_DEBUG(<a class="code" href="group__qvippFF.html#ga9509aca9c5c02975804d29f7799d9902" title="Computes the size of the external buffer for the Gaussian filter with border.This...">FilterGaussGetBufferSize</a>,     ippiFilterGaussGetBufferSize_32f_C1R, IMAGE_ROISIZE(image), kernelSize, &amp;pBufferSize);
+<a name="l00197"></a>00197         buffer = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(pBufferSize,1);
+<a name="l00198"></a>00198         }
+<a name="l00199"></a>00199 
+<a name="l00200"></a><a class="code" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920">00200</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga4a7017e5e9b0df7161ffc48285f3d920" title="Allocates size in a buffer image for temporary data for function MinEigenValGet.This...">MinEigenValGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer, uInt apertureSize, uInt avgWindow)
+<a name="l00201"></a>00201         {
+<a name="l00202"></a>00202         <span class="keywordtype">int</span> pBufferSize;
+<a name="l00203"></a>00203         IPP_DEBUG(<a class="code" href="group__qvippCV.html#gab2eadd7360e07f47881c2727bf28b2df" title="Calculates the minimal eigen value of image blocks for corner detection.This function...">MinEigenVal</a>,  ippiMinEigenValGetBufferSize_8u32f_C1R, IMAGE_ROISIZE(image), apertureSize, avgWindow, &amp;pBufferSize);
+<a name="l00204"></a>00204         buffer = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(pBufferSize,1);
+<a name="l00205"></a>00205         }
+<a name="l00206"></a>00206 
+<a name="l00207"></a><a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7">00207</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7" title="Allocates size in a buffer image for temporary data for function Canny.This function...">CannyGetSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer)
+<a name="l00208"></a>00208         {
+<a name="l00209"></a>00209         <span class="keywordtype">int</span> cannyBufferSize;
+<a name="l00210"></a>00210         IPP_DEBUG(<a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7" title="Allocates size in a buffer image for temporary data for function Canny.This function...">CannyGetSize</a>, ippiCannyGetSize, IMAGE_ROISIZE(src),&amp;cannyBufferSize);
+<a name="l00211"></a>00211         buffer = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(cannyBufferSize,1);
+<a name="l00212"></a>00212         }
+<a name="l00213"></a>00213 
+<a name="l00214"></a><a class="code" href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd">00214</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gac12eb7e0069535465549c2ab63cd50cd" title="Allocates size in a buffer image for temporary data for function FastMarching.This...">FastMarchingGetBufferSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer)
+<a name="l00215"></a>00215         {
+<a name="l00216"></a>00216         <span class="keywordtype">int</span> bufferSize;
+<a name="l00217"></a>00217         IPP_DEBUG(<a class="code" href="group__qvippCV.html#ga81da042e746aff629cf0e0f45b0f9cb7" title="Allocates size in a buffer image for temporary data for function Canny.This function...">CannyGetSize</a>, ippiFastMarchingGetBufferSize_8u32f_C1R, IMAGE_ROISIZE(image),&amp;bufferSize);
+<a name="l00218"></a>00218         buffer = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(bufferSize,1);
+<a name="l00219"></a>00219         }
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221 <span class="comment">// Inpainting C3</span>
+<a name="l00222"></a><a class="code" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">00222</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gae87027225d01eb6d7c21e9a67dccfba2">InpaintInitAllocC3</a>(IppiInpaintState_8u_C3R **pState, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;distances, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;mask,
+<a name="l00223"></a>00223         <span class="keyword">const</span> sFloat radius, <span class="keyword">const</span> IppiInpaintFlag flag)
+<a name="l00224"></a>00224         {
+<a name="l00225"></a>00225         IPP_DEBUG(      <a class="code" href="group__qvippCV.html#ga130796a6842e97aaf115d50585c76930" title="Restores damaged image area by direct inpainting.">Inpaint</a>, ippiInpaintInitAlloc_8u_C3R, pState, distances.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), distances.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00226"></a>00226                         mask.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), mask.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), IMAGE_ROISIZE(mask), radius, flag);
+<a name="l00227"></a>00227         }
+<a name="l00228"></a>00228 
+<a name="l00229"></a><a class="code" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">00229</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gaa5005f5f4b588cdc58fe17ddd7cecf84">InpaintFreeC3</a>(IppiInpaintState_8u_C3R *pState)
+<a name="l00230"></a>00230         {
+<a name="l00231"></a>00231         IPP_DEBUG(<a class="code" href="group__qvippCV.html#ga130796a6842e97aaf115d50585c76930" title="Restores damaged image area by direct inpainting.">Inpaint</a>, ippiInpaintFree_8u_C3R,pState);
+<a name="l00232"></a>00232         }
+<a name="l00233"></a>00233 
+<a name="l00234"></a><a class="code" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">00234</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#ga4bd093b7fbf6a2e95e439172dfc2d538">InpaintInitAllocC1</a>(IppiInpaintState_8u_C1R **pState, <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;distances, <span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;mask,
+<a name="l00235"></a>00235         <span class="keyword">const</span> sFloat radius, <span class="keyword">const</span> IppiInpaintFlag flag)
+<a name="l00236"></a>00236         {
+<a name="l00237"></a>00237         IPP_DEBUG(      <a class="code" href="group__qvippCV.html#ga130796a6842e97aaf115d50585c76930" title="Restores damaged image area by direct inpainting.">Inpaint</a>, ippiInpaintInitAlloc_8u_C1R, pState, distances.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), distances.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00238"></a>00238                         mask.<a class="code" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1" title="Method to obtain image data buffer, in read mode.">getReadData</a>(), mask.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), IMAGE_ROISIZE(mask), radius, flag);
+<a name="l00239"></a>00239         }
+<a name="l00240"></a>00240 
+<a name="l00241"></a><a class="code" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">00241</a> <span class="keywordtype">void</span> <a class="code" href="group__qvippCV.html#gaa3504383d51c52be55503ba6925192af">InpaintFreeC1</a>(IppiInpaintState_8u_C1R *pState)
+<a name="l00242"></a>00242         {
+<a name="l00243"></a>00243         IPP_DEBUG(<a class="code" href="group__qvippCV.html#ga130796a6842e97aaf115d50585c76930" title="Restores damaged image area by direct inpainting.">Inpaint</a>, ippiInpaintFree_8u_C1R,pState);
+<a name="l00244"></a>00244         }
+<a name="l00245"></a>00245 
+<a name="l00246"></a>00246 <span class="comment">// Histogram</span>
+<a name="l00247"></a><a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96">00247</a> QVector&lt;int&gt; <a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96" title="Calculates frequency histogram for a given set of values, for a QVImageThis function...">HistogramRange</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src)
+<a name="l00248"></a>00248         {
+<a name="l00249"></a>00249         <span class="comment">// Bug: always computes last value wrong. So we use one more value, 257, instead of 256.</span>
+<a name="l00250"></a>00250         <span class="keywordtype">int</span> nLevels = 257;
+<a name="l00251"></a>00251         sInt pLevels[nLevels];
+<a name="l00252"></a>00252         <span class="keywordtype">int</span> pHist[nLevels];
+<a name="l00253"></a>00253         
+<a name="l00254"></a>00254         <span class="keywordflow">for</span>(sInt i=0; i&lt;nLevels; i++)
+<a name="l00255"></a>00255                 pLevels[i] = i;
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257         IPP_DEBUG(<a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96" title="Calculates frequency histogram for a given set of values, for a QVImageThis function...">HistogramRange</a>,       ippiHistogramRange_8u_C1R, <span class="comment">// ippi ## NAME ## SUBFIX,</span>
+<a name="l00258"></a>00258                                         PDATA_READ(src), src.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), IMAGE_ROISIZE(src),
+<a name="l00259"></a>00259                                         pHist, pLevels, nLevels);
+<a name="l00260"></a>00260 
+<a name="l00262"></a>00262         <span class="comment">// compute cumulative histogram</span>
+<a name="l00263"></a>00263         QVector&lt; int &gt; result(256);
+<a name="l00264"></a>00264         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;result.size(); i++)
+<a name="l00265"></a>00265                 result[i] = pHist[i];
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="keywordflow">return</span> result;
+<a name="l00268"></a>00268         }
+<a name="l00269"></a>00269 
+<a name="l00270"></a><a class="code" href="group__qvipp.html#gaafd238c384d328ca51834ff1671731da">00270</a> QMap&lt;sInt, int&gt; <a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96" title="Calculates frequency histogram for a given set of values, for a QVImageThis function...">HistogramRange</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;src, QList&lt;uChar&gt; values)
+<a name="l00271"></a>00271         {
+<a name="l00272"></a>00272         <span class="comment">// Bug: always coputes last value wrong. So we use one more value, 257, instead of 256.</span>
+<a name="l00273"></a>00273         <span class="keywordtype">int</span> nLevels = values.size();
+<a name="l00274"></a>00274         sInt pLevels[nLevels];
+<a name="l00275"></a>00275         <span class="keywordtype">int</span> pHist[nLevels];
+<a name="l00276"></a>00276         
+<a name="l00277"></a>00277         Q_ASSERT_X(<span class="keyword">false</span>, <span class="stringliteral">&quot;QMap&lt;sInt, int&gt; HistogramRange(QVImage&lt;uChar, 1&gt; &amp;src, QList&lt;uChar&gt; values)&quot;</span>,
+<a name="l00278"></a>00278                         <span class="stringliteral">&quot;Tried an user defined values QList. Functionality not implemented yet.&quot;</span>);
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280         IPP_DEBUG(<a class="code" href="group__qvipp.html#gae25c99f8b8e1975910a913eaa8d41d96" title="Calculates frequency histogram for a given set of values, for a QVImageThis function...">HistogramRange</a>,       ippiHistogramRange_8u_C1R, <span class="comment">// ippi ## NAME ## SUBFIX,</span>
+<a name="l00281"></a>00281                                         PDATA_READ(src), src.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(), IMAGE_ROISIZE(src),
+<a name="l00282"></a>00282                                         pHist, pLevels, nLevels);
+<a name="l00283"></a>00283 
+<a name="l00285"></a>00285         <span class="comment">// compute cumulative histogram</span>
+<a name="l00286"></a>00286         QMap&lt;sInt, int&gt; histogram;
+<a name="l00287"></a>00287         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;nLevels; i++)
+<a name="l00288"></a>00288                 histogram.insert(pLevels[i], pHist[i]);
+<a name="l00289"></a>00289 
+<a name="l00290"></a>00290         <span class="keywordflow">return</span> histogram;
+<a name="l00291"></a>00291         }
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293 <span class="comment">// Flood fill</span>
+<a name="l00294"></a><a class="code" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06">00294</a> <span class="keywordtype">void</span>    <a class="code" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06" title="Allocates size in a buffer image for temporary data for function family FloodFill...">FloodFillGetSize</a>(<span class="keyword">const</span> <a class="code" href="classQVGenericImage.html" title="Base class for QVImage objects.">QVGenericImage</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;buffer)
+<a name="l00295"></a>00295         {
+<a name="l00296"></a>00296         <span class="keywordtype">int</span> floodFillBufferSize;
+<a name="l00297"></a>00297         IPP_DEBUG(<a class="code" href="group__qvippCV.html#ga73a7041aec616aeba0095fde7d82fa06" title="Allocates size in a buffer image for temporary data for function family FloodFill...">FloodFillGetSize</a>, ippiFloodFillGetSize, IMAGE_ROISIZE(src),&amp;floodFillBufferSize);
+<a name="l00298"></a>00298         buffer = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(floodFillBufferSize,1);
+<a name="l00299"></a>00299         }
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301 <span class="preprocessor">#define CREATE_IPP_FUNCTION_FLOOD_FILL(NAME, CONNECTIVITY, SUBFIX, TYPE)                \</span>
+<a name="l00302"></a>00302 <span class="preprocessor">void NAME(QVImage&lt;TYPE&gt; &amp;img, QVImage&lt;uChar&gt; &amp;buffer,                                   \</span>
+<a name="l00303"></a>00303 <span class="preprocessor">        uInt seedX, uInt seedY, TYPE newVal, TYPE minDelta, TYPE maxDelta)              \</span>
+<a name="l00304"></a>00304 <span class="preprocessor">        {                                                                               \</span>
+<a name="l00305"></a>00305 <span class="preprocessor">        IppiConnectedComp pRegion;                                                      \</span>
+<a name="l00306"></a>00306 <span class="preprocessor">        IPP_DEBUG(NAME,         ippiFloodFill ## CONNECTIVITY ## SUBFIX,                \</span>
+<a name="l00307"></a>00307 <span class="preprocessor">                                PDATA_WRITE(img), img.getStep(), IMAGE_ROISIZE(img),    \</span>
+<a name="l00308"></a>00308 <span class="preprocessor">                                IPP_POINT(seedX, seedY), newVal, minDelta, maxDelta,    \</span>
+<a name="l00309"></a>00309 <span class="preprocessor">                                &amp;pRegion, buffer.getWriteData());                       \</span>
+<a name="l00310"></a>00310 <span class="preprocessor">        }</span>
+<a name="l00311"></a>00311 <span class="preprocessor"></span>
+<a name="l00312"></a>00312 CREATE_IPP_FUNCTION_FLOOD_FILL(<a class="code" href="group__qvippCV.html#gae06195554922c14fa17f8e73ab847995" title="Performs flood filling of pixels with values in the specified range in the connected...">FloodFillRange4Connected</a>, _Range4Con, _8u_C1IR, uChar);
+<a name="l00313"></a>00313 CREATE_IPP_FUNCTION_FLOOD_FILL(<a class="code" href="group__qvippCV.html#ga651729e62b24103aa10667c463c64fed" title="Performs gradient flood filling of connected area on an image.This function performs...">FloodFillGradient4Connected</a>, _Grad4Con, _8u_C1IR, uChar);
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315 <span class="preprocessor">#define CREATE_IPP_FUNCTION_WARP_PERSPECTIVE(NAME, SUBFIX, C, TYPE)                                                                     \</span>
+<a name="l00316"></a>00316 <span class="preprocessor">void    NAME(const QVImage&lt;TYPE, C&gt; &amp;src, QVImage&lt;TYPE, C&gt; &amp;dest, const QVMatrix &amp;rectifyingHomography, int interpolation, const QPoint &amp;</span><span class="comment">/*destROIOffset*/</span>)     \
+<a name="l00317"></a>00317         {                                                                                                                                               \
+<a name="l00318"></a>00318         double coeffs[3][3];                                                                                                                            \
+<a name="l00319"></a>00319         for (int i = 0; i &lt; 3; i++)                                                                                                                     \
+<a name="l00320"></a>00320                 for (int j = 0; j &lt; 3; j++)                                                                                                             \
+<a name="l00321"></a>00321                         coeffs[i][j] = rectifyingHomography(i,j);                                                                                       \
+<a name="l00322"></a>00322                                                                                                                                                         \
+<a name="l00323"></a>00323         IPP_DEBUG(NAME,         ippi ## NAME ## SUBFIX,                                                                                                 \
+<a name="l00324"></a>00324                                 src.getReadData(), IMAGE_SIZE(src), src.getStep(), IMAGE_ROIRECT(src),                                                  \
+<a name="l00325"></a>00325                                 PDATA_WRITE(dest), dest.getStep(), IMAGE_ROIRECT(dest),                                                                 \
+<a name="l00326"></a>00326                                 coeffs, interpolation);                                                                                                 \
+<a name="l00327"></a>00327         }
+<a name="l00328"></a>00328 
+<a name="l00329"></a>00329 CREATE_IPP_FUNCTION_WARP_PERSPECTIVE(<a class="code" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b" title="Performs perspective warping of the source image using the given transform coefficients...">WarpPerspective</a>, _8u_C1R, 1, uChar);
+<a name="l00330"></a>00330 CREATE_IPP_FUNCTION_WARP_PERSPECTIVE(<a class="code" href="group__qvippIGT.html#gad9d43c86b8c1363bd1e4676a3e86e87b" title="Performs perspective warping of the source image using the given transform coefficients...">WarpPerspective</a>, _8u_C3R, 3, uChar);
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332 <span class="preprocessor">#include &lt;<a class="code" href="qvmatrix_8h.html" title="File from the QVision library.">qvmath/qvmatrix.h</a>&gt;</span>
+<a name="l00333"></a><a class="code" href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907">00333</a> <span class="keywordtype">void</span>    <a class="code" href="group__qvippFF.html#ga6d8b00040deb1afc4a23e856f5157907" title="This function uses the general square kernel defined in the matrix kernel to filter...">Filter</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> kernel, <span class="keyword">const</span> QPoint &amp;destROIOffset)
+<a name="l00334"></a>00334         {
+<a name="l00335"></a>00335         Q_ASSERT(kernel.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>() == kernel.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>());
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337         <span class="keyword">const</span> <span class="keywordtype">int</span> kernelSize = kernel.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>();
+<a name="l00338"></a>00338         sFloat kernelValues[kernelSize*kernelSize];
+<a name="l00339"></a>00339         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; kernelSize; i++)
+<a name="l00340"></a>00340                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; kernelSize; j++)
+<a name="l00341"></a>00341                         kernelValues[i+ kernelSize*j] = kernel(i,j);
+<a name="l00342"></a>00342 
+<a name="l00343"></a>00343         dest.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x(), destROIOffset.y(),
+<a name="l00344"></a>00344                 src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width()-kernelSize+1, src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height()-kernelSize+1);
+<a name="l00345"></a>00345 
+<a name="l00348"></a>00348         IPP_DEBUG(NAME,         ippiFilter_32f_C1R,
+<a name="l00349"></a>00349                                 PDATA_READ(src), src.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00350"></a>00350                                 PDATA_WRITE(dest), dest.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00351"></a>00351                                 IMAGE_ROISIZE(dest),
+<a name="l00352"></a>00352                                 kernelValues, IPP_SIZE(kernelSize, kernelSize), IPP_POINT(0,0)
+<a name="l00353"></a>00353                                 );
+<a name="l00354"></a>00354         }
+<a name="l00355"></a>00355 
+<a name="l00357"></a><a class="code" href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f">00357</a> <span class="keywordtype">void</span>    <a class="code" href="group__qvippFF.html#ga5386b7a396525c51c65fbbe60ea83c9f" title="Filters an image using a spatial kernel that consists of a single column.This function...">FilterColumn</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> kernel, <span class="keyword">const</span> QPoint &amp;destROIOffset)
+<a name="l00358"></a>00358         {
+<a name="l00359"></a>00359         <span class="keyword">const</span> <span class="keywordtype">int</span> kernelSize = kernel.size();
+<a name="l00360"></a>00360         sFloat kernelValues[kernelSize];
+<a name="l00361"></a>00361         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; kernelSize; i++)
+<a name="l00362"></a>00362                         kernelValues[i] = kernel[i];
+<a name="l00363"></a>00363 
+<a name="l00364"></a>00364         dest.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x(), destROIOffset.y(),
+<a name="l00365"></a>00365                 src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width(), src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height()-kernelSize+1);
+<a name="l00366"></a>00366 
+<a name="l00367"></a>00367         IPP_DEBUG(NAME,         ippiFilterColumn_32f_C1R,
+<a name="l00368"></a>00368                                 PDATA_READ(src), src.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00369"></a>00369                                 PDATA_WRITE(dest), dest.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00370"></a>00370                                 IMAGE_ROISIZE(dest),
+<a name="l00371"></a>00371                                 kernelValues, kernelSize, kernelSize-1
+<a name="l00372"></a>00372                                 );
+<a name="l00373"></a>00373         }
+<a name="l00374"></a>00374 
+<a name="l00376"></a><a class="code" href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e">00376</a> <span class="keywordtype">void</span>    <a class="code" href="group__qvippFF.html#ga1a5d630d6aa13bd38ebd10c6cc2c243e" title="Filters an image using a spatial kernel that consists of a single row.This function...">FilterRow</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;dest, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> kernel, <span class="keyword">const</span> QPoint &amp;destROIOffset)
+<a name="l00377"></a>00377         {
+<a name="l00378"></a>00378         <span class="keyword">const</span> <span class="keywordtype">int</span> kernelSize = kernel.size();
+<a name="l00379"></a>00379 
+<a name="l00380"></a>00380         sFloat kernelValues[kernelSize];
+<a name="l00381"></a>00381         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; kernelSize; i++)
+<a name="l00382"></a>00382                         kernelValues[i] = kernel[i];
+<a name="l00383"></a>00383 
+<a name="l00384"></a>00384         dest.<a class="code" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b" title="Set the region of interest of the image.">setROI</a>(destROIOffset.x(), destROIOffset.y(),
+<a name="l00385"></a>00385                 src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().width()-kernelSize+1, src.<a class="code" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4" title="Method for obtaining actual region of interest for image.">getROI</a>().height());
+<a name="l00386"></a>00386 
+<a name="l00387"></a>00387         IPP_DEBUG(NAME,         ippiFilterRow_32f_C1R,
+<a name="l00388"></a>00388                                 PDATA_READ(src), src.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00389"></a>00389                                 PDATA_WRITE(dest), dest.<a class="code" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875" title="Overloaded function from QVGenericImage::getStep().">getStep</a>(),
+<a name="l00390"></a>00390                                 IMAGE_ROISIZE(dest),
+<a name="l00391"></a>00391                                 kernelValues, kernelSize, kernelSize-1
+<a name="l00392"></a>00392                                 );
+<a name="l00393"></a>00393         }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

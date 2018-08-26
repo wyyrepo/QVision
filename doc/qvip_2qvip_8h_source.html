@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvip/qvip.h</h1><a href="qvip_2qvip_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVIP_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVIP_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;<a class="code" href="qvdefines_8h.html" title="File from the QVision library.">qvdefines.h</a>&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;<a class="code" href="qvip_2qvimageio_8h.html" title="File from the QVision library.">qvimageio.h</a>&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;QVPolyline&gt;</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;QVImage&gt;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QFile&gt;</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="keywordtype">double</span> ShiTomasiScore(<span class="keyword">const</span> uChar *imagePtr, <span class="keyword">const</span> <span class="keywordtype">int</span> imageStep, <span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">int</span> nHalfBoxSize);
+<a name="l00041"></a>00041 <span class="preprocessor">#endif // DOXYGEN_IGNORE_THIS</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00048"></a>00048 <span class="keywordtype">void</span> <a class="code" href="group__qvipp.html#ga500350a4e3dc3d05b99bd034ab65a67b" title="Obtains the Harris corner response image.">FilterHarrisCornerResponseImage</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;result, <span class="keywordtype">int</span> aperture=3, <span class="keywordtype">int</span> avgwindow=5, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00049"></a>00049 
+<a name="l00055"></a>00055 <span class="keywordtype">void</span> <a class="code" href="group__qvipp.html#ga26877fdb37dbf494fa5672d84b7d3519" title="Obtains the DoG corner response image.">FilterDoG</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;result);
+<a name="l00056"></a>00056 
+<a name="l00062"></a>00062 <span class="keywordtype">void</span> <a class="code" href="group__qvipp.html#gaa9474c9f380746aaa24f9997bada59f5" title="Obtains the Sobel corner response image.">SobelCornerResponseImage</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;image, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;result);
+<a name="l00063"></a>00063 
+<a name="l00069"></a>00069 <span class="keywordtype">void</span> <a class="code" href="group__qvipp.html#ga5e1dd92e6da496d1e621861eb2b67cf9" title="Obtains the Hessian corner response image.">FilterHessianCornerResponseImage</a>(  <span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;image, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;result,
+<a name="l00070"></a>00070                                         <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="keywordtype">void</span> FilterNormalize(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;image, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;equalized, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00074"></a>00074 <span class="keywordtype">void</span> FilterNormalize(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,1&gt;</a> &amp;image, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat,1&gt;</a> &amp;equalized, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>
+<a name="l00083"></a>00083 <span class="keyword">class </span><a class="code" href="classQVComponentTree.html" title="Image component tree data structure.">QVComponentTree</a>;
+<a name="l00084"></a>00084 <span class="keywordtype">void</span> FilterPruneComponentTreeSmallRegions(<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <a class="code" href="classQVComponentTree.html" title="Image component tree data structure.">QVComponentTree</a> &amp;componentTree, uInt <a class="code" href="classQVComponentTree.html#a270428438cc9b604e9261cf3c741c217" title="Returns the accumulative histogram of the gray-level values of the pixels, for a...">area</a>);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <span class="preprocessor">#ifdef GSL_AVAILABLE</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="qvvector_8h.html" title="File from the QVision library.">qvmath/qvvector.h</a>&gt;</span>
+<a name="l00088"></a>00088 <span class="preprocessor">#include &lt;QPoint&gt;</span>
+<a name="l00095"></a>00095 <span class="keywordtype">void</span> <a class="code" href="group__qvipp.html#gaacf3624cc8f531fccb9a436878af3fba" title="Applies a separable filter.">FilterSeparable</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;image, <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> &amp;dest,
+<a name="l00096"></a>00096         <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;rowFilter, <span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;colFilter, <span class="keyword">const</span> QPoint &amp;destROIOffset = QPoint(0,0));
+<a name="l00097"></a>00097 <span class="preprocessor">#endif</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span>
+<a name="l00105"></a>00105 QMap&lt;sFloat, QPointF&gt; <a class="code" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6" title="Finds luminance peaks in the input image.">fastMaximalPoints</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">double</span> threshold = 1.0, <span class="keyword">const</span> <span class="keywordtype">int</span> windowSize = 2);
+<a name="l00106"></a>00106 
+<a name="l00121"></a>00121 QMap&lt;uChar, QPointF&gt;  <a class="code" href="group__qvipp.html#gaa3b64cec3b1037dc5935e6c37ef277e6" title="Finds luminance peaks in the input image.">fastMaximalPoints</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">double</span> threshold, <span class="keyword">const</span> <span class="keywordtype">int</span> windowRadius = 2);
+<a name="l00122"></a>00122 
+<a name="l00124"></a>00124 
+<a name="l00130"></a>00130 QMap&lt;sFloat, QPointF&gt; <a class="code" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a" title="Finds luminance peaks in the input image.">maximalPoints</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">double</span> threshold = 1.0, <span class="keyword">const</span> <span class="keywordtype">int</span> windowRadius = 2);
+<a name="l00131"></a>00131 
+<a name="l00149"></a>00149 <span class="keywordtype">void</span> <a class="code" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13" title="Generates a binary image of local grey-scale maximal value pixels.This function receives...">FilterLocalMax</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat&gt;</a> &amp;src, <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;dest, uInt colMaskSize, uInt rowMaskSize, sFloat threshold = 0);
+<a name="l00150"></a>00150 
+<a name="l00159"></a>00159 QVector&lt; QVector&lt; QPoint &gt; &gt; <a class="code" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138" title="Sorts pixels in an image, given their gray-scale value.This function uses the Counting...">CountingSort</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;img);
+<a name="l00160"></a>00160 
+<a name="l00199"></a>00199 <span class="keywordtype">double</span> <a class="code" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff" title="Eliminates points of a polyline of small shape contribution using the IPE algorithmThis...">IterativePointElimination</a>(<span class="keyword">const</span> <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> &amp;polyline, <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> &amp;result,
+<a name="l00200"></a>00200         <span class="keyword">const</span> <span class="keywordtype">double</span> param, <span class="keywordtype">bool</span> maxNumberOfPointsMethod=FALSE,
+<a name="l00201"></a>00201         <span class="keywordtype">bool</span> intersectLines=TRUE, <span class="keywordtype">double</span> *max_removed_cost=NULL);
+<a name="l00202"></a>00202 
+<a name="l00212"></a>00212 <span class="keywordtype">double</span> <a class="code" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff" title="Eliminates points of a polyline of small shape contribution using the IPE algorithmThis...">IterativePointElimination</a>(<span class="keyword">const</span> <a class="code" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a> &amp;polyline, <a class="code" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a> &amp;result,
+<a name="l00213"></a>00213         <span class="keyword">const</span> <span class="keywordtype">double</span> param, <span class="keywordtype">bool</span> maxNumberOfPointsMethod=FALSE,
+<a name="l00214"></a>00214         <span class="keywordtype">bool</span> intersectLines=TRUE, <span class="keywordtype">double</span> *max_removed_cost=NULL);
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216 <span class="comment">/*</span>
+<a name="l00217"></a>00217 <span class="comment">@brief Obtains the border contour of a connected set of pixels in an image, given a membership condition.</span>
+<a name="l00218"></a>00218 <span class="comment">@ingroup qvip</span>
+<a name="l00219"></a>00219 <span class="comment"></span>
+<a name="l00220"></a>00220 <span class="comment">This function obtains the borders of &lt;a href=&quot;http://en.wikipedia.org/wiki/Connected_set&quot;&gt;connected sets&lt;/a&gt; of pixels, containing gray-scale values equal or greater than a given threshold value.</span>
+<a name="l00221"></a>00221 <span class="comment"></span>
+<a name="l00222"></a>00222 <span class="comment">Both inner borders and outer borders of each connected set detected by the function are transversed. Each border is transversed, storing the pixels detected on it in a polyline.</span>
+<a name="l00223"></a>00223 <span class="comment"></span>
+<a name="l00224"></a>00224 <span class="comment">@param image Image to obtain from the borders.</span>
+<a name="l00225"></a>00225 <span class="comment">@param threshold Threshold separating the pixels inside and outside the connected sets.</span>
+<a name="l00226"></a>00226 <span class="comment">@returns A list, containing the polylines corresponding to the borders of the connected sets.</span>
+<a name="l00227"></a>00227 <span class="comment"></span>
+<a name="l00228"></a>00228 <span class="comment"></span>
+<a name="l00229"></a>00229 <span class="comment"></span>
+<a name="l00230"></a>00230 <span class="comment"></span>
+<a name="l00231"></a>00231 <span class="comment">Borders obtained with this function can be either inner borders (corresponding to the border of an empty space inside the connected set) or the outer border of the connected set. The programmer can tell whether a given border is inner or outer by the boolean value @ref QVPolyline::direction, which will store &lt;i&gt;TRUE&lt;/i&gt; for an outer contour, and &lt;i&gt;FALSE&lt;/i&gt; for an inner contour.</span>
+<a name="l00232"></a>00232 <span class="comment"></span>
+<a name="l00233"></a>00233 <span class="comment"></span>
+<a name="l00234"></a>00234 <span class="comment">@see getConnectedSetBorderContoursThreshold</span>
+<a name="l00235"></a>00235 <span class="comment">*/</span>
+<a name="l00236"></a>00236 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00237"></a>00237 <span class="preprocessor"></span><a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> getConnectedSetBorderContourThreshold(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <span class="keyword">const</span> QPoint point, <span class="keyword">const</span> uChar threshold = 128);
+<a name="l00238"></a>00238 <a class="code" href="classQVPolyline.html" title="Polyline representation.">QVPolyline</a> getConnectedSetBorderContourThreshold(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uShort&gt;</a> &amp;image, <span class="keyword">const</span> QPoint point, <span class="keyword">const</span> uShort threshold = 128);
+<a name="l00239"></a>00239 <span class="preprocessor">#endif</span>
+<a name="l00240"></a>00240 <span class="preprocessor"></span>
+<a name="l00258"></a>00258 QList&lt;QVPolyline&gt; <a class="code" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24" title="Obtains the borders of connected sets of pixels, containing gray-scale values equal...">getConnectedSetBorderContoursThreshold</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage &lt;uChar&gt;</a> &amp;image, <span class="keyword">const</span> uChar threshold = 128);
+<a name="l00259"></a>00259 QList&lt;QVPolyline&gt; <a class="code" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24" title="Obtains the borders of connected sets of pixels, containing gray-scale values equal...">getConnectedSetBorderContoursThreshold</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage &lt;uShort&gt;</a> &amp;image, <span class="keyword">const</span> uShort threshold = 128);
+<a name="l00260"></a>00260 
+<a name="l00280"></a>00280 QList&lt;QVPolyline&gt; <a class="code" href="group__qvip.html#ga5dab7ea4ed1170143df3e59fdd895bf9" title="Obtains a list of the 4-connected pixel lines in the imageThis function can be used...">getLineContoursThreshold4Connectivity</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <span class="keyword">const</span> uChar threshold = 128);
+<a name="l00281"></a>00281 
+<a name="l00301"></a>00301 QList&lt;QVPolyline&gt; <a class="code" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6" title="Obtains a list of the 8-connected pixel lines in the imageThis function can be used...">getLineContoursThreshold8Connectivity</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> &amp;image, <span class="keyword">const</span> uChar threshold = 128);
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303 
+<a name="l00308"></a><a class="code" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">00308</a> <span class="keyword">enum</span> <a class="code" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277" title="FAST detection algorithms.">FASTDetectionAlgorithm</a> {
+<a name="l00309"></a>00309         Fast9 = 9,
+<a name="l00310"></a>00310         Fast10 = 10,
+<a name="l00311"></a>00311         Fast11 = 11,
+<a name="l00312"></a>00312         Fast12 = 12
+<a name="l00313"></a>00313         };
+<a name="l00314"></a>00314 
+<a name="l00326"></a>00326 QList&lt;QPointF&gt; <a class="code" href="group__qvip.html#ga48592e8d0ecc14b8a01c373e97a0b630" title="Obtains FAST features on an image-.">FASTFeatures</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp; image, <span class="keyword">const</span> <span class="keywordtype">int</span> threshold, <span class="keyword">const</span> <a class="code" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277" title="FAST detection algorithms.">FASTDetectionAlgorithm</a> &amp;fastAlgorithm = Fast9);
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328 <span class="comment">// --------------------------------------------</span>
+<a name="l00329"></a>00329 
+<a name="l00342"></a>00342 <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> <a class="code" href="group__qvip.html#ga0a73e3730368b307c874e53dd5af54c4" title="Applies a fast Laplace filter on the input image.">FastLaplaceFilter</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> image);
+<a name="l00343"></a>00343 
+<a name="l00355"></a>00355 <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> <a class="code" href="group__qvip.html#ga69cc8d72179389d9897aa9ac97d62c33" title="Applies a fast smooth filter on the input image.">FastSmoothFilter</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> image, <span class="keyword">const</span> uChar threshold = 0);
+<a name="l00356"></a>00356 
+<a name="l00368"></a>00368 <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> <a class="code" href="group__qvip.html#ga083ddecc2c02b1aa32bd2dd9d6c69601" title="Applies a smooth filter on the input image.">SmoothFilter</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> image, <span class="keyword">const</span> uChar threshold = 0);
+<a name="l00369"></a>00369 
+<a name="l00381"></a>00381 QList&lt;QPointF&gt; <a class="code" href="group__qvip.html#gab0e45b1b85498b4df9cbd1af432cbaea" title="Detects salient points in the Laplace response of an input image.">FastLaplacePoints</a>(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> threshold = 40, <span class="keyword">const</span> <span class="keywordtype">bool</span> applyPreviousSmooth = <span class="keyword">true</span>, <span class="keyword">const</span> <span class="keywordtype">bool</span> smoothResponseImage = <span class="keyword">true</span>);
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00384"></a>00384 <span class="preprocessor"></span>QList&lt;QPointF&gt; getLocalExtremaPixels(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> hiPass, <span class="keyword">const</span> <span class="keywordtype">int</span> HiPassThreshold);
+<a name="l00385"></a>00385 <span class="keywordtype">double</span> ShiTomasiScore(<span class="keyword">const</span> uChar *imagePtr, <span class="keyword">const</span> <span class="keywordtype">int</span> imageStep, <span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">int</span> nHalfBoxSize);
+<a name="l00386"></a>00386 QMap&lt;double, QPointF&gt; pointsByShiTomasiValue(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp; image, <span class="keyword">const</span> QList&lt;QPointF&gt; &amp;points, <span class="keyword">const</span> <span class="keywordtype">int</span> shiTomasiRadius);
+<a name="l00387"></a>00387 QList&lt;QPointF&gt; hiPassPointDetector(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> threshold);
+<a name="l00388"></a>00388 QList&lt;QPointF&gt; DoGPointDetector(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;image, <span class="keyword">const</span> <span class="keywordtype">int</span> threshold);
+<a name="l00389"></a>00389 
+<a name="l00390"></a>00390 <span class="keywordtype">void</span> FilterGauss8Adjacency(<span class="keyword">const</span> <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> responseImg, <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> &amp;result);
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392 <span class="preprocessor">#endif // DOXYGEN_IGNORE_THIS</span>
+<a name="l00393"></a>00393 <span class="preprocessor"></span>
+<a name="l00394"></a>00394 <span class="preprocessor">#endif</span>
+<a name="l00395"></a>00395 <span class="preprocessor"></span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

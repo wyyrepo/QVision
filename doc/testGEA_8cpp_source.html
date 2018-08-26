@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/testGEA/testGEA.cpp</h1><a href="testGEA_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00043"></a>00043 <span class="comment">// Uncomment the line below to show the initial and the optimized reconstruction.</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#define SHOW_RECONSTRUCTION</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;QTime&gt;</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#include &lt;qvsfm.h&gt;</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#include &lt;<a class="code" href="testSBA__ROS_2sfmviewer_8h.html" title="File from the QVision library.">sfmviewer.h</a>&gt;</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="preprocessor">#ifndef QVSSBA_AVAILABLE</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#undef TEST_sSBA</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>
+<a name="l00055"></a>00055 <span class="preprocessor">#ifdef QVSSBA_AVAILABLE</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="preprocessor">#include &lt;qvros.h&gt;</span>
+<a name="l00057"></a>00057 <span class="preprocessor">#endif</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span>
+<a name="l00059"></a>00059 <span class="comment">/*</span>
+<a name="l00060"></a>00060 <span class="comment">GEA cost error simplification method for on-line camera pose optimization.</span>
+<a name="l00061"></a>00061 <span class="comment"></span>
+<a name="l00062"></a>00062 <span class="comment">This function reduces the number of terms in the GEA cost error. This produces a large speed-up in the computational cost of each</span>
+<a name="l00063"></a>00063 <span class="comment">Levenberg-Marquardt step, without a significant loss in the error correction obtained.</span>
+<a name="l00064"></a>00064 <span class="comment"></span>
+<a name="l00065"></a>00065 <span class="comment">Params &#39;k_param&#39; and &#39;s_param&#39; control the number of coefficient matrices (terms in the GEA cost error)</span>
+<a name="l00066"></a>00066 <span class="comment">for each view that are included in the simplified version of the GEA cost error:</span>
+<a name="l00067"></a>00067 <span class="comment"></span>
+<a name="l00068"></a>00068 <span class="comment">Coefficient matrices which relate two views that are closer in the video sequence than &#39;s_param&#39; are always included</span>
+<a name="l00069"></a>00069 <span class="comment">in the simplified version of the GEA cost error. These are considered camera tracking pair-wise relationships.</span>
+<a name="l00070"></a>00070 <span class="comment"></span>
+<a name="l00071"></a>00071 <span class="comment">The parameter &#39;k_param&#39; is the maximal number of loop-closing terms (which are not camera tracking terms) for each view</span>
+<a name="l00072"></a>00072 <span class="comment">that are included in the simplified version of the GEA error.</span>
+<a name="l00073"></a>00073 <span class="comment"></span>
+<a name="l00074"></a>00074 <span class="comment">More information about this method can be found at:</span>
+<a name="l00075"></a>00075 <span class="comment">        http://perception.inf.um.es/gea</span>
+<a name="l00076"></a>00076 <span class="comment">*/</span>
+<a name="l00077"></a>00077 <span class="keywordtype">void</span> onlineGEACostErrorSimplification(<span class="keyword">const</span> <span class="keywordtype">int</span> numCameras, <a class="code" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph</a>&lt; QVector&lt;QPointFMatching&gt; &gt; &amp;pointLists,
+<a name="l00078"></a>00078                                 <span class="keyword">const</span> <span class="keywordtype">int</span> k_param = 10,
+<a name="l00079"></a>00079                                 <span class="keyword">const</span> <span class="keywordtype">int</span> s_param = 10)
+<a name="l00080"></a>00080         {
+<a name="l00081"></a>00081         QVector&lt; QMap&lt;int, int&gt; &gt; sortedUnusedCorrespondences(numCameras);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         <span class="comment">// Keep the coefficient matrices relating views that are close in the video sequence.</span>
+<a name="l00084"></a>00084         <a class="code" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph&lt; QVector&lt;QPointFMatching&gt;</a> &gt; newPointLists;
+<a name="l00085"></a>00085         <span class="keywordflow">foreach</span>(QPoint link, pointLists.keys())
+<a name="l00086"></a>00086                 {
+<a name="l00087"></a>00087                 <span class="keyword">const</span> <span class="keywordtype">int</span> sourceView = link.x(), destView = link.y();
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089                 <span class="keyword">const</span> QVector&lt;QPointFMatching&gt; &amp;pointList = pointLists[ link ];
+<a name="l00090"></a>00090                 <span class="keywordflow">if</span> (ABS(sourceView - destView) &lt;= s_param)
+<a name="l00091"></a>00091                         newPointLists [ QPoint(sourceView, destView) ] = pointList;
+<a name="l00092"></a>00092                 <span class="keywordflow">else</span>
+<a name="l00093"></a>00093                         sortedUnusedCorrespondences [ sourceView ].insertMulti(-pointList.count(), destView);
+<a name="l00094"></a>00094                 }
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         <span class="comment">// Keep coefficient matrices corresponding to long-term/loop-closing matchings.</span>
+<a name="l00097"></a>00097         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> sourceView = 0; sourceView &lt; numCameras; sourceView++)
+<a name="l00098"></a>00098                 <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> destView, sortedUnusedCorrespondences[sourceView].values().mid(0, k_param))
+<a name="l00099"></a>00099                         newPointLists[ QPoint(sourceView,destView) ] = pointLists[ QPoint(sourceView,destView) ];
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101         pointLists = newPointLists;
+<a name="l00102"></a>00102         }
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 <span class="keywordtype">int</span> links = 0;
+<a name="l00105"></a>00105 <span class="comment">// Optimize a reconstruction using GEA.</span>
+<a name="l00106"></a>00106 <span class="comment">// No initial 3D points are needed. Only initial camera poses and point projections.</span>
+<a name="l00107"></a>00107 <span class="keywordtype">int</span> dull_time_gea = 0;
+<a name="l00108"></a>00108 <span class="keywordtype">void</span> GEAOptimization(   <span class="keyword">const</span> QList&lt;QVCameraPose&gt; initialCameraPoses,
+<a name="l00109"></a>00109                         <span class="keyword">const</span> QList&lt;QHash&lt;int, QPointF&gt; &gt; pointProjections,
+<a name="l00110"></a>00110                         <span class="keyword">const</span> <span class="keywordtype">int</span> iterations,
+<a name="l00111"></a>00111                         <span class="keyword">const</span> <span class="keywordtype">double</span> lambda,
+<a name="l00112"></a>00112                         <span class="keyword">const</span> <span class="keywordtype">bool</span> dynamicLambda,
+<a name="l00113"></a>00113                         <span class="keyword">const</span> <span class="keywordtype">int</span> k_param,
+<a name="l00114"></a>00114                         <span class="keyword">const</span> <span class="keywordtype">int</span> s_param,
+<a name="l00115"></a>00115                         QList&lt;QV3DPointF&gt; &amp;refinedPoints3D,
+<a name="l00116"></a>00116                         QList&lt;QVCameraPose&gt; &amp;refinedCameras,
+<a name="l00117"></a>00117                         <span class="keywordtype">int</span> &amp;time_GEA = dull_time_gea,
+<a name="l00118"></a>00118                         <span class="keyword">const</span> TGEA_decomposition_method decomposition_method = GEA_CHOLESKY_DECOMPOSITION,
+<a name="l00119"></a>00119                         <span class="keyword">const</span> <a class="code" href="group__qvmatrixalgebra.html#gaacdaea1a26a36293bfb60ca30909ba42" title="Available methods for sparse linear system solving.">TQVSparseSolve_Method</a> solveMethod = DEFAULT_TQVSPARSESOLVE_METHOD,
+<a name="l00120"></a>00120                         <span class="keyword">const</span> <span class="keywordtype">int</span> secondLevelIterations = 10
+<a name="l00121"></a>00121                         )
+<a name="l00122"></a>00122         {
+<a name="l00123"></a>00123         <span class="comment">// MKL sparse solve routine usually spends some time warming-up in the first call. Calling this</span>
+<a name="l00124"></a>00124         <span class="comment">// function before starting the GEA optimization avoids including this small warming-up time in</span>
+<a name="l00125"></a>00125         <span class="comment">// the performance evaluation.</span>
+<a name="l00126"></a>00126 <span class="preprocessor">        #ifdef MKL_AVAILABLE</span>
+<a name="l00127"></a>00127 <span class="preprocessor"></span>        cold_start_mkl_initialization();
+<a name="l00128"></a>00128 <span class="preprocessor">        #endif</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span>
+<a name="l00130"></a>00130         QTime time, totalTime;
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132         <span class="comment">// 1. Obtain a list of point matchings between each view-pair in the reconstruction, from the 3D point</span>
+<a name="l00133"></a>00133         <span class="comment">// projections container &#39;pointProjections&#39;. Usually SfM systems obtain first the 2D point trackings,</span>
+<a name="l00134"></a>00134         <span class="comment">// and latter the 3D point projections from these lists of point matchings between the view pairs.</span>
+<a name="l00135"></a>00135         <span class="comment">// This is why this time is not included in the GEA total performance time.</span>
+<a name="l00136"></a>00136         time.start();
+<a name="l00137"></a>00137         <a class="code" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph&lt; QVector&lt;QPointFMatching&gt;</a> &gt; pointLists = <a class="code" href="group__qvsfm.html#ga20979b415197687de5b70baf9dfa2417" title="Obtains the list of point correspondences detected between each view-pair in a reconstruction...">getPointMatchingsListsVec</a>( pointProjections, initialCameraPoses.count() );
+<a name="l00138"></a>00138         <span class="keywordtype">int</span> gea_time_pointlists = time.elapsed();
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140         totalTime.start();
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142         onlineGEACostErrorSimplification(initialCameraPoses.count(), pointLists, k_param, s_param);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         std::cout &lt;&lt; <span class="stringliteral">&quot;Number of terms in the GEA cost error = &quot;</span> &lt;&lt; pointLists.count() &lt;&lt; std::endl;
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         <span class="comment">// --------------------------------</span>
+<a name="l00147"></a>00147         <span class="keywordtype">int</span> countLink = 0;
+<a name="l00148"></a>00148         QVector&lt;QPointFMatching&gt; temp;
+<a name="l00149"></a>00149         <span class="keywordflow">foreach</span>(temp, pointLists)
+<a name="l00150"></a>00150                 <span class="keywordflow">if</span> (temp.count() &gt;= 9)
+<a name="l00151"></a>00151                         countLink++;
+<a name="l00152"></a>00152         <span class="comment">// --------------------------------</span>
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154         <span class="comment">//links = pointLists.count();</span>
+<a name="l00155"></a>00155         links = countLink;
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157         <span class="comment">// 2. Get reduced matrices from the point matchings lists.</span>
+<a name="l00158"></a>00158         time.start();
+<a name="l00159"></a>00159         <span class="keyword">const</span> <a class="code" href="classQVDirectedGraph.html" title="Directed graph class.">QVDirectedGraph&lt;QVMatrix&gt;</a> reducedMatricesgraph = <a class="code" href="group__qvsfm.html#ga528d393cab737319ae4b2d6447c5cccc" title="Gets the reduced matrices for a reconstruction.">getReducedMatrices</a>(pointLists, <span class="keyword">false</span>, decomposition_method, <span class="keyword">true</span>, 1e-6);
+<a name="l00160"></a>00160         <span class="keywordtype">int</span> gea_time_RMM = time.elapsed();
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <span class="comment">// 3. Apply LM optimization with the reduced matrices and the initial camera poses.</span>
+<a name="l00163"></a>00163         refinedCameras = <a class="code" href="group__qvsfm.html#ga729a711984f709024f3e532219efb6b8" title="Refine the camera poses using epipolar geometry constraints.">globalEpipolarAdjustment</a>(iterations, initialCameraPoses, reducedMatricesgraph, lambda, dynamicLambda, solveMethod, secondLevelIterations);
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165         <span class="comment">// 4. Triangulate 3D points from the estimated camera poses.</span>
+<a name="l00166"></a>00166         time.start();
+<a name="l00167"></a>00167         refinedPoints3D = <a class="code" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570" title="Recovers the location of several 3D points from their projections on different views...">linear3DPointsTriangulation</a>(refinedCameras, pointProjections);
+<a name="l00168"></a>00168         <span class="keyword">const</span> <span class="keywordtype">int</span> gea_time_LT = time.elapsed();
+<a name="l00169"></a>00169         <span class="keyword">const</span> <span class="keywordtype">int</span> totalTime_GEA = totalTime.elapsed();
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171         <span class="comment">// 5. Print performance times.</span>
+<a name="l00172"></a>00172         std::cout       &lt;&lt; <span class="stringliteral">&quot;[GEA] Time point matchings lists: &quot;</span> &lt;&lt; gea_time_pointlists
+<a name="l00173"></a>00173                         &lt;&lt; <span class="stringliteral">&quot; ms\tRMM: &quot;</span> &lt;&lt; gea_time_RMM
+<a name="l00174"></a>00174                         &lt;&lt; <span class="stringliteral">&quot; ms\tEvaluation: &quot;</span> &lt;&lt; gea_time_eval
+<a name="l00175"></a>00175                         &lt;&lt; <span class="stringliteral">&quot; ms\tSolve: &quot;</span> &lt;&lt; gea_time_solve
+<a name="l00176"></a>00176                         &lt;&lt; <span class="stringliteral">&quot; ms\tLT: &quot;</span> &lt;&lt; gea_time_LT
+<a name="l00177"></a>00177                         &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;
+<a name="l00178"></a>00178         std::cout &lt;&lt; <span class="stringliteral">&quot;[GEA] Time total (RMM + Evaluation + Solve + LT) =\t&quot;</span> &lt;&lt; totalTime_GEA &lt;&lt; <span class="stringliteral">&quot; ms.&quot;</span> &lt;&lt; std::endl;
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180         time_GEA = totalTime_GEA;
+<a name="l00181"></a>00181         }
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183 <span class="comment">// Print the number of cameras, 3D points, projections and some statistics from a SfM reconstruction.</span>
+<a name="l00184"></a>00184 <span class="keywordtype">void</span> printReconstructionStats(  <span class="keyword">const</span> QList&lt;QVCameraPose&gt; &amp;cameraPoses,
+<a name="l00185"></a>00185                                 <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3D,
+<a name="l00186"></a>00186                                 <span class="keyword">const</span> QList&lt; QHash&lt; int, QPointF&gt; &gt; &amp;pointsProjections)
+<a name="l00187"></a>00187         {
+<a name="l00188"></a>00188         <span class="keyword">const</span> <span class="keywordtype">int</span> numCameras = cameraPoses.count(), numPoints = points3D.count();
+<a name="l00189"></a>00189         <span class="keywordtype">int</span> numProjections = 0;
+<a name="l00190"></a>00190         QHash&lt; int, QPointF&gt; temp;
+<a name="l00191"></a>00191         <span class="keywordflow">foreach</span>(temp, pointsProjections)
+<a name="l00192"></a>00192                 numProjections += temp.count();
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Readed &quot;</span>   &lt;&lt; numPoints &lt;&lt; <span class="stringliteral">&quot; points, &quot;</span>
+<a name="l00195"></a>00195                                         &lt;&lt; numCameras &lt;&lt; <span class="stringliteral">&quot; cameras, &quot;</span>
+<a name="l00196"></a>00196                                         &lt;&lt; numProjections &lt;&lt; <span class="stringliteral">&quot; projections, &quot;</span>
+<a name="l00197"></a>00197                                         &lt;&lt; double(numProjections)/double(numCameras) &lt;&lt; <span class="stringliteral">&quot; projections/camera, &quot;</span>
+<a name="l00198"></a>00198                                         &lt;&lt; double(numProjections)/double(numPoints) &lt;&lt; <span class="stringliteral">&quot; projections/point.&quot;</span>
+<a name="l00199"></a>00199                                         &lt;&lt; std::endl;
+<a name="l00200"></a>00200         }
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<a name="l00203"></a>00203         {
+<a name="l00204"></a>00204 <span class="preprocessor">        #ifdef SHOW_RECONSTRUCTION</span>
+<a name="l00205"></a>00205 <span class="preprocessor"></span>        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv, <span class="stringliteral">&quot;Example application for QVision.&quot;</span>, <span class="keyword">true</span>);
+<a name="l00206"></a>00206 <span class="preprocessor">        #else</span>
+<a name="l00207"></a>00207 <span class="preprocessor"></span>        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv, <span class="stringliteral">&quot;Example application for QVision.&quot;</span>, <span class="keyword">false</span>);
+<a name="l00208"></a>00208 <span class="preprocessor">        #endif</span>
+<a name="l00209"></a>00209 <span class="preprocessor"></span>
+<a name="l00210"></a>00210         <span class="comment">// 1. Get the data-set files path from the first command line parameter.</span>
+<a name="l00211"></a>00211         <span class="keywordflow">if</span> (app.getNumberOfArguments() &lt; 2)
+<a name="l00212"></a>00212                 {
+<a name="l00213"></a>00213                 std::cout &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; &lt;data_set_path&gt; [iterations] [lambda] [k param] [s param]&quot;</span>
+<a name="l00214"></a>00214                         &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00215"></a>00215                 exit(0);
+<a name="l00216"></a>00216                 }
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218         <span class="keyword">const</span> QString path = app.getArgument(1);
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220         <span class="comment">// 2. Set the number of iterations, and lambda values for the GEA and sSBA optimizations, if provided as parameters through the command line.</span>
+<a name="l00221"></a>00221         <span class="keywordtype">bool</span> iters_OK = <span class="keyword">true</span>, lambda_gea_OK = <span class="keyword">true</span>, k_param_OK = <span class="keyword">true</span>, s_param_OK = <span class="keyword">true</span>;
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223         <span class="keyword">const</span> <span class="keywordtype">int</span> iters =                       (app.getNumberOfArguments() &lt; 3)? 1 : app.getArgument(2).toInt(&amp;iters_OK);
+<a name="l00224"></a>00224         <span class="keyword">const</span> <span class="keywordtype">double</span> lambda_gea =       (app.getNumberOfArguments() &lt; 4)? 1.0 : app.getArgument(3).toDouble(&amp;lambda_gea_OK);
+<a name="l00225"></a>00225         <span class="keyword">const</span> <span class="keywordtype">double</span> k_param =          (app.getNumberOfArguments() &lt; 5)? 10000000 : app.getArgument(4).toInt(&amp;k_param_OK);
+<a name="l00226"></a>00226         <span class="keyword">const</span> <span class="keywordtype">double</span> s_param =          (app.getNumberOfArguments() &lt; 6)? 10000000 : app.getArgument(5).toInt(&amp;s_param_OK);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228         <span class="keywordflow">if</span> (not iters_OK)
+<a name="l00229"></a>00229                 {
+<a name="l00230"></a>00230                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error reading number of iterations.&quot;</span> &lt;&lt; std::endl;
+<a name="l00231"></a>00231                 exit(0);
+<a name="l00232"></a>00232                 }
+<a name="l00233"></a>00233         <span class="keywordflow">else</span>
+<a name="l00234"></a>00234                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Number of iterations = &quot;</span> &lt;&lt; iters &lt;&lt; std::endl;
+<a name="l00235"></a>00235 
+<a name="l00236"></a>00236         <span class="keywordflow">if</span> (not lambda_gea_OK)
+<a name="l00237"></a>00237                 {
+<a name="l00238"></a>00238                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error reading lambda for GEA optimization&quot;</span> &lt;&lt; std::endl;
+<a name="l00239"></a>00239                 exit(0);
+<a name="l00240"></a>00240                 }
+<a name="l00241"></a>00241         <span class="keywordflow">else</span>
+<a name="l00242"></a>00242                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Lambda for GEA = &quot;</span> &lt;&lt; lambda_gea &lt;&lt; std::endl;
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244         <span class="keywordflow">if</span> (not k_param_OK)
+<a name="l00245"></a>00245                 {
+<a name="l00246"></a>00246                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error reading &#39;k&#39; param for GEA cost error simplification&quot;</span> &lt;&lt; std::endl;
+<a name="l00247"></a>00247                 exit(0);
+<a name="l00248"></a>00248                 }
+<a name="l00249"></a>00249         <span class="keywordflow">else</span>
+<a name="l00250"></a>00250                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Value for &#39;k&#39; parameter = &quot;</span> &lt;&lt; k_param &lt;&lt; std::endl;
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252         <span class="keywordflow">if</span> (not s_param_OK)
+<a name="l00253"></a>00253                 {
+<a name="l00254"></a>00254                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error reading &#39;s&#39; param for GEA cost error simplification&quot;</span> &lt;&lt; std::endl;
+<a name="l00255"></a>00255                 exit(0);
+<a name="l00256"></a>00256                 }
+<a name="l00257"></a>00257         <span class="keywordflow">else</span>
+<a name="l00258"></a>00258                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Value for &#39;s&#39; parameter = &quot;</span> &lt;&lt; s_param &lt;&lt; std::endl;
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260         <span class="comment">// 3. Read SfM reconstruction from the specified path.</span>
+<a name="l00261"></a>00261         QList&lt;QV3DPointF&gt; points3D;
+<a name="l00262"></a>00262         QList&lt;QVCameraPose&gt; cameraPoses;
+<a name="l00263"></a>00263         QList&lt;QVMatrix&gt; cameraCalibrations;
+<a name="l00264"></a>00264         QList&lt; QHash&lt; int, QPointF&gt; &gt; pointsProjections;
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266         <span class="keywordflow">if</span>( not <a class="code" href="group__qvsfm.html#ga934b4f0190cd3442f11b875608941829" title="Loads a SfM reconstruction from a file or files. This function loads a SfM reconstruction...">readSfMReconstruction</a>(path, cameraCalibrations, cameraPoses, points3D, pointsProjections) )
+<a name="l00267"></a>00267                 {
+<a name="l00268"></a>00268                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error: could not read SfM reconstruction from path &#39;&quot;</span> &lt;&lt; qPrintable(path) &lt;&lt; <span class="stringliteral">&quot;&#39;.&quot;</span> &lt;&lt; std::endl;
+<a name="l00269"></a>00269                 <span class="keywordflow">return</span> 0;
+<a name="l00270"></a>00270                 }
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272         <span class="comment">// 4. Correct camera intrinsic calibrations from point projections.</span>
+<a name="l00273"></a>00273         <span class="keyword">const</span> QList&lt; QHash&lt; int, QPointF&gt; &gt; calibratedPointsProjections = correctIntrinsics(cameraCalibrations, pointsProjections);
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275         <span class="comment">// 5. Correct camera cheirality.</span>
+<a name="l00276"></a>00276         <span class="keywordflow">if</span> (<a class="code" href="group__qvsfm.html#gafea767e25db8e80b1822b8a1499776fa" title="Test correct camera cheirality.">testCheirality</a>(cameraPoses, calibratedPointsProjections))
+<a name="l00277"></a>00277                 <a class="code" href="group__qvsfm.html#gafe66d3df96f6c69ab795e2a070865dad" title="Swaps the cheirality of the camera poses and 3D points contained in a SfM reconstruction...">invertCheirality</a>(cameraPoses, points3D);
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279         <span class="comment">// 6. Print SfM reconstruction stats.</span>
+<a name="l00280"></a>00280         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Reconstruction loaded.&quot;</span>&lt;&lt; std::endl;       
+<a name="l00281"></a>00281         printReconstructionStats(cameraPoses, points3D, calibratedPointsProjections);
+<a name="l00282"></a>00282 
+<a name="l00283"></a>00283         <span class="comment">// 8. Perform GEA optimization on the reconstruction.</span>
+<a name="l00284"></a>00284         <span class="comment">// Uncomment one of the following lines, depending on the decomposition you want to use in the tests.</span>
+<a name="l00285"></a>00285                 <span class="comment">//#define REDUCED_MATRIX_DECOMPOSITION  GEA_DO_NOT_DECOMPOSE            // Do not apply any decomposition. Use \f$ M^T M \f$ as is.</span>
+<a name="l00286"></a>00286 <span class="preprocessor">                #define REDUCED_MATRIX_DECOMPOSITION    GEA_CHOLESKY_DECOMPOSITION      // Use Cholesky decomposition.</span>
+<a name="l00287"></a>00287 <span class="preprocessor"></span>                <span class="comment">//#define REDUCED_MATRIX_DECOMPOSITION  GEA_EIGEN_DECOMPOSITION         // Use eigen decomposition.</span>
+<a name="l00288"></a>00288 
+<a name="l00289"></a>00289         <span class="comment">// Uncomment one of the following lines to select the method to solve the LM second level system.</span>
+<a name="l00290"></a>00290                 <span class="comment">//#define       SPARSE_SOLVE_METHOD QVMKL_DSS           // Use MKL sparse direct solver</span>
+<a name="l00291"></a>00291                 <span class="comment">//#define       SPARSE_SOLVE_METHOD QVCHOLMOD_DSS       // Use CHOLMOD sparse direct solver</span>
+<a name="l00292"></a>00292 <span class="preprocessor">                #define SPARSE_SOLVE_METHOD QV_BJPCG                    // Block-Jacobi preconditioned conjugate gradient</span>
+<a name="l00293"></a>00293 <span class="preprocessor"></span>                <span class="comment">//#define       SPARSE_SOLVE_METHOD QV_DENSE            // Solve using non-sparse method.</span>
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295         <span class="keywordtype">int</span> time_GEA;
+<a name="l00296"></a>00296         QList&lt;QV3DPointF&gt; points3D_GEA;
+<a name="l00297"></a>00297         QList&lt;QVCameraPose&gt; cameraPoses_GEA;
+<a name="l00298"></a>00298         GEAOptimization(cameraPoses, calibratedPointsProjections, iters, lambda_gea, <span class="keyword">false</span>, k_param, s_param, points3D_GEA, cameraPoses_GEA,
+<a name="l00299"></a>00299                         time_GEA, REDUCED_MATRIX_DECOMPOSITION, SPARSE_SOLVE_METHOD, 30);
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301         QHash&lt; int, QPointF&gt; temp;
+<a name="l00302"></a>00302         <span class="keywordtype">int</span> count = 0;
+<a name="l00303"></a>00303         <span class="keywordflow">foreach</span>(temp, pointsProjections)
+<a name="l00304"></a>00304                 count += temp.count();
+<a name="l00305"></a>00305         std::cout &lt;&lt; <span class="stringliteral">&quot;Number of views = &quot;</span> &lt;&lt; cameraPoses.count() &lt;&lt; std::endl;
+<a name="l00306"></a>00306         std::cout &lt;&lt; <span class="stringliteral">&quot;Number of points = &quot;</span> &lt;&lt; points3D.count() &lt;&lt; std::endl;
+<a name="l00307"></a>00307         std::cout &lt;&lt; <span class="stringliteral">&quot;Number of projections = &quot;</span> &lt;&lt; count &lt;&lt; std::endl;
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309         <span class="comment">// 9. Print errors and total performance times.</span>
+<a name="l00310"></a>00310         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Initial error\t&quot;</span> &lt;&lt; 1000.0 * reconstructionError(cameraPoses, points3D, calibratedPointsProjections) &lt;&lt; std::endl;
+<a name="l00311"></a>00311         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] GEA error/time\t&quot;</span> &lt;&lt; 1000.0 * reconstructionError(cameraPoses_GEA, points3D_GEA, calibratedPointsProjections) &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; double(time_GEA) / 1000.0 &lt;&lt; <span class="stringliteral">&quot; s&quot;</span> &lt;&lt; std::endl;
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313 <span class="preprocessor">        #ifdef SHOW_RECONSTRUCTION</span>
+<a name="l00314"></a>00314 <span class="preprocessor"></span>        SfMViewer originalMap(cameraPoses, points3D, <span class="stringliteral">&quot;Original reconstruction&quot;</span>);
+<a name="l00315"></a>00315         SfMViewer geaOptimizedMap(cameraPoses_GEA, points3D_GEA, <span class="stringliteral">&quot;Reconstruction optimized with GEA&quot;</span>);
+<a name="l00316"></a>00316         <span class="keywordflow">return</span> app.exec();
+<a name="l00317"></a>00317 <span class="preprocessor">        #endif // SHOW_RECONSTRUCTION</span>
+<a name="l00318"></a>00318 <span class="preprocessor"></span>
+<a name="l00319"></a>00319         exit(0);
+<a name="l00320"></a>00320         }
+<a name="l00321"></a>00321 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

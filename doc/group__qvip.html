@@ -1,0 +1,1905 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Image processing</h1>
+<p>Functions for Image Processing.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBRIEFDetector.html">QVBRIEFDetector</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors.  <a href="classQVBRIEFDetector.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComponentTree.html">QVComponentTree</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Image component tree data structure.  <a href="classQVComponentTree.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Base class for <a class="el" href="classQVImage.html">QVImage</a> objects.  <a href="classQVGenericImage.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Image representation class for the QVision.  <a href="classQVImage.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKeypoint.html">QVKeypoint</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Class for image key point data-type.  <a href="classQVKeypoint.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPolyline.html">QVPolyline</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Polyline representation.  <a href="classQVPolyline.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPolylineF.html">QVPolylineF</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Floating point polyline representation.  <a href="classQVPolylineF.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVSiftFeature.html">QVSiftFeature</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Class for SIFT feature.  <a href="classQVSiftFeature.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Modules</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvgpukltflow.html">GPU-KLT+FLOW wrapper functions and classes</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Wrapper classes and functions for the GPU-KLT+FLOW software. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmplayer.html">MPlayer based image and video input/output</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Classes and functions that use the MPlayer as a back-end application to perform video and image i/o</p>
+<p>If available, the QVision can use the versatile and widely known <a href="http://en.wikipedia.org/wiki/MPlayer">MPlayer</a> multimedia player as a back-end application. The programmer can cleanly use functionality to read from lots of video and image file formats and encodings, digital/analogical TV, video-cam and web-cams, remote streams, etc... You can read the documentation of classes QVMPlayerReader for further specifically info about reading video from a QVision application using MPlayer. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvipp.html">IPP wrapper functions</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Comprehensive set of wrapper functions for <a href="http://en.wikipedia.org/wiki/Integrated_Performance_Primitives">Intel(R) Integrated Performance Primitives (IPP)</a>. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvmser.html">Linear time MSER implementation</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Classes and functions that implement linear time MSER algorithm. </p>
+<br/></td></tr>
+</p>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvsiftgpu.html">SIFT GPU wrapper functions</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Wrapper classes and functions for the GPU implementation of SIFT. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb">QVIMAGE_INIT_READ</a>(TYPE, IMAGE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes image to be read with macro QVIMAGE_PIXEL.  <a href="#gac7c7fd9f827d54495e9e3bc1993f1bcb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1">QVIMAGE_INIT_WRITE</a>(TYPE, IMAGE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes image to be written or read with macro QVIMAGE_PIXEL.  <a href="#ga42904f931068a3ea3f6bdb90861d1dc1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef">QVIMAGE_PTR_INIT_READ</a>(TYPE, IMAGE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes pointed image to be read with macro QVIMAGE_PIXEL.  <a href="#ga988e358793c60b3a9f50c1a7fb4a59ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5">QVIMAGE_PTR_INIT_WRITE</a>(TYPE, IMAGE)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes pointed image to be written or read with macro QVIMAGE_PIXEL.  <a href="#gabd11a1f331e8fc7be6f94d8d7d4456c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3">QVIMAGE_PIXEL</a>(IMAGE, Col, Row, Channel)&nbsp;&nbsp;&nbsp;(__qv_data_##IMAGE##__ [(Row)* __qv_step_##IMAGE##__ + __qv_planes_##IMAGE##__ *(Col)+(Channel)])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Access an image pixel for inspection or modification.  <a href="#ga5dd8ae5ae995f7889bda84469e5465d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de">QVIMAGE_PIXEL_PTR</a>(IMAGE, Col, Row, Channel)&nbsp;&nbsp;&nbsp;(&amp; (__qv_data_##IMAGE##__ [(Row)* __qv_step_##IMAGE##__ + __qv_planes_##IMAGE##__ *(Col)+(Channel)]))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a reference to the memory location of a pixel.  <a href="#gad8167ad6fb78ac46828b6a6bfcff03de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga1d28a2443a2bf4116ce07d29a692154c">QVIMAGE_ROW_INCREMENT_PTR</a>(IMAGE)&nbsp;&nbsp;&nbsp;( __qv_step_##IMAGE##__ )</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the increment for a row movement of a pixel.  <a href="#ga1d28a2443a2bf4116ce07d29a692154c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gad6b87d2e7576cd2ad65bddfbd1d05271">QVIMAGE_COL_INCREMENT_PTR</a>(IMAGE)&nbsp;&nbsp;&nbsp;( __qv_planes_##IMAGE##__ )</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the increment for a column movement of a pixel.  <a href="#gad6b87d2e7576cd2ad65bddfbd1d05271"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga9f971fc24f22c2ebf7de84b46d331c85">QVIMAGE_NEXT_LINE_INCREMENT_PTR</a>(IMAGE)&nbsp;&nbsp;&nbsp;( __qv_next_line_inc_##IMAGE##__ )</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the location of the first pixel in a row, given the location of the last pixel in the upper row.  <a href="#ga9f971fc24f22c2ebf7de84b46d331c85"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">FASTDetectionAlgorithm</a> </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>FAST detection algorithms. </p>
+ <a href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga60fd9c63b86729a04e99b829bedf69cb">saveBRIEFDescriptorsInLoweSIFTFileFormat</a> (const QString fileName, const QVector&lt; QPointF &gt; features, const QVector&lt; unsigned int &gt; descriptors)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write a list of image features and BRIEF descriptors to a text file.  <a href="#ga60fd9c63b86729a04e99b829bedf69cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f">writeYUV4MPEG2Header</a> (QFile &amp;file, const int cols, const int rows, const int fps)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create a yuv4mpeg2 video file.  <a href="#ga3039166fdcc15216e5319d1c5e652c8f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga8009ad640bdcbcec1c00f6a92f9aed27">writeYUV4MPEG2Frame</a> (QFile &amp;file, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; imageY, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; imageU, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; imageV)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write YUV image frames to a yuv4mpeg2 video file.  <a href="#ga8009ad640bdcbcec1c00f6a92f9aed27"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga0eee999bb396163138cd084286249a05">writeYUV4MPEG2Frame</a> (QFile &amp;file, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; imageGray)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write YUV image frames to a yuv4mpeg2 video file.  <a href="#ga0eee999bb396163138cd084286249a05"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189">writeYUV4MPEG2Frame</a> (QFile &amp;file, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; imageRGB)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write RGB image frames to a yuv4mpeg2 video file.  <a href="#gaafafdc5bedd299e344cf744f692fd189"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga77ad534a38a3c6e3de5607c07cc0e999">writeQVImageToFile</a> (const QString fileName, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;image)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write the content of a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> (RGB) object in an image file.  <a href="#ga77ad534a38a3c6e3de5607c07cc0e999"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga59a032b0b1c38254a95e383a39bf33a0">readQVImageFromFile</a> (const QString fileName, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;image)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads the content of a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> (RGB) object from an image file.  <a href="#ga59a032b0b1c38254a95e383a39bf33a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga28c6421742db54f40f50da2387aea93e">readYUV4MPEG2Frame</a> (QFile &amp;file, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageY, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageU, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;imageV)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read YUV image frames from a yuv4mpeg2 video file.  <a href="#ga28c6421742db54f40f50da2387aea93e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga9dc03d51efde6cf108af4d6cac41cb82">readYUV4MPEG2Header</a> (QFile &amp;file, int &amp;cols, int &amp;rows, int &amp;fps)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read yuv4mpeg2 header from a video file.  <a href="#ga9dc03d51efde6cf108af4d6cac41cb82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; sFloat, QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">maximalPoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;image, const double threshold=1.0, const int windowRadius=2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finds luminance peaks in the input image.  <a href="#gad2ed4c0a62c68685797fe9c88148426a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13">FilterLocalMax</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;src, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;dest, uInt colMaskSize, uInt rowMaskSize, sFloat threshold=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generates a binary image of local grey-scale maximal value pixels.This function receives a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>, and generates a binary image where each pixel is set to IPP_MAX_8U if the pixel in the original image is strict maximal in value regarding to pixels in a vicinity window of colMaskSize width, and rowMaskSize height.  <a href="#gade8ced9dc785b2238de521daff597b13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; QVector&lt; QPoint &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138">CountingSort</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;img)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sorts pixels in an image, given their gray-scale value.This function uses the <a href="http://en.wikipedia.org/wiki/Counting_sort">Counting Sort</a> algorithm to get an arrangement of the pixels of an input 8-bit image, regarding their gray-scale value. This arrangement is useful when you need to process the pixels of that image, which contain a certain gray-scale value.  <a href="#ga192921df3cd4daafb183772dc960d138"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff">IterativePointElimination</a> (const <a class="el" href="classQVPolyline.html">QVPolyline</a> &amp;polyline, <a class="el" href="classQVPolyline.html">QVPolyline</a> &amp;result, const double param, bool maxNumberOfPointsMethod=FALSE, bool intersectLines=TRUE, double *max_removed_cost=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Eliminates points of a polyline of small shape contribution using the IPE algorithmThis function eliminates points of a <a class="el" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a>, simplifying it. Points are recursively eliminated while a) their distance to the line joining its two immediate neighbours is smaller than a given maximum value, or b) the number of points of the approximated polyline falls below a given number (depending on the chosen method).  <a href="#ga69b4cc8c2c9561eb4623cb86ddd16fff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga38efea2a64358c2fcf43fc302b0b3595">IterativePointElimination</a> (const <a class="el" href="classQVPolylineF.html">QVPolylineF</a> &amp;polyline, <a class="el" href="classQVPolylineF.html">QVPolylineF</a> &amp;result, const double param, bool maxNumberOfPointsMethod=FALSE, bool intersectLines=TRUE, double *max_removed_cost=NULL)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Eliminates points of a polyline of small shape contribution using the IPE algorithmThis is an overloaded version of the <em>IterativePointElimination</em>, provided for convenience. It simplifies floating point polylines.  <a href="#ga38efea2a64358c2fcf43fc302b0b3595"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24">getConnectedSetBorderContoursThreshold</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const uChar threshold=128)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the borders of connected sets of pixels, containing gray-scale values equal or greater than a given threshold.This function thresholds an input image. Then it obtains the borders of the <a href="http://en.wikipedia.org/wiki/Connected_set">connected sets</a> of the pixels remaining. An example of these connected sets, and the borders this function obtains can be seen in the following picture:  <a href="#gacfe3100b9457c7fe9965a0b0e937ba24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga5dab7ea4ed1170143df3e59fdd895bf9">getLineContoursThreshold4Connectivity</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const uChar threshold=128)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a list of the 4-connected pixel lines in the imageThis function can be used to obtain the 4-connected lines appearing in a border response image. It returns the lines as a <a class="el" href="classQVPolyline.html">QVPolyline</a> objects.  <a href="#ga5dab7ea4ed1170143df3e59fdd895bf9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6">getLineContoursThreshold8Connectivity</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;image, const uChar threshold=128)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a list of the 8-connected pixel lines in the imageThis function can be used to obtain the 8-connected lines appearing in a border response image. It returns the lines as a <a class="el" href="classQVPolyline.html">QVPolyline</a> objects.  <a href="#ga804db01dcec15dce0c303ed4a4715bd6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga48592e8d0ecc14b8a01c373e97a0b630">FASTFeatures</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const int threshold, const <a class="el" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">FASTDetectionAlgorithm</a> &amp;fastAlgorithm=Fast9)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains FAST features on an image-.  <a href="#ga48592e8d0ecc14b8a01c373e97a0b630"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga0a73e3730368b307c874e53dd5af54c4">FastLaplaceFilter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; image)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a fast Laplace filter on the input image.  <a href="#ga0a73e3730368b307c874e53dd5af54c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga69cc8d72179389d9897aa9ac97d62c33">FastSmoothFilter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; image, const uChar threshold=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a fast smooth filter on the input image.  <a href="#ga69cc8d72179389d9897aa9ac97d62c33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga083ddecc2c02b1aa32bd2dd9d6c69601">SmoothFilter</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; image, const uChar threshold=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Applies a smooth filter on the input image.  <a href="#ga083ddecc2c02b1aa32bd2dd9d6c69601"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gab0e45b1b85498b4df9cbd1af432cbaea">FastLaplacePoints</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const int threshold=40, const bool applyPreviousSmooth=true, const bool smoothResponseImage=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detects salient points in the Laplace response of an input image.  <a href="#gab0e45b1b85498b4df9cbd1af432cbaea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga782538a21f9e2ea0aef216b54cbf0570">getMSERContours</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt; &amp;MSERList, QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt; &amp;polylineMSERList)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains border contours for an MSER list, obtained with the function <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER</a>.  <a href="#ga782538a21f9e2ea0aef216b54cbf0570"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt; &amp;MSERList, const int delta, const int minArea, const int maxArea, const double diffAreaThreshold)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This algorithm obtains MSER's - from an image.This is an implementation of the MSER algorithm (see [<a href="#matas">Matas</a>]. It does clustering of the MSER found in each node, keeping just the one with lowest <em>q</em> value. Also, small or large MSER are cleaned up using minimal and maximal areas permitted.  <a href="#ga9eed952744ef9fc9a8b003c524f680f9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#ga301080d8b72707aaa755539efc7ab99a">saveSIFTDescriptorsInLoweSIFTFileFormat</a> (const QString &amp;fileName, const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt; &amp;features)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write a list of SIFT image features to a text file in Lowe's SIFT file format.  <a href="#ga301080d8b72707aaa755539efc7ab99a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvip.html#gad9b6ff6909da8e12d4c231500673d128">QVImage::operator==</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; Type, Channels &gt; &amp;img) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Equality compare operator.  <a href="#gad9b6ff6909da8e12d4c231500673d128"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Functions for Image Processing. </p>
+<p>This package contains several useful image processing tools and computer vision algorithms and data types for the QVision. It basically includes image filtering functionality and several image feature detectors, most of which work on objects of <a class="el" href="TheQVImageClass.html">The QVImage class</a>.</p>
+<p>QVision makes use of Intel's IPP library, and offers many of its functionality to QVision users by means of wrapper functions. These functions are contained in the package <a class="el" href="group__qvipp.html">IPP wrapper functions</a>, which you can check to learn more about it.</p>
+<p>The basic image I/O functionality is based on <em>Qt's</em> ability to easily load/store images from and to <em>PNG</em> or <em>JPG</em> files, while video input is fundamentally covered by cooperation with the well known MPlayer media player. To create a new video file, and store image frames in it, or in the case the MPlayer is not available, the QVision also offers functions to create/read video files coded in the YUV4MPEG2 format. Refer to section <a class="el" href="ImageIO.html">Image and video input/output</a> for details and examples on how to use this functionalities.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Expand this documentation </dd></dl>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="gac7c7fd9f827d54495e9e3bc1993f1bcb"></a><!-- doxytag: member="qvimage.h::QVIMAGE_INIT_READ" ref="gac7c7fd9f827d54495e9e3bc1993f1bcb" args="(TYPE, IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_INIT_READ</td>
+          <td>(</td>
+          <td class="paramtype">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment"><span class="keyword">const</span> TYPE * __qv_data_##IMAGE##__ = IMAGE.getReadData();               \
+    <span class="keyword">const</span> uInt __qv_step_##IMAGE##__ = IMAGE.getStep()/<span class="keyword">sizeof</span>(TYPE);    \
+    <span class="keyword">const</span> uChar __qv_planes_##IMAGE##__  = IMAGE.getChannels();         \
+    <span class="keyword">const</span> uInt __qv_next_line_inc_##IMAGE##__ = __qv_step_##IMAGE##__ - IMAGE.getCols(); \
+    Q_UNUSED (__qv_next_line_inc_##IMAGE##__) ;
+</pre></div>
+<p>Initializes image to be read with macro QVIMAGE_PIXEL. </p>
+<p>This macro initializes an image to inspect or modify its contents using a set of pixel access macros. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TYPE</em>&nbsp;</td><td>Type of the image. It should be the value of first template parameter specified for the image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>IMAGE</em>&nbsp;</td><td>Image name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00055">55</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138">CountingSort()</a>, <a class="el" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13">FilterLocalMax()</a>, <a class="el" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24">getConnectedSetBorderContoursThreshold()</a>, <a class="el" href="group__qvip.html#ga5dab7ea4ed1170143df3e59fdd895bf9">getLineContoursThreshold4Connectivity()</a>, <a class="el" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6">getLineContoursThreshold8Connectivity()</a>, <a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">maximalPoints()</a>, <a class="el" href="group__qvip.html#gad9b6ff6909da8e12d4c231500673d128">QVImage&lt; Type, Channels &gt;::operator==()</a>, and <a class="el" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">QVComponentTree::QVComponentTree()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga42904f931068a3ea3f6bdb90861d1dc1"></a><!-- doxytag: member="qvimage.h::QVIMAGE_INIT_WRITE" ref="ga42904f931068a3ea3f6bdb90861d1dc1" args="(TYPE, IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_INIT_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment">TYPE * __qv_data_##IMAGE##__ = IMAGE.getWriteData();                    \
+    <span class="keyword">const</span> uInt __qv_step_##IMAGE##__ = IMAGE.getStep()/<span class="keyword">sizeof</span>(TYPE);    \
+    <span class="keyword">const</span> uChar __qv_planes_##IMAGE##__  = IMAGE.getChannels();         \
+    <span class="keyword">const</span> uInt __qv_next_line_inc_##IMAGE##__ = __qv_step_##IMAGE##__ - IMAGE.getCols(); \
+    Q_UNUSED (__qv_next_line_inc_##IMAGE##__) ;
+</pre></div>
+<p>Initializes image to be written or read with macro QVIMAGE_PIXEL. </p>
+<p>This macro initializes an image to inspect or modify its contents using a set of pixel access macros. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TYPE</em>&nbsp;</td><td>Type of the image. It should be the value of first template parameter specified for the image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>IMAGE</em>&nbsp;</td><td>Image name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00074">74</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13">FilterLocalMax()</a>, <a class="el" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24">getConnectedSetBorderContoursThreshold()</a>, and <a class="el" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">QVComponentTree::QVComponentTree()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga988e358793c60b3a9f50c1a7fb4a59ef"></a><!-- doxytag: member="qvimage.h::QVIMAGE_PTR_INIT_READ" ref="ga988e358793c60b3a9f50c1a7fb4a59ef" args="(TYPE, IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_PTR_INIT_READ</td>
+          <td>(</td>
+          <td class="paramtype">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment"><span class="keyword">const</span> TYPE * __qv_data_##IMAGE##__ = IMAGE-&gt;getReadData();              \
+    <span class="keyword">const</span> uInt __qv_step_##IMAGE##__ = IMAGE-&gt;getStep()/<span class="keyword">sizeof</span>(TYPE);   \
+    <span class="keyword">const</span> uChar __qv_planes_##IMAGE##__  = IMAGE-&gt;getChannels();                \
+    <span class="keyword">const</span> uInt __qv_next_line_inc_##IMAGE##__ = __qv_step_##IMAGE##__ - IMAGE-&gt;getCols(); \
+    Q_UNUSED (__qv_next_line_inc_##IMAGE##__) ;
+</pre></div>
+<p>Initializes pointed image to be read with macro QVIMAGE_PIXEL. </p>
+<p>This macro initializes a pointed image to inspect its contents using a set of pixel access macros. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TYPE</em>&nbsp;</td><td>Type of the image. It should be the value of first template parameter specified for the image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>IMAGE</em>&nbsp;</td><td>Name of the pointer variable that points to the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00093">93</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#gad9b6ff6909da8e12d4c231500673d128">QVImage&lt; Type, Channels &gt;::operator==()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabd11a1f331e8fc7be6f94d8d7d4456c5"></a><!-- doxytag: member="qvimage.h::QVIMAGE_PTR_INIT_WRITE" ref="gabd11a1f331e8fc7be6f94d8d7d4456c5" args="(TYPE, IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_PTR_INIT_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment">TYPE * __qv_data_##IMAGE##__ = IMAGE-&gt;getWriteData();                                                           \
+    <span class="keyword">const</span> uInt __qv_step_##IMAGE##__ = IMAGE-&gt;getStep()/<span class="keyword">sizeof</span>(TYPE);                                           \
+    <span class="keyword">const</span> uChar __qv_planes_##IMAGE##__  = IMAGE-&gt;getChannels();                                                        \
+    <span class="keyword">const</span> uInt __qv_next_line_inc_##IMAGE##__ = __qv_step_##IMAGE##__ - __qv_planes_##IMAGE##__ * IMAGE-&gt;getCols(); \
+    Q_UNUSED (__qv_next_line_inc_##IMAGE##__) ;
+</pre></div>
+<p>Initializes pointed image to be written or read with macro QVIMAGE_PIXEL. </p>
+<p>This macro initializes a pointed image to inspect or modify its contents using a set of pixel access macros. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TYPE</em>&nbsp;</td><td>Type of the image. It should be the value of first template parameter specified for the image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>IMAGE</em>&nbsp;</td><td>Name of the pointer variable that points to the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00112">112</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5dd8ae5ae995f7889bda84469e5465d3"></a><!-- doxytag: member="qvimage.h::QVIMAGE_PIXEL" ref="ga5dd8ae5ae995f7889bda84469e5465d3" args="(IMAGE, Col, Row, Channel)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_PIXEL</td>
+          <td>(</td>
+          <td class="paramtype">IMAGE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Col, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Row, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Channel&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;(__qv_data_##IMAGE##__ [(Row)* __qv_step_##IMAGE##__ + __qv_planes_##IMAGE##__ *(Col)+(Channel)])</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Access an image pixel for inspection or modification. </p>
+<p>This macro can be used to access arbitrary pixels in an image, with a good time performance. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb" title="Initializes image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_READ</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1" title="Initializes image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_WRITE</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef" title="Initializes pointed image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_PTR_INIT_READ</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5" title="Initializes pointed image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_PTR_INIT_WRITE</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00131">131</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga192921df3cd4daafb183772dc960d138">CountingSort()</a>, <a class="el" href="group__qvip.html#gade8ced9dc785b2238de521daff597b13">FilterLocalMax()</a>, <a class="el" href="group__qvip.html#gacfe3100b9457c7fe9965a0b0e937ba24">getConnectedSetBorderContoursThreshold()</a>, <a class="el" href="group__qvip.html#ga5dab7ea4ed1170143df3e59fdd895bf9">getLineContoursThreshold4Connectivity()</a>, <a class="el" href="group__qvip.html#ga804db01dcec15dce0c303ed4a4715bd6">getLineContoursThreshold8Connectivity()</a>, <a class="el" href="group__qvip.html#gad2ed4c0a62c68685797fe9c88148426a">maximalPoints()</a>, <a class="el" href="group__qvip.html#gad9b6ff6909da8e12d4c231500673d128">QVImage&lt; Type, Channels &gt;::operator==()</a>, and <a class="el" href="classQVComponentTree.html#ac807f5189700723202a4b5f120fd2e57">QVComponentTree::QVComponentTree()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad8167ad6fb78ac46828b6a6bfcff03de"></a><!-- doxytag: member="qvimage.h::QVIMAGE_PIXEL_PTR" ref="gad8167ad6fb78ac46828b6a6bfcff03de" args="(IMAGE, Col, Row, Channel)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_PIXEL_PTR</td>
+          <td>(</td>
+          <td class="paramtype">IMAGE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Col, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Row, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Channel&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;(&amp; (__qv_data_##IMAGE##__ [(Row)* __qv_step_##IMAGE##__ + __qv_planes_##IMAGE##__ *(Col)+(Channel)]))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a reference to the memory location of a pixel. </p>
+<p>This macro can be used to obtain the location of arbitrary pixels in an image, with a good time performance. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb" title="Initializes image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_READ</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1" title="Initializes image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_WRITE</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef" title="Initializes pointed image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_PTR_INIT_READ</a> </dd>
+<dd>
+<a class="el" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5" title="Initializes pointed image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_PTR_INIT_WRITE</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00146">146</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1d28a2443a2bf4116ce07d29a692154c"></a><!-- doxytag: member="qvimage.h::QVIMAGE_ROW_INCREMENT_PTR" ref="ga1d28a2443a2bf4116ce07d29a692154c" args="(IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_ROW_INCREMENT_PTR</td>
+          <td>(</td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;( __qv_step_##IMAGE##__ )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the increment for a row movement of a pixel. </p>
+<p>This macro can be used to navigate through the contents of an image given an initial pointer to its contents. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00158">158</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad6b87d2e7576cd2ad65bddfbd1d05271"></a><!-- doxytag: member="qvimage.h::QVIMAGE_COL_INCREMENT_PTR" ref="gad6b87d2e7576cd2ad65bddfbd1d05271" args="(IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_COL_INCREMENT_PTR</td>
+          <td>(</td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;( __qv_planes_##IMAGE##__ )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the increment for a column movement of a pixel. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>Las macros de acceso a pixel secuenciales no funcionan. Revisar. </dd></dl>
+<p>This macro can be used to navigate through the contents of an image given an initial pointer to its contents. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00170">170</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9f971fc24f22c2ebf7de84b46d331c85"></a><!-- doxytag: member="qvimage.h::QVIMAGE_NEXT_LINE_INCREMENT_PTR" ref="ga9f971fc24f22c2ebf7de84b46d331c85" args="(IMAGE)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QVIMAGE_NEXT_LINE_INCREMENT_PTR</td>
+          <td>(</td>
+          <td class="paramtype">IMAGE&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;( __qv_next_line_inc_##IMAGE##__ )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the location of the first pixel in a row, given the location of the last pixel in the upper row. </p>
+<p>This macro can be used to navigate through the contents of an image given an initial pointer to its contents. See section <a class="el" href="TheQVImageClass.html#QVImagePixelAccess">Image pixel access</a> for detailed usage of this macro.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#gad8167ad6fb78ac46828b6a6bfcff03de" title="Obtains a reference to the memory location of a pixel.">QVIMAGE_PIXEL_PTR</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00181">181</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="ga2d3c88a18a68f0abe71eb8bc6fd2b277"></a><!-- doxytag: member="qvip.h::FASTDetectionAlgorithm" ref="ga2d3c88a18a68f0abe71eb8bc6fd2b277" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">FASTDetectionAlgorithm</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>FAST detection algorithms. </p>
+
+<p>Definition at line <a class="el" href="qvip_2qvip_8h_source.html#l00308">308</a> of file <a class="el" href="qvip_2qvip_8h_source.html">qvip.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga60fd9c63b86729a04e99b829bedf69cb"></a><!-- doxytag: member="qvbriefdetector.h::saveBRIEFDescriptorsInLoweSIFTFileFormat" ref="ga60fd9c63b86729a04e99b829bedf69cb" args="(const QString fileName, const QVector&lt; QPointF &gt; features, const QVector&lt; unsigned int &gt; descriptors)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool saveBRIEFDescriptorsInLoweSIFTFileFormat </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; QPointF &gt;&nbsp;</td>
+          <td class="paramname"> <em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; unsigned int &gt;&nbsp;</td>
+          <td class="paramname"> <em>descriptors</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write a list of image features and BRIEF descriptors to a text file. </p>
+<p>Write a list of image features and BRIEF descriptors to a text file in Lowe's SIFT file format.</p>
+<p>This function writes a list of image features and their associated BRIEF descriptors in a .key file in the same output format used by <a href="http://www.cs.ubc.ca/~lowe/keypoints/">David Lowe's SIFT detector</a> to store the SIFT descriptors and the features detected on an input image.</p>
+<p>The following is an extract of the documentation for Lowe's implementation, which describes this output format:</p>
+<div class="fragment"><pre class="fragment">The file format starts with 2 integers giving the total number of
+keypoints and the length of the descriptor vector <span class="keywordflow">for each</span> keypoint
+(128). Then the location of each keypoint in the image is specified by
+4 floating point numbers giving subpixel row and column location,
+scale, and orientation (in radians from -PI to PI).  Obviously, these
+numbers are not invariant to viewpoint, but can be used in later
+stages of processing to check <span class="keywordflow">for</span> geometric consistency among matches.
+Finally, the invariant descriptor vector <span class="keywordflow">for</span> the keypoint is given as
+a list of 128 integers in range [0,255].  Keypoints from a <span class="keyword">new</span> image
+can be matched to those from previous images by simply looking <span class="keywordflow">for</span> the
+descriptor vector with closest Euclidean distance among all vectors
+from previous images.
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>Name for the descriptor's file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>List containing the location for the image features. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>descriptors</em>&nbsp;</td><td>List containing the corresponding descriptors for these features.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function writes a list of image features and their associated BRIEF descriptors in a .key file in the same output format used by the application<a href="http://www.cs.ubc.ca/~lowe/keypoints/">David Lowe's SIFT detector</a> to store the SIFT descriptors and the features detected on an input image.</p>
+<p>The following is an extract of the documentation for Lowe's implementation, which describes this output format:</p>
+<div class="fragment"><pre class="fragment">The file format starts with 2 integers giving the total number of
+keypoints and the length of the descriptor vector <span class="keywordflow">for each</span> keypoint
+(128). Then the location of each keypoint in the image is specified by
+4 floating point numbers giving subpixel row and column location,
+scale, and orientation (in radians from -PI to PI).  Obviously, these
+numbers are not invariant to viewpoint, but can be used in later
+stages of processing to check <span class="keywordflow">for</span> geometric consistency among matches.
+Finally, the invariant descriptor vector <span class="keywordflow">for</span> the keypoint is given as
+a list of 128 integers in range [0,255].  Keypoints from a <span class="keyword">new</span> image
+can be matched to those from previous images by simply looking <span class="keywordflow">for</span> the
+descriptor vector with closest Euclidean distance among all vectors
+from previous images.
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>Name for the descriptor's file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>List containing the location for the image features. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>descriptors</em>&nbsp;</td><td>List containing the corresponding descriptors for these features.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVBRIEFDetector.html" title="Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors...">QVBRIEFDetector</a></dd></dl>
+<p>Write a list of image features and BRIEF descriptors to a text file.</p>
+<p>This function writes a list of image features and their associated BRIEF descriptors in a .key file in the same output format used by the application<a href="http://www.cs.ubc.ca/~lowe/keypoints/">David Lowe's SIFT detector</a> to store the SIFT descriptors and the features detected on an input image.</p>
+<p>The following is an extract of the documentation for Lowe's implementation, which describes this output format:</p>
+<div class="fragment"><pre class="fragment">The file format starts with 2 integers giving the total number of
+keypoints and the length of the descriptor vector <span class="keywordflow">for each</span> keypoint
+(128). Then the location of each keypoint in the image is specified by
+4 floating point numbers giving subpixel row and column location,
+scale, and orientation (in radians from -PI to PI).  Obviously, these
+numbers are not invariant to viewpoint, but can be used in later
+stages of processing to check <span class="keywordflow">for</span> geometric consistency among matches.
+Finally, the invariant descriptor vector <span class="keywordflow">for</span> the keypoint is given as
+a list of 128 integers in range [0,255].  Keypoints from a <span class="keyword">new</span> image
+can be matched to those from previous images by simply looking <span class="keywordflow">for</span> the
+descriptor vector with closest Euclidean distance among all vectors
+from previous images.
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>Name for the descriptor's file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>List containing the location for the image features. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>descriptors</em>&nbsp;</td><td>List containing the corresponding descriptors for these features.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVBRIEFDetector.html" title="Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors...">QVBRIEFDetector</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbriefdetector_8cpp_source.html#l00066">66</a> of file <a class="el" href="qvbriefdetector_8cpp_source.html">qvbriefdetector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3039166fdcc15216e5319d1c5e652c8f"></a><!-- doxytag: member="qvimageio.h::writeYUV4MPEG2Header" ref="ga3039166fdcc15216e5319d1c5e652c8f" args="(QFile &amp;file, const int cols, const int rows, const int fps)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeYUV4MPEG2Header </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>fps</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a yuv4mpeg2 video file. </p>
+<p>This function stores the header for a video sequence in YUV4MPEG2 format in a newly created file. It can be used in conjunction with any of the versions of the <a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189">writeYUV4MPEG2Frame</a> functions to store a flow of images in a video file.</p>
+<p>See section <a class="el" href="ImageIO.html#WriteYUV4MPEGVideoFiles">Writing to YUV4MPEG video files.</a> for further info about the usage of this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The input file object. It must be already opened when received as argument by this function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cols</em>&nbsp;</td><td>The number of columns that the video in the file should have. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rows</em>&nbsp;</td><td>The number of rows that the video in the file should have. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fps</em>&nbsp;</td><td>The number of frames per second that the video sequence will have. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga8009ad640bdcbcec1c00f6a92f9aed27" title="Write YUV image frames to a yuv4mpeg2 video file.">writeYUV4MPEG2Frame(QFile &amp;, const QVImage&lt;uChar,1&gt;, const QVImage&lt;uChar,1&gt;, const QVImage&lt;uChar,1&gt;)</a>; </dd>
+<dd>
+<a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189" title="Write RGB image frames to a yuv4mpeg2 video file.">writeYUV4MPEG2Frame(QFile &amp;, const QVImage&lt;uChar,3&gt;)</a>; </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00048">48</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8009ad640bdcbcec1c00f6a92f9aed27"></a><!-- doxytag: member="qvimageio.h::writeYUV4MPEG2Frame" ref="ga8009ad640bdcbcec1c00f6a92f9aed27" args="(QFile &amp;file, const QVImage&lt; uChar, 1 &gt; imageY, const QVImage&lt; uChar, 1 &gt; imageU, const QVImage&lt; uChar, 1 &gt; imageV)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeYUV4MPEG2Frame </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>imageY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>imageU</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>imageV</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write YUV image frames to a yuv4mpeg2 video file. </p>
+<p>This function stores a YUV frame in a YUV4MPEG2 video file. The parameters of this function must be three images containing the three channels for the YUV image. For further information about its usage, see documentation for function <a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f">writeYUV4MPEG2Header</a>.</p>
+<p>See section <a class="el" href="ImageIO.html#WriteYUV4MPEGVideoFiles">Writing to YUV4MPEG video files.</a> for further info about the usage of this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The input file object. It must be already opened when received as argument by this function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageY</em>&nbsp;</td><td>Image object containing the Y channel for the YUV image, to store in the video file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageU</em>&nbsp;</td><td>Image object containing the Y channel for the YUV image, to store in the video file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageV</em>&nbsp;</td><td>Image object containing the Y channel for the YUV image, to store in the video file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f" title="Create a yuv4mpeg2 video file.">writeYUV4MPEG2Header</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00055">55</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#ga0eee999bb396163138cd084286249a05">writeYUV4MPEG2Frame()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0eee999bb396163138cd084286249a05"></a><!-- doxytag: member="qvimageio.h::writeYUV4MPEG2Frame" ref="ga0eee999bb396163138cd084286249a05" args="(QFile &amp;file, const QVImage&lt; uChar, 1 &gt; imageGray)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeYUV4MPEG2Frame </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>imageGray</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write YUV image frames to a yuv4mpeg2 video file. </p>
+<p>This function stores a gray scale frame in a YUV4MPEG2 video file. The parameter of this function is a single 1-channel image, containing the gray scale image. For further information about its usage, see documentation for function <a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f">writeYUV4MPEG2Header</a>.</p>
+<p>See section <a class="el" href="ImageIO.html#WriteYUV4MPEGVideoFiles">Writing to YUV4MPEG video files.</a> for further info about the usage of this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The input file object. It must be already opened when received as argument by this function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageGray</em>&nbsp;</td><td>Gray scale image to store in the video file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f" title="Create a yuv4mpeg2 video file.">writeYUV4MPEG2Header</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00070">70</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaafafdc5bedd299e344cf744f692fd189"></a><!-- doxytag: member="qvimageio.h::writeYUV4MPEG2Frame" ref="gaafafdc5bedd299e344cf744f692fd189" args="(QFile &amp;file, const QVImage&lt; uChar, 3 &gt; imageRGB)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeYUV4MPEG2Frame </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt;&nbsp;</td>
+          <td class="paramname"> <em>imageRGB</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write RGB image frames to a yuv4mpeg2 video file. </p>
+<p>This is an overloaded version of the function <a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189">writeYUV4MPEG2Frame(QFile &amp;, const QVImage&lt;uChar,3&gt;)</a> provided for convenience. This version stores a RGB frame in a YUV4MPEG2 video file. The parameter of this function is a single 3-channel image containing the RGB image. For further information about its usage, see documentation for function <a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f">writeYUV4MPEG2Header</a>.</p>
+<p>See section <a class="el" href="ImageIO.html#WriteYUV4MPEGVideoFiles">Writing to YUV4MPEG video files.</a> for further info about the usage of this function.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on functionality from the Intel IPP library. Thus compatibility with that library must be enabled to be available.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The input file object. It must be already opened when received as argument by this function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageRGB</em>&nbsp;</td><td>RGB image object, to store in the video file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f" title="Create a yuv4mpeg2 video file.">writeYUV4MPEG2Header</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00082">82</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga77ad534a38a3c6e3de5607c07cc0e999"></a><!-- doxytag: member="qvimageio.h::writeQVImageToFile" ref="ga77ad534a38a3c6e3de5607c07cc0e999" args="(const QString fileName, const QVImage&lt; uChar, 3 &gt; &amp;image)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeQVImageToFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write the content of a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> (RGB) object in an image file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>The name of the image file to create. It is overwritten if already exists. File format is inferred from fileName suffix. Supported formats: BMP,JPG,PNG,PPM,TIFF,XBM,XPM. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>The image to store in the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if success, FALSE otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00095">95</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga59a032b0b1c38254a95e383a39bf33a0"></a><!-- doxytag: member="qvimageio.h::readQVImageFromFile" ref="ga59a032b0b1c38254a95e383a39bf33a0" args="(const QString fileName, QVImage&lt; uChar, 3 &gt; &amp;image)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool readQVImageFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reads the content of a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> (RGB) object from an image file. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>The name of the image file to read from. File format is inferred from fileName suffix. Supported formats: BMP,JPG,PNG,PPM,TIFF,XBM,XPM,GIF,PBM,PGM. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>The image to store in the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>TRUE if success, FALSE otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00098">98</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga28c6421742db54f40f50da2387aea93e"></a><!-- doxytag: member="qvimageio.h::readYUV4MPEG2Frame" ref="ga28c6421742db54f40f50da2387aea93e" args="(QFile &amp;file, QVImage&lt; uChar &gt; &amp;imageY, QVImage&lt; uChar &gt; &amp;imageU, QVImage&lt; uChar &gt; &amp;imageV)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool readYUV4MPEG2Frame </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageU</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>imageV</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Read YUV image frames from a yuv4mpeg2 video file. </p>
+<p>This function retrieves a frame from a video file coded in YUV format. The parameters of this function must be three images to store the three channels for the YUV image.</p>
+<p>See section <a class="el" href="ImageIO.html#ReadingYUV4MPEGVideoFiles">Reading from YUV4MPEG video files.</a> for further info about the usage of this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The input file object. It must be already opened when received as argument by this function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageY</em>&nbsp;</td><td>Image object to contain the Y channel for the YUV image, to store in the video file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageU</em>&nbsp;</td><td>Image object to contain the U channel for the YUV image, to store in the video file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imageV</em>&nbsp;</td><td>Image object to contain the V channel for the YUV image, to store in the video file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga9dc03d51efde6cf108af4d6cac41cb82" title="Read yuv4mpeg2 header from a video file.">readYUV4MPEG2Header</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00177">177</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9dc03d51efde6cf108af4d6cac41cb82"></a><!-- doxytag: member="qvimageio.h::readYUV4MPEG2Header" ref="ga9dc03d51efde6cf108af4d6cac41cb82" args="(QFile &amp;file, int &amp;cols, int &amp;rows, int &amp;fps)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool readYUV4MPEG2Header </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>fps</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Read yuv4mpeg2 header from a video file. </p>
+<p>This function reads the header of a video file encoded in yuv4mpeg2 format. This header contains information about the size of the frames in the video file, as well as the number of frames per second of the video sequence.</p>
+<p>See section <a class="el" href="ImageIO.html#ReadingYUV4MPEGVideoFiles">Reading from YUV4MPEG video files.</a> for further info about the usage of this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>The input file object. It must be already opened when received as argument by this function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cols</em>&nbsp;</td><td>(output parameter) Number of cols read in the header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rows</em>&nbsp;</td><td>(output parameter) Number of rows read in the header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fps</em>&nbsp;</td><td>(output parameter) Video fps read in the header </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga28c6421742db54f40f50da2387aea93e" title="Read YUV image frames from a yuv4mpeg2 video file.">readYUV4MPEG2Frame</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvimageio_8cpp_source.html#l00136">136</a> of file <a class="el" href="qvimageio_8cpp_source.html">qvimageio.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad2ed4c0a62c68685797fe9c88148426a"></a><!-- doxytag: member="qvip.h::maximalPoints" ref="gad2ed4c0a62c68685797fe9c88148426a" args="(const QVImage&lt; sFloat &gt; &amp;image, const double threshold=1.0, const int windowRadius=2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;sFloat, QPointF&gt; maximalPoints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>windowRadius</em> = <code>2</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds luminance peaks in the input image. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000044">Todo:</a></b></dt><dd>document this</dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00524">524</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gade8ced9dc785b2238de521daff597b13"></a><!-- doxytag: member="qvip.h::FilterLocalMax" ref="gade8ced9dc785b2238de521daff597b13" args="(const QVImage&lt; sFloat &gt; &amp;src, QVImage&lt; uChar &gt; &amp;dest, uInt colMaskSize, uInt rowMaskSize, sFloat threshold=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilterLocalMax </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>colMaskSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uInt&nbsp;</td>
+          <td class="paramname"> <em>rowMaskSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sFloat&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generates a binary image of local grey-scale maximal value pixels.This function receives a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>, and generates a binary image where each pixel is set to IPP_MAX_8U if the pixel in the original image is strict maximal in value regarding to pixels in a vicinity window of colMaskSize width, and rowMaskSize height. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo:</a></b></dt><dd><ul>
+<li>Fix resulting image ROI, obtain maximums restricted to the ROI.</li>
+<li>Use IPP functions to obtain the result.</li>
+</ul>
+</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>src</em>&nbsp;</td><td>source image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dest</em>&nbsp;</td><td>binary image that will contain maximal values. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>colMaskSize</em>&nbsp;</td><td>width of the vicinity. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rowMaskSize</em>&nbsp;</td><td>height of the vicinity. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00390">390</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga192921df3cd4daafb183772dc960d138"></a><!-- doxytag: member="qvip.h::CountingSort" ref="ga192921df3cd4daafb183772dc960d138" args="(const QVImage&lt; uChar, 1 &gt; &amp;img)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; QVector&lt; QPoint &gt; &gt; CountingSort </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sorts pixels in an image, given their gray-scale value.This function uses the <a href="http://en.wikipedia.org/wiki/Counting_sort">Counting Sort</a> algorithm to get an arrangement of the pixels of an input 8-bit image, regarding their gray-scale value. This arrangement is useful when you need to process the pixels of that image, which contain a certain gray-scale value. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>img</em>&nbsp;</td><td>Image to obtain the pixel arrangement. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A vector of 256 lists of points. The element <em>n</em> of the vector is the list of the image pixels (points) that contain the gray-scale value <em>n</em>. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00058">58</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga69b4cc8c2c9561eb4623cb86ddd16fff"></a><!-- doxytag: member="qvip.h::IterativePointElimination" ref="ga69b4cc8c2c9561eb4623cb86ddd16fff" args="(const QVPolyline &amp;polyline, QVPolyline &amp;result, const double param, bool maxNumberOfPointsMethod=FALSE, bool intersectLines=TRUE, double *max_removed_cost=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IterativePointElimination </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVPolyline.html">QVPolyline</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>polyline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVPolyline.html">QVPolyline</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>maxNumberOfPointsMethod</em> = <code>FALSE</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>intersectLines</em> = <code>TRUE</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>max_removed_cost</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Eliminates points of a polyline of small shape contribution using the IPE algorithmThis function eliminates points of a <a class="el" href="classQVPolylineF.html" title="Floating point polyline representation.">QVPolylineF</a>, simplifying it. Points are recursively eliminated while a) their distance to the line joining its two immediate neighbours is smaller than a given maximum value, or b) the number of points of the approximated polyline falls below a given number (depending on the chosen method). </p>
+<p>The return value (which indicates the cost of the first not deleted point) and the optional parameter max_removed_cost are useful to estimate a measure of how well the polyline approximation did. A good approximation will have (relative) low max_removed_cost/return_cost ratio, and (absolute) low max_removed_cost value.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>polyline</em>&nbsp;</td><td>polyline to simplify. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>result</em>&nbsp;</td><td>will store resulting simplified polyline. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>param</em>&nbsp;</td><td>maximal distance for a point to eliminate it, if maxNumberOfPointsMethod is FALSE, or maximal number of points in the result polyline, if maxNumberOfPointsMethod is TRUE. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxNumberOfPointsMethod</em>&nbsp;</td><td>if TRUE, the procedure ends when the number of points of the resulting polyline is lesser or equal to param. If FALSE, the procedure ends when there are no more points with distance to line given by its neighbours smaller than param. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>intersectLines</em>&nbsp;</td><td>If TRUE, a post-processing stage adjusts final points using all the deleted points among vertexes to fit straight lines, whose intersection by pairs gives the final points (recommended for greater precision, at a minimal additional cost). </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max_removed_cost</em>&nbsp;</td><td>If not NULL, pointer to a float value that the procedure will fill with the maximum cost (distance to corresponding line) of all the removed points. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The function returns the cost value of the first NOT deleted point of the polyline. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>IterativePointElimination(const QVPolylineF &amp;, QVPolyline &amp;, const double, bool, bool, double *); </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00671">671</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga38efea2a64358c2fcf43fc302b0b3595"></a><!-- doxytag: member="qvip.h::IterativePointElimination" ref="ga38efea2a64358c2fcf43fc302b0b3595" args="(const QVPolylineF &amp;polyline, QVPolylineF &amp;result, const double param, bool maxNumberOfPointsMethod=FALSE, bool intersectLines=TRUE, double *max_removed_cost=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IterativePointElimination </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVPolylineF.html">QVPolylineF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>polyline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVPolylineF.html">QVPolylineF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>maxNumberOfPointsMethod</em> = <code>FALSE</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>intersectLines</em> = <code>TRUE</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>max_removed_cost</em> = <code>NULL</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Eliminates points of a polyline of small shape contribution using the IPE algorithmThis is an overloaded version of the <em>IterativePointElimination</em>, provided for convenience. It simplifies floating point polylines. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga69b4cc8c2c9561eb4623cb86ddd16fff" title="Eliminates points of a polyline of small shape contribution using the IPE algorithmThis...">IterativePointElimination(const QVPolyline &amp;, QVPolyline &amp;, const double, bool, bool, double *)</a>; </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If GSL compatibility is not enabled, the re-estimation of the segments intersection will not be done. Thus the parameter intersectLines will always be considered false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00893">893</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacfe3100b9457c7fe9965a0b0e937ba24"></a><!-- doxytag: member="qvip.h::getConnectedSetBorderContoursThreshold" ref="gacfe3100b9457c7fe9965a0b0e937ba24" args="(const QVImage&lt; uChar &gt; &amp;image, const uChar threshold=128)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVPolyline.html">QVPolyline</a>&gt; getConnectedSetBorderContoursThreshold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>128</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the borders of connected sets of pixels, containing gray-scale values equal or greater than a given threshold.This function thresholds an input image. Then it obtains the borders of the <a href="http://en.wikipedia.org/wiki/Connected_set">connected sets</a> of the pixels remaining. An example of these connected sets, and the borders this function obtains can be seen in the following picture: </p>
+<div align="center">
+<img src="bordercontours.png" alt="bordercontours.png"/>
+</div>
+<p>Circles indicate the first of the pixels in each border set. The last of the pixels in each detected border is indicated with an asterisk. The function detects inner and outer borders for each connected set. The image displays inner borders in blue color, and outer borders in red color.</p>
+<p>The function returns a list of polylines, each one representing a different border.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Image to obtain from the borders. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Threshold separating the pixels inside and outside the connected sets. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list, containing the polylines corresponding to the borders of the connected sets. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01349">1349</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5dab7ea4ed1170143df3e59fdd895bf9"></a><!-- doxytag: member="qvip.h::getLineContoursThreshold4Connectivity" ref="ga5dab7ea4ed1170143df3e59fdd895bf9" args="(const QVImage&lt; uChar &gt; &amp;image, const uChar threshold=128)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVPolyline.html">QVPolyline</a>&gt; getLineContoursThreshold4Connectivity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>128</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a list of the 4-connected pixel lines in the imageThis function can be used to obtain the 4-connected lines appearing in a border response image. It returns the lines as a <a class="el" href="classQVPolyline.html">QVPolyline</a> objects. </p>
+<p>A pixel will be considered as a line pixel if it contains a gray-scale value equal or larger than the given threshold.</p>
+<div align="center">
+<img src="contours4connected.png" alt="contours4connected.png"/>
+</div>
+<p>Circles indicate the first of the pixels in each line. The last of the pixels in each detected line is indicated with an asterisk. Ambiguous situations (such as pixels with more than two 4-connected neighbor pixels) return unpredictable joining results.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image from were to obtain the polylines. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>threshold to test if a pixel is considered a line pixels or not. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the list of contours (as <a class="el" href="classQVPolyline.html">QVPolyline</a>) in the image. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#gafab0c2a310a7e2050ea95b61324820e9" title="Creates binary image of source&#39;s image edges, using derivatives of the first...">Canny</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01528">1528</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga804db01dcec15dce0c303ed4a4715bd6"></a><!-- doxytag: member="qvip.h::getLineContoursThreshold8Connectivity" ref="ga804db01dcec15dce0c303ed4a4715bd6" args="(const QVImage&lt; uChar &gt; &amp;image, const uChar threshold=128)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQVPolyline.html">QVPolyline</a>&gt; getLineContoursThreshold8Connectivity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>128</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a list of the 8-connected pixel lines in the imageThis function can be used to obtain the 8-connected lines appearing in a border response image. It returns the lines as a <a class="el" href="classQVPolyline.html">QVPolyline</a> objects. </p>
+<p>A pixel will be considered as a line pixel if it contains a gray-scale value equal or larger than the given threshold.</p>
+<div align="center">
+<img src="contours8connected.png" alt="contours8connected.png"/>
+</div>
+<p>Circles indicate the first of the pixels in each line. The last of the pixels in each detected line is indicated with an asterisk. Ambiguous situations (such as pixels with more than two 4-connected neighbor pixels) return unpredictable joining results.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image from were to obtain the polylines. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>threshold to test if a pixel is considered a border or not. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the list of contours (as <a class="el" href="classQVPolyline.html">QVPolyline</a>) in the image. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvippCV.html#gafab0c2a310a7e2050ea95b61324820e9" title="Creates binary image of source&#39;s image edges, using derivatives of the first...">Canny</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01651">1651</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga48592e8d0ecc14b8a01c373e97a0b630"></a><!-- doxytag: member="qvip.h::FASTFeatures" ref="ga48592e8d0ecc14b8a01c373e97a0b630" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, const int threshold, const FASTDetectionAlgorithm &amp;fastAlgorithm=Fast9)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QPointF&gt; FASTFeatures </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvip.html#ga2d3c88a18a68f0abe71eb8bc6fd2b277">FASTDetectionAlgorithm</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>fastAlgorithm</em> = <code>Fast9</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains FAST features on an image-. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is a wrapper function for Edward Rosten's <a href="http://www.edwardrosten.com/work/fast.html">FAST detector implementation</a>.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Threshold value for the FAST algorithm. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fastAlgorithm</em>&nbsp;</td><td>One of the four versions of the FAST detector.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of locations for the FAST features in the image. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l00555">555</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0a73e3730368b307c874e53dd5af54c4"></a><!-- doxytag: member="qvip.h::FastLaplaceFilter" ref="ga0a73e3730368b307c874e53dd5af54c4" args="(const QVImage&lt; uChar, 1 &gt; image)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVImage.html">QVImage</a>&lt;uChar, 1&gt; FastLaplaceFilter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>image</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Applies a fast Laplace filter on the input image. </p>
+<p>This function returns the following <img class="formulaInl" alt="$ 3 \times 3 $" src="form_6.png"/> matrix, corresponding to the intrinsic calibration matrix of a camera:</p>
+<p>Obtains an image containing the absolute values corresponding to the image filtered with the following convolution kernel:</p>
+<p><img class="formulaInl" alt="$K = \frac{1}{8}\left(\begin{array}{ccc} 0 &amp; -1 &amp; 0 \\ -1 &amp; 4 &amp; -1 \\ 0 &amp; -1 &amp; 0 \end{array}\right)$" src="form_7.png"/></p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01723">1723</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#gab0e45b1b85498b4df9cbd1af432cbaea">FastLaplacePoints()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga69cc8d72179389d9897aa9ac97d62c33"></a><!-- doxytag: member="qvip.h::FastSmoothFilter" ref="ga69cc8d72179389d9897aa9ac97d62c33" args="(const QVImage&lt; uChar, 1 &gt; image, const uChar threshold=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVImage.html">QVImage</a>&lt;uChar, 1&gt; FastSmoothFilter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Applies a fast smooth filter on the input image. </p>
+<p>This function convolutes the image with the following filter:</p>
+<p><img class="formulaInl" alt="$K = \frac{1}{8}\left(\begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 1 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{array}\right)$" src="form_8.png"/></p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>pixels with a value velow this threshold will be set to zero directly. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01769">1769</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvip.html#gab0e45b1b85498b4df9cbd1af432cbaea">FastLaplacePoints()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga083ddecc2c02b1aa32bd2dd9d6c69601"></a><!-- doxytag: member="qvip.h::SmoothFilter" ref="ga083ddecc2c02b1aa32bd2dd9d6c69601" args="(const QVImage&lt; uChar, 1 &gt; image, const uChar threshold=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVImage.html">QVImage</a>&lt;uChar, 1&gt; SmoothFilter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Applies a smooth filter on the input image. </p>
+<p>This function convolutes the image with the following filter:</p>
+<p><img class="formulaInl" alt="$K = \frac{1}{16}\left(\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 2 \\ 1 &amp; 2 &amp; 1 \end{array}\right)$" src="form_9.png"/></p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>pixels with a value velow this threshold will be set to zero directly. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01820">1820</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab0e45b1b85498b4df9cbd1af432cbaea"></a><!-- doxytag: member="qvip.h::FastLaplacePoints" ref="gab0e45b1b85498b4df9cbd1af432cbaea" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, const int threshold=40, const bool applyPreviousSmooth=true, const bool smoothResponseImage=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QPointF&gt; FastLaplacePoints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>threshold</em> = <code>40</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>applyPreviousSmooth</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>smoothResponseImage</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detects salient points in the Laplace response of an input image. </p>
+<p>This function uses <a class="el" href="group__qvip.html#ga0a73e3730368b307c874e53dd5af54c4">FastLaplaceFilter</a> and getLocalExtremaPixels to detect maximal pixels in the Laplace response image.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>threshold</em>&nbsp;</td><td>Ignore pixels in the Laplace response image with a value velow this threshold. Set it to a non-zero value to speed up the maximal detection. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>applyPreviousSmooth</em>&nbsp;</td><td>Apply a fast smooth on the input image using the function <a class="el" href="group__qvip.html#ga69cc8d72179389d9897aa9ac97d62c33">FastSmoothFilter</a> before obtaining the Laplace response image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>smoothResponseImage</em>&nbsp;</td><td>Apply a fast smooth on the Laplace response image before the maximal pixel detection. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvip_8cpp_source.html#l01876">1876</a> of file <a class="el" href="qvip_8cpp_source.html">qvip.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga782538a21f9e2ea0aef216b54cbf0570"></a><!-- doxytag: member="qvmser.h::getMSERContours" ref="ga782538a21f9e2ea0aef216b54cbf0570" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, const QList&lt; QVMSER &gt; &amp;MSERList, QList&lt; QVPolyline &gt; &amp;polylineMSERList)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getMSERContours </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>MSERList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVPolyline.html">QVPolyline</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>polylineMSERList</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains border contours for an MSER list, obtained with the function <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image to obtain border contours of MSER. Should be the same used with the function <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER</a>, if that was the one used to obtain MSER list. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>MSERList</em>&nbsp;</td><td>list of MSER. It generally will be obtain using the function <a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9">getMSER</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>polylineMSERList</em>&nbsp;</td><td>list of border contours, represented as <a class="el" href="classQVPolyline.html">QVPolyline</a> objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga9eed952744ef9fc9a8b003c524f680f9" title="This algorithm obtains MSER&#39;s - from an image.This is an implementation of the...">getMSER</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvmser_8cpp_source.html#l00028">28</a> of file <a class="el" href="qvmser_8cpp_source.html">qvmser.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9eed952744ef9fc9a8b003c524f680f9"></a><!-- doxytag: member="qvmser.h::getMSER" ref="ga9eed952744ef9fc9a8b003c524f680f9" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, QList&lt; QVMSER &gt; &amp;MSERList, const int delta, const int minArea, const int maxArea, const double diffAreaThreshold)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getMSER </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="classQVMSER.html">QVMSER</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>MSERList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>delta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>minArea</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>maxArea</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>diffAreaThreshold</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This algorithm obtains MSER's - from an image.This is an implementation of the MSER algorithm (see [<a href="#matas">Matas</a>]. It does clustering of the MSER found in each node, keeping just the one with lowest <em>q</em> value. Also, small or large MSER are cleaned up using minimal and maximal areas permitted. </p>
+<p>REFERENCES:</p>
+<ul>
+<li>
+<a class="anchor" id="matas"></a><em>Robust Wide Baseline Stereo from Maximally Stable Extremal Regions</em>. J. Matas et al. </li>
+<li>
+<a class="anchor" id="vedaldi"></a><em>An implementation of Multi-Dimensional Maximally Stable Extremal Regions</em>. Andrea Vedaldi. <dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>image to obtain MSER's from. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>MSERList</em>&nbsp;</td><td>list that will contain obtained MSER's. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delta</em>&nbsp;</td><td>Delta parameter from the [<a href="#matas">Matas</a>] paper. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minArea</em>&nbsp;</td><td>MSER of area lesser than this value are discarted. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maxArea</em>&nbsp;</td><td>MSER of area greater than this value are discarted. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>diffAreaThreshold</em>&nbsp;</td><td>MSER found to have a relative difference of areas lesser to that value are clustered together, and </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvip.html#ga782538a21f9e2ea0aef216b54cbf0570" title="Obtains border contours for an MSER list, obtained with the function getMSER.">getMSERContours</a> the algorithm just keeps the one with lesser <em>q</em> value, discarding the others. </dd></dl>
+</li>
+</ul>
+
+<p>Definition at line <a class="el" href="qvmser_8cpp_source.html#l00048">48</a> of file <a class="el" href="qvmser_8cpp_source.html">qvmser.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga301080d8b72707aaa755539efc7ab99a"></a><!-- doxytag: member="qvsiftfeature.h::saveSIFTDescriptorsInLoweSIFTFileFormat" ref="ga301080d8b72707aaa755539efc7ab99a" args="(const QString &amp;fileName, const QList&lt; QVSiftFeature &gt; &amp;features)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool saveSIFTDescriptorsInLoweSIFTFileFormat </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVSiftFeature.html">QVSiftFeature</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>features</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write a list of SIFT image features to a text file in Lowe's SIFT file format. </p>
+<p>This function writes a list of SIFT features and their associated descriptors in a .key file in the same output format used by the application <a href="http://www.cs.ubc.ca/~lowe/keypoints/">David Lowe's SIFT detector</a> to store the SIFT descriptors and the features detected on an input image.</p>
+<p>The following is an extract of the documentation for Lowe's implementation, which describes this output format:</p>
+<div class="fragment"><pre class="fragment">The file format starts with 2 integers giving the total number of
+keypoints and the length of the descriptor vector <span class="keywordflow">for each</span> keypoint
+(128). Then the location of each keypoint in the image is specified by
+4 floating point numbers giving subpixel row and column location,
+scale, and orientation (in radians from -PI to PI).  Obviously, these
+numbers are not invariant to viewpoint, but can be used in later
+stages of processing to check <span class="keywordflow">for</span> geometric consistency among matches.
+Finally, the invariant descriptor vector <span class="keywordflow">for</span> the keypoint is given as
+a list of 128 integers in range [0,255].  Keypoints from a <span class="keyword">new</span> image
+can be matched to those from previous images by simply looking <span class="keywordflow">for</span> the
+descriptor vector with closest Euclidean distance among all vectors
+from previous images.
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fileName</em>&nbsp;</td><td>Name for the descriptor's file. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>List of SIFT features. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvsiftfeature_8cpp_source.html#l00031">31</a> of file <a class="el" href="qvsiftfeature_8cpp_source.html">qvsiftfeature.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad9b6ff6909da8e12d4c231500673d128"></a><!-- doxytag: member="QVImage::operator==" ref="gad9b6ff6909da8e12d4c231500673d128" args="(const QVImage&lt; Type, Channels &gt; &amp;img) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type, int C&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classQVImage.html">QVImage</a>&lt; Type, C &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; Type, C &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>img</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Equality compare operator. </p>
+<p>Comparison operator for <a class="el" href="classQVImage.html">QVImage</a> objects.</p>
+<p>This operator will compare two images of same bit depth and channel number, and will return true if images are equal in all of these:</p>
+<ul>
+<li>dimensions (cols and rows).</li>
+<li>region of interest.</li>
+<li>content of region of interest. returning false otherwise.</li>
+</ul>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>img</em>&nbsp;</td><td>image to compare with this image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvimage_8h_source.html#l00985">985</a> of file <a class="el" href="qvimage_8h_source.html">qvimage.h</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

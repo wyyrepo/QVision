@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvblockprogramming/qvguiblocks/qvhistogram.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* -*- mode: C++ ; c-file-style: &quot;stroustrup&quot; -*- *****************************</span>
+<a name="l00002"></a>00002 <span class="comment"> * Qwt Widget Library</span>
+<a name="l00003"></a>00003 <span class="comment"> * Copyright (C) 1997   Josef Wilgen</span>
+<a name="l00004"></a>00004 <span class="comment"> * Copyright (C) 2002   Uwe Rathmann</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> * This library is free software; you can redistribute it and/or</span>
+<a name="l00007"></a>00007 <span class="comment"> * modify it under the terms of the Qwt License, Version 1.0</span>
+<a name="l00008"></a>00008 <span class="comment"> *****************************************************************************/</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;qstring.h&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;qpainter.h&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;qwt_plot.h&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;qwt_interval_data.h&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;qwt_painter.h&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;qwt_scale_map.h&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;qvhistogram.h&quot;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="keyword">class </span>QVHistogram::PrivateData
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021 <span class="keyword">public</span>:
+<a name="l00022"></a>00022     <span class="keywordtype">int</span> attributes;
+<a name="l00023"></a>00023     QwtIntervalData data;
+<a name="l00024"></a>00024     QColor color;
+<a name="l00025"></a>00025     <span class="keywordtype">double</span> reference;
+<a name="l00026"></a>00026 };
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 QVHistogram::QVHistogram(<span class="keyword">const</span> QwtText &amp;title):
+<a name="l00030"></a>00030     QwtPlotItem(title)
+<a name="l00031"></a>00031 {
+<a name="l00032"></a>00032     <a class="code" href="classQVGUI.html#a73873873373076c825c28a86d8b19f58" title="initialice the QVGUI object.">init</a>();
+<a name="l00033"></a>00033 }
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 QVHistogram::QVHistogram(<span class="keyword">const</span> QString &amp;title):
+<a name="l00036"></a>00036     QwtPlotItem(QwtText(title))
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038     <a class="code" href="classQVGUI.html#a73873873373076c825c28a86d8b19f58" title="initialice the QVGUI object.">init</a>();
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 QVHistogram::~QVHistogram()
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043     <span class="keyword">delete</span> d_data;
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="keywordtype">void</span> QVHistogram::init()
+<a name="l00047"></a>00047 {
+<a name="l00048"></a>00048     d_data = <span class="keyword">new</span> PrivateData();
+<a name="l00049"></a>00049     d_data-&gt;reference = 0.0;
+<a name="l00050"></a>00050     d_data-&gt;attributes = QVHistogram::Auto;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     setItemAttribute(QwtPlotItem::AutoScale, <span class="keyword">true</span>);
+<a name="l00053"></a>00053     setItemAttribute(QwtPlotItem::Legend, <span class="keyword">true</span>);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     setZ(20.0);
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> QVHistogram::setBaseline(<span class="keywordtype">double</span> reference)
+<a name="l00059"></a>00059 {
+<a name="l00060"></a>00060     <span class="keywordflow">if</span> ( d_data-&gt;reference != reference )
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         d_data-&gt;reference = reference;
+<a name="l00063"></a>00063         itemChanged();
+<a name="l00064"></a>00064     }
+<a name="l00065"></a>00065 }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keywordtype">double</span> QVHistogram::baseline()<span class="keyword"> const</span>
+<a name="l00068"></a>00068 <span class="keyword"></span>{
+<a name="l00069"></a>00069     <span class="keywordflow">return</span> d_data-&gt;reference;
+<a name="l00070"></a>00070 }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="keywordtype">void</span> QVHistogram::setData(<span class="keyword">const</span> QwtIntervalData &amp;data)
+<a name="l00073"></a>00073 {
+<a name="l00074"></a>00074     d_data-&gt;data = data;
+<a name="l00075"></a>00075     itemChanged();
+<a name="l00076"></a>00076 }
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="keyword">const</span> QwtIntervalData &amp;QVHistogram::data()<span class="keyword"> const</span>
+<a name="l00079"></a>00079 <span class="keyword"></span>{
+<a name="l00080"></a>00080     <span class="keywordflow">return</span> d_data-&gt;data;
+<a name="l00081"></a>00081 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="keywordtype">void</span> QVHistogram::setColor(<span class="keyword">const</span> QColor &amp;color)
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     <span class="keywordflow">if</span> ( d_data-&gt;color != color )
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087         d_data-&gt;color = color;
+<a name="l00088"></a>00088         itemChanged();
+<a name="l00089"></a>00089     }
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 QColor QVHistogram::color()<span class="keyword"> const</span>
+<a name="l00093"></a>00093 <span class="keyword"></span>{
+<a name="l00094"></a>00094     <span class="keywordflow">return</span> d_data-&gt;color;
+<a name="l00095"></a>00095 }
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 QwtDoubleRect QVHistogram::boundingRect()<span class="keyword"> const</span>
+<a name="l00098"></a>00098 <span class="keyword"></span>{
+<a name="l00099"></a>00099     QwtDoubleRect rect = d_data-&gt;data.boundingRect();
+<a name="l00100"></a>00100     <span class="keywordflow">if</span> ( !rect.isValid() ) 
+<a name="l00101"></a>00101         <span class="keywordflow">return</span> rect;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103     <span class="keywordflow">if</span> ( d_data-&gt;attributes &amp; Xfy ) 
+<a name="l00104"></a>00104     {
+<a name="l00105"></a>00105         rect = QwtDoubleRect( rect.y(), rect.x(), 
+<a name="l00106"></a>00106             rect.height(), rect.width() );
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108         <span class="keywordflow">if</span> ( rect.left() &gt; d_data-&gt;reference ) 
+<a name="l00109"></a>00109             rect.setLeft( d_data-&gt;reference );
+<a name="l00110"></a>00110         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( rect.right() &lt; d_data-&gt;reference ) 
+<a name="l00111"></a>00111             rect.setRight( d_data-&gt;reference );
+<a name="l00112"></a>00112     } 
+<a name="l00113"></a>00113     <span class="keywordflow">else</span> 
+<a name="l00114"></a>00114     {
+<a name="l00115"></a>00115         <span class="keywordflow">if</span> ( rect.bottom() &lt; d_data-&gt;reference ) 
+<a name="l00116"></a>00116             rect.setBottom( d_data-&gt;reference );
+<a name="l00117"></a>00117         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( rect.top() &gt; d_data-&gt;reference ) 
+<a name="l00118"></a>00118             rect.setTop( d_data-&gt;reference );
+<a name="l00119"></a>00119     }
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121     <span class="keywordflow">return</span> rect;
+<a name="l00122"></a>00122 }
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 <span class="keywordtype">int</span> QVHistogram::rtti()<span class="keyword"> const</span>
+<a name="l00126"></a>00126 <span class="keyword"></span>{
+<a name="l00127"></a>00127     <span class="keywordflow">return</span> QwtPlotItem::Rtti_PlotHistogram;
+<a name="l00128"></a>00128 }
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 <span class="keywordtype">void</span> QVHistogram::setHistogramAttribute(HistogramAttribute attribute, <span class="keywordtype">bool</span> on)
+<a name="l00131"></a>00131 {
+<a name="l00132"></a>00132     <span class="keywordflow">if</span> ( <span class="keywordtype">bool</span>(d_data-&gt;attributes &amp; attribute) == on )
+<a name="l00133"></a>00133         <span class="keywordflow">return</span>;
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135     <span class="keywordflow">if</span> ( on )
+<a name="l00136"></a>00136         d_data-&gt;attributes |= attribute;
+<a name="l00137"></a>00137     <span class="keywordflow">else</span>
+<a name="l00138"></a>00138         d_data-&gt;attributes &amp;= ~attribute;
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     itemChanged();
+<a name="l00141"></a>00141 }
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143 <span class="keywordtype">bool</span> QVHistogram::testHistogramAttribute(HistogramAttribute attribute)<span class="keyword"> const</span>
+<a name="l00144"></a>00144 <span class="keyword"></span>{
+<a name="l00145"></a>00145     <span class="keywordflow">return</span> d_data-&gt;attributes &amp; attribute;
+<a name="l00146"></a>00146 }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 <span class="keywordtype">void</span> QVHistogram::draw(QPainter *painter, <span class="keyword">const</span> QwtScaleMap &amp;xMap, 
+<a name="l00149"></a>00149     <span class="keyword">const</span> QwtScaleMap &amp;yMap, <span class="keyword">const</span> QRect &amp;)<span class="keyword"> const</span>
+<a name="l00150"></a>00150 <span class="keyword"></span>{
+<a name="l00151"></a>00151     <span class="keyword">const</span> QwtIntervalData &amp;iData = d_data-&gt;data;
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153     painter-&gt;setPen(QPen(d_data-&gt;color));
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155     <span class="keyword">const</span> <span class="keywordtype">int</span> x0 = xMap.transform(baseline());
+<a name="l00156"></a>00156     <span class="keyword">const</span> <span class="keywordtype">int</span> y0 = yMap.transform(baseline());
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158     <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; (int)iData.size(); i++ )
+<a name="l00159"></a>00159     {
+<a name="l00160"></a>00160         <span class="keywordflow">if</span> ( d_data-&gt;attributes &amp; QVHistogram::Xfy )
+<a name="l00161"></a>00161         {
+<a name="l00162"></a>00162             <span class="keyword">const</span> <span class="keywordtype">int</span> x2 = xMap.transform(iData.value(i));
+<a name="l00163"></a>00163             <span class="keywordflow">if</span> ( x2 == x0 )
+<a name="l00164"></a>00164                 <span class="keywordflow">continue</span>;
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166             <span class="keywordtype">int</span> y1 = yMap.transform( iData.interval(i).minValue());
+<a name="l00167"></a>00167             <span class="keywordtype">int</span> y2 = yMap.transform( iData.interval(i).maxValue());
+<a name="l00168"></a>00168             <span class="keywordflow">if</span> ( y1 &gt; y2 )
+<a name="l00169"></a>00169                 qSwap(y1, y2);
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171             <span class="keywordflow">if</span> ( i &lt; (<span class="keywordtype">int</span>)iData.size() - 2 )
+<a name="l00172"></a>00172             {
+<a name="l00173"></a>00173                 <span class="keyword">const</span> <span class="keywordtype">int</span> yy1 = yMap.transform(iData.interval(i+1).minValue());
+<a name="l00174"></a>00174                 <span class="keyword">const</span> <span class="keywordtype">int</span> yy2 = yMap.transform(iData.interval(i+1).maxValue());
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176                 <span class="keywordflow">if</span> ( y2 == qwtMin(yy1, yy2) )
+<a name="l00177"></a>00177                 {
+<a name="l00178"></a>00178                     <span class="keyword">const</span> <span class="keywordtype">int</span> xx2 = xMap.transform(
+<a name="l00179"></a>00179                         iData.interval(i+1).minValue());
+<a name="l00180"></a>00180                     <span class="keywordflow">if</span> ( xx2 != x0 &amp;&amp; ( (xx2 &lt; x0 &amp;&amp; x2 &lt; x0) ||
+<a name="l00181"></a>00181                                           (xx2 &gt; x0 &amp;&amp; x2 &gt; x0) ) )
+<a name="l00182"></a>00182                     {
+<a name="l00183"></a>00183                        <span class="comment">// One pixel distance between neighboured bars</span>
+<a name="l00184"></a>00184                        y2++;
+<a name="l00185"></a>00185                     }
+<a name="l00186"></a>00186                 }
+<a name="l00187"></a>00187             }
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189             drawBar(painter, Qt::Horizontal,
+<a name="l00190"></a>00190                 QRect(x0, y1, x2 - x0, y2 - y1));
+<a name="l00191"></a>00191         }
+<a name="l00192"></a>00192         <span class="keywordflow">else</span>
+<a name="l00193"></a>00193         {
+<a name="l00194"></a>00194             <span class="keyword">const</span> <span class="keywordtype">int</span> y2 = yMap.transform(iData.value(i));
+<a name="l00195"></a>00195             <span class="keywordflow">if</span> ( y2 == y0 )
+<a name="l00196"></a>00196                 <span class="keywordflow">continue</span>;
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198             <span class="keywordtype">int</span> x1 = xMap.transform(iData.interval(i).minValue());
+<a name="l00199"></a>00199             <span class="keywordtype">int</span> x2 = xMap.transform(iData.interval(i).maxValue());
+<a name="l00200"></a>00200             <span class="keywordflow">if</span> ( x1 &gt; x2 )
+<a name="l00201"></a>00201                 qSwap(x1, x2);
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203             <span class="keywordflow">if</span> ( i &lt; (<span class="keywordtype">int</span>)iData.size() - 2 )
+<a name="l00204"></a>00204             {
+<a name="l00205"></a>00205                 <span class="keyword">const</span> <span class="keywordtype">int</span> xx1 = xMap.transform(iData.interval(i+1).minValue());
+<a name="l00206"></a>00206                 <span class="keyword">const</span> <span class="keywordtype">int</span> xx2 = xMap.transform(iData.interval(i+1).maxValue());
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208                 <span class="keywordflow">if</span> ( x2 == qwtMin(xx1, xx2) )
+<a name="l00209"></a>00209                 {
+<a name="l00210"></a>00210                     <span class="keyword">const</span> <span class="keywordtype">int</span> yy2 = yMap.transform(iData.value(i+1));
+<a name="l00211"></a>00211                     <span class="keywordflow">if</span> ( yy2 != y0 &amp;&amp; ( (yy2 &lt; y0 &amp;&amp; y2 &lt; y0) ||
+<a name="l00212"></a>00212                                     (yy2 &gt; y0 &amp;&amp; y2 &gt; y0) ) )
+<a name="l00213"></a>00213                     {
+<a name="l00214"></a>00214                         <span class="comment">// One pixel distance between neighboured bars</span>
+<a name="l00215"></a>00215                         x2--;
+<a name="l00216"></a>00216                     }
+<a name="l00217"></a>00217                 }
+<a name="l00218"></a>00218             }
+<a name="l00219"></a>00219             drawBar(painter, Qt::Vertical,
+<a name="l00220"></a>00220                 QRect(x1, y0, x2 - x1, y2 - y0) );
+<a name="l00221"></a>00221         }
+<a name="l00222"></a>00222     }
+<a name="l00223"></a>00223 }
+<a name="l00224"></a>00224 
+<a name="l00225"></a>00225 <span class="keywordtype">void</span> QVHistogram::drawBar(QPainter *painter,
+<a name="l00226"></a>00226    Qt::Orientation, <span class="keyword">const</span> QRect&amp; rect)<span class="keyword"> const</span>
+<a name="l00227"></a>00227 <span class="keyword"></span>{
+<a name="l00228"></a>00228    painter-&gt;save();
+<a name="l00229"></a>00229 
+<a name="l00230"></a>00230    <span class="keyword">const</span> QColor color(painter-&gt;pen().color());
+<a name="l00231"></a>00231 <span class="preprocessor">#if QT_VERSION &gt;= 0x040000</span>
+<a name="l00232"></a>00232 <span class="preprocessor"></span>   <span class="keyword">const</span> QRect r = rect.normalized();
+<a name="l00233"></a>00233 <span class="preprocessor">#else</span>
+<a name="l00234"></a>00234 <span class="preprocessor"></span>   <span class="keyword">const</span> QRect r = rect.normalize();
+<a name="l00235"></a>00235 <span class="preprocessor">#endif</span>
+<a name="l00236"></a>00236 <span class="preprocessor"></span>
+<a name="l00237"></a>00237    <span class="keyword">const</span> <span class="keywordtype">int</span> factor = 125;
+<a name="l00238"></a>00238    <span class="keyword">const</span> QColor light(color.light(factor));
+<a name="l00239"></a>00239    <span class="keyword">const</span> QColor dark(color.dark(factor));
+<a name="l00240"></a>00240 
+<a name="l00241"></a>00241    painter-&gt;setBrush(color);
+<a name="l00242"></a>00242    painter-&gt;setPen(Qt::NoPen);
+<a name="l00243"></a>00243    QwtPainter::drawRect(painter, r.x() + 1, r.y() + 1,
+<a name="l00244"></a>00244       r.width() - 2, r.height() - 2);
+<a name="l00245"></a>00245    painter-&gt;setBrush(Qt::NoBrush);
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247    painter-&gt;setPen(QPen(light, 2));
+<a name="l00248"></a>00248 <span class="preprocessor">#if QT_VERSION &gt;= 0x040000</span>
+<a name="l00249"></a>00249 <span class="preprocessor"></span>   QwtPainter::drawLine(painter,
+<a name="l00250"></a>00250       r.left() + 1, r.top() + 2, r.right() + 1, r.top() + 2);
+<a name="l00251"></a>00251 <span class="preprocessor">#else</span>
+<a name="l00252"></a>00252 <span class="preprocessor"></span>   QwtPainter::drawLine(painter,
+<a name="l00253"></a>00253       r.left(), r.top() + 2, r.right() + 1, r.top() + 2);
+<a name="l00254"></a>00254 <span class="preprocessor">#endif</span>
+<a name="l00255"></a>00255 <span class="preprocessor"></span>
+<a name="l00256"></a>00256    painter-&gt;setPen(QPen(dark, 2));
+<a name="l00257"></a>00257 <span class="preprocessor">#if QT_VERSION &gt;= 0x040000</span>
+<a name="l00258"></a>00258 <span class="preprocessor"></span>   QwtPainter::drawLine(painter, 
+<a name="l00259"></a>00259       r.left() + 1, r.bottom(), r.right() + 1, r.bottom());
+<a name="l00260"></a>00260 <span class="preprocessor">#else</span>
+<a name="l00261"></a>00261 <span class="preprocessor"></span>   QwtPainter::drawLine(painter, 
+<a name="l00262"></a>00262       r.left(), r.bottom(), r.right() + 1, r.bottom());
+<a name="l00263"></a>00263 <span class="preprocessor">#endif</span>
+<a name="l00264"></a>00264 <span class="preprocessor"></span>
+<a name="l00265"></a>00265    painter-&gt;setPen(QPen(light, 1));
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267 <span class="preprocessor">#if QT_VERSION &gt;= 0x040000</span>
+<a name="l00268"></a>00268 <span class="preprocessor"></span>   QwtPainter::drawLine(painter, 
+<a name="l00269"></a>00269       r.left(), r.top() + 1, r.left(), r.bottom());
+<a name="l00270"></a>00270    QwtPainter::drawLine(painter,
+<a name="l00271"></a>00271       r.left() + 1, r.top() + 2, r.left() + 1, r.bottom() - 1);
+<a name="l00272"></a>00272 <span class="preprocessor">#else</span>
+<a name="l00273"></a>00273 <span class="preprocessor"></span>   QwtPainter::drawLine(painter, 
+<a name="l00274"></a>00274       r.left(), r.top() + 1, r.left(), r.bottom() + 1);
+<a name="l00275"></a>00275    QwtPainter::drawLine(painter,
+<a name="l00276"></a>00276       r.left() + 1, r.top() + 2, r.left() + 1, r.bottom());
+<a name="l00277"></a>00277 <span class="preprocessor">#endif</span>
+<a name="l00278"></a>00278 <span class="preprocessor"></span>
+<a name="l00279"></a>00279    painter-&gt;setPen(QPen(dark, 1));
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281 <span class="preprocessor">#if QT_VERSION &gt;= 0x040000</span>
+<a name="l00282"></a>00282 <span class="preprocessor"></span>   QwtPainter::drawLine(painter, 
+<a name="l00283"></a>00283       r.right() + 1, r.top() + 1, r.right() + 1, r.bottom());
+<a name="l00284"></a>00284    QwtPainter::drawLine(painter, 
+<a name="l00285"></a>00285       r.right(), r.top() + 2, r.right(), r.bottom() - 1);
+<a name="l00286"></a>00286 <span class="preprocessor">#else</span>
+<a name="l00287"></a>00287 <span class="preprocessor"></span>   QwtPainter::drawLine(painter, 
+<a name="l00288"></a>00288       r.right() + 1, r.top() + 1, r.right() + 1, r.bottom() + 1);
+<a name="l00289"></a>00289    QwtPainter::drawLine(painter, 
+<a name="l00290"></a>00290       r.right(), r.top() + 2, r.right(), r.bottom());
+<a name="l00291"></a>00291 <span class="preprocessor">#endif</span>
+<a name="l00292"></a>00292 <span class="preprocessor"></span>
+<a name="l00293"></a>00293    painter-&gt;restore();
+<a name="l00294"></a>00294 }
+<a name="l00295"></a>00295 <span class="preprocessor">#endif</span>
+<a name="l00296"></a>00296 <span class="preprocessor"></span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

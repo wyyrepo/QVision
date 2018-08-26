@@ -1,0 +1,13 @@
+Performing 5 tests per measure.
+GSL_CHOLESKY
+5x5: Average total time: 0 ms. 
+50x50: Average total time: 0 ms. 
+100x100: Average total time: 0.8 ms. 
+500x500: Average total time: 42.8 ms. 
+1000x1000: Average total time: 413.6 ms. 
+LAPACK_CHOLESKY_DPOTRF
+5x5: Average total time: 0.2 ms. 
+50x50: Average total time: 0.2 ms. 
+100x100: Average total time: 1 ms. 
+500x500: Average total time: 29 ms. 
+1000x1000: Average total time: 186.8 ms. 

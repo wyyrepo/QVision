@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVKLTTracker Class Reference<br/>
+<small>
+[<a class="el" href="group__qvgpukltflow.html">GPU-KLT+FLOW wrapper functions and classes</a>]</small>
+</h1><!-- doxytag: class="QVKLTTracker" -->
+<p>Wrapper class to perform image feature tracking with the GPU-KLT library.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvklttracker_8h_source.html">QVKLTTracker</a>&gt;</code></p>
+
+<p><a href="classQVKLTTracker-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKLTTracker.html#af77f1ffb76ad088fac619b304e93bfdc">QVKLTTracker</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor Do nothing.  <a href="#af77f1ffb76ad088fac619b304e93bfdc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKLTTracker.html#a4999f87522dc7fe65ce4f2b6a890a06b">QVKLTTracker</a> (int width, int height, bool trackWithGain=true, int featuresWidth=64, int featuresHeight=64, int nIterations=10, int nLevels=4, int levelSkip=1, int windowWidth=7, float trackBorderMargin=20.0f, float detectBorderMargin=20.0f, float convergenceThreshold=0.1f, float SSD_Threshold=5000.0f, int minDistance=7, float minCornerness=50.0f)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocation constructor.  <a href="#a4999f87522dc7fe65ce4f2b6a890a06b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKLTTracker.html#ae2de72693116f879c6c07d017e719408">~QVKLTTracker</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deallocate the tracker from the GPU.  <a href="#ae2de72693116f879c6c07d017e719408"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKLTTracker.html#a6047e10322f0d4ed95ad61a787fdfebb">detect</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; &amp;features)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detect all features in image from scratch.  <a href="#a6047e10322f0d4ed95ad61a787fdfebb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKLTTracker.html#affe245d7de2e04d06d4bca4439d80009">redetect</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; &amp;features)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detect new features while respecting old ones.  <a href="#affe245d7de2e04d06d4bca4439d80009"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVKLTTracker.html#a03abf973b520dbd9ce624c5977b973ba">track</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; &amp;features)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Track features in the hash.  <a href="#a03abf973b520dbd9ce624c5977b973ba"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Wrapper class to perform image feature tracking with the GPU-KLT library. </p>
+
+<p>Definition at line <a class="el" href="qvklttracker_8h_source.html#l00077">77</a> of file <a class="el" href="qvklttracker_8h_source.html">qvklttracker.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af77f1ffb76ad088fac619b304e93bfdc"></a><!-- doxytag: member="QVKLTTracker::QVKLTTracker" ref="af77f1ffb76ad088fac619b304e93bfdc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVKLTTracker::QVKLTTracker </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor Do nothing. </p>
+
+<p>Definition at line <a class="el" href="qvklttracker_8h_source.html#l00084">84</a> of file <a class="el" href="qvklttracker_8h_source.html">qvklttracker.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4999f87522dc7fe65ce4f2b6a890a06b"></a><!-- doxytag: member="QVKLTTracker::QVKLTTracker" ref="a4999f87522dc7fe65ce4f2b6a890a06b" args="(int width, int height, bool trackWithGain=true, int featuresWidth=64, int featuresHeight=64, int nIterations=10, int nLevels=4, int levelSkip=1, int windowWidth=7, float trackBorderMargin=20.0f, float detectBorderMargin=20.0f, float convergenceThreshold=0.1f, float SSD_Threshold=5000.0f, int minDistance=7, float minCornerness=50.0f)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVKLTTracker::QVKLTTracker </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>trackWithGain</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>featuresWidth</em> = <code>64</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>featuresHeight</em> = <code>64</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nIterations</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nLevels</em> = <code>4</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>levelSkip</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>windowWidth</em> = <code>7</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>trackBorderMargin</em> = <code>20.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>detectBorderMargin</em> = <code>20.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>convergenceThreshold</em> = <code>0.1f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>SSD_Threshold</em> = <code>5000.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>minDistance</em> = <code>7</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>minCornerness</em> = <code>50.0f</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allocation constructor. </p>
+<p>This method initializes and configures a new tracker with parameters below. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>Number of cols of the images. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>height</em>&nbsp;</td><td>Number of rows of the images. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>trackWithGain</em>&nbsp;</td><td>Wether the tracker uses the gain in the tracking method or not. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>featuresWidth</em>&nbsp;</td><td>featuresWidth*featuresHeight gives the maximum number of features to track. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>featuresHeight</em>&nbsp;</td><td>featuresWidth*featuresHeight gives the maximum number of features to track. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nIterations</em>&nbsp;</td><td>Number of iterations. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nLevels</em>&nbsp;</td><td>Number of pyramid levels to skip. Reasonable values are 1 (all levels) and nLevels-1 (2 levels only) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>levelSkip</em>&nbsp;</td><td>Number of pyramid levels to skip. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>windowWidth</em>&nbsp;</td><td>Size of KLT window. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>trackBorderMargin</em>&nbsp;</td><td>Size of the border image margin when tracking. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>detectBorderMargin</em>&nbsp;</td><td>Size of the border image margin when redetecting. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>convergenceThreshold</em>&nbsp;</td><td>Convergence threshold for KLT. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>SSD_Threshold</em>&nbsp;</td><td>SSD threshold for KLT. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minDistance</em>&nbsp;</td><td>Minimum distance among tracked features. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minConnerness</em>&nbsp;</td><td>Minimum degree of cornerness for detecting new features. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvklttracker_8cpp_source.html#l00027">27</a> of file <a class="el" href="qvklttracker_8cpp_source.html">qvklttracker.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2de72693116f879c6c07d017e719408"></a><!-- doxytag: member="QVKLTTracker::~QVKLTTracker" ref="ae2de72693116f879c6c07d017e719408" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVKLTTracker::~QVKLTTracker </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deallocate the tracker from the GPU. </p>
+
+<p>Definition at line <a class="el" href="qvklttracker_8cpp_source.html#l00058">58</a> of file <a class="el" href="qvklttracker_8cpp_source.html">qvklttracker.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a6047e10322f0d4ed95ad61a787fdfebb"></a><!-- doxytag: member="QVKLTTracker::detect" ref="a6047e10322f0d4ed95ad61a787fdfebb" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, QHash&lt; int, QVKLTTrackerFeature &gt; &amp;features)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVKLTTracker::detect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>features</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detect all features in image from scratch. </p>
+<p>This method builds a hash with freshly detected features. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>Pointer to created hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvklttracker_8cpp_source.html#l00100">100</a> of file <a class="el" href="qvklttracker_8cpp_source.html">qvklttracker.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affe245d7de2e04d06d4bca4439d80009"></a><!-- doxytag: member="QVKLTTracker::redetect" ref="affe245d7de2e04d06d4bca4439d80009" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, QHash&lt; int, QVKLTTrackerFeature &gt; &amp;features)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVKLTTracker::redetect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>features</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detect new features while respecting old ones. </p>
+<p>This method updates the feature hash with new features while respecting old ones. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>Pointer to hash that will be updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvklttracker_8cpp_source.html#l00110">110</a> of file <a class="el" href="qvklttracker_8cpp_source.html">qvklttracker.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a03abf973b520dbd9ce624c5977b973ba"></a><!-- doxytag: member="QVKLTTracker::track" ref="a03abf973b520dbd9ce624c5977b973ba" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, QHash&lt; int, QVKLTTrackerFeature &gt; &amp;features)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QVKLTTracker::track </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QHash&lt; int, <a class="el" href="classQVKLTTrackerFeature.html">QVKLTTrackerFeature</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>features</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Track features in the hash. </p>
+<p>This method updates the hash with the new positions of the features, deleting the lost ones. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>Input image </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>features</em>&nbsp;</td><td>Pointer to hash that will be updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvklttracker_8cpp_source.html#l00120">120</a> of file <a class="el" href="qvklttracker_8cpp_source.html">qvklttracker.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvgpukltflow/<a class="el" href="qvklttracker_8h_source.html">qvklttracker.h</a></li>
+<li>src/qvgpukltflow/<a class="el" href="qvklttracker_8cpp_source.html">qvklttracker.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

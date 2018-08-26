@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Statistics<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1>
+<p>Statistics, regression and model fitting related functionality.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVRANSAC.html">QVRANSAC&lt; Element, Model &gt;</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of <a href="http://en.wikipedia.org/wiki/RANSAC">RANSAC</a>, a robust statistical model fitting algorithm.  <a href="classQVRANSAC.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVPROSAC.html">QVPROSAC&lt; Element, Model &gt;</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementation of PROSAC, an extension to RANSAC (see <a class="el" href="classQVRANSAC.html">QVRANSAC</a>).  <a href="classQVPROSAC.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvstatistics.html#gaa0760c428edf4f7d5e6aeb5b0449f4c2">BhattacharyyaDistance</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;m1, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;S1, const <a class="el" href="classQVVector.html">QVVector</a> &amp;m2, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;S2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the <a href="http://en.wikipedia.org/wiki/Bhattacharyya_distance">Bhattacharyya distance</a> of two gaussian distributions.  <a href="#gaa0760c428edf4f7d5e6aeb5b0449f4c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvstatistics.html#gae616e493b5a83636ca91f8397ad899e7">qvLinearRegularizedRegression</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;A, const <a class="el" href="classQVVector.html">QVVector</a> &amp;b, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;Gamma=<a class="el" href="classQVMatrix.html">QVMatrix</a>())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates linear regression using <a href="http://en.wikipedia.org/wiki/Tikhonov_regularization">Tikhonov regularization</a>  <a href="#gae616e493b5a83636ca91f8397ad899e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvstatistics.html#ga65e4922054eb47e845984ea723d2066e">randomNormalValue</a> (const double mean, const double variance)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generate a normally distributed random number.  <a href="#ga65e4922054eb47e845984ea723d2066e"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Statistics, regression and model fitting related functionality. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gaa0760c428edf4f7d5e6aeb5b0449f4c2"></a><!-- doxytag: member="qvstatistics.h::BhattacharyyaDistance" ref="gaa0760c428edf4f7d5e6aeb5b0449f4c2" args="(const QVVector &amp;m1, const QVMatrix &amp;S1, const QVVector &amp;m2, const QVMatrix &amp;S2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double BhattacharyyaDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>m1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>S1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>m2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>S2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the <a href="http://en.wikipedia.org/wiki/Bhattacharyya_distance">Bhattacharyya distance</a> of two gaussian distributions. </p>
+<p>Obtains the Bhattacharyya distance between two Gaussian distributions, given by their mean vectors and covariance matrices.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>GSL compatibility must be enabled to use this function. </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>m1</em>&nbsp;</td><td>first mean. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>S1</em>&nbsp;</td><td>first covariance matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>m2</em>&nbsp;</td><td>second mean. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>S2</em>&nbsp;</td><td>second covariance matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>computed distance value </dd></dl>
+
+<p>Definition at line <a class="el" href="qvstatistics_8cpp_source.html#l00028">28</a> of file <a class="el" href="qvstatistics_8cpp_source.html">qvstatistics.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae616e493b5a83636ca91f8397ad899e7"></a><!-- doxytag: member="qvstatistics.h::qvLinearRegularizedRegression" ref="gae616e493b5a83636ca91f8397ad899e7" args="(const QVMatrix &amp;A, const QVVector &amp;b, const QVMatrix &amp;Gamma=QVMatrix())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> qvLinearRegularizedRegression </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>Gamma</em> = <code><a class="el" href="classQVMatrix.html">QVMatrix</a>()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estimates linear regression using <a href="http://en.wikipedia.org/wiki/Tikhonov_regularization">Tikhonov regularization</a> </p>
+<p>This function solves an overdetermined system of linear equations, given as:</p>
+<p><img class="formulaInl" alt="$ A\mathbf{x}=\mathbf{b} $" src="form_210.png"/></p>
+<p>avoiding ill conditioned cases by minimizing the following regularized expression:</p>
+<p><img class="formulaInl" alt="$ \|A\mathbf{x}-\mathbf{b}\|^2+ \|\Gamma \mathbf{x}\|^2 $" src="form_211.png"/></p>
+<p>Where the <img class="formulaInl" alt="$ \Gamma $" src="form_212.png"/> matrix is called the <em>Tikhonov matrix</em>. In many cases, it is convenient to use the identity matrix as the <img class="formulaInl" alt="$ \Gamma $" src="form_212.png"/> matrix.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>GSL compatibility must be enabled to use this function. </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Coefficients matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>Objective values vector. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Gamma</em>&nbsp;</td><td>Tikhonov Matrix. If no value is provided, an identity matrix with adequate dimensions will be used in the regularized expression. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The <img class="formulaInl" alt="$ \mathbf{x} $" src="form_213.png"/> vector which minimizes the regularized expression. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvstatistics_8cpp_source.html#l00037">37</a> of file <a class="el" href="qvstatistics_8cpp_source.html">qvstatistics.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga65e4922054eb47e845984ea723d2066e"></a><!-- doxytag: member="qvstatistics.h::randomNormalValue" ref="ga65e4922054eb47e845984ea723d2066e" args="(const double mean, const double variance)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double randomNormalValue </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>mean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>variance</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generate a normally distributed random number. </p>
+<p>This function uses the <a href="http://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform">Box-Muller</a> transform to generate independent samples of a normal distribution, provided its mean and variance parameters.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mean</em>&nbsp;</td><td>Mean of the normal distribution. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>variance</em>&nbsp;</td><td>Variance of the normal distribution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvstatistics_8cpp_source.html#l00044">44</a> of file <a class="el" href="qvstatistics_8cpp_source.html">qvstatistics.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

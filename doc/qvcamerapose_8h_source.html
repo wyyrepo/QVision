@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvcamerapose.h</h1><a href="qvcamerapose_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVCAMERAPOSE_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVCAMERAPOSE_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include&lt;QV3DPointF&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include&lt;QVEuclideanMapping3&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00042"></a><a class="code" href="classQVCameraPose.html">00042</a> <span class="keyword">class </span><a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a>
+<a name="l00043"></a>00043         {
+<a name="l00044"></a>00044         <span class="keyword">private</span>:
+<a name="l00045"></a>00045                 <a class="code" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a> orientation;
+<a name="l00046"></a>00046                 <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> center;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048         <span class="keyword">public</span>:
+<a name="l00055"></a><a class="code" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11">00055</a>                 <a class="code" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11" title="Default constructor.">QVCameraPose</a>(<span class="keyword">const</span> <a class="code" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a> q = <a class="code" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a>(), <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> &amp;centre = <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a>()):   orientation(q), center(centre)
+<a name="l00056"></a>00056                         {
+<a name="l00057"></a>00057                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00058"></a>00058                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00059"></a>00059                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00060"></a>00060                         }
+<a name="l00061"></a>00061 
+<a name="l00068"></a><a class="code" href="classQVCameraPose.html#af45cb6490b392a17ed9c90dd66a26724">00068</a>                 <a class="code" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11" title="Default constructor.">QVCameraPose</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;v):        orientation(v.mid(0,4)), center(v.mid(4,3))
+<a name="l00069"></a>00069                         {
+<a name="l00070"></a>00070                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00071"></a>00071                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00072"></a>00072                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00073"></a>00073                         }
+<a name="l00074"></a>00074 
+<a name="l00082"></a><a class="code" href="classQVCameraPose.html#a1eebe7f1f861ff083393c82885fb8697">00082</a>                 <a class="code" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11" title="Default constructor.">QVCameraPose</a>(<span class="keyword">const</span> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a> e3):
+<a name="l00083"></a>00083                                 orientation(e3.getRotation()),
+<a name="l00084"></a>00084                                 center(e3.getRotation().<a class="code" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1" title="Provides the inverse of the camera pose.">inverse</a>().rotate( e3.getTranslation() ) * (-1.0))
+<a name="l00085"></a>00085                         {
+<a name="l00086"></a>00086                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00087"></a>00087                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00088"></a>00088                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00089"></a>00089                         }
+<a name="l00090"></a>00090 
+<a name="l00095"></a><a class="code" href="classQVCameraPose.html#a97fa6dbe48643f88c997c72feae108ea">00095</a>                 <a class="code" href="classQVCameraPose.html#a97fa6dbe48643f88c997c72feae108ea" title="Convert to 3D euclidean mapping operator.">operator QVEuclideanMapping3 </a>()<span class="keyword"> const</span>
+<a name="l00096"></a>00096 <span class="keyword">                        </span>{
+<a name="l00097"></a>00097                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00098"></a>00098                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00099"></a>00099                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101                         <span class="keywordflow">return</span> <a class="code" href="classQVEuclideanMapping3.html" title="Class modeling rotation-translation transformations for 3D points.">QVEuclideanMapping3</a>(orientation, orientation.<a class="code" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c" title="Direct vector rotation.">rotate</a>(center) * (-1.0));           
+<a name="l00102"></a>00102                         }
+<a name="l00103"></a>00103 
+<a name="l00109"></a><a class="code" href="classQVCameraPose.html#a016dd44c3f2517e242feed030ae05651">00109</a>                 <a class="code" href="classQVCameraPose.html#a016dd44c3f2517e242feed030ae05651" title="Convert to compact vector representation operator.">operator QVVector </a>()<span class="keyword"> const</span>
+<a name="l00110"></a>00110 <span class="keyword">                        </span>{
+<a name="l00111"></a>00111                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00112"></a>00112                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00113"></a>00113                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115                         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> result(7);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)
+<a name="l00118"></a>00118                                 result[j] = orientation[j];
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 3; j++)
+<a name="l00121"></a>00121                                 result[4+j] = center[j];
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123                         <span class="keywordflow">return</span> result;
+<a name="l00124"></a>00124                         }
+<a name="l00125"></a>00125 
+<a name="l00129"></a><a class="code" href="classQVCameraPose.html#a2ab3d874b18ae3b7696388007a096d32">00129</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVCameraPose.html#a2ab3d874b18ae3b7696388007a096d32" title="Detect NaN values in the components of the camera pose.">containsNaN</a>()<span class="keyword">      const   </span>{ <span class="keywordflow">return</span> orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() or center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>(); }
+<a name="l00130"></a>00130 
+<a name="l00134"></a><a class="code" href="classQVCameraPose.html#a92d6b001739c6c5fa2742c7722d8a042">00134</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVCameraPose.html#a92d6b001739c6c5fa2742c7722d8a042" title="Compare equal operator.">operator==</a>(<span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;other)<span class="keyword"> const</span>
+<a name="l00135"></a>00135 <span class="keyword">                        </span>{
+<a name="l00136"></a>00136                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00137"></a>00137                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00138"></a>00138                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140                         <span class="keywordflow">return</span> (orientation == other.orientation) and (center == other.center);
+<a name="l00141"></a>00141                         };
+<a name="l00142"></a>00142 
+<a name="l00146"></a><a class="code" href="classQVCameraPose.html#a49c48c2f18fa0f7da4df1ef3e9adf572">00146</a>                 <span class="keywordtype">bool</span> <a class="code" href="classQVCameraPose.html#a49c48c2f18fa0f7da4df1ef3e9adf572" title="Compare not equal operator.">operator!=</a>(<span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;other)<span class="keyword"> const</span>
+<a name="l00147"></a>00147 <span class="keyword">                        </span>{
+<a name="l00148"></a>00148                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00149"></a>00149                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00150"></a>00150                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152                         <span class="keywordflow">return</span> (orientation != other.orientation) or (center != other.center);
+<a name="l00153"></a>00153                         };
+<a name="l00154"></a>00154 
+<a name="l00158"></a><a class="code" href="classQVCameraPose.html#a8643ae492e7a6f66679bf0cc2fc911c7">00158</a>                 <a class="code" href="classQVQuaternion.html" title="Implementation of quaternions.">QVQuaternion</a> <a class="code" href="classQVCameraPose.html#a8643ae492e7a6f66679bf0cc2fc911c7" title="Orientation of the camera pose.">getOrientation</a>()<span class="keyword">   const   </span>{ <span class="keywordflow">return</span> orientation; }
+<a name="l00159"></a>00159 
+<a name="l00163"></a><a class="code" href="classQVCameraPose.html#a57101f0fd271736866f970c1635dd7c1">00163</a>                 <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="classQVCameraPose.html#a57101f0fd271736866f970c1635dd7c1" title="Center of the camera pose.">getCenter</a>()<span class="keyword">          const   </span>{ <span class="keywordflow">return</span> center; }
+<a name="l00164"></a>00164 
+<a name="l00169"></a><a class="code" href="classQVCameraPose.html#a618a5bf0fe0bb41ba717eef051198a4b">00169</a>                 QPointF <a class="code" href="classQVCameraPose.html#a618a5bf0fe0bb41ba717eef051198a4b" title="Projects a 3D point at the image plane for the camera pose.">project</a>(<span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> &amp;p3D)<span class="keyword">          const</span>
+<a name="l00170"></a>00170 <span class="keyword">                        </span>{
+<a name="l00171"></a>00171                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00172"></a>00172                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00173"></a>00173                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175                         <span class="keywordflow">return</span> orientation.<a class="code" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c" title="Direct vector rotation.">rotate</a>(p3D - center);
+<a name="l00176"></a>00176                         }
+<a name="l00177"></a>00177 
+<a name="l00182"></a><a class="code" href="classQVCameraPose.html#a024c8a5a0b5506debb6ae08f9f3ab57c">00182</a>                 <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> <a class="code" href="classQVCameraPose.html#a024c8a5a0b5506debb6ae08f9f3ab57c" title="Obtains the coordinates for a 3D point, regarding the camera pose coordinate system...">toCameraReferenceCoordinates</a>(<span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> &amp;p3D)<span class="keyword">          const</span>
+<a name="l00183"></a>00183 <span class="keyword">                        </span>{
+<a name="l00184"></a>00184                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00185"></a>00185                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00186"></a>00186                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188                         <span class="keywordflow">return</span> orientation.<a class="code" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c" title="Direct vector rotation.">rotate</a>(p3D - center);
+<a name="l00189"></a>00189                         }
+<a name="l00190"></a>00190 
+<a name="l00195"></a><a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b">00195</a>                 <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> <a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>()<span class="keyword"> const</span>
+<a name="l00196"></a>00196 <span class="keyword">                        </span>{
+<a name="l00197"></a>00197                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00198"></a>00198                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00199"></a>00199                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201                         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> Rt = <a class="code" href="classQVMatrix.html#a6eb15980d17c17d4a55ab09a77bcd715" title="Creates an identity matrix.">QVMatrix::identity</a>(4);
+<a name="l00202"></a>00202                         <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> R = orientation.<a class="code" href="classQVQuaternion.html#a00c343b8018cfc98536b13ff31341751" title="Gets the rotation matrix corresponding to the Quaternion.">toRotationMatrix</a>();
+<a name="l00203"></a>00203                         <span class="keyword">const</span> <a class="code" href="classQV3DPointF.html" title="3D point representation">QV3DPointF</a> t = orientation.<a class="code" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c" title="Direct vector rotation.">rotate</a>(-center);
+<a name="l00204"></a>00204                         
+<a name="l00205"></a>00205                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)
+<a name="l00206"></a>00206                                 {
+<a name="l00207"></a>00207                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 3; j++)
+<a name="l00208"></a>00208                                         Rt(i,j) = R(i,j);
+<a name="l00209"></a>00209                                 Rt(i,3) = t[i];
+<a name="l00210"></a>00210                                 }
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212                         <span class="keywordflow">return</span> Rt;
+<a name="l00213"></a>00213                         }
+<a name="l00214"></a>00214 
+<a name="l00219"></a><a class="code" href="classQVCameraPose.html#a3e234c53db2417a35ebc1f2f94baf2b5">00219</a>                 <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> <a class="code" href="classQVCameraPose.html#a3e234c53db2417a35ebc1f2f94baf2b5" title="Composes two camera poses.">operator*</a>(<span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;other)<span class="keyword"> const         </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add" title="Composes two camera poses.">compose</a>(other);        };
+<a name="l00220"></a>00220 
+<a name="l00223"></a><a class="code" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add">00223</a>                 <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> <a class="code" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add" title="Composes two camera poses.">compose</a>(<span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> &amp;other)<span class="keyword"> const</span>
+<a name="l00224"></a>00224 <span class="keyword">                        </span>{
+<a name="l00225"></a>00225                         Q_ASSERT(other.orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00226"></a>00226                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00229"></a>00229                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00230"></a>00230                         Q_WARNING(not other.orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00231"></a>00231                         Q_WARNING(not other.center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233                         <span class="comment">/*std::cout &lt;&lt; &quot;x1&quot; &lt;&lt; std::endl;</span>
+<a name="l00234"></a>00234 <span class="comment">                        Q_ASSERT((orientation * other.orientation).norm2() &gt; 0);</span>
+<a name="l00235"></a>00235 <span class="comment"></span>
+<a name="l00236"></a>00236 <span class="comment">                        std::cout &lt;&lt; &quot;x2&quot; &lt;&lt; std::endl;</span>
+<a name="l00237"></a>00237 <span class="comment"></span>
+<a name="l00238"></a>00238 <span class="comment">                        const QVQuaternion q = other.orientation.inverse();</span>
+<a name="l00239"></a>00239 <span class="comment"></span>
+<a name="l00240"></a>00240 <span class="comment">                        std::cout &lt;&lt; &quot;x3&quot; &lt;&lt; std::endl;*/</span>
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242                         <span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> result(orientation * other.orientation, other.center + other.orientation.<a class="code" href="classQVQuaternion.html#a50fdd28714a4034db3ba71dbd0a3af7f" title="Gets the inverse of the quaternion.">inverse</a>().<a class="code" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c" title="Direct vector rotation.">rotate</a>(center));
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244 <span class="preprocessor">                        #ifdef DEBUG</span>
+<a name="l00245"></a>00245 <span class="preprocessor"></span>                        <span class="keywordflow">if</span> (not (orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() or center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() or other.orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() or other.center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() ) )
+<a name="l00246"></a>00246                                 Q_ASSERT( relativeEuclideanDistance(<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>() * other.<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>(), result.toProjectionMatrix()) &lt; 1e-3);
+<a name="l00247"></a>00247 <span class="preprocessor">                        #endif // DEBUG</span>
+<a name="l00248"></a>00248 <span class="preprocessor"></span>
+<a name="l00249"></a>00249                         <span class="comment">//std::cout &lt;&lt; &quot;x4&quot; &lt;&lt; std::endl;</span>
+<a name="l00250"></a>00250                         <span class="keywordflow">return</span> result;
+<a name="l00251"></a>00251                         }
+<a name="l00252"></a>00252 
+<a name="l00255"></a>00255 <span class="preprocessor">                #ifdef QVMATRIXALGEBRA_AVAILABLE</span>
+<a name="l00256"></a><a class="code" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1">00256</a> <span class="preprocessor"></span>                <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> <a class="code" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1" title="Provides the inverse of the camera pose.">inverse</a>()<span class="keyword"> const</span>
+<a name="l00257"></a>00257 <span class="keyword">                        </span>{
+<a name="l00258"></a>00258                         Q_ASSERT(orientation.<a class="code" href="classQVQuaternion.html#ac7a9049ab48eb43f9ed7ddae01b3126a" title="Gets the norm2 of the quaternion.">norm2</a>() &gt; 0);
+<a name="l00259"></a>00259                         Q_WARNING(not orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00260"></a>00260                         Q_WARNING(not center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>());
+<a name="l00261"></a>00261 
+<a name="l00262"></a>00262                         <span class="keyword">const</span> <a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a> result(orientation.<a class="code" href="classQVQuaternion.html#a50fdd28714a4034db3ba71dbd0a3af7f" title="Gets the inverse of the quaternion.">inverse</a>(), -orientation.<a class="code" href="classQVQuaternion.html#ad93f718564df9914bc11d2e893fcba3c" title="Direct vector rotation.">rotate</a>(center));
+<a name="l00263"></a>00263 
+<a name="l00264"></a>00264 <span class="preprocessor">                        #ifdef DEBUG</span>
+<a name="l00265"></a>00265 <span class="preprocessor"></span>                        <span class="keywordflow">if</span> (not (orientation.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() or center.<a class="code" href="classQVVector.html#a29235517605f49f2327df62d5e0295df" title="Checks whether the vector contains a NaN value or not.">containsNaN</a>() ) )
+<a name="l00266"></a>00266                                 Q_ASSERT( relativeEuclideanDistance(<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>().<a class="code" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1" title="Provides the inverse of the camera pose.">inverse</a>(), result.<a class="code" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b" title="Cast to a pin-hole projection matrix.">toProjectionMatrix</a>()) &lt; 1e-6);
+<a name="l00267"></a>00267 <span class="preprocessor">                        #endif // DEBUG</span>
+<a name="l00268"></a>00268 <span class="preprocessor"></span>
+<a name="l00269"></a>00269                         <span class="keywordflow">return</span> result;
+<a name="l00270"></a>00270                         }
+<a name="l00271"></a>00271 <span class="preprocessor">                #endif // QVMATRIXALGEBRA_AVAILABLE</span>
+<a name="l00272"></a>00272 <span class="preprocessor"></span>        };
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274 <span class="preprocessor">#include &lt;QMetaType&gt;</span>
+<a name="l00275"></a>00275 Q_DECLARE_METATYPE(<a class="code" href="classQVCameraPose.html" title="Class for the camera pose of a view, in a 3D reconstruction.">QVCameraPose</a>);
+<a name="l00276"></a>00276 
+<a name="l00277"></a>00277 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

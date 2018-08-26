@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>src/qvmath/qvnumericalanalysis.h File Reference</h1>
+<p>File from the QVision library.  
+<a href="#_details">More...</a></p>
+<code>#include &lt;QVVector&gt;</code><br/>
+<code>#include &lt;QVMatrix&gt;</code><br/>
+<code>#include &lt;QVFunction&gt;</code><br/>
+
+<p><a href="qvmath_2qvnumericalanalysis_8h_source.html">Go to the source code of this file.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a> { <a class="el" href="group__qvnumericalanalysis.html#ggaf94804b1e1dc7c0e9af0999d68440f70ae769900a9fc183f3501fc0fdc412ddb9">GoldenSection</a> =  0, 
+<a class="el" href="group__qvnumericalanalysis.html#ggaf94804b1e1dc7c0e9af0999d68440f70ab32254721628cea0eeef60a390f0ca16">BrentMinimization</a> =  1
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>GSL Minimization algorithms. </p>
+ <a href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> { <a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a5d65b522cf13b9975a0fee9ab4f07b0e">ConjugateFR</a> =  0, 
+<a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a2c6a593f8b4eafd33170df4f5db2bc9d">ConjugatePR</a> =  1, 
+<a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a1af5c2e022b228fc7e5b331e6d335c4b">VectorBFGS</a> =  2, 
+<a class="el" href="group__qvnumericalanalysis.html#ggad24495d3074466956a7da56fabf2d0e7a815b31aa2c26e45abdbaf05ef58c1943">SteepestDescent</a> =  3
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>GSL multidimensional minimization algorithms using gradient information. </p>
+ <a href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">GSLMultiminFDFSolverType</a> { <a class="el" href="group__qvnumericalanalysis.html#ggaa1d694d467425bf3cfbdf949ef0faed5a1bbb22ad7e6a45514c3e6022a2e50526">LMScaledDerivative</a> =  0, 
+<a class="el" href="group__qvnumericalanalysis.html#ggaa1d694d467425bf3cfbdf949ef0faed5a47a6ed26f8d738391705fb14057484eb">LMDerivative</a> =  1
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>GSL multidimensional solving. </p>
+ <a href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga4d2e455ca93f788e1ec97d942171c8ef">qvEstimateGradient</a> (<a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, const <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const double h=1e-6)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the gradient vector for the function using the forward two-points rule for the derivative approximation.  <a href="group__qvnumericalanalysis.html#ga4d2e455ca93f788e1ec97d942171c8ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gadd02b7275fd52c76e9cb406031b4392c">qvEstimateJacobian</a> (<a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;function, const <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const double h=1e-6)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the Jacobian matrix for the function using the forward two-points rule for the derivative approximation.  <a href="group__qvnumericalanalysis.html#gadd02b7275fd52c76e9cb406031b4392c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gabe23aebe828a863a2d5bc305b5258179">qvEstimateHessian</a> (<a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, const <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const double h=1e-3)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the hessian matrix for the function using the forward two-point rule for the derivative approximation.  <a href="group__qvnumericalanalysis.html#gabe23aebe828a863a2d5bc305b5258179"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#gad5edc708c8725e70dc43ad236729d6e5">qvGSLMinimizeFDF</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> gslMinimizerAlgorithm=ConjugateFR, const int maxIterations=100, const double maxGradientNorm=1e-3, const double step=0.01, const double tol=1e-4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wrapper to GSL multivariate function minimization using gradient information.  <a href="group__qvnumericalanalysis.html#gad5edc708c8725e70dc43ad236729d6e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga0dfcc84308d4ec8b2cb2d11a59251e9c">qvGSLMinimizeFDF</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, double &gt; &amp;function, const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;gradientFunction, <a class="el" href="classQVVector.html">QVVector</a> &amp;point, const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> gslMinimizerAlgorithm=ConjugateFR, const int maxIterations=100, const double maxGradientNorm=1e-3, const double step=0.01, const double tol=1e-4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wrapper to GSL multivariate function minimization using gradient information.  <a href="group__qvnumericalanalysis.html#ga0dfcc84308d4ec8b2cb2d11a59251e9c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga035c2ca4bd03efc36129a9c618e18eee">qvGSLSolveFDF</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVVector.html">QVVector</a> &gt; &amp;function, const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; <a class="el" href="classQVVector.html">QVVector</a>, <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;functionJacobian, <a class="el" href="classQVVector.html">QVVector</a> &amp;x, const <a class="el" href="group__qvnumericalanalysis.html#gaa1d694d467425bf3cfbdf949ef0faed5">GSLMultiminFDFSolverType</a> gslSolverAlgorithm=LMScaledDerivative, const int maxIterations=100, const double maxAbsErr=1e-4, const double maxRelErr=1e-4)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Solves a non-linear system of equations.  <a href="group__qvnumericalanalysis.html#ga035c2ca4bd03efc36129a9c618e18eee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvnumericalanalysis.html#ga19129c12d25402096905b2cd34529d26">qvGSLMinimize</a> (const <a class="el" href="classQVFunction.html">QVFunction</a>&lt; double, double &gt; &amp;function, double &amp;x, double &amp;lower, double &amp;upper, const <a class="el" href="group__qvnumericalanalysis.html#gaf94804b1e1dc7c0e9af0999d68440f70">GSLMinFMinimizer</a> gslMinimizerAlgorithm=BrentMinimization, const int maxIterations=100, const double absoluteError=1e-3, const double relativeError=0.0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wrapper to GSL function minimization.  <a href="group__qvnumericalanalysis.html#ga19129c12d25402096905b2cd34529d26"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>File from the QVision library. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>PARP Research Group. University of Murcia, Spain. </dd></dl>
+
+<p>Definition in file <a class="el" href="qvmath_2qvnumericalanalysis_8h_source.html">qvnumericalanalysis.h</a>.</p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

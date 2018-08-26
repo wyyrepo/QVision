@@ -1,0 +1,1078 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVTensor Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVTensor" -->
+<p>Implementation of <a href="http://en.wikipedia.org/wiki/Classical_treatment_of_tensors">tensors</a>, a generalization for matrices and vectors.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvtensor_8h_source.html">QVTensor</a>&gt;</code></p>
+
+<p><a href="classQVTensor-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#ad0190ee5a42114b381859e0045b9ba81">QVTensor</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#ad0190ee5a42114b381859e0045b9ba81"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#ab571f6752903ec1dea3c6d02be465e8b">QVTensor</a> (const QVTensorValence &amp;indexList=QVTensorValence())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Index list constructor.  <a href="#ab571f6752903ec1dea3c6d02be465e8b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a249f49d9b79a8ad78fbad1f2e2bb0ab3">operator==</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare operator for tensors.  <a href="#a249f49d9b79a8ad78fbad1f2e2bb0ab3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a30fc716cfb642e78bcae4e7cd9034ae0">operator!=</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare operator for tensors.  <a href="#a30fc716cfb642e78bcae4e7cd9034ae0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#adcd1d28addfdde5b6a8ff1c505a0a683">operator*</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tensor product.  <a href="#adcd1d28addfdde5b6a8ff1c505a0a683"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#ae32eb60475bb040349887cde46400b87">operator+</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tensor add.  <a href="#ae32eb60475bb040349887cde46400b87"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a3c55a179607c3a3b44fa30645e7e5aa4">operator-</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tensor substraction.  <a href="#a3c55a179607c3a3b44fa30645e7e5aa4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a3450723305be6b30517ae483b4059a2a">operator^</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Outer product.  <a href="#a3450723305be6b30517ae483b4059a2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a5b1ed4d9d7b11992e04c1d2a9eabeae6">operator()</a> (const QVTensorValence &amp;indexList) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Index renaming and contracting operator.  <a href="#a5b1ed4d9d7b11992e04c1d2a9eabeae6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#aaf731ea26d29371aedf67e02a1f47983">getDataSize</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the size of the data array.  <a href="#aaf731ea26d29371aedf67e02a1f47983"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const double *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a9e75752b76652d2a1ebc64dbc5d0df49">getReadData</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a read-only reference to the data buffer of the tensor.  <a href="#a9e75752b76652d2a1ebc64dbc5d0df49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a9d5c2f2d4fd11123354d7568400d2b8e">getWriteData</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a reference of the data buffer of the tensor for read and write accesses.  <a href="#a9d5c2f2d4fd11123354d7568400d2b8e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVTensorValence&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#ada0f3000987c85bbaaa3c02e4b69aada">getValence</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets <a href="http://en.wikipedia.org/wiki/Tensor#Tensor_valence">valence</a> of the tensor.  <a href="#ada0f3000987c85bbaaa3c02e4b69aada"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#abeec4ea63ea5cac0bec9985b89d6c11b">slice</a> (const QVTensorIndexValues &amp;indexRangeList) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get a subtensor from a tensor.  <a href="#abeec4ea63ea5cac0bec9985b89d6c11b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a6ca73279da9ca3a3914d385faeac0ccd">transpose</a> (const QVTensorValence &amp;indexList) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Change the order of the indexes in the tensor.  <a href="#a6ca73279da9ca3a3914d385faeac0ccd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a750367d97c7647c1dc5c9af8b1f5ba11">transpose</a> (const <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> &amp;i, const <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> &amp;j) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded version of transpose function.  <a href="#a750367d97c7647c1dc5c9af8b1f5ba11"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#ac1d43563ea2215db9d9e710cba7e0246">add</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tensor add.  <a href="#ac1d43563ea2215db9d9e710cba7e0246"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a9c310f3902d33a4572b36147b887a3a5">substract</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tensor substraction.  <a href="#a9c310f3902d33a4572b36147b887a3a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a05457fb8f5a27bd8dfa0fb960b306d4a">tensorProduct</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the tensor product of two tensors.  <a href="#a05457fb8f5a27bd8dfa0fb960b306d4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the inner product of two tensors.  <a href="#ac3ab1408a9ae9b32c01dca061d422ddf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a5fca8e41cab78d5f664b33dc355abbb9">outerProduct</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the outer product of two tensors.  <a href="#a5fca8e41cab78d5f664b33dc355abbb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a66f3349e05d25669238e817363af2829">equals</a> (const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;tensor) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check equivalence between tensors.  <a href="#a66f3349e05d25669238e817363af2829"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#afce34958c46236f2332c04c886d54333">renameIndexes</a> (const QVTensorValence &amp;indexList) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Index renaming and contracting.  <a href="#afce34958c46236f2332c04c886d54333"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVTensorIndexator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a1b856e5e538e752255d0d49e8509dd66">getIndexator</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets tensor indexator.  <a href="#a1b856e5e538e752255d0d49e8509dd66"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a01609a689d7a7e22092968f45eaaba97">norm2</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the <a href="http://en.wikipedia.org/wiki/Norm_%28mathematics%29">norm<sup>2</sup></a> for tensor.  <a href="#a01609a689d7a7e22092968f45eaaba97"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQVTensor.html">QVTensor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVTensor.html#a9f0d229103588fb0bbbd32676a66888e">leviCivita</a> (const int dimension)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets <a href="http://en.wikipedia.org/wiki/Levi-Civita_symbol">Levi Civita</a> symbol tensor.  <a href="#a9f0d229103588fb0bbbd32676a66888e"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of <a href="http://en.wikipedia.org/wiki/Classical_treatment_of_tensors">tensors</a>, a generalization for matrices and vectors. </p>
+<p>Opossed to scalar values, vector and matrices contain numeric values indexed by one and two index values respectively. <em>A</em> tensor is a generalization of these concepts, that can contain numeric values indexed by a set of fixed indexes.</p>
+<h2><a class="anchor" id="TensorCreation">
+Tensor creation</a></h2>
+<p>Tensors are created using index objects. These index objects are created using the class <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> , indicating their size. An example of tensor creation follows:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k );
+
+[...]
+</pre></div><p>Indexes <em>i</em>, <em>j</em> and <em>k</em> have respectively sizes 10, 20, and 7, so tensor <em>A</em> will have 10x20x7 elements, and tree dimensions, of sizes 10, 20 and 7 each one. It is shown that <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> objects are composed using * operator, to express the <a href="http://en.wikipedia.org/wiki/Tensor#Tensor_valence">valence of the tensor</a>.</p>
+<p>Method cov() from the <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> class can be used to get a covariant version of an index. So, for example, we can create a second tensor <em>B</em>, similar to <em>A</em>, but with covariant index <em>j</em>, like this:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k );
+
+[...]
+
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> B( i * j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k );
+</pre></div><p>An index can be copied to another one, both becoming interchangeable and indistinguishable. For example, with the following code:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7, i2 = i, j2 = j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>().<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>(), k2 = k, jCov = j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>();
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k ), B( i2 * j2.cov() * k2 ), C( i2 * jCov * k );
+</pre></div><p>Tensors <em>A</em>, <em>B</em> and <em>C</em> will have the same valence, and will behave the same for tensor product, and contraction operations. Also notice that index <em>j</em> is equivalent to index <em>j.cov().cov()</em>, because applying double covariance to an index returns the original index.</p>
+<h2><a class="anchor" id="TensorSlice">
+Slice operation</a></h2>
+<p>Method <a class="el" href="classQVTensor.html#abeec4ea63ea5cac0bec9985b89d6c11b">slice</a> is the equivalent to a <a href="http://en.wikipedia.org/wiki/Submatrix">submatrix</a> extractor, for tensors. It can be used to extract sub-tensors from tensors, specifying a value, or a list of values, for the indexes. For example, in this code:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7, l = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * l);
+
+[...]
+
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> B = A(i[10]);
+</pre></div><p>tensor <em>B</em> will contain all the values of tensor <em>A</em>, for which index <em>i</em> equals the value 10. So, tensor B will have only tree indexes, covariated <em>j</em>, covariated <em>k</em>, and <em>l</em>. It can be specified several values for the same index, using operator <em>&amp;</em>, like this:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7, l = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * l);
+
+[...]
+
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> B = A(i[10] &amp; i[5] &amp; i[0]);
+</pre></div><p>in this case, tensor <em>B</em> will be a fourth-dimensional tensor, with same valence as tensor <em>A</em>, only that it will have three elements for index <em>i</em>. For multiple value slicing, it can be useful the method range from the class <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a>:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7, l = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * l);
+
+[...]
+
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> B = A(i.<a class="code" href="classQVTensorIndex.html#a7e487e3db0e1effc56adee40beafd355" title="Gets a value state containing a range of integer values for the index name.">range</a>(2,5));
+</pre></div><p>it selects in the slice operation all the values from 2 to 5, for the index <em>i</em>. Also, slicing for multiple indexes can be done, combining values for the different indexes in the same slice operation, for example, in the following code:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 7;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k ), B;
+
+[...]
+
+B = A(i[10] &amp; i.<a class="code" href="classQVTensorIndex.html#a7e487e3db0e1effc56adee40beafd355" title="Gets a value state containing a range of integer values for the index name.">range</a>(3,5) &amp; j[3] &amp; j[1] &amp; j.range(0,1));
+</pre></div><p>tensor <em>B</em> will keep all the values from tensor <em>A</em>, for which index <em>i</em> equals 10, 3, 4 and 5, index <em>j</em> equals 3, 1, 0, and 1.</p>
+<h2><a class="anchor" id="TensorTranspose">
+Transpose operation</a></h2>
+<p>Method <a class="el" href="classQVTensor.html#a6ca73279da9ca3a3914d385faeac0ccd">transpose</a> works like a <a href="http://en.wikipedia.org/wiki/Transpose">transpose operation for matrices</a>, over tensors. It can swap the location for two indexes in the valence of the tensor, or re-order their locations at will. Two versions of method transpose are provided: the first one takes as argument the valence for the resulting tensor, as it is specified in the constructor, as commented in the <a class="el" href="classQVTensor.html#TensorCreation">Tensor creation</a> section:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k ), B;
+
+[...]
+
+B = A.<a class="code" href="classQVTensor.html#a6ca73279da9ca3a3914d385faeac0ccd" title="Change the order of the indexes in the tensor.">transpose</a>( k * j * i.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() );
+</pre></div><p>This can transpose indexes in the tensor in any order, depending on the order in the valence. The second version is used as follows:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k ), B;
+
+[...]
+
+B = A.<a class="code" href="classQVTensor.html#a6ca73279da9ca3a3914d385faeac0ccd" title="Change the order of the indexes in the tensor.">transpose</a>( i, k );
+</pre></div><p>It takes two indexes, and swap their positions, leaving the rest of the indexes at the same place.</p>
+<h2><a class="anchor" id="TensorContraction">
+Tensor contraction</a></h2>
+<p>The operator () defined in tensors can be used to obtain the <a href="http://en.wikipedia.org/wiki/Tensor_contraction">contraction of a tensor</a>. The tensor should have two indexes with same size and one of them should be covariant, and the other one contravariant. The following code is an example of the use of this operator:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() ), B;
+
+[...]
+
+B = A( i * j * i.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() );
+</pre></div><p>This makes <em>B</em> a tensor with one dimension of size 20 (corresponding to index <em>j</em>), which is obtained contracting indexes <em>i</em> and <em>k</em> from tensor <em>A</em>. Contraction can be done over multiple indexes at a time. For example, the following code will be correct:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10, l = 7, m = 20;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * l * m.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() ), B;
+
+[...]
+
+B = A( i * j * i.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * l * j.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() );
+</pre></div><p>This contracts indexes <em>i</em> and <em>k</em>, <em>j</em> and <em>m</em> from tensor <em>A</em>, and store the result in tensor <em>B</em>.</p>
+<h2><a class="anchor" id="TensorProduct">
+Tensor product</a></h2>
+<p><a href="http://en.wikipedia.org/wiki/Tensor_product">Tensor product</a> can be commonly done with operator *. It performs an inner product between both operand tensors, and contracts the indexes of the resulting tensor:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10, l = 14;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() ), B(l * i.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k);
+
+[...]
+
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> C = A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() ) * B(l * i.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * k);
+</pre></div><p>The operator () can be used to specify the contracting indexes in the operation <em>ex professo</em>, if both tensors were constructed with different indexes. For example, the following code would create a tensor contracting the same indexes as the previous code did:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10, l = 14, m = 20, n = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() ), B(l * m.cov() * n);
+
+[...]
+
+<a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i1 = 10, i2 = 20, i3 = 10, i4;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> C = A( i1 * i2 * i3.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() ) * B(i4 * i1.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() * i3);
+</pre></div><h2><a class="anchor" id="DataAccesing">
+Data accessing</a></h2>
+<p>Tensor copying uses <em>copy-on-write</em> policy for its data buffer. This means that when performed a copy from one vector object over another, both objects will share the same data buffer, until a write operation is attempted over the data of one of them. In that case it is necesary to dupe the data, and let each tensor object to have its own copy of the data before the write operation takes place, to avoid writing operations to replicate changes at tensors supposedly different.</p>
+<p>So, tensors have two operations to access to their data. One gets the data buffer for read accesses, not duplicating the data buffer if it is shared, and the other one allows writing on the data of the tensor, duping the data buffer if it is shared beforehand.</p>
+<p>Method <a class="el" href="classQVTensor.html#a9e75752b76652d2a1ebc64dbc5d0df49">getReadData</a> returns a read only pointer to the data buffer. It can be used to read values on the elements of the tensor. Method <a class="el" href="classQVTensor.html#aaf731ea26d29371aedf67e02a1f47983">getDataSize</a> returns the number of elements contained in the tensor. An example usage of both methods:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10, l = 14, m = 20, n = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() );
+
+[...]
+
+<span class="comment">// gets the sum of all the elements on tensor A</span>
+<span class="keyword">const</span> <span class="keywordtype">double</span> sum = 0, *data = A.getReadData();
+<span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; A.getDataSize(); n++)
+    sum += data[i];
+
+[...]
+</pre></div><p>Method <a class="el" href="classQVTensor.html#a9d5c2f2d4fd11123354d7568400d2b8e">getWriteData</a> can be used to get a writable pointer to the data buffer. An example usage:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> i = 10, j = 20, k = 10, l = 14, m = 20, n = 10;
+<a class="code" href="classQVTensor.html" title="Implementation of tensors, a generalization for matrices and vectors.">QVTensor</a> A( i * j * k.<a class="code" href="classQVTensorIndex.html#a68d2ea2884959500b639874597abcfc4" title="Gets the covariant version of this index name.">cov</a>() );
+
+[...]
+
+<span class="comment">// multiplies by a factor, and decrements it by one unit, each element of the tensor A.</span>
+<span class="keywordtype">double</span> *data = A.getWriteData();
+<span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; A.getDataSize(); n++)
+    data[i] = 2*data[i] + 1;
+
+[...]
+</pre></div> 
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00234">234</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad0190ee5a42114b381859e0045b9ba81"></a><!-- doxytag: member="QVTensor::QVTensor" ref="ad0190ee5a42114b381859e0045b9ba81" args="(const QVTensor &amp;tensor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensor::QVTensor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Creates a tensor object and copy the <a href="http://en.wikipedia.org/wiki/Tensor#Tensor_valence">valence</a> and data from a given one. </p>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00242">242</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab571f6752903ec1dea3c6d02be465e8b"></a><!-- doxytag: member="QVTensor::QVTensor" ref="ab571f6752903ec1dea3c6d02be465e8b" args="(const QVTensorValence &amp;indexList=QVTensorValence())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensor::QVTensor </td>
+          <td>(</td>
+          <td class="paramtype">const QVTensorValence &amp;&nbsp;</td>
+          <td class="paramname"> <em>indexList</em> = <code>QVTensorValence()</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Index list constructor. </p>
+<p>Creates a new tensor from a given valence, represented by a <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> list. See TensorUsage section for a detailed description about its usage. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>indexList</em>&nbsp;</td><td>a QVTensorValence, created from a list of <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000088">Todo:</a></b></dt><dd>check that no indexes are repeated in the indexList, even covariated ones </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00250">250</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a249f49d9b79a8ad78fbad1f2e2bb0ab3"></a><!-- doxytag: member="QVTensor::operator==" ref="a249f49d9b79a8ad78fbad1f2e2bb0ab3" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVTensor::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare operator for tensors. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the compare operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if <a href="http://en.wikipedia.org/wiki/Tensor#Tensor_valence">valence</a> and data are equal of both tensors, else false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00269">269</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30fc716cfb642e78bcae4e7cd9034ae0"></a><!-- doxytag: member="QVTensor::operator!=" ref="a30fc716cfb642e78bcae4e7cd9034ae0" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVTensor::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare operator for tensors. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the compare operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false if <a href="http://en.wikipedia.org/wiki/Tensor#Tensor_valence">valence</a> and data are equal of both tensors, else true. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00275">275</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcd1d28addfdde5b6a8ff1c505a0a683"></a><!-- doxytag: member="QVTensor::operator*" ref="adcd1d28addfdde5b6a8ff1c505a0a683" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tensor product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the product operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a05457fb8f5a27bd8dfa0fb960b306d4a" title="Obtains the tensor product of two tensors.">tensorProduct</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00281">281</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae32eb60475bb040349887cde46400b87"></a><!-- doxytag: member="QVTensor::operator+" ref="ae32eb60475bb040349887cde46400b87" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tensor add. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the add operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#ac1d43563ea2215db9d9e710cba7e0246" title="Tensor add.">add</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00287">287</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c55a179607c3a3b44fa30645e7e5aa4"></a><!-- doxytag: member="QVTensor::operator&#45;" ref="a3c55a179607c3a3b44fa30645e7e5aa4" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tensor substraction. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>subtrahend for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a9c310f3902d33a4572b36147b887a3a5" title="Tensor substraction.">substract</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00293">293</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3450723305be6b30517ae483b4059a2a"></a><!-- doxytag: member="QVTensor::operator^" ref="a3450723305be6b30517ae483b4059a2a" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Outer product. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a5fca8e41cab78d5f664b33dc355abbb9" title="Obtains the outer product of two tensors.">outerProduct(const QVTensor &amp;tensor) const </a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00298">298</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b1ed4d9d7b11992e04c1d2a9eabeae6"></a><!-- doxytag: member="QVTensor::operator()" ref="a5b1ed4d9d7b11992e04c1d2a9eabeae6" args="(const QVTensorValence &amp;indexList) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const QVTensorValence &amp;&nbsp;</td>
+          <td class="paramname"> <em>indexList</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Index renaming and contracting operator. </p>
+<p>See sections <a class="el" href="classQVTensor.html#TensorContraction">Tensor contraction</a> and <a class="el" href="classQVTensor.html#TensorProduct">Tensor product</a> for usage of this operator. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#afce34958c46236f2332c04c886d54333" title="Index renaming and contracting.">renameIndexes</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00304">304</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf731ea26d29371aedf67e02a1f47983"></a><!-- doxytag: member="QVTensor::getDataSize" ref="aaf731ea26d29371aedf67e02a1f47983" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QVTensor::getDataSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the size of the data array. </p>
+<p>This returns the number of elements in the tensor. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the product of the sizes of all the indexes in the tensor. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00312">312</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ac1d43563ea2215db9d9e710cba7e0246">add()</a>, <a class="el" href="classQVTensor.html#a66f3349e05d25669238e817363af2829">equals()</a>, <a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct()</a>, <a class="el" href="classQVTensor.html#a9f0d229103588fb0bbbd32676a66888e">leviCivita()</a>, <a class="el" href="classQVTensor.html#a01609a689d7a7e22092968f45eaaba97">norm2()</a>, <a class="el" href="classQVTensor.html#a9c310f3902d33a4572b36147b887a3a5">substract()</a>, and <a class="el" href="classQVTensor.html#a05457fb8f5a27bd8dfa0fb960b306d4a">tensorProduct()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e75752b76652d2a1ebc64dbc5d0df49"></a><!-- doxytag: member="QVTensor::getReadData" ref="a9e75752b76652d2a1ebc64dbc5d0df49" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double* QVTensor::getReadData </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a read-only reference to the data buffer of the tensor. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a constant pointer to the data buffer of the tensor </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00317">317</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ac1d43563ea2215db9d9e710cba7e0246">add()</a>, <a class="el" href="classQVTensor.html#a66f3349e05d25669238e817363af2829">equals()</a>, <a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct()</a>, <a class="el" href="classQVTensor.html#a01609a689d7a7e22092968f45eaaba97">norm2()</a>, <a class="el" href="classQVTensor.html#abeec4ea63ea5cac0bec9985b89d6c11b">slice()</a>, <a class="el" href="classQVTensor.html#a9c310f3902d33a4572b36147b887a3a5">substract()</a>, and <a class="el" href="classQVTensor.html#a05457fb8f5a27bd8dfa0fb960b306d4a">tensorProduct()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9d5c2f2d4fd11123354d7568400d2b8e"></a><!-- doxytag: member="QVTensor::getWriteData" ref="a9d5c2f2d4fd11123354d7568400d2b8e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* QVTensor::getWriteData </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a reference of the data buffer of the tensor for read and write accesses. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the data buffer of the tensor </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00322">322</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct()</a>, <a class="el" href="classQVTensor.html#a9f0d229103588fb0bbbd32676a66888e">leviCivita()</a>, <a class="el" href="classQVTensor.html#abeec4ea63ea5cac0bec9985b89d6c11b">slice()</a>, and <a class="el" href="classQVTensor.html#a05457fb8f5a27bd8dfa0fb960b306d4a">tensorProduct()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada0f3000987c85bbaaa3c02e4b69aada"></a><!-- doxytag: member="QVTensor::getValence" ref="ada0f3000987c85bbaaa3c02e4b69aada" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensorValence QVTensor::getValence </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets <a href="http://en.wikipedia.org/wiki/Tensor#Tensor_valence">valence</a> of the tensor. </p>
+<p>This function can be used to obtain a list of the <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> objects that represente the valence of the tensor. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a QList&lt;QVTensorIndex&gt; object, containing the <a class="el" href="classQVTensorIndex.html" title="Indexes for tensors.">QVTensorIndex</a> objects corresponding to the indexes of the tensor. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00207">207</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct()</a>, and <a class="el" href="classQVTensor.html#a05457fb8f5a27bd8dfa0fb960b306d4a">tensorProduct()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abeec4ea63ea5cac0bec9985b89d6c11b"></a><!-- doxytag: member="QVTensor::slice" ref="abeec4ea63ea5cac0bec9985b89d6c11b" args="(const QVTensorIndexValues &amp;indexRangeList) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::slice </td>
+          <td>(</td>
+          <td class="paramtype">const QVTensorIndexValues &amp;&nbsp;</td>
+          <td class="paramname"> <em>indexRangeList</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get a subtensor from a tensor. </p>
+<p>Like with matrices, it is possible to extract a part of a tensor, given a list of values for some of its indexes. For further details about the use of this function, see section <a class="el" href="classQVTensor.html#TensorSlice">Slice operation</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>indexRangeList</em>&nbsp;</td><td>list of range values for indexes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a750367d97c7647c1dc5c9af8b1f5ba11" title="Overloaded version of transpose function.">transpose(const QVTensorIndex &amp;, const QVTensorIndex &amp;) const</a>; </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00217">217</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ca73279da9ca3a3914d385faeac0ccd"></a><!-- doxytag: member="QVTensor::transpose" ref="a6ca73279da9ca3a3914d385faeac0ccd" args="(const QVTensorValence &amp;indexList) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::transpose </td>
+          <td>(</td>
+          <td class="paramtype">const QVTensorValence &amp;&nbsp;</td>
+          <td class="paramname"> <em>indexList</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Change the order of the indexes in the tensor. </p>
+<p>This function reorders the indexes of the tensor. For further details about the use of this function, see section <a class="el" href="classQVTensor.html#TensorTranspose">Transpose operation</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>indexList</em>&nbsp;</td><td>new valence for the tensor, expressed as a list of indexes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a750367d97c7647c1dc5c9af8b1f5ba11" title="Overloaded version of transpose function.">transpose(const QVTensorIndex &amp;, const QVTensorIndex &amp;) const</a>; </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00264">264</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct()</a>, and <a class="el" href="classQVTensor.html#a750367d97c7647c1dc5c9af8b1f5ba11">transpose()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a750367d97c7647c1dc5c9af8b1f5ba11"></a><!-- doxytag: member="QVTensor::transpose" ref="a750367d97c7647c1dc5c9af8b1f5ba11" args="(const QVTensorIndex &amp;i, const QVTensorIndex &amp;j) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::transpose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVTensorIndex.html">QVTensorIndex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>j</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded version of transpose function. </p>
+<p>This overloaded version of transpose method swaps the location of two given indexes in the tensor. For further details about the use of this function, see section <a class="el" href="classQVTensor.html#TensorTranspose">Transpose operation</a>. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a6ca73279da9ca3a3914d385faeac0ccd" title="Change the order of the indexes in the tensor.">transpose(const QVTensorValence &amp;) const </a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00241">241</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1d43563ea2215db9d9e710cba7e0246"></a><!-- doxytag: member="QVTensor::add" ref="ac1d43563ea2215db9d9e710cba7e0246" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tensor add. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the add operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator+ </dd></dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000081">Todo:</a></b></dt><dd>check tensor valences are compatible </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000082">Todo:</a></b></dt><dd>use blas function cblas_axpy for data add </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00082">82</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ae32eb60475bb040349887cde46400b87">operator+()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c310f3902d33a4572b36147b887a3a5"></a><!-- doxytag: member="QVTensor::substract" ref="a9c310f3902d33a4572b36147b887a3a5" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::substract </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tensor substraction. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>subtrahend for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator- </dd></dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000083">Todo:</a></b></dt><dd>check tensor valences are compatible </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000084">Todo:</a></b></dt><dd>use blas function cblas_axpy for data substraction </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00101">101</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#a3c55a179607c3a3b44fa30645e7e5aa4">operator-()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05457fb8f5a27bd8dfa0fb960b306d4a"></a><!-- doxytag: member="QVTensor::tensorProduct" ref="a05457fb8f5a27bd8dfa0fb960b306d4a" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::tensorProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the tensor product of two tensors. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the tensor product. For further details about the use of this function, see section <a class="el" href="classQVTensor.html#TensorProduct">Tensor product</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the contracted tensor resulting from the inner product of the actual tensor and the one given through the parameter. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator*(const QVTensorValence &amp;) const  </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00054">54</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#ac3ab1408a9ae9b32c01dca061d422ddf">innerProduct()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3ab1408a9ae9b32c01dca061d422ddf"></a><!-- doxytag: member="QVTensor::innerProduct" ref="ac3ab1408a9ae9b32c01dca061d422ddf" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::innerProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the inner product of two tensors. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the inner product. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the contracted tensor resulting from the tensor product of the actual tensor and the one given through the parameter. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator*(const QVTensorValence &amp;) const  </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00119">119</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#adcd1d28addfdde5b6a8ff1c505a0a683">operator*()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fca8e41cab78d5f664b33dc355abbb9"></a><!-- doxytag: member="QVTensor::outerProduct" ref="a5fca8e41cab78d5f664b33dc355abbb9" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::outerProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the outer product of two tensors. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the outer product. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>outer product of actual tensor and </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator^(const QVTensorValence &amp;) const  </dd></dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000085">Todo:</a></b></dt><dd>: to be done. </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00186">186</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#a3450723305be6b30517ae483b4059a2a">operator^()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a66f3349e05d25669238e817363af2829"></a><!-- doxytag: member="QVTensor::equals" ref="a66f3349e05d25669238e817363af2829" args="(const QVTensor &amp;tensor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVTensor::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVTensor.html">QVTensor</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tensor</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check equivalence between tensors. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>operand for the compare operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the given tensor has equivalent valence and equal content of the data buffer. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator==(const QVTensorValence &amp;) const  </dd></dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000080">Todo:</a></b></dt><dd>assert para comprobar que el tamaño del buffer de datos de ambos tensores se corresponde con su valencia </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00028">28</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#a30fc716cfb642e78bcae4e7cd9034ae0">operator!=()</a>, and <a class="el" href="classQVTensor.html#a249f49d9b79a8ad78fbad1f2e2bb0ab3">operator==()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afce34958c46236f2332c04c886d54333"></a><!-- doxytag: member="QVTensor::renameIndexes" ref="afce34958c46236f2332c04c886d54333" args="(const QVTensorValence &amp;indexList) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::renameIndexes </td>
+          <td>(</td>
+          <td class="paramtype">const QVTensorValence &amp;&nbsp;</td>
+          <td class="paramname"> <em>indexList</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Index renaming and contracting. </p>
+<p>This method is equivalent to using operator(). See sections <a class="el" href="classQVTensor.html#TensorContraction">Tensor contraction</a> and <a class="el" href="classQVTensor.html#TensorProduct">Tensor product</a> for usage of that operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>indexList</em>&nbsp;</td><td>new indexes for the tensor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVTensor.html#a5b1ed4d9d7b11992e04c1d2a9eabeae6" title="Index renaming and contracting operator.">operator()(const QVTensorValence &amp;indexList) const </a> </dd></dl>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000086">Todo:</a></b></dt><dd>Assert for valence (variance/covariance and size) of new and old indexes is equivalent really? no, just check dimensions are compatible. </dd></dl>
+</p>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00192">192</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#a5b1ed4d9d7b11992e04c1d2a9eabeae6">operator()()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b856e5e538e752255d0d49e8509dd66"></a><!-- doxytag: member="QVTensor::getIndexator" ref="a1b856e5e538e752255d0d49e8509dd66" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVTensorIndexator QVTensor::getIndexator </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets tensor indexator. </p>
+<p>This functions copies content of the data buffer, valence, and index names on this vector, over a given one. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tensor</em>&nbsp;</td><td>tensor to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a reference to this vector </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>operator=(const QVTensorValence &amp;) </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8h_source.html#l00409">409</a> of file <a class="el" href="qvtensor_8h_source.html">qvtensor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVTensor.html#a9f0d229103588fb0bbbd32676a66888e">leviCivita()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01609a689d7a7e22092968f45eaaba97"></a><!-- doxytag: member="QVTensor::norm2" ref="a01609a689d7a7e22092968f45eaaba97" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVTensor::norm2 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the <a href="http://en.wikipedia.org/wiki/Norm_%28mathematics%29">norm<sup>2</sup></a> for tensor. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>norm-2 of the tensor. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00436">436</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f0d229103588fb0bbbd32676a66888e"></a><!-- doxytag: member="QVTensor::leviCivita" ref="a9f0d229103588fb0bbbd32676a66888e" args="(const int dimension)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVTensor.html">QVTensor</a> QVTensor::leviCivita </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>dimension</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets <a href="http://en.wikipedia.org/wiki/Levi-Civita_symbol">Levi Civita</a> symbol tensor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dimension</em>&nbsp;</td><td>number of dimensions of the tensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a tensor containing the Levi Civita symbol. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvtensor_8cpp_source.html#l00476">476</a> of file <a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvtensor_8h_source.html">qvtensor.h</a></li>
+<li>src/qvmath/<a class="el" href="qvtensor_8cpp_source.html">qvtensor.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

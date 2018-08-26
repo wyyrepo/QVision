@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVImage&lt; Type, Channels &gt; Member List</h1>This is the complete list of members for <a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a>, including all inherited members.<table>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a950c665d25b6270e15e238efb5209ee7">dilateROI</a>(uInt cols, uInt rows)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a1f12013abc679cd9603fdcc6ca9824ff">erodeROI</a>(uInt cols, uInt rows)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a9fede2a177fed58d69d9d13e93cd38b6">getAnchor</a>() const </td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a5d430b0f71799b2b2ca8f8ae8f05ca3c">getChannels</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7">getCols</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a397ee658c9574be3013a68c584b3f9d0">getDataSize</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a200b9b19dbe2a79f75d603f9ecc67bf1">getReadData</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a55132f8ba36904516dcf384039c670e4">getROI</a>() const </td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17">getRows</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#aaeffe5a731175e97707793ee12e06999">getSize</a>() const </td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a8c5cb45d0c7fbf135d89c5cb40ed4875">getStep</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#aa8e2a101e62cdaa7d0fa7c020f625171">getTypeQString</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#aa5abf377f3c4f95d128270d351b8269c">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a250fd54325bf7b45311081f10d6a7d21">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a26060f0d5c591843b2b47c8c33a55b77">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a82511ed913536f548b1f5e10e7f8f4a1">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ab9e7c91408e79a5fc6a2a48f0b4bbcdd">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#aa9826942b7de555975fb354ef38bd76f">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a1da886203b77c0baac9a9a8e5e31fbbb">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a23e0b7fcceda1b493c384991aecff5ab">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#af223ffd23a8459c984a6cd9dad9864e7">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a5449f66a7fd6c95310376ed220ba38fb">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#acd4dc980bb4626fb93142fffb06bd422">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a851df498210edde9a152910076c12244">getTypeQString</a>() const</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a70e75bb386d5b424f266a62d000e52bf">getTypeSize</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a231507d781e33e508fac771b5284c3c9">getWriteData</a>()</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a21b9bc211bcb5b0694ecdad16f1e5d59">isCompatibleWith</a>(const char *qvImageClassName) const </td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#afded424f68a2cefbb0ac6ffdebdfc160">isCompatibleWith</a>(const QVGenericImage *image) const </td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ad69afa02dba6c9351cd3a16c29a4dce3">isEmpty</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a5f0d4b9b20553387175ae0b0c658a6c6">operator IplImage *</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a32786513dbed5b1277fdd08aca880d78">operator QImage</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a92d847580d4d8ff7c435beddb696cd33">operator!</a>() const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a711605fe3079ed219867bd0c121a6726">operator!=</a>(const QVImage&lt; Type, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a9edb618e4cbd6803f8ab64593380882a">operator&amp;</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ab0f7c3d022a614cfb614c1b9fa8fd9b1">operator()</a>(const uInt col, const uInt row, const uInt channel=0)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a923f82b6c7a2aeb5b5ef072860db9402">operator()</a>(const QPoint point, const uInt channel=0)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#af710e6e447f428ac01b0485c075315f2">operator()</a>(const uInt channel=0) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a37d4560acc3253c15ef377c60f7c0df4">operator*</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a1777f27e4ed78711aa3dbd09eb5b9ac2">operator*</a>(const QVImage&lt; Type, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a446a88f9290f14cb4cf9f93a4d5600fa">operator+</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#adfeba51bee210af2222fbbb9b2ff9ccb">operator+</a>(const QVImage&lt; Type, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a955eab9bd6ba4582331d4f3834c27f96">operator-</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a992c90d4bdf39e9bc0edc00868ccca85">operator-</a>(const QVImage&lt; Type, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a78d47c71ce0669bd78469cc75de823c7">operator/</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#abace2731ce10598de32940ff98e26a3d">operator/</a>(const QVImage&lt; Type, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#af6d740c62e447391106880b3bf4395c2">operator&lt;</a>(const QVImage&lt; uChar, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#adcf4f5231bc72199068371199b34ce9c">operator&lt;</a>(const QVImage&lt; uShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a518e4c1bf6cd33a80c7c58a699c9c824">operator&lt;</a>(const QVImage&lt; sShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a4e0924d6958c7f4f90be9ce65ae50755">operator&lt;</a>(const QVImage&lt; sInt, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a945fff634385b9f45dd164ecf9a4bf20">operator&lt;</a>(const QVImage&lt; sFloat, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a61d7b5a18ab0774073e408d62c0a1a4c">operator&lt;&lt;</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a02c0d4b4a12bcfab61498c2b9f6eded8">operator&lt;=</a>(const QVImage&lt; uChar, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a133cfe9bcd8e7648f4f7bd2a14246d0f">operator&lt;=</a>(const QVImage&lt; uShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#af2f0602efc216991f1484756ce524ad3">operator&lt;=</a>(const QVImage&lt; sShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a6504831315915d366f2adf3e0c5d5981">operator&lt;=</a>(const QVImage&lt; sInt, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a0927cb1b154e0e502f46989279f35565">operator&lt;=</a>(const QVImage&lt; sFloat, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a3af2bb0d8e7fde9e2f6c778c4d7f23f9">operator=</a>(const QVImage&lt; uChar, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a540489c365419c8ba69631e4b8990242">operator=</a>(const QVImage&lt; uChar, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#af135c7f46ac4890171b40eed31ce0718">operator=</a>(const QVImage&lt; sChar, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a046cc1bf4f14a7f8b359575366710739">operator=</a>(const QVImage&lt; sChar, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ace925131622fdd17cb6a27cb87e91622">operator=</a>(const QVImage&lt; uShort, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ae2386f631d272214bed8b1fd572fe2b4">operator=</a>(const QVImage&lt; uShort, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a2f484d916f8888c6d3f51f91f1d36ed8">operator=</a>(const QVImage&lt; sShort, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#abf620083c92cdc477f05872c82c65c89">operator=</a>(const QVImage&lt; sShort, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a3d221c1e02dffe9ba8b3d6e009dc52db">operator=</a>(const QVImage&lt; uInt, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ad65abc950f31339c2aa0294fd01f871b">operator=</a>(const QVImage&lt; uInt, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a3ee88c54754fb107612a7becec982283">operator=</a>(const QVImage&lt; sInt, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#afdc80320663f54860a6541030bd4a030">operator=</a>(const QVImage&lt; sInt, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a621328747cffb8a2fb7dac91e7ffee9e">operator=</a>(const QVImage&lt; sFloat, 1 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a83b874a6f925ef39265c3cea1d90caa2">operator=</a>(const QVImage&lt; sFloat, 3 &gt; &amp;sourceImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="group__qvip.html#gad9b6ff6909da8e12d4c231500673d128">operator==</a>(const QVImage&lt; Type, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a84defb58ab6c7c37a6c5e32a676c8155">operator&gt;</a>(const QVImage&lt; uChar, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a7273af2c1c151a617b61a5075afcd9fd">operator&gt;</a>(const QVImage&lt; uShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a4848d665c762292664e2fe3a993a4aab">operator&gt;</a>(const QVImage&lt; sShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#aa7e3abc72637e215078f769b83c2ae92">operator&gt;</a>(const QVImage&lt; sInt, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#afeaf1ded443756c60cd3d859ef0ba418">operator&gt;</a>(const QVImage&lt; sFloat, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ab69223019a34542ef32ed9bdb56e6d9b">operator&gt;=</a>(const QVImage&lt; uChar, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a896e769e1e87810253a90736d60d9f16">operator&gt;=</a>(const QVImage&lt; uShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ae743a09e3a64e26c03eb4768a9fc4a6d">operator&gt;=</a>(const QVImage&lt; sShort, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a6321d6989881a05fb864514e33786d17">operator&gt;=</a>(const QVImage&lt; sInt, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a030527e91441086e7d3a042021d90077">operator&gt;=</a>(const QVImage&lt; sFloat, Channels &gt; &amp;img) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ab0d33365ec2a80cb154b812cfdf34d5c">operator&gt;&gt;</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a546ab721d0c37c727785194e3b0e443a">operator^</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ac5a3f4f32627c88e66ed30edeb60f73d">operator|</a>(const Type constant) const </td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#ab7f12de40f9f2eb3604ca4965c32408e">QVGenericImage</a>()</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a09e3239f3dc0c2e33140f79e63102549">QVGenericImage</a>(QVGenericImage const &amp;img)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a87e4a3ea6bc2db99d0fe170ac8b21b1f">QVImage</a>(uInt cols=1, uInt rows=1)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ace50f548bf3fa469eb47b933c2035690">QVImage</a>(QVImage&lt; uChar, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a0b5454af230d9acd72ddb3a30577c9eb">QVImage</a>(QVImage&lt; uChar, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ad7d6e30612c95684d59d6daa4925f53e">QVImage</a>(QVImage&lt; sChar, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a303afe5c7d2a227befc6303465984ec8">QVImage</a>(QVImage&lt; sChar, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a68c896d6ce8c2a2ea3c8ac1459ffb30a">QVImage</a>(QVImage&lt; uShort, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a80eaaa6624571390646ab80b785e6f3c">QVImage</a>(QVImage&lt; uShort, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a5ac787f4d850296aa6b3ec72294a5aec">QVImage</a>(QVImage&lt; sShort, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a5a6b75b27ecaf1e4faac04458338d62d">QVImage</a>(QVImage&lt; sShort, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ac9a4477f531fce77559b69f9ea3c9b16">QVImage</a>(QVImage&lt; uInt, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#aa67b7a28fb4fd09981ef4093f2979961">QVImage</a>(QVImage&lt; uInt, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a83e16b6938af2929874d6422a5c458ab">QVImage</a>(QVImage&lt; sInt, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a9887ce79d1d61fe76f25eccd322216c8">QVImage</a>(QVImage&lt; sInt, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a0d8c1ff65fbcc0ba8b9f188abfc2a3ff">QVImage</a>(QVImage&lt; sFloat, 1 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a7e2572eb34936f9cae70f5e857e5bb24">QVImage</a>(QVImage&lt; sFloat, 3 &gt; const &amp;img)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a4415e3727eb0d435036c75a58c41bf10">QVImage</a>(const QString &amp;filename)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a561acecc86434195b956fdd3522e647e">QVImage</a>(QVImage&lt; uChar, 1 &gt; const &amp;red, QVImage&lt; uChar, 1 &gt; const &amp;green, QVImage&lt; uChar, 1 &gt; const &amp;blue)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a399459ea46e10770d6132951993638a6">QVImage</a>(QVImage&lt; uShort, 1 &gt; const &amp;red, QVImage&lt; uShort, 1 &gt; const &amp;green, QVImage&lt; uShort, 1 &gt; const &amp;blue)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a157389cca693828417300178793fd3f1">QVImage</a>(QVImage&lt; sShort, 1 &gt; const &amp;red, QVImage&lt; sShort, 1 &gt; const &amp;green, QVImage&lt; sShort, 1 &gt; const &amp;blue)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a2f02163b2f1fb75590f1c6f8c1ce045c">QVImage</a>(QVImage&lt; sInt, 1 &gt; const &amp;red, QVImage&lt; sInt, 1 &gt; const &amp;green, QVImage&lt; sInt, 1 &gt; const &amp;blue)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a9bfd6e801925f782d73f8c1bd28f0c72">QVImage</a>(QVImage&lt; sFloat, 1 &gt; const &amp;red, QVImage&lt; sFloat, 1 &gt; const &amp;green, QVImage&lt; sFloat, 1 &gt; const &amp;blue)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#a5448f8d71a6ce0bbf459a5b3d7c6e60c">QVImage</a>(const QImage &amp;qImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#ab698fef2425b5309a05649c7c4b1525d">QVImage</a>(const IplImage *iplImage)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a41e7573cc04595e3e854ed37c599b1e9">resetAnchor</a>()</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#ad9134aec495e05f191535c23e8344c77">resetROI</a>()</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#abadb4ee2e54af167f6c80e247bf397cb">resize</a>(const int cols, const int rows)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVImage.html#addec4b1d837eb849d4b8605c1a86e3ac">set</a>(Type c1=0, Type c2=0, Type c3=0)</td><td><a class="el" href="classQVImage.html">QVImage&lt; Type, Channels &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#aa3f37d1f7d2271b52c69c8034be8ddac">setAnchor</a>(int col, int row)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#aec61e6f1c101fdc0d7350addf3aa3f2a">setAnchor</a>(const QPoint &amp;point)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#a2e01c2584cee10559bf1aac1ca7e287b">setROI</a>(int x, int y, uInt w, uInt h)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#ab23d43163b77335b855e7c5b4278b92f">setROI</a>(const QRect &amp;rect)</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVGenericImage.html#aec5bf087d3d27cc34ed83520056caef6">~QVGenericImage</a>()</td><td><a class="el" href="classQVGenericImage.html">QVGenericImage</a></td><td><code> [inline, virtual]</code></td></tr>
+</table></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

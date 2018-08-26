@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="FirstExampleBlockStructuredApplication">Creating the first block-oriented application </a></h1><p>In the actual section we will see the creation of a real block-oriented application step by step. This example application will perform Canny edge detector on the image frames from a video sequence, and show in an image canvas the sequence of detected edges.</p>
+<p>This will be the application Qt project file, which is is a typical project file for a QVision application:</p>
+<div class="fragment"><pre class="fragment">include(/usr/local/QVision/qvproject.pri)
+TARGET = blockExample
+SOURCES = blockExample.cpp
+</pre></div><p>The project contains a single source file called <em>blockExample.cpp</em>, containing the source code for the example:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<span class="preprocessor">#include &lt;QVMPlayerReaderBlock&gt;</span>
+<span class="preprocessor">#include &lt;QVImageCanvas&gt;</span>
+<span class="preprocessor">#include &lt;QVCannyEdgeDetector&gt;</span>
+<span class="preprocessor">#include &lt;QVDefaultGUI&gt;</span>
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+        {
+        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv,
+                <span class="stringliteral">&quot;Example program for QVision library. Obtains Canny borders from input video frames.&quot;</span>
+                );
+
+        QVMPlayerReaderBlock videoReader(<span class="stringliteral">&quot;Video reader&quot;</span>);
+        <a class="code" href="classQVCannyEdgeDetector.html">QVCannyEdgeDetector</a> cannyBlock(<span class="stringliteral">&quot;Canny block&quot;</span>);
+        <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> imageDisplayer(<span class="stringliteral">&quot;Original image&quot;</span>);
+        <a class="code" href="classQVImageCanvas.html" title="Display widget for QVImage objects and other data types.">QVImageCanvas</a> edgesDisplayer(<span class="stringliteral">&quot;Canny edges&quot;</span>);
+
+        videoReader.linkProperty(&amp;cannyBlock,<span class="stringliteral">&quot;Input image&quot;</span>);
+        cannyBlock.linkProperty(<span class="stringliteral">&quot;Input image&quot;</span>,imageDisplayer);
+        cannyBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>,edgesDisplayer);
+
+        <a class="code" href="classQVDefaultGUI.html" title="Main user interface widget for QVision applications.">QVDefaultGUI</a> defaultGUI;
+
+        <span class="keywordflow">return</span> app.<a class="code" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4" title="Starts execution of the QVApplication.">exec</a>();
+        }
+</pre></div><p>In the QVision, blocks are modelled as objects. Objects derived from the class <a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a> are processing blocks, which can be linked between them, so they can receive their corresponding input data from the previous node in the data-path, and send the output data to the following node in the data-path.</p>
+<p>Our example application creates four block objects: <em>videoReader</em>, <em>cannyBlock</em>, <em>imageDisplayer</em>, and <em>edgesDisplayer</em>.</p>
+<p>The <em>videoReader</em> object reads image frames from a video source (which can be a video file, a webcam attached to the computer, etc...). The second block object (<em>cannyBlock</em>) applies the Canny edge detector on each input frame read by the <em>videoReader</em> object, obtaining the edge response images. The two last block objects (the <em>imageDisplayer</em> and <em>edgesDisplayer</em>) receive the original image read by the <em>videoReader</em> and the edge response image produced by the <em>cannyBlock</em> and show them on two different image display windows.</p>
+<p>The method <a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">QVProcessingBlock::linkProperty()</a> establishes data sharing links between the block objects. Next section will explain its usage in detail.</p>
+<p>Besides these block objects, our example application contains a <a class="el" href="classQVApplication.html">QVApplication</a> object named <em>app</em>.</p>
+<p>This is the main object in a QVision application. Amongst other tasks it stores references to all blocks and graphical elements of the application, parses the command line parameters. Also, the call to its <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4">QVApplication::exec()</a> method opens the video sources, launches the graphical elements, and starts the data processing at the blocks defined in the application. The call returns only when the work at the processing blocks ends, and the application finishes.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Class <a class="el" href="classQVApplication.html">QVApplication</a> inherits from Qt <a href="http://doc.trolltech.com/4.4/qapplication.html#details">QApplication</a> class. Avoid using the <a class="el" href="classQVApplication.html">QVApplication</a> object as a <em>QApplication</em> object, like this: <div class="fragment"><pre class="fragment"><span class="comment">// Incorrect creation of the QVApplication object: as a QApplication</span>
+QApplication *app = <span class="keyword">new</span> <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>(argc, argv, <span class="stringliteral">&quot;Example program for QVision library. Play a video on a canvas window.&quot;</span>);
+</pre></div> If you need to use pointers, make sure the application object is stored in a <a class="el" href="classQVApplication.html">QVApplication</a> pointer variable: <div class="fragment"><pre class="fragment"><span class="comment">// Correct creation of the QVAplication object: as a QVApplication object</span>
+        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> *app = <span class="keyword">new</span> <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a>(argc, argv, <span class="stringliteral">&quot;Example program for QVision library. Play a video on a canvas window.&quot;</span>);
+</pre></div></dd>
+<dd>
+Block object creation and dynamic property linkage must be performed anywhere between the creation of the <a class="el" href="classQVApplication.html">QVApplication</a> object, and the call to the <a class="el" href="classQVApplication.html#a629aa9b6d8aa09fdb5ed379167c84af4">QVApplication::exec()</a> method. Any code beyond that call will be executed only when the application finishes.</dd></dl>
+<p>The <a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a> object is optional in our application. By creating it, we add a control window that will allow the user to inspect the performance of our application, and gain control on different aspects of its execution.</p>
+<p>For example, the user can change the values of the parameters of the application algorithms at execution time, and control the processing flow of the different blocks and the video sources opened by the application. The user can stop, resume, or advance the input of the video streams opened by the application, and stop, resume or advance one iteration for any block -i.e., processing block- instantiated by the application.</p>
+<p>Once compiled using the <em>qmake-qt4</em> and <em>make</em> tools, we can execute the application using the following line:</p>
+<div class="fragment"><pre class="fragment">./blockExample --URL=penguin.avi
+</pre></div><p>The file <a href="http://perception.inf.um.es/public_data/videos/misc/penguin.avi">penguin.avi</a> is one of our test videos. For further info about command line parameters see section <a class="el" href="CommandLineParameters.html">Command line parameters</a>. The application will open the image canvases, and display each image read from the video source, and the edges detected at it:</p>
+<div align="center">
+<img src="cannyDisplayer.png" alt="cannyDisplayer.png"/>
+</div>
+<p>Also, the application will open the control window:</p>
+<div align="center">
+<img src="qvisioninterface_canny_default_gui.png" alt="qvisioninterface_canny_default_gui.png"/>
+</div>
+<p>A full description on the features of this control widget can be found here: <a class="el" href="classQVDefaultGUI.html">QVDefaultGUI</a>.</p>
+<h2><a class="anchor" id="ExampleBlockDataLinkingInDetail">
+Block data linking</a></h2>
+<p>In the previous example application the <em>videoReader</em> block object must share the input frames which it reads from the video source with the <em>cannyBlock</em>. In the same manner, the <em>cannyBlock</em> block must share each original image, and the edge response image it produces with the <em>imageDisplayer</em> and the <em>edgesDisplayer</em> block objects.</p>
+<p>The following line connects the <em>videoReader</em> object with the <em>cannyBlock</em> object, so the former sends each frame read from the video source to the latter.</p>
+<div class="fragment"><pre class="fragment">videoReader.linkProperty(&amp;cannyBlock,<span class="stringliteral">&quot;Input image&quot;</span>);
+</pre></div><p>The literal string <em>Input image</em> denotes univocally a <em>dynamic property</em> inside the block <em>cannyBlock</em>. <em>Dynamic properties</em> are special object <em>member variables</em> contained in the block objects, that can be seen as <em>slots</em> where the programmer can plug in wires to establish the data connections between the block objects.</p>
+<p>The previous code line establishes that each time a new input frame is read from the video source by the <em>videoReader</em> block, it will automatically be send and stored in the <em>Input image</em> dynamic property at the <em>cannyBlock</em> object.</p>
+<p>The <em>imageDisplayer</em> must receive the original input image from the <em>cannyBlock</em>. Also, the <em>edgeDisplayer</em> must receive the edge response images to display them. The following lines will establish the needed data connections between the <em>cannyBlock</em> and both the <em>imageDisplayer</em> and the <em>edgeDisplayer</em> block objects, so every time the former obtains the Canny edges from an input image, it will send both the edge image and the original image to the <em>edgeDisplayer</em> and the <em>imageDisplayer</em> respectively:</p>
+<div class="fragment"><pre class="fragment">cannyBlock.linkProperty(<span class="stringliteral">&quot;Input image&quot;</span>, imageDisplayer);
+cannyBlock.linkProperty(<span class="stringliteral">&quot;Output image&quot;</span>,edgesDisplayer);
+</pre></div><p>Block objects and data-links define a data-path, which transfer data from the input node (the camera) to the output node (the image display window). Our example application transfer images and edge lists from the <em>videoReader</em> and <em>cannyBlock</em> block objects to the <em>imageDisplayer</em> and <em>edgeDisplayer</em> block objects. The following image illustrates the final data-path of our example application:</p>
+<div align="center">
+<img src="cannyBlockExample.png" alt="cannyBlockExample.png"/>
+</div>
+<p>In the following section, <a class="el" href="AdvancedExampleBlockStructured.html">An advanced block-oriented example</a>, this edge detector example will be extended to illustrate how to create and interconnect several processing blocks in the same block-oriented application. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

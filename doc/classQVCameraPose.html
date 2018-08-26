@@ -1,0 +1,583 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVCameraPose Class Reference</h1><!-- doxytag: class="QVCameraPose" -->
+<p>Class for the camera pose of a view, in a 3D reconstruction.  
+<a href="#_details">More...</a></p>
+
+<p><a href="classQVCameraPose-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a52ad0074e213ff741d1e7a8212290f11">QVCameraPose</a> (const <a class="el" href="classQVQuaternion.html">QVQuaternion</a> q=<a class="el" href="classQVQuaternion.html">QVQuaternion</a>(), const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;centre=<a class="el" href="classQV3DPointF.html">QV3DPointF</a>())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#a52ad0074e213ff741d1e7a8212290f11"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#af45cb6490b392a17ed9c90dd66a26724">QVCameraPose</a> (const <a class="el" href="classQVVector.html">QVVector</a> &amp;v)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#af45cb6490b392a17ed9c90dd66a26724"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a1eebe7f1f861ff083393c82885fb8697">QVCameraPose</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> e3)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert constructor.  <a href="#a1eebe7f1f861ff083393c82885fb8697"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a97fa6dbe48643f88c997c72feae108ea">operator QVEuclideanMapping3</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert to 3D euclidean mapping operator.  <a href="#a97fa6dbe48643f88c997c72feae108ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a016dd44c3f2517e242feed030ae05651">operator QVVector</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convert to compact vector representation operator.  <a href="#a016dd44c3f2517e242feed030ae05651"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a2ab3d874b18ae3b7696388007a096d32">containsNaN</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Detect NaN values in the components of the camera pose.  <a href="#a2ab3d874b18ae3b7696388007a096d32"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a92d6b001739c6c5fa2742c7722d8a042">operator==</a> (const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare equal operator.  <a href="#a92d6b001739c6c5fa2742c7722d8a042"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a49c48c2f18fa0f7da4df1ef3e9adf572">operator!=</a> (const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare not equal operator.  <a href="#a49c48c2f18fa0f7da4df1ef3e9adf572"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVQuaternion.html">QVQuaternion</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a8643ae492e7a6f66679bf0cc2fc911c7">getOrientation</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Orientation of the camera pose.  <a href="#a8643ae492e7a6f66679bf0cc2fc911c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a57101f0fd271736866f970c1635dd7c1">getCenter</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Center of the camera pose.  <a href="#a57101f0fd271736866f970c1635dd7c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QPointF&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a618a5bf0fe0bb41ba717eef051198a4b">project</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;p3D) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Projects a 3D point at the image plane for the camera pose.  <a href="#a618a5bf0fe0bb41ba717eef051198a4b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a024c8a5a0b5506debb6ae08f9f3ab57c">toCameraReferenceCoordinates</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;p3D) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the coordinates for a 3D point, regarding the camera pose coordinate system.  <a href="#a024c8a5a0b5506debb6ae08f9f3ab57c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#ad976cef1f2d772209dfb55f0f105072b">toProjectionMatrix</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cast to a pin-hole projection matrix.  <a href="#ad976cef1f2d772209dfb55f0f105072b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCameraPose.html">QVCameraPose</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a3e234c53db2417a35ebc1f2f94baf2b5">operator*</a> (const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Composes two camera poses.  <a href="#a3e234c53db2417a35ebc1f2f94baf2b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCameraPose.html">QVCameraPose</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add">compose</a> (const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Composes two camera poses.  <a href="#a3db80981040aa1759e972e60129a6add"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCameraPose.html">QVCameraPose</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1">inverse</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provides the inverse of the camera pose.  <a href="#a8f8733e34460af6dda637385e358f1e1"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Class for the camera pose of a view, in a 3D reconstruction. </p>
+<p>This class specifies the orientation and location of a camera, in a SfM reconstruction.</p>
+<p>It is similar to the class <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>. The main difference is that the camera center in class <a class="el" href="classQVCameraPose.html">QVCameraPose</a> is stored explicitally, instead of as an indirect measurement of the translation of the euclidean mapping. </p>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00042">42</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a52ad0074e213ff741d1e7a8212290f11"></a><!-- doxytag: member="QVCameraPose::QVCameraPose" ref="a52ad0074e213ff741d1e7a8212290f11" args="(const QVQuaternion q=QVQuaternion(), const QV3DPointF &amp;centre=QV3DPointF())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCameraPose::QVCameraPose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVQuaternion.html">QVQuaternion</a>&nbsp;</td>
+          <td class="paramname"> <em>q</em> = <code><a class="el" href="classQVQuaternion.html">QVQuaternion</a>()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>centre</em> = <code><a class="el" href="classQV3DPointF.html">QV3DPointF</a>()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<p>Creates a new camera pose from its orientation and its center location.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>q</em>&nbsp;</td><td>Quaternion representing the orientation of the camera. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>centre</em>&nbsp;</td><td>3D location of the camera center. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00055">55</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af45cb6490b392a17ed9c90dd66a26724"></a><!-- doxytag: member="QVCameraPose::QVCameraPose" ref="af45cb6490b392a17ed9c90dd66a26724" args="(const QVVector &amp;v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCameraPose::QVCameraPose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVVector.html">QVVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>v</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<p>Creates a new camera pose from its orientation and its center location.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>q</em>&nbsp;</td><td>Quaternion representing the orientation of the camera. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>centre</em>&nbsp;</td><td>3D location of the camera center. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00068">68</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1eebe7f1f861ff083393c82885fb8697"></a><!-- doxytag: member="QVCameraPose::QVCameraPose" ref="a1eebe7f1f861ff083393c82885fb8697" args="(const QVEuclideanMapping3 e3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCameraPose::QVCameraPose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>&nbsp;</td>
+          <td class="paramname"> <em>e3</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert constructor. </p>
+<p>Creates a new camera pose from its pin-hole geometry, specified by an euclidean transformation. This constructor takes as input the 3D euclidean transformation which maps the 3D point location to the homogeneous coordinates of the image 2D points. This mapping is transformed to the camera pose.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e3</em>&nbsp;</td><td>euclidean mapping corresponding to the pin-hole camera geometry. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00082">82</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a97fa6dbe48643f88c997c72feae108ea"></a><!-- doxytag: member="QVCameraPose::operator QVEuclideanMapping3" ref="a97fa6dbe48643f88c997c72feae108ea" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCameraPose::operator <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert to 3D euclidean mapping operator. </p>
+<p>This operator converts the camera pose to the 3D euclidean transformation which maps 3D point locations to 2D homogeneous image point coordinates. </p>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00095">95</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a016dd44c3f2517e242feed030ae05651"></a><!-- doxytag: member="QVCameraPose::operator QVVector" ref="a016dd44c3f2517e242feed030ae05651" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVCameraPose::operator <a class="el" href="classQVVector.html">QVVector</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert to compact vector representation operator. </p>
+<p>This operator obtains a compact vector representation of the camera pose in 7 coordinates:</p>
+<ul>
+<li>4 for the orientation, parametrized as a quaternion vector.</li>
+<li>3 for the camera center. </li>
+</ul>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00109">109</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ab3d874b18ae3b7696388007a096d32"></a><!-- doxytag: member="QVCameraPose::containsNaN" ref="a2ab3d874b18ae3b7696388007a096d32" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVCameraPose::containsNaN </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Detect NaN values in the components of the camera pose. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if either the components of the orientation quaternion or the center point contain a NaN value. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00129">129</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga6592d7adcbca1d12882e1f68e3fbb3a9">checkForNaNValues()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92d6b001739c6c5fa2742c7722d8a042"></a><!-- doxytag: member="QVCameraPose::operator==" ref="a92d6b001739c6c5fa2742c7722d8a042" args="(const QVCameraPose &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVCameraPose::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare equal operator. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the orientation and the camera center of both camera poses is equal. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00134">134</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a49c48c2f18fa0f7da4df1ef3e9adf572"></a><!-- doxytag: member="QVCameraPose::operator!=" ref="a49c48c2f18fa0f7da4df1ef3e9adf572" args="(const QVCameraPose &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVCameraPose::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare not equal operator. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the orientation and the camera center of both camera poses is equal. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00146">146</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8643ae492e7a6f66679bf0cc2fc911c7"></a><!-- doxytag: member="QVCameraPose::getOrientation" ref="a8643ae492e7a6f66679bf0cc2fc911c7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVQuaternion.html">QVQuaternion</a> QVCameraPose::getOrientation </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Orientation of the camera pose. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A quaternion vector representing the camera pose orientation. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00158">158</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gad245d4a452046e18d3e4854398add123">globalEpipolarAdjustment()</a>, and <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57101f0fd271736866f970c1635dd7c1"></a><!-- doxytag: member="QVCameraPose::getCenter" ref="a57101f0fd271736866f970c1635dd7c1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> QVCameraPose::getCenter </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Center of the camera pose. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A 3D point corresponding to the camera center. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00163">163</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gad245d4a452046e18d3e4854398add123">globalEpipolarAdjustment()</a>, and <a class="el" href="group__qvsfm.html#ga854751f95bc2cd345b9f5cceaea3b192">incrementalGEA()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a618a5bf0fe0bb41ba717eef051198a4b"></a><!-- doxytag: member="QVCameraPose::project" ref="a618a5bf0fe0bb41ba717eef051198a4b" args="(const QV3DPointF &amp;p3D) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF QVCameraPose::project </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>p3D</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Projects a 3D point at the image plane for the camera pose. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p3D</em>&nbsp;</td><td>3D point to project. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A 2D image point corresponding to the projection of the 3D point. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00169">169</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a024c8a5a0b5506debb6ae08f9f3ab57c"></a><!-- doxytag: member="QVCameraPose::toCameraReferenceCoordinates" ref="a024c8a5a0b5506debb6ae08f9f3ab57c" args="(const QV3DPointF &amp;p3D) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> QVCameraPose::toCameraReferenceCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>p3D</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the coordinates for a 3D point, regarding the camera pose coordinate system. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p3D</em>&nbsp;</td><td>3D point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>3D point coordinates, regarding the camera coordinate reference. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00182">182</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad976cef1f2d772209dfb55f0f105072b"></a><!-- doxytag: member="QVCameraPose::toProjectionMatrix" ref="ad976cef1f2d772209dfb55f0f105072b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> QVCameraPose::toProjectionMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cast to a pin-hole projection matrix. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A rotation-translation matrix <img class="formulaInl" alt="$ R[I|-C] $" src="form_20.png"/>, where <img class="formulaInl" alt="$ R $" src="form_21.png"/> is the orientation of the camera, and <img class="formulaInl" alt="$ C $" src="form_22.png"/> is the center location of the camera. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00195">195</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add">compose()</a>, <a class="el" href="classQVCameraPose.html#a8f8733e34460af6dda637385e358f1e1">inverse()</a>, <a class="el" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">linear3DPointTriangulation()</a>, and <a class="el" href="group__qvsfm.html#gafea767e25db8e80b1822b8a1499776fa">testCheirality()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e234c53db2417a35ebc1f2f94baf2b5"></a><!-- doxytag: member="QVCameraPose::operator*" ref="a3e234c53db2417a35ebc1f2f94baf2b5" args="(const QVCameraPose &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCameraPose.html">QVCameraPose</a> QVCameraPose::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Composes two camera poses. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Operand</em>&nbsp;</td><td>camera pose for the composition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classQVCameraPose.html#a3db80981040aa1759e972e60129a6add" title="Composes two camera poses.">compose</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00219">219</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3db80981040aa1759e972e60129a6add"></a><!-- doxytag: member="QVCameraPose::compose" ref="a3db80981040aa1759e972e60129a6add" args="(const QVCameraPose &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCameraPose.html">QVCameraPose</a> QVCameraPose::compose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>other</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Composes two camera poses. </p>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00223">223</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVCameraPose.html#a3e234c53db2417a35ebc1f2f94baf2b5">operator*()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f8733e34460af6dda637385e358f1e1"></a><!-- doxytag: member="QVCameraPose::inverse" ref="a8f8733e34460af6dda637385e358f1e1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCameraPose.html">QVCameraPose</a> QVCameraPose::inverse </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provides the inverse of the camera pose. </p>
+
+<p>Definition at line <a class="el" href="qvcamerapose_8h_source.html#l00256">256</a> of file <a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvmath/<a class="el" href="qvcamerapose_8h_source.html">qvcamerapose.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>examples/testSBA_ROS/testSBA_ROS.cpp</h1><a href="testSBA__ROS_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00039"></a>00039 <span class="comment">// Uncomment the line below to show the initial and the optimized reconstruction.</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#define SHOW_RECONSTRUCTION</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QTime&gt;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;qvsfm.h&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;<a class="code" href="testSBA__ROS_2sfmviewer_8h.html" title="File from the QVision library.">sfmviewer.h</a>&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;qvros.h&gt;</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="comment">// Print the number of cameras, 3D points, projections and some statistics from a SfM reconstruction.</span>
+<a name="l00049"></a>00049 <span class="keywordtype">void</span> printReconstructionStats(  <span class="keyword">const</span> QList&lt;QVCameraPose&gt; &amp;cameraPoses,
+<a name="l00050"></a>00050                                 <span class="keyword">const</span> QList&lt;QV3DPointF&gt; &amp;points3D,
+<a name="l00051"></a>00051                                 <span class="keyword">const</span> QList&lt; QHash&lt; int, QPointF&gt; &gt; &amp;pointsProjections)
+<a name="l00052"></a>00052         {
+<a name="l00053"></a>00053         <span class="keyword">const</span> <span class="keywordtype">int</span> numCameras = cameraPoses.count(), numPoints = points3D.count();
+<a name="l00054"></a>00054         <span class="keywordtype">int</span> numProjections = 0;
+<a name="l00055"></a>00055         QHash&lt; int, QPointF&gt; temp;
+<a name="l00056"></a>00056         <span class="keywordflow">foreach</span>(temp, pointsProjections)
+<a name="l00057"></a>00057                 numProjections += temp.count();
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Readed &quot;</span>   &lt;&lt; numPoints &lt;&lt; <span class="stringliteral">&quot; points, &quot;</span>
+<a name="l00060"></a>00060                                         &lt;&lt; numCameras &lt;&lt; <span class="stringliteral">&quot; cameras, &quot;</span>
+<a name="l00061"></a>00061                                         &lt;&lt; numProjections &lt;&lt; <span class="stringliteral">&quot; projections, &quot;</span>
+<a name="l00062"></a>00062                                         &lt;&lt; double(numProjections)/double(numCameras) &lt;&lt; <span class="stringliteral">&quot; projections/camera, &quot;</span>
+<a name="l00063"></a>00063                                         &lt;&lt; double(numProjections)/double(numPoints) &lt;&lt; <span class="stringliteral">&quot; projections/point.&quot;</span>
+<a name="l00064"></a>00064                                         &lt;&lt; std::endl;
+<a name="l00065"></a>00065         }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<a name="l00068"></a>00068         {
+<a name="l00069"></a>00069 <span class="preprocessor">        #ifdef SHOW_RECONSTRUCTION</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv, <span class="stringliteral">&quot;Example application for QVision.&quot;</span>, <span class="keyword">true</span>);
+<a name="l00071"></a>00071 <span class="preprocessor">        #else</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span>        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc, argv, <span class="stringliteral">&quot;Example application for QVision.&quot;</span>, <span class="keyword">false</span>);
+<a name="l00073"></a>00073 <span class="preprocessor">        #endif</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span>
+<a name="l00075"></a>00075         <span class="comment">// 1. Get the data-set files path from the first command line parameter.</span>
+<a name="l00076"></a>00076         <span class="keywordflow">if</span> (app.getNumberOfArguments() &lt; 2)
+<a name="l00077"></a>00077                 {
+<a name="l00078"></a>00078                 std::cout &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; &lt;data_set_path&gt; [iterations] [lambda]&quot;</span>
+<a name="l00079"></a>00079                         &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00080"></a>00080                 exit(0);
+<a name="l00081"></a>00081                 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         <span class="keyword">const</span> QString path = app.getArgument(1);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="comment">// 2. Set the number of iterations, and lambda values for the GEA and sSBA optimizations, if provided as parameters through the command line.</span>
+<a name="l00086"></a>00086         <span class="keywordtype">bool</span> iters_OK = <span class="keyword">true</span>, lambda_OK = <span class="keyword">true</span>;
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088         <span class="keyword">const</span> <span class="keywordtype">int</span> iters =                       (app.getNumberOfArguments() &lt; 3)? 10 : app.getArgument(2).toInt(&amp;iters_OK);
+<a name="l00089"></a>00089         <span class="keyword">const</span> <span class="keywordtype">double</span> lambda =           (app.getNumberOfArguments() &lt; 4)? 1e-3 : app.getArgument(3).toDouble(&amp;lambda_OK);
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091         <span class="keywordflow">if</span> (not iters_OK)
+<a name="l00092"></a>00092                 {
+<a name="l00093"></a>00093                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error reading number of iterations.&quot;</span> &lt;&lt; std::endl;
+<a name="l00094"></a>00094                 exit(0);
+<a name="l00095"></a>00095                 }
+<a name="l00096"></a>00096         <span class="keywordflow">else</span>
+<a name="l00097"></a>00097                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Number of iterations = &quot;</span> &lt;&lt; iters &lt;&lt; std::endl;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <span class="keywordflow">if</span> (not lambda_OK)
+<a name="l00100"></a>00100                 {
+<a name="l00101"></a>00101                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error reading lambda parameter&quot;</span> &lt;&lt; std::endl;
+<a name="l00102"></a>00102                 exit(0);
+<a name="l00103"></a>00103                 }
+<a name="l00104"></a>00104         <span class="keywordflow">else</span>
+<a name="l00105"></a>00105                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Lambda = &quot;</span> &lt;&lt; lambda &lt;&lt; std::endl;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         <span class="comment">// 3. Read SfM reconstruction from the specified path.</span>
+<a name="l00108"></a>00108         QList&lt;QV3DPointF&gt; points3D;
+<a name="l00109"></a>00109         QList&lt;QVCameraPose&gt; cameraPoses;
+<a name="l00110"></a>00110         QList&lt;QVMatrix&gt; cameraCalibrations;
+<a name="l00111"></a>00111         QList&lt; QHash&lt; int, QPointF&gt; &gt; pointsProjections;
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113         <span class="keywordflow">if</span>( not <a class="code" href="group__qvsfm.html#ga934b4f0190cd3442f11b875608941829" title="Loads a SfM reconstruction from a file or files. This function loads a SfM reconstruction...">readSfMReconstruction</a>(path, cameraCalibrations, cameraPoses, points3D, pointsProjections) )
+<a name="l00114"></a>00114                 {
+<a name="l00115"></a>00115                 std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Error: could not read SfM reconstruction from path &#39;&quot;</span> &lt;&lt; qPrintable(path) &lt;&lt; <span class="stringliteral">&quot;&#39;.&quot;</span> &lt;&lt; std::endl;
+<a name="l00116"></a>00116                 <span class="keywordflow">return</span> 0;
+<a name="l00117"></a>00117                 }
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119         <span class="comment">// 4. Correct camera intrinsic calibrations from point projections.</span>
+<a name="l00120"></a>00120         <span class="keyword">const</span> QList&lt; QHash&lt; int, QPointF&gt; &gt; calibratedPointsProjections = correctIntrinsics(cameraCalibrations, pointsProjections);
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         <span class="comment">// 5. Correct camera cheirality for the 3D structure.</span>
+<a name="l00123"></a>00123         <span class="keywordflow">if</span> (<a class="code" href="group__qvsfm.html#gafea767e25db8e80b1822b8a1499776fa" title="Test correct camera cheirality.">testCheirality</a>(cameraPoses, calibratedPointsProjections))
+<a name="l00124"></a>00124                 <a class="code" href="group__qvsfm.html#gafe66d3df96f6c69ab795e2a070865dad" title="Swaps the cheirality of the camera poses and 3D points contained in a SfM reconstruction...">invertCheirality</a>(cameraPoses, points3D);
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126         <span class="comment">// 6. Print SfM reconstruction stats.</span>
+<a name="l00127"></a>00127         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Reconstruction loaded.&quot;</span>&lt;&lt; std::endl;       
+<a name="l00128"></a>00128         printReconstructionStats(cameraPoses, points3D, calibratedPointsProjections);
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130         QList&lt;QV3DPointF&gt; points3D_SBA;
+<a name="l00131"></a>00131         QList&lt;QVCameraPose&gt; cameraPoses_SBA;
+<a name="l00132"></a>00132         
+<a name="l00133"></a>00133         <span class="keywordtype">int</span> time_sSBA;
+<a name="l00134"></a>00134         <a class="code" href="group__qvros.html#gad93da3ae76d4c1cebbdd6b7dbd29d662" title="Apply sSBA optimization on a SfM reconstruction.">sSBAOptimization</a>(cameraPoses, points3D, calibratedPointsProjections, cameraPoses_SBA, points3D_SBA, time_sSBA, iters, lambda, <span class="keyword">true</span>);
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136         <span class="comment">// 9. Print errors and total performance times.</span>
+<a name="l00137"></a>00137         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] Initial error\t&quot;</span> &lt;&lt; 1000.0 * reconstructionError(cameraPoses, points3D, calibratedPointsProjections) &lt;&lt; std::endl;
+<a name="l00138"></a>00138         std::cout &lt;&lt; <span class="stringliteral">&quot;[main] sSBA error\t&quot;</span> &lt;&lt; 1000.0 * reconstructionError(cameraPoses_SBA, points3D_SBA, calibratedPointsProjections) &lt;&lt; std::endl;
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140 <span class="preprocessor">        #ifdef SHOW_RECONSTRUCTION</span>
+<a name="l00141"></a>00141 <span class="preprocessor"></span>        SfMViewer originalMap(cameraPoses, points3D, <span class="stringliteral">&quot;Original reconstruction&quot;</span>);
+<a name="l00142"></a>00142         SfMViewer SBAMap(cameraPoses_SBA, points3D_SBA, <span class="stringliteral">&quot;Reconstruction optimized with SBA&quot;</span>);
+<a name="l00143"></a>00143         <span class="keywordflow">return</span> app.exec();
+<a name="l00144"></a>00144 <span class="preprocessor">        #endif // SHOW_RECONSTRUCTION</span>
+<a name="l00145"></a>00145 <span class="preprocessor"></span>
+<a name="l00146"></a>00146         exit(0);
+<a name="l00147"></a>00147         }
+<a name="l00148"></a>00148 
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

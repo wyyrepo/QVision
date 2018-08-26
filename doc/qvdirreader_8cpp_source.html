@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvio/qvdirreader.cpp</h1><a href="qvdirreader_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *   Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *   &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *   University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *   This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *   QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *   it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *   published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *   QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *   GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *   You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *   License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QVDirReader&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;QUrl&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#ifdef QVIPP</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#include &lt;qvipp.h&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#endif // QVIPP</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00033"></a>00033 <span class="keywordtype">bool</span> QVDirReader:: open(<span class="keyword">const</span> QString &amp; url_string,
+<a name="l00034"></a>00034                          <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_cols, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_rows,
+<a name="l00035"></a>00035                          <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; suggested_fps, <a class="code" href="classQVVideoReader.html#a5897497caf38c09bace454d3e205ede0" title="Open options for a video source.">QVVideoReader::OpenOptions</a> &amp; suggested_options,
+<a name="l00036"></a>00036                          <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421" title="Possible preferred modes for video sources.">QVVideoReader::TSourceMode</a> &amp; source_mode)
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039         <span class="comment">// Preferred mode: RGB</span>
+<a name="l00040"></a>00040         source_mode = <a class="code" href="classQVVideoReader.html#ae7f437e441e6b0d6c0acbb1edbdc6421a65e1ba18291e438596be5197a7901337" title="Source outputs RGB images by default.">QVVideoReader::RGBMode</a>;
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         ended = <span class="keyword">false</span>;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="comment">// Treat both isolated directory names and path to files (with possible wildcards):</span>
+<a name="l00045"></a>00045         QString dir_string = url_string;
+<a name="l00046"></a>00046         dir_string.remove(<span class="stringliteral">&quot;dir://&quot;</span>);
+<a name="l00047"></a>00047         QStringList filters;
+<a name="l00048"></a>00048         QFileInfo info(dir_string);
+<a name="l00049"></a>00049         <span class="keywordflow">if</span>(info.isDir()) { <span class="comment">// Will read every image file in specified dir:</span>
+<a name="l00050"></a>00050             dir = QDir(dir_string);
+<a name="l00051"></a>00051             filters &lt;&lt; <span class="stringliteral">&quot;*.jpg&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.png&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.bmp&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.pgm&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.gif&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.jpeg&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.pbm&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.ppm&quot;</span>
+<a name="l00052"></a>00052                     &lt;&lt; <span class="stringliteral">&quot;*.tiff&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.xbm&quot;</span> &lt;&lt; <span class="stringliteral">&quot;*.xpm&quot;</span>;
+<a name="l00053"></a>00053         } <span class="keywordflow">else</span> { <span class="comment">// Will read only selected files (i.e. using wildcards) in specified dir:</span>
+<a name="l00054"></a>00054             QString path = info.path(), files = info.fileName();
+<a name="l00055"></a>00055             QFileInfo info(path);
+<a name="l00056"></a>00056             <span class="keywordflow">if</span>(not info.isDir())
+<a name="l00057"></a>00057                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00058"></a>00058             dir = QDir(path);
+<a name="l00059"></a>00059             filters &lt;&lt; files;
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061         dir.setNameFilters(filters);
+<a name="l00062"></a>00062         dir.setSorting(QDir::Name);
+<a name="l00063"></a>00063         filenames = dir.entryList();
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <span class="keywordflow">if</span>(filenames.isEmpty())
+<a name="l00066"></a>00066             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="comment">// NoLoop &amp; realTime flags:</span>
+<a name="l00069"></a>00069         noLoop = (suggested_options &amp; <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604bafa19a0a74c786eaa4d71f5102a1a7aa3" title="Continue from the beginning of the video source when it reaches the end.">QVVideoReader::NoLoop</a>);
+<a name="l00070"></a>00070         realTime = (suggested_options &amp; <a class="code" href="classQVVideoReader.html#a0a3fbed9c7741e2c85c65df76c8e604ba0125897d48c0c6f4d1b399bb2d3b746d">QVVideoReader::RealTime</a>);
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072         <span class="keywordflow">if</span>(realTime)
+<a name="l00073"></a>00073             suggested_fps = 25;
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075         <span class="comment">// std::cout &lt;&lt; qPrintable(dir.absolutePath()) &lt;&lt; &quot;\n&quot;;</span>
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <span class="comment">// Will not rescale, answer size (0,0)</span>
+<a name="l00078"></a>00078         suggested_cols = suggested_rows = 0;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         <span class="keywordflow">if</span>(filenames.size() &gt; 0) {
+<a name="l00081"></a>00081             index = 0;
+<a name="l00082"></a>00082             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00083"></a>00083         } <span class="keywordflow">else</span>
+<a name="l00084"></a>00084             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="keywordtype">bool</span> QVDirReader::close()
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="keywordtype">bool</span> QVDirReader::grab(<a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imgR, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imgG, <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> &amp;imgB)
+<a name="l00093"></a>00093 {
+<a name="l00094"></a>00094         <span class="keywordflow">if</span>(ended)
+<a name="l00095"></a>00095             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         QString fullpathtofile = dir.absolutePath() + <span class="stringliteral">&quot;/&quot;</span> + filenames.at(index);
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <span class="comment">//std::cout &lt;&lt; &quot;QVDirReader::grab: Read file &quot; &lt;&lt; qPrintable(fullpathtofile) &lt;&lt; &quot;\n&quot;;</span>
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101         <a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;uchar,3&gt;</a> ColorImage(fullpathtofile);
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="comment">/* Not needed yet (all resizing in qvvideoreader.cpp):</span>
+<a name="l00104"></a>00104 <span class="comment">        if((cols_out != 0 and rows_out !=0) || (ColorImage.getRows()%2==1) || (ColorImage.getCols()%2==1)) {</span>
+<a name="l00105"></a>00105 <span class="comment">            QVImage&lt;uchar,3&gt; InterImage;</span>
+<a name="l00106"></a>00106 <span class="comment">            if(cols_out == 0 || rows_out == 0)</span>
+<a name="l00107"></a>00107 <span class="comment">                InterImage.resize(ColorImage.getCols() &amp; 0xfffffffe,ColorImage.getRows() &amp; 0xfffffffe);</span>
+<a name="l00108"></a>00108 <span class="comment">            else</span>
+<a name="l00109"></a>00109 <span class="comment">                InterImage.resize(cols_out,rows_out);</span>
+<a name="l00110"></a>00110 <span class="comment">            InterImage.resetROI();</span>
+<a name="l00111"></a>00111 <span class="comment">            Resize(ColorImage,InterImage);</span>
+<a name="l00112"></a>00112 <span class="comment">            ColorImage = InterImage;</span>
+<a name="l00113"></a>00113 <span class="comment">        }*/</span>
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115         imgR = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(ColorImage.getCols(),ColorImage.getRows());
+<a name="l00116"></a>00116         imgG = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(ColorImage.getCols(),ColorImage.getRows());
+<a name="l00117"></a>00117         imgB = <a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a>(ColorImage.getCols(),ColorImage.getRows());
+<a name="l00118"></a>00118         Copy(ColorImage,0,imgR);
+<a name="l00119"></a>00119         Copy(ColorImage,1,imgG);
+<a name="l00120"></a>00120         Copy(ColorImage,2,imgB);
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         index = index + 1;
+<a name="l00123"></a>00123         <span class="keywordflow">if</span>(index == filenames.size()) {
+<a name="l00124"></a>00124             <span class="keywordflow">if</span>(noLoop) {
+<a name="l00125"></a>00125                 ended = <span class="keyword">true</span>;
+<a name="l00126"></a>00126                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00127"></a>00127             } <span class="keywordflow">else</span>
+<a name="l00128"></a>00128                 index = 0;
+<a name="l00129"></a>00129         }
+<a name="l00130"></a>00130         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00131"></a>00131 }
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="keywordtype">int</span> QVDirReader::getLength()
+<a name="l00134"></a>00134 {
+<a name="l00135"></a>00135     <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(filenames.size());
+<a name="l00136"></a>00136 }
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138 <span class="keywordtype">int</span> QVDirReader::getPos()
+<a name="l00139"></a>00139 {
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(index);
+<a name="l00141"></a>00141 }
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143 <span class="keywordtype">bool</span> QVDirReader::seek(<span class="keywordtype">int</span> pos)
+<a name="l00144"></a>00144 {
+<a name="l00145"></a>00145     index = pos;
+<a name="l00146"></a>00146     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00147"></a>00147 }
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

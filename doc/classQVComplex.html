@@ -1,0 +1,796 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVComplex Class Reference<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1><!-- doxytag: class="QVComplex" -->
+<p>Implementation of complex numbers.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvcomplex_8h_source.html">QVComplex</a>&gt;</code></p>
+
+<p><a href="classQVComplex-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#af48f92549641ae6dd083aa888af64f78">QVComplex</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#af48f92549641ae6dd083aa888af64f78"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#abaebcbe26a30c33f70d3d19a683fa3b7">QVComplex</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#abaebcbe26a30c33f70d3d19a683fa3b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a908417d55a10387812ebf3000f47269e">QVComplex</a> (const double real, const double imaginary=0.0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Common constructor.  <a href="#a908417d55a10387812ebf3000f47269e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#abf6b2872ac74e7b8aefd50742678d15c">QVComplex</a> (const QPointF &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor from a QPointF.  <a href="#abf6b2872ac74e7b8aefd50742678d15c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#ad126bb0526badc34e24ca39398c53d31">operator=</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy operator.  <a href="#ad126bb0526badc34e24ca39398c53d31"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a585033e23669137089afa0cd5c147f19">operator==</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex equality operator.  <a href="#a585033e23669137089afa0cd5c147f19"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#ada7a3161b6da2094c68d43c91595ff23">operator+=</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex incremental operator.  <a href="#ada7a3161b6da2094c68d43c91595ff23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#afaac911c41aa799e16ab86c2499c0f88">operator!=</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex unequality operator.  <a href="#afaac911c41aa799e16ab86c2499c0f88"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#acffd76d37a9fb9a6032d2484a71b004c">operator*</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex product operator.  <a href="#acffd76d37a9fb9a6032d2484a71b004c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a1b7fdffa93b10b721bc914be159f4125">operator/</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex division.  <a href="#a1b7fdffa93b10b721bc914be159f4125"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a38f5464dd430dfac70ba1aae91f244a2">operator+</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex addition operator.  <a href="#a38f5464dd430dfac70ba1aae91f244a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a4498379eac055a759b74d2e9b455fae2">operator-</a> (const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;complex) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-complex substraction operator.  <a href="#a4498379eac055a759b74d2e9b455fae2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#adc088f9dbd8fb5fee2dbcb2d09032b38">operator-</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the additive inverse of the complex.  <a href="#adc088f9dbd8fb5fee2dbcb2d09032b38"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a86336df1451fb2eb85cf79b19046e2af">operator*</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-scalar product.  <a href="#a86336df1451fb2eb85cf79b19046e2af"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a3a9127f78bd5b53333d528e7bf35aa36">operator/</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-scalar division operator.  <a href="#a3a9127f78bd5b53333d528e7bf35aa36"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a3e510f4968ce1d5b0ecd22f7bbb44ba3">operator+</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-scalar addition.  <a href="#a3e510f4968ce1d5b0ecd22f7bbb44ba3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a4e1705f37ca0c89d53670fa7ec6b8449">operator-</a> (const double value) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Complex-scalar substraction operator.  <a href="#a4e1705f37ca0c89d53670fa7ec6b8449"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#ab13613331500f6433425da7fd187d206">norm2</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the <a href="http://en.wikipedia.org/wiki/Norm_%28mathematics%29">norm<sub>2</sub></a> for complex.  <a href="#ab13613331500f6433425da7fd187d206"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a8205f0bb88be6cc2f7f41a39e034d7ab">real</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get real component of complex value.  <a href="#a8205f0bb88be6cc2f7f41a39e034d7ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#abd8c383c75a395b2eae542b18b2a856d">imaginary</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get imaginary component of complex value.  <a href="#abd8c383c75a395b2eae542b18b2a856d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a89f5f73cf54cffeea16b88bf3367f150">real</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get reference to the real component of complex value.  <a href="#a89f5f73cf54cffeea16b88bf3367f150"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a146b5c513dad5dc8b0ecef5982260f5f">imaginary</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get reference to the imaginary component of complex value.  <a href="#a146b5c513dad5dc8b0ecef5982260f5f"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQVComplex.html">QVComplex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVComplex.html#a8de38671ae4ef50c10824815b7648479">i</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates the unit imaginary value.  <a href="#a8de38671ae4ef50c10824815b7648479"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Implementation of complex numbers. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8h_source.html#l00037">37</a> of file <a class="el" href="qvcomplex_8h_source.html">qvcomplex.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af48f92549641ae6dd083aa888af64f78"></a><!-- doxytag: member="QVComplex::QVComplex" ref="af48f92549641ae6dd083aa888af64f78" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVComplex::QVComplex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<p>Constructs a complex number object equal to zero. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00031">31</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="classQVComplex.html#a8de38671ae4ef50c10824815b7648479">i()</a>, <a class="el" href="classQVComplex.html#acffd76d37a9fb9a6032d2484a71b004c">operator*()</a>, <a class="el" href="classQVComplex.html#a38f5464dd430dfac70ba1aae91f244a2">operator+()</a>, <a class="el" href="classQVComplex.html#a4498379eac055a759b74d2e9b455fae2">operator-()</a>, and <a class="el" href="classQVComplex.html#a1b7fdffa93b10b721bc914be159f4125">operator/()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abaebcbe26a30c33f70d3d19a683fa3b7"></a><!-- doxytag: member="QVComplex::QVComplex" ref="abaebcbe26a30c33f70d3d19a683fa3b7" args="(const QVComplex &amp;complex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVComplex::QVComplex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Creates a complex object copying the content from a given one. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>complex to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00032">32</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a908417d55a10387812ebf3000f47269e"></a><!-- doxytag: member="QVComplex::QVComplex" ref="a908417d55a10387812ebf3000f47269e" args="(const double real, const double imaginary=0.0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVComplex::QVComplex </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>real</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>imaginary</em> = <code>0.0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Common constructor. </p>
+<p>Creates a new complex number object, specifying the real and imaginary parts.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>real</em>&nbsp;</td><td>Real part of the complex number. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>imaginary</em>&nbsp;</td><td>Imaginary part of the complex number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00033">33</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf6b2872ac74e7b8aefd50742678d15c"></a><!-- doxytag: member="QVComplex::QVComplex" ref="abf6b2872ac74e7b8aefd50742678d15c" args="(const QPointF &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVComplex::QVComplex </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor from a QPointF. </p>
+<p>Creates a new complex number object, obtaining its components from a point object. The real part of the complex number will be obtained from the <em>x</em> component of the point, and the imaginary part from the <em>y</em> component.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Point containing the components of the new complex number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00034">34</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad126bb0526badc34e24ca39398c53d31"></a><!-- doxytag: member="QVComplex::operator=" ref="ad126bb0526badc34e24ca39398c53d31" args="(const QVComplex &amp;complex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> &amp; QVComplex::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>complex to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00036">36</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a585033e23669137089afa0cd5c147f19"></a><!-- doxytag: member="QVComplex::operator==" ref="a585033e23669137089afa0cd5c147f19" args="(const QVComplex &amp;complex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVComplex::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex equality operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>term for the compare operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the given complex has same dimensions and equal content of the data buffer, else false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00043">43</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada7a3161b6da2094c68d43c91595ff23"></a><!-- doxytag: member="QVComplex::operator+=" ref="ada7a3161b6da2094c68d43c91595ff23" args="(const QVComplex &amp;complex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> &amp; QVComplex::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex incremental operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>addendum to the actual complex </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if the given complex has same dimensions and equal content of the data buffer, else false. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00044">44</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afaac911c41aa799e16ab86c2499c0f88"></a><!-- doxytag: member="QVComplex::operator!=" ref="afaac911c41aa799e16ab86c2499c0f88" args="(const QVComplex &amp;complex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QVComplex::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex unequality operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>term for the compare operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false if the given complex has same dimensions and equal content of the data buffer, else true. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00045">45</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acffd76d37a9fb9a6032d2484a71b004c"></a><!-- doxytag: member="QVComplex::operator*" ref="acffd76d37a9fb9a6032d2484a71b004c" args="(const QVComplex &amp;complex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex product operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>factor for the product operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00047">47</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b7fdffa93b10b721bc914be159f4125"></a><!-- doxytag: member="QVComplex::operator/" ref="a1b7fdffa93b10b721bc914be159f4125" args="(const QVComplex &amp;complex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex division. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>factor for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00058">58</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38f5464dd430dfac70ba1aae91f244a2"></a><!-- doxytag: member="QVComplex::operator+" ref="a38f5464dd430dfac70ba1aae91f244a2" args="(const QVComplex &amp;complex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex addition operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>term for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00070">70</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4498379eac055a759b74d2e9b455fae2"></a><!-- doxytag: member="QVComplex::operator&#45;" ref="a4498379eac055a759b74d2e9b455fae2" args="(const QVComplex &amp;complex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVComplex.html">QVComplex</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>complex</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-complex substraction operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>complex</em>&nbsp;</td><td>subtrahend for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00071">71</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc088f9dbd8fb5fee2dbcb2d09032b38"></a><!-- doxytag: member="QVComplex::operator&#45;" ref="adc088f9dbd8fb5fee2dbcb2d09032b38" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator- </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the additive inverse of the complex. </p>
+<p>Obtains a complex changing the sign of its elements. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00072">72</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86336df1451fb2eb85cf79b19046e2af"></a><!-- doxytag: member="QVComplex::operator*" ref="a86336df1451fb2eb85cf79b19046e2af" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-scalar product. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>factor for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00073">73</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a9127f78bd5b53333d528e7bf35aa36"></a><!-- doxytag: member="QVComplex::operator/" ref="a3a9127f78bd5b53333d528e7bf35aa36" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-scalar division operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>divider for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00074">74</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e510f4968ce1d5b0ecd22f7bbb44ba3"></a><!-- doxytag: member="QVComplex::operator+" ref="a3e510f4968ce1d5b0ecd22f7bbb44ba3" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-scalar addition. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>addendum for the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00075">75</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e1705f37ca0c89d53670fa7ec6b8449"></a><!-- doxytag: member="QVComplex::operator&#45;" ref="a4e1705f37ca0c89d53670fa7ec6b8449" args="(const double value) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Complex-scalar substraction operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>value to substract. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00076">76</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab13613331500f6433425da7fd187d206"></a><!-- doxytag: member="QVComplex::norm2" ref="ab13613331500f6433425da7fd187d206" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVComplex::norm2 </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the <a href="http://en.wikipedia.org/wiki/Norm_%28mathematics%29">norm<sub>2</sub></a> for complex. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>norm-2 of the complex. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00077">77</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8205f0bb88be6cc2f7f41a39e034d7ab"></a><!-- doxytag: member="QVComplex::real" ref="a8205f0bb88be6cc2f7f41a39e034d7ab" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVComplex::real </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get real component of complex value. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8h_source.html#l00155">155</a> of file <a class="el" href="qvcomplex_8h_source.html">qvcomplex.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmath.html#gaf32edeb19dd7ba0327a1405ffd78cea4">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd8c383c75a395b2eae542b18b2a856d"></a><!-- doxytag: member="QVComplex::imaginary" ref="abd8c383c75a395b2eae542b18b2a856d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QVComplex::imaginary </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get imaginary component of complex value. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8h_source.html#l00158">158</a> of file <a class="el" href="qvcomplex_8h_source.html">qvcomplex.h</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvmath.html#gaf32edeb19dd7ba0327a1405ffd78cea4">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89f5f73cf54cffeea16b88bf3367f150"></a><!-- doxytag: member="QVComplex::real" ref="a89f5f73cf54cffeea16b88bf3367f150" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double&amp; QVComplex::real </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get reference to the real component of complex value. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8h_source.html#l00161">161</a> of file <a class="el" href="qvcomplex_8h_source.html">qvcomplex.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a146b5c513dad5dc8b0ecef5982260f5f"></a><!-- doxytag: member="QVComplex::imaginary" ref="a146b5c513dad5dc8b0ecef5982260f5f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double&amp; QVComplex::imaginary </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get reference to the imaginary component of complex value. </p>
+
+<p>Definition at line <a class="el" href="qvcomplex_8h_source.html#l00164">164</a> of file <a class="el" href="qvcomplex_8h_source.html">qvcomplex.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8de38671ae4ef50c10824815b7648479"></a><!-- doxytag: member="QVComplex::i" ref="a8de38671ae4ef50c10824815b7648479" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVComplex.html">QVComplex</a> QVComplex::i </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates the unit imaginary value. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>complex number containing a unit value for the imaginary coordinate, and zero value for the real coordinate. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvcomplex_8cpp_source.html#l00078">78</a> of file <a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/qvmath/<a class="el" href="qvcomplex_8h_source.html">qvcomplex.h</a></li>
+<li>src/qvmath/<a class="el" href="qvcomplex_8cpp_source.html">qvcomplex.cpp</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="ImageIO">Image and video input/output </a></h1><p>The QVision provides functionality to perform the following image an video input/output tasks:</p>
+<ul>
+<li>Reading and writing image objects from and to image files.</li>
+<li>Reading and writing YUV4MPEG video files.</li>
+<li>Reading from general video sources (using MPlayer, only in Linux).</li>
+</ul>
+<h2><a class="anchor" id="ImageReadWrite">
+Reading and writing images from and to files.</a></h2>
+<p>The first application example seen in section <a class="el" href="HelloWorld.html">Hello world</a> includes the header file <em>qvip.h</em>. This file contains much of the image input/output functionality provided by the QVision. For example, it contains the headers for the functions <a class="el" href="group__qvip.html#ga77ad534a38a3c6e3de5607c07cc0e999">writeQVImageToFile</a> and <a class="el" href="group__qvip.html#ga59a032b0b1c38254a95e383a39bf33a0">readQVImageFromFile</a>, which respectively write and read the content of an image file from and to a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> object.</p>
+<h2><a class="anchor" id="ReadingYUV4MPEGVideoFiles">
+Reading from YUV4MPEG video files.</a></h2>
+<p>Functions <a class="el" href="group__qvip.html#ga9dc03d51efde6cf108af4d6cac41cb82">readYUV4MPEG2Header</a> and <a class="el" href="group__qvip.html#ga28c6421742db54f40f50da2387aea93e">readYUV4MPEG2Frame</a> can be used to retrieve the contents of the video file.</p>
+<p>An example code usage follows:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;iostream&gt;</span>
+
+<span class="comment">// Headers for the QFile and the YUV4MPEG functions.</span>
+<span class="preprocessor">#include &lt;QFile&gt;</span>
+<span class="preprocessor">#include &lt;qvip.h&gt;</span>
+
+<span class="keywordtype">int</span> main()
+{
+QFile videoFile(<span class="stringliteral">&quot;test.yuv&quot;</span>);
+<span class="keywordtype">int</span> cols, rows, fps;
+
+<span class="comment">// First the video file must be opened for reading:</span>
+<span class="keywordflow">if</span> (not videoFile.open(QIODevice::ReadOnly))
+    std::err &lt;&lt; <span class="stringliteral">&quot;Can&#39;t open file &#39;test.yuv&#39;.&quot;</span> &lt;&lt; std::endl;
+
+<span class="comment">// If the video file was correctly opened, we can use function &#39;readYUV4MPEG2Header&#39; to read the video file header:</span>
+<span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="group__qvip.html#ga9dc03d51efde6cf108af4d6cac41cb82" title="Read yuv4mpeg2 header from a video file.">readYUV4MPEG2Header</a>(videoFile, cols, rows, fps))
+    std::err &lt;&lt; <span class="stringliteral">&quot;File &#39;test.yuv&#39; doesn&#39;t seem to contain a valid YUV4MPEG2 header.&quot;</span> &lt;&lt; std::endl;
+
+<span class="comment">// If that is successful, we can use the function &#39;readYUV4MPEG2Frame&#39; to read image frames to &#39;QVImage&#39; objects:</span>
+<span class="keywordflow">else</span>    {
+        <span class="comment">// Each image will contain a different channel for the input images, read in YUV format.</span>
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a>       imageY(cols, rows, cols),
+                                imageU(cols/2, rows/2, cols/2),
+                                imageV(cols/2, rows/2, cols/2);
+
+        <span class="keywordflow">while</span> (!videoFile.atEnd() &amp;&amp; <a class="code" href="group__qvip.html#ga28c6421742db54f40f50da2387aea93e" title="Read YUV image frames from a yuv4mpeg2 video file.">readYUV4MPEG2Frame</a>(videoFile, imageY, imageU, imageV))
+                {
+                <span class="comment">// Perform some image processing with the &#39;imageY&#39;, &#39;imageU&#39; and &#39;imageV&#39; objects,</span>
+                <span class="comment">// which contain the image frame readed from the input file, in YUV 4:2:2 format.</span>
+                }
+
+        <span class="comment">// When finished, close the video file.</span>
+        videoFile.close();
+        }
+<span class="keywordflow">return</span> 0;
+}
+</pre></div><h2><a class="anchor" id="WriteYUV4MPEGVideoFiles">
+Writing to YUV4MPEG video files.</a></h2>
+<p>This can be done using the functions <a class="el" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f">writeYUV4MPEG2Header</a>, <a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189">writeYUV4MPEG2Frame</a> and <a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189">writeYUV4MPEG2Frame</a>.</p>
+<p>The following code illustrates their usage. First the video file must be created and initialized with a header:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;QFile&gt;</span>
+<span class="preprocessor">#include &lt;qvip.h&gt;</span>
+
+[...]
+QFile videoFile(<span class="stringliteral">&quot;test.yuv&quot;</span>);
+videoFile.open(QIODevice::WriteOnly|QIODevice::Truncate);
+<a class="code" href="group__qvip.html#ga3039166fdcc15216e5319d1c5e652c8f" title="Create a yuv4mpeg2 video file.">writeYUV4MPEG2Header</a>(videoFile, cols, rows, 24);
+[...]
+</pre></div><p>Then, each image frame must be written to the video file, until a given stop condition is met:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordflow">while</span>(newImages)
+        {
+        <span class="comment">// Read a new image in RGB format</span>
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar,3&gt;</a> rgbImage = getSomeRGBImage();
+        
+        <span class="comment">// Write the RGB image to the file</span>
+        <a class="code" href="group__qvip.html#ga8009ad640bdcbcec1c00f6a92f9aed27" title="Write YUV image frames to a yuv4mpeg2 video file.">writeYUV4MPEG2Frame</a>(videoFile, rgbImage);
+        [...]
+        }
+</pre></div><p>Alternatively, an overloaded version of the <a class="el" href="group__qvip.html#gaafafdc5bedd299e344cf744f692fd189">writeYUV4MPEG2Frame</a> function can be used, to store an image in YUV format:</p>
+<div class="fragment"><pre class="fragment"><span class="keywordflow">while</span>(newImages)
+        {
+        <span class="comment">// Read a new YUV image in 4:2:0 format</span>
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> yImage = getSomeYUVImageYChannel();
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> UImage = getSomeYUVImageUChannel();
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar,1&gt;</a> VImage = getSomeYUVImageVChannel();
+
+        <span class="comment">// Write the YUV image to the file</span>
+        <a class="code" href="group__qvip.html#ga8009ad640bdcbcec1c00f6a92f9aed27" title="Write YUV image frames to a yuv4mpeg2 video file.">writeYUV4MPEG2Frame</a>(videoFile, yImage, uImage, vImage);
+        [...]
+        }
+</pre></div><p>When finished storing frames in the video file, it must of course be closed:</p>
+<div class="fragment"><pre class="fragment">videoFile.close();
+</pre></div><h2><a class="anchor" id="ReadingVideoWithTheQVMPlayerApplication">
+Reading video with the QVMPlayer application</a></h2>
+<p>The QVMPlayerReader class contains functionality to open and read frames from a wide set of video sources:</p>
+<ul>
+<li><b>Video files</b>: <a href="http://en.wikipedia.org/wiki/MPlayer">Full list of video formats</a>, and <a href="http://www.mplayerhq.hu/DOCS/codecs-status.html">Full list of codecs</a> supported by the MPlayer.</li>
+<li><b>Video Streaming sources</b>: via HTTP/FTP, RTP/RTSP, MMS/MMST, MPST, or SDP.</li>
+<li><b>Videocams and Webcams</b> (only in linux, using v4l and v4l2).</li>
+<li><b>Digital/analog TV grabbing</b>: through a capable video card.</li>
+<li><b>Physical media</b>: CDs, DVDs, Video CDs.</li>
+<li><b>Sets (or sequences) of individual images</b>: JPGs, PPMs, PNGs, etc.</li>
+</ul>
+<p>This class uses the widely known <a href="http://en.wikipedia.org/wiki/MPlayer">MPlayer</a> as a <em>back-end</em> application. Each QVMPlayerReader object launches an MPlayer application, that opens the requested video source, and reads frames from it. The QVMPlayerReader communicates with the MPlayer process using Linux named pipes, in a completely user-transparent way, obtaining the image frames and converting them into <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> objects.</p>
+<p>The following code shows an usage example of this class. It opens a <em>.avi</em> video file, named <em>penguin.avi</em>, and reads frames from it until the end of the video file is reached.</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;QVApplication&gt;</span>
+<span class="preprocessor">#include &lt;QVMPlayerReader&gt;</span>
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+        {
+        <a class="code" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> app(argc,argv);
+        QVMPlayerReader videoReader;
+
+        <span class="keywordflow">if</span> (!videoReader.open(<span class="stringliteral">&quot;penguin.avi&quot;</span>, QVMPlayerReader::NoLoop))
+                {
+                std::cout &lt;&lt; <span class="stringliteral">&quot;Error opening video source.&quot;</span> &lt;&lt; std::endl;
+                exit(0);
+                }
+        std::cout &lt;&lt; <span class="stringliteral">&quot;Video source successfully opened.&quot;</span> &lt;&lt; std::endl;
+
+        <a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> image;
+        <span class="keywordflow">while</span>(videoReader.grab(image))
+                std::cout &lt;&lt; <span class="stringliteral">&quot;Frame grabbed ok. Image size:\t&quot;</span> &lt;&lt; image.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; image.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>() &lt;&lt; std::endl;
+
+        videoReader.close();
+        std::cout &lt;&lt; <span class="stringliteral">&quot;Video reading finished.&quot;</span> &lt;&lt; std::endl;
+        }
+</pre></div><p>IMPORTANT: Please note that, in order to use a QVMPlayerReader object, a <a class="el" href="classQVApplication.html" title="Main class for QVision applications.">QVApplication</a> object (which is just an specialization of the well-known QT QApplication, an thus inherits from it) must have been previously created. This is necessary because it internally uses QTimer, QProcess and QThread objects, which use themshelves the infrastructure created by the (singleton) QApplication object.</p>
+<p>The first parameter of the <em>open</em> method in the <em>videoReader</em> object specifies the video source. It is an URL format string which identifies different video sources: files, webcams, digital cameras, etc... For more info about how to specify a video source (digital camera, remote file, etc...) see section QVMPlayerURLFormat. </p>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

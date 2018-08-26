@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVFilterGauss_sFloatC1Block Member List</h1>This is the complete list of members for <a class="el" href="classQVFilterGauss__sFloatC1Block.html">QVFilterGauss_sFloatC1Block</a>, including all inherited members.<table>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ae2cd8d4bea91574bed4c1863a13d6171">addProperty</a>(const QString name, const PropertyFlags flags=inputFlag, const Type &amp;value=Type(), const QString info=QString(&quot;(Info not available)&quot;))</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#af14a72f894b51d5d95d8197c0af3b38f">addProperty</a>(const QString name, const PropertyFlags flags, const Type &amp;value, const QString info, const Type &amp;minValue, const Type &amp;maxValue)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a3e13ed40e1ae121c9d4442a33ce6cf0d">addPropertyFromQVariant</a>(const QString &amp;name, const PropertyFlags flags, QVariant variant, const QString info)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a26a8c3ab6758620d7cb328f4dd60b860">addTrigger</a>(QString name)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#afc35c0aeca52288aec5a095e139e9c40">areSynchronized</a>(const QList&lt; QVPropertyContainer * &gt; containers)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [static]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a1f397287bc9c69b22aec208bddcc1d23">containsProperty</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1924b55e68860c62099885a8700ef7ab">endIteration</a>(uint id, int iteration)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [signal]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#afacc54ae592d0b6da15476b6b9238499">finish</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a24d46237cabfd686cbdb35b20b193baa">Finished</a> enum value</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#aca59123fcdd242d3c7a867cfc942d1bb">getCpuStat</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a1bd21ac401e6d79a29430712e5a72027">getDestinyContainers</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a79e08d0500b8dcd0c15cdadb4e3d9a7e">getId</a>() const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a8c64c9c1074995778dbf8d517cd1c479">getInformer</a>()</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a95c56bae078a84bf689b7ee8073bcf7c">getIteration</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a14303586bf0de35498002c984408735f">getLastError</a>() const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a82e880a6c160f3780bc8f7b822fbbd85">getName</a>() const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a9044690763a61b2da16735cdf42968f8">getPropertyFlags</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#afbbd3b9914406c1e237d9443ea5fa48b">getPropertyInfo</a>(const QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ad841530f023ade63674be20b9677b3cc">getPropertyList</a>() const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a99342ac4665ab8a2dcd00b3bc7b38695">getPropertyListByType</a>() const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#aa522f5a0b43093ca4ef90c72a499344d">getPropertyMaximum</a>(const QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a61a8accaec52384a4b0980a2fd0c2899">getPropertyMinimum</a>(const QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a253156f365b20fa2e0accc82dff1284f">getPropertyQVariantValue</a>(const QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#acabf023fd31ca114618a8f1e9e0215a3">getPropertyType</a>(const QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#affc6008202b566e68ab20cec8b16a7ee">getPropertyValue</a>(const QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a350c0c7a337fb173dbfe5b384cc615eb">getSourceContainer</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#aa88d1097bf52887c07e8cf1b15e98791">getSourceProperty</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a37bbb1533327b59c24daa736d7de67e3">getStatus</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#addab1a41d0a9e7bbdfe47f8b81283ffc">getTriggerList</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ad4d7d822be0be35b9d6549a5abf718e1">hasRange</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a5d4ecfa7b8aa6e25223898df82ada1f4">infoInputProperties</a>() const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#af99e1dca90060534310833741d66518e">inputPropertyBlock</a>(QString prop) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline, protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#aba2598b540740b3836d431836efd5d6d">isFinished</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#aec4486b670bdda79321ad447323e3c06">isGUIInvisible</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a81d9c28ff7aefe940b058d80a47eb93a">isInput</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ab3711d136b3af5497ee180d6a2665844">isLinkedInput</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ad16cc60565b7e43255149a53e44bce3a">isLinkedOutput</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#aa6edef6dbc24d47a88ebe7768eb0bbf0">isOutput</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a794e129d5ad9d8356a9d5c363cfda4b1">isPaused</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a386b50b1697d0404a9dc56e337ed4fb0">isRunning</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a344fd4ac42cb3290c0ec1fe069036226">isSequential</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#aea1b1735900c3fccdbe183cc335504cf">isStatsEnabled</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#ae01629a378633a1a029e02fc2fd483b6">isStopped</a>() const </td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#adaa8f8488392d3080b7fa22613371356">isSynchronous</a>(const QString name) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#afdd65a88f713e0031ac4847485acfce4">isType</a>(QString name, bool *ok=NULL) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVFilterGauss__sFloatC1Block.html#aafb95b09b8c8701e4e713af4e1806e52">iterate</a>()</td><td><a class="el" href="classQVFilterGauss__sFloatC1Block.html">QVFilterGauss_sFloatC1Block</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#abd2a991c0bc91cee684ff3ffc80825dd">linkProperty</a>(QString sourcePropName, QVPropertyContainer *destinyContainer, QString destinyPropName, LinkType linkType=AsynchronousLink)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a22e133082a9bd25818ce52c51cc9e3aa">linkProperty</a>(QVPropertyContainer *container, LinkType linkType=AsynchronousLink)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a71d6042e94adbb6c46814e3593973a76">LinkType</a> enum name</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a959fb67110a55c37b138e66929fe88e9">operator=</a>(const QVPropertyContainer &amp;cont)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#afe5a790ea61bbd0f964a4c1387230579">operator==</a>(const QVPropertyContainer &amp;cont) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ab72d3b0e61346e8c05a4e7dca767dc40">parseArgument</a>(const QString parameter, const QString value)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline, protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a4f5ffa9798933d22a8959bf95d5ce6c7">pause</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a00db081e1975c5fe7b2896d0e3b9c2f7">Paused</a> enum value</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a762e6a292423b4ab842fe6e858550262">printStats</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#adb13844954356bd9ed1bfbe97d731095">processTrigger</a>(const QString name)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline, virtual, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#aac9662fa8dbe182c8b0e5c01252b58e1">PropertyFlag</a> enum name</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVFilterGauss__sFloatC1Block.html#a84c686e78a6fcfa736c523313a317eb8">QVFilterGauss_sFloatC1Block</a>(QString name=QString())</td><td><a class="el" href="classQVFilterGauss__sFloatC1Block.html">QVFilterGauss_sFloatC1Block</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a68ff2767d04f952f5654514145bb32d8">QVProcessingBlock</a>(const QString name=QString())</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1ead8ef597583070ddd3ec57b1154f05">QVProcessingBlock</a>(const QVProcessingBlock &amp;other)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#af7b6ad165bd7d4ce2fa489a0dad182a7">QVPropertyContainer</a>(const QString name=QString())</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a374d59d823846e4e2db24b0198add780">QVPropertyContainer</a>(const QVPropertyContainer &amp;cont)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a386412d3d7d011283034086a89173f86">readInputProperties</a>()</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ad221d2ac61352d7af1aaac7df46a5b92">removeProperty</a>(const QString name)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a5252ef1bbe4bd07e1fa66c7cf1f27d0e">Running</a> enum value</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5af2ff917aa66dc170044ea731082c50d7">RunningOneStep</a> enum value</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#ab915024bd1988b45719b7bb65921105a">setLastError</a>(QString str) const </td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a511e811818f28903b60631a550f86b55">setMinimumDelay</a>(int ms)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a4571a5d7470e88fb2dd8595421c5967f">setName</a>(const QString name)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#af9896015375318688fb78012a08cddfb">setPrintStatsFrequency</a>(int freq)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a0dc180ef52afef64e3d2522c91e7118c">setPropertyValue</a>(const QString name, const Type &amp;value)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a2be02b18fe1e03a2dd3a51b589e61f69">startIteration</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [signal]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#af6d73eb86583ac05cc86e9dcd2da4f19">statusUpdate</a>(QVProcessingBlock::TBlockStatus)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [signal]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a3f4dd477633e707ec876aa5f8677d18c">step</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#ace1cb7c1c822c3f4b32782528a3b9a99">stop</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5a598549c56ecfbe02fbc7a71825bde564">Stopped</a> enum value</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a1a629009a666814593cd3f50198b24c5">TBlockStatus</a> enum name</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a61f390e8790a77175a6d6e1049a9d127">timeFlag</a>(const QString flag)</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a08d44d0b9b36725186124549a1dfc124">unlink</a>()</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a2ed8fb74ec14fc91dd90f6cd961f4a81">unlinkProperty</a>(QString origName, QVPropertyContainer *destCont, QString destName)</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#a8ba2deff4679f67891e0aafe2a1d1c14">unPause</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td><code> [inline, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#a858a9653531337be74ffc081065bb31a">writeOutputProperties</a>()</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVProcessingBlock.html#aefcffc7b413c1640f4c1f0f245736f2d">~QVProcessingBlock</a>()</td><td><a class="el" href="classQVProcessingBlock.html">QVProcessingBlock</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classQVPropertyContainer.html#abd41c5852adee4c1dbffeefe2f3041d8">~QVPropertyContainer</a>()</td><td><a class="el" href="classQVPropertyContainer.html">QVPropertyContainer</a></td><td><code> [virtual]</code></td></tr>
+</table></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

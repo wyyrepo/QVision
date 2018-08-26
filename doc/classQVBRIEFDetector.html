@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>QVBRIEFDetector Class Reference<br/>
+<small>
+[<a class="el" href="group__qvip.html">Image processing</a>]</small>
+</h1><!-- doxytag: class="QVBRIEFDetector" -->
+<p>Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qvbriefdetector_8h_source.html">qvbriefdetector.h</a>&gt;</code></p>
+
+<p><a href="classQVBRIEFDetector-members.html">List of all members.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBRIEFDetector.html#a340eb352eb4a43e2b47674dc7b7995f3">distance</a> (const QVector&lt; unsigned int &gt; &amp;descriptorsA, const QVector&lt; unsigned int &gt; &amp;descriptorsB, const int indexA=0, const int indexB=0) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluates the Hamming distance between two binary descriptors.  <a href="#a340eb352eb4a43e2b47674dc7b7995f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBRIEFDetector.html#a919f31539fe65e0a476a5fe6a0ed2fb9">QVBRIEFDetector</a> (const unsigned int descriptorInts=4, const unsigned int windowRadius=16)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Main constructor.  <a href="#a919f31539fe65e0a476a5fe6a0ed2fb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; unsigned int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQVBRIEFDetector.html#a0882e01e86c84b45d5c9f6e138af2cca">getDescriptors</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const QVector&lt; QPointF &gt; &amp;keypoints, const unsigned int octave=1) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the descriptor for a set of features in an image.  <a href="#a0882e01e86c84b45d5c9f6e138af2cca"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors. </p>
+<p>BRIEF descriptors are designed to perform accelerated image keypoint matching.</p>
+<p>These descriptors are variant to scale and orientation, but their lightweight evaluation and matching speed make them suitable for many different image matching applications.</p>
+<p>BRIEF descriptors are binary strings representing a pattern of pair-wise comparations of pixels or tests, located inside a patch on the image centered at the given keypoint.</p>
+<p>This class obtains BRIEF descriptors for points from an input image, and can be used to perform an efficient matching between them.</p>
+<p>The following is an example usage code:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Init BRIEF detector.</span>
+<span class="comment">// The detector will generate 3*32 test patterns.</span>
+<span class="comment">// Each descriptor contains 3 integer values, and 32 bits for each integer value store tests results.</span>
+<span class="comment">// The maximal distance between the tested pixels in the pattern to the feature location is 5 pixels.</span>
+<span class="comment">// The binary test pattern is different for each BRIEF detector object created.</span>
+<a class="code" href="classQVBRIEFDetector.html" title="Simple implementation of BRIEF (Binary Robust Independent Elementary Features) descriptors...">QVBRIEFDetector</a> BRIEFDetector(3,5);
+
+<span class="comment">// Init images and keypoint lists</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageA, imageB;
+QVector&lt;QPointF&gt; keypointsA, keypointsB;
+
+[...]
+
+<span class="comment">// Get descriptors for keypoints and images.</span>
+<span class="comment">// It is important to use the same BRIEF detector to compare descriptors from different images.</span>
+<span class="comment">// Each vector of binary descriptors will contain n*m integers, where &#39;n&#39; is the size of the keypoint list,</span>
+<span class="comment">// and &#39;m&#39; is the number of integers per descriptor (in this case, m = 3).</span>
+QVector&lt;unsigned int&gt;   binaryDescriptorsA = BRIEFDetector.getDescriptors(imageA, keypointsA), <span class="comment">// Get descriptors for keypoints in image A.</span>
+                        binaryDescriptorsB = BRIEFDetector.getDescriptors(imageB, keypointsB);  <span class="comment">// Get descriptors for keypoints in image B.</span>
+
+[...]
+
+<span class="comment">// Example code to obtain the distance between the descriptor for each keypoint in A, and the descriptor for each point in B.</span>
+<span class="comment">// The result is stored in the following distance matrix.</span>
+<a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> distanceMatrix(keypointsA.count(), keypointsB.count(), 0.0);
+
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; keypointsA.count(); i++)
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; keypointsB.count(); j++)
+                <span class="comment">// Get distance between i-th descriptor from image A, and j-th descriptor from image B.</span>
+                <span class="comment">// The comparison must be done with the same BRIEF detector used to obtain the descriptors.</span>
+                distanceMatrix(i,j) = BRIEFDetector.distance( binaryDescriptorsA, binaryDescriptorsB, i, j);
+</pre></div> 
+<p>Definition at line <a class="el" href="qvbriefdetector_8h_source.html#l00086">86</a> of file <a class="el" href="qvbriefdetector_8h_source.html">qvbriefdetector.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a919f31539fe65e0a476a5fe6a0ed2fb9"></a><!-- doxytag: member="QVBRIEFDetector::QVBRIEFDetector" ref="a919f31539fe65e0a476a5fe6a0ed2fb9" args="(const unsigned int descriptorInts=4, const unsigned int windowRadius=16)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBRIEFDetector::QVBRIEFDetector </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>descriptorInts</em> = <code>4</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>windowRadius</em> = <code>16</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Main constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>descriptorInts</em>&nbsp;</td><td>Size of the descriptor. Each element of the descriptor is an integer containing 32 bit tests. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>windowRadius</em>&nbsp;</td><td>Max radius for the testing window around the pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvbriefdetector_8h_source.html#l00129">129</a> of file <a class="el" href="qvbriefdetector_8h_source.html">qvbriefdetector.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a340eb352eb4a43e2b47674dc7b7995f3"></a><!-- doxytag: member="QVBRIEFDetector::distance" ref="a340eb352eb4a43e2b47674dc7b7995f3" args="(const QVector&lt; unsigned int &gt; &amp;descriptorsA, const QVector&lt; unsigned int &gt; &amp;descriptorsB, const int indexA=0, const int indexB=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int QVBRIEFDetector::distance </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; unsigned int &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>descriptorsA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; unsigned int &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>descriptorsB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>indexA</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>indexB</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluates the Hamming distance between two binary descriptors. </p>
+<p>This method uses the xor operator and the <a class="el" href="group__qvmath.html#gaabea9bcc4938d7719cc2940ed2894c02">qvNiftyParallelBitCount</a> function to evaluate the number of bits which differ between two binary descriptors.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>descriptorsA</em>&nbsp;</td><td>set of descriptors for the first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>descriptorsB</em>&nbsp;</td><td>set of descriptors for the second image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>indexA</em>&nbsp;</td><td>index for the feature descriptor in the first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>indexB</em>&nbsp;</td><td>index for the feature descriptor in the second image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of bits set in the integer obtained from the xor operation between the two descriptors. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbriefdetector_8h_source.html#l00111">111</a> of file <a class="el" href="qvbriefdetector_8h_source.html">qvbriefdetector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0882e01e86c84b45d5c9f6e138af2cca"></a><!-- doxytag: member="QVBRIEFDetector::getDescriptors" ref="a0882e01e86c84b45d5c9f6e138af2cca" args="(const QVImage&lt; uChar, 1 &gt; &amp;image, const QVector&lt; QPointF &gt; &amp;keypoints, const unsigned int octave=1) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;unsigned int&gt; QVBRIEFDetector::getDescriptors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>keypoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&nbsp;</td>
+          <td class="paramname"> <em>octave</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the descriptor for a set of features in an image. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a vector containing the concatenated descriptors for the features in the image. The order of the features is preserved in the vector of descriptors. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvbriefdetector_8h_source.html#l00166">166</a> of file <a class="el" href="qvbriefdetector_8h_source.html">qvbriefdetector.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/qvip/<a class="el" href="qvbriefdetector_8h_source.html">qvbriefdetector.h</a></li>
+</ul>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

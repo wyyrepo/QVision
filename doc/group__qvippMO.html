@@ -1,0 +1,1059 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Morphological Operation<br/>
+<small>
+[<a class="el" href="group__qvipp.html">IPP wrapper functions</a>]</small>
+</h1>
+<p>Image processing functions that perform morphological operations on images.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#ga06522a34f60319acd1200610bb7f381e">Dilate</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#ga06522a34f60319acd1200610bb7f381e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gac2b537fe54a045ccfecf44f228d3bccd">Dilate</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#gac2b537fe54a045ccfecf44f228d3bccd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#ga9291f4a21e3769c2ae2ff1282a744899">Dilate</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#ga9291f4a21e3769c2ae2ff1282a744899"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#ga0867f062d6247159aa1c6879bed074b2">Dilate</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#ga0867f062d6247159aa1c6879bed074b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#ga435985a1056ef61c78ec6b74ee9e8ca6">Dilate</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#ga435985a1056ef61c78ec6b74ee9e8ca6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gaac78d1726d3bd603418f6f65d2c457bf">Dilate</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#gaac78d1726d3bd603418f6f65d2c457bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#ga13300324d8699f08c1cf85e318007ee7">Dilate</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs in-place erosion dilation using an arbitrary mask.  <a href="#ga13300324d8699f08c1cf85e318007ee7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gaec4a680ae5ed084aecff6eb0b594face">Erode</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_8u_C1R.  <a href="#gaec4a680ae5ed084aecff6eb0b594face"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#ga7ae093e6474a7b982a5afa92db12ca8c">Erode</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_8u_C3R.  <a href="#ga7ae093e6474a7b982a5afa92db12ca8c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gae3642345ef9c68eeaec2c81ae4ed05ec">Erode</a> (<a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_8u_C1IR.  <a href="#gae3642345ef9c68eeaec2c81ae4ed05ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gaf35b9e347e7461e5f0c851173d3de19c">Erode</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_16u_C1R.  <a href="#gaf35b9e347e7461e5f0c851173d3de19c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gac89c2147c0c3b64769883462bd05439e">Erode</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_16u_C3R.  <a href="#gac89c2147c0c3b64769883462bd05439e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gacf349cc9e0a3f1fc90d242a133603ee6">Erode</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_32f_C1R.  <a href="#gacf349cc9e0a3f1fc90d242a133603ee6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvippMO.html#gad03dd77170c03f365ffb622e6ec59574">Erode</a> (const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;qvimage_pSrc, <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">QVision wrapper function for IPP's ippiErode_32f_C3R.  <a href="#gad03dd77170c03f365ffb622e6ec59574"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Image processing functions that perform morphological operations on images. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga06522a34f60319acd1200610bb7f381e"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="ga06522a34f60319acd1200610bb7f381e" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03394">3394</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippMO.html#ga06522a34f60319acd1200610bb7f381e">Dilate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac2b537fe54a045ccfecf44f228d3bccd"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="gac2b537fe54a045ccfecf44f228d3bccd" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03415">3415</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9291f4a21e3769c2ae2ff1282a744899"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="ga9291f4a21e3769c2ae2ff1282a744899" args="(QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_8u_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03436">3436</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0867f062d6247159aa1c6879bed074b2"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="ga0867f062d6247159aa1c6879bed074b2" args="(const QVImage&lt; uShort, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uShort, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_16u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03451">3451</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga435985a1056ef61c78ec6b74ee9e8ca6"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="ga435985a1056ef61c78ec6b74ee9e8ca6" args="(const QVImage&lt; uShort, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uShort, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_16u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03472">3472</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaac78d1726d3bd603418f6f65d2c457bf"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="gaac78d1726d3bd603418f6f65d2c457bf" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03493">3493</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga13300324d8699f08c1cf85e318007ee7"></a><!-- doxytag: member="qvippfunctions.h::Dilate" ref="ga13300324d8699f08c1cf85e318007ee7" args="(const QVImage&lt; sFloat, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dilate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs in-place erosion dilation using an arbitrary mask. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiDilate_32f_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03514">3514</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaec4a680ae5ed084aecff6eb0b594face"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="gaec4a680ae5ed084aecff6eb0b594face" args="(const QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_8u_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_8u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03535">3535</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvippMO.html#gaec4a680ae5ed084aecff6eb0b594face">Erode()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7ae093e6474a7b982a5afa92db12ca8c"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="ga7ae093e6474a7b982a5afa92db12ca8c" args="(const QVImage&lt; uChar, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uChar, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_8u_C3R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_8u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03556">3556</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae3642345ef9c68eeaec2c81ae4ed05ec"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="gae3642345ef9c68eeaec2c81ae4ed05ec" args="(QVImage&lt; uChar, 1 &gt; &amp;qvimage_pSrcDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrcDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_8u_C1IR. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_8u_C1IR</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrcDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrcDst</em> and step number <em>srcDstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03577">3577</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf35b9e347e7461e5f0c851173d3de19c"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="gaf35b9e347e7461e5f0c851173d3de19c" args="(const QVImage&lt; uShort, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; uShort, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_16u_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_16u_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03592">3592</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac89c2147c0c3b64769883462bd05439e"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="gac89c2147c0c3b64769883462bd05439e" args="(const QVImage&lt; uShort, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; uShort, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; uShort, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_16u_C3R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_16u_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03613">3613</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacf349cc9e0a3f1fc90d242a133603ee6"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="gacf349cc9e0a3f1fc90d242a133603ee6" args="(const QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 1 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_32f_C1R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_32f_C1R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03634">3634</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad03dd77170c03f365ffb622e6ec59574"></a><!-- doxytag: member="qvippfunctions.h::Erode" ref="gad03dd77170c03f365ffb622e6ec59574" args="(const QVImage&lt; sFloat, 3 &gt; &amp;qvimage_pSrc, QVImage&lt; sFloat, 3 &gt; &amp;qvimage_pDst, const uChar &amp;pMask, const QSize &amp;maskSize=QSize(3, 3), const QPoint &amp;anchor=QPoint(0, 0), const QPoint &amp;destROIOffset=QPoint(0, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Erode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVImage.html">QVImage</a>&lt; sFloat, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>qvimage_pDst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uChar &amp;&nbsp;</td>
+          <td class="paramname"> <em>pMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSize &amp;&nbsp;</td>
+          <td class="paramname"> <em>maskSize</em> = <code>QSize(3,&nbsp;3)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>anchor</em> = <code>QPoint(0,&nbsp;0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&nbsp;</td>
+          <td class="paramname"> <em>destROIOffset</em> = <code>QPoint(0,&nbsp;0)</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>QVision wrapper function for IPP's ippiErode_32f_C3R. </p>
+<p>This is the QVision wrapper function for IPP's <b>ippiErode_32f_C3R</b>. See <a href="http://www.intel.com/cd/software/products/asmo-na/eng/346532.htm">Intel's IPP documentation</a> for a deeper understanding of that function. The parameters of this wrapper function are the following: </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pSrc</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pSrc</em> and step number <em>srcStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>qvimage_pDst</em>&nbsp;</td><td>Image corresponding to the data buffer pointer <em>pDst</em> and step number <em>dstStep</em> variables in the IPP function </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMask</em>&nbsp;</td><td>Corresponds to the same parameter in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>maskSize</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiSize in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anchor</em>&nbsp;</td><td>Corresponds to the same parameter of type IppiPoint in the IPP function. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destROIOffset</em>&nbsp;</td><td>Pointer to destination ROI. See section <a class="el" href="IPPInteroperability.html#DestinationROIPointer">Destination ROI pointer</a> for more info about this parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvippfunctions_8cpp_source.html#l03655">3655</a> of file <a class="el" href="qvippfunctions_8cpp_source.html">qvippfunctions.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+    </ul>
+  </div>
+<h1>src/qvmath/qvsparseblockmatrix.h</h1><a href="qvsparseblockmatrix_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Copyright (C) 2010, 2011, 2012. PARP Research Group.</span>
+<a name="l00003"></a>00003 <span class="comment"> *      &lt;http://perception.inf.um.es&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> *      University of Murcia, Spain.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> *      This file is part of the QVision library.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> *      QVision is free software: you can redistribute it and/or modify</span>
+<a name="l00009"></a>00009 <span class="comment"> *      it under the terms of the GNU Lesser General Public License as</span>
+<a name="l00010"></a>00010 <span class="comment"> *      published by the Free Software Foundation, version 3 of the License.</span>
+<a name="l00011"></a>00011 <span class="comment"> *</span>
+<a name="l00012"></a>00012 <span class="comment"> *      QVision is distributed in the hope that it will be useful,</span>
+<a name="l00013"></a>00013 <span class="comment"> *      but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00014"></a>00014 <span class="comment"> *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00015"></a>00015 <span class="comment"> *      GNU Lesser General Public License for more details.</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *      You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00018"></a>00018 <span class="comment"> *      License along with QVision. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef QVSPARSEBLOCKMATRIX_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define QVSPARSEBLOCKMATRIX_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;QMap&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="qvmatrix_8h.html" title="File from the QVision library.">qvmath/qvmatrix.h</a>&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#ifdef MKL_AVAILABLE</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">  #include &quot;mkl_dss.h&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#endif</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00172"></a><a class="code" href="classQVSparseBlockMatrix.html">00172</a> <span class="keyword">class </span><a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a>: <span class="keyword">public</span> QMap&lt;int, QMap&lt;int, QVMatrix&gt; &gt;
+<a name="l00173"></a>00173     {
+<a name="l00174"></a>00174     <span class="keyword">protected</span>:
+<a name="l00175"></a>00175         <span class="keywordtype">int</span> majorRows, majorCols, minorRows, minorCols;
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177     <span class="keyword">public</span>:
+<a name="l00178"></a>00178         <span class="keywordtype">int</span> blockCount;
+<a name="l00180"></a><a class="code" href="classQVSparseBlockMatrix.html#a68980a03b57f59475b79e2549e86faa0">00180</a>                 <a class="code" href="classQVSparseBlockMatrix.html#a68980a03b57f59475b79e2549e86faa0" title="Default constructor for the QVSparseBlockMatrix class.">QVSparseBlockMatrix</a>(): QMap&lt;int, QMap&lt;int, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>&gt; &gt;(),
+<a name="l00181"></a>00181                         majorRows(0), majorCols(0), minorRows(0), minorCols(0), blockCount(0)
+<a name="l00182"></a>00182                 {
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184                 }
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186         <a class="code" href="classQVSparseBlockMatrix.html#a68980a03b57f59475b79e2549e86faa0" title="Default constructor for the QVSparseBlockMatrix class.">QVSparseBlockMatrix</a> (<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;other): QMap&lt;int, QMap&lt;int, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>&gt; &gt;(other),
+<a name="l00187"></a>00187                         majorRows(other.majorRows), majorCols(other.majorCols), minorRows(other.minorRows), minorCols(other.minorCols), blockCount(other.blockCount)
+<a name="l00188"></a>00188                 {
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190                 }
+<a name="l00191"></a>00191 
+<a name="l00201"></a><a class="code" href="classQVSparseBlockMatrix.html#ab9081555cc33e341accab96fb4bb9d70">00201</a>                 <a class="code" href="classQVSparseBlockMatrix.html#a68980a03b57f59475b79e2549e86faa0" title="Default constructor for the QVSparseBlockMatrix class.">QVSparseBlockMatrix</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> majorRows, <span class="keyword">const</span> <span class="keywordtype">int</span> majorCols, <span class="keyword">const</span> <span class="keywordtype">int</span> minorRows, <span class="keyword">const</span> <span class="keywordtype">int</span> minorCols): QMap&lt;int, QMap&lt;int, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>&gt; &gt;(),
+<a name="l00202"></a>00202                         majorRows(majorRows), majorCols(majorCols), minorRows(minorRows), minorCols(minorCols), blockCount(0)
+<a name="l00203"></a>00203                 { }
+<a name="l00204"></a>00204 
+<a name="l00221"></a><a class="code" href="classQVSparseBlockMatrix.html#a9a4eac5be3b17f2ac05ae249cf9c5a11">00221</a>                 <a class="code" href="classQVSparseBlockMatrix.html#a68980a03b57f59475b79e2549e86faa0" title="Default constructor for the QVSparseBlockMatrix class.">QVSparseBlockMatrix</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> majorRows, <span class="keyword">const</span> <span class="keywordtype">int</span> majorCols, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;other): QMap&lt;int, QMap&lt;int, <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>&gt; &gt;(),
+<a name="l00222"></a>00222                         majorRows(majorRows), majorCols(majorCols), minorRows(other.getRows() / majorRows), minorCols(other.getCols() / majorCols)
+<a name="l00223"></a>00223                 {
+<a name="l00224"></a>00224 
+<a name="l00225"></a>00225                                 <span class="keywordflow">if</span>( (minorRows*majorRows != other.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>()) || (minorCols*majorCols != other.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>()) )
+<a name="l00226"></a>00226                                     {
+<a name="l00227"></a>00227                                     std::cout &lt;&lt; <span class="stringliteral">&quot;[QVSparseBlockMatrix] Error: tried to construct a sparse block matrix of incompatible sizes with original dense matrix.&quot;</span> &lt;&lt; std::endl
+<a name="l00228"></a>00228                                               &lt;&lt; <span class="stringliteral">&quot;\tSparse matrix number of blocks:\t&quot;</span> &lt;&lt; majorRows &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; majorCols &lt;&lt; std::endl
+<a name="l00229"></a>00229                                               &lt;&lt; <span class="stringliteral">&quot;\tDense matrix number of blocks:\t&quot;</span> &lt;&lt; other.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; other.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>() &lt;&lt; std::endl;
+<a name="l00230"></a>00230                                     exit(1);
+<a name="l00231"></a>00231                                     }
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233                                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; majorRows; i++)
+<a name="l00234"></a>00234                                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; majorCols; j++)
+<a name="l00235"></a>00235                         {
+<a name="l00236"></a>00236                         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = other.<a class="code" href="classQVMatrix.html#a77b34335086bb9e12d7d72398c608e75" title="Gets a submatrix from a matrix.">getSubmatrix</a>(i*minorRows, (i+1)*minorRows-1, j*minorCols, (j+1)*minorCols-1);
+<a name="l00237"></a>00237                         <span class="keywordflow">if</span> (M != <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(minorRows, minorCols, 0.0))
+<a name="l00238"></a>00238                             operator[](i)[j] = M;
+<a name="l00239"></a>00239                         }
+<a name="l00240"></a>00240                 }
+<a name="l00241"></a>00241 
+<a name="l00243"></a><a class="code" href="classQVSparseBlockMatrix.html#a202dae52dc2ec0501ceddc53ffc31aac">00243</a>                 <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classQVSparseBlockMatrix.html#a202dae52dc2ec0501ceddc53ffc31aac" title="Get majorRows from a sparse block matrix.">getMajorRows</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> majorRows;};
+<a name="l00244"></a>00244 
+<a name="l00246"></a><a class="code" href="classQVSparseBlockMatrix.html#a6cb89146c9191b915b8f493f0be6becc">00246</a>                 <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classQVSparseBlockMatrix.html#a6cb89146c9191b915b8f493f0be6becc" title="Get majorCols from a sparse block matrix.">getMajorCols</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> majorCols;};
+<a name="l00247"></a>00247 
+<a name="l00249"></a><a class="code" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6">00249</a>                 <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6" title="Get minorRows from a sparse block matrix.">getMinorRows</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> minorRows;};
+<a name="l00250"></a>00250 
+<a name="l00252"></a><a class="code" href="classQVSparseBlockMatrix.html#ad606f1e2fe760064d0494e7c133dbed7">00252</a>                 <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classQVSparseBlockMatrix.html#ad606f1e2fe760064d0494e7c133dbed7" title="Get minorCols from a sparse block matrix.">getMinorCols</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> minorCols;};
+<a name="l00253"></a>00253 
+<a name="l00255"></a><a class="code" href="classQVSparseBlockMatrix.html#aa626b58871ac2f8758e4e766630d8795">00255</a>         <a class="code" href="classQVSparseBlockMatrix.html#aa626b58871ac2f8758e4e766630d8795" title="Convert a sparse block matrix into an ordinary matrix.">operator QVMatrix </a>()<span class="keyword"> const</span>
+<a name="l00256"></a>00256 <span class="keyword">            </span>{
+<a name="l00257"></a>00257                         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> result(majorRows * minorRows, majorCols * minorCols, 0.0);
+<a name="l00258"></a>00258                         <span class="comment">/*for(int i = 0; i &lt; majorRows; i++)</span>
+<a name="l00259"></a>00259 <span class="comment">                                for(int j = 0; j &lt; majorCols; j++)</span>
+<a name="l00260"></a>00260 <span class="comment">                    if (operator[](i).contains(j))</span>
+<a name="l00261"></a>00261 <span class="comment">                                                result.setSubmatrix(i*minorRows, j*minorCols, operator[](i)[j]);*/</span>
+<a name="l00262"></a>00262                         <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> i, keys())
+<a name="l00263"></a>00263                             <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> j, <span class="keyword">operator</span>[](i).keys())
+<a name="l00264"></a>00264                                 result.<a class="code" href="classQVMatrix.html#ac5ce9ed25c533d7b89abe5b6a5c6df3e" title="Sets a submatrix from a matrix.">setSubmatrix</a>(i*minorRows, j*minorCols, <span class="keyword">operator</span>[](i)[j]);
+<a name="l00265"></a>00265             <span class="keywordflow">return</span> result;
+<a name="l00266"></a>00266             }
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268         <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> transpose() <span class="keyword">const</span>;
+<a name="l00269"></a>00269 
+<a name="l00288"></a><a class="code" href="classQVSparseBlockMatrix.html#a0cb729d3480d161417812d5ddbc2b378">00288</a>                 <span class="keywordtype">void</span> <a class="code" href="classQVSparseBlockMatrix.html#a0cb729d3480d161417812d5ddbc2b378" title="Set a data block.">setBlock</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> majorRow, <span class="keyword">const</span> <span class="keywordtype">int</span> majorCol, <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp;M)
+<a name="l00289"></a>00289             {
+<a name="l00290"></a>00290                         <span class="keywordflow">if</span> (majorRow &lt; 0 || majorRow &gt;= majorRows || majorCol &lt; 0 || majorCol &gt;= majorCols)
+<a name="l00291"></a>00291                 {
+<a name="l00292"></a>00292                 std::cout &lt;&lt; <span class="stringliteral">&quot;[QVSparseBlockMatrix::setBlock]: accessing a block outside the sparse matrix.&quot;</span> &lt;&lt; std::endl
+<a name="l00293"></a>00293                                         &lt;&lt; <span class="stringliteral">&quot;\tProvided block index:\t&quot;</span> &lt;&lt; majorRow &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; majorCol &lt;&lt; std::endl
+<a name="l00294"></a>00294                                         &lt;&lt; <span class="stringliteral">&quot;\tValid block ranges for the matrix:\t&quot;</span> &lt;&lt; majorRows &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; majorCols &lt;&lt; std::endl;
+<a name="l00295"></a>00295                 exit(1);
+<a name="l00296"></a>00296                 }
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298             <span class="keywordflow">if</span> (minorRows != M.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>() || minorCols != M.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>())
+<a name="l00299"></a>00299                 {
+<a name="l00300"></a>00300                                 std::cout &lt;&lt; <span class="stringliteral">&quot;[QVSparseBlockMatrix::setBlock] Error: tried to assing a matrix of incorrect dimensions to a block.&quot;</span> &lt;&lt; std::endl
+<a name="l00301"></a>00301                     &lt;&lt; <span class="stringliteral">&quot;\tMatrix size:\t&quot;</span> &lt;&lt; M.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; M.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>() &lt;&lt; std::endl
+<a name="l00302"></a>00302                     &lt;&lt; <span class="stringliteral">&quot;\tSparse matrix block size:\t&quot;</span> &lt;&lt; minorRows &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; minorCols &lt;&lt; std::endl;
+<a name="l00303"></a>00303                 exit(1);
+<a name="l00304"></a>00304                 }
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306             QMap&lt;int, QVMatrix&gt; &amp; row = operator[](majorRow);
+<a name="l00307"></a>00307             <span class="keywordflow">if</span> (!row.contains(majorCol))
+<a name="l00308"></a>00308                 blockCount ++;
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310                         operator[](majorRow)[majorCol] = M;
+<a name="l00311"></a>00311             }
+<a name="l00312"></a>00312 
+<a name="l00314"></a><a class="code" href="classQVSparseBlockMatrix.html#a19d8143ac0013bb30353199eaf75b990">00314</a>         <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> &amp; <a class="code" href="classQVSparseBlockMatrix.html#a19d8143ac0013bb30353199eaf75b990" title="Gets a data block.">getBlock</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> majorRow, <span class="keyword">const</span> <span class="keywordtype">int</span> majorCol)
+<a name="l00315"></a>00315             {
+<a name="l00316"></a>00316                         <span class="keywordflow">if</span> (majorRow &lt; 0 || majorRow &gt;= majorRows || majorCol &lt; 0 || majorCol &gt;= majorCols)
+<a name="l00317"></a>00317                 {
+<a name="l00318"></a>00318                 std::cout &lt;&lt; <span class="stringliteral">&quot;[QVSparseBlockMatrix::getBlock] Error: accessing a block outside the sparse matrix.&quot;</span> &lt;&lt; std::endl
+<a name="l00319"></a>00319                                         &lt;&lt; <span class="stringliteral">&quot;\tProvided block index:\t&quot;</span> &lt;&lt; majorRow &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; majorCol &lt;&lt; std::endl
+<a name="l00320"></a>00320                                         &lt;&lt; <span class="stringliteral">&quot;\tValid block ranges for the matrix:\t&quot;</span> &lt;&lt; majorRows &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; majorCols &lt;&lt; std::endl;
+<a name="l00321"></a>00321                 exit(1);
+<a name="l00322"></a>00322                 }
+<a name="l00323"></a>00323 
+<a name="l00324"></a>00324             QMap&lt;int, QVMatrix&gt; &amp; row = operator[](majorRow);
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326             <span class="comment">// If no submatrix is at the indexed block, create one filled with NULL values.</span>
+<a name="l00327"></a>00327             <span class="keywordflow">if</span> (!row.contains(majorCol))
+<a name="l00328"></a>00328                 row[majorCol] = <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a>(minorRows, minorCols, 0.0);
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330             <span class="keywordflow">return</span> row[majorCol];
+<a name="l00331"></a>00331             }
+<a name="l00332"></a>00332 
+<a name="l00339"></a><a class="code" href="classQVSparseBlockMatrix.html#a3890f927a8d052fb3f62c5826ac6ffef">00339</a>         <span class="keywordtype">bool</span> <a class="code" href="classQVSparseBlockMatrix.html#a3890f927a8d052fb3f62c5826ac6ffef" title="Evaluate if a block contains zero values.">isNullBlock</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> majorRow, <span class="keyword">const</span> <span class="keywordtype">int</span> majorCol)<span class="keyword"> const</span>
+<a name="l00340"></a>00340 <span class="keyword">            </span>{
+<a name="l00341"></a>00341                         <span class="keywordflow">if</span> (majorRow &lt; 0 || majorRow &gt;= majorRows || majorCol &lt; 0 || majorCol &gt;= majorCols)
+<a name="l00342"></a>00342                 {
+<a name="l00343"></a>00343                 std::cout &lt;&lt; <span class="stringliteral">&quot;[QVSparseBlockMatrix::isNullBlock] Error: accessing a block outside the sparse matrix.&quot;</span> &lt;&lt; std::endl
+<a name="l00344"></a>00344                                         &lt;&lt; <span class="stringliteral">&quot;\tProvided block index:\t&quot;</span> &lt;&lt; majorRow &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; majorCol &lt;&lt; std::endl
+<a name="l00345"></a>00345                                         &lt;&lt; <span class="stringliteral">&quot;\tValid block ranges for the matrix:\t&quot;</span> &lt;&lt; majorRows &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; majorCols &lt;&lt; std::endl;
+<a name="l00346"></a>00346                 exit(1);
+<a name="l00347"></a>00347                 }
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349             <span class="keywordflow">return</span> !operator[](majorRow).contains(majorCol);
+<a name="l00350"></a>00350             }
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352         <span class="comment">/*const QVMatrix &amp; getBlock(const int majorRow, const int majorCol) const</span>
+<a name="l00353"></a>00353 <span class="comment">            {</span>
+<a name="l00354"></a>00354 <span class="comment">                        if (majorRow &lt; 0 || majorRow &gt;= majorRows || majorCol &lt; 0 || majorCol &gt;= majorCols)</span>
+<a name="l00355"></a>00355 <span class="comment">                {</span>
+<a name="l00356"></a>00356 <span class="comment">                std::cout &lt;&lt; &quot;ERROR: accessing a block outside the sparse matrix.&quot; &lt;&lt; std::endl</span>
+<a name="l00357"></a>00357 <span class="comment">                                        &lt;&lt; &quot;\tProvided block index:\t&quot; &lt;&lt; majorRow &lt;&lt; &quot;,&quot; &lt;&lt; majorCol &lt;&lt; std::endl</span>
+<a name="l00358"></a>00358 <span class="comment">                                        &lt;&lt; &quot;\tValid block ranges for the matrix:\t&quot; &lt;&lt; majorRows &lt;&lt; &quot;x&quot; &lt;&lt; majorCols &lt;&lt; std::endl;</span>
+<a name="l00359"></a>00359 <span class="comment">                exit(1);</span>
+<a name="l00360"></a>00360 <span class="comment">                }</span>
+<a name="l00361"></a>00361 <span class="comment"></span>
+<a name="l00362"></a>00362 <span class="comment">            const QMap&lt;int, QVMatrix&gt; &amp; row = operator[](majorRow);</span>
+<a name="l00363"></a>00363 <span class="comment">            // @todo This operation should create a block of adequate dimensions in the sparse matrix if no block is found.</span>
+<a name="l00364"></a>00364 <span class="comment">            if (!row.contains(majorCol))</span>
+<a name="l00365"></a>00365 <span class="comment">                {</span>
+<a name="l00366"></a>00366 <span class="comment">                std::cout &lt;&lt; &quot;ERROR: accessing a block which is NULL in the sparse matrix.&quot; &lt;&lt; std::endl;</span>
+<a name="l00367"></a>00367 <span class="comment">                exit(1);</span>
+<a name="l00368"></a>00368 <span class="comment">                }</span>
+<a name="l00369"></a>00369 <span class="comment"></span>
+<a name="l00370"></a>00370 <span class="comment">            return row[majorCol];</span>
+<a name="l00371"></a>00371 <span class="comment">            }*/</span>
+<a name="l00372"></a>00372 
+<a name="l00373"></a>00373         <span class="keywordtype">void</span> printBlocks()<span class="keyword"> const</span>
+<a name="l00374"></a>00374 <span class="keyword">            </span>{
+<a name="l00375"></a>00375             std::cout &lt;&lt; <span class="stringliteral">&quot;Blocks for sparse matrix:&quot;</span> &lt;&lt; std::endl;
+<a name="l00376"></a>00376                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; majorRows; i++)
+<a name="l00377"></a>00377                 {
+<a name="l00378"></a>00378                 std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span>;
+<a name="l00379"></a>00379                                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; majorCols; j++)
+<a name="l00380"></a>00380                     <span class="keywordflow">if</span> (<span class="keyword">operator</span>[](i).contains(j))
+<a name="l00381"></a>00381                         std::cout &lt;&lt; <span class="stringliteral">&quot;[]&quot;</span>;
+<a name="l00382"></a>00382                     <span class="keywordflow">else</span>
+<a name="l00383"></a>00383                         std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;&gt;&quot;</span>;
+<a name="l00384"></a>00384                 std::cout &lt;&lt; std::endl;
+<a name="l00385"></a>00385                 }
+<a name="l00386"></a>00386             }
+<a name="l00387"></a>00387 
+<a name="l00393"></a><a class="code" href="classQVSparseBlockMatrix.html#a41e42237298152cf3b3da6e0e7e79c01">00393</a>         QList&lt;int&gt; <a class="code" href="classQVSparseBlockMatrix.html#a41e42237298152cf3b3da6e0e7e79c01" title="List of non-zero blocks in a block-row.">getBlockRowIndexes</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> majorRow)<span class="keyword"> const</span>
+<a name="l00394"></a>00394 <span class="keyword">            </span>{
+<a name="l00395"></a>00395             <span class="keywordflow">return</span> operator[](majorRow).keys();
+<a name="l00396"></a>00396             }
+<a name="l00397"></a>00397 
+<a name="l00403"></a><a class="code" href="classQVSparseBlockMatrix.html#a27365e05775fdd2fc655f065d173f163">00403</a>         <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> <a class="code" href="classQVSparseBlockMatrix.html#a27365e05775fdd2fc655f065d173f163" title="Product operator for sparse block matrices.">operator*</a>(<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;other)<span class="keyword"> const           </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVSparseBlockMatrix.html#a36a11e4a75005686b522407e67136b0c" title="Dot product for sparse block matrices.">dotProduct</a>(other, <span class="keyword">false</span>, <span class="keyword">false</span>); };
+<a name="l00404"></a>00404 
+<a name="l00408"></a><a class="code" href="classQVSparseBlockMatrix.html#a4589e6f5a82165b4159168805258ad4f">00408</a>         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVSparseBlockMatrix.html#a4589e6f5a82165b4159168805258ad4f" title="Sparse block matrix-vector product.">operator*</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector)<span class="keyword"> const        </span>{ <span class="keywordflow">return</span> <a class="code" href="classQVSparseBlockMatrix.html#a36a11e4a75005686b522407e67136b0c" title="Dot product for sparse block matrices.">dotProduct</a>(vector, <span class="keyword">false</span>); }
+<a name="l00409"></a>00409 
+<a name="l00415"></a>00415         <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> <a class="code" href="classQVSparseBlockMatrix.html#a36a11e4a75005686b522407e67136b0c" title="Dot product for sparse block matrices.">dotProduct</a>(<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;other,
+<a name="l00416"></a>00416                     <span class="keyword">const</span> <span class="keywordtype">bool</span> transposeFirstOperand = <span class="keyword">false</span>,
+<a name="l00417"></a>00417                     <span class="keyword">const</span> <span class="keywordtype">bool</span> transposeSecondOperand = <span class="keyword">false</span>) <span class="keyword">const</span>;
+<a name="l00418"></a>00418 
+<a name="l00424"></a>00424         <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> <a class="code" href="classQVSparseBlockMatrix.html#a36a11e4a75005686b522407e67136b0c" title="Dot product for sparse block matrices.">dotProduct</a>(<span class="keyword">const</span> <a class="code" href="classQVVector.html" title="Implementation of numerical vectors.">QVVector</a> &amp;vector, <span class="keyword">const</span> <span class="keywordtype">bool</span> transposeMatrix = <span class="keyword">false</span>) <span class="keyword">const</span>;
+<a name="l00425"></a>00425 
+<a name="l00427"></a>00427         <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp; <a class="code" href="classQVSparseBlockMatrix.html#a603b844cfe6c0102ee10cd3dee2563c2" title="Copy operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;other);
+<a name="l00428"></a>00428 
+<a name="l00430"></a><a class="code" href="classQVSparseBlockMatrix.html#ab96a97d0790f3925632b6e5706278947">00430</a>         <span class="keywordtype">void</span> <a class="code" href="classQVSparseBlockMatrix.html#ab96a97d0790f3925632b6e5706278947" title="Set matrix to zero.">clear</a>()            { QMap&lt;int, QMap&lt;int, QVMatrix&gt; &gt;<a class="code" href="classQVSparseBlockMatrix.html#ab96a97d0790f3925632b6e5706278947" title="Set matrix to zero.">::clear</a>(); }
+<a name="l00431"></a>00431 
+<a name="l00432"></a>00432         <span class="comment">// @brief Gets the trace of the matrix.</span>
+<a name="l00433"></a>00433         <span class="comment">// @note this function works only on sparse matrices with square blocks.</span>
+<a name="l00434"></a>00434 <span class="preprocessor">        #ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00435"></a>00435 <span class="preprocessor"></span>        <span class="keywordtype">double</span> trace()
+<a name="l00436"></a>00436             {
+<a name="l00437"></a>00437             <span class="comment">// Evaluate the trace.</span>
+<a name="l00438"></a>00438             <span class="keywordtype">double</span> trace = 0.0;
+<a name="l00439"></a>00439             <span class="keywordtype">int</span> count = 0;
+<a name="l00440"></a>00440             <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = 0; k &lt; MIN(<a class="code" href="classQVSparseBlockMatrix.html#a202dae52dc2ec0501ceddc53ffc31aac" title="Get majorRows from a sparse block matrix.">getMajorRows</a>(),<a class="code" href="classQVSparseBlockMatrix.html#a6cb89146c9191b915b8f493f0be6becc" title="Get majorCols from a sparse block matrix.">getMajorCols</a>()); k++)
+<a name="l00441"></a>00441                 {
+<a name="l00442"></a>00442                 <span class="keywordflow">if</span> (<a class="code" href="classQVSparseBlockMatrix.html#a3890f927a8d052fb3f62c5826ac6ffef" title="Evaluate if a block contains zero values.">isNullBlock</a>(k,k))
+<a name="l00443"></a>00443                     <span class="keywordflow">continue</span>;
+<a name="l00444"></a>00444 
+<a name="l00445"></a>00445                 <span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = <a class="code" href="classQVSparseBlockMatrix.html#a19d8143ac0013bb30353199eaf75b990" title="Gets a data block.">getBlock</a>(k,k);
+<a name="l00446"></a>00446                 <span class="keywordflow">if</span> (M.<a class="code" href="classQVMatrix.html#a420bba03aeccbd18161418049a025f66" title="Get width of the matrix.">getCols</a>() &lt; <a class="code" href="classQVSparseBlockMatrix.html#ad606f1e2fe760064d0494e7c133dbed7" title="Get minorCols from a sparse block matrix.">getMinorCols</a>() || M.<a class="code" href="classQVMatrix.html#a4108aa685baecab8a9822dcc04e98b7f" title="Get height of the matrix.">getRows</a>() &lt; <a class="code" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6" title="Get minorRows from a sparse block matrix.">getMinorRows</a>())
+<a name="l00447"></a>00447                     {
+<a name="l00448"></a>00448                     std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR: block in the diagonal is NULL.&quot;</span> &lt;&lt; std::endl;
+<a name="l00449"></a>00449                     exit(1);
+<a name="l00450"></a>00450                     }
+<a name="l00451"></a>00451 
+<a name="l00452"></a>00452                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; MIN(<a class="code" href="classQVSparseBlockMatrix.html#af6637b61809a2d386d8d6ea3078a96b6" title="Get minorRows from a sparse block matrix.">getMinorRows</a>(), <a class="code" href="classQVSparseBlockMatrix.html#ad606f1e2fe760064d0494e7c133dbed7" title="Get minorCols from a sparse block matrix.">getMinorCols</a>()); j++)
+<a name="l00453"></a>00453                     {
+<a name="l00454"></a>00454                     trace += M(j,j);
+<a name="l00455"></a>00455                     count++;
+<a name="l00456"></a>00456                     }
+<a name="l00457"></a>00457                 }
+<a name="l00458"></a>00458 
+<a name="l00459"></a>00459             <span class="keywordflow">return</span> trace;
+<a name="l00460"></a>00460             }
+<a name="l00461"></a>00461 <span class="preprocessor">        #endif</span>
+<a name="l00462"></a>00462 <span class="preprocessor"></span>
+<a name="l00472"></a>00472                 <span class="keyword">static</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> <a class="code" href="classQVSparseBlockMatrix.html#af2826bfd4440734cf95c6d16099f15b2" title="Generates a random square sparse block matrix The sparse block matrix must have compatible...">randomSquare</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> NB,<span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keywordtype">double</span> NZProb,<span class="keyword">const</span> <span class="keywordtype">bool</span> symmetric=<span class="keyword">true</span>,<span class="keyword">const</span> <span class="keywordtype">bool</span> positive=<span class="keyword">true</span>);
+<a name="l00473"></a>00473     };
+<a name="l00474"></a>00474 
+<a name="l00475"></a>00475 <span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span>
+<a name="l00476"></a>00476 <span class="preprocessor"></span><span class="comment">// Internal class: Pardiso sparse matrix format (for solving sparse systems using MKL DSS):</span>
+<a name="l00477"></a>00477 <span class="keyword">class </span>MKLPardisoSparseFormat
+<a name="l00478"></a>00478     {
+<a name="l00479"></a>00479     <span class="keyword">public</span>:
+<a name="l00480"></a>00480         MKLPardisoSparseFormat(<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> qvspmatrix, <span class="keywordtype">bool</span> isSymmetric);
+<a name="l00481"></a>00481         MKLPardisoSparseFormat(): majorRows(0), majorCols(0), minorRows(0), minorCols(0), nRows(0), nCols(0), nNonZeros(0), rowIndex(NULL), columns(NULL), values(NULL)
+<a name="l00482"></a>00482             {};
+<a name="l00483"></a>00483 
+<a name="l00484"></a>00484         ~MKLPardisoSparseFormat();
+<a name="l00485"></a>00485         <span class="keywordtype">int</span> majorRows, majorCols, minorRows, minorCols;
+<a name="l00486"></a>00486         <span class="keywordtype">int</span> nRows; <span class="comment">// Total number of rows.</span>
+<a name="l00487"></a>00487         <span class="keywordtype">int</span> nCols; <span class="comment">// Total number of cols.</span>
+<a name="l00488"></a>00488         <span class="keywordtype">int</span> nNonZeros; <span class="comment">// Total number of non zero elements.</span>
+<a name="l00489"></a>00489 <span class="preprocessor">                #ifdef MKL_AVAILABLE</span>
+<a name="l00490"></a>00490 <span class="preprocessor"></span>            _INTEGER_t *rowIndex; <span class="comment">// rowIndex array (see MKL Pardiso sparse format).</span>
+<a name="l00491"></a>00491             _INTEGER_t *columns;  <span class="comment">// columns arrays (see MKL Pardiso sparse format).</span>
+<a name="l00492"></a>00492             _DOUBLE_PRECISION_t *values;<span class="comment">// values arrays (see MKL Pardiso sparse format).</span>
+<a name="l00493"></a>00493 <span class="preprocessor">        #else</span>
+<a name="l00494"></a>00494 <span class="preprocessor"></span>            <span class="keywordtype">int</span> *rowIndex; <span class="comment">// rowIndex array (see MKL Pardiso sparse format).</span>
+<a name="l00495"></a>00495             <span class="keywordtype">int</span> *columns;  <span class="comment">// columns arrays (see MKL Pardiso sparse format).</span>
+<a name="l00496"></a>00496             <span class="keywordtype">double</span> *values;<span class="comment">// values arrays (see MKL Parddiso sparse format).</span>
+<a name="l00497"></a>00497 <span class="preprocessor">        #endif</span>
+<a name="l00498"></a>00498 <span class="preprocessor"></span>
+<a name="l00500"></a>00500                 <span class="keyword">inline</span> <span class="keywordtype">int</span> getMajorRows()<span class="keyword"> const </span>{<span class="keywordflow">return</span> majorRows;};
+<a name="l00501"></a>00501 
+<a name="l00503"></a>00503                 <span class="keyword">inline</span> <span class="keywordtype">int</span> getMajorCols()<span class="keyword"> const </span>{<span class="keywordflow">return</span> majorCols;};
+<a name="l00504"></a>00504 
+<a name="l00506"></a>00506                 <span class="keyword">inline</span> <span class="keywordtype">int</span> getMinorRows()<span class="keyword"> const </span>{<span class="keywordflow">return</span> minorRows;};
+<a name="l00507"></a>00507 
+<a name="l00509"></a>00509                 <span class="keyword">inline</span> <span class="keywordtype">int</span> getMinorCols()<span class="keyword"> const </span>{<span class="keywordflow">return</span> minorCols;};
+<a name="l00510"></a>00510     };
+<a name="l00511"></a>00511 
+<a name="l00512"></a>00512 <span class="preprocessor">#ifdef MKL_AVAILABLE</span>
+<a name="l00513"></a>00513 <span class="preprocessor"></span><span class="keywordtype">void</span> squareSymmetricSparseMatrixToPardisoFormat(<span class="keyword">const</span> <a class="code" href="classQVSparseBlockMatrix.html" title="Implementation of sparse block matrices.">QVSparseBlockMatrix</a> &amp;qvspmatrix, MKLPardisoSparseFormat &amp;pardiso);
+<a name="l00514"></a>00514 <span class="preprocessor">#endif</span>
+<a name="l00515"></a>00515 <span class="preprocessor"></span>
+<a name="l00516"></a>00516 <span class="preprocessor">#endif</span>
+<a name="l00517"></a>00517 <span class="preprocessor"></span>
+<a name="l00518"></a>00518 
+<a name="l00519"></a>00519 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

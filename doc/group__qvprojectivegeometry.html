@@ -1,0 +1,1719 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Projective Geometry<br/>
+<small>
+[<a class="el" href="group__qvmath.html">Math functionality</a>]</small>
+</h1>
+<p>Functions related to Projective Geometry.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga721c81d3a9e9c7c2e09f5867241c7021">computeFundamentalMatrix</a> (const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;F, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> svdMethod=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the fundamental matrix between two images using the <a href="http://en.wikipedia.org/wiki/Eight-point_algorithm">8-point algorithm</a>.  <a href="#ga721c81d3a9e9c7c2e09f5867241c7021"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga86b3bbbca7ae731894f90bfd9ebb3a3a">symmetricEpipolarDistance</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;F, const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate symmetric epipolar error for a fundamental matrix defined between two images and one image point correspondence.  <a href="#ga86b3bbbca7ae731894f90bfd9ebb3a3a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVVector.html">QVVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gae93905c2b6cca18996c889210cbb6874">symmetricEpipolarDistance</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;F, const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate symmetric epipolar errors for a fundamental matrix defined between two images and a list of image point correspondences.  <a href="#gae93905c2b6cca18996c889210cbb6874"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668">computeProjectiveHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a planar homography from a list of point correspondences.  <a href="#ga72b520d418b7835458269a7d803c6668"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga5d0a08b6088fe1fa90baa765cff776a2">computeProjectiveHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a planar homography from a list of point correspondences.  <a href="#ga5d0a08b6088fe1fa90baa765cff776a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gae622eb1823659bb0d8dd9528f22e2f1c">computeAffineHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains an affine homography from a list of point correspondences.  <a href="#gae622eb1823659bb0d8dd9528f22e2f1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga06a3ff264f0821da24ee07ce73c86bd6">computeSimilarHomography</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains a similar homography from a set of inter-image point matchings.  <a href="#ga06a3ff264f0821da24ee07ce73c86bd6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b">cvFindFundamentalMat</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the fundamental matrix between two images, using the 8 point algorithm.  <a href="#ga61fbad744f81531ae01df55e48909a5b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QPointF&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga305b04da4d0035c3b4de07ff381b9e1c">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const QPointF &amp;point)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maps a point using an homography.  <a href="#ga305b04da4d0035c3b4de07ff381b9e1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QPointF &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga57f5860ede7f1c5cc138a08a9770debd">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const QList&lt; QPointF &gt; &amp;sourcePoints)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maps a set of points using an homography.  <a href="#ga57f5860ede7f1c5cc138a08a9770debd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga16d78d75712d628864cbfcd0e9622052">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;image, const int interpolation=IPPI_INTER_CUBIC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs an homography distortion on an image.  <a href="#ga16d78d75712d628864cbfcd0e9622052"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gab759381f29a49e65fb47b7e377705e8f">applyHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;homography, const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;image, const int interpolation=IPPI_INTER_CUBIC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Performs an homography distortion on an image.  <a href="#gab759381f29a49e65fb47b7e377705e8f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga017edd807b040c198a02733e4b81e1df">getCameraPosesFromEssentialMatrix</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;E, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R1, <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;R2, <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;t)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Decomposes an essential matrix and obtains the corresponding pair of camera poses.  <a href="#ga017edd807b040c198a02733e4b81e1df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b">testCheiralityForCameraPoses</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;sourceRt, const QPointF &amp;sourceProjection, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;destRt, const QPointF &amp;destProjection)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tests if two camera poses satisfy the cheirality condition for the reconstruction of a 3D point.  <a href="#ga5b7c05c6c12bb5c005f00cd838fd436b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVMatrix.html">QVMatrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gae1435ef34731a4088d1c45deab3d3ba5">linearCameraResection</a> (const QList&lt; QPointF &gt; &amp;points2d, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3d)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtains the camera matrix from a set of correspondences between 3D points and their respective image projections.  <a href="#gae1435ef34731a4088d1c45deab3d3ba5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga8d7cc4afd681a8c0251b975f5d303436">linear3DPointTriangulation</a> (const QVector&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;cameraMatrices, const QHash&lt; int, QPointF &gt; &amp;projectionsOfAPoint, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on several views, and their corresponding camera matrices.  <a href="#ga8d7cc4afd681a8c0251b975f5d303436"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga1d52c9946346c83aea79f1f2311b44ef">linear3DPointTriangulation</a> (const QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;cameraMatrices, const QList&lt; QPointF &gt; &amp;projectionsOfAPoint, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on several views, and their corresponding camera matrices.  <a href="#ga1d52c9946346c83aea79f1f2311b44ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gabaa689662af5c3e513041ef1a7c97117">linear3DPointTriangulation</a> (const QPointF &amp;point1, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P1, const QPointF &amp;point2, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P2, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices.  <a href="#gabaa689662af5c3e513041ef1a7c97117"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga3d79b8259c6cf0dfbd6fbbc4d1f8f968">linear3DPointTriangulation</a> (const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P1, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;P2, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices.  <a href="#ga3d79b8259c6cf0dfbd6fbbc4d1f8f968"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">linear3DPointTriangulation</a> (const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;matching, const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;pose1, const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;pose2, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices.  <a href="#ga67b250d99026dad89a8f1006ab8e4fe1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;cameras, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="#ga145fc6ee66fb884fa959a00400744570"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga2213ce30fd6ab62c46e482fd9fec6397">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;cameras, const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="#ga2213ce30fd6ab62c46e482fd9fec6397"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga7ad9c59ab6cdc91ac4c908e1d2f95174">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameras, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="#ga7ad9c59ab6cdc91ac4c908e1d2f95174"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga867d933e04eb6e85cd89b9604592b0c9">linear3DPointsTriangulation</a> (const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;cameras, const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a> method=DEFAULT_TQVSVD_METHOD)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices.  <a href="#ga867d933e04eb6e85cd89b9604592b0c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gabb623dbd849917dc8f20dbcbf775ff22">getCameraFocals</a> (const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;matchings, double &amp;focal1, double &amp;focal2, const QPointF principalPoint1=QPointF(0.0, 0.0), const QPointF principalPoint2=QPointF(0.0, 0.0), const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a> gslMinimizerAlgorithm=VectorBFGS, const int optimizationIterations=50)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the focal lengths for two cameras,.  <a href="#gabb623dbd849917dc8f20dbcbf775ff22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gafebb00bc1698d22fdb6875a6a5d70c24">computeCameraFocalFromPlanarHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H, int w, int h, bool byzero=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compute camera focal from a planar homography.  <a href="#gafebb00bc1698d22fdb6875a6a5d70c24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCameraPose.html">QVCameraPose</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga53841f2498e0f94b889bac1134135e43">getCameraPoseFromCalibratedHomography</a> (const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;K, const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;H)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estimates the camera pose form the intrinsic calibration and a planar homography.  <a href="#ga53841f2498e0f94b889bac1134135e43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga3f3a84e1786f64ea1e8ba2975759f406">optimizeReprojectionErrorForCameraPose</a> (const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;camera0, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, const int iterations=5)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Improves the estimated location of a camera pose by refining its reprojection error.  <a href="#ga3f3a84e1786f64ea1e8ba2975759f406"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQV3DPointF.html">QV3DPointF</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#gabe1f2349f630e5584249273044cce486">optimizeReprojectionErrorFor3DPoint</a> (const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;initialPoint3D, const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;cameraPoses, const QHash&lt; int, QPointF &gt; &amp;projectionsOfAPoint, const int iterations=5, const double lambda=1e+0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Improves the estimated location of a 3D point by refining its reprojection error.  <a href="#gabe1f2349f630e5584249273044cce486"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQVCameraPose.html">QVCameraPose</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qvprojectivegeometry.html#ga6a50717778dcec283e6294ba95e41078">optimizeReprojectionErrorForCameraPoseCauchy</a> (const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;cameraPose, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;points3D, const int iterations, const double lambda=1e-5, const double sigma=3.0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Improves the estimated location of a camera pose by refining its reprojection error robustified by a Cauchy distribution.  <a href="#ga6a50717778dcec283e6294ba95e41078"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Functions related to Projective Geometry. </p>
+<p>The <a href="http://en.wikipedia.org/wiki/Projective_geometry">projective geometry</a> is the study of the geometric properties of physical objects when projected in the image plane. It provides theoretical tools to obtain 3D reconstructions and measurements of real world objects and scenes from the geometry and location of their distinctive features in images.</p>
+<p>In this module you can find functions to:</p>
+<ul>
+<li>Obtain the camera pose and location of 3D points of a scene, provided point correspondences between the images.</li>
+<li>Estimate planar, euclidean and affine homographies from a set of image to plane point correspondences.</li>
+<li>Estimate the fundamental matrix from a set of image point correspondences between two views.</li>
+<li>Project points using an homography. In the case of planar homographies, project points from the image to the plane, and viceversa.</li>
+<li>Triangulate 3D points provided the set of camera poses for the views where they appear and their projections on them.</li>
+<li>Resect the pose of a camera, provided a set of 3D to image point correspondences.</li>
+</ul>
+<p>Most of these algorithms are described in the book <em>Multiple View Geometry in Computer Vision</em> by R. Hartley and A. Zisserman. The references to this book in this documentation correspond to the second edition.</p>
+<h2><a class="anchor" id="ReconstructionFrom2Views">
+3D reconstruction from 2 views</a></h2>
+<p>From <a href="http://en.wikipedia.org/wiki/Fundamental_matrix_(computer_vision)">fundamental and essential matrices</a>. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga721c81d3a9e9c7c2e09f5867241c7021"></a><!-- doxytag: member="qvepipolar.h::computeFundamentalMatrix" ref="ga721c81d3a9e9c7c2e09f5867241c7021" args="(const QVector&lt; QPointFMatching &gt; &amp;matchings, QVMatrix &amp;F, const TQVSVD_Method svdMethod=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool computeFundamentalMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>svdMethod</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the fundamental matrix between two images using the <a href="http://en.wikipedia.org/wiki/Eight-point_algorithm">8-point algorithm</a>. </p>
+<p>This function obtains the fundamental matrix between two images using the <a href="http://en.wikipedia.org/wiki/Eight-point_algorithm">8-point algorithm</a>. It is faster than the overloaded version.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>list of 8 or more point matchings. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>F</em>&nbsp;</td><td>output fundamental matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>svdMethod</em>&nbsp;</td><td>method used in several SVD internal decompositions of the algorithm. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the fundamental matrix was found, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvepipolar_8cpp_source.html#l00208">208</a> of file <a class="el" href="qvepipolar_8cpp_source.html">qvepipolar.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#gabb623dbd849917dc8f20dbcbf775ff22">getCameraFocals()</a>, and <a class="el" href="group__qvsfm.html#gaab6ac97055fa83864cb3bcad712008b7">linearCameraPairInitialization()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga86b3bbbca7ae731894f90bfd9ebb3a3a"></a><!-- doxytag: member="qvepipolar.h::symmetricEpipolarDistance" ref="ga86b3bbbca7ae731894f90bfd9ebb3a3a" args="(const QVMatrix &amp;F, const QPointFMatching &amp;matching)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double symmetricEpipolarDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matching</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate symmetric epipolar error for a fundamental matrix defined between two images and one image point correspondence. </p>
+<p>This function returns the epipolar error defined for the image point correspondence with the following expression:</p>
+<p><img class="formulaInl" alt="$ e = d(x, Fx') + d(x', xF) $" src="form_26.png"/></p>
+<p>Where <img class="formulaInl" alt="$ d(p,l) $" src="form_27.png"/> is the euclidean distance in the 2D plane between the point <img class="formulaInl" alt="$ p $" src="form_28.png"/> and the line <img class="formulaInl" alt="$ l $" src="form_29.png"/>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>F</em>&nbsp;</td><td>Fundamental matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matching</em>&nbsp;</td><td>Image point matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The symmetric epipolar distance <img class="formulaInl" alt="$ e $" src="form_30.png"/>. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvepipolar_8cpp_source.html#l00253">253</a> of file <a class="el" href="qvepipolar_8cpp_source.html">qvepipolar.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#gae93905c2b6cca18996c889210cbb6874">symmetricEpipolarDistance()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae93905c2b6cca18996c889210cbb6874"></a><!-- doxytag: member="qvepipolar.h::symmetricEpipolarDistance" ref="gae93905c2b6cca18996c889210cbb6874" args="(const QVMatrix &amp;F, const QVector&lt; QPointFMatching &gt; &amp;matchings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVVector.html">QVVector</a> symmetricEpipolarDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Evaluate symmetric epipolar errors for a fundamental matrix defined between two images and a list of image point correspondences. </p>
+<p>This function returns a vector containing the symmetric epipolar errors defined for the image point correspondences with the following expression:</p>
+<p><img class="formulaInl" alt="$ e_i = d(x_i, Fx'_i) + d(x'_i, x_i F) $" src="form_31.png"/></p>
+<p>Where <img class="formulaInl" alt="$ d(p,l) $" src="form_27.png"/> is the euclidean distance in the 2D plane between the point <img class="formulaInl" alt="$ p $" src="form_28.png"/> and the line <img class="formulaInl" alt="$ l $" src="form_29.png"/>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>F</em>&nbsp;</td><td>fundamental matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>list of point matchings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A vector, containing the distance <img class="formulaInl" alt="$ e_i $" src="form_32.png"/> for each matching. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvepipolar_8cpp_source.html#l00302">302</a> of file <a class="el" href="qvepipolar_8cpp_source.html">qvepipolar.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga72b520d418b7835458269a7d803c6668"></a><!-- doxytag: member="qvprojective.h::computeProjectiveHomography" ref="ga72b520d418b7835458269a7d803c6668" args="(const QList&lt; QPointFMatching &gt; &amp;matchings, QVMatrix &amp;H)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool computeProjectiveHomography </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>H</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a planar homography from a list of point correspondences. </p>
+<p>This function obtains the homography matrix <img class="formulaInl" alt="$ H $" src="form_153.png"/> corresponding to the <a href="http://en.wikipedia.org/wiki/Projective_transformation">projective transformation</a> which most closely map a set of four or more point correspondences.</p>
+<p>These projective homographies can be used to obtain a frontal view of any planar figure appearing in an image. The following is an example of planar rectification:</p>
+<div align="center">
+<img src="rectification_homography.png" alt="rectification_homography.png"/>
+</div>
+<p>Image on the left is the original picture obtained with a pin-hole camera. Image on the right was obtained mapping the pixels in the original image with the planar homography obtained using the function ComputeProjectiveHomography.</p>
+<p>The homography <img class="formulaInl" alt="$ H^* $" src="form_154.png"/>is obtained identifying the four corners of the chessboard, and their corresponding coordinates in the plane of the chessboard:</p>
+<div class="fragment"><pre class="fragment">QList&lt; QPair&lt;QPointF, QPointF&gt; &gt; matchings;
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(-171,109),     QPointF(-100,+100)));
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(-120,31),      QPointF(-100,-100)));
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(117,53),       QPointF(+100,-100)));
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(11,115),       QPointF(+100,+100)));
+
+<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> H = ComputeProjectiveHomography(matchings);
+</pre></div><p>by solving the following inequation:</p>
+<p><img class="formulaInl" alt="$ p' \propto H p $" src="form_155.png"/></p>
+<p>maximizing the average of the algebraic reprojection error for the point matchings <img class="formulaInl" alt="$ \left\{ p_i \mapsto p_i' \right\} _{i=1..n} $" src="form_156.png"/> contained in the <em>matchings</em> list:</p>
+<p><img class="formulaInl" alt="$ H^* = \arg\max \displaystyle\sum\limits_{i=0}^n \left[ p_i' \right] _\times H p_i $" src="form_157.png"/></p>
+<p>The points in the original image can be mapped with the homography matrix <img class="formulaInl" alt="$ H $" src="form_153.png"/> using the ApplyHomography functions.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>ApplyHomography(const QVMatrix &amp;, const QPointF &amp;) </dd>
+<dd>
+ApplyHomography(const QVMatrix &amp;, const QList&lt;QPointF&gt; &amp;)</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>list of point matchings from the original location, to the destination location. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>H</em>&nbsp;</td><td>output homography matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false if the number of matchings is less than 4. True otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00131">131</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#ga5d0a08b6088fe1fa90baa765cff776a2">computeProjectiveHomography()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5d0a08b6088fe1fa90baa765cff776a2"></a><!-- doxytag: member="qvprojective.h::computeProjectiveHomography" ref="ga5d0a08b6088fe1fa90baa765cff776a2" args="(const QList&lt; QPointFMatching &gt; &amp;matchings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> computeProjectiveHomography </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a planar homography from a list of point correspondences. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>This version of <a class="el" href="group__qvprojectivegeometry.html#ga5d0a08b6088fe1fa90baa765cff776a2">computeProjectiveHomography</a> is deprecated. Use <a class="el" href="group__qvprojectivegeometry.html#ga72b520d418b7835458269a7d803c6668">computeProjectiveHomography(const QList&lt;QPointFMatching&gt;&amp;,QVMatrix&amp;)</a> instead</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>list of point matchings from the original location, to the destination location. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01329">1329</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae622eb1823659bb0d8dd9528f22e2f1c"></a><!-- doxytag: member="qvprojective.h::computeAffineHomography" ref="gae622eb1823659bb0d8dd9528f22e2f1c" args="(const QList&lt; QPointFMatching &gt; &amp;matchings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> computeAffineHomography </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains an affine homography from a list of point correspondences. </p>
+<p>This function obtains the homography matrix <img class="formulaInl" alt="$ M $" src="form_103.png"/> which most closely maps the source points to their destination, in the input point matching list. This homography matrix corresponds to an <a href="http://en.wikipedia.org/wiki/Affine_transformation">affine transformation</a>.</p>
+<p>The function returns the matrix corresponding to the planar homography, from a list of three or more point correspondences between the location of those points at the source plane and their location in the destination plane.</p>
+<p>Usage: </p>
+<div class="fragment"><pre class="fragment">QList&lt; QPair&lt;QPointF, QPointF&gt; &gt; matchings;
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(-171,109),     QPointF(-100,+100)));
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(-120,31),      QPointF(-100,-100)));
+matchings.append(QPair&lt;QPointF, QPointF&gt;(QPointF(117,53),       QPointF(+100,-100)));
+
+<span class="keyword">const</span> <a class="code" href="classQVMatrix.html" title="Implementation of numerical matrices.">QVMatrix</a> M = ComputeAffineHomography(matchings);
+</pre></div><p>Any point <img class="formulaInl" alt="$ p $" src="form_28.png"/> from the 2D plane can be mapped to another point in the plane <img class="formulaInl" alt="$ q $" src="form_158.png"/> with an affine matrix <img class="formulaInl" alt="$ M $" src="form_103.png"/> using the following C++ code:</p>
+<div class="fragment"><pre class="fragment">QPointF q = M * <a class="code" href="classQVVector.html#af8e81c72e88b61e1f9a8d118f8120c23" title="Obtains the vector in homogeneous coordinates.">QVVector::homogeneousCoordinates</a>(p);
+</pre></div><p>Or by using the ApplyHomography functions.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>ApplyHomography(const QVMatrix &amp;, const QPointF &amp;) </dd>
+<dd>
+ApplyHomography(const QVMatrix &amp;, const QList&lt;QPointF&gt; &amp;)</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>list of point matchings from the original location, to the destination location. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00227">227</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga06a3ff264f0821da24ee07ce73c86bd6"></a><!-- doxytag: member="qvprojective.h::computeSimilarHomography" ref="ga06a3ff264f0821da24ee07ce73c86bd6" args="(const QList&lt; QPointFMatching &gt; &amp;matchings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> computeSimilarHomography </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains a similar homography from a set of inter-image point matchings. </p>
+<p>A similar transformation is obtained by composing an euclidean transformation with a scaling.</p>
+<p>This function obtains a similar mapping between the source an destination locations of a set of point matchings. The mapping is returned as a <img class="formulaInl" alt="$ 3 \times 3 $" src="form_6.png"/> matrix which can be multiplied to the source location of each mapping point in homogeneous coordinates, to obtain the location of the mapped point.</p>
+<p>The returned matrix has the following structure:</p>
+<p><img class="formulaInl" alt="$ H = \left( \begin{array}{ccc} s \cos(\theta) &amp; -s \sin (\theta) &amp; t_x \\ s \sin(\theta) &amp; s \cos (\theta) &amp; t_y \\ 0 &amp; 0 &amp; 1 \end{array} \right) $" src="form_159.png"/></p>
+<p>Where <img class="formulaInl" alt="$ s $" src="form_72.png"/> is the scale factor, and <img class="formulaInl" alt="$ \theta $" src="form_160.png"/> and <img class="formulaInl" alt="$ (t_x, t_y) $" src="form_161.png"/> are the rotation angle and translation vector of the euclidean mapping respectively. </p>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00275">275</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga61fbad744f81531ae01df55e48909a5b"></a><!-- doxytag: member="qvprojective.h::cvFindFundamentalMat" ref="ga61fbad744f81531ae01df55e48909a5b" args="(const QList&lt; QPointFMatching &gt; &amp;matchings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> cvFindFundamentalMat </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the fundamental matrix between two images, using the 8 point algorithm. </p>
+<p>This function performs point normalization to robustly obtain the F matrix.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on functionality from the OpenCV library. Thus compatibility with that library must be enabled to be available. </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>list containing at least 8 image point correspondences.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__qvprojectivegeometry.html#ga721c81d3a9e9c7c2e09f5867241c7021">computeFundamentalMatrix</a> to estimate the fundamental matrix using the 8 point algorithm, or call directly to the OpenCV cvFindFundamentalMat function.</dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00540">540</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#ga61fbad744f81531ae01df55e48909a5b">cvFindFundamentalMat()</a>, and <a class="el" href="group__qvprojectivegeometry.html#gabb623dbd849917dc8f20dbcbf775ff22">getCameraFocals()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga305b04da4d0035c3b4de07ff381b9e1c"></a><!-- doxytag: member="qvprojective.h::applyHomography" ref="ga305b04da4d0035c3b4de07ff381b9e1c" args="(const QVMatrix &amp;homography, const QPointF &amp;point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF applyHomography </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>homography</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maps a point using an homography. </p>
+<p>This function maps a point <img class="formulaInl" alt="$ (x, y) $" src="form_162.png"/> in the 2D plane, using a planar homography. The homography is represented as a <img class="formulaInl" alt="$ H_{3 \times 3} $" src="form_163.png"/> matrix. These matrices can be obtained using methods like ComputeSimilarHomography, ComputeProjectiveHomography, or ComputeAffineHomography from a set of point correspondences between the original 2D plane, and the mapped plane.</p>
+<p>The output of the function is a point <img class="formulaInl" alt="$ (x', y') $" src="form_164.png"/> which satisfies the following equation:</p>
+<p><img class="formulaInl" alt="$ \left(\begin{array}{c} x' \\ y' \\ 1 \end{array}\right) \propto H \left(\begin{array}{c} x \\ y \\ 1 \end{array}\right) $" src="form_165.png"/></p>
+<dl class="see"><dt><b>See also:</b></dt><dd>ComputeSimilarHomography </dd>
+<dd>
+ComputeAffineHomography </dd>
+<dd>
+ComputeProjectiveHomography</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>homography</em>&nbsp;</td><td>The homography transformation matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point</em>&nbsp;</td><td>Point to apply the homography transformation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00646">646</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#ga57f5860ede7f1c5cc138a08a9770debd">applyHomography()</a>, and <a class="el" href="group__qvsfm.html#ga88e5c045a99ad4e58d312ccee761860d">correctIntrinsics()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga57f5860ede7f1c5cc138a08a9770debd"></a><!-- doxytag: member="qvprojective.h::applyHomography" ref="ga57f5860ede7f1c5cc138a08a9770debd" args="(const QVMatrix &amp;homography, const QList&lt; QPointF &gt; &amp;sourcePoints)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QPointF&gt; applyHomography </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>homography</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>sourcePoints</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maps a set of points using an homography. </p>
+<p>This is an overloaded version of the ApplyHomography(const QVMatrix &amp;, const QPointF &amp;) function provided by convenience. This function takes a list of points from the 2D plane, and an homography matrix as inputs. The output will be a list of points obtained by mapping the points from the input list, using the homography.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>ApplyHomography(const QVMatrix &amp;, const QPointF &amp;) </dd>
+<dd>
+ComputeSimilarHomography </dd>
+<dd>
+ComputeAffineHomography </dd>
+<dd>
+ComputeProjectiveHomography</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>homography</em>&nbsp;</td><td>The homography transformation matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sourcePoints</em>&nbsp;</td><td>Points to apply the homography transformation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00657">657</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga16d78d75712d628864cbfcd0e9622052"></a><!-- doxytag: member="qvprojective.h::applyHomography" ref="ga16d78d75712d628864cbfcd0e9622052" args="(const QVMatrix &amp;homography, const QVImage&lt; uChar, 1 &gt; &amp;image, const int interpolation=IPPI_INTER_CUBIC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVImage.html">QVImage</a>&lt;uChar, 1&gt; applyHomography </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>homography</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 1 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>interpolation</em> = <code>IPPI_INTER_CUBIC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs an homography distortion on an image. </p>
+<p>The homography is represented as a <img class="formulaInl" alt="$ H_{3 \times 3} $" src="form_163.png"/> matrix. These matrices can be obtained using methods like ComputeSimilarHomography, ComputeProjectiveHomography, or ComputeAffineHomography.</p>
+<p>This function takes a single channel image, and an homography matrix as inputs. Each point <img class="formulaInl" alt="$ (x, y) $" src="form_162.png"/> in the input image is mapped to its location in the resulting image <img class="formulaInl" alt="$ (x', y') $" src="form_164.png"/> using the homography <img class="formulaInl" alt="$ H $" src="form_153.png"/> as follows:</p>
+<p><img class="formulaInl" alt="$ \left(\begin{array}{c} x' \\ y' \\ 1 \end{array}\right) \propto H \left(\begin{array}{c} x \\ y \\ 1 \end{array}\right) $" src="form_165.png"/></p>
+<dl class="see"><dt><b>See also:</b></dt><dd>ComputeSimilarHomography </dd>
+<dd>
+ComputeAffineHomography </dd>
+<dd>
+ComputeProjectiveHomography</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>homography</em>&nbsp;</td><td>The homography transformation matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>The input image to distort </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>interpolation</em>&nbsp;</td><td>Type of interpolation. Possible values for this parameter are:</p>
+<ul>
+<li>IPPI_INTER_NN. Nearest neighbor interpolation</li>
+<li>IPPI_INTER_LINEAR. Linear interpolation</li>
+<li>IPPI_INTER_CUBIC. Cubic interpolation</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on functionality from the Intel IPP library. Thus compatibility with that library must be enabled to be available. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00666">666</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab759381f29a49e65fb47b7e377705e8f"></a><!-- doxytag: member="qvprojective.h::applyHomography" ref="gab759381f29a49e65fb47b7e377705e8f" args="(const QVMatrix &amp;homography, const QVImage&lt; uChar, 3 &gt; &amp;image, const int interpolation=IPPI_INTER_CUBIC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVImage.html">QVImage</a>&lt;uChar, 3&gt; applyHomography </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>homography</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVImage.html">QVImage</a>&lt; uChar, 3 &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>interpolation</em> = <code>IPPI_INTER_CUBIC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Performs an homography distortion on an image. </p>
+<p>The homography is represented as a <img class="formulaInl" alt="$ H_{3 \times 3} $" src="form_163.png"/> matrix. These matrices can be obtained using methods like ComputeSimilarHomography, ComputeProjectiveHomography, or ComputeAffineHomography.</p>
+<p>This function takes a three channel image, and an homography matrix as inputs. Each point <img class="formulaInl" alt="$ (x, y) $" src="form_162.png"/> in the input image is mapped to its location in the resulting image <img class="formulaInl" alt="$ (x', y') $" src="form_164.png"/> using the homography <img class="formulaInl" alt="$ H $" src="form_153.png"/> as follows:</p>
+<p><img class="formulaInl" alt="$ \left(\begin{array}{c} x' \\ y' \\ 1 \end{array}\right) \propto H \left(\begin{array}{c} x \\ y \\ 1 \end{array}\right) $" src="form_165.png"/></p>
+<dl class="see"><dt><b>See also:</b></dt><dd>ComputeSimilarHomography </dd>
+<dd>
+ComputeAffineHomography </dd>
+<dd>
+ComputeProjectiveHomography</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>homography</em>&nbsp;</td><td>The homography transformation matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>The input image to distort </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>interpolation</em>&nbsp;</td><td>Type of interpolation. Possible values for this parameter are:</p>
+<ul>
+<li>IPPI_INTER_NN. Nearest neighbor interpolation</li>
+<li>IPPI_INTER_LINEAR. Linear interpolation</li>
+<li>IPPI_INTER_CUBIC. Cubic interpolation</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is based on functionality from the Intel IPP library. Thus compatibility with that library must be enabled to be available. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00673">673</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga017edd807b040c198a02733e4b81e1df"></a><!-- doxytag: member="qvprojective.h::getCameraPosesFromEssentialMatrix" ref="ga017edd807b040c198a02733e4b81e1df" args="(const QVMatrix &amp;E, QVMatrix &amp;R1, QVMatrix &amp;R2, QV3DPointF &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getCameraPosesFromEssentialMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>R1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>R2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Decomposes an essential matrix and obtains the corresponding pair of camera poses. </p>
+<p>This function obtains the four possible pairs of valid camera poses from an essential matrix:</p>
+<ul>
+<li><img class="formulaInl" alt="$ \left( I_3|0 \right) $" src="form_166.png"/> and <img class="formulaInl" alt="$ \left( R_1|t \right) $" src="form_167.png"/></li>
+<li><img class="formulaInl" alt="$ \left( I_3|0 \right) $" src="form_166.png"/> and <img class="formulaInl" alt="$ \left( R_1|-t \right) $" src="form_168.png"/></li>
+<li><img class="formulaInl" alt="$ \left( I_3|0 \right) $" src="form_166.png"/> and <img class="formulaInl" alt="$ \left( R_2|t \right) $" src="form_169.png"/></li>
+<li><img class="formulaInl" alt="$ \left( I_3|0 \right) $" src="form_166.png"/> and <img class="formulaInl" alt="$ \left( R_2|-t \right) $" src="form_170.png"/></li>
+</ul>
+<p>These camera poses satisfy the following equation:</p>
+<p><img class="formulaInl" alt="$ E \propto \left[ t \right] _\times R_i $" src="form_171.png"/></p>
+<p>This function returns the two rotation matrices (<img class="formulaInl" alt="$ R_1 $" src="form_172.png"/> and <img class="formulaInl" alt="$ R_2 $" src="form_173.png"/>) and the vector <img class="formulaInl" alt="$ t $" src="form_35.png"/> from those expressions.</p>
+<p>See section 9.6.2 from <em>Multiple View Geometry in Computer Vision</em> for more info on decomposing the essential matrix to obtain the camera poses.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>The function <a class="el" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b">testCheiralityForCameraPoses</a> can be used to test which one of these configurations corresponds to a valid 3D reconstruction.</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>E</em>&nbsp;</td><td>The input essential matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>R1</em>&nbsp;</td><td>Output param containing the first possible rotation matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>R2</em>&nbsp;</td><td>Output param containing the second possible rotation matrix. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>Output param containing the translation vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01219">1219</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gaab6ac97055fa83864cb3bcad712008b7">linearCameraPairInitialization()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5b7c05c6c12bb5c005f00cd838fd436b"></a><!-- doxytag: member="qvprojective.h::testCheiralityForCameraPoses" ref="ga5b7c05c6c12bb5c005f00cd838fd436b" args="(const QVMatrix &amp;sourceRt, const QPointF &amp;sourceProjection, const QVMatrix &amp;destRt, const QPointF &amp;destProjection)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool testCheiralityForCameraPoses </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sourceRt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>sourceProjection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>destRt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>destProjection</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tests if two camera poses satisfy the cheirality condition for the reconstruction of a 3D point. </p>
+<p>This function reconstructs a 3D point from its projections on two image views, and test whether the triangulated location is in front or behind of the cameras. If the point is not in front of both cameras, the 3D reconstruction obtained from these camera poses will be incorrect.</p>
+<p>See chapter 20 from <em>Multiple View Geometry in Computer Vision</em> for more info on cheirality.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sourceRt</em>&nbsp;</td><td>Camera pose for the first view. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sourceProjection</em>&nbsp;</td><td>Projection of the point used to test cheirality on the first view. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destRt</em>&nbsp;</td><td>Camera pose for the second view. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destProjection</em>&nbsp;</td><td>Projection of the point used to test cheirality on the second view.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the point reconstruction is in front of both camera poses, false otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__qvprojectivegeometry.html#ga017edd807b040c198a02733e4b81e1df" title="Decomposes an essential matrix and obtains the corresponding pair of camera poses...">getCameraPosesFromEssentialMatrix</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01241">1241</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#gaab6ac97055fa83864cb3bcad712008b7">linearCameraPairInitialization()</a>, and <a class="el" href="group__qvsfm.html#gafea767e25db8e80b1822b8a1499776fa">testCheirality()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gae1435ef34731a4088d1c45deab3d3ba5"></a><!-- doxytag: member="qvprojective.h::linearCameraResection" ref="gae1435ef34731a4088d1c45deab3d3ba5" args="(const QList&lt; QPointF &gt; &amp;points2d, const QList&lt; QV3DPointF &gt; &amp;points3d)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVMatrix.html">QVMatrix</a> linearCameraResection </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points2d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3d</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Obtains the camera matrix from a set of correspondences between 3D points and their respective image projections. </p>
+<p>The following formula models the relation between a set of points from the 3D world <img class="formulaInl" alt="$ \{ X_i \}_{i=1..n} $" src="form_174.png"/> and their projections <img class="formulaInl" alt="$ \{ x_i \}_{i=1..n} $" src="form_175.png"/> on an image:</p>
+<p><img class="formulaInl" alt="$ x_i \propto P X_i $" src="form_176.png"/></p>
+<p>This function uses a <a href="http://en.wikipedia.org/wiki/Direct_linear_transformation">direct linear transformation (DLT)</a> to obtain the camera matrix <img class="formulaInl" alt="$ P $" src="form_114.png"/> from a given set of 3D points and their corresponding image points.</p>
+<p>For more information about the linear camera resection, check chapter 7 of 'Multiple View Geometry in Computer Vision', section 7.1.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>points2d</em>&nbsp;</td><td>List containing the points from the image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points3d</em>&nbsp;</td><td>List containing the 3D points. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The camera matrix <img class="formulaInl" alt="$ P $" src="form_114.png"/>. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00896">896</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8d7cc4afd681a8c0251b975f5d303436"></a><!-- doxytag: member="qvprojective.h::linear3DPointTriangulation" ref="ga8d7cc4afd681a8c0251b975f5d303436" args="(const QVector&lt; QVMatrix &gt; &amp;cameraMatrices, const QHash&lt; int, QPointF &gt; &amp;projectionsOfAPoint, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> linear3DPointTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraMatrices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QHash&lt; int, QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>projectionsOfAPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of a 3D point from its projection on several views, and their corresponding camera matrices. </p>
+<p>This is an overloaded version of the function linear3DPointTriangulation(const QList&lt;QVMatrix&gt; &amp;, const QList&lt;QPointF&gt; &amp;), provided for convenience.</p>
+<p>This version does not require that the point were visible from every camera in the input camera list. The point projections are provided in a QHash structure. Each key in that structure is the index at the camera list of the camera corresponding to the point projection.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>linear3DPointTriangulation(const QList&lt;QVMatrix&gt; &amp;, const QList&lt;QPointF&gt; &amp;); </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01011">1011</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1d52c9946346c83aea79f1f2311b44ef"></a><!-- doxytag: member="qvprojective.h::linear3DPointTriangulation" ref="ga1d52c9946346c83aea79f1f2311b44ef" args="(const QList&lt; QVMatrix &gt; &amp;cameraMatrices, const QList&lt; QPointF &gt; &amp;projectionsOfAPoint, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> linear3DPointTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVMatrix.html">QVMatrix</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraMatrices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>projectionsOfAPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of a 3D point from its projection on several views, and their corresponding camera matrices. </p>
+<p>Using the projection formula:</p>
+<p><img class="formulaInl" alt="$ x \propto P X $" src="form_177.png"/></p>
+<p>This function triangulates the location of the 3D point <img class="formulaInl" alt="$ X $" src="form_178.png"/>, provided the projections <img class="formulaInl" alt="$ \{x_i\}_{i=1..n}$" src="form_179.png"/> on several views, and the camera matrices <img class="formulaInl" alt="$ \{P_i\}_{i=1..n}$" src="form_180.png"/> for those views.</p>
+<p>The method used is described at section 12.2 from <em>Multiple View Geometry in Computer Vision</em>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameraMatrices</em>&nbsp;</td><td>list of camera matrices for the different views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>projectionsOfAPoint</em>&nbsp;</td><td>list of projections of the 3D point for the different views. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated location for the point. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l00969">969</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvprojectivegeometry.html#ga145fc6ee66fb884fa959a00400744570">linear3DPointsTriangulation()</a>, <a class="el" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">linear3DPointTriangulation()</a>, and <a class="el" href="group__qvprojectivegeometry.html#ga5b7c05c6c12bb5c005f00cd838fd436b">testCheiralityForCameraPoses()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabaa689662af5c3e513041ef1a7c97117"></a><!-- doxytag: member="qvprojective.h::linear3DPointTriangulation" ref="gabaa689662af5c3e513041ef1a7c97117" args="(const QPointF &amp;point1, const QVMatrix &amp;P1, const QPointF &amp;point2, const QVMatrix &amp;P2, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> linear3DPointTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>P1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&nbsp;</td>
+          <td class="paramname"> <em>point2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>P2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices. </p>
+<p>Using the projection formula:</p>
+<p><img class="formulaInl" alt="$ x \propto P X $" src="form_177.png"/></p>
+<p>This function triangulates the location of the 3D point <img class="formulaInl" alt="$ X $" src="form_178.png"/>, provided the projections <img class="formulaInl" alt="$ x_i$" src="form_181.png"/> and <img class="formulaInl" alt="$ x_j$" src="form_182.png"/> on two views, and the camera matrices <img class="formulaInl" alt="$ P_i$" src="form_183.png"/> and <img class="formulaInl" alt="$ P_j$" src="form_184.png"/> for those views.</p>
+<p>The method used is described at section 12.2 from <em>Multiple View Geometry in Computer Vision</em>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>point1</em>&nbsp;</td><td>The projected location of the 3D point in the first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>P1</em>&nbsp;</td><td>The camera matrix for the first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>point2</em>&nbsp;</td><td>The projected location of the 3D point in the second image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>P2</em>&nbsp;</td><td>The camera matrix for the second image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated location for the point.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>use <a class="el" href="group__qvprojectivegeometry.html#ga3d79b8259c6cf0dfbd6fbbc4d1f8f968">linear3DPointTriangulation(const QPointFMatching &amp;, const QVMatrix &amp;, const QVMatrix &amp;, const TQVSVD_Method)</a> instead. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01337">1337</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3d79b8259c6cf0dfbd6fbbc4d1f8f968"></a><!-- doxytag: member="qvprojective.h::linear3DPointTriangulation" ref="ga3d79b8259c6cf0dfbd6fbbc4d1f8f968" args="(const QPointFMatching &amp;matching, const QVMatrix &amp;P1, const QVMatrix &amp;P2, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> linear3DPointTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matching</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>P1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>P2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices. </p>
+<p>Using the projection formula:</p>
+<p><img class="formulaInl" alt="$ x \propto P X $" src="form_177.png"/></p>
+<p>This function triangulates the location of the 3D point <img class="formulaInl" alt="$ X $" src="form_178.png"/>, provided the point matchings <img class="formulaInl" alt="$ x_i \mapsto x_j $" src="form_185.png"/> between two views, and the camera matrices <img class="formulaInl" alt="$ P_i$" src="form_183.png"/> and <img class="formulaInl" alt="$ P_j$" src="form_184.png"/> for those views.</p>
+<p>The method used is described at section 12.2 from <em>Multiple View Geometry in Computer Vision</em>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matching</em>&nbsp;</td><td>Point matching containing the projections of each 3D point at both cameras. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>P1</em>&nbsp;</td><td>The camera matrix for the first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>P2</em>&nbsp;</td><td>The camera matrix for the second image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>method</em>&nbsp;</td><td>The method to solve the linear system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated location for the point. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01050">1050</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga67b250d99026dad89a8f1006ab8e4fe1"></a><!-- doxytag: member="qvprojective.h::linear3DPointTriangulation" ref="ga67b250d99026dad89a8f1006ab8e4fe1" args="(const QPointFMatching &amp;matching, const QVCameraPose &amp;pose1, const QVCameraPose &amp;pose2, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> linear3DPointTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>matching</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>pose1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>pose2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of a 3D point from its projection on two images, and their corresponding camera matrices. </p>
+<p>Using the projection formula:</p>
+<p><img class="formulaInl" alt="$ x \propto P X $" src="form_177.png"/></p>
+<p>This function triangulates the location of the 3D point <img class="formulaInl" alt="$ X $" src="form_178.png"/>, provided the point matchings <img class="formulaInl" alt="$ x_i \mapsto x_j $" src="form_185.png"/> between two views, and the camera matrices <img class="formulaInl" alt="$ P_i$" src="form_183.png"/> and <img class="formulaInl" alt="$ P_j$" src="form_184.png"/> for those views.</p>
+<p>The method used is described at section 12.2 from <em>Multiple View Geometry in Computer Vision</em>.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matching</em>&nbsp;</td><td>Point matching containing the projections of each 3D point at both cameras. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pose1</em>&nbsp;</td><td>The camera pose for the first image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pose2</em>&nbsp;</td><td>The camera pose for the second image. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>method</em>&nbsp;</td><td>The method to solve the linear system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated location for the point. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01088">1088</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga145fc6ee66fb884fa959a00400744570"></a><!-- doxytag: member="qvprojective.h::linear3DPointsTriangulation" ref="ga145fc6ee66fb884fa959a00400744570" args="(const QList&lt; QVEuclideanMapping3 &gt; &amp;cameras, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQV3DPointF.html">QV3DPointF</a>&gt; linear3DPointsTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameras</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices. </p>
+<p>Using function <a class="el" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">linear3DPointTriangulation</a>, the locations of several 3D points are triangulated with this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameras</em>&nbsp;</td><td>List of cameras. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pointProjections</em>&nbsp;</td><td>Container for the point projections. Each element in this list corresponds to a 3D point. These elements are hash tables, containing the point image projections, indexed by the number of the camera.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated locations for the points. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01111">1111</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="group__qvsfm.html#ga24c3d362f20077a851e8539e4bc73aa4">reconstructionError()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2213ce30fd6ab62c46e482fd9fec6397"></a><!-- doxytag: member="qvprojective.h::linear3DPointsTriangulation" ref="ga2213ce30fd6ab62c46e482fd9fec6397" args="(const QList&lt; QVEuclideanMapping3 &gt; &amp;cameras, const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQV3DPointF.html">QV3DPointF</a>&gt; linear3DPointsTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameras</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices. </p>
+<p>This is an overloaded version of the previous function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameras</em>&nbsp;</td><td>List of cameras. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pointProjections</em>&nbsp;</td><td>Container for the point projections. Each element in this list corresponds to a 3D point. These elements are hash tables, containing the point image projections, indexed by the number of the camera.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated locations for the points. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01127">1127</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga7ad9c59ab6cdc91ac4c908e1d2f95174"></a><!-- doxytag: member="qvprojective.h::linear3DPointsTriangulation" ref="ga7ad9c59ab6cdc91ac4c908e1d2f95174" args="(const QList&lt; QVCameraPose &gt; &amp;cameras, const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQV3DPointF.html">QV3DPointF</a>&gt; linear3DPointsTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameras</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices. </p>
+<p>Using function <a class="el" href="group__qvprojectivegeometry.html#ga67b250d99026dad89a8f1006ab8e4fe1">linear3DPointTriangulation</a>, the locations of several 3D points are triangulated with this function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameras</em>&nbsp;</td><td>List of cameras. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pointProjections</em>&nbsp;</td><td>Container for the point projections. Each element in this list corresponds to a 3D point. These elements are hash tables, containing the point image projections, indexed by the number of the camera.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated locations for the points. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01143">1143</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga867d933e04eb6e85cd89b9604592b0c9"></a><!-- doxytag: member="qvprojective.h::linear3DPointsTriangulation" ref="ga867d933e04eb6e85cd89b9604592b0c9" args="(const QList&lt; QVCameraPose &gt; &amp;cameras, const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;pointProjections, const TQVSVD_Method method=DEFAULT_TQVSVD_METHOD)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="classQV3DPointF.html">QV3DPointF</a>&gt; linear3DPointsTriangulation </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameras</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; QHash&lt; int, QPointF &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>pointProjections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvmatrixalgebra.html#gad753ba41cd08df7e8d4173d8c2ac2575">TQVSVD_Method</a>&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>DEFAULT_TQVSVD_METHOD</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Recovers the location of several 3D points from their projections on different views, and the corresponding camera matrices. </p>
+<p>This is an overloaded version of the previous function.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameras</em>&nbsp;</td><td>List of cameras. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pointProjections</em>&nbsp;</td><td>Container for the point projections. Each element in this list corresponds to a 3D point. These elements are hash tables, containing the point image projections, indexed by the number of the camera.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The triangulated locations for the points. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01159">1159</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabb623dbd849917dc8f20dbcbf775ff22"></a><!-- doxytag: member="qvprojective.h::getCameraFocals" ref="gabb623dbd849917dc8f20dbcbf775ff22" args="(const QList&lt; QPointFMatching &gt; &amp;matchings, double &amp;focal1, double &amp;focal2, const QPointF principalPoint1=QPointF(0.0, 0.0), const QPointF principalPoint2=QPointF(0.0, 0.0), const GSLMultiminFDFMinimizerType gslMinimizerAlgorithm=VectorBFGS, const int optimizationIterations=50)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool getCameraFocals </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="group__qvmath.html#ga818fe0c689af956cd14431148c879718">QPointFMatching</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>matchings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>focal1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>focal2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF&nbsp;</td>
+          <td class="paramname"> <em>principalPoint1</em> = <code>QPointF(0.0,&nbsp;0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF&nbsp;</td>
+          <td class="paramname"> <em>principalPoint2</em> = <code>QPointF(0.0,&nbsp;0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qvnumericalanalysis.html#gad24495d3074466956a7da56fabf2d0e7">GSLMultiminFDFMinimizerType</a>&nbsp;</td>
+          <td class="paramname"> <em>gslMinimizerAlgorithm</em> = <code>VectorBFGS</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>optimizationIterations</em> = <code>50</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estimates the focal lengths for two cameras,. </p>
+<p>This function can be used to calibrate two cameras, provided a rough approximation of their principal point locations, and a list of point correspondences between two images.</p>
+<p>It first obtains two initial estimations for the focal lengths <img class="formulaInl" alt="$ f_1 $" src="form_186.png"/> and <img class="formulaInl" alt="$ f_2 $" src="form_187.png"/> of the cameras using the procedure described in [1]. These focal distances are refined by optimizing the following calibration error function:</p>
+<p><img class="formulaInl" alt="$ error(f_1, f_2) = 1 - s_2 / s_1 $" src="form_188.png"/></p>
+<p>where the values <img class="formulaInl" alt="$ s_1 $" src="form_189.png"/> and <img class="formulaInl" alt="$ s_2 $" src="form_190.png"/> correspond to the first and second singular values of the following matrix:</p>
+<p><img class="formulaInl" alt="$ \left(\begin{array}{ccc} f_1 &amp; 0 &amp; cx_1 \\ 0 &amp; f_1 &amp; cy_1 \\ 0 &amp; 0 &amp; 1 \\ \end{array}\right) F \left(\begin{array}{ccc} f_2 &amp; 0 &amp; cx_2 \\ 0 &amp; f_2 &amp; cy_2 \\ 0 &amp; 0 &amp; 1 \\ \end{array}\right) $" src="form_191.png"/></p>
+<p>where <img class="formulaInl" alt="$ (cx_1, cy_1) $" src="form_192.png"/> and <img class="formulaInl" alt="$ (cx_2, cy_2) $" src="form_193.png"/> are the provided rough approximations for the principal points of the first and second camera respectively, and <img class="formulaInl" alt="$ F $" src="form_194.png"/> is the fundamental matrix obtained from the list of point correspondences.</p>
+<p>[1] <em>Estimation of Relative Camera Positions for Uncalibrated Cameras</em>. R. Hartley. Proceedings of the Second European Conference on Computer Vision, 1992.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>matchings</em>&nbsp;</td><td>List of point matchings between the two images. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>focal1</em>&nbsp;</td><td>This variable will contain the focal for the first camera in return. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>focal2</em>&nbsp;</td><td>This variable will contain the focal for the second camera in return. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>principalPoint1</em>&nbsp;</td><td>Rough approximation for the principal point of the first camera. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>principalPoint2</em>&nbsp;</td><td>Rough approximation for the principal point of the second camera. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gslMinimizerAlgorithm</em>&nbsp;</td><td>Algorithm to use in the optimization step of the focal calibration. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>optimizationIterations</em>&nbsp;</td><td>Number of iterations to perform at the optimization step.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function requires GSL compatibility.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>false if a numerical error was found, and the focal lengths could not be estimated, true otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="getCameraFocals_8cpp_source.html#l00512">512</a> of file <a class="el" href="getCameraFocals_8cpp_source.html">getCameraFocals.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gafebb00bc1698d22fdb6875a6a5d70c24"></a><!-- doxytag: member="qvprojective.h::computeCameraFocalFromPlanarHomography" ref="gafebb00bc1698d22fdb6875a6a5d70c24" args="(const QVMatrix &amp;H, int w, int h, bool byzero=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double computeCameraFocalFromPlanarHomography </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>H</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>byzero</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compute camera focal from a planar homography. </p>
+<p>This function computes the camera focal by solving for diagonal matrix IAC <img class="formulaInl" alt="$ W=K^{-T}.K^{-1} $" src="form_195.png"/>, taking into account that <img class="formulaInl" alt="$ H^T W H = \left( \begin{array}{ccc} a &amp; 0 &amp; r \\ 0 &amp; a &amp; s \\ t &amp; u &amp; v \end{array} \right) $" src="form_196.png"/></p>
+<p>This is equivalent to two different constraints in the entries of H, one of them to force</p>
+<p>(1) <img class="formulaInl" alt="$ (H^T W H)(0,0) = (H^T W H)(1,1) $" src="form_197.png"/></p>
+<p>and the other to force</p>
+<p>(2) <img class="formulaInl" alt="$ (H^T.W.H)(0,1)=0 $" src="form_198.png"/></p>
+<p>If we want to use the first condition, we set byzero to false; if we want to use de second, we set byzero to true. (Of course, we could have also used both conditions at the same time, and solve by minimum squares).</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>H</em>&nbsp;</td><td>planar homography matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>horizontal coordinate for the principal point of the image </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>vertical coordinate for the principal point of the image </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>byzero</em>&nbsp;</td><td>If true, use equation (1) to solve for the focal value. Otherwise, use equation (2) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01283">1283</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga53841f2498e0f94b889bac1134135e43"></a><!-- doxytag: member="qvprojective.h::getCameraPoseFromCalibratedHomography" ref="ga53841f2498e0f94b889bac1134135e43" args="(const QVMatrix &amp;K, const QVMatrix &amp;H)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCameraPose.html">QVCameraPose</a> getCameraPoseFromCalibratedHomography </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>K</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classQVMatrix.html">QVMatrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>H</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estimates the camera pose form the intrinsic calibration and a planar homography. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>K</em>&nbsp;</td><td>Intrinsic calibration matrix for the camera. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>H</em>&nbsp;</td><td>Planar homography. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="qvprojective_8cpp_source.html#l01292">1292</a> of file <a class="el" href="qvprojective_8cpp_source.html">qvprojective.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3f3a84e1786f64ea1e8ba2975759f406"></a><!-- doxytag: member="qvreprojectionerror.h::optimizeReprojectionErrorForCameraPose" ref="ga3f3a84e1786f64ea1e8ba2975759f406" args="(const QVEuclideanMapping3 &amp;camera0, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; QV3DPointF &gt; &amp;points3D, const int iterations=5)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> optimizeReprojectionErrorForCameraPose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>camera0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points2D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>iterations</em> = <code>5</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Improves the estimated location of a camera pose by refining its reprojection error. </p>
+<p>Provided a set of 3D points and their estimated projections on an image, this function improves the pose for that view, by refining the <img class="formulaInl" alt="$ norm_2 $" src="form_199.png"/> of the reprojection error using the Levenberg-Marquardt optimization.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameraPose</em>&nbsp;</td><td>Initial camera pose. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points2D</em>&nbsp;</td><td>List of image projections for the points </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points3D</em>&nbsp;</td><td>List of 3D coordinates for the points </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>iterations</em>&nbsp;</td><td>Number of Levenberg-Marquard iterations to perform</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An improved camera pose. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvreprojectionerror_8cpp_source.html#l00154">154</a> of file <a class="el" href="qvreprojectionerror_8cpp_source.html">qvreprojectionerror.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabe1f2349f630e5584249273044cce486"></a><!-- doxytag: member="qvreprojectionerror.h::optimizeReprojectionErrorFor3DPoint" ref="gabe1f2349f630e5584249273044cce486" args="(const QV3DPointF &amp;initialPoint3D, const QList&lt; QVEuclideanMapping3 &gt; &amp;cameraPoses, const QHash&lt; int, QPointF &gt; &amp;projectionsOfAPoint, const int iterations=5, const double lambda=1e+0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQV3DPointF.html">QV3DPointF</a> optimizeReprojectionErrorFor3DPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>initialPoint3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQVEuclideanMapping3.html">QVEuclideanMapping3</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPoses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QHash&lt; int, QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>projectionsOfAPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>iterations</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>lambda</em> = <code>1e+0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Improves the estimated location of a 3D point by refining its reprojection error. </p>
+<p>Provided the estimated projections of a 3D point on a set of views, and the estimated camera poses for those views, this function improves the estimated location of the 3D point by refining the <img class="formulaInl" alt="$ norm_2 $" src="form_199.png"/> of the reprojection error using the Levenberg-Marquardt optimization.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>initialPoint3D</em>&nbsp;</td><td>Initial 3D point location. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cameraPoses</em>&nbsp;</td><td>List of the views camera poses. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>projectionsOfAPoint</em>&nbsp;</td><td>List of projections of the 3D point on the views. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>iterations</em>&nbsp;</td><td>Number of iterations to refine reprojection error. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lambda</em>&nbsp;</td><td>Value to increase the diagonal of the Hessian matrix in the Levenberg-Marquardt algorithm.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An improved location for the 3D point. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvreprojectionerror_8cpp_source.html#l00267">267</a> of file <a class="el" href="qvreprojectionerror_8cpp_source.html">qvreprojectionerror.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6a50717778dcec283e6294ba95e41078"></a><!-- doxytag: member="qvreprojectionerror.h::optimizeReprojectionErrorForCameraPoseCauchy" ref="ga6a50717778dcec283e6294ba95e41078" args="(const QVCameraPose &amp;cameraPose, const QList&lt; QPointF &gt; &amp;points2D, const QList&lt; QV3DPointF &gt; &amp;points3D, const int iterations, const double lambda=1e&#45;5, const double sigma=3.0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQVCameraPose.html">QVCameraPose</a> optimizeReprojectionErrorForCameraPoseCauchy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classQVCameraPose.html">QVCameraPose</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>cameraPose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPointF &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points2D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="classQV3DPointF.html">QV3DPointF</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>points3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>iterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>lambda</em> = <code>1e-5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>sigma</em> = <code>3.0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Improves the estimated location of a camera pose by refining its reprojection error robustified by a Cauchy distribution. </p>
+<p>This function optimizes the pose of a view using the Levenberg-Marquardt optimization, provided the image projections of a set of 3D points.</p>
+<p>This method assumes a Cauchy distribution for the reprojection residuals, to reduce the impact of outliers in the cost error, and improve the obtained camera pose.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cameraPose</em>&nbsp;</td><td>Initial camera pose. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points2D</em>&nbsp;</td><td>List of image projections for the points </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>points3D</em>&nbsp;</td><td>List of 3D coordinates for the points </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>iterations</em>&nbsp;</td><td>Number of Levenberg-Marquard iterations to perform </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lambda</em>&nbsp;</td><td>Increment of the diagonal elements for the estimated Hessian matrix </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sigma</em>&nbsp;</td><td>standard deviation to the cost function (negative log-likelihood)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An improved camera pose. </dd></dl>
+
+<p>Definition at line <a class="el" href="qvreprojectionerror_8cpp_source.html#l00455">455</a> of file <a class="el" href="qvreprojectionerror_8cpp_source.html">qvreprojectionerror.cpp</a>.</p>
+
+</div>
+</div>
+</div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>

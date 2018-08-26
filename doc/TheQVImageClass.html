@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- 
+	Copyright (C) 2007, 2008, 2009, 2010, 2011. PARP Research Group.
+	<http://perception.inf.um.es>
+	University of Murcia, Spain.
+
+	This file is part of the QVision library.
+
+	QVision is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Lesser General Public License as
+	published by the Free Software Foundation, version 3 of the License.
+
+	QVision is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with QVision. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html><head><meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+<title>QVision: Qt&#39;s Image, Video and Computer Vision Library</title>
+<meta name="title" content="QVision" />
+<meta name="dc.title" content="QVision" />
+<meta name="url" content="http://perception.inf.um.es/QVision" />
+<meta name="author" content="PARP Research Group - http://perception.inf.um.es" />
+<meta name="revisit-after" content="30 DAYS"/>
+<meta name="robots" content="index,follow"/>
+<meta name="classification" content="*">
+<meta name="rating" content="Safe For Kids">
+<meta name="distribution" content="GLOBAL"/>
+<meta name="description" content="Qt's Image, Video and Computer Vision Library"/>
+<meta name="page-topic" content="Computer Vision research and prototype programming"/>
+<meta name="geo.country" content="ES" />
+
+<!--
+Keywords:
+By license:		open source, gnu, lgpl, gpl, free
+By theme:		computer vision, image processing, robotics, programming, source, development
+By usage:		library, toolkit, framework, prototype, application
+By programming specs:	object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping
+Interoperability with:	Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack
+Functionallity:		image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface
+Main data-types:	matrix, vector, tensor, quaternion, image, polyline
+Video sources:		webcam, camera, stream
+Devices:		embedded, desktop computer, laptop, mini-laptop
+Authors:		PARP research group. University of Murcia, Spain.
+-->
+
+<meta name="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="keywords" content="augmented reality, sfm, structure from motion, open source, gnu, lgpl, gpl, free, computer vision, image processing, robotics, programming, source, development, library, toolkit, framework, prototype, application, object oriented, c++, block programming, reusability, gui, graphical, parallel computing, high performance, GPU, prototyping, Qt, GSL, GNU Scientific library, OpenCV, CGAL, QWT, CUDA, mplayer, IPP, Intel Image Performance Primitives, blas, lapack, image features, matrix algebra, projective geometry, mser, function minimization, function optimization, canny operator, harris operator, corner detection, performance evaluation, cpu usage, graphical interface, matrix, vector, tensor, quaternion, image, polyline, webcam, camera, stream, embedded, desktop computer, laptop, mini-laptop, University of Murcia, Spain, PARP research group, vision por computador"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="title" content="QVision"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+</head><body>
+
+<table width="100%"><tr>
+	<td><a href="http://perception.inf.um.es/"><img src="parp.png" border="0" /> <big>PARP Research Group</big></a></td>
+	<td align="right"><a href="http://www.um.es/"><big>Universidad de Murcia</big> <img src="um.png" border="0" /></a></td>
+</tr></table>
+
+<hr /><br />
+
+<table width="95%" align="center"><tr><td>
+
+<!-- Generated by Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+          <form id="FSearchBox" action="search.php" method="get">
+            <img id="MSearchSelect" src="search/search.png" alt=""/>
+            <input type="text" id="MSearchField" name="query" value="Search" size="20" accesskey="S" 
+                   onfocus="searchBox.OnSearchFieldFocus(true)" 
+                   onblur="searchBox.OnSearchFieldFocus(false)"/>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="ManualSections.html">The manual</a>
+  </div>
+</div>
+<div class="contents">
+
+
+<h1><a class="anchor" id="TheQVImageClass">The <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> class </a></h1><p>In the QVision framework, images are represented as objects. These objects are created from the <a class="el" href="classQVImage.html">QVImage</a> class. They contain the pixel values corresponding to a raster or bitmap image representation.</p>
+<p>The <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> class is parametrized with the type of the values contained in each pixel, and the number of channels of the image. For example, the following code will create an unsigned 8 bit-depth image, with 3 channels:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;QVImage&gt;</span>      <span class="comment">// Header file required to include the class QVImage</span>
+
+[...]
+
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;unsigned char, 3&gt;</a> image;
+</pre></div><h2><a class="anchor" id="QVImageTypes">
+Image types</a></h2>
+<p>The QVision defines several short name types to specify the image bit depth. A comprehensive list can be seen in the next table:</p>
+<table class="doxtable">
+<tr>
+<th>C++ type </th><th>QVision type </th><th>Bit depth  </th></tr>
+<tr>
+<td>unsigned char </td><td>uChar </td><td>8 bits, integer value.  </td></tr>
+<tr>
+<td>unsigned short </td><td>uShort </td><td>16 bits, integer value.  </td></tr>
+<tr>
+<td>unsigned int </td><td>uInt </td><td>32 bits, integer value.  </td></tr>
+<tr>
+<td>signed char </td><td>sChar </td><td>8 bits, integer value.  </td></tr>
+<tr>
+<td>signed short </td><td>sShort </td><td>16 bits, integer value.  </td></tr>
+<tr>
+<td>signed int </td><td>sInt </td><td>32 bits, integer value.  </td></tr>
+<tr>
+<td>float </td><td>sFloat </td><td>single precission, floating point value  </td></tr>
+<tr>
+<td>double </td><td>sDouble </td><td>double precission, floating point value  </td></tr>
+</table>
+<p>Some examples of <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> object creation with these defined types follows: </p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates an unsigned 8-bit, 1 channel image, using the C++ type for the 8-bit depth.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;unsigned char, 1&gt;</a> imageA;
+
+<span class="comment">// Creates another unsigned 8-bit, 1 channel image, using the QVision predefined type for the 8-bit depth.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageB;
+
+<span class="comment">// Creates a signed 32-bit, 3 channel image, using the C++ type for the 32-bit depth.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;signed int, 3&gt;</a> imageC;
+
+<span class="comment">// Creates another signed 32-bit, 3 channel image, using the QVision predefined type for the 32-bit depth.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> imageD;
+
+<span class="comment">// Creates a single precission floating point, 1 channel image, using the C++ type for the floating point.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;float, 1&gt;</a> imageE;
+
+<span class="comment">// Creates another single precission floating point, 1 channel image, using the QVision predefined type for the floating point.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sFloat, 1&gt;</a> imageF;
+</pre></div><p>Programmers can use the QVision defined types, as well as the corresponding C++ types. The former are just short terms defined for usability. As for the image channel number, technically you can create image objects with an arbitrarily number of channels. In practice you generally won't find practical functionality applied to images with a channel number other than 1, 3 or 4.</p>
+<h2><a class="anchor" id="DefaultQVImageTemplateParameters">
+Default template parameters</a></h2>
+<p>The <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> template parameters can be omitted. By default, when declaring a <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> object, the bit-depth is 8-bits, and the channel number is one. For example, the following variable declarations are all equivalent, and declare 8-bit one channel images:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a 8-bit, 1 channel image.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageB;
+
+<span class="comment">// Creates another 8-bit, 1 channel image, omiting the channel number.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar&gt;</a> imageC;
+
+<span class="comment">// Creates yet another 8-bit, 1 channel image, omitting both bit depth and channel number.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;&gt;</a> imageD;
+</pre></div><h2><a class="anchor" id="ImageInitialization">
+Image initialization</a></h2>
+<p>The class <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a> has several different constructors. The <b>default constructor</b> creates a 1x1 size image:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a 1x1 size, 3 channel image.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> image;
+</pre></div><p>This constructor is useful for completeness. Another constructor creates the image by <b>specifying its size</b> in rows and cols. For example:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Creates a 320x240 size, 3 channel image.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> imageA(320, 240);
+</pre></div><p>That line will create a 3-channel image with 32 bit-depth, of size 320x240 pixels. Also, the size and content of image objects can be initialized from an image file, using the <b>image file loader constructor</b>. It only requires the file name as the input parameter:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// &#39;imageB&#39; will load its contents from the image file &#39;lena.png&#39;.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageB(<span class="stringliteral">&quot;lena.png&quot;</span>);
+</pre></div><p>That instruction will load the content of the file <em>lena.png</em> on the object <em>imageD</em>, provided that the file exists in the current directory and is readable by the application.</p>
+<p>The last constructor is the <b>copy constructor</b>. It initializes the size and content of the image from another image, of the same bit-depth and channel number:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Images &#39;imageC&#39; and &#39;imageCbis&#39; will contain both copies of &#39;imageA&#39;.</span>
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> imageC = imageA;
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 3&gt;</a> imageCbis(imageA);
+</pre></div><h2><a class="anchor" id="QVImageCopyConversion">
+Copying and converting images</a></h2>
+<p>The <b>copy constructor</b> can also be used to <b>convert</b> an image to a different bit-depth and/or channel number. An example of this usage follows:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// The RGB image &#39;imageB&#39; will be converted to the grayscale images &#39;imageD&#39; and &#39;imageDbis&#39;.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageD = imageB;
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageDbis(imageB);
+</pre></div><p>The copy operator has a similar use to the copy and convert constructors. It can be used to copy the size and content of an image onto an already initialized one:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Construct default image objects.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageE;
+<a class="code" href="classQVImage.html" title="Image representation class for the QVision.">QVImage&lt;sInt, 1&gt;</a> imageF;
+
+[...]
+
+<span class="comment">// Copy &#39;imageA&#39; to &#39;imageE&#39;.</span>
+imageE = imageA;
+
+<span class="comment">// Convert unsigned 8-bit three channel image &#39;imageA&#39;, to signed 32-bit one channel image &#39;imageF&#39;.</span>
+imageF = imageA;
+</pre></div><p>The object <em>imageE</em> will contain a copy of the contents of the object <em>imageA</em>, and the object <em>imageF</em> will contain a 32 bit-depth, one channel conversion of the same contents.</p>
+<h2><a class="anchor" id="QVImagePixelAccess">
+Image pixel access</a></h2>
+<p>The QVision provides several ways to access the pixels of an image. The simplest and less efficient of them is using the <b>parenthesis</b> <b>operator</b>. The following code shows how it can be used to retrieve and update the value of the pixels in an image:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageA(<span class="stringliteral">&quot;lena.png&quot;</span>);
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageB(imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(); i++)
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(); j++)
+                {
+                imageB(i, j, 0) = imageA(i, j, 1);
+                imageB(i, j, 1) = imageA(i, j, 0);
+                imageB(i, j, 2) = imageA(i, j, 2);
+                }
+</pre></div><p>That code swaps the content of the first and the second channels of the image contained in the file <em>lena.png</em>. The default value for the third parameter of the parenthesis operator is 0. Thus if the image has only one channel, the third parameter of the function call operator can be omitted:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageA(<span class="stringliteral">&quot;lena.png&quot;</span>);
+
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageB(imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(); i++)
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(); j++)
+                imageB(i, j) =  0.30* imageA(i, j, 0) +
+                                0.59* imageA(i, j, 1) +
+                                0.11* imageA(i, j, 2);
+</pre></div><p>This code obtains a gray-scale version of the <em>lena.png</em> image in the object <em>imageB</em>.</p>
+<p>A more efficient way of accessing the contents of an image is using the following macros:</p>
+<ul>
+<li><a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb">QVIMAGE_INIT_READ</a></li>
+<li><a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1">QVIMAGE_INIT_WRITE</a></li>
+<li><a class="el" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef">QVIMAGE_PTR_INIT_READ</a></li>
+<li><a class="el" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5">QVIMAGE_PTR_INIT_WRITE</a></li>
+<li><a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3">QVIMAGE_PIXEL</a></li>
+</ul>
+<p>Macros <a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb">QVIMAGE_INIT_READ</a> and <a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1">QVIMAGE_INIT_WRITE</a> are used to initialize access to an image in read or read/write mode respectively. Macro <a class="el" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3">QVIMAGE_PIXEL</a> is used to access a pixel in an image, previously initialized with the other four macros. The previous code example can be rewritten using the macros in the following way:</p>
+<div class="fragment"><pre class="fragment"><a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageA(<span class="stringliteral">&quot;lena.png&quot;</span>);
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageB(imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+
+<a class="code" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb" title="Initializes image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_READ</a>(uChar, imageA);
+<a class="code" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1" title="Initializes image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_INIT_WRITE</a>(uChar, imageB);
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(); i++)
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(); j++)
+                <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(imageB, i, j, 0) = 
+                                0.30* <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(imageA, i, j, 0) +
+                                0.59* <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(imageA, i, j, 1) +
+                                0.11* <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(imageA, i, j, 2);
+</pre></div><p>By using these macros, the code becomes somewhat less legible, but time performance is better. The macros <a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb">QVIMAGE_INIT_READ</a>, <a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1">QVIMAGE_INIT_WRITE</a>, <a class="el" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef">QVIMAGE_PTR_INIT_READ</a> and <a class="el" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5">QVIMAGE_PTR_INIT_WRITE</a> must always receive a plain variable identifier as the second parameter, not an expression of type <a class="el" href="classQVImage.html" title="Image representation class for the QVision.">QVImage</a>. Thus an image pointer cannot be used with the <a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb">QVIMAGE_INIT_READ</a> or <a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1">QVIMAGE_INIT_WRITE</a>, because that would imply including the dereference operator * in the second parameter.</p>
+<p>Macros <a class="el" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef">QVIMAGE_PTR_INIT_READ</a> and <a class="el" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5">QVIMAGE_PTR_INIT_WRITE</a> are equivalent to <a class="el" href="group__qvip.html#gac7c7fd9f827d54495e9e3bc1993f1bcb">QVIMAGE_INIT_READ</a> and <a class="el" href="group__qvip.html#ga42904f931068a3ea3f6bdb90861d1dc1">QVIMAGE_INIT_WRITE</a>, but can receive a pointer to an image as the second input parameter. An equivalent code to the previous example, using image pointers and those macros would be the following:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">// Input and output images</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> imageA(<span class="stringliteral">&quot;lena.png&quot;</span>);
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> imageB(imageA.<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(), imageA.<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>());
+
+<span class="comment">// Get pointers to images.</span>
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 3&gt;</a> *ptrImageA = &amp;imageA;
+<a class="code" href="classQVImage.html">QVImage&lt;uChar, 1&gt;</a> *ptrImageB = &amp;imageB;
+
+<span class="comment">// Read the input image</span>
+<a class="code" href="group__qvip.html#ga988e358793c60b3a9f50c1a7fb4a59ef" title="Initializes pointed image to be read with macro QVIMAGE_PIXEL.">QVIMAGE_PTR_INIT_READ</a>(uChar, ptrImageA);
+<a class="code" href="group__qvip.html#gabd11a1f331e8fc7be6f94d8d7d4456c5" title="Initializes pointed image to be written or read with macro QVIMAGE_PIXEL.">QVIMAGE_PTR_INIT_WRITE</a>(uChar, ptrImageB);
+<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; ptrImageA-&gt;<a class="code" href="classQVImage.html#ad0f2758702ee4d96d538aa353ae81bb7" title="Overloaded function from QVGenericImage::getCols().">getCols</a>(); i++)
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; ptrImageA-&gt;<a class="code" href="classQVImage.html#a55e71ad628f450ee82bb4226cb62ec17" title="Overloaded function from QVGenericImage::getRows().">getRows</a>(); j++)
+                <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(ptrImageB, i, j, 0) = 
+                                0.30* <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(ptrImageA, i, j, 0) +
+                                0.59* <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(ptrImageA, i, j, 1) +
+                                0.11* <a class="code" href="group__qvip.html#ga5dd8ae5ae995f7889bda84469e5465d3" title="Access an image pixel for inspection or modification.">QVIMAGE_PIXEL</a>(ptrImageA, i, j, 2);
+</pre></div> </div>
+</td></tr></table>
+
+<br /><hr><br />
+<center><a href="http://perception.inf.um.es/QVision">QVision framework</a>.
+<a href="http://perception.inf.um.es">PARP research group</a>.
+Copyright &copy; 2007, 2008, 2009, 2010, 2011.</center>
+<br />
+</body>
+</html>
